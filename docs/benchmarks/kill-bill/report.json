@@ -1,0 +1,570 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-06-29T18:44:51.702Z",
+  "project": {
+    "name": "kill-bill",
+    "root": "benchmark-repos/kill-bill",
+    "source": "local",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "unknown",
+    "springBootVersion": "unknown",
+    "fileCount": 2065,
+    "javaFileCount": 1693
+  },
+  "pack": "spring-boot-3-readiness",
+  "readiness": {
+    "overall": 62,
+    "categories": {
+      "java": 6,
+      "spring": 79,
+      "jakarta": 79,
+      "build": 90,
+      "security": 76,
+      "architecture": 44
+    },
+    "summary": "Migration risk requires focused cleanup",
+    "counts": {
+      "critical": 1,
+      "warning": 1,
+      "info": 61
+    }
+  },
+  "findings": [
+    {
+      "code": "spring-boot-version-unknown",
+      "severity": "warning",
+      "title": "Spring Boot version unknown",
+      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
+      "file": null,
+      "line": null
+    },
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultMutableStaticCatalog.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultPlan.java",
+      "line": 29
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultVersionedCatalog.java",
+      "line": 29
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/LoadCatalog.java",
+      "line": 35
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/StandaloneCatalog.java",
+      "line": 28
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/MockCatalog.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/MockPlan.java",
+      "line": 20
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/TestDefaultPriceOverride.java",
+      "line": 145
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/TestPlan.java",
+      "line": 19
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/TestStandaloneCatalogWithPriceOverrideUnit.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/dao/BlockingStateSqlDao.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/dao/DefaultBlockingStateDao.java",
+      "line": 25
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/dao/InvoicePaymentSqlDao.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/dao/InvoiceTrackingSqlDao.java",
+      "line": 21
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/dao/TestCBADaoUnit.java",
+      "line": 115
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/template/formatters/TestDefaultInvoiceFormatter.java",
+      "line": 529
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestSubscriptionItemTree.java",
+      "line": 1380
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestTreePrinter.java",
+      "line": 73
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestTreePrinter.java",
+      "line": 117
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestTreePrinter.java",
+      "line": 129
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/json/CatalogJson.java",
+      "line": 24
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jaxrs/src/test/java/org/killbill/billing/jaxrs/json/TestInvoiceItemJsonSimple.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/DefaultPaymentDao.java",
+      "line": 25
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/PaymentAttemptSqlDao.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/PaymentSqlDao.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/TransactionSqlDao.java",
+      "line": 22
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "payment/src/test/java/org/killbill/billing/payment/TestDefaultStateMachineConfigDOTGenerator.java",
+      "line": 35
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "profiles/killbill/src/test/java/org/killbill/billing/jaxrs/TestJetty.java",
+      "line": 63
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/api/user/DefaultSubscriptionBillingEvent.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/BundleSqlDao.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/DefaultSubscriptionDao.java",
+      "line": 25
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/SubscriptionEventSqlDao.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/SubscriptionSqlDao.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/test/java/org/killbill/billing/subscription/api/user/TestSubscriptionBillingEvents.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "usage/src/main/java/org/killbill/billing/usage/dao/RolledUpUsageSqlDao.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/catalog/CatalogDateHelper.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/dao/BinderBase.java",
+      "line": 19
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/dao/MapperBase.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/nodes/dao/DefaultNodeInfoDao.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/nodes/dao/NodeInfoSqlDao.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/shiro/dao/UserRolesSqlDao.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/shiro/dao/UsersSqlDao.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/shiro/realm/KillBillAuth0Realm.java",
+      "line": 40
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/mock/MockPlan.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/UtilTestSuiteWithEmbeddedDB.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/callcontext/TestInternalCallContextFactory.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/dao/TestNonEntityDao.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/export/dao/TestDatabaseExportDao.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/export/dao/TestDatabaseExportDaoWithExtraTables.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/dao/TestJDBCSessionDao.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/dao/TestSessionModelDao.java",
+      "line": 21
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 59
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 64
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 65
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 69
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillJndiLdapRealm.java",
+      "line": 84
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillJndiLdapRealm.java",
+      "line": 89
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillJndiLdapRealm.java",
+      "line": 90
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillOktaRealm.java",
+      "line": 54
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillOktaRealm.java",
+      "line": 59
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillOktaRealm.java",
+      "line": 60
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": false,
+    "springSecurityDetected": false
+  }
+}

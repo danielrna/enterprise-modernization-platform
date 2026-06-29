@@ -1,0 +1,72 @@
+{
+  "id": "spring-boot-3-readiness",
+  "name": "Spring Boot 3 Readiness",
+  "vertical": "Enterprise Java Readiness",
+  "migration": "Spring Boot 2.x to 3.x",
+  "version": "0.1.0",
+  "categories": [
+    "java",
+    "spring",
+    "jakarta",
+    "build",
+    "security",
+    "architecture"
+  ],
+  "checks": [
+    {
+      "id": "build-tool-detection",
+      "engine": "scanner",
+      "description": "Detect Maven or Gradle project metadata."
+    },
+    {
+      "id": "spring-boot-version",
+      "engine": "scanner",
+      "description": "Detect Spring Boot version from Maven or Gradle metadata."
+    },
+    {
+      "id": "jakarta-namespace",
+      "engine": "static-source-scan",
+      "description": "Find javax namespace usage that blocks Spring Boot 3 readiness."
+    },
+    {
+      "id": "spring-field-injection",
+      "engine": "static-source-scan",
+      "description": "Find Spring field injection patterns that increase migration risk."
+    },
+    {
+      "id": "openrewrite-dry-run",
+      "engine": "openrewrite",
+      "description": "Plan Spring Boot 2 to 3 and Jakarta namespace transformations before applying changes."
+    },
+    {
+      "id": "jakarta-namespace-transform",
+      "engine": "emp-native-rewrite",
+      "description": "Rewrite supported javax namespaces to Jakarta equivalents with rollback evidence."
+    },
+    {
+      "id": "compile-test-validation",
+      "engine": "build-tool",
+      "description": "Capture Maven or Gradle compile and test validation after dry-run, apply, or rollback."
+    },
+    {
+      "id": "trust-confidence",
+      "engine": "emp-trust",
+      "description": "Summarize compile, test, rollback, compatibility, and confidence evidence for Professional packaging."
+    },
+    {
+      "id": "enterprise-rules",
+      "engine": "emp-rules",
+      "description": "Apply client-defined .preflight-rules.yml checks to readiness scoring and report evidence."
+    }
+  ],
+  "reportSections": [
+    "executive-summary",
+    "readiness",
+    "evidence",
+    "transformation",
+    "validation",
+    "trust-engine",
+    "enterprise-rules",
+    "risks-and-recommendations"
+  ]
+}

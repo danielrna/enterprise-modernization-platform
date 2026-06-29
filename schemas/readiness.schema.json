@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://enterprise-modernization-platform.local/schemas/readiness.schema.json",
+  "title": "Readiness Score",
+  "type": "object",
+  "required": ["overall", "categories", "summary", "counts"],
+  "properties": {
+    "overall": { "type": ["integer", "null"], "minimum": 0, "maximum": 100 },
+    "summary": { "type": "string" },
+    "status": { "type": "string" },
+    "categories": {
+      "type": "object",
+      "properties": {
+        "java": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "spring": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "jakarta": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "build": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "security": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "architecture": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "enterpriseRules": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "additionalProperties": false
+    },
+    "counts": {
+      "type": "object",
+      "required": ["critical", "warning", "info"],
+      "properties": {
+        "critical": { "type": "integer", "minimum": 0 },
+        "warning": { "type": "integer", "minimum": 0 },
+        "info": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

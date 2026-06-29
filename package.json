@@ -1,0 +1,21 @@
+{
+  "name": "enterprise-modernization-platform",
+  "version": "0.1.0",
+  "private": false,
+  "description": "CLI-first enterprise modernization readiness platform.",
+  "type": "module",
+  "bin": {
+    "emp": "./bin/emp.js"
+  },
+  "scripts": {
+    "analyze": "node ./bin/emp.js analyze . --out reports/local",
+    "benchmarks": "node ./bin/emp.js benchmarks --out docs/benchmarks",
+    "hub": "node ./bin/emp.js hub --out docs/migration-hub",
+    "test": "node --test ./test/*.test.js",
+    "check": "node --check ./bin/emp.js && node --check ./src/cli.js && node --check ./src/scanner.js && node --check ./src/readiness.js && node --check ./src/report.js && node --check ./src/benchmarks.js && node --check ./src/hub.js && node --check ./src/transform.js && node --check ./src/trust.js && node --check ./src/rules.js && node --check ./src/mcp.js && node --check ./test/emp.test.js && npm test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

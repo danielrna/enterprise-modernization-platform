@@ -1,0 +1,30 @@
+{
+  "id": "jakarta-readiness",
+  "name": "Jakarta Readiness",
+  "target": "javax to jakarta namespace migration readiness",
+  "description": "Assess Java EE javax namespace usage before Jakarta EE or framework migrations.",
+  "checks": [
+    {
+      "id": "javax-usage",
+      "severity": "critical",
+      "description": "Find javax namespace usage that requires Jakarta migration planning."
+    },
+    {
+      "id": "java-util-date",
+      "severity": "info",
+      "description": "Find legacy date API usage around persistence and API boundaries."
+    },
+    {
+      "id": "system-out",
+      "severity": "info",
+      "description": "Separate production logging risks from test and utility output."
+    }
+  ],
+  "outputs": [
+    "applicability",
+    "readiness",
+    "finding-summary",
+    "html-report",
+    "json-report"
+  ]
+}

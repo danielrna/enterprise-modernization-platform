@@ -1,0 +1,498 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-06-29T18:44:39.322Z",
+  "project": {
+    "name": "jhipster-sample-app",
+    "root": "benchmark-repos/jhipster-sample-app",
+    "source": "local",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "21",
+    "springBootVersion": "4.0.6",
+    "fileCount": 609,
+    "javaFileCount": 136
+  },
+  "pack": "spring-boot-3-readiness",
+  "readiness": {
+    "overall": 57,
+    "categories": {
+      "java": 88,
+      "spring": 0,
+      "jakarta": 79,
+      "build": 90,
+      "security": 82,
+      "architecture": 0
+    },
+    "summary": "Migration risk requires focused cleanup",
+    "counts": {
+      "critical": 1,
+      "warning": 53,
+      "info": 0
+    }
+  },
+  "findings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/config/timezone/HibernateTimeZoneIT.java",
+      "line": 30
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/config/timezone/HibernateTimeZoneIT.java",
+      "line": 33
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/security/DomainUserDetailsServiceIT.java",
+      "line": 35
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/security/DomainUserDetailsServiceIT.java",
+      "line": 38
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/security/jwt/TokenAuthenticationIT.java",
+      "line": 18
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/security/jwt/TokenAuthenticationSecurityMetersIT.java",
+      "line": 23
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/security/jwt/TokenAuthenticationSecurityMetersIT.java",
+      "line": 29
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/service/MailServiceIT.java",
+      "line": 51
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/service/MailServiceIT.java",
+      "line": 60
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/service/UserServiceIT.java",
+      "line": 43
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/service/UserServiceIT.java",
+      "line": 50
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/service/UserServiceIT.java",
+      "line": 53
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/service/UserServiceIT.java",
+      "line": 56
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/filter/SpaWebFilterIT.java",
+      "line": 20
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AccountResourceIT.java",
+      "line": 45
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AccountResourceIT.java",
+      "line": 48
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AccountResourceIT.java",
+      "line": 51
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AccountResourceIT.java",
+      "line": 54
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AccountResourceIT.java",
+      "line": 57
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AccountResourceIT.java",
+      "line": 60
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AuthenticateControllerIT.java",
+      "line": 32
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AuthenticateControllerIT.java",
+      "line": 35
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AuthenticateControllerIT.java",
+      "line": 38
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AuthenticateControllerIT.java",
+      "line": 41
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AuthorityResourceIT.java",
+      "line": 36
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AuthorityResourceIT.java",
+      "line": 39
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AuthorityResourceIT.java",
+      "line": 42
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/AuthorityResourceIT.java",
+      "line": 45
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/BankAccountResourceIT.java",
+      "line": 58
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/BankAccountResourceIT.java",
+      "line": 61
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/BankAccountResourceIT.java",
+      "line": 64
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/BankAccountResourceIT.java",
+      "line": 70
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/BankAccountResourceIT.java",
+      "line": 73
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/LabelResourceIT.java",
+      "line": 44
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/LabelResourceIT.java",
+      "line": 47
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/LabelResourceIT.java",
+      "line": 50
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/LabelResourceIT.java",
+      "line": 53
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/OperationResourceIT.java",
+      "line": 62
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/OperationResourceIT.java",
+      "line": 65
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/OperationResourceIT.java",
+      "line": 71
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/OperationResourceIT.java",
+      "line": 74
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/PublicUserResourceIT.java",
+      "line": 34
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/PublicUserResourceIT.java",
+      "line": 37
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/PublicUserResourceIT.java",
+      "line": 40
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/PublicUserResourceIT.java",
+      "line": 43
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/UserResourceIT.java",
+      "line": 60
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/UserResourceIT.java",
+      "line": 63
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/UserResourceIT.java",
+      "line": 66
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/UserResourceIT.java",
+      "line": 69
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/UserResourceIT.java",
+      "line": 72
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/UserResourceIT.java",
+      "line": 75
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/UserResourceIT.java",
+      "line": 78
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/github/jhipster/sample/web/rest/errors/ExceptionTranslatorIT.java",
+      "line": 25
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "passed"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "4.0.6",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": true
+  }
+}

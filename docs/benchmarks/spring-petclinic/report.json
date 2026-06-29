@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-06-29T18:44:39.219Z",
+  "project": {
+    "name": "spring-petclinic",
+    "root": "benchmark-repos/spring-petclinic",
+    "source": "local",
+    "buildTools": [
+      "Maven",
+      "Gradle"
+    ],
+    "javaVersion": "17",
+    "springBootVersion": "4.0.0-SNAPSHOT",
+    "fileCount": 126,
+    "javaFileCount": 47
+  },
+  "pack": "spring-boot-3-readiness",
+  "readiness": {
+    "overall": 56,
+    "categories": {
+      "java": 88,
+      "spring": 0,
+      "jakarta": 79,
+      "build": 90,
+      "security": 76,
+      "architecture": 0
+    },
+    "summary": "Migration risk requires focused cleanup",
+    "counts": {
+      "critical": 1,
+      "warning": 14,
+      "info": 0
+    }
+  },
+  "findings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+      "line": 55
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+      "line": 58
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+      "line": 40
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+      "line": 43
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+      "line": 60
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+      "line": 63
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
+      "line": 65
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java",
+      "line": 58
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java",
+      "line": 53
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+      "line": 76
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+      "line": 79
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+      "line": 82
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/system/CrashControllerIntegrationTests.java",
+      "line": 58
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java",
+      "line": 48
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "passed"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "4.0.0-SNAPSHOT",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false
+  }
+}

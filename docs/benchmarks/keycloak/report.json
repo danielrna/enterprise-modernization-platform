@@ -1,0 +1,2362 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-06-29T18:44:47.069Z",
+  "project": {
+    "name": "keycloak",
+    "root": "benchmark-repos/keycloak",
+    "source": "local",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "11",
+    "springBootVersion": "unknown",
+    "fileCount": 12759,
+    "javaFileCount": 8068
+  },
+  "pack": "spring-boot-3-readiness",
+  "readiness": {
+    "overall": 54,
+    "categories": {
+      "java": 0,
+      "spring": 79,
+      "jakarta": 79,
+      "build": 90,
+      "security": 76,
+      "architecture": 0
+    },
+    "summary": "Migration risk requires focused cleanup",
+    "counts": {
+      "critical": 1,
+      "warning": 1,
+      "info": 285
+    }
+  },
+  "findings": [
+    {
+      "code": "spring-boot-version-unknown",
+      "severity": "warning",
+      "title": "Spring Boot version unknown",
+      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
+      "file": null,
+      "line": null
+    },
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "adapters/saml/core/src/main/java/org/keycloak/adapters/cloned/HttpClientBuilder.java",
+      "line": 27
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "authz/policy/common/src/main/java/org/keycloak/authorization/policy/provider/time/TimePolicyProvider.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "authz/policy/common/src/main/java/org/keycloak/authorization/policy/provider/time/TimePolicyProviderFactory.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "common/src/main/java/org/keycloak/common/crypto/CertificateUtilsProvider.java",
+      "line": 26
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "common/src/main/java/org/keycloak/common/util/CertificateUtils.java",
+      "line": 24
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "common/src/main/java/org/keycloak/common/util/Time.java",
+      "line": 20
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "common/src/test/java/org/keycloak/common/util/RetryTest.java",
+      "line": 51
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "common/src/test/java/org/keycloak/common/util/RetryTest.java",
+      "line": 57
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "core/src/main/java/org/keycloak/representations/info/SystemInfoRepresentation.java",
+      "line": 21
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 53
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 56
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 69
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 70
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 71
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 72
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 86
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 89
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 90
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 91
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 108
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/JsonParserTest.java",
+      "line": 113
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/RSAVerifierTest.java",
+      "line": 83
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/RSAVerifierTest.java",
+      "line": 137
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/RSAVerifierTest.java",
+      "line": 184
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/RSAVerifierTest.java",
+      "line": 232
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/RSAVerifierTest.java",
+      "line": 258
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/RSAVerifierTest.java",
+      "line": 265
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/SkeletonKeyTokenTest.java",
+      "line": 109
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 96
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 97
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 135
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 156
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 157
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 173
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 175
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 183
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 206
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 289
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 290
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 297
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 298
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 326
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 327
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 337
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/jose/JWETest.java",
+      "line": 338
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/representations/workflows/WorkflowDefinitionTest.java",
+      "line": 70
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/representations/workflows/WorkflowDefinitionTest.java",
+      "line": 84
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/sdjwt/sdjwtvp/SdJwtVPTest.java",
+      "line": 106
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/sdjwt/sdjwtvp/SdJwtVPTest.java",
+      "line": 115
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/sdjwt/sdjwtvp/SdJwtVPTest.java",
+      "line": 125
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/keycloak/sdjwt/sdjwtvp/SdJwtVPTest.java",
+      "line": 135
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "crypto/default/src/main/java/org/keycloak/crypto/def/BCCertificateUtilsProvider.java",
+      "line": 32
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "crypto/default/src/main/java/org/keycloak/crypto/def/BCOCSPProvider.java",
+      "line": 37
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "crypto/default/src/test/java/org/keycloak/crypto/def/test/CryptoPerfTest.java",
+      "line": 181
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "crypto/elytron/src/main/java/org/keycloak/crypto/elytron/ElytronCertificateUtilsProvider.java",
+      "line": 34
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "crypto/elytron/src/main/java/org/keycloak/crypto/elytron/ElytronCertificateUtilsProvider.java",
+      "line": 243
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "crypto/elytron/src/main/java/org/keycloak/crypto/elytron/ElytronCertificateUtilsProvider.java",
+      "line": 247
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "crypto/elytron/src/main/java/org/keycloak/crypto/elytron/ElytronOCSPProvider.java",
+      "line": 40
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "crypto/elytron/src/test/java/org/keycloak/crypto/elytron/test/ElytronHmacTest.java",
+      "line": 49
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "crypto/elytron/src/test/java/org/keycloak/crypto/elytron/test/ElytronSignatureAlgTest.java",
+      "line": 44
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "crypto/fips1402/src/main/java/org/keycloak/crypto/fips/BCFIPSCertificateUtilsProvider.java",
+      "line": 32
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "crypto/fips1402/src/main/java/org/keycloak/crypto/fips/BCFIPSOCSPProvider.java",
+      "line": 37
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "distribution/galleon-feature-packs/saml-adapter-galleon-pack-layer-metadata-tests/src/test/java/org/keycloak/test/saml/adapter/galleon/pack/layer/metadata/KeycloakSamlAdapterLayerMetaDataTestCase.java",
+      "line": 40
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "docs/guides/src/test/java/org/keycloak/guides/DocsBuildDebugUtil.java",
+      "line": 40
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "federation/ldap/src/main/java/org/keycloak/storage/ldap/LDAPStorageProviderFactory.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "federation/ldap/src/main/java/org/keycloak/storage/ldap/LDAPUtils.java",
+      "line": 23
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "federation/ldap/src/main/java/org/keycloak/storage/ldap/idm/query/internal/NamedParameterCondition.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "federation/ldap/src/main/java/org/keycloak/storage/ldap/idm/store/ldap/LDAPUtil.java",
+      "line": 23
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "federation/ldap/src/test/java/org/keycloak/storage/ldap/idm/model/LDAPCapabilityTest.java",
+      "line": 25
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/main/java/org/keycloak/client/cli/util/IoUtil.java",
+      "line": 163
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/main/java/org/keycloak/client/cli/util/IoUtil.java",
+      "line": 171
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/main/java/org/keycloak/client/cli/util/IoUtil.java",
+      "line": 175
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/main/java/org/keycloak/client/cli/util/IoUtil.java",
+      "line": 183
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/main/java/org/keycloak/client/cli/util/IoUtil.java",
+      "line": 191
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/test/java/org/keycloak/client/cli/util/MergeAttributesTest.java",
+      "line": 76
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/test/java/org/keycloak/client/cli/util/MergeAttributesTest.java",
+      "line": 98
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/test/java/org/keycloak/client/registration/cli/ReflectionUtilTest.java",
+      "line": 38
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/test/java/org/keycloak/client/registration/cli/ReflectionUtilTest.java",
+      "line": 42
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/test/java/org/keycloak/client/registration/cli/ReflectionUtilTest.java",
+      "line": 46
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/test/java/org/keycloak/client/registration/cli/ReflectionUtilTest.java",
+      "line": 50
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/test/java/org/keycloak/client/registration/cli/ReflectionUtilTest.java",
+      "line": 54
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/test/java/org/keycloak/client/registration/cli/ReflectionUtilTest.java",
+      "line": 62
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "integration/client-cli/admin-cli/src/test/java/org/keycloak/client/registration/cli/ReflectionUtilTest.java",
+      "line": 68
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/log/LogTrimmer.java",
+      "line": 30
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/log/LogTrimmer.java",
+      "line": 32
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/log/LogTrimmer.java",
+      "line": 37
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/log/LogTrimmer.java",
+      "line": 38
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/log/LogTrimmer.java",
+      "line": 39
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/log/LogTrimmer.java",
+      "line": 41
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/MarkdownReportGenerator.java",
+      "line": 16
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/MarkdownReportGenerator.java",
+      "line": 17
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/MarkdownReportGenerator.java",
+      "line": 18
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/MarkdownReportGenerator.java",
+      "line": 24
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/MarkdownReportGenerator.java",
+      "line": 29
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/MarkdownReportGenerator.java",
+      "line": 30
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/MarkdownReportGenerator.java",
+      "line": 31
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/MarkdownReportGenerator.java",
+      "line": 36
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/TextReportGenerator.java",
+      "line": 18
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/TextReportGenerator.java",
+      "line": 19
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/TextReportGenerator.java",
+      "line": 21
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/TextReportGenerator.java",
+      "line": 23
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/TextReportGenerator.java",
+      "line": 29
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/TextReportGenerator.java",
+      "line": 30
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/TextReportGenerator.java",
+      "line": 32
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/TextReportGenerator.java",
+      "line": 34
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "misc/test-stability/src/main/java/org/keycloak/test/logparser/TextReportGenerator.java",
+      "line": 40
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "model/infinispan/src/main/java/org/keycloak/connections/infinispan/shutdown/ShutdownListener.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "model/infinispan/src/main/java/org/keycloak/connections/infinispan/shutdown/ShutdownManager.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "model/infinispan/src/main/java/org/keycloak/connections/infinispan/shutdown/WaitConditionShutdownListener.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "model/infinispan/src/main/java/org/keycloak/crl/infinispan/InfinispanCrlStorageProvider.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "model/infinispan/src/main/java/org/keycloak/jgroups/certificates/Utils.java",
+      "line": 31
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "model/infinispan/src/test/java/org/keycloak/connections/infinispan/shutdown/ShutdownManagerTest.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "model/infinispan/src/test/java/org/keycloak/connections/infinispan/shutdown/WaitConditionShutdownListenerTest.java",
+      "line": 22
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "model/infinispan/src/test/java/org/keycloak/models/sessions/infinispan/initializer/ConcurrencyVersioningTest.java",
+      "line": 224
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "model/jpa/src/main/java/org/keycloak/events/jpa/JpaAdminEventQuery.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "model/jpa/src/main/java/org/keycloak/events/jpa/JpaEventQuery.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "model/storage/src/main/java/org/keycloak/storage/user/ImportSynchronization.java",
+      "line": 19
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "quarkus/runtime/src/main/java/org/keycloak/quarkus/runtime/KeycloakMain.java",
+      "line": 182
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "quarkus/tests/junit5/src/main/java/org/keycloak/it/utils/RawKeycloakDistribution.java",
+      "line": 643
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "saml-core-api/src/main/java/org/keycloak/saml/common/constants/JBossSAMLConstants.java",
+      "line": 259
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "server-spi-private/src/main/java/org/keycloak/authorization/attribute/Attributes.java",
+      "line": 26
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "server-spi-private/src/main/java/org/keycloak/events/EventQuery.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "server-spi-private/src/main/java/org/keycloak/events/admin/AdminEventQuery.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "server-spi-private/src/main/java/org/keycloak/utils/OCSPProvider.java",
+      "line": 28
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "server-spi-private/src/test/java/org/keycloak/models/HmacTest.java",
+      "line": 37
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "server-spi-private/src/test/java/org/keycloak/models/HmacTest.java",
+      "line": 38
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/authentication/authenticators/x509/CertificateValidator.java",
+      "line": 48
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/authorization/common/DefaultEvaluationContext.java",
+      "line": 24
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/broker/saml/SAMLIdentityProviderFactory.java",
+      "line": 19
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/email/DefaultEmailSenderProvider.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/email/freemarker/beans/AdminEventBean.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/email/freemarker/beans/EventBean.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/keys/KeyNoteUtils.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/protocol/docker/DockerAuthV2Protocol.java",
+      "line": 4
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/protocol/oid4vc/issuance/signing/LDCredentialSigner.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/protocol/oid4vc/model/vcdm/LdProof.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/protocol/oidc/OIDCClientSecretConfigWrapper.java",
+      "line": 6
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/protocol/saml/SamlAbstractMetadataPublicKeyLoader.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/services/clientpolicy/executor/ClientSecretRotationExecutor.java",
+      "line": 4
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/main/java/org/keycloak/theme/DateTimeFormatterUtil.java",
+      "line": 21
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/test/java/org/keycloak/authentication/authenticators/x509/CertificateValidatorTest.java",
+      "line": 7
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "services/src/test/java/org/keycloak/services/clientregistration/policy/impl/HostsTest.java",
+      "line": 40
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/test/java/org/keycloak/services/x509/TraefikProxySslClientCertificateLookupTest.java",
+      "line": 25
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "services/src/test/java/org/keycloak/theme/ResourceLoaderTest.java",
+      "line": 59
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "services/src/test/java/org/keycloak/theme/beans/MessageFormatterMethodTest.java",
+      "line": 21
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "services/src/test/java/org/keycloak/utils/SearchQueryUtilsTest.java",
+      "line": 90
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "test-framework/core/src/main/java/org/keycloak/testframework/events/SysLog.java",
+      "line": 4
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/admin/concurrency/ConcurrencyTest.java",
+      "line": 149
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/admin/concurrency/ConcurrencyTest.java",
+      "line": 153
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/admin/finegrainedadminv1/FineGrainedAdminRestTest.java",
+      "line": 262
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/admin/identityprovider/AbstractIdentityProviderTest.java",
+      "line": 76
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/admin/identityprovider/IdentityProviderSamlTest.java",
+      "line": 394
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/admin/identityprovider/IdentityProviderSamlTest.java",
+      "line": 395
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/admin/identityprovider/IdentityProviderSamlTest.java",
+      "line": 408
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/admin/identityprovider/IdentityProviderSamlTest.java",
+      "line": 422
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/admin/identityprovider/IdentityProviderSamlTest.java",
+      "line": 470
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/events/AdminEventStoreProviderTest.java",
+      "line": 22
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/events/EventRunOnServerHelper.java",
+      "line": 6
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/events/EventStoreProviderTest.java",
+      "line": 24
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/keys/ImportedRsaKeyProviderTest.java",
+      "line": 25
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/keys/JavaKeystoreKeyProviderTest.java",
+      "line": 32
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/oauth/AuthorizationCodeTest.java",
+      "line": 283
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/oauth/AuthorizationCodeTest.java",
+      "line": 375
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/oid4vc/OID4VCProofTestUtils.java",
+      "line": 12
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/session/LastSessionRefreshUnitTest.java",
+      "line": 72
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/workflow/execution/StepRunnerScheduledTaskTest.java",
+      "line": 124
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/base/src/test/java/org/keycloak/tests/workflow/execution/StepRunnerScheduledTaskTest.java",
+      "line": 126
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "tests/conformance/src/test/java/org/keycloak/tests/conformance/vci/VciTestSigningKey.java",
+      "line": 33
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "tests/custom-providers/src/main/java/org/keycloak/tests/providers/federation/DummyUserFederationProviderFactory.java",
+      "line": 20
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/migration-util/src/main/java/org/keycloak/test/migration/MigrateTest.java",
+      "line": 64
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/migration-util/src/main/java/org/keycloak/test/migration/MigrateTest.java",
+      "line": 65
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/migration-util/src/main/java/org/keycloak/test/migration/MigrateTest.java",
+      "line": 66
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/migration-util/src/main/java/org/keycloak/test/migration/MigrateTest.java",
+      "line": 67
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/migration-util/src/main/java/org/keycloak/test/migration/MigrateTest.java",
+      "line": 68
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/migration-util/src/main/java/org/keycloak/test/migration/MigrateTest.java",
+      "line": 69
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/migration-util/src/main/java/org/keycloak/test/migration/MigrateTest.java",
+      "line": 70
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/migration-util/src/main/java/org/keycloak/test/migration/MigrateTest.java",
+      "line": 95
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/migration-util/src/main/java/org/keycloak/test/migration/MigrateTest.java",
+      "line": 135
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "tests/migration-util/src/main/java/org/keycloak/test/migration/TestRewrite.java",
+      "line": 86
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/servers/auth-server/services/testsuite-providers/src/main/java/org/keycloak/testsuite/federation/DummyUserFederationProviderFactory.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/servers/auth-server/services/testsuite-providers/src/main/java/org/keycloak/testsuite/federation/FailableHardcodedStorageProviderFactory.java",
+      "line": 19
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/servers/auth-server/services/testsuite-providers/src/main/java/org/keycloak/testsuite/federation/UserPropertyFileStorageFactory.java",
+      "line": 23
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/servers/auth-server/services/testsuite-providers/src/main/java/org/keycloak/testsuite/federation/sync/IgnoredDummyUserFederationProviderFactory.java",
+      "line": 20
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/servers/auth-server/services/testsuite-providers/src/main/java/org/keycloak/testsuite/federation/sync/SyncDummyUserFederationProviderFactory.java",
+      "line": 20
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SamlSPFacade.java",
+      "line": 59
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SamlSPFacade.java",
+      "line": 61
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SamlSPFacade.java",
+      "line": 70
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 75
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 86
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 99
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 109
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 136
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 143
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 152
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 169
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 177
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 187
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 193
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/test-apps/servlets/src/main/java/org/keycloak/testsuite/adapter/servlet/SendUsernameServlet.java",
+      "line": 195
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/ActionURIUtils.java",
+      "line": 81
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/ActionURIUtils.java",
+      "line": 84
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/ActionURIUtils.java",
+      "line": 87
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/arquillian/containers/KeycloakQuarkusServerDeployableContainer.java",
+      "line": 295
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/arquillian/containers/KeycloakQuarkusServerDeployableContainer.java",
+      "line": 304
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/cli/OsUtils.java",
+      "line": 28
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/cli/exec/AbstractExec.java",
+      "line": 89
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/cli/exec/AbstractExec.java",
+      "line": 93
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/cli/exec/AbstractExec.java",
+      "line": 152
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/cli/exec/AbstractExec.java",
+      "line": 154
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/cli/exec/LoggingOutputStream.java",
+      "line": 51
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/util/MessageHandlerFactoryImpl.java",
+      "line": 38
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/util/MessageHandlerFactoryImpl.java",
+      "line": 42
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/util/MessageHandlerFactoryImpl.java",
+      "line": 62
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/util/RepeatRule.java",
+      "line": 34
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/util/RepeatRule.java",
+      "line": 43
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/main/java/org/keycloak/testsuite/util/Timer.java",
+      "line": 26
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/adapter/servlet/AbstractSAMLServletAdapterTest.java",
+      "line": 66
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/adapter/servlet/SAMLServletAdapterTest.java",
+      "line": 38
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/adapter/servlet/SAMLServletAdapterTest.java",
+      "line": 1632
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/adapter/servlet/SAMLServletAdapterTest.java",
+      "line": 2150
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/adapter/servlet/SAMLServletAdapterTest.java",
+      "line": 2152
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/adapter/servlet/SAMLServletAdapterTest.java",
+      "line": 2153
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/authz/PolicyEvaluationTest.java",
+      "line": 23
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/cli/admin/KcAdmTest.java",
+      "line": 309
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/cli/admin/KcAdmTest.java",
+      "line": 353
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/cli/admin/KcAdmTruststoreTest.java",
+      "line": 39
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/cli/admin/KcAdmTruststoreTest.java",
+      "line": 87
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/cli/registration/KcRegConfigTest.java",
+      "line": 62
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/cli/registration/KcRegTest.java",
+      "line": 284
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/cli/registration/KcRegTest.java",
+      "line": 328
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/cli/registration/KcRegTruststoreTest.java",
+      "line": 39
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/cli/registration/KcRegTruststoreTest.java",
+      "line": 87
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/client/ClientRegistrationTester.java",
+      "line": 39
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/client/ClientSecretRotationTest.java",
+      "line": 6
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/federation/ldap/LDAPGroupMapperSyncTest.java",
+      "line": 20
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/federation/ldap/LDAPSyncTest.java",
+      "line": 462
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/federation/ldap/LDAPSyncTest.java",
+      "line": 618
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/federation/storage/UserStorageFailureTest.java",
+      "line": 245
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/federation/storage/UserStorageFailureTest.java",
+      "line": 246
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/federation/storage/UserStorageTest.java",
+      "line": 521
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/federation/storage/UserStorageTest.java",
+      "line": 744
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/forms/LoginTotpTest.java",
+      "line": 168
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/forms/PasswordHashingTest.java",
+      "line": 487
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/forms/PasswordHashingTest.java",
+      "line": 490
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/forms/PasswordHashingTest.java",
+      "line": 493
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/forms/PasswordHashingTest.java",
+      "line": 496
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/forms/RecoveryAuthnCodesAuthenticatorTest.java",
+      "line": 433
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oauth/ServiceAccountTest.java",
+      "line": 224
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oauth/ServiceAccountTest.java",
+      "line": 535
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oauth/tokenexchange/ClientTokenExchangeSAML2Test.java",
+      "line": 521
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oauth/tokenexchange/SubjectImpersonationTokenExchangeV1Test.java",
+      "line": 122
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oauth/tokenexchange/SubjectImpersonationTokenExchangeV1Test.java",
+      "line": 269
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oauth/tokenexchange/SubjectImpersonationTokenExchangeV1Test.java",
+      "line": 336
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oauth/tokenexchange/SubjectImpersonationTokenExchangeV1Test.java",
+      "line": 385
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oauth/tokenexchange/SubjectImpersonationTokenExchangeV1Test.java",
+      "line": 432
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oauth/tokenexchange/SubjectImpersonationTokenExchangeV1Test.java",
+      "line": 470
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oidc/AuthorizationTokenEncryptionTest.java",
+      "line": 287
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/oidc/AuthorizationTokenResponseModeTest.java",
+      "line": 122
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/webauthn/account/WebAuthnSigningInTest.java",
+      "line": 25
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/x509/OcspHandler.java",
+      "line": 28
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/util/src/main/java/org/keycloak/testsuite/utils/io/IOUtil.java",
+      "line": 83
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/util/src/main/java/org/keycloak/testsuite/utils/io/IOUtil.java",
+      "line": 342
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/util/src/main/java/org/keycloak/testsuite/utils/io/IOUtil.java",
+      "line": 345
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/integration-arquillian/util/src/main/java/org/keycloak/testsuite/utils/io/IOUtil.java",
+      "line": 348
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/KeycloakServer.java",
+      "line": 30
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/KeycloakServer.java",
+      "line": 241
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/KeycloakServer.java",
+      "line": 486
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/LogTrimmer.java",
+      "line": 32
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/LogTrimmer.java",
+      "line": 34
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/LogTrimmer.java",
+      "line": 39
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/LogTrimmer.java",
+      "line": 40
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/LogTrimmer.java",
+      "line": 41
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/LogTrimmer.java",
+      "line": 43
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/TotpGenerator.java",
+      "line": 40
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/TotpGenerator.java",
+      "line": 46
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/TotpGenerator.java",
+      "line": 63
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/util/cli/TestsuiteCLI.java",
+      "line": 103
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "testsuite/utils/src/main/java/org/keycloak/testsuite/util/cli/TestsuiteCLI.java",
+      "line": 131
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/embedded-ldap/src/main/java/org/keycloak/util/ldap/KerberosKeytabCreator.java",
+      "line": 51
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/embedded-ldap/src/main/java/org/keycloak/util/ldap/KerberosKeytabCreator.java",
+      "line": 52
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/embedded-ldap/src/main/java/org/keycloak/util/ldap/KerberosKeytabCreator.java",
+      "line": 53
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/embedded-ldap/src/main/java/org/keycloak/util/ldap/KerberosKeytabCreator.java",
+      "line": 54
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/embedded-ldap/src/main/java/org/keycloak/util/ldap/KerberosKeytabCreator.java",
+      "line": 55
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/embedded-ldap/src/main/java/org/keycloak/util/ldap/KerberosKeytabCreator.java",
+      "line": 59
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/embedded-ldap/src/main/java/org/keycloak/util/ldap/KerberosKeytabCreator.java",
+      "line": 85
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false
+  }
+}

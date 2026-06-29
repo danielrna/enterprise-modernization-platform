@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+
+# Build outputs
+target/
+build/
+dist/
+out/
+
+# Runtime and generated reports
+.preflight/
+.emp/
+reports/
+benchmark-output/
+benchmark-repos/
+
+# Environment
+.env
+.env.*

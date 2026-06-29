@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://enterprise-modernization-platform.local/schemas/report.schema.json",
+  "title": "Enterprise Modernization Platform Report",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "project", "pack", "packApplicability", "readiness", "productionFindings", "testFindings", "findingSummary", "findings", "evidence", "dependencies"],
+  "properties": {
+    "schemaVersion": { "const": "emp.report.v1" },
+    "generatedAt": { "type": "string" },
+    "pack": { "type": "string" },
+    "project": {
+      "type": "object",
+      "required": ["name", "source", "buildTools", "javaVersion", "springBootVersion", "fileCount", "javaFileCount"],
+      "properties": {
+        "name": { "type": "string" },
+        "root": { "type": "string" },
+        "source": { "type": "string" },
+        "buildTools": { "type": "array", "items": { "type": "string" } },
+        "javaVersion": { "type": "string" },
+        "springBootVersion": { "type": "string" },
+        "fileCount": { "type": "integer", "minimum": 0 },
+        "javaFileCount": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "readiness": { "$ref": "./readiness.schema.json" },
+    "packApplicability": {
+      "type": "object",
+      "required": ["applicable", "confidence", "reason"],
+      "properties": {
+        "applicable": { "type": "boolean" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "reason": { "type": "string" },
+        "recommendedPack": { "type": "string" },
+        "targetVersion": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "productionFindings": { "$ref": "#/$defs/findings" },
+    "testFindings": { "$ref": "#/$defs/findings" },
+    "findingSummary": {
+      "type": "object",
+      "required": ["production", "test", "byCode"],
+      "properties": {
+        "production": { "$ref": "#/$defs/severityCounts" },
+        "test": { "$ref": "#/$defs/severityCounts" },
+        "byCode": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["code", "title", "severity", "total", "production", "test", "topModules", "examples"],
+            "properties": {
+              "code": { "type": "string" },
+              "title": { "type": "string" },
+              "severity": { "type": "string", "enum": ["critical", "warning", "info"] },
+              "total": { "type": "integer", "minimum": 0 },
+              "production": { "type": "integer", "minimum": 0 },
+              "test": { "type": "integer", "minimum": 0 },
+              "topModules": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["name", "count"],
+                  "properties": {
+                    "name": { "type": "string" },
+                    "count": { "type": "integer", "minimum": 0 }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "examples": { "$ref": "#/$defs/findings" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "title", "recommendation"],
+        "properties": {
+          "code": { "type": "string" },
+          "severity": { "type": "string", "enum": ["critical", "warning", "info"] },
+          "title": { "type": "string" },
+          "recommendation": { "type": "string" },
+          "file": { "type": ["string", "null"] },
+          "line": { "type": ["integer", "null"], "minimum": 1 },
+          "scope": { "type": "string", "enum": ["production", "test"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "./trust-evidence.schema.json" }
+    },
+    "dependencies": { "type": "object" },
+    "rules": {
+      "type": "object",
+      "required": ["schemaVersion", "source", "loaded", "rules", "violations"],
+      "properties": {
+        "schemaVersion": { "const": "emp.rules.v1" },
+        "source": { "type": "string" },
+        "loaded": { "type": "boolean" },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "type", "pattern", "severity"],
+            "properties": {
+              "name": { "type": "string" },
+              "type": { "type": "string" },
+              "pattern": { "type": "string" },
+              "severity": { "type": "string", "enum": ["critical", "warning", "info"] }
+            },
+            "additionalProperties": false
+          }
+        },
+        "violations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["rule", "type", "pattern", "severity", "message"],
+            "properties": {
+              "rule": { "type": "string" },
+              "type": { "type": "string" },
+              "pattern": { "type": "string" },
+              "severity": { "type": "string", "enum": ["critical", "warning", "info"] },
+              "file": { "type": ["string", "null"] },
+              "line": { "type": ["integer", "null"], "minimum": 1 },
+              "message": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "trust": {
+      "type": "object",
+      "required": ["schemaVersion", "tier", "confidence", "summary", "checks"],
+      "properties": {
+        "schemaVersion": { "const": "emp.trust.v1" },
+        "tier": { "type": "string", "enum": ["professional"] },
+        "confidence": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "summary": { "type": "string" },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "status", "note"],
+            "properties": {
+              "name": { "type": "string" },
+              "status": { "type": "string", "enum": ["passed", "warning", "failed", "pending", "skipped"] },
+              "note": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "transformation": {
+      "type": "object",
+      "required": ["pack", "mode", "startedAt", "completedAt", "status", "plan", "applied", "validation"],
+      "properties": {
+        "pack": { "type": "string" },
+        "mode": { "type": "string", "enum": ["dry-run", "apply", "rollback"] },
+        "engine": { "type": "string" },
+        "requestedEngine": { "type": "string" },
+        "startedAt": { "type": "string" },
+        "completedAt": { "type": ["string", "null"] },
+        "status": { "type": "string" },
+        "plan": {
+          "type": "object",
+          "required": ["engine", "openRewrite", "changes", "summary"],
+          "properties": {
+            "engine": { "type": "string" },
+            "openRewrite": { "type": "string" },
+            "recipe": { "type": "string" },
+            "recipeArtifact": { "type": "string" },
+            "command": { "type": ["string", "null"] },
+            "summary": { "type": "string" },
+            "changes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["file", "replacements", "recipe"],
+                "properties": {
+                  "file": { "type": "string" },
+                  "replacements": { "type": "integer", "minimum": 0 },
+                  "recipe": { "type": "string" }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "execution": { "type": "array" },
+        "applied": { "type": "array" },
+        "rollback": { "type": ["object", "null"] },
+        "validation": { "type": "array" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "severityCounts": {
+      "type": "object",
+      "required": ["critical", "warning", "info"],
+      "properties": {
+        "critical": { "type": "integer", "minimum": 0 },
+        "warning": { "type": "integer", "minimum": 0 },
+        "info": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "title", "recommendation"],
+        "properties": {
+          "code": { "type": "string" },
+          "severity": { "type": "string", "enum": ["critical", "warning", "info"] },
+          "title": { "type": "string" },
+          "recommendation": { "type": "string" },
+          "file": { "type": ["string", "null"] },
+          "line": { "type": ["integer", "null"], "minimum": 1 },
+          "scope": { "type": "string", "enum": ["production", "test"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
