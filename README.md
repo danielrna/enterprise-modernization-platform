@@ -29,7 +29,13 @@ reports/readiness/index.html
 
 ## Docker
 
-Build the CLI image:
+Run the published Docker image:
+
+```bash
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.1.0 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+```
+
+Or build the CLI image locally:
 
 ```bash
 docker build -t emp-cli .
