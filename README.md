@@ -14,6 +14,8 @@ Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform-public/migration-hub/spring-boot-2-to-3.html
 
+Validated benchmark reference: https://danielrna.github.io/enterprise-modernization-platform-public/benchmarks/gs-spring-boot-27/index.html
+
 Run the analyzer on any Java or Spring repository:
 
 ```bash
@@ -108,6 +110,24 @@ node ./bin/emp.js mcp
 - Applies client-owned enterprise rules from `.preflight-rules.yml`.
 - Exposes an MCP stdio interface for AI clients through `emp.analyze`.
 - Packages the CLI in Docker with Node, Git, Maven, and Java 21.
+
+## Consultant Workflow
+
+Use the platform to turn a mandatory upgrade into a client-ready evidence report:
+
+1. Run the free readiness report.
+2. Send the static HTML report to the client.
+3. Fix the highest-risk findings.
+4. Validate compilation and tests.
+5. Sell migration confidence, not a generic migration script.
+
+The first public validated benchmark proves the reference flow: Spring Boot `2.7.6`, readiness `85%`, compile `passed`, tests `passed`, validation confidence `95%`.
+
+## Editions
+
+- Community: readiness analysis, HTML report, JSON report, and public benchmark reference.
+- Professional: validation evidence, Trust Engine report, repeatable benchmark pack, and stronger confidence trail.
+- Consultant: repeated client usage, enterprise rules workflow, and reusable reporting assets.
 
 ## Enterprise Rules
 

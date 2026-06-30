@@ -54,7 +54,43 @@ function renderMigrationPage(benchmarks) {
 
     ${validatedBlock}
 
-    <h2>Try in 5 Minutes</h2>
+    <h2>Consultant Workflow</h2>
+    <section class="steps">
+      <div><strong>1. Run</strong><span>Execute the free readiness report on the client repository.</span></div>
+      <div><strong>2. Send report</strong><span>Share the static HTML report as neutral migration evidence.</span></div>
+      <div><strong>3. Fix risks</strong><span>Prioritize Jakarta, build metadata, injection patterns, and client rules.</span></div>
+      <div><strong>4. Validate</strong><span>Capture compile and test evidence before proposing migration execution.</span></div>
+      <div><strong>5. Sell confidence</strong><span>Position the work as risk reduction, not as a generic code migration.</span></div>
+    </section>
+
+    <h2>What You Can Promise a Client</h2>
+    <section class="promise">
+      <div><strong>Readiness score</strong><span>A clear percentage and category scores for planning.</span></div>
+      <div><strong>Version evidence</strong><span>Detected Spring Boot, Java, and build metadata.</span></div>
+      <div><strong>Risk inventory</strong><span>Jakarta, static source findings, and repeated risk patterns.</span></div>
+      <div><strong>Validation evidence</strong><span>Compile and test status when a checkout can be validated.</span></div>
+      <div><strong>Client-owned rules</strong><span>Optional .preflight-rules.yml checks for internal standards.</span></div>
+      <div><strong>Shareable report</strong><span>Static HTML and JSON outputs, no backend required.</span></div>
+    </section>
+
+    <h2>Free vs Professional</h2>
+    <table>
+      <thead><tr><th>Edition</th><th>Best For</th><th>Includes</th></tr></thead>
+      <tbody>
+        <tr><td>Community</td><td>First client conversation</td><td>Readiness analysis, HTML report, JSON report, public benchmark reference.</td></tr>
+        <tr><td>Professional</td><td>Paid migration preparation</td><td>Validation evidence, Trust Engine report, repeatable benchmark pack, stronger confidence trail.</td></tr>
+        <tr><td>Consultant</td><td>Repeated client work</td><td>Unlimited client usage, enterprise rules workflow, reusable reporting assets.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Start With the Free Report</h2>
+    <section class="actions">
+      <a href="#try-in-5-minutes">Run the free readiness report</a>
+      <a href="../benchmarks/gs-spring-boot-27/index.html">Use the validated benchmark as reference</a>
+      <a href="${RELEASE_URL}">Download v0.1.0</a>
+    </section>
+
+    <h2 id="try-in-5-minutes">Try in 5 Minutes</h2>
     <p>Run a readiness report on any Java or Spring repository. The output is a static HTML report and a machine-readable JSON report.</p>
     <pre><code>docker run --rm -v "$PWD:/workspace" ${DOCKER_IMAGE} analyze . --pack spring-boot-3-readiness --out reports/spring-boot-readiness</code></pre>
     <p>Open the generated report:</p>
@@ -188,13 +224,20 @@ function page(title, body) {
     .metrics { display:grid; grid-template-columns:repeat(4, minmax(92px, 1fr)); gap:10px; }
     .metrics span { display:flex; flex-direction:column; gap:2px; padding:10px 12px; background:#f8fafc; border:1px solid var(--line); border-radius:6px; }
     .metrics small { color:var(--muted); font-size:12px; }
+    .steps { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:10px; }
+    .steps div,.promise div { display:flex; flex-direction:column; gap:5px; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .steps span,.promise span { color:var(--muted); }
+    .promise { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:10px; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .actions a { display:inline-flex; align-items:center; min-height:40px; padding:8px 12px; background:var(--panel); border:1px solid var(--line); border-radius:6px; }
     pre { overflow:auto; padding:14px; background:#111827; color:#f8fafc; border-radius:8px; }
     code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
     th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
     th { font-size:12px; color:var(--muted); text-transform:uppercase; }
     li { margin:6px 0; }
-    @media (max-width: 720px) { .layout,.proof { grid-template-columns:1fr; } .metrics { grid-template-columns:1fr 1fr; } h1 { font-size:27px; } }
+    @media (max-width: 900px) { .steps,.promise { grid-template-columns:1fr 1fr; } }
+    @media (max-width: 720px) { .layout,.proof,.steps,.promise { grid-template-columns:1fr; } .metrics { grid-template-columns:1fr 1fr; } h1 { font-size:27px; } }
   </style>
 </head>
 <body><main>${body}</main></body>
