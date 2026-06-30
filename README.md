@@ -16,6 +16,8 @@ Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-moderni
 
 Validated benchmark reference: https://danielrna.github.io/enterprise-modernization-platform-public/benchmarks/gs-spring-boot-27/index.html
 
+Editions: https://danielrna.github.io/enterprise-modernization-platform-public/editions.html
+
 Run the analyzer on any Java or Spring repository:
 
 ```bash
@@ -128,6 +130,7 @@ The first public validated benchmark proves the reference flow: Spring Boot `2.7
 - Community: readiness analysis, HTML report, JSON report, and public benchmark reference.
 - Professional: validation evidence, Trust Engine report, repeatable benchmark pack, and stronger confidence trail.
 - Consultant: repeated client usage, enterprise rules workflow, and reusable reporting assets.
+- Organization: team usage, shared rules workflow, and CI-ready evidence reports.
 
 ## Enterprise Rules
 
