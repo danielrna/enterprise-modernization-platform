@@ -5,6 +5,7 @@
 - Added `npm run release:verify` to automate the release checklist across local tests, Docker build, Docker report generation, image-level tests, and report assertions.
 - Added `npm run ci:verify` for command-equivalent GitLab CI, Jenkins, and Azure DevOps example validation.
 - Added Apereo CAS 6.6 as a stronger public Spring Boot 2.x benchmark reference.
+- Replaced the Apereo CAS 6.6 catalog report with checkout-backed evidence, including failed Gradle validation output from the local Java/Gradle compatibility mismatch.
 - Extended enterprise rules with severity, category, owner, rationale, remediation, include paths, and exclude paths.
 
 ## v0.1.1
