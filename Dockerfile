@@ -4,6 +4,7 @@ WORKDIR /app
 RUN apk add --no-cache git maven openjdk21-jdk
 
 COPY package.json ./
+COPY Dockerfile ./
 COPY action.yml ./
 COPY bin ./bin
 COPY src ./src

@@ -8,9 +8,9 @@ The product is not a Java migration tool. The product is confidence that an appl
 
 ## Try In 5 Minutes
 
-Release: https://github.com/danielrna/enterprise-modernization-platform-public/releases/tag/v0.1.0
+Release: https://github.com/danielrna/enterprise-modernization-platform-public/releases/tag/v0.1.1
 
-Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform-public/releases/download/v0.1.0/emp-smoke-report.zip
+Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform-public/releases/download/v0.1.1/emp-smoke-report.zip
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform-public/migration-hub/spring-boot-2-to-3.html
 
@@ -45,7 +45,7 @@ reports/readiness/index.html
 Run the published Docker image:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.1.0 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.1.1 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
 ```
 
 Or build the CLI image locally:
@@ -84,7 +84,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform-public@v0.1.0
+        uses: danielrna/enterprise-modernization-platform-public@v0.1.1
         with:
           path: .
           pack: spring-boot-3-readiness

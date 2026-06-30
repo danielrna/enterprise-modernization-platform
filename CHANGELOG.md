@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v0.1.1
+
+- Fixed Docker image packaging so image-level release verification includes the Dockerfile test context.
+
+## v0.1.0
+
 - Created initial public project.
 - Implemented the CLI MVP with `analyze`, `benchmarks`, and `hub` commands.
 - Added Java/Spring scanner orchestration, readiness scoring, JSON report output, and static HTML report rendering.
