@@ -41,7 +41,8 @@ test('publishes the benchmark catalog and migration hub', async () => {
   const hubDir = path.join(root, 'hub');
 
   const result = await publishBenchmarks({ outDir: benchmarksDir, source: 'catalog', limit: 2 });
-  await generateMigrationHub({ outDir: hubDir, benchmarks: result.reports });
+  result.reports[0].validation = { status: 'passed', confidence: 95 };
+  await generateMigrationHub({ outDir: hubDir, benchmarks: result.reports, benchmarksDir: path.join(root, 'missing-benchmarks') });
 
   assert.equal(result.count, 2);
   assert.match(await fs.readFile(path.join(benchmarksDir, 'index.html'), 'utf8'), /Benchmark Reports/);
@@ -49,6 +50,8 @@ test('publishes the benchmark catalog and migration hub', async () => {
   assert.match(hub, /Spring Boot 2 to 3 Migration/);
   assert.match(hub, /Spring Petclinic/);
   assert.match(hub, /Findings/);
+  assert.match(hub, /Validated Benchmark/);
+  assert.match(hub, /Compile \+ tests/);
 });
 
 test('local benchmark reports include checkout evidence', async () => {
