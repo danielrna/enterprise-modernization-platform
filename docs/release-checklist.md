@@ -24,7 +24,7 @@ docker run --rm --entrypoint npm -w /app emp-cli run check
 ## Release Artifacts
 
 - Update `CHANGELOG.md`.
-- Confirm `README.md` roadmap status matches the release.
+- Confirm `README.md` public status matches the release.
 - Tag the release.
 - Publish the Docker image if distributing outside GitHub Actions.
 - Upload or link a sample readiness report.
@@ -33,4 +33,4 @@ docker run --rm --entrypoint npm -w /app emp-cli run check
 
 - Regenerate benchmark reports if pack behavior changed.
 - Regenerate the Migration Hub if benchmark reports changed.
-- Expand public benchmarks toward 50.
+- Review benchmark coverage and add new public reports when behavior changes.

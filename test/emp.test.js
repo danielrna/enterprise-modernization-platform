@@ -227,6 +227,30 @@ test('MCP analyze returns rule-aware readiness evidence', async () => {
   assert.equal(payload.readiness.categories.enterpriseRules, 80);
 });
 
+test('GitHub Action exposes Docker readiness analysis inputs', async () => {
+  const action = await fs.readFile(path.resolve('action.yml'), 'utf8');
+  const dockerfile = await fs.readFile(path.resolve('Dockerfile'), 'utf8');
+  const entrypoint = await fs.readFile(path.resolve('docker-entrypoint.sh'), 'utf8');
+  const githubDocs = await fs.readFile(path.resolve('docs/ci-github-action.md'), 'utf8');
+  const dockerDocs = await fs.readFile(path.resolve('docs/docker-wrapper.md'), 'utf8');
+  const ciDocs = await fs.readFile(path.resolve('docs/ci-examples.md'), 'utf8');
+  const releaseDocs = await fs.readFile(path.resolve('docs/release-checklist.md'), 'utf8');
+
+  assert.match(action, /using: docker/);
+  assert.match(action, /image: Dockerfile/);
+  assert.match(action, /spring-boot-3-readiness/);
+  assert.match(action, /--rules/);
+  assert.match(dockerfile, /docker-entrypoint\.sh/);
+  assert.match(entrypoint, /GITHUB_WORKSPACE:-\/workspace/);
+  assert.match(githubDocs, /actions\/upload-artifact@v4/);
+  assert.match(githubDocs, /emp-report\/index\.html/);
+  assert.match(dockerDocs, /docker run --rm/);
+  assert.match(ciDocs, /GitLab CI/);
+  assert.match(ciDocs, /Azure DevOps/);
+  assert.match(releaseDocs, /Publish the Docker image/);
+  assert.match(releaseDocs, /Validate the GitHub Action from a separate .* repository/);
+});
+
 test('Generated reports and cloned benchmark repositories are ignored at the workspace root', async () => {
   const root = await makeSpringProject();
   await fs.mkdir(path.join(root, 'benchmark-repos/noisy/src/main/java'), { recursive: true });

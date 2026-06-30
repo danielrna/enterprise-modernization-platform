@@ -11,4 +11,6 @@
 - Added OpenRewrite transform engine support for Maven and Gradle targets, with native rewrite fallback through `--engine auto`.
 - Added the Java 17 to 21 readiness pack, Java target update planning, Trust Engine evidence, compatibility checks, confidence scoring, and Professional report section.
 - Added the enterprise rules engine, `.preflight-rules.yml` loading, rule-aware readiness scoring, report rule sections, and MCP stdio `emp.analyze` interface.
-- Added the Docker-based GitHub Action wrapper, workspace-aware Docker entrypoint, release checklist, and public quickstart documentation for v0.1.
+- Added the Docker-based GitHub Action wrapper, Docker wrapper documentation, CI examples, and a release checklist.
+- Added a Docker entrypoint that supports both local `/workspace` runs and GitHub Actions `GITHUB_WORKSPACE` runs.
+- Packaged GitHub Action metadata and release docs inside the Docker image so image-level verification can run the full test suite.

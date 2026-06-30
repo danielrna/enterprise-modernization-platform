@@ -2,6 +2,8 @@
 
 The repository can run as a Docker action and publish a static readiness report artifact.
 
+## Minimal Workflow
+
 ```yaml
 name: EMP Readiness
 
@@ -29,7 +31,25 @@ jobs:
           path: emp-report
 ```
 
+## Enterprise Rules
+
+Add a `.preflight-rules.yml` file to the analyzed repository and pass it to the action:
+
+```yaml
+- name: Run EMP readiness
+  uses: danielrna/enterprise-modernization-platform-public@v0.1.0
+  with:
+    path: .
+    pack: spring-boot-3-readiness
+    rules: .preflight-rules.yml
+    out: emp-report
+```
+
+## Outputs
+
 The artifact contains:
 
 - `emp-report/index.html`
 - `emp-report/report.json`
+
+Upload the directory as a workflow artifact so consultants and reviewers can inspect the executive report without a server.
