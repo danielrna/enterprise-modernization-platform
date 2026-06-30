@@ -1,0 +1,36 @@
+# Release Checklist
+
+Use this checklist before publishing a tagged release.
+
+## Verification
+
+- Run `npm run check`.
+- Build the Docker image with `docker build -t emp-cli .`.
+- Run a local Docker readiness report:
+
+```bash
+docker run --rm -v "$PWD:/workspace" emp-cli analyze . --pack spring-boot-3-readiness --out reports/release-readiness
+```
+
+- Run the Docker image test suite:
+
+```bash
+docker run --rm --entrypoint npm -w /app emp-cli run check
+```
+
+- Confirm `reports/release-readiness/index.html` exists and contains the expected pack, score, evidence, and finding summary.
+- Validate the GitHub Action from a separate smoke-test repository after the tag is pushed.
+
+## Release Artifacts
+
+- Update `CHANGELOG.md`.
+- Confirm `README.md` roadmap status matches the release.
+- Tag the release.
+- Publish the Docker image if distributing outside GitHub Actions.
+- Upload or link a sample readiness report.
+
+## Post-Release
+
+- Regenerate benchmark reports if pack behavior changed.
+- Regenerate the Migration Hub if benchmark reports changed.
+- Expand public benchmarks toward 50.
