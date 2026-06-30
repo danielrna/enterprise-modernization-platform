@@ -180,6 +180,10 @@ jobs:
 
 function renderValidatedBenchmarks(benchmarks) {
   if (!benchmarks.length) return '';
+  const realApplicationCount = benchmarks.filter((benchmark) => !shortRepository(benchmark.repository).startsWith('spring-guides/')).length;
+  const realApplicationText = realApplicationCount
+    ? `, including ${realApplicationCount} real application${realApplicationCount === 1 ? '' : 's'} outside Spring Guides`
+    : '';
   const cards = benchmarks.map((benchmark) => `
       <div class="proof-card">
         <strong><a href="../benchmarks/${escapeHtml(benchmark.slug)}/index.html">${escapeHtml(benchmark.name)}</a></strong>
@@ -194,11 +198,12 @@ function renderValidatedBenchmarks(benchmarks) {
     <h2>Validated Benchmarks</h2>
     <section class="proof">
       <div>
-        <strong>${escapeHtml(benchmarks.length)} checkout-backed benchmark${benchmarks.length === 1 ? '' : 's'} passed compile and test validation.</strong>
+        <strong>${escapeHtml(benchmarks.length)} checkout-backed benchmark${benchmarks.length === 1 ? '' : 's'} passed compile and test validation${escapeHtml(realApplicationText)}.</strong>
         <p>Each green benchmark is generated from a real repository checkout with captured compilation and test evidence.</p>
       </div>
       <div class="metrics">
         <span><strong>${escapeHtml(benchmarks.length)}</strong><small>Validated</small></span>
+        <span><strong>${escapeHtml(realApplicationCount)}</strong><small>Real apps</small></span>
         <span><strong>passed</strong><small>Compile + tests</small></span>
         <span><strong>${escapeHtml(Math.round(benchmarks.reduce((sum, item) => sum + Number(item.validation.confidence || 0), 0) / benchmarks.length))}%</strong><small>Avg confidence</small></span>
       </div>
@@ -244,7 +249,7 @@ function page(title, body) {
     .tile span { color:var(--muted); }
     .proof { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:18px; align-items:center; padding:18px; background:var(--panel); border:1px solid var(--line); border-left:4px solid #217a45; border-radius:8px; }
     .proof p { margin:6px 0 0; }
-    .metrics { display:grid; grid-template-columns:repeat(3, minmax(92px, 1fr)); gap:10px; }
+    .metrics { display:grid; grid-template-columns:repeat(4, minmax(92px, 1fr)); gap:10px; }
     .metrics span { display:flex; flex-direction:column; gap:2px; padding:10px 12px; background:#f8fafc; border:1px solid var(--line); border-radius:6px; }
     .metrics small { color:var(--muted); font-size:12px; }
     .validated { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:10px; margin:12px 0 24px; }

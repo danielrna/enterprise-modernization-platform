@@ -1,6 +1,7 @@
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import { spawn } from 'node:child_process';
+import os from 'node:os';
 import { analyzeProject } from './scanner.js';
 import { scoreReadiness } from './readiness.js';
 import { writeReportBundle } from './report.js';
@@ -24,6 +25,28 @@ export const BENCHMARKS = [
     findings: [
       finding('javax-usage', 'critical', 'javax namespace usage detected', 'Plan Jakarta migration before Spring Boot 3 execution.', 'src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java', 3),
       ...repeatFindings(14, 'field-injection', 'warning', 'Spring field injection patterns', 'Prefer constructor injection in services touched by migration work.', 'src/main/java/org/springframework/samples/petclinic')
+    ]
+  }),
+  benchmark({
+    slug: 'spring-petclinic-rest-26',
+    name: 'Spring Petclinic REST 2.6 Application',
+    repository: 'https://github.com/spring-petclinic/spring-petclinic-rest',
+    ref: 'v2.6.2',
+    pack: 'spring-boot-3-readiness',
+    buildTool: 'Maven',
+    javaVersion: 'unknown',
+    springBootVersion: '2.6.2',
+    fileCount: 359,
+    javaFileCount: 83,
+    jakartaDetected: false,
+    javaxDetected: true,
+    hibernateDetected: true,
+    springSecurityDetected: true,
+    findings: [
+      finding('javax-usage', 'critical', 'javax namespace usage detected', 'Plan Jakarta migration before Spring Boot 3 execution.', 'src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java', 18),
+      finding('spring-boot-2', 'warning', 'Spring Boot 2.6.2 detected', 'Run OpenRewrite Boot 3 recipes in dry-run mode.'),
+      ...repeatFindings(9, 'field-injection', 'warning', 'Spring field injection patterns', 'Prefer constructor injection in services touched by migration work.', 'src/main/java/org/springframework/samples/petclinic'),
+      ...repeatFindings(2, 'java-util-date', 'info', 'Legacy date API usage', 'Review domain date handling.', 'src/main/java/org/springframework/samples/petclinic/repository/jdbc')
     ]
   }),
   benchmark({
@@ -765,7 +788,14 @@ function validationOutput(result, timeoutMs) {
 
 function sanitizeCommandOutput(output) {
   const home = process.env.HOME || null;
-  return (home ? output.replaceAll(home, '~') : output)
+  const user = process.env.USER || null;
+  const hostname = os.hostname();
+  let sanitized = home ? output.replaceAll(home, '~') : output;
+  if (user) sanitized = sanitized.replaceAll(`started by ${user}`, 'started by <user>');
+  if (hostname) sanitized = sanitized.replaceAll(hostname, '<host>');
+  return sanitized
+    .replace(/ on [A-Za-z0-9.-]+\.local /g, ' on <host> ')
+    .replace(/~\/IdeaProjects\/[^\s:)]+/g, '~/<workspace>')
     .replace(/\/Users\/[^/\s:)]+/g, '~')
     .replace(/\/private\/var\/folders\/[^\s:)]+/g, '<tmp>');
 }

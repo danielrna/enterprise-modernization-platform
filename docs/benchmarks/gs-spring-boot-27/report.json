@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T17:21:43.377Z",
+  "generatedAt": "2026-06-30T18:25:18.907Z",
   "project": {
     "name": "Spring Guide Boot 2.7 Sample",
     "root": "benchmark-repos/gs-spring-boot-27/complete",
@@ -291,7 +291,7 @@
           "name": "Compilation",
           "status": "passed",
           "command": "./mvnw -q -DskipTests compile",
-          "durationMs": 4552,
+          "durationMs": 3457,
           "exitCode": 0,
           "output": "WARNING: A restricted method in java.lang.System has been called\nWARNING: java.lang.System::loadLibrary has been called by org.fusesource.hawtjni.runtime.Library in an unnamed module (file:~/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3/lib/jansi-1.17.1.jar)\nWARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module\nWARNING: Restricted methods will be blocked in a future release unless native access is enabled\n\nWARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:~/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3/lib/guava-25.1-android.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper\nWARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release",
           "timedOut": false
@@ -300,7 +300,7 @@
           "name": "Tests",
           "status": "passed",
           "command": "./mvnw -q test",
-          "durationMs": 18657,
+          "durationMs": 14375,
           "exitCode": 0,
           "output": "t.autoconfigure.context.LifecycleProperties\nspring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties\nspring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties\nspring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties\nspring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties\nspring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties\nspring.web-org.springframework.boot.autoconfigure.web.WebProperties\nspringBootMockMvcBuilderCustomizer\nstandardJacksonObjectMapperBuilderCustomizer\nstartupTimeMetrics\nstringHttpMessageConverter\ntaskExecutorBuilder\ntaskSchedulerBuilder\nthemeResolver\ntomcatMetricsBinder\ntomcatServletWebServerFactory\ntomcatServletWebServerFactoryCustomizer\ntomcatWebServerFactoryCustomizer\nuptimeMetrics\nviewControllerHandlerMapping\nviewNameTranslator\nviewResolver\nwebEndpointDiscoverer\nwebEndpointPathMapper\nwebEndpointServletHandlerMapping\nwebExposeExcludePropertyEndpointFilter\nwebMvcMetricsFilter\nwebMvcTagsProvider\nwebServerFactoryCustomizerBeanPostProcessor\nwebsocketServletWebServerCustomizer\nwelcomePageHandlerMapping",
           "timedOut": false

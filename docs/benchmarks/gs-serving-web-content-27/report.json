@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T18:04:13.001Z",
+  "generatedAt": "2026-06-30T18:25:53.324Z",
   "project": {
     "name": "Spring Guide Serving Web Content 2.7 Sample",
     "root": "benchmark-repos/gs-serving-web-content-27/complete",
@@ -179,19 +179,12 @@
     "name": "Spring Guide Serving Web Content 2.7 Sample",
     "repository": "https://github.com/spring-guides/gs-serving-web-content",
     "ref": "boot-2.7",
-    "requestedSource": "clone",
+    "requestedSource": "local",
     "source": "checkout",
     "checkoutPath": "benchmark-repos/gs-serving-web-content-27",
     "analysisPath": "benchmark-repos/gs-serving-web-content-27/complete",
     "gitRevision": "741b00b1a2235b22e3cb3f1d9c6bc81c8cf8d8b9",
-    "commands": [
-      {
-        "command": "git clone --depth 1 --branch boot-2.7 https://github.com/spring-guides/gs-serving-web-content benchmark-repos/gs-serving-web-content-27",
-        "exitCode": 0,
-        "status": "passed",
-        "output": "Cloning into '~/IdeaProjects/emp-project/enterprise-modernization-platform-public/benchmark-repos/gs-serving-web-content-27'..."
-      }
-    ],
+    "commands": [],
     "validation": {
       "requested": true,
       "status": "passed",
@@ -201,7 +194,7 @@
           "name": "Compilation",
           "status": "passed",
           "command": "./mvnw -q -DskipTests compile",
-          "durationMs": 6003,
+          "durationMs": 3117,
           "exitCode": 0,
           "output": "WARNING: A restricted method in java.lang.System has been called\nWARNING: java.lang.System::loadLibrary has been called by org.fusesource.hawtjni.runtime.Library in an unnamed module (file:~/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3/lib/jansi-1.17.1.jar)\nWARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module\nWARNING: Restricted methods will be blocked in a future release unless native access is enabled\n\nWARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:~/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3/lib/guava-25.1-android.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper\nWARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release",
           "timedOut": false
@@ -210,9 +203,9 @@
           "name": "Tests",
           "status": "passed",
           "command": "./mvnw -q test",
-          "durationMs": 14263,
+          "durationMs": 13352,
           "exitCode": 0,
-          "output": "gWebContentApplicationTest   : Starting ServingWebContentApplicationTest using Java 25.0.1 on MacBook-Pro-de-Daniel.local with PID 36430 (started by danielrna in ~/IdeaProjects/emp-project/enterprise-modernization-platform-public/benchmark-repos/gs-serving-web-content-27/complete)\n2026-06-30 20:04:30.773  INFO 36430 --- [           main] c.e.s.ServingWebContentApplicationTest   : No active profile set, falling back to 1 default profile: \"default\"\n2026-06-30 20:04:31.777  INFO 36430 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]\n2026-06-30 20:04:32.063  INFO 36430 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''\n2026-06-30 20:04:32.063  INFO 36430 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''\n2026-06-30 20:04:32.065  INFO 36430 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms\n2026-06-30 20:04:32.100  INFO 36430 --- [           main] c.e.s.ServingWebContentApplicationTest   : Started ServingWebContentApplicationTest in 6.721 seconds (JVM running for 8.022)",
+          "output": "=|___/=/_/_/_/\n :: Spring Boot ::                (v2.7.6)\n\n2026-06-30 20:26:06.672  INFO 37981 --- [           main] c.e.s.ServingWebContentApplicationTest   : Starting ServingWebContentApplicationTest using Java 25.0.1 on <host> with PID 37981 (started by <user> in ~/<workspace>)\n2026-06-30 20:26:06.675  INFO 37981 --- [           main] c.e.s.ServingWebContentApplicationTest   : No active profile set, falling back to 1 default profile: \"default\"\n2026-06-30 20:26:07.997  INFO 37981 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]\n2026-06-30 20:26:08.408  INFO 37981 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''\n2026-06-30 20:26:08.409  INFO 37981 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''\n2026-06-30 20:26:08.411  INFO 37981 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms\n2026-06-30 20:26:08.463  INFO 37981 --- [           main] c.e.s.ServingWebContentApplicationTest   : Started ServingWebContentApplicationTest in 7.201 seconds (JVM running for 8.349)",
           "timedOut": false
         }
       ],
