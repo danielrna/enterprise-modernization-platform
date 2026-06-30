@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:39:00.717Z",
+  "generatedAt": "2026-06-30T17:22:06.593Z",
   "project": {
     "name": "Spring Batch",
     "root": "https://github.com/spring-projects/spring-batch",
@@ -1101,9 +1101,11 @@
     "slug": "spring-batch",
     "name": "Spring Batch",
     "repository": "https://github.com/spring-projects/spring-batch",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

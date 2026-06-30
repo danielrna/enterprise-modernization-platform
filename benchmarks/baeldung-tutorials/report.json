@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:41:12.471Z",
+  "generatedAt": "2026-06-30T17:24:12.040Z",
   "project": {
     "name": "Baeldung Tutorials",
     "root": "https://github.com/eugenp/tutorials",
@@ -14698,9 +14698,11 @@
     "slug": "baeldung-tutorials",
     "name": "Baeldung Tutorials",
     "repository": "https://github.com/eugenp/tutorials",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:37:59.662Z",
+  "generatedAt": "2026-06-30T17:20:42.162Z",
   "project": {
     "name": "JHipster Sample App",
     "root": "https://github.com/jhipster/jhipster-sample-app",
@@ -1142,9 +1142,11 @@
     "slug": "jhipster-sample-app",
     "name": "JHipster Sample App",
     "repository": "https://github.com/jhipster/jhipster-sample-app",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

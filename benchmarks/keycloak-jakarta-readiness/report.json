@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:41:12.488Z",
+  "generatedAt": "2026-06-30T17:24:12.069Z",
   "project": {
     "name": "Keycloak Jakarta Readiness",
     "root": "https://github.com/keycloak/keycloak",
@@ -6055,9 +6055,11 @@
     "slug": "keycloak-jakarta-readiness",
     "name": "Keycloak Jakarta Readiness",
     "repository": "https://github.com/keycloak/keycloak",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

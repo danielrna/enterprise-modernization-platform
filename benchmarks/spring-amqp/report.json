@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:40:01.980Z",
+  "generatedAt": "2026-06-30T17:23:07.957Z",
   "project": {
     "name": "Spring AMQP",
     "root": "https://github.com/spring-projects/spring-amqp",
@@ -1029,9 +1029,11 @@
     "slug": "spring-amqp",
     "name": "Spring AMQP",
     "repository": "https://github.com/spring-projects/spring-amqp",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

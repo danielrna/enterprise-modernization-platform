@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:40:01.949Z",
+  "generatedAt": "2026-06-30T17:23:07.923Z",
   "project": {
     "name": "Spring Cloud Config",
     "root": "https://github.com/spring-cloud/spring-cloud-config",
@@ -939,9 +939,11 @@
     "slug": "spring-cloud-config",
     "name": "Spring Cloud Config",
     "repository": "https://github.com/spring-cloud/spring-cloud-config",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:37:59.670Z",
+  "generatedAt": "2026-06-30T17:20:42.171Z",
   "project": {
     "name": "Flowable Engine",
     "root": "https://github.com/flowable/flowable-engine",
@@ -26266,9 +26266,11 @@
     "slug": "flowable-engine",
     "name": "Flowable Engine",
     "repository": "https://github.com/flowable/flowable-engine",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

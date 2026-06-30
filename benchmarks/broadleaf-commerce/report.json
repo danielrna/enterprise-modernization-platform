@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:37:59.723Z",
+  "generatedAt": "2026-06-30T17:20:42.225Z",
   "project": {
     "name": "Broadleaf Commerce",
     "root": "https://github.com/BroadleafCommerce/BroadleafCommerce",
@@ -5062,9 +5062,11 @@
     "slug": "broadleaf-commerce",
     "name": "Broadleaf Commerce",
     "repository": "https://github.com/BroadleafCommerce/BroadleafCommerce",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

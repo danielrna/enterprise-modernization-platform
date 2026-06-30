@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:40:01.955Z",
+  "generatedAt": "2026-06-30T17:23:07.943Z",
   "project": {
     "name": "Spring Integration",
     "root": "https://github.com/spring-projects/spring-integration",
@@ -2361,9 +2361,11 @@
     "slug": "spring-integration",
     "name": "Spring Integration",
     "repository": "https://github.com/spring-projects/spring-integration",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

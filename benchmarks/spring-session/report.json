@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:40:01.963Z",
+  "generatedAt": "2026-06-30T17:23:07.955Z",
   "project": {
     "name": "Spring Session",
     "root": "https://github.com/spring-projects/spring-session",
@@ -795,9 +795,11 @@
     "slug": "spring-session",
     "name": "Spring Session",
     "repository": "https://github.com/spring-projects/spring-session",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

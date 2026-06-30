@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:38:00.077Z",
+  "generatedAt": "2026-06-30T17:20:42.598Z",
   "project": {
     "name": "Spring Boot Admin",
     "root": "benchmark-repos/spring-boot-admin",
@@ -867,9 +867,11 @@
     "slug": "spring-boot-admin",
     "name": "Spring Boot Admin",
     "repository": "https://github.com/codecentric/spring-boot-admin",
+    "ref": null,
     "requestedSource": "local",
     "source": "checkout",
     "checkoutPath": "benchmark-repos/spring-boot-admin",
+    "analysisPath": "benchmark-repos/spring-boot-admin",
     "gitRevision": "2df6deada70983944c54ee4b5e6e862c7d0fd6b0",
     "commands": [],
     "validation": {
@@ -881,7 +883,7 @@
           "name": "Compilation",
           "status": "failed",
           "command": "./mvnw -q -DskipTests compile",
-          "durationMs": 30321,
+          "durationMs": 30349,
           "exitCode": 143,
           "output": "Command timed out after 30000 ms.",
           "timedOut": true
@@ -890,7 +892,7 @@
           "name": "Tests",
           "status": "failed",
           "command": "./mvnw -q test",
-          "durationMs": 30310,
+          "durationMs": 30370,
           "exitCode": 143,
           "output": "Command timed out after 30000 ms.",
           "timedOut": true

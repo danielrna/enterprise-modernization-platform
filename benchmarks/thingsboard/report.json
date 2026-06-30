@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:37:59.699Z",
+  "generatedAt": "2026-06-30T17:20:42.202Z",
   "project": {
     "name": "ThingsBoard",
     "root": "https://github.com/thingsboard/thingsboard",
@@ -16582,9 +16582,11 @@
     "slug": "thingsboard",
     "name": "ThingsBoard",
     "repository": "https://github.com/thingsboard/thingsboard",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

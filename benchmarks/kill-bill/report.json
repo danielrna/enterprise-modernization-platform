@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:37:59.743Z",
+  "generatedAt": "2026-06-30T17:20:42.244Z",
   "project": {
     "name": "Kill Bill",
     "root": "https://github.com/killbill/killbill",
@@ -1329,9 +1329,11 @@
     "slug": "kill-bill",
     "name": "Kill Bill",
     "repository": "https://github.com/killbill/killbill",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {

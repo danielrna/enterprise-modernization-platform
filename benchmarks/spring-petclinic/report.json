@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T16:37:59.655Z",
+  "generatedAt": "2026-06-30T17:20:42.148Z",
   "project": {
     "name": "Spring Petclinic",
     "root": "https://github.com/spring-projects/spring-petclinic",
@@ -440,9 +440,11 @@
     "slug": "spring-petclinic",
     "name": "Spring Petclinic",
     "repository": "https://github.com/spring-projects/spring-petclinic",
+    "ref": null,
     "requestedSource": "local",
     "source": "catalog",
     "checkoutPath": null,
+    "analysisPath": null,
     "gitRevision": null,
     "commands": [],
     "validation": {
