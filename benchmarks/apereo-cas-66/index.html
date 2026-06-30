@@ -38,49 +38,64 @@
 <body>
   <header>
     <h1>Apereo CAS 6.6 Readiness Report</h1>
-    <p class="meta">spring-boot-3-readiness · 2026-06-30T20:19:48.065Z · https://github.com/apereo/cas</p>
+    <p class="meta">spring-boot-3-readiness · 2026-06-30T20:28:18.975Z · https://github.com/apereo/cas</p>
   </header>
   <main>
     <section class="grid">
-      <div class="panel"><div class="metric">61%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">N/A</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">6100</div><div class="label">Java files</div></div>
-      <div class="panel"><div class="metric">2.7.x</div><div class="label">Spring Boot</div></div>
+      <div class="panel"><div class="metric">6250</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Migration risk requires focused cleanup</div>
+    <div class="panel">Pack mismatch: Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
 
 
     <h2>Pack Applicability</h2>
-    <div class="panel notice">
-      <strong>Pack applicable: yes</strong> · confidence 95%
-      <div>Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
-      <div class="label">Detected: Spring Boot: 2.7.x · Java: 11 · Build: Gradle · javax usage: yes · jakarta usage: yes</div>
-
+    <div class="panel notice bad">
+      <strong>Pack applicable: no</strong> · confidence 90%
+      <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 11 · Build: Gradle · javax usage: yes · jakarta usage: yes</div>
+      <div class="label">Recommended pack: jakarta-readiness</div>
     </div>
 
 
-    <h2>Readiness</h2>
-    <table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>73%</strong></td><td><div class="bar"><span style="width:73%"></span></div></td></tr><tr><td>Spring</td><td><strong>19%</strong></td><td><div class="bar"><span style="width:19%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>82%</strong></td><td><div class="bar"><span style="width:82%"></span></div></td></tr><tr><td>Architecture</td><td><strong>24%</strong></td><td><div class="bar"><span style="width:24%"></span></div></td></tr></tbody></table>
+      <h2>Readiness</h2>
+      <div class="panel notice bad">Readiness score was not computed because this pack is not applicable to the project.</div>
 
 
     <h2>Evidence</h2>
-    <table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table>
+    <table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/apereo/cas
+      <strong>checkout</strong> · https://github.com/apereo/cas
       <div class="label">Git ref: v6.6.15</div>
+      <div class="label">Checkout: benchmark-repos/apereo-cas-66</div>
+      <div class="label">Git revision: 070c08d26f151b862c6003011157e8c372291713</div>
     </div>
-    <table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table>
+    <table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 --branch v6.6.15 https://github.com/apereo/cas benchmark-repos/apereo-cas-66</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt;
+Note: switching to &#039;070c08d26f151b862c6003011157e8c372291713&#039;.
+
+You are in &#039;detached HEAD&#039; state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in thi...</td></tr></tbody></table>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table>
+    <table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./gradlew compileJava --no-daemon</td><td>22.3 s</td><td>NG: Restricted methods will be blocked in a future release unless native access is enabled
+
+
+Welcome to Gradle 7.5.1!
+
+Here are the highlights of this release:
+ - Support for Java 18
+ - Support for building with Groovy 4
+ - Much more res...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./gradlew test --no-daemon</td><td>8.6 s</td><td>efruit.platform.internal.NativeLibraryLoader in an unnamed module (file:~/.gradle/wrapper/dists/gradle-7.5.1-bin/7jzzequgds1hbszbhq3npc5ng/gradle-7.5.1/lib/native-platform-0.22-milestone-23.jar)
+WARNING: Use --enable-native-access=ALL-UN...</td></tr></tbody></table>
 
 
 
@@ -89,12 +104,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">286</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">4</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">286</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">116</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">253</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">7</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">369</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection patterns</td><td>188</td><td>188</td><td>0</td><td>support (188)</td><td>support/cas-server-support/Example1.java:10 · Prefer constructor injection in services touched by migration work.<br>support/cas-server-support/Example2.java:11 · Prefer constructor injection in services touched by migration work.<br>support/cas-server-support/Example3.java:12 · Prefer constructor injection in services touched by migration work.<br>support/cas-server-support/Example4.java:13 · Prefer constructor injection in services touched by migration work.<br>support/cas-server-support/Example5.java:14 · Prefer constructor injection in services touched by migration work.</td></tr><tr><td><span class="pill info">info</span><br>Legacy date API usage</td><td>96</td><td>96</td><td>0</td><td>core (96)</td><td>core/cas-server-core/Example1.java:10 · Review ticket and authentication date handling before validation.<br>core/cas-server-core/Example2.java:11 · Review ticket and authentication date handling before validation.<br>core/cas-server-core/Example3.java:12 · Review ticket and authentication date handling before validation.<br>core/cas-server-core/Example4.java:13 · Review ticket and authentication date handling before validation.<br>core/cas-server-core/Example5.java:14 · Review ticket and authentication date handling before validation.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>cas-server-support-jpa-core (1)</td><td>support/cas-server-support-jpa-core/src/main/java/org/apereo/cas/jpa/JpaBeanFactory.java:12 · Plan Jakarta namespace migration before Spring Boot 3 execution.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot 2.7.x detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Run OpenRewrite Boot 3 recipes in dry-run mode before any apply step.</td></tr></tbody></table>
+    <table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>226</td><td>10</td><td>216</td><td>cas-server-support-duo-core (9)<br>cas-server-support-shell-core (7)<br>cas-server-core-configuration (6)</td><td>api/cas-server-core-api-configuration-model/src/test/java/org/apereo/cas/configuration/AdditionalMetadataVerificationTests.java:34 · Review Spring field injection before modernization.<br>core/cas-server-core/src/test/java/org/apereo/cas/BaseCasCoreTests.java:66 · Review Spring field injection before modernization.<br>core/cas-server-core/src/test/java/org/apereo/cas/BaseCasCoreTests.java:69 · Review Spring field injection before modernization.<br>core/cas-server-core/src/test/java/org/apereo/cas/authentication/principal/cache/CachingPrincipalAttributesRepositoryTests.java:46 · Review Spring field injection before modernization.<br>core/cas-server-core-authentication/src/test/java/org/apereo/cas/authentication/UsernamePasswordCredentialTests.java:39 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>46</td><td>35</td><td>11</td><td>cas-server-support-jdbc-drivers (8)<br>cas-server-core-authentication-api (5)<br>cas-server-core-util-api (5)</td><td>api/cas-server-core-api-cookie/src/main/java/org/apereo/cas/web/cookie/CookieSameSitePolicy.java:31 · Review Reflection usage before modernization.<br>core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/CoreAuthenticationUtils.java:270 · Review Reflection usage before modernization.<br>core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/CoreAuthenticationUtils.java:273 · Review Reflection usage before modernization.<br>core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/CoreAuthenticationUtils.java:342 · Review Reflection usage before modernization.<br>core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/support/password/PasswordEncoderUtils.java:63 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>43</td><td>22</td><td>21</td><td>gradle (4)<br>cas-server-support-x509-core (3)<br>cas-server-core-audit-api (2)</td><td>api/cas-server-core-api-events/src/test/java/org/apereo/cas/support/events/audit/CasAuditActionContextRecordedEventTests.java:9 · Review java.util.Date usage before modernization.<br>core/cas-server-core-audit/src/test/java/org/apereo/cas/audit/spi/BaseAuditConfigurationTests.java:13 · Review java.util.Date usage before modernization.<br>core/cas-server-core-audit-api/src/test/java/org/apereo/cas/audit/spi/AuditActionContextJsonSerializerTests.java:8 · Review java.util.Date usage before modernization.<br>core/cas-server-core-audit-api/src/test/java/org/apereo/cas/audit/spi/FilterAndDelegateAuditTrailManagerTests.java:15 · Review java.util.Date usage before modernization.<br>core/cas-server-core-util/src/test/java/org/apereo/cas/util/DateTimeUtilsTests.java:13 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>33</td><td>31</td><td>2</td><td>ci (33)</td><td>ci/checks/CheckAsyncAnnotationInInterface.java:21 · Review System.out logging before modernization.<br>ci/checks/CheckAsyncAnnotationInInterface.java:22 · Review System.out logging before modernization.<br>ci/checks/CheckDuplicateGradleConfiguration.java:21 · Review System.out logging before modernization.<br>ci/checks/CheckDuplicateGradleConfiguration.java:22 · Review System.out logging before modernization.<br>ci/checks/CheckDuplicateTestConfiguration.java:26 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JDK internal API usage</td><td>19</td><td>16</td><td>3</td><td>gradle (12)<br>cas-server-support-sms-smsmode (3)<br>cas-server-support-shell-core (2)</td><td>core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/handler/support/jaas/JaasAuthenticationHandler.java:43 · Review JDK internal API usage before modernization.<br>core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/io/PathWatcherService.java:5 · Review JDK internal API usage before modernization.<br>gradle/dependencies.gradle:35 · Review JDK internal API usage before modernization.<br>gradle/dependencies.gradle:241 · Review JDK internal API usage before modernization.<br>gradle/dependencies.gradle:1147 · Review JDK internal API usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot version unknown</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Declare Spring Boot version explicitly in Maven or Gradle metadata.</td></tr></tbody></table>
   </main>
 </body>
 </html>
