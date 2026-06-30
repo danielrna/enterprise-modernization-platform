@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Added `npm run release:verify` to automate the release checklist across local tests, Docker build, Docker report generation, image-level tests, and report assertions.
+- Added Apereo CAS 6.6 as a stronger public Spring Boot 2.x benchmark reference.
+- Extended enterprise rules with severity, category, owner, rationale, remediation, include paths, and exclude paths.
+
 ## v0.1.1
 
 - Fixed Docker image packaging so image-level release verification includes the Dockerfile test context.

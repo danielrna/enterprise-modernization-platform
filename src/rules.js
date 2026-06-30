@@ -89,7 +89,13 @@ function normalizeRule(rule) {
     name: rule.name || rule.pattern || 'Unnamed enterprise rule',
     type: rule.type || 'pattern',
     pattern: rule.pattern || '',
-    severity: rule.severity || defaultSeverity(rule.type)
+    severity: normalizeSeverity(rule.severity || defaultSeverity(rule.type)),
+    category: rule.category || categoryFor(rule.type),
+    rationale: rule.rationale || '',
+    remediation: rule.remediation || rule['remediation-url'] || '',
+    owner: rule.owner || '',
+    paths: normalizeList(rule.paths || rule.path || ''),
+    excludePaths: normalizeList(rule.excludePaths || rule['exclude-paths'] || rule.exclude || '')
   };
 }
 
@@ -98,24 +104,28 @@ function defaultSeverity(type = '') {
   return 'warning';
 }
 
+function normalizeSeverity(severity) {
+  return ['critical', 'warning', 'info'].includes(severity) ? severity : 'warning';
+}
+
+function categoryFor(type = '') {
+  if (type.includes('package') || type.includes('api')) return 'api';
+  if (type.includes('spring')) return 'spring';
+  if (type.includes('call')) return 'code-quality';
+  return 'enterprise';
+}
+
 function evaluateRule(rule, scan, contents) {
   const mapped = mappedFindingViolations(rule, scan);
   if (mapped.length) return mapped;
 
   const regex = patternToRegex(rule.pattern);
   const violations = [];
-  for (const entry of contents) {
+  for (const entry of contents.filter((item) => ruleAppliesToFile(rule, item.file))) {
+    regex.lastIndex = 0;
     let match;
     while ((match = regex.exec(entry.content)) !== null) {
-      violations.push({
-        rule: rule.name,
-        type: rule.type,
-        pattern: rule.pattern,
-        severity: rule.severity,
-        file: entry.file,
-        line: lineFor(entry.content, match.index),
-        message: `${rule.name} matched ${rule.pattern}.`
-      });
+      violations.push(ruleViolation(rule, entry.file, lineFor(entry.content, match.index), `${rule.name} matched ${rule.pattern}.`));
       if (!regex.global) break;
     }
   }
@@ -127,15 +137,24 @@ function mappedFindingViolations(rule, scan) {
   if (!code) return [];
   return scan.findings
     .filter((finding) => finding.code === code)
-    .map((finding) => ({
-      rule: rule.name,
-      type: rule.type,
-      pattern: rule.pattern,
-      severity: rule.severity,
-      file: finding.file,
-      line: finding.line,
-      message: `${rule.name} matched ${finding.title}.`
-    }));
+    .filter((finding) => ruleAppliesToFile(rule, finding.file || ''))
+    .map((finding) => ruleViolation(rule, finding.file, finding.line, `${rule.name} matched ${finding.title}.`));
+}
+
+function ruleViolation(rule, file, line, message) {
+  return {
+    rule: rule.name,
+    type: rule.type,
+    pattern: rule.pattern,
+    severity: rule.severity,
+    category: rule.category,
+    rationale: rule.rationale,
+    remediation: rule.remediation,
+    owner: rule.owner,
+    file,
+    line,
+    message
+  };
 }
 
 function ruleCode(rule) {
@@ -152,6 +171,24 @@ function patternToRegex(pattern) {
     .map((part) => part.replaceAll(/[|\\{}()[\]^$+?.]/g, '\\$&'))
     .join('.*');
   return new RegExp(escaped, 'g');
+}
+
+function ruleAppliesToFile(rule, file) {
+  if (!file) return true;
+  const normalized = file.replaceAll('\\', '/');
+  const included = !rule.paths.length || rule.paths.some((pattern) => globMatches(pattern, normalized));
+  const excluded = rule.excludePaths.some((pattern) => globMatches(pattern, normalized));
+  return included && !excluded;
+}
+
+function globMatches(pattern, file) {
+  const normalized = pattern.replaceAll('\\', '/');
+  const escaped = normalized
+    .replaceAll('.', '\\.')
+    .replaceAll('**', '\u0000')
+    .replaceAll('*', '[^/]*')
+    .replaceAll('\u0000', '.*');
+  return new RegExp(`^${escaped}$`).test(file);
 }
 
 async function listTextFiles(root, base = '') {
@@ -185,4 +222,12 @@ function lineFor(content, index) {
 
 function stripQuotes(value) {
   return value.replace(/^['"]|['"]$/g, '');
+}
+
+function normalizeList(value) {
+  if (!value) return [];
+  return String(value)
+    .split(',')
+    .map((item) => stripQuotes(item.trim()))
+    .filter(Boolean);
 }

@@ -254,6 +254,28 @@ export const BENCHMARKS = [
     ]
   }),
   benchmark({
+    slug: 'apereo-cas-66',
+    name: 'Apereo CAS 6.6',
+    repository: 'https://github.com/apereo/cas',
+    ref: 'v6.6.15',
+    pack: 'spring-boot-3-readiness',
+    buildTool: 'Gradle',
+    javaVersion: '11',
+    springBootVersion: '2.7.x',
+    fileCount: 9800,
+    javaFileCount: 6100,
+    jakartaDetected: true,
+    javaxDetected: true,
+    hibernateDetected: true,
+    springSecurityDetected: true,
+    findings: [
+      finding('javax-usage', 'critical', 'javax namespace usage detected', 'Plan Jakarta namespace migration before Spring Boot 3 execution.', 'support/cas-server-support-jpa-core/src/main/java/org/apereo/cas/jpa/JpaBeanFactory.java', 12),
+      finding('spring-boot-2', 'warning', 'Spring Boot 2.7.x detected', 'Run OpenRewrite Boot 3 recipes in dry-run mode before any apply step.'),
+      ...repeatFindings(188, 'field-injection', 'warning', 'Spring field injection patterns', 'Prefer constructor injection in services touched by migration work.', 'support/cas-server-support'),
+      ...repeatFindings(96, 'java-util-date', 'info', 'Legacy date API usage', 'Review ticket and authentication date handling before validation.', 'core/cas-server-core')
+    ]
+  }),
+  benchmark({
     slug: 'gs-spring-boot-27',
     name: 'Spring Guide Boot 2.7 Sample',
     repository: 'https://github.com/spring-guides/gs-spring-boot',

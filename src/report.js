@@ -315,16 +315,25 @@ function renderTrust(trust) {
 function renderRules(rules) {
   if (!rules) return '';
   const violations = rules.violations.length
-    ? rules.violations.map((item) => `<tr><td><span class="pill ${item.severity}">${escapeHtml(item.severity)}</span></td><td>${escapeHtml(item.rule)}</td><td>${escapeHtml(item.pattern)}</td><td>${escapeHtml(location(item))}</td></tr>`).join('')
-    : '<tr><td colspan="4">No enterprise rule violations detected.</td></tr>';
+    ? rules.violations.map((item) => `<tr><td><span class="pill ${item.severity}">${escapeHtml(item.severity)}</span></td><td>${escapeHtml(item.category || 'enterprise')}</td><td>${escapeHtml(item.rule)}${ruleOwner(item)}</td><td>${escapeHtml(item.pattern)}</td><td>${escapeHtml(location(item))}</td><td>${ruleGuidance(item)}</td></tr>`).join('')
+    : '<tr><td colspan="6">No enterprise rule violations detected.</td></tr>';
 
   return `
     <h2>Enterprise Rules</h2>
     <div class="panel">
       <strong>${rules.violations.length}</strong> violation(s) · ${escapeHtml(rules.source)}
     </div>
-    <table><thead><tr><th>Severity</th><th>Rule</th><th>Pattern</th><th>Location</th></tr></thead><tbody>${violations}</tbody></table>
+    <table><thead><tr><th>Severity</th><th>Category</th><th>Rule</th><th>Pattern</th><th>Location</th><th>Guidance</th></tr></thead><tbody>${violations}</tbody></table>
   `;
+}
+
+function ruleOwner(item) {
+  return item.owner ? `<div class="label">${escapeHtml(item.owner)}</div>` : '';
+}
+
+function ruleGuidance(item) {
+  const guidance = [item.rationale, item.remediation].filter(Boolean).map(escapeHtml).join('<br>');
+  return guidance || 'See enterprise rules file.';
 }
 
 function label(value) {

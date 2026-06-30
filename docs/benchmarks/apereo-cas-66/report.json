@@ -1,0 +1,5428 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-06-30T20:19:48.065Z",
+  "project": {
+    "name": "Apereo CAS 6.6",
+    "root": "https://github.com/apereo/cas",
+    "source": "https://github.com/apereo/cas",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "11",
+    "springBootVersion": "2.7.x",
+    "fileCount": 9800,
+    "javaFileCount": 6100
+  },
+  "pack": "spring-boot-3-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.95,
+    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "targetVersion": "3.x"
+  },
+  "readiness": {
+    "overall": 61,
+    "categories": {
+      "java": 73,
+      "spring": 19,
+      "jakarta": 79,
+      "build": 90,
+      "security": 82,
+      "architecture": 24
+    },
+    "summary": "Migration risk requires focused cleanup",
+    "counts": {
+      "critical": 1,
+      "warning": 189,
+      "info": 96
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta namespace migration before Spring Boot 3 execution.",
+      "file": "support/cas-server-support-jpa-core/src/main/java/org/apereo/cas/jpa/JpaBeanFactory.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "spring-boot-2",
+      "severity": "warning",
+      "title": "Spring Boot 2.7.x detected",
+      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode before any apply step.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example14.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example15.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example16.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example17.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example18.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example19.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example20.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example21.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example22.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example23.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example24.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example25.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example26.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example27.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example28.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example29.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example30.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example31.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example32.java",
+      "line": 41,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example33.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example34.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example35.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example36.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example37.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example38.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example39.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example40.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example41.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example42.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example43.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example44.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example45.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example46.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example47.java",
+      "line": 56,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example48.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example49.java",
+      "line": 58,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example50.java",
+      "line": 59,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example51.java",
+      "line": 60,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example52.java",
+      "line": 61,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example53.java",
+      "line": 62,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example54.java",
+      "line": 63,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example55.java",
+      "line": 64,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example56.java",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example57.java",
+      "line": 66,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example58.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example59.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example60.java",
+      "line": 69,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example61.java",
+      "line": 70,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example62.java",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example63.java",
+      "line": 72,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example64.java",
+      "line": 73,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example65.java",
+      "line": 74,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example66.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example67.java",
+      "line": 76,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example68.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example69.java",
+      "line": 78,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example70.java",
+      "line": 79,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example71.java",
+      "line": 80,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example72.java",
+      "line": 81,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example73.java",
+      "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example74.java",
+      "line": 83,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example75.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example76.java",
+      "line": 85,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example77.java",
+      "line": 86,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example78.java",
+      "line": 87,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example79.java",
+      "line": 88,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example80.java",
+      "line": 89,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example81.java",
+      "line": 90,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example82.java",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example83.java",
+      "line": 92,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example84.java",
+      "line": 93,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example85.java",
+      "line": 94,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example86.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example87.java",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example88.java",
+      "line": 97,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example89.java",
+      "line": 98,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example90.java",
+      "line": 99,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example91.java",
+      "line": 100,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example92.java",
+      "line": 101,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example93.java",
+      "line": 102,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example94.java",
+      "line": 103,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example95.java",
+      "line": 104,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example96.java",
+      "line": 105,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example97.java",
+      "line": 106,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example98.java",
+      "line": 107,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example99.java",
+      "line": 108,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example100.java",
+      "line": 109,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example101.java",
+      "line": 110,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example102.java",
+      "line": 111,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example103.java",
+      "line": 112,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example104.java",
+      "line": 113,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example105.java",
+      "line": 114,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example106.java",
+      "line": 115,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example107.java",
+      "line": 116,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example108.java",
+      "line": 117,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example109.java",
+      "line": 118,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example110.java",
+      "line": 119,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example111.java",
+      "line": 120,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example112.java",
+      "line": 121,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example113.java",
+      "line": 122,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example114.java",
+      "line": 123,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example115.java",
+      "line": 124,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example116.java",
+      "line": 125,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example117.java",
+      "line": 126,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example118.java",
+      "line": 127,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example119.java",
+      "line": 128,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example120.java",
+      "line": 129,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example121.java",
+      "line": 130,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example122.java",
+      "line": 131,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example123.java",
+      "line": 132,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example124.java",
+      "line": 133,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example125.java",
+      "line": 134,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example126.java",
+      "line": 135,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example127.java",
+      "line": 136,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example128.java",
+      "line": 137,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example129.java",
+      "line": 138,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example130.java",
+      "line": 139,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example131.java",
+      "line": 140,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example132.java",
+      "line": 141,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example133.java",
+      "line": 142,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example134.java",
+      "line": 143,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example135.java",
+      "line": 144,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example136.java",
+      "line": 145,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example137.java",
+      "line": 146,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example138.java",
+      "line": 147,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example139.java",
+      "line": 148,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example140.java",
+      "line": 149,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example141.java",
+      "line": 150,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example142.java",
+      "line": 151,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example143.java",
+      "line": 152,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example144.java",
+      "line": 153,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example145.java",
+      "line": 154,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example146.java",
+      "line": 155,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example147.java",
+      "line": 156,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example148.java",
+      "line": 157,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example149.java",
+      "line": 158,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example150.java",
+      "line": 159,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example151.java",
+      "line": 160,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example152.java",
+      "line": 161,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example153.java",
+      "line": 162,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example154.java",
+      "line": 163,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example155.java",
+      "line": 164,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example156.java",
+      "line": 165,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example157.java",
+      "line": 166,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example158.java",
+      "line": 167,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example159.java",
+      "line": 168,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example160.java",
+      "line": 169,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example161.java",
+      "line": 170,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example162.java",
+      "line": 171,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example163.java",
+      "line": 172,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example164.java",
+      "line": 173,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example165.java",
+      "line": 174,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example166.java",
+      "line": 175,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example167.java",
+      "line": 176,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example168.java",
+      "line": 177,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example169.java",
+      "line": 178,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example170.java",
+      "line": 179,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example171.java",
+      "line": 180,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example172.java",
+      "line": 181,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example173.java",
+      "line": 182,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example174.java",
+      "line": 183,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example175.java",
+      "line": 184,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example176.java",
+      "line": 185,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example177.java",
+      "line": 186,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example178.java",
+      "line": 187,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example179.java",
+      "line": 188,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example180.java",
+      "line": 189,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example181.java",
+      "line": 190,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example182.java",
+      "line": 191,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example183.java",
+      "line": 192,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example184.java",
+      "line": 193,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example185.java",
+      "line": 194,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example186.java",
+      "line": 195,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example187.java",
+      "line": 196,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example188.java",
+      "line": 197,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example14.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example15.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example16.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example17.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example18.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example19.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example20.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example21.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example22.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example23.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example24.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example25.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example26.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example27.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example28.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example29.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example30.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example31.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example32.java",
+      "line": 41,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example33.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example34.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example35.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example36.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example37.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example38.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example39.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example40.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example41.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example42.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example43.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example44.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example45.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example46.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example47.java",
+      "line": 56,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example48.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example49.java",
+      "line": 58,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example50.java",
+      "line": 59,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example51.java",
+      "line": 60,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example52.java",
+      "line": 61,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example53.java",
+      "line": 62,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example54.java",
+      "line": 63,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example55.java",
+      "line": 64,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example56.java",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example57.java",
+      "line": 66,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example58.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example59.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example60.java",
+      "line": 69,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example61.java",
+      "line": 70,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example62.java",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example63.java",
+      "line": 72,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example64.java",
+      "line": 73,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example65.java",
+      "line": 74,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example66.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example67.java",
+      "line": 76,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example68.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example69.java",
+      "line": 78,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example70.java",
+      "line": 79,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example71.java",
+      "line": 80,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example72.java",
+      "line": 81,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example73.java",
+      "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example74.java",
+      "line": 83,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example75.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example76.java",
+      "line": 85,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example77.java",
+      "line": 86,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example78.java",
+      "line": 87,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example79.java",
+      "line": 88,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example80.java",
+      "line": 89,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example81.java",
+      "line": 90,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example82.java",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example83.java",
+      "line": 92,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example84.java",
+      "line": 93,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example85.java",
+      "line": 94,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example86.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example87.java",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example88.java",
+      "line": 97,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example89.java",
+      "line": 98,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example90.java",
+      "line": 99,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example91.java",
+      "line": 100,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example92.java",
+      "line": 101,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example93.java",
+      "line": 102,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example94.java",
+      "line": 103,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example95.java",
+      "line": 104,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example96.java",
+      "line": 105,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 189,
+      "info": 96
+    },
+    "test": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "byCode": {
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "cas-server-support-jpa-core",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Plan Jakarta namespace migration before Spring Boot 3 execution.",
+            "file": "support/cas-server-support-jpa-core/src/main/java/org/apereo/cas/jpa/JpaBeanFactory.java",
+            "line": 12,
+            "scope": "production"
+          }
+        ]
+      },
+      "spring-boot-2": {
+        "code": "spring-boot-2",
+        "title": "Spring Boot 2.7.x detected",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "spring-boot-2",
+            "severity": "warning",
+            "title": "Spring Boot 2.7.x detected",
+            "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode before any apply step.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection patterns",
+        "severity": "warning",
+        "total": 188,
+        "production": 188,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "support",
+            "count": 188
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "support/cas-server-support/Example1.java",
+            "line": 10,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "support/cas-server-support/Example2.java",
+            "line": 11,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "support/cas-server-support/Example3.java",
+            "line": 12,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "support/cas-server-support/Example4.java",
+            "line": 13,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "support/cas-server-support/Example5.java",
+            "line": 14,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "Legacy date API usage",
+        "severity": "info",
+        "total": 96,
+        "production": 96,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "core",
+            "count": 96
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "Legacy date API usage",
+            "recommendation": "Review ticket and authentication date handling before validation.",
+            "file": "core/cas-server-core/Example1.java",
+            "line": 10,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "Legacy date API usage",
+            "recommendation": "Review ticket and authentication date handling before validation.",
+            "file": "core/cas-server-core/Example2.java",
+            "line": 11,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "Legacy date API usage",
+            "recommendation": "Review ticket and authentication date handling before validation.",
+            "file": "core/cas-server-core/Example3.java",
+            "line": 12,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "Legacy date API usage",
+            "recommendation": "Review ticket and authentication date handling before validation.",
+            "file": "core/cas-server-core/Example4.java",
+            "line": 13,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "Legacy date API usage",
+            "recommendation": "Review ticket and authentication date handling before validation.",
+            "file": "core/cas-server-core/Example5.java",
+            "line": 14,
+            "scope": "production"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta namespace migration before Spring Boot 3 execution.",
+      "file": "support/cas-server-support-jpa-core/src/main/java/org/apereo/cas/jpa/JpaBeanFactory.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "spring-boot-2",
+      "severity": "warning",
+      "title": "Spring Boot 2.7.x detected",
+      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode before any apply step.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example14.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example15.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example16.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example17.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example18.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example19.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example20.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example21.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example22.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example23.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example24.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example25.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example26.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example27.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example28.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example29.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example30.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example31.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example32.java",
+      "line": 41,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example33.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example34.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example35.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example36.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example37.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example38.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example39.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example40.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example41.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example42.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example43.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example44.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example45.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example46.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example47.java",
+      "line": 56,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example48.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example49.java",
+      "line": 58,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example50.java",
+      "line": 59,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example51.java",
+      "line": 60,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example52.java",
+      "line": 61,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example53.java",
+      "line": 62,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example54.java",
+      "line": 63,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example55.java",
+      "line": 64,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example56.java",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example57.java",
+      "line": 66,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example58.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example59.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example60.java",
+      "line": 69,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example61.java",
+      "line": 70,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example62.java",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example63.java",
+      "line": 72,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example64.java",
+      "line": 73,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example65.java",
+      "line": 74,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example66.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example67.java",
+      "line": 76,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example68.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example69.java",
+      "line": 78,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example70.java",
+      "line": 79,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example71.java",
+      "line": 80,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example72.java",
+      "line": 81,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example73.java",
+      "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example74.java",
+      "line": 83,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example75.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example76.java",
+      "line": 85,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example77.java",
+      "line": 86,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example78.java",
+      "line": 87,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example79.java",
+      "line": 88,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example80.java",
+      "line": 89,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example81.java",
+      "line": 90,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example82.java",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example83.java",
+      "line": 92,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example84.java",
+      "line": 93,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example85.java",
+      "line": 94,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example86.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example87.java",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example88.java",
+      "line": 97,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example89.java",
+      "line": 98,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example90.java",
+      "line": 99,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example91.java",
+      "line": 100,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example92.java",
+      "line": 101,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example93.java",
+      "line": 102,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example94.java",
+      "line": 103,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example95.java",
+      "line": 104,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example96.java",
+      "line": 105,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example97.java",
+      "line": 106,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example98.java",
+      "line": 107,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example99.java",
+      "line": 108,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example100.java",
+      "line": 109,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example101.java",
+      "line": 110,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example102.java",
+      "line": 111,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example103.java",
+      "line": 112,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example104.java",
+      "line": 113,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example105.java",
+      "line": 114,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example106.java",
+      "line": 115,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example107.java",
+      "line": 116,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example108.java",
+      "line": 117,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example109.java",
+      "line": 118,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example110.java",
+      "line": 119,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example111.java",
+      "line": 120,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example112.java",
+      "line": 121,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example113.java",
+      "line": 122,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example114.java",
+      "line": 123,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example115.java",
+      "line": 124,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example116.java",
+      "line": 125,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example117.java",
+      "line": 126,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example118.java",
+      "line": 127,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example119.java",
+      "line": 128,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example120.java",
+      "line": 129,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example121.java",
+      "line": 130,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example122.java",
+      "line": 131,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example123.java",
+      "line": 132,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example124.java",
+      "line": 133,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example125.java",
+      "line": 134,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example126.java",
+      "line": 135,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example127.java",
+      "line": 136,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example128.java",
+      "line": 137,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example129.java",
+      "line": 138,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example130.java",
+      "line": 139,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example131.java",
+      "line": 140,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example132.java",
+      "line": 141,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example133.java",
+      "line": 142,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example134.java",
+      "line": 143,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example135.java",
+      "line": 144,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example136.java",
+      "line": 145,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example137.java",
+      "line": 146,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example138.java",
+      "line": 147,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example139.java",
+      "line": 148,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example140.java",
+      "line": 149,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example141.java",
+      "line": 150,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example142.java",
+      "line": 151,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example143.java",
+      "line": 152,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example144.java",
+      "line": 153,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example145.java",
+      "line": 154,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example146.java",
+      "line": 155,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example147.java",
+      "line": 156,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example148.java",
+      "line": 157,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example149.java",
+      "line": 158,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example150.java",
+      "line": 159,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example151.java",
+      "line": 160,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example152.java",
+      "line": 161,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example153.java",
+      "line": 162,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example154.java",
+      "line": 163,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example155.java",
+      "line": 164,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example156.java",
+      "line": 165,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example157.java",
+      "line": 166,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example158.java",
+      "line": 167,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example159.java",
+      "line": 168,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example160.java",
+      "line": 169,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example161.java",
+      "line": 170,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example162.java",
+      "line": 171,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example163.java",
+      "line": 172,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example164.java",
+      "line": 173,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example165.java",
+      "line": 174,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example166.java",
+      "line": 175,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example167.java",
+      "line": 176,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example168.java",
+      "line": 177,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example169.java",
+      "line": 178,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example170.java",
+      "line": 179,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example171.java",
+      "line": 180,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example172.java",
+      "line": 181,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example173.java",
+      "line": 182,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example174.java",
+      "line": 183,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example175.java",
+      "line": 184,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example176.java",
+      "line": 185,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example177.java",
+      "line": 186,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example178.java",
+      "line": 187,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example179.java",
+      "line": 188,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example180.java",
+      "line": 189,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example181.java",
+      "line": 190,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example182.java",
+      "line": 191,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example183.java",
+      "line": 192,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example184.java",
+      "line": 193,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example185.java",
+      "line": 194,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example186.java",
+      "line": 195,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example187.java",
+      "line": 196,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "support/cas-server-support/Example188.java",
+      "line": 197,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example14.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example15.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example16.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example17.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example18.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example19.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example20.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example21.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example22.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example23.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example24.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example25.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example26.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example27.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example28.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example29.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example30.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example31.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example32.java",
+      "line": 41,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example33.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example34.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example35.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example36.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example37.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example38.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example39.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example40.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example41.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example42.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example43.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example44.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example45.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example46.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example47.java",
+      "line": 56,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example48.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example49.java",
+      "line": 58,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example50.java",
+      "line": 59,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example51.java",
+      "line": 60,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example52.java",
+      "line": 61,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example53.java",
+      "line": 62,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example54.java",
+      "line": 63,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example55.java",
+      "line": 64,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example56.java",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example57.java",
+      "line": 66,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example58.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example59.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example60.java",
+      "line": 69,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example61.java",
+      "line": 70,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example62.java",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example63.java",
+      "line": 72,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example64.java",
+      "line": 73,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example65.java",
+      "line": 74,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example66.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example67.java",
+      "line": 76,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example68.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example69.java",
+      "line": 78,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example70.java",
+      "line": 79,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example71.java",
+      "line": 80,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example72.java",
+      "line": 81,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example73.java",
+      "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example74.java",
+      "line": 83,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example75.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example76.java",
+      "line": 85,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example77.java",
+      "line": 86,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example78.java",
+      "line": 87,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example79.java",
+      "line": 88,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example80.java",
+      "line": 89,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example81.java",
+      "line": 90,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example82.java",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example83.java",
+      "line": 92,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example84.java",
+      "line": 93,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example85.java",
+      "line": 94,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example86.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example87.java",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example88.java",
+      "line": 97,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example89.java",
+      "line": 98,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example90.java",
+      "line": 99,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example91.java",
+      "line": 100,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example92.java",
+      "line": 101,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example93.java",
+      "line": 102,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example94.java",
+      "line": 103,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example95.java",
+      "line": 104,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review ticket and authentication date handling before validation.",
+      "file": "core/cas-server-core/Example96.java",
+      "line": 105,
+      "scope": "production"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "passed"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "2.7.x",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "apereo-cas-66",
+    "name": "Apereo CAS 6.6",
+    "repository": "https://github.com/apereo/cas",
+    "ref": "v6.6.15",
+    "requestedSource": "catalog",
+    "source": "catalog",
+    "checkoutPath": null,
+    "analysisPath": null,
+    "gitRevision": null,
+    "commands": [],
+    "validation": {
+      "requested": false,
+      "status": "not_requested",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation was not requested."
+    }
+  }
+}

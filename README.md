@@ -20,6 +20,7 @@ Validated benchmark references:
 - https://danielrna.github.io/enterprise-modernization-platform-public/benchmarks/gs-rest-service-27/index.html
 - https://danielrna.github.io/enterprise-modernization-platform-public/benchmarks/gs-serving-web-content-27/index.html
 - https://danielrna.github.io/enterprise-modernization-platform-public/benchmarks/spring-petclinic-rest-26/index.html
+- https://danielrna.github.io/enterprise-modernization-platform-public/benchmarks/apereo-cas-66/index.html
 
 Editions: https://danielrna.github.io/enterprise-modernization-platform-public/editions.html
 
@@ -150,9 +151,18 @@ rules:
   - name: javax forbidden
     type: forbidden-package
     pattern: javax.*
+    severity: critical
+    category: api
+    owner: platform-team
+    rationale: Spring Boot 3 requires Jakarta namespaces.
+    remediation: https://github.com/openrewrite/rewrite-migrate-java
+    paths: src/main/java/**
+    exclude-paths: src/test/**
   - name: System.out forbidden
     type: forbidden-call
     pattern: System.out
+    severity: warning
+    category: code-quality
 ```
 
 Run with:
@@ -217,7 +227,7 @@ Implemented v0.1 scope:
 - Jakarta readiness pack.
 - Enterprise rules.
 - Trust evidence and static HTML/JSON reports.
-- 24 Spring Boot benchmark reports plus Jakarta readiness evidence.
+- 25 Spring Boot benchmark reports plus Jakarta readiness evidence.
 - Validation status in benchmark reports and the Migration Hub, including 4 checkout benchmarks with passing compile/test evidence.
 - Spring Boot 2 to 3 Migration Hub published through GitHub Pages.
 

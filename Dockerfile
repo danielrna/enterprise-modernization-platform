@@ -8,6 +8,7 @@ COPY Dockerfile ./
 COPY action.yml ./
 COPY bin ./bin
 COPY src ./src
+COPY scripts ./scripts
 COPY test ./test
 COPY packs ./packs
 COPY schemas ./schemas

@@ -9,7 +9,7 @@ import { transformProject } from './transform.js';
 import { loadEnterpriseRules, evaluateEnterpriseRules } from './rules.js';
 import { runMcpServer } from './mcp.js';
 
-const VERSION = '0.1.0';
+const VERSION = '0.1.1';
 
 export async function runCli(argv) {
   const [command, ...rest] = argv;
@@ -167,7 +167,7 @@ Available scope:
   - Professional trust evidence with confidence, compatibility, compile, test, and rollback status
   - Consultant enterprise rules from .preflight-rules.yml
   - MCP stdio interface for AI clients
-  - 21 Spring Boot benchmark reports plus Jakarta readiness evidence
+  - 25 Spring Boot benchmark reports plus Jakarta readiness evidence
   - Checkout benchmark validation evidence, including one passing compile/test benchmark
   - Initial Migration Hub
 `);

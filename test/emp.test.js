@@ -302,6 +302,57 @@ public class Logging {
   assert.match(await fs.readFile(bundle.htmlPath, 'utf8'), /Enterprise Rules/);
 });
 
+test('enterprise rules support metadata and path scoping', async () => {
+  const root = await makeSpringProject();
+  const outDir = path.join(root, 'report');
+  await fs.mkdir(path.join(root, 'src/test/java/com/example'), { recursive: true });
+  await fs.writeFile(path.join(root, '.preflight-rules.yml'), `rules:
+  - name: production console output
+    type: forbidden-call
+    pattern: System.out
+    severity: warning
+    category: code-quality
+    owner: platform-team
+    rationale: Production output must use structured logging.
+    remediation: https://example.com/logging-standard
+    paths: src/main/java/**
+    exclude-paths: src/test/**
+`);
+  await fs.writeFile(path.join(root, 'src/main/java/com/example/Logging.java'), `package com.example;
+
+public class Logging {
+  void run() {
+    System.out.println("prod");
+  }
+}
+`);
+  await fs.writeFile(path.join(root, 'src/test/java/com/example/LoggingTest.java'), `package com.example;
+
+public class LoggingTest {
+  void run() {
+    System.out.println("test");
+  }
+}
+`);
+
+  const scan = await analyzeProject({ root });
+  const rules = await evaluateEnterpriseRules({ root, scan, rules: await loadEnterpriseRules(root) });
+  const readiness = scoreReadiness(scan, rules);
+  const bundle = await writeReportBundle({ outDir, scan, readiness, rules });
+  const report = JSON.parse(await fs.readFile(bundle.jsonPath, 'utf8'));
+  const html = await fs.readFile(bundle.htmlPath, 'utf8');
+
+  assert.equal(rules.rules[0].category, 'code-quality');
+  assert.equal(rules.rules[0].owner, 'platform-team');
+  assert.deepEqual(rules.rules[0].paths, ['src/main/java/**']);
+  assert.deepEqual(rules.rules[0].excludePaths, ['src/test/**']);
+  assert.equal(rules.violations.length, 1);
+  assert.equal(rules.violations[0].file, 'src/main/java/com/example/Logging.java');
+  assert.equal(report.rules.violations[0].rationale, 'Production output must use structured logging.');
+  assert.match(html, /platform-team/);
+  assert.match(html, /code-quality/);
+});
+
 test('MCP analyze returns rule-aware readiness evidence', async () => {
   const root = await makeSpringProject();
   await fs.writeFile(path.join(root, '.preflight-rules.yml'), `rules:
@@ -342,7 +393,10 @@ test('GitHub Action exposes Docker readiness analysis inputs', async () => {
   assert.match(action, /spring-boot-3-readiness/);
   assert.match(action, /--rules/);
   assert.match(dockerfile, /docker-entrypoint\.sh/);
+  assert.match(dockerfile, /COPY scripts \.\/scripts/);
   assert.match(entrypoint, /GITHUB_WORKSPACE:-\/workspace/);
+  assert.match(await fs.readFile(path.resolve('package.json'), 'utf8'), /"release:verify"/);
+  assert.match(await fs.readFile(path.resolve('scripts/release-verify.js'), 'utf8'), /Release verification passed/);
   assert.match(githubDocs, /actions\/upload-artifact@v4/);
   assert.match(githubDocs, /emp-report\/index\.html/);
   assert.match(dockerDocs, /docker run --rm/);

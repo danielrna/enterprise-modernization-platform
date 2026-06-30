@@ -4,6 +4,16 @@ Use this checklist before publishing a tagged release.
 
 ## Verification
 
+- Run the automated release verifier:
+
+```bash
+npm run release:verify
+```
+
+The verifier runs `npm run check`, builds the Docker image, generates the Docker readiness report, runs the image test suite, and checks the generated release report.
+
+Manual equivalent:
+
 - Run `npm run check`.
 - Build the Docker image with `docker build -t emp-cli .`.
 - Run a local Docker readiness report:
