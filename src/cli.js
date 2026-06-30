@@ -42,7 +42,9 @@ export async function runCli(argv) {
       source: options.source || 'catalog',
       only: options.only || null,
       limit: options.limit || null,
-      reposDir: options['repos-dir'] || 'benchmark-repos'
+      reposDir: options['repos-dir'] || 'benchmark-repos',
+      validate: Boolean(options.validate),
+      validationTimeoutMs: options['validation-timeout-ms'] || undefined
     });
     console.log(`Generated ${result.count} ${result.source} benchmark reports at ${path.relative(process.cwd(), outDir)}`);
     return;
@@ -152,7 +154,7 @@ function printHelp() {
 Usage:
   emp analyze <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness] [--rules .preflight-rules.yml] [--out reports/latest]
   emp transform <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness] [--mode dry-run|apply|rollback] [--engine native|openrewrite|auto] [--recipe recipeId] [--recipe-artifact group:artifact:version] [--validate] [--rules .preflight-rules.yml] [--out reports/transform]
-  emp benchmarks [--source catalog|local|clone] [--only slug[,slug]] [--limit n] [--out docs/benchmarks]
+  emp benchmarks [--source catalog|local|clone] [--only slug[,slug]] [--limit n] [--validate] [--validation-timeout-ms 120000] [--out docs/benchmarks]
   emp hub [--out docs/migration-hub]
   emp mcp
 

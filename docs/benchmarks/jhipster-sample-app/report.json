@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:30:18.028Z",
+  "generatedAt": "2026-06-30T16:37:59.662Z",
   "project": {
     "name": "JHipster Sample App",
     "root": "https://github.com/jhipster/jhipster-sample-app",
@@ -1146,6 +1146,13 @@
     "source": "catalog",
     "checkoutPath": null,
     "gitRevision": null,
-    "commands": []
+    "commands": [],
+    "validation": {
+      "requested": true,
+      "status": "skipped",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation requires a local checkout."
+    }
   }
 }

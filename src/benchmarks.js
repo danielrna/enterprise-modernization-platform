@@ -434,7 +434,9 @@ export const BENCHMARKS = [
   })
 ];
 
-export async function publishBenchmarks({ outDir, source = 'catalog', only = null, limit = null, reposDir = 'benchmark-repos' }) {
+const DEFAULT_VALIDATION_TIMEOUT_MS = 120000;
+
+export async function publishBenchmarks({ outDir, source = 'catalog', only = null, limit = null, reposDir = 'benchmark-repos', validate = false, validationTimeoutMs = DEFAULT_VALIDATION_TIMEOUT_MS }) {
   if (!['catalog', 'local', 'clone'].includes(source)) {
     throw new Error(`Invalid benchmark source: ${source}`);
   }
@@ -451,7 +453,14 @@ export async function publishBenchmarks({ outDir, source = 'catalog', only = nul
       source: 'catalog',
       checkoutPath: null,
       gitRevision: null,
-      commands: []
+      commands: [],
+      validation: {
+        requested: Boolean(validate),
+        status: validate ? 'skipped' : 'not_requested',
+        confidence: 0,
+        checks: [],
+        summary: validate ? 'Validation requires a local checkout.' : 'Validation was not requested.'
+      }
     };
     if (source === 'clone' && !hasLocalCheckout) {
       const clone = await cloneBenchmark(item, localRoot);
@@ -483,6 +492,9 @@ export async function publishBenchmarks({ outDir, source = 'catalog', only = nul
     scan.project.name = item.name;
     scan.project.root = useLocalCheckout ? benchmarkEvidence.checkoutPath : item.repository;
     scan.project.source = item.repository;
+    if (validate && useLocalCheckout) {
+      benchmarkEvidence.validation = await validateBenchmarkCheckout({ root: localRoot, timeoutMs: Number(validationTimeoutMs) || DEFAULT_VALIDATION_TIMEOUT_MS });
+    }
     scan.benchmark = benchmarkEvidence;
     const readiness = scoreReadiness(scan);
     const reportDir = path.join(outDir, item.slug);
@@ -492,6 +504,7 @@ export async function publishBenchmarks({ outDir, source = 'catalog', only = nul
       readiness: readiness.overall,
       reportPath: path.relative(outDir, bundle.htmlPath),
       source: benchmarkEvidence.source,
+      validation: benchmarkEvidence.validation,
       localRoot: useLocalCheckout ? localRoot : null
     });
   }
@@ -537,15 +550,161 @@ async function getGitRevision(root) {
   return result.exitCode === 0 ? result.output.trim() : null;
 }
 
+async function validateBenchmarkCheckout({ root, timeoutMs }) {
+  const plan = await validationPlan(root);
+  if (!plan.length) {
+    return {
+      requested: true,
+      status: 'skipped',
+      confidence: 15,
+      checks: [
+        {
+          name: 'Build tool detection',
+          status: 'skipped',
+          command: null,
+          durationMs: 0,
+          exitCode: null,
+          output: 'No Maven or Gradle build file was detected at the checkout root.'
+        }
+      ],
+      summary: 'Validation skipped because no supported root build file was detected.'
+    };
+  }
+
+  const checks = [];
+  for (const step of plan) {
+    const result = await runCommand(step.args, { cwd: root, timeoutMs });
+    checks.push({
+      name: step.name,
+      status: statusFromExitCode(result.exitCode, result.timedOut),
+      command: step.args.join(' '),
+      durationMs: result.durationMs,
+      exitCode: result.exitCode,
+      output: validationOutput(result, timeoutMs),
+      timedOut: result.timedOut
+    });
+  }
+  const status = validationStatus(checks);
+  return {
+    requested: true,
+    status,
+    confidence: validationConfidence(checks),
+    checks,
+    summary: validationSummary(status, checks)
+  };
+}
+
+async function validationPlan(root) {
+  if (await isFile(path.join(root, 'mvnw'))) {
+    return [
+      { name: 'Compilation', args: ['./mvnw', '-q', '-DskipTests', 'compile'] },
+      { name: 'Tests', args: ['./mvnw', '-q', 'test'] }
+    ];
+  }
+  if (await isFile(path.join(root, 'pom.xml'))) {
+    return [
+      { name: 'Compilation', args: ['mvn', '-q', '-DskipTests', 'compile'] },
+      { name: 'Tests', args: ['mvn', '-q', 'test'] }
+    ];
+  }
+  if (await isFile(path.join(root, 'gradlew'))) {
+    return [
+      { name: 'Compilation', args: ['./gradlew', 'compileJava', '--no-daemon'] },
+      { name: 'Tests', args: ['./gradlew', 'test', '--no-daemon'] }
+    ];
+  }
+  if (await isFile(path.join(root, 'build.gradle')) || await isFile(path.join(root, 'build.gradle.kts'))) {
+    return [
+      { name: 'Compilation', args: ['gradle', 'compileJava', '--no-daemon'] },
+      { name: 'Tests', args: ['gradle', 'test', '--no-daemon'] }
+    ];
+  }
+  return [];
+}
+
+async function isFile(file) {
+  const stat = await fs.stat(file).catch(() => null);
+  return Boolean(stat?.isFile());
+}
+
+function validationStatus(checks) {
+  if (!checks.length) return 'skipped';
+  if (checks.some((check) => check.status === 'failed')) return 'failed';
+  if (checks.some((check) => check.status === 'skipped')) return 'skipped';
+  return 'passed';
+}
+
+function validationConfidence(checks) {
+  if (!checks.length) return 15;
+  const passed = checks.filter((check) => check.status === 'passed').length;
+  const failed = checks.filter((check) => check.status === 'failed').length;
+  if (failed) return Math.max(25, Math.round((passed / checks.length) * 70));
+  return Math.min(98, 55 + passed * 20);
+}
+
+function validationSummary(status, checks) {
+  if (status === 'passed') return 'Compilation and tests completed successfully.';
+  if (status === 'failed') return `${checks.filter((check) => check.status === 'failed').length} validation check(s) failed.`;
+  return 'Validation was skipped or incomplete.';
+}
+
+function statusFromExitCode(exitCode, timedOut) {
+  if (timedOut) return 'failed';
+  return exitCode === 0 ? 'passed' : 'failed';
+}
+
+function trimCommandOutput(output) {
+  const value = sanitizeCommandOutput(String(output || '')).trim();
+  if (!value) return '';
+  return value.length > 1200 ? `${value.slice(-1200)}` : value;
+}
+
+function validationOutput(result, timeoutMs) {
+  const output = trimCommandOutput(result.output);
+  if (result.timedOut && output) return `${output}\nCommand timed out after ${timeoutMs} ms.`;
+  if (result.timedOut) return `Command timed out after ${timeoutMs} ms.`;
+  return output;
+}
+
+function sanitizeCommandOutput(output) {
+  const home = process.env.HOME || null;
+  return (home ? output.replaceAll(home, '~') : output)
+    .replace(/\/Users\/[^/\s:)]+/g, '~')
+    .replace(/\/private\/var\/folders\/[^\s:)]+/g, '<tmp>');
+}
+
 function runCommand(args, options = {}) {
   return new Promise((resolve) => {
-    const child = spawn(args[0], args.slice(1), { cwd: options.cwd });
+    const startedAt = Date.now();
+    const child = spawn(args[0], args.slice(1), { cwd: options.cwd, detached: Boolean(options.timeoutMs) });
     let output = '';
+    let timedOut = false;
+    const timeout = options.timeoutMs
+      ? setTimeout(() => {
+          timedOut = true;
+          killProcessTree(child);
+        }, options.timeoutMs)
+      : null;
     child.stdout.on('data', (chunk) => { output += chunk.toString(); });
     child.stderr.on('data', (chunk) => { output += chunk.toString(); });
-    child.on('error', (error) => resolve({ exitCode: 127, output: error.message }));
-    child.on('close', (exitCode) => resolve({ exitCode, output }));
+    child.on('error', (error) => {
+      if (timeout) clearTimeout(timeout);
+      resolve({ exitCode: 127, output: error.message, durationMs: Date.now() - startedAt, timedOut });
+    });
+    child.on('close', (exitCode) => {
+      if (timeout) clearTimeout(timeout);
+      resolve({ exitCode, output, durationMs: Date.now() - startedAt, timedOut });
+    });
   });
+}
+
+function killProcessTree(child) {
+  if (!child.pid) return;
+  try {
+    process.kill(-child.pid, 'SIGTERM');
+  } catch {
+    child.kill('SIGTERM');
+  }
 }
 
 function benchmark({ slug, name, repository, pack, buildTool, javaVersion, springBootVersion, fileCount, javaFileCount, jakartaDetected, javaxDetected, hibernateDetected, springSecurityDetected, findings }) {

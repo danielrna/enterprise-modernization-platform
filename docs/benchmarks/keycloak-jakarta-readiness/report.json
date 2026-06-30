@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:30:19.608Z",
+  "generatedAt": "2026-06-30T16:41:12.488Z",
   "project": {
     "name": "Keycloak Jakarta Readiness",
     "root": "https://github.com/keycloak/keycloak",
@@ -6059,6 +6059,13 @@
     "source": "catalog",
     "checkoutPath": null,
     "gitRevision": null,
-    "commands": []
+    "commands": [],
+    "validation": {
+      "requested": true,
+      "status": "skipped",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation requires a local checkout."
+    }
   }
 }

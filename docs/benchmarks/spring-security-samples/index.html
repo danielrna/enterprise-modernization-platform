@@ -38,7 +38,7 @@
 <body>
   <header>
     <h1>Spring Security Samples Readiness Report</h1>
-    <p class="meta">spring-boot-3-readiness · 2026-06-30T15:30:18.476Z · https://github.com/spring-projects/spring-security-samples</p>
+    <p class="meta">spring-boot-3-readiness · 2026-06-30T16:39:01.223Z · https://github.com/spring-projects/spring-security-samples</p>
   </header>
   <main>
     <section class="grid">
@@ -76,6 +76,15 @@
       <div class="label">Git revision: 472a9b7cb683e854bc9d9781875b2df72faad7a5</div>
     </div>
     <table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table>
+
+    <h2>Benchmark Validation</h2>
+    <div class="panel">
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
+    </div>
+    <table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./gradlew compileJava --no-daemon</td><td>30.3 s</td><td>WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:~/.gradle/wrapper/dists/gradle-8.14.4...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./gradlew test --no-daemon</td><td>30.4 s</td><td>WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:~/.gradle/wrapper/dists/gradle-8.14.4...</td></tr></tbody></table>
+
 
 
 

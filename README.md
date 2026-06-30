@@ -91,7 +91,7 @@ jobs:
 ```bash
 node ./bin/emp.js analyze <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness] [--rules .preflight-rules.yml] [--out reports/latest]
 node ./bin/emp.js transform <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness] [--mode dry-run|apply|rollback] [--engine native|openrewrite|auto] [--validate] [--out reports/transform]
-node ./bin/emp.js benchmarks [--source catalog|local|clone] [--only slug[,slug]] [--limit n] [--out docs/benchmarks]
+node ./bin/emp.js benchmarks [--source catalog|local|clone] [--only slug[,slug]] [--limit n] [--validate] [--validation-timeout-ms 120000] [--out docs/benchmarks]
 node ./bin/emp.js hub [--out docs/migration-hub]
 node ./bin/emp.js mcp
 ```
@@ -148,11 +148,13 @@ Benchmark generation supports:
 - `catalog`: deterministic metadata reports, no network required.
 - `local`: analyze existing checkouts under `benchmark-repos/<slug>`.
 - `clone`: shallow-clone missing repositories into `benchmark-repos/<slug>` and analyze the real checkout.
+- `--validate`: on checkout-backed benchmarks, run compile and test commands through Maven or Gradle wrappers when available, then capture status, duration, exit code, timeout, and log excerpts.
 
 Regenerate static assets:
 
 ```bash
 node ./bin/emp.js benchmarks --out docs/benchmarks
+node ./bin/emp.js benchmarks --source local --validate --validation-timeout-ms 30000 --out docs/benchmarks
 node ./bin/emp.js hub --out docs/migration-hub
 ```
 
@@ -167,6 +169,7 @@ docker run --rm --entrypoint npm -w /app emp-cli run check
 Current automated coverage verifies:
 
 - Readiness analysis, report generation, benchmark publishing, and hub generation.
+- Checkout benchmark validation evidence for compilation and tests.
 - Transformation dry-run, apply, rollback, validation evidence, and OpenRewrite engine selection.
 - Java 17 to 21 target update planning and Trust Engine evidence.
 - Enterprise rules and MCP `emp.analyze`.
@@ -183,6 +186,7 @@ Implemented v0.1 scope:
 - Enterprise rules.
 - Trust evidence and static HTML/JSON reports.
 - 20 Spring Boot benchmark reports plus Jakarta readiness evidence.
+- Validation status in benchmark reports and the Migration Hub.
 - Spring Boot 2 to 3 Migration Hub published through GitHub Pages.
 
 Still intentionally out of scope:

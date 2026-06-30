@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:30:18.234Z",
+  "generatedAt": "2026-06-30T16:38:00.077Z",
   "project": {
     "name": "Spring Boot Admin",
     "root": "benchmark-repos/spring-boot-admin",
@@ -10,7 +10,7 @@
     ],
     "javaVersion": "17",
     "springBootVersion": "unknown",
-    "fileCount": 1357,
+    "fileCount": 1360,
     "javaFileCount": 362
   },
   "pack": "spring-boot-3-readiness",
@@ -871,6 +871,32 @@
     "source": "checkout",
     "checkoutPath": "benchmark-repos/spring-boot-admin",
     "gitRevision": "2df6deada70983944c54ee4b5e6e862c7d0fd6b0",
-    "commands": []
+    "commands": [],
+    "validation": {
+      "requested": true,
+      "status": "failed",
+      "confidence": 25,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "failed",
+          "command": "./mvnw -q -DskipTests compile",
+          "durationMs": 30321,
+          "exitCode": 143,
+          "output": "Command timed out after 30000 ms.",
+          "timedOut": true
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "./mvnw -q test",
+          "durationMs": 30310,
+          "exitCode": 143,
+          "output": "Command timed out after 30000 ms.",
+          "timedOut": true
+        }
+      ],
+      "summary": "2 validation check(s) failed."
+    }
   }
 }

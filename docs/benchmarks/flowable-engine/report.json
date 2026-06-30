@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:30:18.035Z",
+  "generatedAt": "2026-06-30T16:37:59.670Z",
   "project": {
     "name": "Flowable Engine",
     "root": "https://github.com/flowable/flowable-engine",
@@ -26270,6 +26270,13 @@
     "source": "catalog",
     "checkoutPath": null,
     "gitRevision": null,
-    "commands": []
+    "commands": [],
+    "validation": {
+      "requested": true,
+      "status": "skipped",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation requires a local checkout."
+    }
   }
 }

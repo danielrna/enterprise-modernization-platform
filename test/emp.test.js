@@ -90,6 +90,58 @@ public class Demo {
   assert.match(html, /Benchmark Evidence/);
 });
 
+test('validated local benchmark reports include compile and test evidence', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'emp-benchmark-validation-'));
+  const reposDir = path.join(root, 'repos');
+  const checkout = path.join(reposDir, 'spring-petclinic');
+  const outDir = path.join(root, 'benchmarks');
+  await fs.mkdir(path.join(checkout, 'src/main/java/com/example'), { recursive: true });
+  await fs.writeFile(path.join(checkout, 'pom.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.18</version>
+  </parent>
+  <properties>
+    <java.version>17</java.version>
+  </properties>
+</project>
+`);
+  await fs.writeFile(path.join(checkout, 'mvnw'), `#!/bin/sh
+echo "fake maven $*"
+exit 0
+`);
+  await fs.chmod(path.join(checkout, 'mvnw'), 0o755);
+  await fs.writeFile(path.join(checkout, 'src/main/java/com/example/Demo.java'), `package com.example;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Demo {
+}
+`);
+
+  const result = await publishBenchmarks({
+    outDir,
+    source: 'local',
+    only: 'spring-petclinic',
+    reposDir,
+    validate: true,
+    validationTimeoutMs: 5000
+  });
+  const report = JSON.parse(await fs.readFile(path.join(outDir, 'spring-petclinic', 'report.json'), 'utf8'));
+  const html = await fs.readFile(path.join(outDir, 'spring-petclinic', 'index.html'), 'utf8');
+
+  assert.equal(result.reports[0].validation.status, 'passed');
+  assert.equal(report.benchmark.validation.status, 'passed');
+  assert.equal(report.benchmark.validation.checks.length, 2);
+  assert.equal(report.benchmark.validation.checks.every((check) => check.status === 'passed'), true);
+  assert.match(html, /Benchmark Validation/);
+  assert.match(html, /Compilation/);
+  assert.match(html, /Tests/);
+});
+
 test('Pack mismatch suppresses readiness score for non-applicable Spring Boot report', async () => {
   const root = await makeSpringProject();
   const pom = path.join(root, 'pom.xml');

@@ -263,6 +263,7 @@ function renderBenchmarkEvidence(benchmark) {
   const commands = benchmark.commands?.length
     ? benchmark.commands.map((item) => `<tr><td>${escapeHtml(item.command)}</td><td><span class="pill ${escapeHtml(item.status || statusFromExitCode(item.exitCode))}">${escapeHtml(item.status || statusFromExitCode(item.exitCode))}</span></td><td>${escapeHtml(trimOutput(item.output))}</td></tr>`).join('')
     : '<tr><td colspan="3">No external command was needed for this benchmark source.</td></tr>';
+  const validation = renderBenchmarkValidation(benchmark.validation);
   const details = [
     benchmark.checkoutPath ? `<div class="label">Checkout: ${escapeHtml(benchmark.checkoutPath)}</div>` : null,
     benchmark.gitRevision ? `<div class="label">Git revision: ${escapeHtml(benchmark.gitRevision)}</div>` : null
@@ -275,6 +276,22 @@ function renderBenchmarkEvidence(benchmark) {
       <strong>${escapeHtml(benchmark.source)}</strong> · ${escapeHtml(benchmark.repository)}${detailsBlock}
     </div>
     <table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody>${commands}</tbody></table>
+    ${validation}
+  `;
+}
+
+function renderBenchmarkValidation(validation) {
+  if (!validation) return '';
+  const checks = validation.checks?.length
+    ? validation.checks.map((item) => `<tr><td>${escapeHtml(item.name)}</td><td><span class="pill ${escapeHtml(item.status)}">${escapeHtml(item.status)}</span></td><td>${escapeHtml(item.command || '')}</td><td>${escapeHtml(formatDuration(item.durationMs))}</td><td>${escapeHtml(trimOutput(item.output))}</td></tr>`).join('')
+    : '<tr><td colspan="5">Validation was not requested.</td></tr>';
+
+  return `
+    <h2>Benchmark Validation</h2>
+    <div class="panel">
+      <strong>${escapeHtml(validation.status)}</strong> · confidence ${escapeHtml(validation.confidence)}% · ${escapeHtml(validation.summary)}
+    </div>
+    <table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody>${checks}</tbody></table>
   `;
 }
 
@@ -328,6 +345,12 @@ function statusFromExitCode(exitCode) {
 function trimOutput(output) {
   const value = String(output || '').trim();
   return value.length > 240 ? `${value.slice(0, 237)}...` : value;
+}
+
+function formatDuration(durationMs) {
+  if (!Number.isFinite(durationMs)) return 'N/A';
+  if (durationMs < 1000) return `${durationMs} ms`;
+  return `${(durationMs / 1000).toFixed(1)} s`;
 }
 
 function normalizeHtml(html) {

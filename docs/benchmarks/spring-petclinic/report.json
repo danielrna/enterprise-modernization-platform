@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:30:18.023Z",
+  "generatedAt": "2026-06-30T16:37:59.655Z",
   "project": {
     "name": "Spring Petclinic",
     "root": "https://github.com/spring-projects/spring-petclinic",
@@ -444,6 +444,13 @@
     "source": "catalog",
     "checkoutPath": null,
     "gitRevision": null,
-    "commands": []
+    "commands": [],
+    "validation": {
+      "requested": true,
+      "status": "skipped",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation requires a local checkout."
+    }
   }
 }

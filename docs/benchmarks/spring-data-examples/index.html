@@ -38,7 +38,7 @@
 <body>
   <header>
     <h1>Spring Data Examples Readiness Report</h1>
-    <p class="meta">spring-boot-3-readiness · 2026-06-30T15:30:19.596Z · https://github.com/spring-projects/spring-data-examples</p>
+    <p class="meta">spring-boot-3-readiness · 2026-06-30T16:40:11.973Z · https://github.com/spring-projects/spring-data-examples</p>
   </header>
   <main>
     <section class="grid">
@@ -76,6 +76,15 @@
       <div class="label">Git revision: 083ff1c38c9c77339828accf106f2c8f4b8bb511</div>
     </div>
     <table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table>
+
+    <h2>Benchmark Validation</h2>
+    <div class="panel">
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
+    </div>
+    <table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./mvnw -q -DskipTests compile</td><td>30.4 s</td><td>WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module (file:~/.m2/wrapper/dists/apache-maven-3.8.4-bin/52ccbt68d...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./mvnw -q test</td><td>30.1 s</td><td>WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module (file:~/.m2/wrapper/dists/apache-maven-3.8.4-bin/52ccbt68d...</td></tr></tbody></table>
+
 
 
 

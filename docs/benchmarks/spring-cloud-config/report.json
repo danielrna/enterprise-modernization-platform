@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:30:18.481Z",
+  "generatedAt": "2026-06-30T16:40:01.949Z",
   "project": {
     "name": "Spring Cloud Config",
     "root": "https://github.com/spring-cloud/spring-cloud-config",
@@ -943,6 +943,13 @@
     "source": "catalog",
     "checkoutPath": null,
     "gitRevision": null,
-    "commands": []
+    "commands": [],
+    "validation": {
+      "requested": true,
+      "status": "skipped",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation requires a local checkout."
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:30:18.074Z",
+  "generatedAt": "2026-06-30T16:37:59.723Z",
   "project": {
     "name": "Broadleaf Commerce",
     "root": "https://github.com/BroadleafCommerce/BroadleafCommerce",
@@ -5066,6 +5066,13 @@
     "source": "catalog",
     "checkoutPath": null,
     "gitRevision": null,
-    "commands": []
+    "commands": [],
+    "validation": {
+      "requested": true,
+      "status": "skipped",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation requires a local checkout."
+    }
   }
 }

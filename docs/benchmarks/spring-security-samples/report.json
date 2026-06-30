@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:30:18.476Z",
+  "generatedAt": "2026-06-30T16:39:01.223Z",
   "project": {
     "name": "Spring Security Samples",
     "root": "benchmark-repos/spring-security-samples",
@@ -1306,6 +1306,32 @@
     "source": "checkout",
     "checkoutPath": "benchmark-repos/spring-security-samples",
     "gitRevision": "472a9b7cb683e854bc9d9781875b2df72faad7a5",
-    "commands": []
+    "commands": [],
+    "validation": {
+      "requested": true,
+      "status": "failed",
+      "confidence": 25,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "failed",
+          "command": "./gradlew compileJava --no-daemon",
+          "durationMs": 30328,
+          "exitCode": 143,
+          "output": "WARNING: A restricted method in java.lang.System has been called\nWARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:~/.gradle/wrapper/dists/gradle-8.14.4-bin/92wwslzcyst3phie3o264zltu/gradle-8.14.4/lib/native-platform-0.22-milestone-28.jar)\nWARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module\nWARNING: Restricted methods will be blocked in a future release unless native access is enabled\n\nTo honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.\nDaemon will be stopped at the end of the build\nCommand timed out after 30000 ms.",
+          "timedOut": true
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "./gradlew test --no-daemon",
+          "durationMs": 30385,
+          "exitCode": 143,
+          "output": "WARNING: A restricted method in java.lang.System has been called\nWARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:~/.gradle/wrapper/dists/gradle-8.14.4-bin/92wwslzcyst3phie3o264zltu/gradle-8.14.4/lib/native-platform-0.22-milestone-28.jar)\nWARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module\nWARNING: Restricted methods will be blocked in a future release unless native access is enabled\n\nTo honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.\nDaemon will be stopped at the end of the build\nCommand timed out after 30000 ms.",
+          "timedOut": true
+        }
+      ],
+      "summary": "2 validation check(s) failed."
+    }
   }
 }
