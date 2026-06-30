@@ -12,6 +12,8 @@ Release: https://github.com/danielrna/enterprise-modernization-platform-public/r
 
 Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform-public/releases/download/v0.1.0/emp-smoke-report.zip
 
+Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform-public/migration-hub/spring-boot-2-to-3.html
+
 Run the analyzer on any Java or Spring repository:
 
 ```bash
