@@ -1,0 +1,1028 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-06-30T15:02:19.944Z",
+  "project": {
+    "name": "Spring AMQP",
+    "root": "https://github.com/spring-projects/spring-amqp",
+    "source": "https://github.com/spring-projects/spring-amqp",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "17",
+    "springBootVersion": "2.7.x",
+    "fileCount": 2500,
+    "javaFileCount": 1500
+  },
+  "pack": "spring-boot-3-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.95,
+    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "targetVersion": "3.x"
+  },
+  "readiness": {
+    "overall": 81,
+    "categories": {
+      "java": 75,
+      "spring": 79,
+      "jakarta": 79,
+      "build": 90,
+      "security": 76,
+      "architecture": 84
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 1,
+      "warning": 1,
+      "info": 44
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/config/AbstractRabbitListenerContainerFactory.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "spring-boot-2",
+      "severity": "warning",
+      "title": "Spring Boot 2.7.x detected",
+      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example14.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example15.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example16.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example17.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example18.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example19.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example20.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example21.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example22.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example23.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example24.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example25.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example26.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example27.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example28.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example29.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example30.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example31.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example32.java",
+      "line": 41,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example33.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example34.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example35.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example36.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example37.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example38.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example39.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example40.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example41.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example42.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example43.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example44.java",
+      "line": 53,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 1,
+      "info": 44
+    },
+    "test": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "byCode": {
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-rabbit",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
+            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/config/AbstractRabbitListenerContainerFactory.java",
+            "line": 14,
+            "scope": "production"
+          }
+        ]
+      },
+      "spring-boot-2": {
+        "code": "spring-boot-2",
+        "title": "Spring Boot 2.7.x detected",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "spring-boot-2",
+            "severity": "warning",
+            "title": "Spring Boot 2.7.x detected",
+            "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "Legacy date API usage",
+        "severity": "info",
+        "total": 44,
+        "production": 44,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-rabbit",
+            "count": 44
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "Legacy date API usage",
+            "recommendation": "Review date handling before migration validation.",
+            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example1.java",
+            "line": 10,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "Legacy date API usage",
+            "recommendation": "Review date handling before migration validation.",
+            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example2.java",
+            "line": 11,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "Legacy date API usage",
+            "recommendation": "Review date handling before migration validation.",
+            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example3.java",
+            "line": 12,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "Legacy date API usage",
+            "recommendation": "Review date handling before migration validation.",
+            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example4.java",
+            "line": 13,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "Legacy date API usage",
+            "recommendation": "Review date handling before migration validation.",
+            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example5.java",
+            "line": 14,
+            "scope": "production"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/config/AbstractRabbitListenerContainerFactory.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "spring-boot-2",
+      "severity": "warning",
+      "title": "Spring Boot 2.7.x detected",
+      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example14.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example15.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example16.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example17.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example18.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example19.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example20.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example21.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example22.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example23.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example24.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example25.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example26.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example27.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example28.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example29.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example30.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example31.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example32.java",
+      "line": 41,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example33.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example34.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example35.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example36.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example37.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example38.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example39.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example40.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example41.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example42.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example43.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example44.java",
+      "line": 53,
+      "scope": "production"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "passed"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "2.7.x",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": false,
+    "springSecurityDetected": false
+  }
+}

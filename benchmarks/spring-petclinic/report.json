@@ -1,13 +1,12 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-29T18:44:39.219Z",
+  "generatedAt": "2026-06-30T15:02:19.827Z",
   "project": {
-    "name": "spring-petclinic",
-    "root": "benchmark-repos/spring-petclinic",
-    "source": "local",
+    "name": "Spring Petclinic",
+    "root": "https://github.com/spring-projects/spring-petclinic",
+    "source": "https://github.com/spring-projects/spring-petclinic",
     "buildTools": [
-      "Maven",
-      "Gradle"
+      "Maven"
     ],
     "javaVersion": "17",
     "springBootVersion": "4.0.0-SNAPSHOT",
@@ -15,21 +14,259 @@
     "javaFileCount": 47
   },
   "pack": "spring-boot-3-readiness",
+  "packApplicability": {
+    "applicable": false,
+    "confidence": 0.94,
+    "reason": "Spring Boot 4.0.0-SNAPSHOT was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "recommendedPack": "jakarta-readiness"
+  },
   "readiness": {
-    "overall": 56,
-    "categories": {
-      "java": 88,
-      "spring": 0,
-      "jakarta": 79,
-      "build": 90,
-      "security": 76,
-      "architecture": 0
-    },
-    "summary": "Migration risk requires focused cleanup",
+    "overall": null,
+    "categories": {},
+    "summary": "Pack mismatch: Spring Boot 4.0.0-SNAPSHOT was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "status": "not_applicable",
     "counts": {
       "critical": 1,
       "warning": 14,
       "info": 0
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
+      "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+      "line": 3,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example14.java",
+      "line": 23,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 14,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "byCode": {
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
+            "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+            "line": 3,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection patterns",
+        "severity": "warning",
+        "total": 14,
+        "production": 14,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 14
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "src/main/java/org/springframework/samples/petclinic/Example1.java",
+            "line": 10,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "src/main/java/org/springframework/samples/petclinic/Example2.java",
+            "line": 11,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "src/main/java/org/springframework/samples/petclinic/Example3.java",
+            "line": 12,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "src/main/java/org/springframework/samples/petclinic/Example4.java",
+            "line": 13,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "src/main/java/org/springframework/samples/petclinic/Example5.java",
+            "line": 14,
+            "scope": "production"
+          }
+        ]
+      }
     }
   },
   "findings": [
@@ -37,121 +274,136 @@
       "code": "javax-usage",
       "severity": "critical",
       "title": "javax namespace usage detected",
-      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
-      "file": null,
-      "line": null
+      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
+      "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+      "line": 3,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
-      "line": 55
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example1.java",
+      "line": 10,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
-      "line": 58
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example2.java",
+      "line": 11,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
-      "line": 40
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example3.java",
+      "line": 12,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
-      "line": 43
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example4.java",
+      "line": 13,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
-      "line": 60
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example5.java",
+      "line": 14,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
-      "line": 63
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example6.java",
+      "line": 15,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
-      "line": 65
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example7.java",
+      "line": 16,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java",
-      "line": 58
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example8.java",
+      "line": 17,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java",
-      "line": 53
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example9.java",
+      "line": 18,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
-      "line": 76
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example10.java",
+      "line": 19,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
-      "line": 79
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example11.java",
+      "line": 20,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
-      "line": 82
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example12.java",
+      "line": 21,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/system/CrashControllerIntegrationTests.java",
-      "line": 58
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example13.java",
+      "line": 22,
+      "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java",
-      "line": 48
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "src/main/java/org/springframework/samples/petclinic/Example14.java",
+      "line": 23,
+      "scope": "production"
     }
   ],
   "evidence": [

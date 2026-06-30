@@ -1,34 +1,40 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.914Z",
+  "generatedAt": "2026-06-30T15:02:19.921Z",
   "project": {
-    "name": "Kill Bill",
-    "root": "https://github.com/killbill/killbill",
-    "source": "https://github.com/killbill/killbill",
+    "name": "Spring Batch",
+    "root": "https://github.com/spring-projects/spring-batch",
+    "source": "https://github.com/spring-projects/spring-batch",
     "buildTools": [
       "Maven"
     ],
-    "javaVersion": "unknown",
-    "springBootVersion": "unknown",
-    "fileCount": 2065,
-    "javaFileCount": 1693
+    "javaVersion": "17",
+    "springBootVersion": "2.7.x",
+    "fileCount": 4200,
+    "javaFileCount": 2700
   },
   "pack": "spring-boot-3-readiness",
   "packApplicability": {
-    "applicable": false,
-    "confidence": 0.9,
-    "reason": "Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
-    "recommendedPack": "jakarta-readiness"
+    "applicable": true,
+    "confidence": 0.95,
+    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "targetVersion": "3.x"
   },
   "readiness": {
-    "overall": null,
-    "categories": {},
-    "summary": "Pack mismatch: Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
-    "status": "not_applicable",
+    "overall": 81,
+    "categories": {
+      "java": 75,
+      "spring": 79,
+      "jakarta": 79,
+      "build": 90,
+      "security": 76,
+      "architecture": 84
+    },
+    "summary": "Ready with remediation work",
     "counts": {
       "critical": 1,
       "warning": 1,
-      "info": 61
+      "info": 48
     }
   },
   "productionFindings": [
@@ -37,15 +43,15 @@
       "severity": "critical",
       "title": "javax namespace usage detected",
       "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "server/src/main/java/org/killbill/billing/server/listeners/KillbillGuiceListener.java",
-      "line": 12,
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/repository/dao/JdbcJobExecutionDao.java",
+      "line": 18,
       "scope": "production"
     },
     {
-      "code": "spring-boot-version-unknown",
+      "code": "spring-boot-2",
       "severity": "warning",
-      "title": "Spring Boot version unknown",
-      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
+      "title": "Spring Boot 2.7.x detected",
+      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
       "file": null,
       "line": null,
       "scope": "production"
@@ -55,7 +61,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example1.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example1.java",
       "line": 10,
       "scope": "production"
     },
@@ -64,7 +70,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example2.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example2.java",
       "line": 11,
       "scope": "production"
     },
@@ -73,7 +79,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example3.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example3.java",
       "line": 12,
       "scope": "production"
     },
@@ -82,7 +88,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example4.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example4.java",
       "line": 13,
       "scope": "production"
     },
@@ -91,7 +97,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example5.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example5.java",
       "line": 14,
       "scope": "production"
     },
@@ -100,7 +106,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example6.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example6.java",
       "line": 15,
       "scope": "production"
     },
@@ -109,7 +115,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example7.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example7.java",
       "line": 16,
       "scope": "production"
     },
@@ -118,7 +124,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example8.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example8.java",
       "line": 17,
       "scope": "production"
     },
@@ -127,7 +133,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example9.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example9.java",
       "line": 18,
       "scope": "production"
     },
@@ -136,7 +142,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example10.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example10.java",
       "line": 19,
       "scope": "production"
     },
@@ -145,7 +151,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example11.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example11.java",
       "line": 20,
       "scope": "production"
     },
@@ -154,7 +160,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example12.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example12.java",
       "line": 21,
       "scope": "production"
     },
@@ -163,7 +169,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example13.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example13.java",
       "line": 22,
       "scope": "production"
     },
@@ -172,7 +178,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example14.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example14.java",
       "line": 23,
       "scope": "production"
     },
@@ -181,7 +187,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example15.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example15.java",
       "line": 24,
       "scope": "production"
     },
@@ -190,7 +196,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example16.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example16.java",
       "line": 25,
       "scope": "production"
     },
@@ -199,7 +205,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example17.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example17.java",
       "line": 26,
       "scope": "production"
     },
@@ -208,7 +214,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example18.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example18.java",
       "line": 27,
       "scope": "production"
     },
@@ -217,7 +223,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example19.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example19.java",
       "line": 28,
       "scope": "production"
     },
@@ -226,7 +232,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example20.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example20.java",
       "line": 29,
       "scope": "production"
     },
@@ -235,7 +241,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example21.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example21.java",
       "line": 30,
       "scope": "production"
     },
@@ -244,7 +250,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example22.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example22.java",
       "line": 31,
       "scope": "production"
     },
@@ -253,7 +259,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example23.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example23.java",
       "line": 32,
       "scope": "production"
     },
@@ -262,7 +268,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example24.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example24.java",
       "line": 33,
       "scope": "production"
     },
@@ -271,7 +277,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example25.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example25.java",
       "line": 34,
       "scope": "production"
     },
@@ -280,7 +286,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example26.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example26.java",
       "line": 35,
       "scope": "production"
     },
@@ -289,7 +295,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example27.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example27.java",
       "line": 36,
       "scope": "production"
     },
@@ -298,7 +304,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example28.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example28.java",
       "line": 37,
       "scope": "production"
     },
@@ -307,7 +313,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example29.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example29.java",
       "line": 38,
       "scope": "production"
     },
@@ -316,7 +322,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example30.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example30.java",
       "line": 39,
       "scope": "production"
     },
@@ -325,7 +331,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example31.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example31.java",
       "line": 40,
       "scope": "production"
     },
@@ -334,7 +340,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example32.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example32.java",
       "line": 41,
       "scope": "production"
     },
@@ -343,7 +349,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example33.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example33.java",
       "line": 42,
       "scope": "production"
     },
@@ -352,7 +358,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example34.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example34.java",
       "line": 43,
       "scope": "production"
     },
@@ -361,7 +367,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example35.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example35.java",
       "line": 44,
       "scope": "production"
     },
@@ -370,7 +376,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example36.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example36.java",
       "line": 45,
       "scope": "production"
     },
@@ -379,7 +385,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example37.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example37.java",
       "line": 46,
       "scope": "production"
     },
@@ -388,7 +394,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example38.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example38.java",
       "line": 47,
       "scope": "production"
     },
@@ -397,7 +403,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example39.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example39.java",
       "line": 48,
       "scope": "production"
     },
@@ -406,7 +412,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example40.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example40.java",
       "line": 49,
       "scope": "production"
     },
@@ -415,7 +421,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example41.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example41.java",
       "line": 50,
       "scope": "production"
     },
@@ -424,7 +430,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example42.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example42.java",
       "line": 51,
       "scope": "production"
     },
@@ -433,7 +439,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example43.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example43.java",
       "line": 52,
       "scope": "production"
     },
@@ -442,7 +448,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example44.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example44.java",
       "line": 53,
       "scope": "production"
     },
@@ -451,7 +457,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example45.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example45.java",
       "line": 54,
       "scope": "production"
     },
@@ -460,7 +466,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example46.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example46.java",
       "line": 55,
       "scope": "production"
     },
@@ -469,7 +475,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example47.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example47.java",
       "line": 56,
       "scope": "production"
     },
@@ -478,125 +484,8 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example48.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example48.java",
       "line": 57,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example49.java",
-      "line": 58,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example50.java",
-      "line": 59,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example51.java",
-      "line": 60,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example52.java",
-      "line": 61,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example53.java",
-      "line": 62,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example54.java",
-      "line": 63,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example55.java",
-      "line": 64,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example56.java",
-      "line": 65,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example57.java",
-      "line": 66,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example58.java",
-      "line": 67,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example59.java",
-      "line": 68,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example60.java",
-      "line": 69,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example61.java",
-      "line": 70,
       "scope": "production"
     }
   ],
@@ -605,7 +494,7 @@
     "production": {
       "critical": 1,
       "warning": 1,
-      "info": 61
+      "info": 48
     },
     "test": {
       "critical": 0,
@@ -622,7 +511,7 @@
         "test": 0,
         "topModules": [
           {
-            "name": "server",
+            "name": "spring-batch-core",
             "count": 1
           }
         ],
@@ -632,15 +521,15 @@
             "severity": "critical",
             "title": "javax namespace usage detected",
             "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-            "file": "server/src/main/java/org/killbill/billing/server/listeners/KillbillGuiceListener.java",
-            "line": 12,
+            "file": "spring-batch-core/src/main/java/org/springframework/batch/core/repository/dao/JdbcJobExecutionDao.java",
+            "line": 18,
             "scope": "production"
           }
         ]
       },
-      "spring-boot-version-unknown": {
-        "code": "spring-boot-version-unknown",
-        "title": "Spring Boot version unknown",
+      "spring-boot-2": {
+        "code": "spring-boot-2",
+        "title": "Spring Boot 2.7.x detected",
         "severity": "warning",
         "total": 1,
         "production": 1,
@@ -653,10 +542,10 @@
         ],
         "examples": [
           {
-            "code": "spring-boot-version-unknown",
+            "code": "spring-boot-2",
             "severity": "warning",
-            "title": "Spring Boot version unknown",
-            "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
+            "title": "Spring Boot 2.7.x detected",
+            "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
             "file": null,
             "line": null,
             "scope": "production"
@@ -667,13 +556,13 @@
         "code": "java-util-date",
         "title": "Legacy date API usage",
         "severity": "info",
-        "total": 61,
-        "production": 61,
+        "total": 48,
+        "production": 48,
         "test": 0,
         "topModules": [
           {
-            "name": "util",
-            "count": 61
+            "name": "spring-batch-core",
+            "count": 48
           }
         ],
         "examples": [
@@ -682,7 +571,7 @@
             "severity": "info",
             "title": "Legacy date API usage",
             "recommendation": "Review domain date handling.",
-            "file": "util/src/main/java/org/killbill/billing/util/Example1.java",
+            "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example1.java",
             "line": 10,
             "scope": "production"
           },
@@ -691,7 +580,7 @@
             "severity": "info",
             "title": "Legacy date API usage",
             "recommendation": "Review domain date handling.",
-            "file": "util/src/main/java/org/killbill/billing/util/Example2.java",
+            "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example2.java",
             "line": 11,
             "scope": "production"
           },
@@ -700,7 +589,7 @@
             "severity": "info",
             "title": "Legacy date API usage",
             "recommendation": "Review domain date handling.",
-            "file": "util/src/main/java/org/killbill/billing/util/Example3.java",
+            "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example3.java",
             "line": 12,
             "scope": "production"
           },
@@ -709,7 +598,7 @@
             "severity": "info",
             "title": "Legacy date API usage",
             "recommendation": "Review domain date handling.",
-            "file": "util/src/main/java/org/killbill/billing/util/Example4.java",
+            "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example4.java",
             "line": 13,
             "scope": "production"
           },
@@ -718,7 +607,7 @@
             "severity": "info",
             "title": "Legacy date API usage",
             "recommendation": "Review domain date handling.",
-            "file": "util/src/main/java/org/killbill/billing/util/Example5.java",
+            "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example5.java",
             "line": 14,
             "scope": "production"
           }
@@ -732,15 +621,15 @@
       "severity": "critical",
       "title": "javax namespace usage detected",
       "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "server/src/main/java/org/killbill/billing/server/listeners/KillbillGuiceListener.java",
-      "line": 12,
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/repository/dao/JdbcJobExecutionDao.java",
+      "line": 18,
       "scope": "production"
     },
     {
-      "code": "spring-boot-version-unknown",
+      "code": "spring-boot-2",
       "severity": "warning",
-      "title": "Spring Boot version unknown",
-      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
+      "title": "Spring Boot 2.7.x detected",
+      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
       "file": null,
       "line": null,
       "scope": "production"
@@ -750,7 +639,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example1.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example1.java",
       "line": 10,
       "scope": "production"
     },
@@ -759,7 +648,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example2.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example2.java",
       "line": 11,
       "scope": "production"
     },
@@ -768,7 +657,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example3.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example3.java",
       "line": 12,
       "scope": "production"
     },
@@ -777,7 +666,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example4.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example4.java",
       "line": 13,
       "scope": "production"
     },
@@ -786,7 +675,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example5.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example5.java",
       "line": 14,
       "scope": "production"
     },
@@ -795,7 +684,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example6.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example6.java",
       "line": 15,
       "scope": "production"
     },
@@ -804,7 +693,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example7.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example7.java",
       "line": 16,
       "scope": "production"
     },
@@ -813,7 +702,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example8.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example8.java",
       "line": 17,
       "scope": "production"
     },
@@ -822,7 +711,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example9.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example9.java",
       "line": 18,
       "scope": "production"
     },
@@ -831,7 +720,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example10.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example10.java",
       "line": 19,
       "scope": "production"
     },
@@ -840,7 +729,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example11.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example11.java",
       "line": 20,
       "scope": "production"
     },
@@ -849,7 +738,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example12.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example12.java",
       "line": 21,
       "scope": "production"
     },
@@ -858,7 +747,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example13.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example13.java",
       "line": 22,
       "scope": "production"
     },
@@ -867,7 +756,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example14.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example14.java",
       "line": 23,
       "scope": "production"
     },
@@ -876,7 +765,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example15.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example15.java",
       "line": 24,
       "scope": "production"
     },
@@ -885,7 +774,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example16.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example16.java",
       "line": 25,
       "scope": "production"
     },
@@ -894,7 +783,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example17.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example17.java",
       "line": 26,
       "scope": "production"
     },
@@ -903,7 +792,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example18.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example18.java",
       "line": 27,
       "scope": "production"
     },
@@ -912,7 +801,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example19.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example19.java",
       "line": 28,
       "scope": "production"
     },
@@ -921,7 +810,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example20.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example20.java",
       "line": 29,
       "scope": "production"
     },
@@ -930,7 +819,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example21.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example21.java",
       "line": 30,
       "scope": "production"
     },
@@ -939,7 +828,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example22.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example22.java",
       "line": 31,
       "scope": "production"
     },
@@ -948,7 +837,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example23.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example23.java",
       "line": 32,
       "scope": "production"
     },
@@ -957,7 +846,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example24.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example24.java",
       "line": 33,
       "scope": "production"
     },
@@ -966,7 +855,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example25.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example25.java",
       "line": 34,
       "scope": "production"
     },
@@ -975,7 +864,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example26.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example26.java",
       "line": 35,
       "scope": "production"
     },
@@ -984,7 +873,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example27.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example27.java",
       "line": 36,
       "scope": "production"
     },
@@ -993,7 +882,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example28.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example28.java",
       "line": 37,
       "scope": "production"
     },
@@ -1002,7 +891,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example29.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example29.java",
       "line": 38,
       "scope": "production"
     },
@@ -1011,7 +900,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example30.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example30.java",
       "line": 39,
       "scope": "production"
     },
@@ -1020,7 +909,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example31.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example31.java",
       "line": 40,
       "scope": "production"
     },
@@ -1029,7 +918,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example32.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example32.java",
       "line": 41,
       "scope": "production"
     },
@@ -1038,7 +927,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example33.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example33.java",
       "line": 42,
       "scope": "production"
     },
@@ -1047,7 +936,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example34.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example34.java",
       "line": 43,
       "scope": "production"
     },
@@ -1056,7 +945,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example35.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example35.java",
       "line": 44,
       "scope": "production"
     },
@@ -1065,7 +954,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example36.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example36.java",
       "line": 45,
       "scope": "production"
     },
@@ -1074,7 +963,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example37.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example37.java",
       "line": 46,
       "scope": "production"
     },
@@ -1083,7 +972,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example38.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example38.java",
       "line": 47,
       "scope": "production"
     },
@@ -1092,7 +981,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example39.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example39.java",
       "line": 48,
       "scope": "production"
     },
@@ -1101,7 +990,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example40.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example40.java",
       "line": 49,
       "scope": "production"
     },
@@ -1110,7 +999,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example41.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example41.java",
       "line": 50,
       "scope": "production"
     },
@@ -1119,7 +1008,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example42.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example42.java",
       "line": 51,
       "scope": "production"
     },
@@ -1128,7 +1017,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example43.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example43.java",
       "line": 52,
       "scope": "production"
     },
@@ -1137,7 +1026,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example44.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example44.java",
       "line": 53,
       "scope": "production"
     },
@@ -1146,7 +1035,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example45.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example45.java",
       "line": 54,
       "scope": "production"
     },
@@ -1155,7 +1044,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example46.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example46.java",
       "line": 55,
       "scope": "production"
     },
@@ -1164,7 +1053,7 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example47.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example47.java",
       "line": 56,
       "scope": "production"
     },
@@ -1173,125 +1062,8 @@
       "severity": "info",
       "title": "Legacy date API usage",
       "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example48.java",
+      "file": "spring-batch-core/src/main/java/org/springframework/batch/core/Example48.java",
       "line": 57,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example49.java",
-      "line": 58,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example50.java",
-      "line": 59,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example51.java",
-      "line": 60,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example52.java",
-      "line": 61,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example53.java",
-      "line": 62,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example54.java",
-      "line": 63,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example55.java",
-      "line": 64,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example56.java",
-      "line": 65,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example57.java",
-      "line": 66,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example58.java",
-      "line": 67,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example59.java",
-      "line": 68,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example60.java",
-      "line": 69,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example61.java",
-      "line": 70,
       "scope": "production"
     }
   ],
@@ -1302,7 +1074,7 @@
     },
     {
       "name": "Spring Boot version detection",
-      "status": "warning"
+      "status": "passed"
     },
     {
       "name": "Jakarta namespace readiness",
@@ -1319,10 +1091,10 @@
     }
   ],
   "dependencies": {
-    "springBootVersion": "unknown",
+    "springBootVersion": "2.7.x",
     "jakartaDetected": true,
     "javaxDetected": true,
-    "hibernateDetected": false,
+    "hibernateDetected": true,
     "springSecurityDetected": false
   }
 }

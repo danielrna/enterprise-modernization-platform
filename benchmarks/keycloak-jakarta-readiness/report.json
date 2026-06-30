@@ -1,9 +1,9 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-29T19:39:22.147Z",
+  "generatedAt": "2026-06-30T15:02:19.970Z",
   "project": {
     "name": "Keycloak Jakarta Readiness",
-    "root": "benchmark-repos/keycloak-jakarta-readiness",
+    "root": "https://github.com/keycloak/keycloak",
     "source": "https://github.com/keycloak/keycloak",
     "buildTools": [
       "Maven"

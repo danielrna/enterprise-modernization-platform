@@ -1,0 +1,794 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-06-30T15:02:19.940Z",
+  "project": {
+    "name": "Spring Session",
+    "root": "https://github.com/spring-projects/spring-session",
+    "source": "https://github.com/spring-projects/spring-session",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "17",
+    "springBootVersion": "2.7.x",
+    "fileCount": 1700,
+    "javaFileCount": 990
+  },
+  "pack": "spring-boot-3-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.95,
+    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "targetVersion": "3.x"
+  },
+  "readiness": {
+    "overall": 70,
+    "categories": {
+      "java": 88,
+      "spring": 37,
+      "jakarta": 79,
+      "build": 90,
+      "security": 82,
+      "architecture": 42
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 1,
+      "warning": 32,
+      "info": 0
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
+      "file": "spring-session-core/src/main/java/org/springframework/session/web/http/SessionRepositoryFilter.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "spring-boot-2",
+      "severity": "warning",
+      "title": "Spring Boot 2.7.x detected",
+      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example14.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example15.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example16.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example17.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example18.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example19.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example20.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example21.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example22.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example23.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example24.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example25.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example26.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example27.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example28.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example29.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example30.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example31.java",
+      "line": 40,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 32,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "byCode": {
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-session-core",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
+            "file": "spring-session-core/src/main/java/org/springframework/session/web/http/SessionRepositoryFilter.java",
+            "line": 18,
+            "scope": "production"
+          }
+        ]
+      },
+      "spring-boot-2": {
+        "code": "spring-boot-2",
+        "title": "Spring Boot 2.7.x detected",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "spring-boot-2",
+            "severity": "warning",
+            "title": "Spring Boot 2.7.x detected",
+            "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection patterns",
+        "severity": "warning",
+        "total": 31,
+        "production": 31,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-session-samples",
+            "count": 31
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "spring-session-samples/src/main/java/sample/Example1.java",
+            "line": 10,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "spring-session-samples/src/main/java/sample/Example2.java",
+            "line": 11,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "spring-session-samples/src/main/java/sample/Example3.java",
+            "line": 12,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "spring-session-samples/src/main/java/sample/Example4.java",
+            "line": 13,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection patterns",
+            "recommendation": "Prefer constructor injection in services touched by migration work.",
+            "file": "spring-session-samples/src/main/java/sample/Example5.java",
+            "line": 14,
+            "scope": "production"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
+      "file": "spring-session-core/src/main/java/org/springframework/session/web/http/SessionRepositoryFilter.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "spring-boot-2",
+      "severity": "warning",
+      "title": "Spring Boot 2.7.x detected",
+      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example14.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example15.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example16.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example17.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example18.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example19.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example20.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example21.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example22.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example23.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example24.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example25.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example26.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example27.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example28.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example29.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example30.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection patterns",
+      "recommendation": "Prefer constructor injection in services touched by migration work.",
+      "file": "spring-session-samples/src/main/java/sample/Example31.java",
+      "line": 40,
+      "scope": "production"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "passed"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "2.7.x",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": false,
+    "springSecurityDetected": true
+  }
+}

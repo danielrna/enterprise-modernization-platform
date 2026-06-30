@@ -1,33 +1,39 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.835Z",
+  "generatedAt": "2026-06-30T15:02:19.917Z",
   "project": {
-    "name": "JHipster Sample App",
-    "root": "https://github.com/jhipster/jhipster-sample-app",
-    "source": "https://github.com/jhipster/jhipster-sample-app",
+    "name": "Spring Boot Admin",
+    "root": "https://github.com/codecentric/spring-boot-admin",
+    "source": "https://github.com/codecentric/spring-boot-admin",
     "buildTools": [
       "Maven"
     ],
-    "javaVersion": "21",
-    "springBootVersion": "4.0.6",
-    "fileCount": 609,
-    "javaFileCount": 136
+    "javaVersion": "17",
+    "springBootVersion": "2.7.18",
+    "fileCount": 1650,
+    "javaFileCount": 910
   },
   "pack": "spring-boot-3-readiness",
   "packApplicability": {
-    "applicable": false,
-    "confidence": 0.94,
-    "reason": "Spring Boot 4.0.6 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
-    "recommendedPack": "jakarta-readiness"
+    "applicable": true,
+    "confidence": 0.95,
+    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "targetVersion": "3.x"
   },
   "readiness": {
-    "overall": null,
-    "categories": {},
-    "summary": "Pack mismatch: Spring Boot 4.0.6 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
-    "status": "not_applicable",
+    "overall": 70,
+    "categories": {
+      "java": 88,
+      "spring": 37,
+      "jakarta": 79,
+      "build": 90,
+      "security": 82,
+      "architecture": 42
+    },
+    "summary": "Ready with remediation work",
     "counts": {
       "critical": 1,
-      "warning": 53,
+      "warning": 33,
       "info": 0
     }
   },
@@ -37,8 +43,17 @@
       "severity": "critical",
       "title": "javax namespace usage detected",
       "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "src/main/java/io/github/jhipster/sample/domain/Operation.java",
-      "line": 8,
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerProperties.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "spring-boot-2",
+      "severity": "warning",
+      "title": "Spring Boot 2.7.18 detected",
+      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "file": null,
+      "line": null,
       "scope": "production"
     },
     {
@@ -46,7 +61,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example1.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example1.java",
       "line": 10,
       "scope": "production"
     },
@@ -55,7 +70,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example2.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example2.java",
       "line": 11,
       "scope": "production"
     },
@@ -64,7 +79,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example3.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example3.java",
       "line": 12,
       "scope": "production"
     },
@@ -73,7 +88,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example4.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example4.java",
       "line": 13,
       "scope": "production"
     },
@@ -82,7 +97,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example5.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example5.java",
       "line": 14,
       "scope": "production"
     },
@@ -91,7 +106,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example6.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example6.java",
       "line": 15,
       "scope": "production"
     },
@@ -100,7 +115,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example7.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example7.java",
       "line": 16,
       "scope": "production"
     },
@@ -109,7 +124,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example8.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example8.java",
       "line": 17,
       "scope": "production"
     },
@@ -118,7 +133,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example9.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example9.java",
       "line": 18,
       "scope": "production"
     },
@@ -127,7 +142,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example10.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example10.java",
       "line": 19,
       "scope": "production"
     },
@@ -136,7 +151,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example11.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example11.java",
       "line": 20,
       "scope": "production"
     },
@@ -145,7 +160,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example12.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example12.java",
       "line": 21,
       "scope": "production"
     },
@@ -154,7 +169,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example13.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example13.java",
       "line": 22,
       "scope": "production"
     },
@@ -163,7 +178,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example14.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example14.java",
       "line": 23,
       "scope": "production"
     },
@@ -172,7 +187,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example15.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example15.java",
       "line": 24,
       "scope": "production"
     },
@@ -181,7 +196,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example16.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example16.java",
       "line": 25,
       "scope": "production"
     },
@@ -190,7 +205,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example17.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example17.java",
       "line": 26,
       "scope": "production"
     },
@@ -199,7 +214,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example18.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example18.java",
       "line": 27,
       "scope": "production"
     },
@@ -208,7 +223,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example19.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example19.java",
       "line": 28,
       "scope": "production"
     },
@@ -217,7 +232,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example20.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example20.java",
       "line": 29,
       "scope": "production"
     },
@@ -226,7 +241,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example21.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example21.java",
       "line": 30,
       "scope": "production"
     },
@@ -235,7 +250,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example22.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example22.java",
       "line": 31,
       "scope": "production"
     },
@@ -244,7 +259,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example23.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example23.java",
       "line": 32,
       "scope": "production"
     },
@@ -253,7 +268,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example24.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example24.java",
       "line": 33,
       "scope": "production"
     },
@@ -262,7 +277,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example25.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example25.java",
       "line": 34,
       "scope": "production"
     },
@@ -271,7 +286,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example26.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example26.java",
       "line": 35,
       "scope": "production"
     },
@@ -280,7 +295,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example27.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example27.java",
       "line": 36,
       "scope": "production"
     },
@@ -289,7 +304,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example28.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example28.java",
       "line": 37,
       "scope": "production"
     },
@@ -298,7 +313,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example29.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example29.java",
       "line": 38,
       "scope": "production"
     },
@@ -307,7 +322,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example30.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example30.java",
       "line": 39,
       "scope": "production"
     },
@@ -316,7 +331,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example31.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example31.java",
       "line": 40,
       "scope": "production"
     },
@@ -325,197 +340,8 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example32.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example32.java",
       "line": 41,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example33.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example34.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example35.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example36.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example37.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example38.java",
-      "line": 47,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example39.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example40.java",
-      "line": 49,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example41.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example42.java",
-      "line": 51,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example43.java",
-      "line": 52,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example44.java",
-      "line": 53,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example45.java",
-      "line": 54,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example46.java",
-      "line": 55,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example47.java",
-      "line": 56,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example48.java",
-      "line": 57,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example49.java",
-      "line": 58,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example50.java",
-      "line": 59,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example51.java",
-      "line": 60,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example52.java",
-      "line": 61,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example53.java",
-      "line": 62,
       "scope": "production"
     }
   ],
@@ -523,7 +349,7 @@
   "findingSummary": {
     "production": {
       "critical": 1,
-      "warning": 53,
+      "warning": 33,
       "info": 0
     },
     "test": {
@@ -541,7 +367,7 @@
         "test": 0,
         "topModules": [
           {
-            "name": "src",
+            "name": "spring-boot-admin-server",
             "count": 1
           }
         ],
@@ -551,8 +377,33 @@
             "severity": "critical",
             "title": "javax namespace usage detected",
             "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-            "file": "src/main/java/io/github/jhipster/sample/domain/Operation.java",
-            "line": 8,
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerProperties.java",
+            "line": 12,
+            "scope": "production"
+          }
+        ]
+      },
+      "spring-boot-2": {
+        "code": "spring-boot-2",
+        "title": "Spring Boot 2.7.18 detected",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "spring-boot-2",
+            "severity": "warning",
+            "title": "Spring Boot 2.7.18 detected",
+            "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+            "file": null,
+            "line": null,
             "scope": "production"
           }
         ]
@@ -561,13 +412,13 @@
         "code": "field-injection",
         "title": "Spring field injection patterns",
         "severity": "warning",
-        "total": 53,
-        "production": 53,
+        "total": 32,
+        "production": 32,
         "test": 0,
         "topModules": [
           {
-            "name": "src",
-            "count": 53
+            "name": "spring-boot-admin-server",
+            "count": 32
           }
         ],
         "examples": [
@@ -576,7 +427,7 @@
             "severity": "warning",
             "title": "Spring field injection patterns",
             "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "src/main/java/io/github/jhipster/sample/Example1.java",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example1.java",
             "line": 10,
             "scope": "production"
           },
@@ -585,7 +436,7 @@
             "severity": "warning",
             "title": "Spring field injection patterns",
             "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "src/main/java/io/github/jhipster/sample/Example2.java",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example2.java",
             "line": 11,
             "scope": "production"
           },
@@ -594,7 +445,7 @@
             "severity": "warning",
             "title": "Spring field injection patterns",
             "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "src/main/java/io/github/jhipster/sample/Example3.java",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example3.java",
             "line": 12,
             "scope": "production"
           },
@@ -603,7 +454,7 @@
             "severity": "warning",
             "title": "Spring field injection patterns",
             "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "src/main/java/io/github/jhipster/sample/Example4.java",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example4.java",
             "line": 13,
             "scope": "production"
           },
@@ -612,7 +463,7 @@
             "severity": "warning",
             "title": "Spring field injection patterns",
             "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "src/main/java/io/github/jhipster/sample/Example5.java",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example5.java",
             "line": 14,
             "scope": "production"
           }
@@ -626,8 +477,17 @@
       "severity": "critical",
       "title": "javax namespace usage detected",
       "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "src/main/java/io/github/jhipster/sample/domain/Operation.java",
-      "line": 8,
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerProperties.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "spring-boot-2",
+      "severity": "warning",
+      "title": "Spring Boot 2.7.18 detected",
+      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "file": null,
+      "line": null,
       "scope": "production"
     },
     {
@@ -635,7 +495,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example1.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example1.java",
       "line": 10,
       "scope": "production"
     },
@@ -644,7 +504,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example2.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example2.java",
       "line": 11,
       "scope": "production"
     },
@@ -653,7 +513,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example3.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example3.java",
       "line": 12,
       "scope": "production"
     },
@@ -662,7 +522,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example4.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example4.java",
       "line": 13,
       "scope": "production"
     },
@@ -671,7 +531,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example5.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example5.java",
       "line": 14,
       "scope": "production"
     },
@@ -680,7 +540,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example6.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example6.java",
       "line": 15,
       "scope": "production"
     },
@@ -689,7 +549,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example7.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example7.java",
       "line": 16,
       "scope": "production"
     },
@@ -698,7 +558,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example8.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example8.java",
       "line": 17,
       "scope": "production"
     },
@@ -707,7 +567,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example9.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example9.java",
       "line": 18,
       "scope": "production"
     },
@@ -716,7 +576,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example10.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example10.java",
       "line": 19,
       "scope": "production"
     },
@@ -725,7 +585,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example11.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example11.java",
       "line": 20,
       "scope": "production"
     },
@@ -734,7 +594,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example12.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example12.java",
       "line": 21,
       "scope": "production"
     },
@@ -743,7 +603,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example13.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example13.java",
       "line": 22,
       "scope": "production"
     },
@@ -752,7 +612,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example14.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example14.java",
       "line": 23,
       "scope": "production"
     },
@@ -761,7 +621,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example15.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example15.java",
       "line": 24,
       "scope": "production"
     },
@@ -770,7 +630,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example16.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example16.java",
       "line": 25,
       "scope": "production"
     },
@@ -779,7 +639,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example17.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example17.java",
       "line": 26,
       "scope": "production"
     },
@@ -788,7 +648,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example18.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example18.java",
       "line": 27,
       "scope": "production"
     },
@@ -797,7 +657,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example19.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example19.java",
       "line": 28,
       "scope": "production"
     },
@@ -806,7 +666,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example20.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example20.java",
       "line": 29,
       "scope": "production"
     },
@@ -815,7 +675,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example21.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example21.java",
       "line": 30,
       "scope": "production"
     },
@@ -824,7 +684,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example22.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example22.java",
       "line": 31,
       "scope": "production"
     },
@@ -833,7 +693,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example23.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example23.java",
       "line": 32,
       "scope": "production"
     },
@@ -842,7 +702,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example24.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example24.java",
       "line": 33,
       "scope": "production"
     },
@@ -851,7 +711,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example25.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example25.java",
       "line": 34,
       "scope": "production"
     },
@@ -860,7 +720,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example26.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example26.java",
       "line": 35,
       "scope": "production"
     },
@@ -869,7 +729,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example27.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example27.java",
       "line": 36,
       "scope": "production"
     },
@@ -878,7 +738,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example28.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example28.java",
       "line": 37,
       "scope": "production"
     },
@@ -887,7 +747,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example29.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example29.java",
       "line": 38,
       "scope": "production"
     },
@@ -896,7 +756,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example30.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example30.java",
       "line": 39,
       "scope": "production"
     },
@@ -905,7 +765,7 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example31.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example31.java",
       "line": 40,
       "scope": "production"
     },
@@ -914,197 +774,8 @@
       "severity": "warning",
       "title": "Spring field injection patterns",
       "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example32.java",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example32.java",
       "line": 41,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example33.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example34.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example35.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example36.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example37.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example38.java",
-      "line": 47,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example39.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example40.java",
-      "line": 49,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example41.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example42.java",
-      "line": 51,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example43.java",
-      "line": 52,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example44.java",
-      "line": 53,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example45.java",
-      "line": 54,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example46.java",
-      "line": 55,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example47.java",
-      "line": 56,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example48.java",
-      "line": 57,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example49.java",
-      "line": 58,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example50.java",
-      "line": 59,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example51.java",
-      "line": 60,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example52.java",
-      "line": 61,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "src/main/java/io/github/jhipster/sample/Example53.java",
-      "line": 62,
       "scope": "production"
     }
   ],
@@ -1132,8 +803,8 @@
     }
   ],
   "dependencies": {
-    "springBootVersion": "4.0.6",
-    "jakartaDetected": true,
+    "springBootVersion": "2.7.18",
+    "jakartaDetected": false,
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": true
