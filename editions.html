@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enterprise Modernization Platform Editions</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; --ok:#217a45; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:28px 0 10px; font-size:21px; letter-spacing:0; }
+    p { max-width:760px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .nav { display:flex; flex-wrap:wrap; gap:12px; margin:0 0 28px; }
+    .nav a { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:14px; margin:24px 0; }
+    .edition { display:flex; flex-direction:column; gap:12px; min-height:360px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .edition.featured { border-top:4px solid var(--ok); }
+    .edition h2 { margin:0; }
+    .price { font-size:24px; font-weight:700; color:var(--ink); }
+    .price small { display:block; margin-top:2px; font-size:12px; font-weight:500; color:var(--muted); }
+    ul { margin:0; padding-left:18px; color:var(--muted); }
+    li { margin:6px 0; }
+    .cta { display:inline-flex; align-items:center; justify-content:center; min-height:40px; margin-top:auto; padding:8px 12px; background:#f8fafc; border:1px solid var(--line); border-radius:6px; color:var(--accent); text-align:center; }
+    .cta.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    .note { padding:16px; background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:8px; }
+    @media (max-width: 960px) { .grid { grid-template-columns:1fr 1fr; } }
+    @media (max-width: 640px) { .grid { grid-template-columns:1fr; } h1 { font-size:27px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="migration-hub/spring-boot-2-to-3.html">Spring Boot 2 to 3</a>
+      <a href="benchmarks/index.html">Benchmarks</a>
+    </nav>
+
+    <section>
+      <h1>Editions</h1>
+      <p>Start with a free readiness report. Upgrade only when you need repeatable client work, validation evidence, enterprise rules, or organization-level usage.</p>
+    </section>
+
+    <section class="grid">
+      <article class="edition">
+        <h2>Community</h2>
+        <div class="price">Free<small>Readiness evidence</small></div>
+        <ul>
+          <li>Readiness analysis</li>
+          <li>Static HTML report</li>
+          <li>JSON report</li>
+          <li>Public benchmark reference</li>
+          <li>Docker and CLI usage</li>
+        </ul>
+        <a class="cta primary" href="migration-hub/spring-boot-2-to-3.html#try-in-5-minutes">Run free report</a>
+      </article>
+
+      <article class="edition featured">
+        <h2>Professional</h2>
+        <div class="price">599 CHF/year<small>1 developer</small></div>
+        <ul>
+          <li>All migration packs</li>
+          <li>Validation evidence</li>
+          <li>Trust Engine report</li>
+          <li>Repeatable benchmark pack</li>
+          <li>Stronger confidence trail</li>
+        </ul>
+        <a class="cta" href="https://github.com/danielrna/enterprise-modernization-platform-public/issues/new?title=Professional%20access%20request">Request Professional access</a>
+      </article>
+
+      <article class="edition">
+        <h2>Consultant</h2>
+        <div class="price">1490 CHF/year<small>Repeated client work</small></div>
+        <ul>
+          <li>Unlimited client usage</li>
+          <li>Enterprise rules workflow</li>
+          <li>Reusable reporting assets</li>
+          <li>Client-ready evidence flow</li>
+          <li>Consultant positioning support</li>
+        </ul>
+        <a class="cta" href="https://github.com/danielrna/enterprise-modernization-platform-public/issues/new?title=Consultant%20license%20request">Request Consultant license</a>
+      </article>
+
+      <article class="edition">
+        <h2>Organization</h2>
+        <div class="price">4990 CHF/year<small>Team usage</small></div>
+        <ul>
+          <li>Organization usage</li>
+          <li>Shared rules workflow</li>
+          <li>CI-ready evidence reports</li>
+          <li>Internal modernization standards</li>
+          <li>OEM discussion path</li>
+        </ul>
+        <a class="cta" href="https://github.com/danielrna/enterprise-modernization-platform-public/issues/new?title=Organization%20license%20request">Request Organization access</a>
+      </article>
+    </section>
+
+    <h2>Which Edition Fits?</h2>
+    <table>
+      <thead><tr><th>Need</th><th>Recommended Edition</th><th>Reason</th></tr></thead>
+      <tbody>
+        <tr><td>First client conversation</td><td>Community</td><td>Generate a neutral readiness report in minutes.</td></tr>
+        <tr><td>Paid migration preparation</td><td>Professional</td><td>Add validation and trust evidence before execution.</td></tr>
+        <tr><td>Repeated consulting work</td><td>Consultant</td><td>Use the same evidence workflow across client repositories.</td></tr>
+        <tr><td>Team modernization program</td><td>Organization</td><td>Standardize readiness reporting and enterprise rules.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Start Free</h2>
+    <section class="note">
+      <p>The Community edition is enough to run the first Spring Boot 2 to 3 readiness report and share the generated HTML evidence with a client or team. No hosted backend, account, or database is required.</p>
+    </section>
+  </main>
+</body>
+</html>
