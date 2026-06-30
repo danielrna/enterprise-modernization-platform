@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.884Z",
+  "generatedAt": "2026-06-30T15:30:18.064Z",
   "project": {
     "name": "Keycloak",
     "root": "https://github.com/keycloak/keycloak",
@@ -5356,5 +5356,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "keycloak",
+    "name": "Keycloak",
+    "repository": "https://github.com/keycloak/keycloak",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

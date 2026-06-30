@@ -38,7 +38,7 @@
 <body>
   <header>
     <h1>Keycloak Jakarta Readiness Readiness Report</h1>
-    <p class="meta">jakarta-readiness · 2026-06-30T15:02:19.970Z · https://github.com/keycloak/keycloak</p>
+    <p class="meta">jakarta-readiness · 2026-06-30T15:30:19.608Z · https://github.com/keycloak/keycloak</p>
   </header>
   <main>
     <section class="grid">
@@ -51,26 +51,33 @@
     <h2>Executive Summary</h2>
     <div class="panel">Migration risk requires focused cleanup</div>
 
-    
+
     <h2>Pack Applicability</h2>
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 92%
       <div>javax namespace usage was detected. This pack targets javax to jakarta readiness.</div>
       <div class="label">Detected: Spring Boot: unknown · Java: 17 · Build: Maven · javax usage: yes · jakarta usage: yes</div>
-      
+
     </div>
-  
-    
+
+
     <h2>Readiness</h2>
     <table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>0%</strong></td><td><div class="bar"><span style="width:0%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Architecture</td><td><strong>73%</strong></td><td><div class="bar"><span style="width:73%"></span></div></td></tr></tbody></table>
-  
+
 
     <h2>Evidence</h2>
     <table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table>
 
-    
-    
-    
+
+    <h2>Benchmark Evidence</h2>
+    <div class="panel">
+      <strong>catalog</strong> · https://github.com/keycloak/keycloak
+    </div>
+    <table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table>
+
+
+
+
 
     <h2>Finding Summary</h2>
     <section class="grid">

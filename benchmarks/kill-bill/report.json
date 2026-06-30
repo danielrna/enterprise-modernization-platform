@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.914Z",
+  "generatedAt": "2026-06-30T15:30:18.086Z",
   "project": {
     "name": "Kill Bill",
     "root": "https://github.com/killbill/killbill",
@@ -1324,5 +1324,15 @@
     "javaxDetected": true,
     "hibernateDetected": false,
     "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "kill-bill",
+    "name": "Kill Bill",
+    "repository": "https://github.com/killbill/killbill",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

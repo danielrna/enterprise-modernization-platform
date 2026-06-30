@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.899Z",
+  "generatedAt": "2026-06-30T15:30:18.076Z",
   "project": {
     "name": "Spring Cloud Data Flow",
     "root": "https://github.com/spring-cloud/spring-cloud-dataflow",
@@ -6659,5 +6659,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "spring-cloud-dataflow",
+    "name": "Spring Cloud Data Flow",
+    "repository": "https://github.com/spring-cloud/spring-cloud-dataflow",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

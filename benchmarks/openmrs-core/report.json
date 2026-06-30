@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.905Z",
+  "generatedAt": "2026-06-30T15:30:18.081Z",
   "project": {
     "name": "OpenMRS Core",
     "root": "https://github.com/openmrs/openmrs-core",
@@ -14237,5 +14237,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "openmrs-core",
+    "name": "OpenMRS Core",
+    "repository": "https://github.com/openmrs/openmrs-core",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

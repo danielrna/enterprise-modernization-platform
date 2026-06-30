@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.958Z",
+  "generatedAt": "2026-06-30T15:30:19.602Z",
   "project": {
     "name": "Baeldung Tutorials",
     "root": "https://github.com/eugenp/tutorials",
@@ -14693,5 +14693,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "baeldung-tutorials",
+    "name": "Baeldung Tutorials",
+    "repository": "https://github.com/eugenp/tutorials",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

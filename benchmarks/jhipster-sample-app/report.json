@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.835Z",
+  "generatedAt": "2026-06-30T15:30:18.028Z",
   "project": {
     "name": "JHipster Sample App",
     "root": "https://github.com/jhipster/jhipster-sample-app",
@@ -1137,5 +1137,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "jhipster-sample-app",
+    "name": "JHipster Sample App",
+    "repository": "https://github.com/jhipster/jhipster-sample-app",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.937Z",
+  "generatedAt": "2026-06-30T15:30:18.483Z",
   "project": {
     "name": "Spring Integration",
     "root": "https://github.com/spring-projects/spring-integration",
@@ -2356,5 +2356,15 @@
     "javaxDetected": true,
     "hibernateDetected": false,
     "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "spring-integration",
+    "name": "Spring Integration",
+    "repository": "https://github.com/spring-projects/spring-integration",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

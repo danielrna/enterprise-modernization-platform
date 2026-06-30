@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.931Z",
+  "generatedAt": "2026-06-30T15:30:18.481Z",
   "project": {
     "name": "Spring Cloud Config",
     "root": "https://github.com/spring-cloud/spring-cloud-config",
@@ -934,5 +934,15 @@
     "javaxDetected": true,
     "hibernateDetected": false,
     "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "spring-cloud-config",
+    "name": "Spring Cloud Config",
+    "repository": "https://github.com/spring-cloud/spring-cloud-config",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

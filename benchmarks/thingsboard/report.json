@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.876Z",
+  "generatedAt": "2026-06-30T15:30:18.057Z",
   "project": {
     "name": "ThingsBoard",
     "root": "https://github.com/thingsboard/thingsboard",
@@ -16577,5 +16577,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "thingsboard",
+    "name": "ThingsBoard",
+    "repository": "https://github.com/thingsboard/thingsboard",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

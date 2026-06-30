@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.845Z",
+  "generatedAt": "2026-06-30T15:30:18.035Z",
   "project": {
     "name": "Flowable Engine",
     "root": "https://github.com/flowable/flowable-engine",
@@ -26261,5 +26261,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "flowable-engine",
+    "name": "Flowable Engine",
+    "repository": "https://github.com/flowable/flowable-engine",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

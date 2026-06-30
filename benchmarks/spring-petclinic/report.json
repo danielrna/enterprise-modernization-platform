@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.827Z",
+  "generatedAt": "2026-06-30T15:30:18.023Z",
   "project": {
     "name": "Spring Petclinic",
     "root": "https://github.com/spring-projects/spring-petclinic",
@@ -435,5 +435,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "spring-petclinic",
+    "name": "Spring Petclinic",
+    "repository": "https://github.com/spring-projects/spring-petclinic",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

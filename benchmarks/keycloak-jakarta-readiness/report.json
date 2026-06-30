@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.970Z",
+  "generatedAt": "2026-06-30T15:30:19.608Z",
   "project": {
     "name": "Keycloak Jakarta Readiness",
     "root": "https://github.com/keycloak/keycloak",
@@ -6050,5 +6050,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "keycloak-jakarta-readiness",
+    "name": "Keycloak Jakarta Readiness",
+    "repository": "https://github.com/keycloak/keycloak",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

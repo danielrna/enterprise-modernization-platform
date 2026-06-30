@@ -1,40 +1,34 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.951Z",
+  "generatedAt": "2026-06-30T15:30:19.596Z",
   "project": {
     "name": "Spring Data Examples",
-    "root": "https://github.com/spring-projects/spring-data-examples",
+    "root": "benchmark-repos/spring-data-examples",
     "source": "https://github.com/spring-projects/spring-data-examples",
     "buildTools": [
       "Maven"
     ],
-    "javaVersion": "17",
-    "springBootVersion": "2.7.x",
-    "fileCount": 1450,
-    "javaFileCount": 820
+    "javaVersion": "unknown",
+    "springBootVersion": "4.0.4",
+    "fileCount": 7022,
+    "javaFileCount": 6692
   },
   "pack": "spring-boot-3-readiness",
   "packApplicability": {
-    "applicable": true,
-    "confidence": 0.95,
-    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
-    "targetVersion": "3.x"
+    "applicable": false,
+    "confidence": 0.94,
+    "reason": "Spring Boot 4.0.4 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "recommendedPack": "jakarta-readiness"
   },
   "readiness": {
-    "overall": 80,
-    "categories": {
-      "java": 74,
-      "spring": 79,
-      "jakarta": 79,
-      "build": 90,
-      "security": 76,
-      "architecture": 84
-    },
-    "summary": "Ready with remediation work",
+    "overall": null,
+    "categories": {},
+    "summary": "Pack mismatch: Spring Boot 4.0.4 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "status": "not_applicable",
     "counts": {
       "critical": 1,
-      "warning": 1,
-      "info": 73
+      "warning": 7,
+      "info": 101
     }
   },
   "productionFindings": [
@@ -42,689 +36,996 @@
       "code": "javax-usage",
       "severity": "critical",
       "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/simple/SimpleUserRepository.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "spring-boot-2",
-      "severity": "warning",
-      "title": "Spring Boot 2.7.x detected",
-      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
       "file": null,
       "line": null,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example1.java",
-      "line": 10,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 66,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example2.java",
-      "line": 11,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 67,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example3.java",
-      "line": 12,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 68,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example4.java",
-      "line": 13,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 70,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example5.java",
-      "line": 14,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 71,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example6.java",
-      "line": 15,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 73,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example7.java",
-      "line": 16,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 74,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example8.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example10.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example12.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example16.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example17.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example18.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example19.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example20.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example21.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example26.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example27.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example28.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example29.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example30.java",
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "couchbase/example/src/main/java/example/springdata/couchbase/repository/CouchbaseMain.java",
       "line": 39,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example31.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example32.java",
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "couchbase/example/src/main/java/example/springdata/couchbase/repository/CouchbaseMain.java",
       "line": 41,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example33.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example34.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example35.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example36.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example37.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 46,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example38.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 47,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example39.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 48,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example40.java",
-      "line": 49,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example41.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example42.java",
-      "line": 51,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example43.java",
-      "line": 52,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example44.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 53,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example45.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 54,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example46.java",
-      "line": 55,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example47.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 56,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example48.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
+      "line": 58,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
+      "line": 60,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/CategoryConfiguration.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/basics/src/main/java/example/springdata/jdbc/basics/simpleentity/CategoryConfiguration.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 59,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 60,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 76,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/howto/bidirectionalinternal/src/main/java/example/springdata/jdbc/howto/bidirectionalinternal/Toy.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "jdbc/jooq/src/main/java/example/springdata/jdbc/jooq/CategoryConfiguration.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 62,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 63,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 66,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 69,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 73,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 79,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 80,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 83,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 85,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 87,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 88,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 92,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 94,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 97,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 99,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 100,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/eclipselink/src/main/java/example/springdata/jpa/eclipselink/Application.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "jpa/example/src/main/java/example/springdata/jpa/custom/UserRepositoryImplJdbc.java",
       "line": 57,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example49.java",
-      "line": 58,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/example/src/main/java/example/springdata/jpa/pagination/Book.java",
+      "line": 24,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example50.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 59,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example51.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 60,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example52.java",
-      "line": 61,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example53.java",
-      "line": 62,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example54.java",
-      "line": 63,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example55.java",
-      "line": 64,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example56.java",
-      "line": 65,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example57.java",
-      "line": 66,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example58.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 67,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example59.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 68,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example60.java",
-      "line": 69,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example61.java",
-      "line": 70,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example62.java",
-      "line": 71,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example63.java",
-      "line": 72,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example64.java",
-      "line": 73,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example65.java",
-      "line": 74,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example66.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 75,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example67.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 76,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example68.java",
-      "line": 77,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example69.java",
-      "line": 78,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example70.java",
-      "line": 79,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example71.java",
-      "line": 80,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example72.java",
-      "line": 81,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example73.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "jpa/multiple-datasources/src/main/java/example/springdata/jpa/multipleds/customer/Customer.java",
+      "line": 1,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "jpa/multitenant/db/src/main/java/example/springdata/jpa/hibernatemultitenant/db/TenantRoutingDatasource.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/security/src/main/java/example/springdata/jpa/security/BusinessObject.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/security/src/main/java/example/springdata/jpa/security/SecureBusinessObjectRepository.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/showcase/src/main/java/example/springdata/jpa/showcase/core/Account.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/showcase/src/snippets/java/example/springdata/jpa/showcase/snippets/AccountRepositoryImpl.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "jpa/showcase/src/snippets/java/example/springdata/jpa/showcase/snippets/AccountRepositoryImpl.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/showcase/src/snippets/java/example/springdata/jpa/showcase/snippets/CustomerSpecifications.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mongodb/aggregation/src/main/java/example/springdata/mongodb/aggregation/Order.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/change-streams/src/main/java/example/springdata/mongodb/CollectingMessageListener.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "multi-store/src/main/java/example/springdata/multistore/shop/Order.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/pubsub-listener/src/main/java/example/springdata/redis/listener/RedisListenerApplication.java",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/sentinel/src/main/java/example/springdata/redis/sentinel/RedisSentinelApplication.java",
+      "line": 62,
       "scope": "production"
     }
   ],
-  "testFindings": [],
+  "testFindings": [
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/vector-search/src/test/java/example/springdata/vector/CassandraVectorSearchTest.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/vector-search/src/test/java/example/springdata/vector/JpaVectorSearchTest.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mongodb/aggregation/src/test/java/example/springdata/mongodb/aggregation/OrderRepositoryIntegrationTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/reactive/src/test/java/example/springdata/mongodb/people/ReactivePersonRepositoryIntegrationTest.java",
+      "line": 124,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/reactive/src/test/java/example/springdata/mongodb/people/ReactivePersonRepositoryIntegrationTest.java",
+      "line": 125,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 66,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 69,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 75,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 78,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 81,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 84,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 87,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 90,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/text-search/src/test/java/example/springdata/mongodb/util/ConsoleResultPrinter.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/text-search/src/test/java/example/springdata/mongodb/util/ConsoleResultPrinter.java",
+      "line": 37,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/text-search/src/test/java/example/springdata/mongodb/util/ConsoleResultPrinter.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/transactions/src/test/java/example/springdata/mongodb/reactive/ReactiveManagedTransitionServiceTests.java",
+      "line": 112,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/vector-search/src/test/java/example/springdata/vector/MongoDBVectorSearchTest.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/reactive/src/test/java/example/springdata/redis/commands/KeyCommandsTests.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/reactive/src/test/java/example/springdata/redis/commands/KeyCommandsTests.java",
+      "line": 78,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/reactive/src/test/java/example/springdata/redis/commands/KeyCommandsTests.java",
+      "line": 97,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/reactive/src/test/java/example/springdata/redis/commands/KeyCommandsTests.java",
+      "line": 99,
+      "scope": "test"
+    }
+  ],
   "findingSummary": {
     "production": {
       "critical": 1,
-      "warning": 1,
-      "info": 73
+      "warning": 7,
+      "info": 77
     },
     "test": {
       "critical": 0,
       "warning": 0,
-      "info": 0
+      "info": 24
     },
     "byCode": {
       "javax-usage": {
@@ -736,7 +1037,7 @@
         "test": 0,
         "topModules": [
           {
-            "name": "example",
+            "name": "project",
             "count": 1
           }
         ],
@@ -745,95 +1046,241 @@
             "code": "javax-usage",
             "severity": "critical",
             "title": "javax namespace usage detected",
-            "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-            "file": "jpa/example/src/main/java/example/springdata/jpa/simple/SimpleUserRepository.java",
-            "line": 12,
-            "scope": "production"
-          }
-        ]
-      },
-      "spring-boot-2": {
-        "code": "spring-boot-2",
-        "title": "Spring Boot 2.7.x detected",
-        "severity": "warning",
-        "total": 1,
-        "production": 1,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "project",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "spring-boot-2",
-            "severity": "warning",
-            "title": "Spring Boot 2.7.x detected",
-            "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
             "file": null,
             "line": null,
             "scope": "production"
           }
         ]
       },
-      "java-util-date": {
-        "code": "java-util-date",
-        "title": "Legacy date API usage",
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
         "severity": "info",
-        "total": 73,
-        "production": 73,
+        "total": 92,
+        "production": 69,
+        "test": 23,
+        "topModules": [
+          {
+            "name": "aot-optimization",
+            "count": 41
+          },
+          {
+            "name": "graalvm-native",
+            "count": 22
+          },
+          {
+            "name": "repository-metrics",
+            "count": 10
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+            "line": 66,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+            "line": 67,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+            "line": 68,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+            "line": 70,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+            "line": 71,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 6,
+        "production": 6,
         "test": 0,
         "topModules": [
           {
             "name": "example",
-            "count": 73
+            "count": 3
+          },
+          {
+            "name": "db",
+            "count": 1
+          },
+          {
+            "name": "jooq",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "couchbase/example/src/main/java/example/springdata/couchbase/repository/CouchbaseMain.java",
+            "line": 39,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "couchbase/example/src/main/java/example/springdata/couchbase/repository/CouchbaseMain.java",
+            "line": 41,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "jdbc/jooq/src/main/java/example/springdata/jdbc/jooq/CategoryConfiguration.java",
+            "line": 43,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "jpa/example/src/main/java/example/springdata/jpa/custom/UserRepositoryImplJdbc.java",
+            "line": 57,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "jpa/multitenant/db/src/main/java/example/springdata/jpa/hibernatemultitenant/db/TenantRoutingDatasource.java",
+            "line": 30,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "java.util.Date usage",
+        "severity": "info",
+        "total": 9,
+        "production": 8,
+        "test": 1,
+        "topModules": [
+          {
+            "name": "showcase",
+            "count": 3
+          },
+          {
+            "name": "aggregation",
+            "count": 2
+          },
+          {
+            "name": "security",
+            "count": 2
           }
         ],
         "examples": [
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "jpa/example/src/main/java/example/springdata/jpa/Example1.java",
-            "line": 10,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "jpa/example/src/main/java/example/springdata/jpa/pagination/Book.java",
+            "line": 24,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "jpa/example/src/main/java/example/springdata/jpa/Example2.java",
-            "line": 11,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "jpa/security/src/main/java/example/springdata/jpa/security/BusinessObject.java",
+            "line": 21,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "jpa/example/src/main/java/example/springdata/jpa/Example3.java",
-            "line": 12,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "jpa/security/src/main/java/example/springdata/jpa/security/SecureBusinessObjectRepository.java",
+            "line": 55,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "jpa/example/src/main/java/example/springdata/jpa/Example4.java",
-            "line": 13,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "jpa/showcase/src/main/java/example/springdata/jpa/showcase/core/Account.java",
+            "line": 18,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "jpa/example/src/main/java/example/springdata/jpa/Example5.java",
-            "line": 14,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "jpa/showcase/src/snippets/java/example/springdata/jpa/showcase/snippets/AccountRepositoryImpl.java",
+            "line": 21,
+            "scope": "production"
+          }
+        ]
+      },
+      "serializable-missing-serial-version": {
+        "code": "serializable-missing-serial-version",
+        "title": "Serializable type without serialVersionUID",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "multiple-datasources",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "jpa/multiple-datasources/src/main/java/example/springdata/jpa/multipleds/customer/Customer.java",
+            "line": 1,
             "scope": "production"
           }
         ]
@@ -845,675 +1292,981 @@
       "code": "javax-usage",
       "severity": "critical",
       "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/simple/SimpleUserRepository.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "spring-boot-2",
-      "severity": "warning",
-      "title": "Spring Boot 2.7.x detected",
-      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
       "file": null,
       "line": null,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example1.java",
-      "line": 10,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 66,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example2.java",
-      "line": 11,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 67,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example3.java",
-      "line": 12,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 68,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example4.java",
-      "line": 13,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 70,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example5.java",
-      "line": 14,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 71,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example6.java",
-      "line": 15,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 73,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example7.java",
-      "line": 16,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/aot-optimization/src/main/java/example/springdata/cassandra/AotApplication.java",
+      "line": 74,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example8.java",
-      "line": 17,
-      "scope": "production"
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "cassandra/vector-search/src/test/java/example/springdata/vector/CassandraVectorSearchTest.java",
+      "line": 63,
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example10.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example12.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example16.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example17.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example18.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example19.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example20.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example21.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example26.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example27.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example28.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example29.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example30.java",
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "couchbase/example/src/main/java/example/springdata/couchbase/repository/CouchbaseMain.java",
       "line": 39,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example31.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example32.java",
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "couchbase/example/src/main/java/example/springdata/couchbase/repository/CouchbaseMain.java",
       "line": 41,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example33.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example34.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example35.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example36.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example37.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 46,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example38.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 47,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example39.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 48,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example40.java",
-      "line": 49,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example41.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example42.java",
-      "line": 51,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example43.java",
-      "line": 52,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example44.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 53,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example45.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 54,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example46.java",
-      "line": 55,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example47.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
       "line": 56,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example48.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
+      "line": 58,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/AotJdbcApp.java",
+      "line": 60,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/aot-optimization/src/main/java/example/springdata/aot/CategoryConfiguration.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/basics/src/main/java/example/springdata/jdbc/basics/simpleentity/CategoryConfiguration.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 59,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 60,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 76,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/graalvm-native/src/main/java/example/springdata/jdbc/graalvmnative/CLR.java",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jdbc/howto/bidirectionalinternal/src/main/java/example/springdata/jdbc/howto/bidirectionalinternal/Toy.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "jdbc/jooq/src/main/java/example/springdata/jdbc/jooq/CategoryConfiguration.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 62,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 63,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 66,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 69,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 73,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 79,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 80,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 83,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 85,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 87,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 88,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 92,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 94,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 97,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 99,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/aot-optimization/src/main/java/example/springdata/aot/CLR.java",
+      "line": 100,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/eclipselink/src/main/java/example/springdata/jpa/eclipselink/Application.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "jpa/example/src/main/java/example/springdata/jpa/custom/UserRepositoryImplJdbc.java",
       "line": 57,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example49.java",
-      "line": 58,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/example/src/main/java/example/springdata/jpa/pagination/Book.java",
+      "line": 24,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example50.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 59,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example51.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 60,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example52.java",
-      "line": 61,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example53.java",
-      "line": 62,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example54.java",
-      "line": 63,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example55.java",
-      "line": 64,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example56.java",
-      "line": 65,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example57.java",
-      "line": 66,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example58.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 67,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example59.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 68,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example60.java",
-      "line": 69,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example61.java",
-      "line": 70,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example62.java",
-      "line": 71,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example63.java",
-      "line": 72,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example64.java",
-      "line": 73,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example65.java",
-      "line": 74,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example66.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 75,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example67.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 76,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example68.java",
-      "line": 77,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example69.java",
-      "line": 78,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example70.java",
-      "line": 79,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example71.java",
-      "line": 80,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example72.java",
-      "line": 81,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "jpa/example/src/main/java/example/springdata/jpa/Example73.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
       "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/graalvm-native/src/main/java/com/example/data/jpa/CLR.java",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "jpa/multiple-datasources/src/main/java/example/springdata/jpa/multipleds/customer/Customer.java",
+      "line": 1,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "jpa/multitenant/db/src/main/java/example/springdata/jpa/hibernatemultitenant/db/TenantRoutingDatasource.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/security/src/main/java/example/springdata/jpa/security/BusinessObject.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/security/src/main/java/example/springdata/jpa/security/SecureBusinessObjectRepository.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/showcase/src/main/java/example/springdata/jpa/showcase/core/Account.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/showcase/src/snippets/java/example/springdata/jpa/showcase/snippets/AccountRepositoryImpl.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "jpa/showcase/src/snippets/java/example/springdata/jpa/showcase/snippets/AccountRepositoryImpl.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jpa/showcase/src/snippets/java/example/springdata/jpa/showcase/snippets/CustomerSpecifications.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "jpa/vector-search/src/test/java/example/springdata/vector/JpaVectorSearchTest.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mongodb/aggregation/src/main/java/example/springdata/mongodb/aggregation/Order.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mongodb/aggregation/src/test/java/example/springdata/mongodb/aggregation/OrderRepositoryIntegrationTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/change-streams/src/main/java/example/springdata/mongodb/CollectingMessageListener.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/reactive/src/test/java/example/springdata/mongodb/people/ReactivePersonRepositoryIntegrationTest.java",
+      "line": 124,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/reactive/src/test/java/example/springdata/mongodb/people/ReactivePersonRepositoryIntegrationTest.java",
+      "line": 125,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 66,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 69,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 75,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 78,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 81,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 84,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 87,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/repository-metrics/src/test/java/example/springdata/mongodb/DemoApplicationTests.java",
+      "line": 90,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/text-search/src/test/java/example/springdata/mongodb/util/ConsoleResultPrinter.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/text-search/src/test/java/example/springdata/mongodb/util/ConsoleResultPrinter.java",
+      "line": 37,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/text-search/src/test/java/example/springdata/mongodb/util/ConsoleResultPrinter.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/transactions/src/test/java/example/springdata/mongodb/reactive/ReactiveManagedTransitionServiceTests.java",
+      "line": 112,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mongodb/vector-search/src/test/java/example/springdata/vector/MongoDBVectorSearchTest.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "multi-store/src/main/java/example/springdata/multistore/shop/Order.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/pubsub-listener/src/main/java/example/springdata/redis/listener/RedisListenerApplication.java",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/reactive/src/test/java/example/springdata/redis/commands/KeyCommandsTests.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/reactive/src/test/java/example/springdata/redis/commands/KeyCommandsTests.java",
+      "line": 78,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/reactive/src/test/java/example/springdata/redis/commands/KeyCommandsTests.java",
+      "line": 97,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/reactive/src/test/java/example/springdata/redis/commands/KeyCommandsTests.java",
+      "line": 99,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "redis/sentinel/src/main/java/example/springdata/redis/sentinel/RedisSentinelApplication.java",
+      "line": 62,
       "scope": "production"
     }
   ],
@@ -1541,10 +2294,20 @@
     }
   ],
   "dependencies": {
-    "springBootVersion": "2.7.x",
+    "springBootVersion": "4.0.4",
     "jakartaDetected": true,
     "javaxDetected": true,
     "hibernateDetected": true,
-    "springSecurityDetected": false
+    "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "spring-data-examples",
+    "name": "Spring Data Examples",
+    "repository": "https://github.com/spring-projects/spring-data-examples",
+    "requestedSource": "local",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/spring-data-examples",
+    "gitRevision": "083ff1c38c9c77339828accf106f2c8f4b8bb511",
+    "commands": []
   }
 }

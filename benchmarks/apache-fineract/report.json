@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.889Z",
+  "generatedAt": "2026-06-30T15:30:18.068Z",
   "project": {
     "name": "Apache Fineract",
     "root": "https://github.com/apache/fineract",
@@ -11908,5 +11908,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "apache-fineract",
+    "name": "Apache Fineract",
+    "repository": "https://github.com/apache/fineract",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

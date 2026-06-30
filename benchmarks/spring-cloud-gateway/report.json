@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.927Z",
+  "generatedAt": "2026-06-30T15:30:18.479Z",
   "project": {
     "name": "Spring Cloud Gateway",
     "root": "https://github.com/spring-cloud/spring-cloud-gateway",
@@ -1510,5 +1510,15 @@
     "javaxDetected": true,
     "hibernateDetected": false,
     "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "spring-cloud-gateway",
+    "name": "Spring Cloud Gateway",
+    "repository": "https://github.com/spring-cloud/spring-cloud-gateway",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

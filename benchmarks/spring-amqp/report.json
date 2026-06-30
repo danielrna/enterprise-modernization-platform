@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.944Z",
+  "generatedAt": "2026-06-30T15:30:18.487Z",
   "project": {
     "name": "Spring AMQP",
     "root": "https://github.com/spring-projects/spring-amqp",
@@ -1024,5 +1024,15 @@
     "javaxDetected": true,
     "hibernateDetected": false,
     "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "spring-amqp",
+    "name": "Spring AMQP",
+    "repository": "https://github.com/spring-projects/spring-amqp",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

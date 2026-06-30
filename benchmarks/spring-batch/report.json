@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.921Z",
+  "generatedAt": "2026-06-30T15:30:18.237Z",
   "project": {
     "name": "Spring Batch",
     "root": "https://github.com/spring-projects/spring-batch",
@@ -1096,5 +1096,15 @@
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "spring-batch",
+    "name": "Spring Batch",
+    "repository": "https://github.com/spring-projects/spring-batch",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

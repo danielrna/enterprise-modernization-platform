@@ -1,6 +1,6 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.940Z",
+  "generatedAt": "2026-06-30T15:30:18.485Z",
   "project": {
     "name": "Spring Session",
     "root": "https://github.com/spring-projects/spring-session",
@@ -790,5 +790,15 @@
     "javaxDetected": true,
     "hibernateDetected": false,
     "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "spring-session",
+    "name": "Spring Session",
+    "repository": "https://github.com/spring-projects/spring-session",
+    "requestedSource": "local",
+    "source": "catalog",
+    "checkoutPath": null,
+    "gitRevision": null,
+    "commands": []
   }
 }

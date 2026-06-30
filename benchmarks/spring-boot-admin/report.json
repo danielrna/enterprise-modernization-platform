@@ -1,391 +1,298 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T15:02:19.917Z",
+  "generatedAt": "2026-06-30T15:30:18.234Z",
   "project": {
     "name": "Spring Boot Admin",
-    "root": "https://github.com/codecentric/spring-boot-admin",
+    "root": "benchmark-repos/spring-boot-admin",
     "source": "https://github.com/codecentric/spring-boot-admin",
     "buildTools": [
       "Maven"
     ],
     "javaVersion": "17",
-    "springBootVersion": "2.7.18",
-    "fileCount": 1650,
-    "javaFileCount": 910
+    "springBootVersion": "unknown",
+    "fileCount": 1357,
+    "javaFileCount": 362
   },
   "pack": "spring-boot-3-readiness",
   "packApplicability": {
-    "applicable": true,
-    "confidence": 0.95,
-    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
-    "targetVersion": "3.x"
+    "applicable": false,
+    "confidence": 0.9,
+    "reason": "Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "recommendedPack": "jakarta-readiness"
   },
   "readiness": {
-    "overall": 70,
-    "categories": {
-      "java": 88,
-      "spring": 37,
-      "jakarta": 79,
-      "build": 90,
-      "security": 82,
-      "architecture": 42
-    },
-    "summary": "Ready with remediation work",
+    "overall": null,
+    "categories": {},
+    "summary": "Pack mismatch: Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "status": "not_applicable",
     "counts": {
       "critical": 1,
-      "warning": 33,
-      "info": 0
+      "warning": 17,
+      "info": 9
     }
   },
   "productionFindings": [
     {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerProperties.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "spring-boot-2",
+      "code": "spring-boot-version-unknown",
       "severity": "warning",
-      "title": "Spring Boot 2.7.18 detected",
-      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "title": "Spring Boot version unknown",
+      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
       "file": null,
       "line": null,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example1.java",
-      "line": 10,
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example2.java",
-      "line": 11,
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/ClientRuntimeHints.java",
+      "line": 45,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example3.java",
-      "line": 12,
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-boot-admin-samples/spring-boot-admin-sample-servlet/src/main/java/de/codecentric/boot/admin/sample/QuartzJobsConfiguration.java",
+      "line": 117,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example4.java",
-      "line": 13,
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-boot-admin-samples/spring-boot-admin-sample-servlet/src/main/java/de/codecentric/boot/admin/sample/QuartzJobsConfiguration.java",
+      "line": 131,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example5.java",
-      "line": 14,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/entities/Instance.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example6.java",
-      "line": 15,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/BuildVersion.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example7.java",
-      "line": 16,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Endpoint.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example8.java",
-      "line": 17,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Endpoints.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example9.java",
-      "line": 18,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Info.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example10.java",
-      "line": 19,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/InstanceId.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example11.java",
-      "line": 20,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Registration.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example12.java",
-      "line": 21,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/StatusInfo.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example13.java",
-      "line": 22,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Tags.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example16.java",
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java",
       "line": 25,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example17.java",
-      "line": 26,
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+      "line": 105,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example18.java",
-      "line": 27,
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+      "line": 185,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example19.java",
-      "line": 28,
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+      "line": 188,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example20.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example21.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example26.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example27.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example28.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example29.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example30.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example31.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example32.java",
-      "line": 41,
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+      "line": 190,
       "scope": "production"
     }
   ],
-  "testFindings": [],
+  "testFindings": [
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-client/src/test/java/de/codecentric/boot/admin/client/AbstractClientApplicationTest.java",
+      "line": 150,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+      "line": 80,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+      "line": 83,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+      "line": 89,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/config/AdminServerNotifierAutoConfigurationTest.java",
+      "line": 185,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/config/AdminServerPropertiesTest.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server-ui/src/test/java/de/codecentric/boot/admin/server/ui/config/AdminServerUiPropertiesTest.java",
+      "line": 43,
+      "scope": "test"
+    }
+  ],
   "findingSummary": {
     "production": {
       "critical": 1,
-      "warning": 33,
-      "info": 0
+      "warning": 10,
+      "info": 8
     },
     "test": {
       "critical": 0,
-      "warning": 0,
-      "info": 0
+      "warning": 7,
+      "info": 1
     },
     "byCode": {
-      "javax-usage": {
-        "code": "javax-usage",
-        "title": "javax namespace usage detected",
-        "severity": "critical",
-        "total": 1,
-        "production": 1,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "spring-boot-admin-server",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "javax-usage",
-            "severity": "critical",
-            "title": "javax namespace usage detected",
-            "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerProperties.java",
-            "line": 12,
-            "scope": "production"
-          }
-        ]
-      },
-      "spring-boot-2": {
-        "code": "spring-boot-2",
-        "title": "Spring Boot 2.7.18 detected",
+      "spring-boot-version-unknown": {
+        "code": "spring-boot-version-unknown",
+        "title": "Spring Boot version unknown",
         "severity": "warning",
         "total": 1,
         "production": 1,
@@ -398,73 +305,283 @@
         ],
         "examples": [
           {
-            "code": "spring-boot-2",
+            "code": "spring-boot-version-unknown",
             "severity": "warning",
-            "title": "Spring Boot 2.7.18 detected",
-            "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+            "title": "Spring Boot version unknown",
+            "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
             "file": null,
             "line": null,
             "scope": "production"
           }
         ]
       },
-      "field-injection": {
-        "code": "field-injection",
-        "title": "Spring field injection patterns",
-        "severity": "warning",
-        "total": 32,
-        "production": 32,
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
         "test": 0,
         "topModules": [
           {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "reflection-usage": {
+        "code": "reflection-usage",
+        "title": "Reflection usage",
+        "severity": "info",
+        "total": 6,
+        "production": 5,
+        "test": 1,
+        "topModules": [
+          {
+            "name": "spring-boot-admin-server-ui",
+            "count": 4
+          },
+          {
+            "name": "spring-boot-admin-client",
+            "count": 1
+          },
+          {
             "name": "spring-boot-admin-server",
-            "count": 32
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/ClientRuntimeHints.java",
+            "line": 45,
+            "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/config/AdminServerNotifierAutoConfigurationTest.java",
+            "line": 185,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+            "line": 105,
+            "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+            "line": 185,
+            "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+            "line": 188,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 7,
+        "production": 0,
+        "test": 7,
+        "topModules": [
+          {
+            "name": "spring-boot-admin-server",
+            "count": 5
+          },
+          {
+            "name": "spring-boot-admin-client",
+            "count": 1
+          },
+          {
+            "name": "spring-boot-admin-server-ui",
+            "count": 1
           }
         ],
         "examples": [
           {
             "code": "field-injection",
             "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example1.java",
-            "line": 10,
-            "scope": "production"
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-boot-admin-client/src/test/java/de/codecentric/boot/admin/client/AbstractClientApplicationTest.java",
+            "line": 150,
+            "scope": "test"
           },
           {
             "code": "field-injection",
             "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example2.java",
-            "line": 11,
-            "scope": "production"
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+            "line": 80,
+            "scope": "test"
           },
           {
             "code": "field-injection",
             "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example3.java",
-            "line": 12,
-            "scope": "production"
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+            "line": 83,
+            "scope": "test"
           },
           {
             "code": "field-injection",
             "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example4.java",
-            "line": 13,
-            "scope": "production"
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+            "line": 86,
+            "scope": "test"
           },
           {
             "code": "field-injection",
             "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example5.java",
-            "line": 14,
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+            "line": 89,
+            "scope": "test"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "java.util.Date usage",
+        "severity": "info",
+        "total": 3,
+        "production": 3,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-boot-admin-sample-servlet",
+            "count": 2
+          },
+          {
+            "name": "spring-boot-admin-server",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "spring-boot-admin-samples/spring-boot-admin-sample-servlet/src/main/java/de/codecentric/boot/admin/sample/QuartzJobsConfiguration.java",
+            "line": 117,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "spring-boot-admin-samples/spring-boot-admin-sample-servlet/src/main/java/de/codecentric/boot/admin/sample/QuartzJobsConfiguration.java",
+            "line": 131,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java",
+            "line": 25,
+            "scope": "production"
+          }
+        ]
+      },
+      "serializable-missing-serial-version": {
+        "code": "serializable-missing-serial-version",
+        "title": "Serializable type without serialVersionUID",
+        "severity": "warning",
+        "total": 9,
+        "production": 9,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-boot-admin-server",
+            "count": 9
+          }
+        ],
+        "examples": [
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/entities/Instance.java",
+            "line": 1,
+            "scope": "production"
+          },
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/BuildVersion.java",
+            "line": 1,
+            "scope": "production"
+          },
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Endpoint.java",
+            "line": 1,
+            "scope": "production"
+          },
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Endpoints.java",
+            "line": 1,
+            "scope": "production"
+          },
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Info.java",
+            "line": 1,
             "scope": "production"
           }
         ]
@@ -473,310 +590,247 @@
   },
   "findings": [
     {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerProperties.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "spring-boot-2",
+      "code": "spring-boot-version-unknown",
       "severity": "warning",
-      "title": "Spring Boot 2.7.18 detected",
-      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "title": "Spring Boot version unknown",
+      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
       "file": null,
       "line": null,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example1.java",
-      "line": 10,
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/ClientRuntimeHints.java",
+      "line": 45,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example2.java",
-      "line": 11,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-client/src/test/java/de/codecentric/boot/admin/client/AbstractClientApplicationTest.java",
+      "line": 150,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-boot-admin-samples/spring-boot-admin-sample-servlet/src/main/java/de/codecentric/boot/admin/sample/QuartzJobsConfiguration.java",
+      "line": 117,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example3.java",
-      "line": 12,
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-boot-admin-samples/spring-boot-admin-sample-servlet/src/main/java/de/codecentric/boot/admin/sample/QuartzJobsConfiguration.java",
+      "line": 131,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example4.java",
-      "line": 13,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/entities/Instance.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example5.java",
-      "line": 14,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/BuildVersion.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example6.java",
-      "line": 15,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Endpoint.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example7.java",
-      "line": 16,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Endpoints.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example8.java",
-      "line": 17,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Info.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example9.java",
-      "line": 18,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/InstanceId.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example10.java",
-      "line": 19,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Registration.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example11.java",
-      "line": 20,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/StatusInfo.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example12.java",
-      "line": 21,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/Tags.java",
+      "line": 1,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example16.java",
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java",
       "line": 25,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example17.java",
-      "line": 26,
-      "scope": "production"
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+      "line": 80,
+      "scope": "test"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example18.java",
-      "line": 27,
-      "scope": "production"
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+      "line": 83,
+      "scope": "test"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example19.java",
-      "line": 28,
-      "scope": "production"
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+      "line": 86,
+      "scope": "test"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example20.java",
-      "line": 29,
-      "scope": "production"
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/MonitorTimeoutIntegrationTest.java",
+      "line": 89,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/config/AdminServerNotifierAutoConfigurationTest.java",
+      "line": 185,
+      "scope": "test"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example21.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example24.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/config/AdminServerPropertiesTest.java",
       "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+      "line": 105,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+      "line": 185,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+      "line": 188,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java",
+      "line": 190,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example26.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example27.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example28.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example29.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example30.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example31.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/Example32.java",
-      "line": 41,
-      "scope": "production"
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-boot-admin-server-ui/src/test/java/de/codecentric/boot/admin/server/ui/config/AdminServerUiPropertiesTest.java",
+      "line": 43,
+      "scope": "test"
     }
   ],
   "evidence": [
@@ -786,7 +840,7 @@
     },
     {
       "name": "Spring Boot version detection",
-      "status": "passed"
+      "status": "warning"
     },
     {
       "name": "Jakarta namespace readiness",
@@ -803,10 +857,20 @@
     }
   ],
   "dependencies": {
-    "springBootVersion": "2.7.18",
-    "jakartaDetected": false,
+    "springBootVersion": "unknown",
+    "jakartaDetected": true,
     "javaxDetected": true,
-    "hibernateDetected": true,
+    "hibernateDetected": false,
     "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "spring-boot-admin",
+    "name": "Spring Boot Admin",
+    "repository": "https://github.com/codecentric/spring-boot-admin",
+    "requestedSource": "local",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/spring-boot-admin",
+    "gitRevision": "2df6deada70983944c54ee4b5e6e862c7d0fd6b0",
+    "commands": []
   }
 }
