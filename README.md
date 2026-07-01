@@ -8,9 +8,9 @@ The product is not a Java migration tool. The product is confidence that an appl
 
 ## Try In 5 Minutes
 
-Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.1.6
+Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.1.7
 
-Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.1.6/emp-smoke-report.zip
+Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.1.7/emp-smoke-report.zip
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform/migration-hub/spring-boot-2-to-3.html
 
@@ -19,6 +19,8 @@ Migration pack docs: https://danielrna.github.io/enterprise-modernization-platfo
 Knowledge Base: https://danielrna.github.io/enterprise-modernization-platform/knowledge-base/
 
 Release notes: https://danielrna.github.io/enterprise-modernization-platform/release-notes/
+
+Consultant demo: https://danielrna.github.io/enterprise-modernization-platform/consultant-demo.html
 
 Validated benchmark references:
 
@@ -52,7 +54,7 @@ reports/readiness/index.html
 Run the published Docker image:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.1.6 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.1.7 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
 ```
 
 Or build the CLI image locally:
@@ -91,7 +93,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.1.6
+        uses: danielrna/enterprise-modernization-platform@v0.1.7
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -208,10 +210,11 @@ node ./bin/emp.js hub --out docs/migration-hub
 npm run docs:generate
 npm run knowledge:generate
 npm run release-notes:generate
+npm run consultant:demo
 npm run benchmarks:publish
 ```
 
-`npm run docs:generate` generates static pack documentation from `packs/*.json`. `npm run knowledge:generate` generates Knowledge Base pages from `knowledge/*.json`. `npm run release-notes:generate` generates public HTML and GitHub-ready Markdown release notes from `features/catalog.json`. `npm run benchmarks:publish` uses the checked-in benchmark reports by default, regenerates the Migration Hub, pack docs, Knowledge Base, and release notes, writes `reports/benchmark-publish-summary.json`, and asserts the current report count. Use `npm run benchmarks:publish -- --min-count 60` for the current benchmark gate. Use `node ./scripts/benchmark-publish.js --source local --validate` or `--source clone --validate` when intentionally refreshing checkout-backed evidence.
+`npm run docs:generate` generates static pack documentation from `packs/*.json`. `npm run knowledge:generate` generates Knowledge Base pages from `knowledge/*.json`. `npm run release-notes:generate` generates public HTML and GitHub-ready Markdown release notes from `features/catalog.json`. `npm run consultant:demo` generates the Consultant Demo page and downloadable bundle. `npm run benchmarks:publish` uses the checked-in benchmark reports by default, regenerates the Migration Hub, pack docs, Knowledge Base, release notes, Consultant Demo, writes `reports/benchmark-publish-summary.json`, and asserts the current report count. Use `npm run benchmarks:publish -- --min-count 60` for the current benchmark gate. Use `node ./scripts/benchmark-publish.js --source local --validate` or `--source clone --validate` when intentionally refreshing checkout-backed evidence.
 
 ## Verification
 
@@ -236,7 +239,7 @@ Current automated coverage verifies:
 
 ## Current Status
 
-Implemented through v0.1.6:
+Implemented through v0.1.7:
 
 - CLI, Docker, MCP, and GitHub Action interfaces.
 - Spring Boot 2 to 3 readiness and transformation workflow.
@@ -247,6 +250,7 @@ Implemented through v0.1.6:
 - Trust evidence and static HTML/JSON reports.
 - 49 Spring Boot benchmark reports plus Jakarta readiness and 10 Hibernate readiness benchmark reports.
 - Validation status in benchmark reports and the Migration Hub, including 25 checkout-backed reports and 12 reports with passing compile/test evidence.
+- Consultant Demo page and downloadable consultant demo bundle.
 - Spring Boot 2 to 3 Migration Hub published through GitHub Pages.
 
 Still intentionally out of scope:

@@ -2,6 +2,58 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.1.7",
+      "title": "v0.1.7",
+      "date": "2026-07-01",
+      "summary": "Consultant Demo Pack for turning readiness evidence into a client-ready sales conversation.",
+      "features": [
+        {
+          "id": "consultant-demo-page",
+          "type": "documentation",
+          "name": "Consultant Demo page",
+          "audience": "Consultants using EMP in client conversations",
+          "summary": "Add a static demo page that packages green-path, partial-validation, and advanced Hibernate evidence into a short client walkthrough.",
+          "evidence": [
+            "Adds `docs/consultant-demo.html`.",
+            "Highlights Spring JavaConfig Sample, Java Hibernate Hello World, and Hypersistence Utils as the three recommended demo reports.",
+            "Includes a client conversation flow, commands to run, artifacts to send, and commercial next steps."
+          ],
+          "links": [
+            {
+              "label": "Consultant Demo",
+              "href": "docs/consultant-demo.html"
+            },
+            {
+              "label": "Hibernate Validation Failure Patterns",
+              "href": "docs/knowledge-base/hibernate-validation-failures.html"
+            }
+          ]
+        },
+        {
+          "id": "consultant-demo-bundle",
+          "type": "packaging",
+          "name": "Consultant demo bundle",
+          "audience": "Consultants preparing reusable client assets",
+          "summary": "Add a repeatable generator for a downloadable consultant demo bundle containing selected reports, Knowledge Base pages, release notes, and a README.",
+          "evidence": [
+            "Adds `npm run consultant:demo`.",
+            "Generates `reports/emp-consultant-demo.zip`.",
+            "Wires Consultant Demo generation into `npm run benchmarks:publish`."
+          ],
+          "links": [
+            {
+              "label": "Consultant Demo page",
+              "href": "docs/consultant-demo.html"
+            },
+            {
+              "label": "Release notes",
+              "href": "docs/release-notes/v0.1.7.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.1.6",
       "title": "v0.1.6",
       "date": "2026-07-01",

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v0.1.7
+
+- Added a static Consultant Demo page that packages green-path, partial-validation, and advanced Hibernate evidence for client conversations.
+- Added `npm run consultant:demo` to generate `docs/consultant-demo.html` and `reports/emp-consultant-demo.zip`.
+- Added the consultant demo to the benchmark publishing workflow and release verification surface.
+
 ## v0.1.6
 
 - Added five more Hibernate readiness benchmark reports, raising the public benchmark catalog to 60 reports.

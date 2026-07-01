@@ -7,6 +7,7 @@ import { generateKnowledgeBase } from '../src/knowledge-base.js';
 import { generatePackDocs } from '../src/pack-docs.js';
 import { buildNextActions, renderReport } from '../src/report.js';
 import { generateReleaseNotes } from '../src/release-notes.js';
+import { buildConsultantDemoBundle, generateConsultantDemo } from '../src/consultant-demo.js';
 
 const DEFAULT_MIN_COUNT = BENCHMARKS.length;
 
@@ -16,6 +17,8 @@ const hubDir = path.resolve(options.hub || 'docs/migration-hub');
 const packDocsDir = path.resolve(options['pack-docs'] || 'docs/packs');
 const knowledgeDir = path.resolve(options.knowledge || 'docs/knowledge-base');
 const releaseNotesDir = path.resolve(options['release-notes'] || 'docs/release-notes');
+const consultantDemoFile = path.resolve(options['consultant-demo'] || 'docs/consultant-demo.html');
+const consultantDemoBundle = path.resolve(options['consultant-demo-bundle'] || 'reports/emp-consultant-demo.zip');
 const source = options.source || 'existing';
 const minCount = Number(options['min-count'] || DEFAULT_MIN_COUNT);
 
@@ -45,6 +48,8 @@ await generateMigrationHub({ outDir: hubDir, benchmarks: reports, benchmarksDir:
 const packDocs = await generatePackDocs({ outDir: packDocsDir });
 const knowledgeBase = await generateKnowledgeBase({ outDir: knowledgeDir });
 const releaseNotes = await generateReleaseNotes({ outDir: releaseNotesDir });
+const consultantDemo = await generateConsultantDemo({ benchmarksDir: outDir, outFile: consultantDemoFile });
+const consultantBundle = await buildConsultantDemoBundle({ docsDir: path.resolve('docs'), outFile: consultantDemoBundle });
 
 const summary = await summarizePublishedReports(outDir);
 if (summary.total < minCount) {
@@ -61,11 +66,15 @@ await fs.writeFile(options.summary || 'reports/benchmark-publish-summary.json', 
   packDocsDir: path.relative(process.cwd(), packDocsDir),
   knowledgeDir: path.relative(process.cwd(), knowledgeDir),
   releaseNotesDir: path.relative(process.cwd(), releaseNotesDir),
+  consultantDemoFile: path.relative(process.cwd(), consultantDemoFile),
+  consultantDemoBundle: path.relative(process.cwd(), consultantDemoBundle),
   minCount,
   catalogCount: BENCHMARKS.length,
   packDocsCount: packDocs.count,
   knowledgeArticleCount: knowledgeBase.count,
   releaseNoteFeatureCount: releaseNotes.featureCount,
+  consultantDemoReportCount: consultantDemo.count,
+  consultantDemoBundleFileCount: consultantBundle.fileCount,
   ...summary
 }, null, 2)}\n`);
 
@@ -75,6 +84,7 @@ console.log(`Migration Hub: ${path.relative(process.cwd(), hubDir)}`);
 console.log(`Pack docs: ${path.relative(process.cwd(), packDocsDir)}`);
 console.log(`Knowledge Base: ${path.relative(process.cwd(), knowledgeDir)}`);
 console.log(`Release notes: ${path.relative(process.cwd(), releaseNotesDir)}`);
+console.log(`Consultant demo: ${path.relative(process.cwd(), consultantDemoFile)}`);
 
 async function loadPublishedReportSummaries(benchmarksDir) {
   const entries = await fs.readdir(benchmarksDir, { withFileTypes: true }).catch(() => []);

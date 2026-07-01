@@ -12,6 +12,7 @@ import { generateMigrationHub } from '../src/hub.js';
 import { generateKnowledgeBase } from '../src/knowledge-base.js';
 import { generatePackDocs } from '../src/pack-docs.js';
 import { generateReleaseNotes } from '../src/release-notes.js';
+import { buildConsultantDemoBundle, generateConsultantDemo } from '../src/consultant-demo.js';
 import { transformProject } from '../src/transform.js';
 import { loadEnterpriseRules, evaluateEnterpriseRules } from '../src/rules.js';
 import { handleMcpRequest } from '../src/mcp.js';
@@ -126,14 +127,32 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 4);
+  assert.equal(result.count, 5);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.1\.6/);
-  assert.match(html, /Hibernate checkout evidence batch two/);
-  assert.match(html, /checkout-backed validation evidence/);
+  assert.match(index, /v0\.1\.7/);
+  assert.match(html, /Consultant Demo page/);
+  assert.match(html, /client walkthrough/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Hibernate checkout evidence batch two/);
+  assert.match(markdown, /## Consultant Demo page/);
+});
+
+test('generates Consultant Demo page and bundle', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'emp-consultant-demo-'));
+  const page = path.join(root, 'consultant-demo.html');
+  const bundle = path.join(root, 'emp-consultant-demo.zip');
+
+  const result = await generateConsultantDemo({ outFile: page });
+  const bundleResult = await buildConsultantDemoBundle({ outFile: bundle, workDir: path.join(root, 'bundle') });
+  const html = await fs.readFile(page, 'utf8');
+  const bundleStat = await fs.stat(bundle);
+
+  assert.equal(result.count, 3);
+  assert.match(html, /Consultant Demo Pack/);
+  assert.match(html, /Spring JavaConfig Sample/);
+  assert.match(html, /Client Conversation/);
+  assert.equal(bundleResult.fileCount > 10, true);
+  assert.equal(bundleStat.size > 1000, true);
 });
 
 test('local benchmark reports include checkout evidence', async () => {
@@ -617,6 +636,7 @@ test('GitHub Action exposes Docker readiness analysis inputs', async () => {
   assert.match(action, /spring-boot-3-readiness/);
   assert.match(action, /--rules/);
   assert.match(dockerfile, /docker-entrypoint\.sh/);
+  assert.match(dockerfile, /zip/);
   assert.match(dockerfile, /COPY scripts \.\/scripts/);
   assert.match(dockerfile, /COPY features \.\/features/);
   assert.match(dockerfile, /COPY knowledge \.\/knowledge/);
