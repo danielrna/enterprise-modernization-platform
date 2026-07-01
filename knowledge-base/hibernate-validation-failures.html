@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hibernate Validation Failure Patterns</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:28px 0 10px; font-size:21px; letter-spacing:0; }
+    p { max-width:760px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .layout { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:18px 0; }
+    .tile { display:flex; flex-direction:column; gap:6px; min-height:118px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .tile span { color:var(--muted); }
+    .summary { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; margin:24px 0; }
+    .summary div { display:flex; flex-direction:column; gap:5px; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .summary span { color:var(--muted); }
+    .table-scroll { width:100%; overflow-x:auto; border-radius:8px; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    li { margin:6px 0; }
+    code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--muted); }
+    @media (max-width: 760px) { main { padding:24px 16px; } .layout,.summary { grid-template-columns:1fr; } h1 { font-size:27px; } table { min-width:760px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../packs/index.html">Packs</a>
+      <a href="index.html">Knowledge Base</a>
+      <a href="../release-notes/index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <section>
+      <h1>Hibernate Validation Failure Patterns</h1>
+      <p>Guidance for interpreting failed, partial, and timeout validation evidence in checkout-backed Hibernate readiness reports.</p>
+    </section>
+
+    <section class="summary">
+      <div><strong>Pack</strong><span><a href="../packs/hibernate-readiness.html">hibernate-readiness</a></span></div>
+      <div><strong>Risks</strong><span>5</span></div>
+      <div><strong>Benchmarks</strong><span>5</span></div>
+    </section>
+
+    <h2>Guide</h2>
+    <ul><li>Use validation failures as scope evidence. A failed compile or test run is not a useless report; it identifies the first environment or dependency blocker that must be cleared before upgrade execution.</li><li>Separate application risk from validation environment risk. Java toolchain mismatch, missing wrappers, blocked repositories, and Docker-dependent tests should be tracked differently from Hibernate API incompatibility.</li><li>Keep passing and failing examples together. Buyers need proof that the tool reports both green paths and messy real-world blockers without hiding failure evidence.</li></ul>
+
+    <h2>Common Risks</h2>
+    <div class="table-scroll"><table><thead><tr><th>Risk</th><th>Why It Matters</th><th>Recommendation</th></tr></thead><tbody>
+      <tr>
+        <td><strong>Java toolchain mismatch</strong><br><code>validation-failed</code></td>
+        <td>Older Hibernate examples may require Java 8 or older compiler source levels while the release image runs a modern JDK.</td>
+        <td>Capture the required runtime explicitly and rerun validation with EMP_JAVA_&lt;major&gt;_HOME when a client project depends on an older Java toolchain.</td>
+      </tr>
+      <tr>
+        <td><strong>Missing Maven or Gradle wrapper files</strong><br><code>validation-failed</code></td>
+        <td>Repositories sometimes commit wrapper scripts without wrapper jars, making otherwise valid source impossible to validate repeatably.</td>
+        <td>Prefer system Maven or Gradle when available, or ask the client to restore wrapper metadata before treating validation as authoritative.</td>
+      </tr>
+      <tr>
+        <td><strong>Test dependency gaps</strong><br><code>validation-failed</code></td>
+        <td>A project can compile production code while test compilation fails because old sample tests reference missing JUnit or plugin dependencies.</td>
+        <td>Record compile success separately from test failure and use that distinction in the migration estimate.</td>
+      </tr>
+      <tr>
+        <td><strong>External service assumptions</strong><br><code>validation-failed</code></td>
+        <td>Persistence tests may require Docker, PostgreSQL, MySQL, Elasticsearch, or other services that are not part of a static source checkout.</td>
+        <td>Mark the report as partial validation and ask for the service bootstrap path before promising runtime confidence.</td>
+      </tr>
+      <tr>
+        <td><strong>Timeout under release budget</strong><br><code>validation-failed</code></td>
+        <td>Large tutorial or integration-heavy repositories can exceed the current 120-second public validation budget even when the build might pass later.</td>
+        <td>Treat timeout evidence as a signal to split modules or raise the validation budget for paid client work.</td>
+      </tr></tbody></table></div>
+
+    <h2>Validation Notes</h2>
+    <ul><li>Passing compile plus failing tests is stronger than catalog-only evidence because it proves source and dependency resolution reached the test phase.</li><li>A timeout is not the same as an incompatibility. It records the current public evidence budget and should be revisited for client-specific work.</li><li>Reports should preserve command, duration, exit code, timeout status, and a short log excerpt so consultants can explain the blocker.</li><li>The recommended next action after validation failure is usually environment repair, dependency repair, or module narrowing before migration planning.</li></ul>
+
+    <h2>Benchmark Examples</h2>
+    <section class="layout">
+      <a class="tile" href="../benchmarks/hibernate-test-case-templates/index.html">
+        <strong>Hibernate Test Case Templates</strong>
+        <span>Compilation passes while Docker-dependent reactive tests fail without a valid Docker environment.</span>
+      </a>
+      <a class="tile" href="../benchmarks/hypersistence-utils/index.html">
+        <strong>Hypersistence Utils</strong>
+        <span>Validation records Java toolchain failure evidence for modules requiring an older JDK.</span>
+      </a>
+      <a class="tile" href="../benchmarks/high-performance-java-persistence/index.html">
+        <strong>High Performance Java Persistence</strong>
+        <span>Validation records timeout evidence under the current public check budget.</span>
+      </a>
+      <a class="tile" href="../benchmarks/hibernate-helloworld/index.html">
+        <strong>Java Hibernate Hello World</strong>
+        <span>Production compilation passes while test compilation records a missing JUnit dependency.</span>
+      </a>
+      <a class="tile" href="../benchmarks/spring-javaconfig-sample/index.html">
+        <strong>Spring JavaConfig Sample</strong>
+        <span>Compile and tests pass, giving a small green-path comparison for failed validation examples.</span>
+      </a></section>
+
+    <h2>What This Does Not Prove</h2>
+    <ul><li>Validation failure evidence does not prove a Hibernate migration is impossible.</li><li>Validation failure evidence does not replace maintainer knowledge about required local services.</li><li>A passing public validation run does not prove production database behavior.</li><li>A timeout under the public budget should not be used as the only estimate for paid remediation work.</li></ul>
+  </main></body>
+</html>
