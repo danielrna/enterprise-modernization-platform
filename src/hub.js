@@ -1,10 +1,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const RELEASE_URL = 'https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.1.3';
-const SAMPLE_REPORT_URL = 'https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.1.3/emp-smoke-report.zip';
-const DOCKER_IMAGE = 'danielrna/enterprise-modernization-platform:v0.1.3';
-const GITHUB_ACTION = 'danielrna/enterprise-modernization-platform@v0.1.3';
+const RELEASE_VERSION = 'v0.1.4';
+const RELEASE_URL = `https://github.com/danielrna/enterprise-modernization-platform/releases/tag/${RELEASE_VERSION}`;
+const SAMPLE_REPORT_URL = `https://github.com/danielrna/enterprise-modernization-platform/releases/download/${RELEASE_VERSION}/emp-smoke-report.zip`;
+const DOCKER_IMAGE = `danielrna/enterprise-modernization-platform:${RELEASE_VERSION}`;
+const GITHUB_ACTION = `danielrna/enterprise-modernization-platform@${RELEASE_VERSION}`;
 
 export async function generateMigrationHub({ outDir, benchmarks = [], benchmarksDir = path.resolve(outDir, '..', 'benchmarks') }) {
   await fs.mkdir(outDir, { recursive: true });
@@ -59,7 +60,7 @@ function renderMigrationPage(benchmarks) {
       <div class="actions">
         <a class="primary" href="#try-in-5-minutes">Run in 5 minutes</a>
         <a href="${SAMPLE_REPORT_URL}">Download sample report</a>
-        <a href="${RELEASE_URL}">Release v0.1.3</a>
+        <a href="${RELEASE_URL}">Release ${RELEASE_VERSION}</a>
       </div>
     </section>
 
@@ -109,7 +110,7 @@ function renderMigrationPage(benchmarks) {
       <a href="../benchmarks/gs-spring-boot-27/index.html">Use the validated benchmark as reference</a>
       <a href="../editions.html">Compare editions</a>
       <a href="../contact.html">Request access</a>
-      <a href="${RELEASE_URL}">Download v0.1.3</a>
+      <a href="${RELEASE_URL}">Download ${RELEASE_VERSION}</a>
     </section>
 
     <h2 id="try-in-5-minutes">Try in 5 Minutes</h2>

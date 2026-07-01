@@ -2,6 +2,41 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.1.4",
+      "title": "v0.1.4",
+      "date": "2026-07-01",
+      "summary": "Hibernate evidence upgrade with checkout-backed compile and test validation for Hibernate ORM Demos.",
+      "features": [
+        {
+          "id": "hibernate-demos-checkout-validation",
+          "type": "evidence",
+          "name": "Hibernate ORM Demos checkout validation",
+          "audience": "Consultants and persistence modernization reviewers",
+          "summary": "Promote Hibernate ORM Demos from catalog-only Hibernate readiness evidence to checkout-backed evidence with passing Maven-wrapper compile and test validation.",
+          "evidence": [
+            "Analyzes `hibernate/hibernate-demos` from the `hibernate-search/hsearch-with-elasticsearch` checkout subdirectory.",
+            "Publishes checkout-backed Hibernate readiness report evidence with readiness `83%`.",
+            "Records compile and test validation as `passed` with validation confidence `95%`.",
+            "Raises the public evidence set to 17 checkout-backed reports and 8 reports with passing validation."
+          ],
+          "links": [
+            {
+              "label": "Hibernate ORM Demos report",
+              "href": "docs/benchmarks/hibernate-demos/index.html"
+            },
+            {
+              "label": "Hibernate Knowledge Base",
+              "href": "docs/knowledge-base/hibernate-readiness.html"
+            },
+            {
+              "label": "Benchmark index",
+              "href": "docs/benchmarks/index.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.1.3",
       "title": "v0.1.3",
       "date": "2026-07-01",

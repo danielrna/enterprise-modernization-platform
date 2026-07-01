@@ -116,13 +116,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 1);
+  assert.equal(result.count, 2);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(html, /Release notes from feature metadata/);
-  assert.match(html, /Pack documentation generation/);
+  assert.match(index, /v0\.1\.4/);
+  assert.match(html, /Hibernate ORM Demos checkout validation/);
+  assert.match(html, /checkout-backed evidence/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Release notes from feature metadata/);
+  assert.match(markdown, /## Hibernate ORM Demos checkout validation/);
 });
 
 test('local benchmark reports include checkout evidence', async () => {

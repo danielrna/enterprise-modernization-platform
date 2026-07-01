@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.1.4
+
 - Promoted Hibernate ORM Demos to checkout-backed Hibernate readiness evidence with passing Maven-wrapper compile/test validation.
 
 ## v0.1.3
