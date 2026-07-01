@@ -8,6 +8,7 @@ import { scoreReadiness } from '../src/readiness.js';
 import { writeReportBundle } from '../src/report.js';
 import { BENCHMARKS, publishBenchmarks } from '../src/benchmarks.js';
 import { generateMigrationHub } from '../src/hub.js';
+import { generateKnowledgeBase } from '../src/knowledge-base.js';
 import { generatePackDocs } from '../src/pack-docs.js';
 import { generateReleaseNotes } from '../src/release-notes.js';
 import { transformProject } from '../src/transform.js';
@@ -84,6 +85,22 @@ test('generates documentation pages from pack metadata', async () => {
   assert.match(springBoot, /node \.\/bin\/emp\.js analyze \/path\/to\/app --pack spring-boot-3-readiness/);
   assert.match(java, /binary compatibility/);
   assert.match(hibernate, /Hibernate 5\.x to 6\.x readiness/);
+});
+
+test('generates Knowledge Base pages from structured guidance', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'emp-knowledge-base-'));
+  const outDir = path.join(root, 'knowledge-base');
+
+  const result = await generateKnowledgeBase({ knowledgeDir: path.resolve('knowledge'), outDir });
+  const index = await fs.readFile(path.join(outDir, 'index.html'), 'utf8');
+  const hibernate = await fs.readFile(path.join(outDir, 'hibernate-readiness.html'), 'utf8');
+
+  assert.equal(result.count, 1);
+  assert.match(index, /Knowledge Base/);
+  assert.match(index, /Hibernate Readiness Knowledge Base/);
+  assert.match(hibernate, /Legacy Criteria API/);
+  assert.match(hibernate, /What This Does Not Prove/);
+  assert.match(hibernate, /hibernate-demos/);
 });
 
 test('generates release notes from feature metadata', async () => {
@@ -558,16 +575,20 @@ test('GitHub Action exposes Docker readiness analysis inputs', async () => {
   assert.match(dockerfile, /docker-entrypoint\.sh/);
   assert.match(dockerfile, /COPY scripts \.\/scripts/);
   assert.match(dockerfile, /COPY features \.\/features/);
+  assert.match(dockerfile, /COPY knowledge \.\/knowledge/);
   assert.match(entrypoint, /GITHUB_WORKSPACE:-\/workspace/);
   assert.match(await fs.readFile(path.resolve('package.json'), 'utf8'), /"release:verify"/);
   assert.match(await fs.readFile(path.resolve('package.json'), 'utf8'), /"ci:verify"/);
   assert.match(await fs.readFile(path.resolve('package.json'), 'utf8'), /"docs:generate"/);
+  assert.match(await fs.readFile(path.resolve('package.json'), 'utf8'), /"knowledge:generate"/);
   assert.match(await fs.readFile(path.resolve('package.json'), 'utf8'), /"release-notes:generate"/);
   assert.match(await fs.readFile(path.resolve('package.json'), 'utf8'), /pack-docs\.js/);
+  assert.match(await fs.readFile(path.resolve('package.json'), 'utf8'), /knowledge-base\.js/);
   assert.match(await fs.readFile(path.resolve('package.json'), 'utf8'), /release-notes\.js/);
   assert.match(await fs.readFile(path.resolve('scripts/ci-examples-verify.js'), 'utf8'), /command_equivalent_verified/);
   assert.match(await fs.readFile(path.resolve('scripts/release-verify.js'), 'utf8'), /Release verification passed/);
   assert.match(await fs.readFile(path.resolve('scripts/benchmark-publish.js'), 'utf8'), /generatePackDocs/);
+  assert.match(await fs.readFile(path.resolve('scripts/benchmark-publish.js'), 'utf8'), /generateKnowledgeBase/);
   assert.match(await fs.readFile(path.resolve('scripts/benchmark-publish.js'), 'utf8'), /generateReleaseNotes/);
   assert.match(githubDocs, /actions\/upload-artifact@v4/);
   assert.match(githubDocs, /emp-report\/index\.html/);

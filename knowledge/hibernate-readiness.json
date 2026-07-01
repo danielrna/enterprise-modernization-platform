@@ -1,0 +1,82 @@
+{
+  "id": "hibernate-readiness",
+  "title": "Hibernate Readiness Knowledge Base",
+  "pack": "hibernate-readiness",
+  "summary": "Guidance for using EMP Hibernate readiness evidence during Hibernate 5.x to 6.x modernization planning.",
+  "guide": [
+    "Start with applicability. The Hibernate readiness pack is useful only when Hibernate ORM usage is detected from dependencies, imports, or mapping files.",
+    "Separate migration tracks. Jakarta namespace work, Hibernate API compatibility, custom type migration, and validation evidence should be planned as related but distinct workstreams.",
+    "Treat the static report as triage evidence. It identifies risk areas and repeatable discussion points before a consultant promises upgrade execution."
+  ],
+  "risks": [
+    {
+      "name": "Legacy Criteria API",
+      "signal": "hibernate-legacy-criteria",
+      "whyItMatters": "Legacy org.hibernate.Criteria usage does not map cleanly to modern Hibernate migration paths.",
+      "recommendation": "Replace or isolate legacy Criteria usage before relying on automated upgrade validation."
+    },
+    {
+      "name": "Direct Session API usage",
+      "signal": "hibernate-session-api",
+      "whyItMatters": "Direct Session and SessionFactory usage often hides transaction, flush, and lifecycle assumptions.",
+      "recommendation": "Review Session-specific code paths and validate them with compile and test evidence."
+    },
+    {
+      "name": "Custom type integrations",
+      "signal": "hibernate-custom-type",
+      "whyItMatters": "UserType, BasicType, and CompositeUserType integrations are sensitive to Hibernate type-system changes.",
+      "recommendation": "Inventory custom types and test them against the target Hibernate version before broad migration work."
+    },
+    {
+      "name": "Hibernate XML mappings",
+      "signal": "hibernate-xml-mapping",
+      "whyItMatters": "hbm.xml mappings are easy to miss in source-only reviews and need explicit validation.",
+      "recommendation": "Keep XML mapping files in scope for upgrade review and test coverage."
+    },
+    {
+      "name": "javax and Jakarta overlap",
+      "signal": "javax-usage",
+      "whyItMatters": "Hibernate 6 work often overlaps with Jakarta namespace migration in Spring Boot 3 and modern Jakarta EE stacks.",
+      "recommendation": "Track namespace migration separately so ORM API risk is not hidden behind import rewrites."
+    }
+  ],
+  "validationNotes": [
+    "Catalog-backed reports prove the report shape and known risk vocabulary, not checkout compile success.",
+    "Checkout-backed validation should capture compile and test status before a migration estimate is treated as execution-ready.",
+    "A passing compile/test run increases confidence, but domain persistence behavior still needs project-specific test coverage.",
+    "Failed validation evidence is still useful when it honestly records build compatibility, runtime, or dependency problems."
+  ],
+  "benchmarks": [
+    {
+      "slug": "hibernate-demos",
+      "name": "Hibernate ORM Demos",
+      "note": "Small Hibernate-focused examples that show direct ORM API usage."
+    },
+    {
+      "slug": "hibernate-test-case-templates",
+      "name": "Hibernate Test Case Templates",
+      "note": "Templates that exercise Hibernate-specific testing and reproduction patterns."
+    },
+    {
+      "slug": "hypersistence-utils",
+      "name": "Hypersistence Utils",
+      "note": "Custom type and advanced Hibernate integration examples."
+    },
+    {
+      "slug": "high-performance-java-persistence",
+      "name": "High Performance Java Persistence",
+      "note": "Persistence examples with direct Hibernate and JPA usage patterns."
+    },
+    {
+      "slug": "baeldung-hibernate-tutorials",
+      "name": "Baeldung Hibernate Tutorials",
+      "note": "Tutorial material with broad Hibernate API and XML mapping examples."
+    }
+  ],
+  "limits": [
+    "The readiness report does not prove runtime query correctness.",
+    "The readiness report does not replace schema migration review.",
+    "The readiness report does not guarantee custom Hibernate types are compatible with the target version.",
+    "The readiness report does not apply source transformations for Hibernate APIs."
+  ]
+}

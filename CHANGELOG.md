@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added generated Knowledge Base pages, starting with Hibernate readiness guidance from pack and benchmark evidence.
 - Added the first Hibernate benchmark catalog batch with 5 catalog-backed Hibernate readiness reports.
 - Added the Month 7 Hibernate readiness pack with ORM usage detection and static upgrade-risk signals.
 - Added release-note generation from `features/catalog.json`, including static HTML and GitHub-ready Markdown output under `docs/release-notes/`.

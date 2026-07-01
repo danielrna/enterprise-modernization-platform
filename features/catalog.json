@@ -48,6 +48,28 @@
           ]
         },
         {
+          "id": "hibernate-knowledge-base",
+          "type": "documentation",
+          "name": "Hibernate Knowledge Base",
+          "audience": "Consultants and enterprise modernization reviewers",
+          "summary": "Generate a Knowledge Base section from structured guidance, starting with Hibernate readiness risks, validation notes, benchmark examples, and report limits.",
+          "evidence": [
+            "Adds `knowledge/hibernate-readiness.json`.",
+            "Adds `npm run knowledge:generate`.",
+            "Publishes static Knowledge Base pages under `docs/knowledge-base/`."
+          ],
+          "links": [
+            {
+              "label": "Hibernate Knowledge Base",
+              "href": "docs/knowledge-base/hibernate-readiness.html"
+            },
+            {
+              "label": "Knowledge Base index",
+              "href": "docs/knowledge-base/index.html"
+            }
+          ]
+        },
+        {
           "id": "pack-docs",
           "type": "documentation",
           "name": "Pack documentation generation",

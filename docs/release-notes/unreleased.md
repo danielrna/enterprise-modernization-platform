@@ -29,6 +29,20 @@ Links:
 - [Hibernate benchmark example](docs/benchmarks/hibernate-demos/index.html)
 - [Benchmark index](docs/benchmarks/index.html)
 
+## Hibernate Knowledge Base
+
+Generate a Knowledge Base section from structured guidance, starting with Hibernate readiness risks, validation notes, benchmark examples, and report limits.
+
+Audience: Consultants and enterprise modernization reviewers
+
+- Adds `knowledge/hibernate-readiness.json`.
+- Adds `npm run knowledge:generate`.
+- Publishes static Knowledge Base pages under `docs/knowledge-base/`.
+
+Links:
+- [Hibernate Knowledge Base](docs/knowledge-base/hibernate-readiness.html)
+- [Knowledge Base index](docs/knowledge-base/index.html)
+
 ## Pack documentation generation
 
 Generate static pack documentation from `packs/*.json`, including supported checks, readiness categories, report sections, and execution commands.

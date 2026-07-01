@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hibernate Readiness Knowledge Base</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:28px 0 10px; font-size:21px; letter-spacing:0; }
+    p { max-width:760px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .layout { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:18px 0; }
+    .tile { display:flex; flex-direction:column; gap:6px; min-height:118px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .tile span { color:var(--muted); }
+    .summary { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; margin:24px 0; }
+    .summary div { display:flex; flex-direction:column; gap:5px; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .summary span { color:var(--muted); }
+    .table-scroll { width:100%; overflow-x:auto; border-radius:8px; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    li { margin:6px 0; }
+    code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--muted); }
+    @media (max-width: 760px) { main { padding:24px 16px; } .layout,.summary { grid-template-columns:1fr; } h1 { font-size:27px; } table { min-width:760px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../packs/index.html">Packs</a>
+      <a href="index.html">Knowledge Base</a>
+      <a href="../release-notes/index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <section>
+      <h1>Hibernate Readiness Knowledge Base</h1>
+      <p>Guidance for using EMP Hibernate readiness evidence during Hibernate 5.x to 6.x modernization planning.</p>
+    </section>
+
+    <section class="summary">
+      <div><strong>Pack</strong><span><a href="../packs/hibernate-readiness.html">hibernate-readiness</a></span></div>
+      <div><strong>Risks</strong><span>5</span></div>
+      <div><strong>Benchmarks</strong><span>5</span></div>
+    </section>
+
+    <h2>Guide</h2>
+    <ul><li>Start with applicability. The Hibernate readiness pack is useful only when Hibernate ORM usage is detected from dependencies, imports, or mapping files.</li><li>Separate migration tracks. Jakarta namespace work, Hibernate API compatibility, custom type migration, and validation evidence should be planned as related but distinct workstreams.</li><li>Treat the static report as triage evidence. It identifies risk areas and repeatable discussion points before a consultant promises upgrade execution.</li></ul>
+
+    <h2>Common Risks</h2>
+    <div class="table-scroll"><table><thead><tr><th>Risk</th><th>Why It Matters</th><th>Recommendation</th></tr></thead><tbody>
+      <tr>
+        <td><strong>Legacy Criteria API</strong><br><code>hibernate-legacy-criteria</code></td>
+        <td>Legacy org.hibernate.Criteria usage does not map cleanly to modern Hibernate migration paths.</td>
+        <td>Replace or isolate legacy Criteria usage before relying on automated upgrade validation.</td>
+      </tr>
+      <tr>
+        <td><strong>Direct Session API usage</strong><br><code>hibernate-session-api</code></td>
+        <td>Direct Session and SessionFactory usage often hides transaction, flush, and lifecycle assumptions.</td>
+        <td>Review Session-specific code paths and validate them with compile and test evidence.</td>
+      </tr>
+      <tr>
+        <td><strong>Custom type integrations</strong><br><code>hibernate-custom-type</code></td>
+        <td>UserType, BasicType, and CompositeUserType integrations are sensitive to Hibernate type-system changes.</td>
+        <td>Inventory custom types and test them against the target Hibernate version before broad migration work.</td>
+      </tr>
+      <tr>
+        <td><strong>Hibernate XML mappings</strong><br><code>hibernate-xml-mapping</code></td>
+        <td>hbm.xml mappings are easy to miss in source-only reviews and need explicit validation.</td>
+        <td>Keep XML mapping files in scope for upgrade review and test coverage.</td>
+      </tr>
+      <tr>
+        <td><strong>javax and Jakarta overlap</strong><br><code>javax-usage</code></td>
+        <td>Hibernate 6 work often overlaps with Jakarta namespace migration in Spring Boot 3 and modern Jakarta EE stacks.</td>
+        <td>Track namespace migration separately so ORM API risk is not hidden behind import rewrites.</td>
+      </tr></tbody></table></div>
+
+    <h2>Validation Notes</h2>
+    <ul><li>Catalog-backed reports prove the report shape and known risk vocabulary, not checkout compile success.</li><li>Checkout-backed validation should capture compile and test status before a migration estimate is treated as execution-ready.</li><li>A passing compile/test run increases confidence, but domain persistence behavior still needs project-specific test coverage.</li><li>Failed validation evidence is still useful when it honestly records build compatibility, runtime, or dependency problems.</li></ul>
+
+    <h2>Benchmark Examples</h2>
+    <section class="layout">
+      <a class="tile" href="../benchmarks/hibernate-demos/index.html">
+        <strong>Hibernate ORM Demos</strong>
+        <span>Small Hibernate-focused examples that show direct ORM API usage.</span>
+      </a>
+      <a class="tile" href="../benchmarks/hibernate-test-case-templates/index.html">
+        <strong>Hibernate Test Case Templates</strong>
+        <span>Templates that exercise Hibernate-specific testing and reproduction patterns.</span>
+      </a>
+      <a class="tile" href="../benchmarks/hypersistence-utils/index.html">
+        <strong>Hypersistence Utils</strong>
+        <span>Custom type and advanced Hibernate integration examples.</span>
+      </a>
+      <a class="tile" href="../benchmarks/high-performance-java-persistence/index.html">
+        <strong>High Performance Java Persistence</strong>
+        <span>Persistence examples with direct Hibernate and JPA usage patterns.</span>
+      </a>
+      <a class="tile" href="../benchmarks/baeldung-hibernate-tutorials/index.html">
+        <strong>Baeldung Hibernate Tutorials</strong>
+        <span>Tutorial material with broad Hibernate API and XML mapping examples.</span>
+      </a></section>
+
+    <h2>What This Does Not Prove</h2>
+    <ul><li>The readiness report does not prove runtime query correctness.</li><li>The readiness report does not replace schema migration review.</li><li>The readiness report does not guarantee custom Hibernate types are compatible with the target version.</li><li>The readiness report does not apply source transformations for Hibernate APIs.</li></ul>
+  </main></body>
+</html>

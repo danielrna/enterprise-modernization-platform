@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { BENCHMARKS, publishBenchmarks } from '../src/benchmarks.js';
 import { generateMigrationHub } from '../src/hub.js';
+import { generateKnowledgeBase } from '../src/knowledge-base.js';
 import { generatePackDocs } from '../src/pack-docs.js';
 import { generateReleaseNotes } from '../src/release-notes.js';
 
@@ -12,6 +13,7 @@ const { options } = parseOptions(process.argv.slice(2));
 const outDir = path.resolve(options.out || 'docs/benchmarks');
 const hubDir = path.resolve(options.hub || 'docs/migration-hub');
 const packDocsDir = path.resolve(options['pack-docs'] || 'docs/packs');
+const knowledgeDir = path.resolve(options.knowledge || 'docs/knowledge-base');
 const releaseNotesDir = path.resolve(options['release-notes'] || 'docs/release-notes');
 const source = options.source || 'existing';
 const minCount = Number(options['min-count'] || DEFAULT_MIN_COUNT);
@@ -38,6 +40,7 @@ if (source === 'existing') {
 
 await generateMigrationHub({ outDir: hubDir, benchmarks: reports, benchmarksDir: outDir });
 const packDocs = await generatePackDocs({ outDir: packDocsDir });
+const knowledgeBase = await generateKnowledgeBase({ outDir: knowledgeDir });
 const releaseNotes = await generateReleaseNotes({ outDir: releaseNotesDir });
 
 const summary = await summarizePublishedReports(outDir);
@@ -53,10 +56,12 @@ await fs.writeFile(options.summary || 'reports/benchmark-publish-summary.json', 
   outDir: path.relative(process.cwd(), outDir),
   hubDir: path.relative(process.cwd(), hubDir),
   packDocsDir: path.relative(process.cwd(), packDocsDir),
+  knowledgeDir: path.relative(process.cwd(), knowledgeDir),
   releaseNotesDir: path.relative(process.cwd(), releaseNotesDir),
   minCount,
   catalogCount: BENCHMARKS.length,
   packDocsCount: packDocs.count,
+  knowledgeArticleCount: knowledgeBase.count,
   releaseNoteFeatureCount: releaseNotes.featureCount,
   ...summary
 }, null, 2)}\n`);
@@ -65,6 +70,7 @@ console.log(`Published ${summary.total} benchmark reports from ${source} source.
 console.log(`Checkout-backed: ${summary.checkoutBacked}; validated passed: ${summary.validationPassed}.`);
 console.log(`Migration Hub: ${path.relative(process.cwd(), hubDir)}`);
 console.log(`Pack docs: ${path.relative(process.cwd(), packDocsDir)}`);
+console.log(`Knowledge Base: ${path.relative(process.cwd(), knowledgeDir)}`);
 console.log(`Release notes: ${path.relative(process.cwd(), releaseNotesDir)}`);
 
 async function loadPublishedReportSummaries(benchmarksDir) {

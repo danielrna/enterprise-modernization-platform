@@ -16,6 +16,8 @@ Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-moderni
 
 Migration pack docs: https://danielrna.github.io/enterprise-modernization-platform-public/packs/
 
+Knowledge Base: https://danielrna.github.io/enterprise-modernization-platform-public/knowledge-base/
+
 Release notes: https://danielrna.github.io/enterprise-modernization-platform-public/release-notes/
 
 Validated benchmark references:
@@ -204,11 +206,12 @@ node ./bin/emp.js benchmarks --out docs/benchmarks
 node ./bin/emp.js benchmarks --source local --validate --validation-timeout-ms 30000 --out docs/benchmarks
 node ./bin/emp.js hub --out docs/migration-hub
 npm run docs:generate
+npm run knowledge:generate
 npm run release-notes:generate
 npm run benchmarks:publish
 ```
 
-`npm run docs:generate` generates static pack documentation from `packs/*.json`. `npm run release-notes:generate` generates public HTML and GitHub-ready Markdown release notes from `features/catalog.json`. `npm run benchmarks:publish` uses the checked-in benchmark reports by default, regenerates the Migration Hub, pack docs, and release notes, writes `reports/benchmark-publish-summary.json`, and asserts the current report count. Use `npm run benchmarks:publish -- --min-count 50` for the Month 6 benchmark gate. Use `node ./scripts/benchmark-publish.js --source local --validate` or `--source clone --validate` when intentionally refreshing checkout-backed evidence.
+`npm run docs:generate` generates static pack documentation from `packs/*.json`. `npm run knowledge:generate` generates Knowledge Base pages from `knowledge/*.json`. `npm run release-notes:generate` generates public HTML and GitHub-ready Markdown release notes from `features/catalog.json`. `npm run benchmarks:publish` uses the checked-in benchmark reports by default, regenerates the Migration Hub, pack docs, Knowledge Base, and release notes, writes `reports/benchmark-publish-summary.json`, and asserts the current report count. Use `npm run benchmarks:publish -- --min-count 55` for the current benchmark gate. Use `node ./scripts/benchmark-publish.js --source local --validate` or `--source clone --validate` when intentionally refreshing checkout-backed evidence.
 
 ## Verification
 
