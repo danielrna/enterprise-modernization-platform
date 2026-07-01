@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added Trust Engine factors with confidence impacts and explicit evidence reasons.
 - Added report next actions in JSON and HTML so readiness reports recommend prioritized follow-up work.
 - Added generated Knowledge Base pages, starting with Hibernate readiness guidance from pack and benchmark evidence.
 - Added the first Hibernate benchmark catalog batch with 5 catalog-backed Hibernate readiness reports.

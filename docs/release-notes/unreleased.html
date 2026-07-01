@@ -51,10 +51,19 @@
     </section>
     <section class="summary">
       <div><strong>Date</strong><span>Pending</span></div>
-      <div><strong>Features</strong><span>8</span></div>
+      <div><strong>Features</strong><span>9</span></div>
       <div><strong>Draft</strong><span><a href="unreleased.md">Markdown</a></span></div>
     </section>
     <section class="features">
+      <article class="feature">
+        <small>trust</small>
+        <h2>Trust Engine confidence factors</h2>
+        <p>Add explicit Trust Engine factors that explain confidence changes with status, impact, reason, and evidence.</p>
+        <div class="meta"><strong>Audience</strong><span>Consultants and Professional-tier reviewers</span></div>
+        <h3>Evidence</h3>
+        <ul><li>Adds <code>trust.factors[]</code> to Professional trust JSON.</li><li>Adds a <code>Trust Factors</code> table to HTML reports.</li><li>Explains compile, test, rollback, compatibility, benchmark source, and validation confidence contributions.</li></ul>
+        <h3>Links</h3><div class="actions"><a href="../schemas/trust-evidence.schema.json">Trust evidence schema</a><a href="../schemas/report.schema.json">Report schema</a></div>
+      </article>
       <article class="feature">
         <small>report</small>
         <h2>Report next actions</h2>

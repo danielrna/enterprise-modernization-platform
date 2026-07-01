@@ -158,7 +158,7 @@
     },
     "trust": {
       "type": "object",
-      "required": ["schemaVersion", "tier", "confidence", "summary", "checks"],
+      "required": ["schemaVersion", "tier", "confidence", "summary", "checks", "factors"],
       "properties": {
         "schemaVersion": { "const": "emp.trust.v1" },
         "tier": { "type": "string", "enum": ["professional"] },
@@ -173,6 +173,22 @@
               "name": { "type": "string" },
               "status": { "type": "string", "enum": ["passed", "warning", "failed", "pending", "skipped"] },
               "note": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "factors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "status", "impact", "reason"],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "status": { "type": "string", "enum": ["passed", "warning", "failed", "missing"] },
+              "impact": { "type": "integer" },
+              "reason": { "type": "string" },
+              "evidence": { "type": ["string", "null"] }
             },
             "additionalProperties": false
           }

@@ -387,7 +387,30 @@ public class LegacyPayload implements Serializable {
   assert.equal(report.trust.tier, 'professional');
   assert.equal(report.trust.checks.some((check) => check.name === 'Binary compatibility'), true);
   assert.equal(report.trust.checks.some((check) => check.name === 'Public API compatibility'), true);
-  assert.match(await fs.readFile(bundle.htmlPath, 'utf8'), /Trust Engine/);
+  assert.equal(report.trust.factors.some((factor) => factor.id === 'compile-validation' && factor.status === 'missing'), true);
+  assert.equal(report.trust.factors.some((factor) => factor.id === 'binary-compatibility-risk' && factor.impact < 0), true);
+  assert.match(await fs.readFile(bundle.htmlPath, 'utf8'), /Trust Factors/);
+});
+
+test('Trust Engine factors reward passing validation evidence', async () => {
+  const root = await makeSpringProject();
+  const outDir = path.join(root, 'report');
+  await fs.writeFile(path.join(root, 'mvnw'), `#!/bin/sh
+echo "fake maven $*"
+exit 0
+`);
+  await fs.chmod(path.join(root, 'mvnw'), 0o755);
+
+  const transformation = await transformProject({ root, mode: 'apply', validate: true });
+  const scan = await analyzeProject({ root });
+  const readiness = scoreReadiness(scan);
+  const bundle = await writeReportBundle({ outDir, scan, readiness, transformation });
+  const report = JSON.parse(await fs.readFile(bundle.jsonPath, 'utf8'));
+
+  assert.equal(report.trust.factors.some((factor) => factor.id === 'compile-validation' && factor.status === 'passed' && factor.impact > 0), true);
+  assert.equal(report.trust.factors.some((factor) => factor.id === 'test-validation' && factor.status === 'passed' && factor.impact > 0), true);
+  assert.equal(report.trust.factors.some((factor) => factor.id === 'rollback-evidence' && factor.status === 'passed'), true);
+  assert.equal(report.trust.confidence >= 80, true);
 });
 
 test('Hibernate readiness pack detects ORM upgrade risks', async () => {

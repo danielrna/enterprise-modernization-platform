@@ -470,6 +470,9 @@ function renderTrust(trust) {
   const checks = trust.checks.length
     ? trust.checks.map((item) => `<tr><td>${escapeHtml(item.name)}</td><td><span class="pill ${item.status}">${escapeHtml(item.status)}</span></td><td>${escapeHtml(item.note || '')}</td></tr>`).join('')
     : '<tr><td colspan="3">No trust checks were generated.</td></tr>';
+  const factors = trust.factors?.length
+    ? trust.factors.map((item) => `<tr><td>${escapeHtml(item.name)}</td><td><span class="pill ${escapeHtml(item.status)}">${escapeHtml(item.status)}</span></td><td>${escapeHtml(formatImpact(item.impact))}</td><td>${escapeHtml(item.reason)}</td></tr>`).join('')
+    : '<tr><td colspan="4">No trust factors were generated.</td></tr>';
 
   return `
     <h2>Trust Engine</h2>
@@ -477,6 +480,8 @@ function renderTrust(trust) {
       <strong>${trust.confidence}%</strong> · ${escapeHtml(trust.tier)} · ${escapeHtml(trust.summary)}
     </div>
     <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Evidence</th></tr></thead><tbody>${checks}</tbody></table></div>
+    <h2>Trust Factors</h2>
+    <div class="table-scroll"><table><thead><tr><th>Factor</th><th>Status</th><th>Impact</th><th>Reason</th></tr></thead><tbody>${factors}</tbody></table></div>
   `;
 }
 
@@ -586,6 +591,11 @@ function formatDuration(durationMs) {
   if (!Number.isFinite(durationMs)) return 'N/A';
   if (durationMs < 1000) return `${durationMs} ms`;
   return `${(durationMs / 1000).toFixed(1)} s`;
+}
+
+function formatImpact(impact) {
+  if (!Number.isFinite(impact)) return '0';
+  return impact > 0 ? `+${impact}` : String(impact);
 }
 
 function normalizeHtml(html) {

@@ -8,6 +8,28 @@
       "summary": "Content engine improvements plus the first Month 7 mandatory pack expansion for Hibernate readiness.",
       "features": [
         {
+          "id": "trust-engine-factors",
+          "type": "trust",
+          "name": "Trust Engine confidence factors",
+          "audience": "Consultants and Professional-tier reviewers",
+          "summary": "Add explicit Trust Engine factors that explain confidence changes with status, impact, reason, and evidence.",
+          "evidence": [
+            "Adds `trust.factors[]` to Professional trust JSON.",
+            "Adds a `Trust Factors` table to HTML reports.",
+            "Explains compile, test, rollback, compatibility, benchmark source, and validation confidence contributions."
+          ],
+          "links": [
+            {
+              "label": "Trust evidence schema",
+              "href": "schemas/trust-evidence.schema.json"
+            },
+            {
+              "label": "Report schema",
+              "href": "schemas/report.schema.json"
+            }
+          ]
+        },
+        {
           "id": "report-next-actions",
           "type": "report",
           "name": "Report next actions",
