@@ -2,6 +2,20 @@
 
 Content engine improvements plus the first Month 7 mandatory pack expansion for Hibernate readiness.
 
+## Trust Engine confidence factors
+
+Add explicit Trust Engine factors that explain confidence changes with status, impact, reason, and evidence.
+
+Audience: Consultants and Professional-tier reviewers
+
+- Adds `trust.factors[]` to Professional trust JSON.
+- Adds a `Trust Factors` table to HTML reports.
+- Explains compile, test, rollback, compatibility, benchmark source, and validation confidence contributions.
+
+Links:
+- [Trust evidence schema](schemas/trust-evidence.schema.json)
+- [Report schema](schemas/report.schema.json)
+
 ## Report next actions
 
 Add prioritized recommended next actions to readiness report JSON and HTML so reports move from diagnostics to client-actionable guidance.
