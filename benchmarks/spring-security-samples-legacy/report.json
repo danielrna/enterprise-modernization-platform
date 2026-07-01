@@ -1,17 +1,17 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-07-01T21:19:41.665Z",
+  "generatedAt": "2026-07-01T21:27:40.457Z",
   "project": {
     "name": "Spring Security Samples Legacy",
-    "root": "https://github.com/spring-projects/spring-security-samples",
+    "root": "benchmark-repos/spring-security-samples-legacy",
     "source": "https://github.com/spring-projects/spring-security-samples",
     "buildTools": [
       "Gradle"
     ],
     "javaVersion": "17",
-    "springBootVersion": "2.7.x",
-    "fileCount": 420,
-    "javaFileCount": 180
+    "springBootVersion": "unknown",
+    "fileCount": 1284,
+    "javaFileCount": 416
   },
   "pack": "spring-security-6-readiness",
   "packApplicability": {
@@ -20,259 +20,534 @@
     "reason": "Spring Security usage was detected. This pack targets Spring Security 5.x to 6.x readiness."
   },
   "readiness": {
-    "overall": 74,
+    "overall": 73,
     "categories": {
       "java": 88,
-      "spring": 86,
-      "hibernate": 72,
+      "spring": 52,
+      "hibernate": 84,
       "jakarta": 79,
       "build": 90,
-      "security": 17,
-      "architecture": 84
+      "security": 84,
+      "architecture": 33
     },
     "summary": "Ready with remediation work",
     "counts": {
       "critical": 1,
-      "warning": 18,
-      "info": 0
+      "warning": 36,
+      "info": 18
     }
   },
   "productionFindings": [
     {
-      "code": "spring-security-5",
-      "severity": "warning",
-      "title": "Spring Security 5.8.x detected",
-      "recommendation": "Plan Spring Security 6 authorization and configuration validation.",
-      "file": "build.gradle",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "spring-security-legacy-matchers",
-      "severity": "warning",
-      "title": "Legacy Spring Security matcher API",
-      "recommendation": "Review matcher semantics before requestMatchers migration.",
-      "file": "servlet/java-configuration/authentication/username-password/form/src/main/java/example/SecurityConfiguration.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
       "code": "javax-usage",
       "severity": "critical",
       "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta namespace alignment before Spring Security 6 validation.",
-      "file": "servlet/java-configuration/authentication/username-password/form/src/main/java/example/MessageController.java",
-      "line": 6,
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example1.java",
-      "line": 10,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "reactive/webflux/java/oauth2/resource-server/src/integTest/java/example/ServerOAuth2ResourceServerApplicationITests.java",
+      "line": 48,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example2.java",
-      "line": 11,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/username-password/user-details-service/custom-user/src/integTest/java/example/HelloSecurityExplicitITests.java",
+      "line": 37,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example3.java",
-      "line": 12,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/cas/login/src/main/java/cas/example/SecurityConfig.java",
+      "line": 55,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example4.java",
-      "line": 13,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/authorization-server/src/integTest/java/example/OAuth2AuthorizationServerApplicationITests.java",
+      "line": 53,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example5.java",
-      "line": 14,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/login/src/integTest/java/example/OAuth2LoginApplicationTests.java",
+      "line": 99,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example6.java",
-      "line": 15,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/login/src/integTest/java/example/OAuth2LoginApplicationTests.java",
+      "line": 102,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example7.java",
-      "line": 16,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/login/src/integTest/java/example/OAuth2LoginApplicationTests.java",
+      "line": 105,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example8.java",
-      "line": 17,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/restclient/src/integTest/java/example/OAuth2RestClientApplicationITests.java",
+      "line": 64,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example9.java",
-      "line": 18,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/session-management/maximum-sessions/src/integTest/java/com/example/maximumsessions/MaximumSessionsTests.java",
+      "line": 37,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example10.java",
-      "line": 19,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/session-management/maximum-sessions-prevent-login/src/integTest/java/com/example/maximumsessionspreventlogin/MaximumSessionsPreventLoginTests.java",
+      "line": 39,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example11.java",
-      "line": 20,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/AddDeleteContactController.java",
+      "line": 39,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
-      "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example12.java",
-      "line": 21,
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/AddDeleteContactController.java",
+      "line": 51,
       "scope": "production"
     },
     {
-      "code": "spring-security-global-method-security",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "Global method security annotation",
-      "recommendation": "Review method security configuration before Spring Security 6 migration.",
-      "file": "method-security/src/main/java/example/Example1.java",
-      "line": 10,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/AdminPermissionController.java",
+      "line": 60,
       "scope": "production"
     },
     {
-      "code": "spring-security-global-method-security",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "Global method security annotation",
-      "recommendation": "Review method security configuration before Spring Security 6 migration.",
-      "file": "method-security/src/main/java/example/Example2.java",
-      "line": 11,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/AdminPermissionController.java",
+      "line": 63,
       "scope": "production"
     },
     {
-      "code": "spring-security-global-method-security",
-      "severity": "warning",
-      "title": "Global method security annotation",
-      "recommendation": "Review method security configuration before Spring Security 6 migration.",
-      "file": "method-security/src/main/java/example/Example3.java",
-      "line": 12,
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 58,
       "scope": "production"
     },
     {
-      "code": "spring-security-global-method-security",
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 61,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 72,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 76,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 79,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 98,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 102,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 105,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 106,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 118,
+      "scope": "production"
+    },
+    {
+      "code": "serializable-missing-serial-version",
       "severity": "warning",
-      "title": "Global method security annotation",
-      "recommendation": "Review method security configuration before Spring Security 6 migration.",
-      "file": "method-security/src/main/java/example/Example4.java",
-      "line": 13,
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/Contact.java",
+      "line": 1,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/DataSourcePopulator.java",
+      "line": 86,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/IndexController.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/IndexController.java",
+      "line": 53,
       "scope": "production"
     }
   ],
-  "testFindings": [],
+  "testFindings": [
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "reactive/webflux/java/oauth2/webclient/src/test/java/example/OAuth2WebClientControllerTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "reactive/webflux/java/oauth2/webclient/src/test/java/example/OAuth2WebClientWebFluxApplicationTests.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "reactive/webflux/java/oauth2/webclient/src/test/java/example/RegisteredOAuth2AuthorizedClientControllerTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/java-configuration/aspectj/src/test/java/sample/aspectj/AspectJInterceptorTests.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/java-configuration/aspectj/src/test/java/sample/aspectj/AspectJInterceptorTests.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/mfa/formLogin+ott/src/test/java/example/CustomPagesConfigTests.java",
+      "line": 39,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/mfa/formLogin+ott/src/test/java/example/DefaultConfigTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/mfa/x509+formLogin/src/test/java/example/MfaApplicationTests.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/mfa/x509+webauthn/src/test/java/example/X509WebAuthnMfaApplicationTests.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/username-password/user-details-service/custom-user/src/test/java/example/UserDetailsServiceApplicationTests.java",
+      "line": 39,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/hello/src/test/java/example/HelloApplicationTests.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/hello-security/src/test/java/example/HelloSecurityApplicationTests.java",
+      "line": 37,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/hello-security-explicit/src/test/java/example/HelloSecurityExplicitApplicationTests.java",
+      "line": 37,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/webclient/src/test/java/example/OAuth2WebClientApplicationTests.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/webclient/src/test/java/example/OAuth2WebClientControllerTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/webclient/src/test/java/example/RegisteredOAuth2AuthorizedClientControllerTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/kotlin/hello-security/src/test/kotlin/org/springframework/security/samples/KotlinApplicationTests.kt",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/test/java/sample/contact/ContactManagerTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 67,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 104,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 117,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 118,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 146,
+      "scope": "test"
+    }
+  ],
   "findingSummary": {
     "production": {
       "critical": 1,
-      "warning": 18,
-      "info": 0
+      "warning": 16,
+      "info": 14
     },
     "test": {
       "critical": 0,
-      "warning": 0,
-      "info": 0
+      "warning": 20,
+      "info": 4
     },
     "byCode": {
-      "spring-security-5": {
-        "code": "spring-security-5",
-        "title": "Spring Security 5.8.x detected",
-        "severity": "warning",
-        "total": 1,
-        "production": 1,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "build.gradle",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "spring-security-5",
-            "severity": "warning",
-            "title": "Spring Security 5.8.x detected",
-            "recommendation": "Plan Spring Security 6 authorization and configuration validation.",
-            "file": "build.gradle",
-            "line": 12,
-            "scope": "production"
-          }
-        ]
-      },
-      "spring-security-legacy-matchers": {
-        "code": "spring-security-legacy-matchers",
-        "title": "Legacy Spring Security matcher API",
-        "severity": "warning",
-        "total": 1,
-        "production": 1,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "form",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "spring-security-legacy-matchers",
-            "severity": "warning",
-            "title": "Legacy Spring Security matcher API",
-            "recommendation": "Review matcher semantics before requestMatchers migration.",
-            "file": "servlet/java-configuration/authentication/username-password/form/src/main/java/example/SecurityConfiguration.java",
-            "line": 28,
-            "scope": "production"
-          }
-        ]
-      },
       "javax-usage": {
         "code": "javax-usage",
         "title": "javax namespace usage detected",
@@ -282,7 +557,7 @@
         "test": 0,
         "topModules": [
           {
-            "name": "form",
+            "name": "project",
             "count": 1
           }
         ],
@@ -291,122 +566,168 @@
             "code": "javax-usage",
             "severity": "critical",
             "title": "javax namespace usage detected",
-            "recommendation": "Plan Jakarta namespace alignment before Spring Security 6 validation.",
-            "file": "servlet/java-configuration/authentication/username-password/form/src/main/java/example/MessageController.java",
-            "line": 6,
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
             "scope": "production"
           }
         ]
       },
-      "spring-security-authorize-requests": {
-        "code": "spring-security-authorize-requests",
-        "title": "authorizeRequests configuration",
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
         "severity": "warning",
-        "total": 12,
-        "production": 12,
-        "test": 0,
+        "total": 35,
+        "production": 15,
+        "test": 20,
         "topModules": [
           {
-            "name": "java-configuration",
-            "count": 12
-          }
-        ],
-        "examples": [
-          {
-            "code": "spring-security-authorize-requests",
-            "severity": "warning",
-            "title": "authorizeRequests configuration",
-            "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-            "file": "servlet/java-configuration/src/main/java/example/Example1.java",
-            "line": 10,
-            "scope": "production"
+            "name": "contacts",
+            "count": 6
           },
           {
-            "code": "spring-security-authorize-requests",
-            "severity": "warning",
-            "title": "authorizeRequests configuration",
-            "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-            "file": "servlet/java-configuration/src/main/java/example/Example2.java",
-            "line": 11,
-            "scope": "production"
+            "name": "webclient",
+            "count": 6
           },
           {
-            "code": "spring-security-authorize-requests",
-            "severity": "warning",
-            "title": "authorizeRequests configuration",
-            "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-            "file": "servlet/java-configuration/src/main/java/example/Example3.java",
-            "line": 12,
-            "scope": "production"
-          },
-          {
-            "code": "spring-security-authorize-requests",
-            "severity": "warning",
-            "title": "authorizeRequests configuration",
-            "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-            "file": "servlet/java-configuration/src/main/java/example/Example4.java",
-            "line": 13,
-            "scope": "production"
-          },
-          {
-            "code": "spring-security-authorize-requests",
-            "severity": "warning",
-            "title": "authorizeRequests configuration",
-            "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-            "file": "servlet/java-configuration/src/main/java/example/Example5.java",
-            "line": 14,
-            "scope": "production"
-          }
-        ]
-      },
-      "spring-security-global-method-security": {
-        "code": "spring-security-global-method-security",
-        "title": "Global method security annotation",
-        "severity": "warning",
-        "total": 4,
-        "production": 4,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "method-security",
+            "name": "login",
             "count": 4
           }
         ],
         "examples": [
           {
-            "code": "spring-security-global-method-security",
+            "code": "field-injection",
             "severity": "warning",
-            "title": "Global method security annotation",
-            "recommendation": "Review method security configuration before Spring Security 6 migration.",
-            "file": "method-security/src/main/java/example/Example1.java",
-            "line": 10,
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "reactive/webflux/java/oauth2/resource-server/src/integTest/java/example/ServerOAuth2ResourceServerApplicationITests.java",
+            "line": 48,
             "scope": "production"
           },
           {
-            "code": "spring-security-global-method-security",
+            "code": "field-injection",
             "severity": "warning",
-            "title": "Global method security annotation",
-            "recommendation": "Review method security configuration before Spring Security 6 migration.",
-            "file": "method-security/src/main/java/example/Example2.java",
-            "line": 11,
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "reactive/webflux/java/oauth2/webclient/src/test/java/example/OAuth2WebClientControllerTests.java",
+            "line": 45,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "reactive/webflux/java/oauth2/webclient/src/test/java/example/OAuth2WebClientWebFluxApplicationTests.java",
+            "line": 33,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "reactive/webflux/java/oauth2/webclient/src/test/java/example/RegisteredOAuth2AuthorizedClientControllerTests.java",
+            "line": 45,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "servlet/java-configuration/aspectj/src/test/java/sample/aspectj/AspectJInterceptorTests.java",
+            "line": 40,
+            "scope": "test"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 18,
+        "production": 14,
+        "test": 4,
+        "topModules": [
+          {
+            "name": "contacts",
+            "count": 14
+          },
+          {
+            "name": "dms",
+            "count": 4
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "servlet/xml/java/contacts/src/main/java/sample/contact/AddDeleteContactController.java",
+            "line": 51,
             "scope": "production"
           },
           {
-            "code": "spring-security-global-method-security",
-            "severity": "warning",
-            "title": "Global method security annotation",
-            "recommendation": "Review method security configuration before Spring Security 6 migration.",
-            "file": "method-security/src/main/java/example/Example3.java",
-            "line": 12,
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+            "line": 58,
             "scope": "production"
           },
           {
-            "code": "spring-security-global-method-security",
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+            "line": 61,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+            "line": 65,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+            "line": 72,
+            "scope": "production"
+          }
+        ]
+      },
+      "serializable-missing-serial-version": {
+        "code": "serializable-missing-serial-version",
+        "title": "Serializable type without serialVersionUID",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "contacts",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "serializable-missing-serial-version",
             "severity": "warning",
-            "title": "Global method security annotation",
-            "recommendation": "Review method security configuration before Spring Security 6 migration.",
-            "file": "method-security/src/main/java/example/Example4.java",
-            "line": 13,
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "servlet/xml/java/contacts/src/main/java/sample/contact/Contact.java",
+            "line": 1,
             "scope": "production"
           }
         ]
@@ -415,175 +736,499 @@
   },
   "findings": [
     {
-      "code": "spring-security-5",
-      "severity": "warning",
-      "title": "Spring Security 5.8.x detected",
-      "recommendation": "Plan Spring Security 6 authorization and configuration validation.",
-      "file": "build.gradle",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "spring-security-legacy-matchers",
-      "severity": "warning",
-      "title": "Legacy Spring Security matcher API",
-      "recommendation": "Review matcher semantics before requestMatchers migration.",
-      "file": "servlet/java-configuration/authentication/username-password/form/src/main/java/example/SecurityConfiguration.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
       "code": "javax-usage",
       "severity": "critical",
       "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta namespace alignment before Spring Security 6 validation.",
-      "file": "servlet/java-configuration/authentication/username-password/form/src/main/java/example/MessageController.java",
-      "line": 6,
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example1.java",
-      "line": 10,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "reactive/webflux/java/oauth2/resource-server/src/integTest/java/example/ServerOAuth2ResourceServerApplicationITests.java",
+      "line": 48,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example2.java",
-      "line": 11,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "reactive/webflux/java/oauth2/webclient/src/test/java/example/OAuth2WebClientControllerTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "reactive/webflux/java/oauth2/webclient/src/test/java/example/OAuth2WebClientWebFluxApplicationTests.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "reactive/webflux/java/oauth2/webclient/src/test/java/example/RegisteredOAuth2AuthorizedClientControllerTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/java-configuration/aspectj/src/test/java/sample/aspectj/AspectJInterceptorTests.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/java-configuration/aspectj/src/test/java/sample/aspectj/AspectJInterceptorTests.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/mfa/formLogin+ott/src/test/java/example/CustomPagesConfigTests.java",
+      "line": 39,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/mfa/formLogin+ott/src/test/java/example/DefaultConfigTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/mfa/x509+formLogin/src/test/java/example/MfaApplicationTests.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/mfa/x509+webauthn/src/test/java/example/X509WebAuthnMfaApplicationTests.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/username-password/user-details-service/custom-user/src/integTest/java/example/HelloSecurityExplicitITests.java",
+      "line": 37,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example3.java",
-      "line": 12,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/authentication/username-password/user-details-service/custom-user/src/test/java/example/UserDetailsServiceApplicationTests.java",
+      "line": 39,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/cas/login/src/main/java/cas/example/SecurityConfig.java",
+      "line": 55,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example4.java",
-      "line": 13,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/hello/src/test/java/example/HelloApplicationTests.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/hello-security/src/test/java/example/HelloSecurityApplicationTests.java",
+      "line": 37,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/hello-security-explicit/src/test/java/example/HelloSecurityExplicitApplicationTests.java",
+      "line": 37,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/authorization-server/src/integTest/java/example/OAuth2AuthorizationServerApplicationITests.java",
+      "line": 53,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example5.java",
-      "line": 14,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/login/src/integTest/java/example/OAuth2LoginApplicationTests.java",
+      "line": 99,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example6.java",
-      "line": 15,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/login/src/integTest/java/example/OAuth2LoginApplicationTests.java",
+      "line": 102,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example7.java",
-      "line": 16,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/login/src/integTest/java/example/OAuth2LoginApplicationTests.java",
+      "line": 105,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example8.java",
-      "line": 17,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/restclient/src/integTest/java/example/OAuth2RestClientApplicationITests.java",
+      "line": 64,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example9.java",
-      "line": 18,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/webclient/src/test/java/example/OAuth2WebClientApplicationTests.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/webclient/src/test/java/example/OAuth2WebClientControllerTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/oauth2/webclient/src/test/java/example/RegisteredOAuth2AuthorizedClientControllerTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/session-management/maximum-sessions/src/integTest/java/com/example/maximumsessions/MaximumSessionsTests.java",
+      "line": 37,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example10.java",
-      "line": 19,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/java/session-management/maximum-sessions-prevent-login/src/integTest/java/com/example/maximumsessionspreventlogin/MaximumSessionsPreventLoginTests.java",
+      "line": 39,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example11.java",
-      "line": 20,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/spring-boot/kotlin/hello-security/src/test/kotlin/org/springframework/security/samples/KotlinApplicationTests.kt",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/AddDeleteContactController.java",
+      "line": 39,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
-      "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "servlet/java-configuration/src/main/java/example/Example12.java",
-      "line": 21,
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/AddDeleteContactController.java",
+      "line": 51,
       "scope": "production"
     },
     {
-      "code": "spring-security-global-method-security",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "Global method security annotation",
-      "recommendation": "Review method security configuration before Spring Security 6 migration.",
-      "file": "method-security/src/main/java/example/Example1.java",
-      "line": 10,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/AdminPermissionController.java",
+      "line": 60,
       "scope": "production"
     },
     {
-      "code": "spring-security-global-method-security",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "Global method security annotation",
-      "recommendation": "Review method security configuration before Spring Security 6 migration.",
-      "file": "method-security/src/main/java/example/Example2.java",
-      "line": 11,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/AdminPermissionController.java",
+      "line": 63,
       "scope": "production"
     },
     {
-      "code": "spring-security-global-method-security",
-      "severity": "warning",
-      "title": "Global method security annotation",
-      "recommendation": "Review method security configuration before Spring Security 6 migration.",
-      "file": "method-security/src/main/java/example/Example3.java",
-      "line": 12,
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 58,
       "scope": "production"
     },
     {
-      "code": "spring-security-global-method-security",
-      "severity": "warning",
-      "title": "Global method security annotation",
-      "recommendation": "Review method security configuration before Spring Security 6 migration.",
-      "file": "method-security/src/main/java/example/Example4.java",
-      "line": 13,
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 61,
       "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 72,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 76,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 79,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 98,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 102,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 105,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 106,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java",
+      "line": 118,
+      "scope": "production"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/Contact.java",
+      "line": 1,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/DataSourcePopulator.java",
+      "line": 86,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/IndexController.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/main/java/sample/contact/IndexController.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/contacts/src/test/java/sample/contact/ContactManagerTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 67,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 104,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 117,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 118,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "servlet/xml/java/dms/src/test/java/sample/DmsIntegrationTests.java",
+      "line": 146,
+      "scope": "test"
     }
   ],
   "evidence": [
@@ -593,7 +1238,7 @@
     },
     {
       "name": "Spring Boot version detection",
-      "status": "passed"
+      "status": "warning"
     },
     {
       "name": "Jakarta namespace readiness",
@@ -601,7 +1246,7 @@
     },
     {
       "name": "Hibernate usage detection",
-      "status": "warning"
+      "status": "passed"
     },
     {
       "name": "Spring Security usage detection",
@@ -618,11 +1263,11 @@
     }
   ],
   "dependencies": {
-    "springBootVersion": "2.7.x",
-    "springSecurityVersion": "5.8.x",
-    "jakartaDetected": false,
+    "springBootVersion": "unknown",
+    "springSecurityVersion": "unknown",
+    "jakartaDetected": true,
     "javaxDetected": true,
-    "hibernateDetected": false,
+    "hibernateDetected": true,
     "springSecurityDetected": true
   },
   "benchmark": {
@@ -630,18 +1275,37 @@
     "name": "Spring Security Samples Legacy",
     "repository": "https://github.com/spring-projects/spring-security-samples",
     "ref": "5.8.x",
-    "requestedSource": "catalog",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
+    "requestedSource": "local",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/spring-security-samples-legacy",
+    "analysisPath": "benchmark-repos/spring-security-samples-legacy",
+    "gitRevision": "472a9b7cb683e854bc9d9781875b2df72faad7a5",
     "commands": [],
     "validation": {
-      "requested": false,
-      "status": "not_requested",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation was not requested."
+      "requested": true,
+      "status": "failed",
+      "confidence": 25,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "failed",
+          "command": "./gradlew compileJava --no-daemon",
+          "durationMs": 51490,
+          "exitCode": 1,
+          "output": "gle-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.\nDaemon will be stopped at the end of the build \n\n[Incubating] Problems report is available at: file://~/<workspace>\n\nFAILURE: Build failed with an exception.\n\n* Where:\nBuild file '~/<workspace> line: 63\n\n* What went wrong:\nA problem occurred evaluating root project 'spring-security-samples'.\n> Could not create task ':runAllTests'.\n   > A problem occurred configuring project ':reactive:webflux:kotlin:hello-security'.\n      > 25.0.1\n\n* Try:\n> Run with --stacktrace option to get the stack trace.\n> Run with --info or --debug option to get more log output.\n> Get more help at https://help.gradle.org.\n\nDeprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.\n\nYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.\n\nFor more on this, please refer to https://docs.gradle.org/8.14.4/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.\n\nBUILD FAILED in 50s",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "./gradlew test --no-daemon",
+          "durationMs": 23671,
+          "exitCode": 1,
+          "output": "gle-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.\nDaemon will be stopped at the end of the build \n\n[Incubating] Problems report is available at: file://~/<workspace>\n\nDeprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.\n\nYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.\n\nFor more on this, please refer to https://docs.gradle.org/8.14.4/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.\n\nFAILURE: Build failed with an exception.\n\n* Where:\nBuild file '~/<workspace> line: 63\n\n* What went wrong:\nA problem occurred evaluating root project 'spring-security-samples'.\n> Could not create task ':runAllTests'.\n   > A problem occurred configuring project ':reactive:webflux:kotlin:hello-security'.\n      > 25.0.1\n\n* Try:\n> Run with --stacktrace option to get the stack trace.\n> Run with --info or --debug option to get more log output.\n> Get more help at https://help.gradle.org.\n\nBUILD FAILED in 23s",
+          "timedOut": false
+        }
+      ],
+      "summary": "2 validation check(s) failed."
     }
   },
   "nextActions": [
@@ -655,21 +1319,6 @@
         "javax-usage"
       ],
       "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
-    },
-    {
-      "id": "review-spring-security-6-risks",
-      "priority": "warning",
-      "title": "Review Spring Security 6 configuration risks",
-      "reason": "Spring Security 6 readiness depends on explicit review of removed configuration adapters, matcher API changes, authorization DSL changes, and method security annotations.",
-      "evidenceCount": 18,
-      "findingCodes": [
-        "spring-security-5",
-        "spring-security-websecurityconfigureradapter",
-        "spring-security-legacy-matchers",
-        "spring-security-authorize-requests",
-        "spring-security-global-method-security"
-      ],
-      "suggestedCommand": "node ./bin/emp.js analyze . --pack spring-security-6-readiness --out reports/spring-security-6-readiness"
     }
   ]
 }

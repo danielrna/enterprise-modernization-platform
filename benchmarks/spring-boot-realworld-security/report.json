@@ -1,17 +1,17 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-07-01T21:19:41.690Z",
+  "generatedAt": "2026-07-01T21:25:26.214Z",
   "project": {
     "name": "Spring Boot RealWorld Security",
-    "root": "https://github.com/gothinkster/spring-boot-realworld-example-app",
+    "root": "benchmark-repos/spring-boot-realworld-security",
     "source": "https://github.com/gothinkster/spring-boot-realworld-example-app",
     "buildTools": [
       "Gradle"
     ],
     "javaVersion": "11",
     "springBootVersion": "2.6.3",
-    "fileCount": 96,
-    "javaFileCount": 72
+    "fileCount": 143,
+    "javaFileCount": 116
   },
   "pack": "spring-security-6-readiness",
   "packApplicability": {
@@ -20,133 +20,516 @@
     "reason": "Spring Security usage was detected. This pack targets Spring Security 5.x to 6.x readiness."
   },
   "readiness": {
-    "overall": 81,
+    "overall": 65,
     "categories": {
-      "java": 88,
-      "spring": 86,
-      "hibernate": 84,
+      "java": 86,
+      "spring": 55,
+      "hibernate": 72,
       "jakarta": 79,
       "build": 90,
-      "security": 56,
-      "architecture": 84
+      "security": 20,
+      "architecture": 53
     },
-    "summary": "Ready with remediation work",
+    "summary": "Migration risk requires focused cleanup",
     "counts": {
-      "critical": 1,
-      "warning": 4,
-      "info": 0
+      "critical": 3,
+      "warning": 48,
+      "info": 2
     }
   },
   "productionFindings": [
     {
-      "code": "spring-security-5",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
       "severity": "warning",
-      "title": "Spring Security 5.6.x detected",
-      "recommendation": "Plan Spring Security 6 authorization and configuration validation.",
-      "file": "build.gradle",
-      "line": 42,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/api/security/JwtTokenFilter.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/api/security/JwtTokenFilter.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-websecurityconfigureradapter",
+      "severity": "critical",
+      "title": "WebSecurityConfigurerAdapter usage",
+      "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-websecurityconfigureradapter",
+      "severity": "critical",
+      "title": "WebSecurityConfigurerAdapter usage",
+      "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 23,
       "scope": "production"
     },
     {
       "code": "spring-security-legacy-matchers",
       "severity": "warning",
       "title": "Legacy Spring Security matcher API",
-      "recommendation": "Review matcher semantics before requestMatchers migration.",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
       "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
-      "line": 35,
+      "line": 49,
       "scope": "production"
     },
     {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta namespace alignment before Spring Security 6 validation.",
-      "file": "build.gradle",
-      "line": 36,
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 59,
       "scope": "production"
     },
     {
       "code": "spring-security-authorize-requests",
       "severity": "warning",
       "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "src/main/java/io/spring/api/security/Example1.java",
-      "line": 10,
+      "recommendation": "Review authorizeRequests configuration before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 48,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "src/main/java/io/spring/api/security/Example2.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/application/article/DuplicatedArticleValidator.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/application/user/DuplicatedEmailValidator.java",
       "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/application/user/DuplicatedUsernameValidator.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/application/user/UserService.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/application/user/UserService.java",
+      "line": 72,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/infrastructure/repository/MyBatisArticleFavoriteRepository.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/infrastructure/repository/MyBatisCommentRepository.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/infrastructure/repository/MyBatisUserRepository.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/main/java/io/spring/infrastructure/service/DefaultJwtService.java",
+      "line": 9,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/infrastructure/service/DefaultJwtService.java",
+      "line": 23,
       "scope": "production"
     }
   ],
-  "testFindings": [],
+  "testFindings": [
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/ArticleApiTest.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/ArticleFavoriteApiTest.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/ArticlesApiTest.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/CommentsApiTest.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/CurrentUserApiTest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/ListArticleApiTest.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/ProfileApiTest.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/UsersApiTest.java",
+      "line": 41,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/UsersApiTest.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/article/ArticleQueryServiceTest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/article/ArticleQueryServiceTest.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/article/ArticleQueryServiceTest.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/article/ArticleQueryServiceTest.java",
+      "line": 44,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/comment/CommentQueryServiceTest.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/comment/CommentQueryServiceTest.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/comment/CommentQueryServiceTest.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/comment/CommentQueryServiceTest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/profile/ProfileQueryServiceTest.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/profile/ProfileQueryServiceTest.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/tag/TagsQueryServiceTest.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/tag/TagsQueryServiceTest.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/ArticleRepositoryTransactionTest.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/ArticleRepositoryTransactionTest.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/ArticleRepositoryTransactionTest.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/MyBatisArticleRepositoryTest.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/MyBatisArticleRepositoryTest.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/MyBatisArticleRepositoryTest.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/comment/MyBatisCommentRepositoryTest.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/favorite/MyBatisArticleFavoriteRepositoryTest.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/favorite/MyBatisArticleFavoriteRepositoryTest.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/user/MyBatisUserRepositoryTest.java",
+      "line": 17,
+      "scope": "test"
+    }
+  ],
   "findingSummary": {
     "production": {
-      "critical": 1,
-      "warning": 4,
-      "info": 0
+      "critical": 3,
+      "warning": 18,
+      "info": 1
     },
     "test": {
       "critical": 0,
-      "warning": 0,
-      "info": 0
+      "warning": 30,
+      "info": 1
     },
     "byCode": {
-      "spring-security-5": {
-        "code": "spring-security-5",
-        "title": "Spring Security 5.6.x detected",
-        "severity": "warning",
-        "total": 1,
-        "production": 1,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "build.gradle",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "spring-security-5",
-            "severity": "warning",
-            "title": "Spring Security 5.6.x detected",
-            "recommendation": "Plan Spring Security 6 authorization and configuration validation.",
-            "file": "build.gradle",
-            "line": 42,
-            "scope": "production"
-          }
-        ]
-      },
-      "spring-security-legacy-matchers": {
-        "code": "spring-security-legacy-matchers",
-        "title": "Legacy Spring Security matcher API",
-        "severity": "warning",
-        "total": 1,
-        "production": 1,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "src",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "spring-security-legacy-matchers",
-            "severity": "warning",
-            "title": "Legacy Spring Security matcher API",
-            "recommendation": "Review matcher semantics before requestMatchers migration.",
-            "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
-            "line": 35,
-            "scope": "production"
-          }
-        ]
-      },
       "javax-usage": {
         "code": "javax-usage",
         "title": "javax namespace usage detected",
@@ -156,7 +539,7 @@
         "test": 0,
         "topModules": [
           {
-            "name": "build.gradle",
+            "name": "project",
             "count": 1
           }
         ],
@@ -165,17 +548,78 @@
             "code": "javax-usage",
             "severity": "critical",
             "title": "javax namespace usage detected",
-            "recommendation": "Plan Jakarta namespace alignment before Spring Security 6 validation.",
-            "file": "build.gradle",
-            "line": 36,
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
             "scope": "production"
           }
         ]
       },
-      "spring-security-authorize-requests": {
-        "code": "spring-security-authorize-requests",
-        "title": "authorizeRequests configuration",
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
         "severity": "warning",
+        "total": 41,
+        "production": 11,
+        "test": 30,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 41
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/io/spring/api/security/JwtTokenFilter.java",
+            "line": 20,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/io/spring/api/security/JwtTokenFilter.java",
+            "line": 21,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/io/spring/application/article/DuplicatedArticleValidator.java",
+            "line": 12,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/io/spring/application/user/DuplicatedEmailValidator.java",
+            "line": 11,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/io/spring/application/user/DuplicatedUsernameValidator.java",
+            "line": 11,
+            "scope": "production"
+          }
+        ]
+      },
+      "spring-security-websecurityconfigureradapter": {
+        "code": "spring-security-websecurityconfigureradapter",
+        "title": "WebSecurityConfigurerAdapter usage",
+        "severity": "critical",
         "total": 2,
         "production": 2,
         "test": 0,
@@ -187,22 +631,158 @@
         ],
         "examples": [
           {
-            "code": "spring-security-authorize-requests",
-            "severity": "warning",
-            "title": "authorizeRequests configuration",
-            "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-            "file": "src/main/java/io/spring/api/security/Example1.java",
-            "line": 10,
+            "code": "spring-security-websecurityconfigureradapter",
+            "severity": "critical",
+            "title": "WebSecurityConfigurerAdapter usage",
+            "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+            "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+            "line": 11,
             "scope": "production"
           },
+          {
+            "code": "spring-security-websecurityconfigureradapter",
+            "severity": "critical",
+            "title": "WebSecurityConfigurerAdapter usage",
+            "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+            "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+            "line": 23,
+            "scope": "production"
+          }
+        ]
+      },
+      "spring-security-legacy-matchers": {
+        "code": "spring-security-legacy-matchers",
+        "title": "Legacy Spring Security matcher API",
+        "severity": "warning",
+        "total": 6,
+        "production": 6,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 6
+          }
+        ],
+        "examples": [
+          {
+            "code": "spring-security-legacy-matchers",
+            "severity": "warning",
+            "title": "Legacy Spring Security matcher API",
+            "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+            "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+            "line": 49,
+            "scope": "production"
+          },
+          {
+            "code": "spring-security-legacy-matchers",
+            "severity": "warning",
+            "title": "Legacy Spring Security matcher API",
+            "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+            "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+            "line": 51,
+            "scope": "production"
+          },
+          {
+            "code": "spring-security-legacy-matchers",
+            "severity": "warning",
+            "title": "Legacy Spring Security matcher API",
+            "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+            "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+            "line": 53,
+            "scope": "production"
+          },
+          {
+            "code": "spring-security-legacy-matchers",
+            "severity": "warning",
+            "title": "Legacy Spring Security matcher API",
+            "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+            "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+            "line": 55,
+            "scope": "production"
+          },
+          {
+            "code": "spring-security-legacy-matchers",
+            "severity": "warning",
+            "title": "Legacy Spring Security matcher API",
+            "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+            "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+            "line": 57,
+            "scope": "production"
+          }
+        ]
+      },
+      "spring-security-authorize-requests": {
+        "code": "spring-security-authorize-requests",
+        "title": "authorizeRequests configuration",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 1
+          }
+        ],
+        "examples": [
           {
             "code": "spring-security-authorize-requests",
             "severity": "warning",
             "title": "authorizeRequests configuration",
-            "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-            "file": "src/main/java/io/spring/api/security/Example2.java",
-            "line": 11,
+            "recommendation": "Review authorizeRequests configuration before modernization.",
+            "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+            "line": 48,
             "scope": "production"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "java.util.Date usage",
+        "severity": "info",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "src/main/java/io/spring/infrastructure/service/DefaultJwtService.java",
+            "line": 9,
+            "scope": "production"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 1,
+        "production": 0,
+        "test": 1,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "src/test/java/io/spring/infrastructure/article/MyBatisArticleRepositoryTest.java",
+            "line": 51,
+            "scope": "test"
           }
         ]
       }
@@ -210,49 +790,481 @@
   },
   "findings": [
     {
-      "code": "spring-security-5",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
       "severity": "warning",
-      "title": "Spring Security 5.6.x detected",
-      "recommendation": "Plan Spring Security 6 authorization and configuration validation.",
-      "file": "build.gradle",
-      "line": 42,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/api/security/JwtTokenFilter.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/api/security/JwtTokenFilter.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-websecurityconfigureradapter",
+      "severity": "critical",
+      "title": "WebSecurityConfigurerAdapter usage",
+      "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-websecurityconfigureradapter",
+      "severity": "critical",
+      "title": "WebSecurityConfigurerAdapter usage",
+      "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 23,
       "scope": "production"
     },
     {
       "code": "spring-security-legacy-matchers",
       "severity": "warning",
       "title": "Legacy Spring Security matcher API",
-      "recommendation": "Review matcher semantics before requestMatchers migration.",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
       "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
-      "line": 35,
+      "line": 49,
       "scope": "production"
     },
     {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta namespace alignment before Spring Security 6 validation.",
-      "file": "build.gradle",
-      "line": 36,
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 59,
       "scope": "production"
     },
     {
       "code": "spring-security-authorize-requests",
       "severity": "warning",
       "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "src/main/java/io/spring/api/security/Example1.java",
-      "line": 10,
+      "recommendation": "Review authorizeRequests configuration before modernization.",
+      "file": "src/main/java/io/spring/api/security/WebSecurityConfig.java",
+      "line": 48,
       "scope": "production"
     },
     {
-      "code": "spring-security-authorize-requests",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "authorizeRequests configuration",
-      "recommendation": "Review authorization DSL rules before Spring Security 6 migration.",
-      "file": "src/main/java/io/spring/api/security/Example2.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/application/article/DuplicatedArticleValidator.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/application/user/DuplicatedEmailValidator.java",
       "line": 11,
       "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/application/user/DuplicatedUsernameValidator.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/application/user/UserService.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/application/user/UserService.java",
+      "line": 72,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/infrastructure/repository/MyBatisArticleFavoriteRepository.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/infrastructure/repository/MyBatisCommentRepository.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/infrastructure/repository/MyBatisUserRepository.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/main/java/io/spring/infrastructure/service/DefaultJwtService.java",
+      "line": 9,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/spring/infrastructure/service/DefaultJwtService.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/ArticleApiTest.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/ArticleFavoriteApiTest.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/ArticlesApiTest.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/CommentsApiTest.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/CurrentUserApiTest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/ListArticleApiTest.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/ProfileApiTest.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/UsersApiTest.java",
+      "line": 41,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/api/UsersApiTest.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/article/ArticleQueryServiceTest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/article/ArticleQueryServiceTest.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/article/ArticleQueryServiceTest.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/article/ArticleQueryServiceTest.java",
+      "line": 44,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/comment/CommentQueryServiceTest.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/comment/CommentQueryServiceTest.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/comment/CommentQueryServiceTest.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/comment/CommentQueryServiceTest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/profile/ProfileQueryServiceTest.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/profile/ProfileQueryServiceTest.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/tag/TagsQueryServiceTest.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/application/tag/TagsQueryServiceTest.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/ArticleRepositoryTransactionTest.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/ArticleRepositoryTransactionTest.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/ArticleRepositoryTransactionTest.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/MyBatisArticleRepositoryTest.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/MyBatisArticleRepositoryTest.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/article/MyBatisArticleRepositoryTest.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/comment/MyBatisCommentRepositoryTest.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/favorite/MyBatisArticleFavoriteRepositoryTest.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/favorite/MyBatisArticleFavoriteRepositoryTest.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/io/spring/infrastructure/user/MyBatisUserRepositoryTest.java",
+      "line": 17,
+      "scope": "test"
     }
   ],
   "evidence": [
@@ -270,7 +1282,7 @@
     },
     {
       "name": "Hibernate usage detection",
-      "status": "passed"
+      "status": "warning"
     },
     {
       "name": "Spring Security usage detection",
@@ -288,10 +1300,10 @@
   ],
   "dependencies": {
     "springBootVersion": "2.6.3",
-    "springSecurityVersion": "5.6.x",
+    "springSecurityVersion": "unknown",
     "jakartaDetected": false,
     "javaxDetected": true,
-    "hibernateDetected": true,
+    "hibernateDetected": false,
     "springSecurityDetected": true
   },
   "benchmark": {
@@ -299,21 +1311,55 @@
     "name": "Spring Boot RealWorld Security",
     "repository": "https://github.com/gothinkster/spring-boot-realworld-example-app",
     "ref": null,
-    "requestedSource": "catalog",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
+    "requestedSource": "local",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/spring-boot-realworld-security",
+    "analysisPath": "benchmark-repos/spring-boot-realworld-security",
+    "gitRevision": "ee17e31aafe733d98c4853c8b9a74d7f2f6c924a",
     "commands": [],
     "validation": {
-      "requested": false,
-      "status": "not_requested",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation was not requested."
+      "requested": true,
+      "status": "failed",
+      "confidence": 25,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "failed",
+          "command": "JAVA_HOME=<JDK 17> ./gradlew compileJava --no-daemon",
+          "durationMs": 14180,
+          "exitCode": 1,
+          "output": "uit.platform.internal.NativeLibraryLoader in an unnamed module (file:~/.gradle/wrapper/dists/gradle-7.4-bin/c0gwcg53nkjbqw7r0h0umtfvt/gradle-7.4/lib/native-platform-0.22-milestone-23.jar)\nWARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module\nWARNING: Restricted methods will be blocked in a future release unless native access is enabled\n\nTo honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.4/userguide/gradle_daemon.html#sec:disabling_the_daemon.\nDaemon will be stopped at the end of the build \n\n> Configure project :\nDGS CodeGen added [com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-client-core:5.0.6] to the implementation dependencies.\n\n> Task :generateJava\n> Task :compileJava FAILED\n\nFAILURE: Build failed with an exception.\n\n* What went wrong:\nExecution failed for task ':compileJava'.\n> java.lang.ExceptionInInitializerError\n\n* Try:\n> Run with --stacktrace option to get the stack trace.\n> Run with --info or --debug option to get more log output.\n> Run with --scan to get full insights.\n\n* Get more help at https://help.gradle.org\n\nBUILD FAILED in 13s\n2 actionable tasks: 2 executed",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "JAVA_HOME=<JDK 17> ./gradlew test --no-daemon",
+          "durationMs": 11376,
+          "exitCode": 1,
+          "output": "iveLibraryLoader in an unnamed module (file:~/.gradle/wrapper/dists/gradle-7.4-bin/c0gwcg53nkjbqw7r0h0umtfvt/gradle-7.4/lib/native-platform-0.22-milestone-23.jar)\nWARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module\nWARNING: Restricted methods will be blocked in a future release unless native access is enabled\n\nTo honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.4/userguide/gradle_daemon.html#sec:disabling_the_daemon.\nDaemon will be stopped at the end of the build \n\n> Configure project :\nDGS CodeGen added [com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-client-core:5.0.6] to the implementation dependencies.\n\n> Task :generateJava UP-TO-DATE\n> Task :compileJava FAILED\n\nFAILURE: Build failed with an exception.\n\n* What went wrong:\nExecution failed for task ':compileJava'.\n> java.lang.ExceptionInInitializerError\n\n* Try:\n> Run with --stacktrace option to get the stack trace.\n> Run with --info or --debug option to get more log output.\n> Run with --scan to get full insights.\n\n* Get more help at https://help.gradle.org\n\nBUILD FAILED in 10s\n2 actionable tasks: 1 executed, 1 up-to-date",
+          "timedOut": false
+        }
+      ],
+      "summary": "2 validation check(s) failed."
     }
   },
   "nextActions": [
+    {
+      "id": "review-spring-security-6-risks",
+      "priority": "critical",
+      "title": "Review Spring Security 6 configuration risks",
+      "reason": "Spring Security 6 readiness depends on explicit review of removed configuration adapters, matcher API changes, authorization DSL changes, and method security annotations.",
+      "evidenceCount": 9,
+      "findingCodes": [
+        "spring-security-5",
+        "spring-security-websecurityconfigureradapter",
+        "spring-security-legacy-matchers",
+        "spring-security-authorize-requests",
+        "spring-security-global-method-security"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack spring-security-6-readiness --out reports/spring-security-6-readiness"
+    },
     {
       "id": "plan-jakarta-migration",
       "priority": "critical",
@@ -324,21 +1370,6 @@
         "javax-usage"
       ],
       "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
-    },
-    {
-      "id": "review-spring-security-6-risks",
-      "priority": "warning",
-      "title": "Review Spring Security 6 configuration risks",
-      "reason": "Spring Security 6 readiness depends on explicit review of removed configuration adapters, matcher API changes, authorization DSL changes, and method security annotations.",
-      "evidenceCount": 4,
-      "findingCodes": [
-        "spring-security-5",
-        "spring-security-websecurityconfigureradapter",
-        "spring-security-legacy-matchers",
-        "spring-security-authorize-requests",
-        "spring-security-global-method-security"
-      ],
-      "suggestedCommand": "node ./bin/emp.js analyze . --pack spring-security-6-readiness --out reports/spring-security-6-readiness"
     }
   ]
 }
