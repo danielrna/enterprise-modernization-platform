@@ -104,6 +104,10 @@
       <div class="panel notice bad">Readiness score was not computed because this pack is not applicable to the project.</div>
 
 
+    <h2>Recommended Next Actions</h2>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill critical">critical</span></td><td>Select the applicable modernization pack</td><td>Spring Boot 4.0.6 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr></tbody></table></div>
+
+
     <h2>Evidence</h2>
     <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 

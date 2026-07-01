@@ -4,6 +4,7 @@ import { buildTrustEvidence } from './trust.js';
 
 export async function writeReportBundle({ outDir, scan, readiness, transformation = null, rules = null }) {
   await fs.mkdir(outDir, { recursive: true });
+  const findingSummary = summarizeFindings(scan.findings);
   const report = {
     schemaVersion: 'emp.report.v1',
     generatedAt: scan.generatedAt,
@@ -13,7 +14,7 @@ export async function writeReportBundle({ outDir, scan, readiness, transformatio
     readiness,
     productionFindings: scan.findings.filter((finding) => finding.scope !== 'test'),
     testFindings: scan.findings.filter((finding) => finding.scope === 'test'),
-    findingSummary: summarizeFindings(scan.findings),
+    findingSummary,
     findings: scan.findings,
     evidence: scan.evidence,
     dependencies: scan.dependencies
@@ -22,6 +23,7 @@ export async function writeReportBundle({ outDir, scan, readiness, transformatio
   if (transformation) report.transformation = transformation;
   if (transformation) report.trust = buildTrustEvidence({ scan, transformation });
   if (rules?.loaded) report.rules = rules;
+  report.nextActions = buildNextActions(report);
   const jsonPath = path.join(outDir, 'report.json');
   const htmlPath = path.join(outDir, 'index.html');
   await fs.writeFile(jsonPath, `${JSON.stringify(report, null, 2)}\n`);
@@ -43,6 +45,7 @@ export function renderReport(report) {
   const trust = renderTrust(report.trust);
   const rules = renderRules(report.rules);
   const benchmarkEvidence = renderBenchmarkEvidence(report.benchmark);
+  const nextActions = renderNextActions(report.nextActions);
   const decision = reportDecision(report);
   const primaryRisks = topFindingTypes(report.findingSummary).slice(0, 3);
 
@@ -140,6 +143,7 @@ export function renderReport(report) {
 
     ${applicability}
     ${readiness}
+    ${nextActions}
 
     <h2>Evidence</h2>
     <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody>${evidence}</tbody></table></div>
@@ -161,6 +165,108 @@ export function renderReport(report) {
 </body>
 </html>
 `;
+}
+
+export function buildNextActions(report) {
+  const actions = [];
+  const productionFindings = report.productionFindings || [];
+  const addAction = ({ id, priority, title, reason, findingCodes = [], suggestedCommand = null }) => {
+    if (actions.some((action) => action.id === id)) return;
+    const evidenceCount = findingCodes.length
+      ? productionFindings.filter((finding) => findingCodes.includes(finding.code)).length
+      : 0;
+    actions.push({ id, priority, title, reason, evidenceCount, findingCodes, suggestedCommand });
+  };
+
+  if (report.readiness.status === 'not_applicable') {
+    addAction({
+      id: 'select-applicable-pack',
+      priority: 'critical',
+      title: 'Select the applicable modernization pack',
+      reason: report.packApplicability?.reason || 'The selected pack is not applicable to the detected project state.',
+      suggestedCommand: report.packApplicability?.recommendedPack
+        ? `node ./bin/emp.js analyze . --pack ${report.packApplicability.recommendedPack} --out reports/${report.packApplicability.recommendedPack}`
+        : 'node ./bin/emp.js analyze . --out reports/readiness'
+    });
+  }
+
+  if (hasFinding(productionFindings, 'build-tool-missing')) {
+    addAction({
+      id: 'add-build-metadata',
+      priority: 'critical',
+      title: 'Add Maven or Gradle metadata before migration planning',
+      reason: 'Build metadata is required for repeatable analysis, transformation, and validation evidence.',
+      findingCodes: ['build-tool-missing']
+    });
+  }
+
+  if (hasFinding(productionFindings, 'javax-usage')) {
+    addAction({
+      id: 'plan-jakarta-migration',
+      priority: 'critical',
+      title: 'Plan javax to Jakarta namespace migration',
+      reason: 'Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.',
+      findingCodes: ['javax-usage'],
+      suggestedCommand: 'node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness'
+    });
+  }
+
+  if (hasFinding(productionFindings, 'spring-boot-2') || hasFinding(productionFindings, 'spring-boot-version-unknown')) {
+    addAction({
+      id: 'validate-spring-boot-upgrade-path',
+      priority: 'warning',
+      title: 'Validate the Spring Boot 3 upgrade path',
+      reason: 'Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.',
+      findingCodes: ['spring-boot-2', 'spring-boot-version-unknown'],
+      suggestedCommand: 'node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust'
+    });
+  }
+
+  if (hasFinding(productionFindings, 'java-21-target-missing')) {
+    addAction({
+      id: 'validate-java-21-target',
+      priority: 'warning',
+      title: 'Validate Java 21 target configuration',
+      reason: 'The Java target must be explicit before Java LTS migration evidence is strong enough for execution planning.',
+      findingCodes: ['java-21-target-missing'],
+      suggestedCommand: 'node ./bin/emp.js transform . --pack java-17-to-21-readiness --mode dry-run --validate --out reports/java-21-trust'
+    });
+  }
+
+  const hibernateCodes = ['hibernate-legacy-criteria', 'hibernate-session-api', 'hibernate-custom-type', 'hibernate-xml-mapping'];
+  if (hibernateCodes.some((code) => hasFinding(productionFindings, code))) {
+    addAction({
+      id: 'review-hibernate-upgrade-risks',
+      priority: hasFinding(productionFindings, 'hibernate-legacy-criteria') ? 'critical' : 'warning',
+      title: 'Review Hibernate API and mapping upgrade risks',
+      reason: 'Hibernate 6 readiness depends on explicit review of legacy Criteria usage, Session API assumptions, custom types, and XML mappings.',
+      findingCodes: hibernateCodes,
+      suggestedCommand: 'node ./bin/emp.js analyze . --pack hibernate-readiness --out reports/hibernate-readiness'
+    });
+  }
+
+  if (report.rules?.violations?.some((violation) => violation.severity === 'critical')) {
+    addAction({
+      id: 'resolve-critical-enterprise-rules',
+      priority: 'critical',
+      title: 'Resolve critical enterprise rule violations',
+      reason: 'Client-owned critical rules should be resolved before presenting readiness evidence as migration-ready.',
+      findingCodes: report.rules.violations.map((violation) => violation.code).filter(Boolean),
+      suggestedCommand: 'node ./bin/emp.js analyze . --rules .preflight-rules.yml --out reports/client-readiness'
+    });
+  }
+
+  if (!actions.length) {
+    addAction({
+      id: 'capture-validation-evidence',
+      priority: 'info',
+      title: 'Capture validation evidence',
+      reason: 'No blocking static action was detected. The next useful step is compile, test, rollback, and trust evidence.',
+      suggestedCommand: `node ./bin/emp.js transform . --pack ${report.pack} --mode dry-run --validate --out reports/validation`
+    });
+  }
+
+  return actions.sort((left, right) => priorityRank(left.priority) - priorityRank(right.priority) || right.evidenceCount - left.evidenceCount || left.title.localeCompare(right.title));
 }
 
 function renderApplicability(report) {
@@ -197,6 +303,17 @@ function renderReadiness(report, categories) {
   return `
     <h2>Readiness</h2>
     <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody>${categories}</tbody></table></div>
+  `;
+}
+
+function renderNextActions(actions = []) {
+  const rows = actions.length
+    ? actions.map((action) => `<tr><td><span class="pill ${escapeHtml(action.priority)}">${escapeHtml(action.priority)}</span></td><td>${escapeHtml(action.title)}</td><td>${escapeHtml(action.reason)}</td><td>${escapeHtml(action.evidenceCount)}</td><td>${action.suggestedCommand ? `<code>${escapeHtml(action.suggestedCommand)}</code>` : 'No command suggested.'}</td></tr>`).join('')
+    : '<tr><td colspan="5">No recommended next actions were generated.</td></tr>';
+
+  return `
+    <h2>Recommended Next Actions</h2>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody>${rows}</tbody></table></div>
   `;
 }
 
@@ -256,6 +373,16 @@ function countBySeverity(findings) {
     counts[finding.severity] = (counts[finding.severity] || 0) + 1;
     return counts;
   }, { critical: 0, warning: 0, info: 0 });
+}
+
+function hasFinding(findings, code) {
+  return findings.some((finding) => finding.code === code);
+}
+
+function priorityRank(priority) {
+  if (priority === 'critical') return 0;
+  if (priority === 'warning') return 1;
+  return 2;
 }
 
 function moduleNameFor(file) {

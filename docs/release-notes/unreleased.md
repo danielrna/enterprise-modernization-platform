@@ -2,6 +2,20 @@
 
 Content engine improvements plus the first Month 7 mandatory pack expansion for Hibernate readiness.
 
+## Report next actions
+
+Add prioritized recommended next actions to readiness report JSON and HTML so reports move from diagnostics to client-actionable guidance.
+
+Audience: Consultants and client reviewers
+
+- Adds `report.nextActions` to generated JSON reports.
+- Adds a `Recommended Next Actions` section to HTML reports.
+- Derives actions from pack applicability, finding types, Hibernate risks, Jakarta readiness, Java target readiness, build metadata, and enterprise rules.
+
+Links:
+- [Hibernate benchmark report example](docs/benchmarks/hibernate-demos/index.html)
+- [Report schema](schemas/report.schema.json)
+
 ## Hibernate readiness pack
 
 Add a Hibernate 5.x to 6.x readiness pack with ORM usage detection, pack applicability, static risk findings, readiness scoring, generated docs, and CLI visibility.

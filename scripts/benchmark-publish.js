@@ -5,6 +5,7 @@ import { BENCHMARKS, publishBenchmarks } from '../src/benchmarks.js';
 import { generateMigrationHub } from '../src/hub.js';
 import { generateKnowledgeBase } from '../src/knowledge-base.js';
 import { generatePackDocs } from '../src/pack-docs.js';
+import { buildNextActions, renderReport } from '../src/report.js';
 import { generateReleaseNotes } from '../src/release-notes.js';
 
 const DEFAULT_MIN_COUNT = BENCHMARKS.length;
@@ -24,6 +25,7 @@ if (!Number.isInteger(minCount) || minCount < 1) {
 
 let reports = [];
 if (source === 'existing') {
+  await refreshPublishedReportBundles(outDir);
   reports = await loadPublishedReportSummaries(outDir);
 } else {
   const result = await publishBenchmarks({
@@ -110,6 +112,19 @@ async function summarizePublishedReports(benchmarksDir) {
     validationFailed: reports.filter((report) => report.benchmark?.validation?.status === 'failed').length,
     validationSkipped: reports.filter((report) => report.benchmark?.validation?.status === 'skipped').length
   };
+}
+
+async function refreshPublishedReportBundles(benchmarksDir) {
+  const entries = await fs.readdir(benchmarksDir, { withFileTypes: true }).catch(() => []);
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const reportPath = path.join(benchmarksDir, entry.name, 'report.json');
+    const report = await readJson(reportPath);
+    if (!report) continue;
+    report.nextActions = buildNextActions(report);
+    await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
+    await fs.writeFile(path.join(benchmarksDir, entry.name, 'index.html'), renderReport(report).replace(/[ \t]+$/gm, ''));
+  }
 }
 
 async function readJson(file) {

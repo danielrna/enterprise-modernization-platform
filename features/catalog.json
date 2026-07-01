@@ -8,6 +8,28 @@
       "summary": "Content engine improvements plus the first Month 7 mandatory pack expansion for Hibernate readiness.",
       "features": [
         {
+          "id": "report-next-actions",
+          "type": "report",
+          "name": "Report next actions",
+          "audience": "Consultants and client reviewers",
+          "summary": "Add prioritized recommended next actions to readiness report JSON and HTML so reports move from diagnostics to client-actionable guidance.",
+          "evidence": [
+            "Adds `report.nextActions` to generated JSON reports.",
+            "Adds a `Recommended Next Actions` section to HTML reports.",
+            "Derives actions from pack applicability, finding types, Hibernate risks, Jakarta readiness, Java target readiness, build metadata, and enterprise rules."
+          ],
+          "links": [
+            {
+              "label": "Hibernate benchmark report example",
+              "href": "docs/benchmarks/hibernate-demos/index.html"
+            },
+            {
+              "label": "Report schema",
+              "href": "schemas/report.schema.json"
+            }
+          ]
+        },
+        {
           "id": "hibernate-readiness-pack",
           "type": "pack",
           "name": "Hibernate readiness pack",

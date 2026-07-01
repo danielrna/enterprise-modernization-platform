@@ -51,10 +51,19 @@
     </section>
     <section class="summary">
       <div><strong>Date</strong><span>Pending</span></div>
-      <div><strong>Features</strong><span>7</span></div>
+      <div><strong>Features</strong><span>8</span></div>
       <div><strong>Draft</strong><span><a href="unreleased.md">Markdown</a></span></div>
     </section>
     <section class="features">
+      <article class="feature">
+        <small>report</small>
+        <h2>Report next actions</h2>
+        <p>Add prioritized recommended next actions to readiness report JSON and HTML so reports move from diagnostics to client-actionable guidance.</p>
+        <div class="meta"><strong>Audience</strong><span>Consultants and client reviewers</span></div>
+        <h3>Evidence</h3>
+        <ul><li>Adds <code>report.nextActions</code> to generated JSON reports.</li><li>Adds a <code>Recommended Next Actions</code> section to HTML reports.</li><li>Derives actions from pack applicability, finding types, Hibernate risks, Jakarta readiness, Java target readiness, build metadata, and enterprise rules.</li></ul>
+        <h3>Links</h3><div class="actions"><a href="../benchmarks/hibernate-demos/index.html">Hibernate benchmark report example</a><a href="../schemas/report.schema.json">Report schema</a></div>
+      </article>
       <article class="feature">
         <small>pack</small>
         <h2>Hibernate readiness pack</h2>

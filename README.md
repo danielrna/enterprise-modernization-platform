@@ -224,6 +224,7 @@ docker run --rm --entrypoint npm -w /app emp-cli run check
 Current automated coverage verifies:
 
 - Readiness analysis, report generation, benchmark publishing, and hub generation.
+- Report next-action recommendations in JSON and HTML output.
 - Pack documentation generation from pack metadata.
 - Release-note generation from feature metadata.
 - Checkout benchmark validation evidence for compilation and tests.

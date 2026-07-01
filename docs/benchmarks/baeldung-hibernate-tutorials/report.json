@@ -1065,5 +1065,21 @@
       "checks": [],
       "summary": "Validation was not requested."
     }
-  }
+  },
+  "nextActions": [
+    {
+      "id": "review-hibernate-upgrade-risks",
+      "priority": "critical",
+      "title": "Review Hibernate API and mapping upgrade risks",
+      "reason": "Hibernate 6 readiness depends on explicit review of legacy Criteria usage, Session API assumptions, custom types, and XML mappings.",
+      "evidenceCount": 45,
+      "findingCodes": [
+        "hibernate-legacy-criteria",
+        "hibernate-session-api",
+        "hibernate-custom-type",
+        "hibernate-xml-mapping"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack hibernate-readiness --out reports/hibernate-readiness"
+    }
+  ]
 }

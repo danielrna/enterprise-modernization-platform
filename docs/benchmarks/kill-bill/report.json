@@ -1343,5 +1343,39 @@
       "checks": [],
       "summary": "Validation requires a local checkout."
     }
-  }
+  },
+  "nextActions": [
+    {
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    },
+    {
+      "id": "select-applicable-pack",
+      "priority": "critical",
+      "title": "Select the applicable modernization pack",
+      "reason": "Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+      "evidenceCount": 0,
+      "findingCodes": [],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    },
+    {
+      "id": "validate-spring-boot-upgrade-path",
+      "priority": "warning",
+      "title": "Validate the Spring Boot 3 upgrade path",
+      "reason": "Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "spring-boot-2",
+        "spring-boot-version-unknown"
+      ],
+      "suggestedCommand": "node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust"
+    }
+  ]
 }

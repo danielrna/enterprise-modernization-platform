@@ -319,5 +319,16 @@
       "checks": [],
       "summary": "Validation was not requested."
     }
-  }
+  },
+  "nextActions": [
+    {
+      "id": "capture-validation-evidence",
+      "priority": "info",
+      "title": "Capture validation evidence",
+      "reason": "No blocking static action was detected. The next useful step is compile, test, rollback, and trust evidence.",
+      "evidenceCount": 0,
+      "findingCodes": [],
+      "suggestedCommand": "node ./bin/emp.js transform . --pack hibernate-readiness --mode dry-run --validate --out reports/validation"
+    }
+  ]
 }

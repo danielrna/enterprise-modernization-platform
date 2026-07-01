@@ -1156,5 +1156,27 @@
       "checks": [],
       "summary": "Validation requires a local checkout."
     }
-  }
+  },
+  "nextActions": [
+    {
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    },
+    {
+      "id": "select-applicable-pack",
+      "priority": "critical",
+      "title": "Select the applicable modernization pack",
+      "reason": "Spring Boot 4.0.6 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+      "evidenceCount": 0,
+      "findingCodes": [],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    }
+  ]
 }

@@ -3,7 +3,7 @@
   "$id": "https://enterprise-modernization-platform.local/schemas/report.schema.json",
   "title": "Enterprise Modernization Platform Report",
   "type": "object",
-  "required": ["schemaVersion", "generatedAt", "project", "pack", "packApplicability", "readiness", "productionFindings", "testFindings", "findingSummary", "findings", "evidence", "dependencies"],
+  "required": ["schemaVersion", "generatedAt", "project", "pack", "packApplicability", "readiness", "productionFindings", "testFindings", "findingSummary", "findings", "evidence", "dependencies", "nextActions"],
   "properties": {
     "schemaVersion": { "const": "emp.report.v1" },
     "generatedAt": { "type": "string" },
@@ -98,6 +98,23 @@
       "items": { "$ref": "./trust-evidence.schema.json" }
     },
     "dependencies": { "type": "object" },
+    "nextActions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "priority", "title", "reason", "evidenceCount", "findingCodes"],
+        "properties": {
+          "id": { "type": "string" },
+          "priority": { "type": "string", "enum": ["critical", "warning", "info"] },
+          "title": { "type": "string" },
+          "reason": { "type": "string" },
+          "evidenceCount": { "type": "integer", "minimum": 0 },
+          "findingCodes": { "type": "array", "items": { "type": "string" } },
+          "suggestedCommand": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
     "rules": {
       "type": "object",
       "required": ["schemaVersion", "source", "loaded", "rules", "violations"],

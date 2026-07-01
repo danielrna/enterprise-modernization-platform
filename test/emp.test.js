@@ -36,6 +36,8 @@ test('analyzes a Spring Boot project and writes HTML/JSON reports', async () => 
   assert.equal(report.packApplicability.applicable, true);
   assert.equal(report.productionFindings.length, report.findings.length);
   assert.equal(report.findingSummary.byCode['javax-usage'].production, 1);
+  assert.equal(report.nextActions.some((action) => action.id === 'plan-jakarta-migration'), true);
+  assert.match(await fs.readFile(bundle.htmlPath, 'utf8'), /Recommended Next Actions/);
 });
 
 test('publishes the benchmark catalog and migration hub', async () => {
@@ -390,6 +392,7 @@ public class LegacyPayload implements Serializable {
 
 test('Hibernate readiness pack detects ORM upgrade risks', async () => {
   const root = await makeSpringProject();
+  const outDir = path.join(root, 'report');
   await fs.writeFile(path.join(root, 'pom.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -425,6 +428,9 @@ public class Persistence {
 
   const scan = await analyzeProject({ root, pack: 'hibernate-readiness' });
   const readiness = scoreReadiness(scan);
+  const bundle = await writeReportBundle({ outDir, scan, readiness });
+  const report = JSON.parse(await fs.readFile(bundle.jsonPath, 'utf8'));
+  const html = await fs.readFile(bundle.htmlPath, 'utf8');
 
   assert.equal(scan.packApplicability.applicable, true);
   assert.equal(scan.dependencies.hibernateDetected, true);
@@ -433,6 +439,8 @@ public class Persistence {
   assert.equal(scan.findings.some((finding) => finding.code === 'hibernate-custom-type'), true);
   assert.equal(scan.findings.some((finding) => finding.code === 'hibernate-xml-mapping'), true);
   assert.equal(Object.hasOwn(readiness.categories, 'hibernate'), true);
+  assert.equal(report.nextActions.some((action) => action.id === 'review-hibernate-upgrade-risks'), true);
+  assert.match(html, /Review Hibernate API and mapping upgrade risks/);
 });
 
 test('Hibernate readiness pack reports mismatch when Hibernate is absent', async () => {
