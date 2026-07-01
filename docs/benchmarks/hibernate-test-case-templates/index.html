@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Hibernate Test Case Templates Readiness Report</h1>
-    <p class="meta">hibernate-readiness · 2026-07-01T06:16:31.257Z · https://github.com/hibernate/hibernate-test-case-templates</p>
+    <p class="meta">hibernate-readiness · 2026-07-01T17:29:19.464Z · https://github.com/hibernate/hibernate-test-case-templates</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -67,7 +67,7 @@
       <div class="panel decision-main bad">
         <strong>Migration is blocked by critical readiness risks</strong>
         <div>1 critical finding(s) should be resolved before execution planning.</div>
-        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">4 Hibernate custom type integration</span><span class="pill warning">1 Direct Hibernate Session API usage</span></div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">88 Direct Hibernate Session API usage</span><span class="pill warning">18 Hibernate XML mapping</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
@@ -75,37 +75,37 @@
       </div>
       <div class="panel decision-list">
         <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 35% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">86%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">84%</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">82</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">81</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready for controlled migration planning</div>
+    <div class="panel">Ready with remediation work</div>
 
 
     <h2>Pack Applicability</h2>
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 17 · Build: Maven, Gradle · javax usage: yes · jakarta usage: yes</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: unknown · Build: Maven · javax usage: yes · jakarta usage: yes</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill info">info</span></td><td>Capture validation evidence</td><td>No blocking static action was detected. The next useful step is compile, test, rollback, and trust evidence.</td><td>0</td><td><code>node ./bin/emp.js transform . --pack hibernate-readiness --mode dry-run --validate --out reports/validation</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
@@ -114,15 +114,17 @@
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/hibernate/hibernate-test-case-templates
+      <strong>checkout</strong> · https://github.com/hibernate/hibernate-test-case-templates
+      <div class="label">Checkout: benchmark-repos/hibernate-test-case-templates</div>
+      <div class="label">Git revision: 882abaedd3d065f2ccf93522830e82bf611d9614</div>
     </div>
     <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 35% · 1 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill passed">passed</span></td><td>mvn -q -DskipTests compile</td><td>42.9 s</td><td></td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>mvn -q test</td><td>81.7 s</td><td>t.java:1596) [ERROR] Errors: [ERROR] ReactiveStandaloneTestCase.startContainer:61 » IllegalState Could not find a valid Docker environment. Please see logs and check configuration [ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0 ...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">0</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">6</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">3</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">6</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">1</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">109</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">4</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">110</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Hibernate custom type integration</td><td>4</td><td>0</td><td>4</td><td>hibernate-orm-5 (4)</td><td>orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example1Test.java:10 · Review custom type extension points against Hibernate 6 type-system changes.<br>orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example2Test.java:11 · Review custom type extension points against Hibernate 6 type-system changes.<br>orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example3Test.java:12 · Review custom type extension points against Hibernate 6 type-system changes.<br>orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example4Test.java:13 · Review custom type extension points against Hibernate 6 type-system changes.</td></tr><tr><td><span class="pill warning">warning</span><br>Direct Hibernate Session API usage</td><td>1</td><td>0</td><td>1</td><td>hibernate-orm-5 (1)</td><td>orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java:41 · Validate Session lifecycle assumptions before ORM upgrade execution.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>0</td><td>1</td><td>hibernate-orm-5 (1)</td><td>orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java:9 · Separate javax to jakarta work from Hibernate API compatibility validation.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Direct Hibernate Session API usage</td><td>88</td><td>0</td><td>88</td><td>orm-elasticsearch (19)<br>orm-lucene (19)<br>hibernate-reactive-2 (8)</td><td>orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java:3 · Review Direct Hibernate Session API usage before modernization.<br>orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java:16 · Review Direct Hibernate Session API usage before modernization.<br>orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java:18 · Review Direct Hibernate Session API usage before modernization.<br>orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java:72 · Review Direct Hibernate Session API usage before modernization.<br>orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java:3 · Review Direct Hibernate Session API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Hibernate XML mapping</td><td>18</td><td>0</td><td>18</td><td>envers-5 (3)<br>envers-6 (3)<br>envers-7 (3)</td><td>envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java:29 · Review Hibernate XML mapping before modernization.<br>envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java:33 · Review Hibernate XML mapping before modernization.<br>envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java:34 · Review Hibernate XML mapping before modernization.<br>envers/envers-6/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java:29 · Review Hibernate XML mapping before modernization.<br>envers/envers-6/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java:33 · Review Hibernate XML mapping before modernization.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>3</td><td>0</td><td>3</td><td>hibernate-reactive-2 (1)<br>hibernate-reactive-3 (1)<br>hibernate-reactive-4 (1)</td><td>reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/util/Database.java:76 · Review System.out logging before modernization.<br>reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/util/Database.java:76 · Review System.out logging before modernization.<br>reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/util/Database.java:76 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

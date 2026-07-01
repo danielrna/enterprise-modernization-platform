@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Promoted Hibernate Test Case Templates to checkout-backed Hibernate readiness evidence with passing Maven compile validation and honest test failure evidence for Docker-dependent reactive tests.
+
 ## v0.1.4
 
 - Promoted Hibernate ORM Demos to checkout-backed Hibernate readiness evidence with passing Maven-wrapper compile/test validation.

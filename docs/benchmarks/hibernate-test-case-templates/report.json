@@ -1,18 +1,17 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-07-01T06:16:31.257Z",
+  "generatedAt": "2026-07-01T17:29:19.464Z",
   "project": {
     "name": "Hibernate Test Case Templates",
-    "root": "https://github.com/hibernate/hibernate-test-case-templates",
+    "root": "benchmark-repos/hibernate-test-case-templates",
     "source": "https://github.com/hibernate/hibernate-test-case-templates",
     "buildTools": [
-      "Maven",
-      "Gradle"
+      "Maven"
     ],
-    "javaVersion": "17",
+    "javaVersion": "unknown",
     "springBootVersion": "unknown",
-    "fileCount": 160,
-    "javaFileCount": 82
+    "fileCount": 183,
+    "javaFileCount": 81
   },
   "pack": "hibernate-readiness",
   "packApplicability": {
@@ -21,127 +20,1039 @@
     "reason": "Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness."
   },
   "readiness": {
-    "overall": 86,
+    "overall": 84,
     "categories": {
       "java": 88,
       "spring": 86,
       "hibernate": 84,
-      "jakarta": 95,
+      "jakarta": 79,
       "build": 90,
       "security": 76,
       "architecture": 84
     },
-    "summary": "Ready for controlled migration planning",
+    "summary": "Ready with remediation work",
     "counts": {
       "critical": 1,
-      "warning": 5,
-      "info": 0
+      "warning": 106,
+      "info": 3
     }
   },
-  "productionFindings": [],
-  "testFindings": [
-    {
-      "code": "hibernate-session-api",
-      "severity": "warning",
-      "title": "Direct Hibernate Session API usage",
-      "recommendation": "Validate Session lifecycle assumptions before ORM upgrade execution.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
-      "line": 41,
-      "scope": "test"
-    },
+  "productionFindings": [
     {
       "code": "javax-usage",
       "severity": "critical",
       "title": "javax namespace usage detected",
-      "recommendation": "Separate javax to jakarta work from Hibernate API compatibility validation.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-6/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-6/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-6/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-7/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-7/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-7/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 60,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 44,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/QuarkusLikeORMUnitTestCase.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/QuarkusLikeORMUnitTestCase.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/QuarkusLikeORMUnitTestCase.java",
       "line": 9,
       "scope": "test"
     },
     {
-      "code": "hibernate-custom-type",
+      "code": "hibernate-session-api",
       "severity": "warning",
-      "title": "Hibernate custom type integration",
-      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example1Test.java",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/QuarkusLikeORMUnitTestCase.java",
+      "line": 48,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/util/Database.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/util/Database.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/util/Database.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/elasticsearch-5/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/elasticsearch-5/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/elasticsearch-5/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/elasticsearch-5/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/elasticsearch-5/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 8,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/lucene/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 8,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-lucene/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
       "line": 10,
       "scope": "test"
     },
     {
-      "code": "hibernate-custom-type",
+      "code": "hibernate-session-api",
       "severity": "warning",
-      "title": "Hibernate custom type integration",
-      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example2Test.java",
-      "line": 11,
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 36,
       "scope": "test"
     },
     {
-      "code": "hibernate-custom-type",
+      "code": "hibernate-session-api",
       "severity": "warning",
-      "title": "Hibernate custom type integration",
-      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example3Test.java",
-      "line": 12,
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
       "scope": "test"
     },
     {
-      "code": "hibernate-custom-type",
+      "code": "hibernate-session-api",
       "severity": "warning",
-      "title": "Hibernate custom type integration",
-      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example4Test.java",
-      "line": 13,
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 8,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 8,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
       "scope": "test"
     }
   ],
   "findingSummary": {
     "production": {
-      "critical": 0,
+      "critical": 1,
       "warning": 0,
       "info": 0
     },
     "test": {
-      "critical": 1,
-      "warning": 5,
-      "info": 0
+      "critical": 0,
+      "warning": 106,
+      "info": 3
     },
     "byCode": {
-      "hibernate-session-api": {
-        "code": "hibernate-session-api",
-        "title": "Direct Hibernate Session API usage",
-        "severity": "warning",
-        "total": 1,
-        "production": 0,
-        "test": 1,
-        "topModules": [
-          {
-            "name": "hibernate-orm-5",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "hibernate-session-api",
-            "severity": "warning",
-            "title": "Direct Hibernate Session API usage",
-            "recommendation": "Validate Session lifecycle assumptions before ORM upgrade execution.",
-            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
-            "line": 41,
-            "scope": "test"
-          }
-        ]
-      },
       "javax-usage": {
         "code": "javax-usage",
         "title": "javax namespace usage detected",
         "severity": "critical",
         "total": 1,
-        "production": 0,
-        "test": 1,
+        "production": 1,
+        "test": 0,
         "topModules": [
           {
-            "name": "hibernate-orm-5",
+            "name": "project",
             "count": 1
           }
         ],
@@ -150,61 +1061,198 @@
             "code": "javax-usage",
             "severity": "critical",
             "title": "javax namespace usage detected",
-            "recommendation": "Separate javax to jakarta work from Hibernate API compatibility validation.",
-            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
-            "line": 9,
-            "scope": "test"
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
           }
         ]
       },
-      "hibernate-custom-type": {
-        "code": "hibernate-custom-type",
-        "title": "Hibernate custom type integration",
+      "hibernate-xml-mapping": {
+        "code": "hibernate-xml-mapping",
+        "title": "Hibernate XML mapping",
         "severity": "warning",
-        "total": 4,
+        "total": 18,
         "production": 0,
-        "test": 4,
+        "test": 18,
         "topModules": [
           {
-            "name": "hibernate-orm-5",
-            "count": 4
+            "name": "envers-5",
+            "count": 3
+          },
+          {
+            "name": "envers-6",
+            "count": 3
+          },
+          {
+            "name": "envers-7",
+            "count": 3
           }
         ],
         "examples": [
           {
-            "code": "hibernate-custom-type",
+            "code": "hibernate-xml-mapping",
             "severity": "warning",
-            "title": "Hibernate custom type integration",
-            "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example1Test.java",
-            "line": 10,
+            "title": "Hibernate XML mapping",
+            "recommendation": "Review Hibernate XML mapping before modernization.",
+            "file": "envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+            "line": 29,
             "scope": "test"
           },
           {
-            "code": "hibernate-custom-type",
+            "code": "hibernate-xml-mapping",
             "severity": "warning",
-            "title": "Hibernate custom type integration",
-            "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example2Test.java",
-            "line": 11,
+            "title": "Hibernate XML mapping",
+            "recommendation": "Review Hibernate XML mapping before modernization.",
+            "file": "envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+            "line": 33,
             "scope": "test"
           },
           {
-            "code": "hibernate-custom-type",
+            "code": "hibernate-xml-mapping",
             "severity": "warning",
-            "title": "Hibernate custom type integration",
-            "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example3Test.java",
-            "line": 12,
+            "title": "Hibernate XML mapping",
+            "recommendation": "Review Hibernate XML mapping before modernization.",
+            "file": "envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+            "line": 34,
             "scope": "test"
           },
           {
-            "code": "hibernate-custom-type",
+            "code": "hibernate-xml-mapping",
             "severity": "warning",
-            "title": "Hibernate custom type integration",
-            "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example4Test.java",
-            "line": 13,
+            "title": "Hibernate XML mapping",
+            "recommendation": "Review Hibernate XML mapping before modernization.",
+            "file": "envers/envers-6/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+            "line": 29,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-xml-mapping",
+            "severity": "warning",
+            "title": "Hibernate XML mapping",
+            "recommendation": "Review Hibernate XML mapping before modernization.",
+            "file": "envers/envers-6/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+            "line": 33,
+            "scope": "test"
+          }
+        ]
+      },
+      "hibernate-session-api": {
+        "code": "hibernate-session-api",
+        "title": "Direct Hibernate Session API usage",
+        "severity": "warning",
+        "total": 88,
+        "production": 0,
+        "test": 88,
+        "topModules": [
+          {
+            "name": "orm-elasticsearch",
+            "count": 19
+          },
+          {
+            "name": "orm-lucene",
+            "count": 19
+          },
+          {
+            "name": "hibernate-reactive-2",
+            "count": 8
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+            "line": 3,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+            "line": 16,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+            "line": 18,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+            "line": 72,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+            "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+            "line": 3,
+            "scope": "test"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 3,
+        "production": 0,
+        "test": 3,
+        "topModules": [
+          {
+            "name": "hibernate-reactive-2",
+            "count": 1
+          },
+          {
+            "name": "hibernate-reactive-3",
+            "count": 1
+          },
+          {
+            "name": "hibernate-reactive-4",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/util/Database.java",
+            "line": 76,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/util/Database.java",
+            "line": 76,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/util/Database.java",
+            "line": 76,
             "scope": "test"
           }
         ]
@@ -213,57 +1261,993 @@
   },
   "findings": [
     {
-      "code": "hibernate-session-api",
-      "severity": "warning",
-      "title": "Direct Hibernate Session API usage",
-      "recommendation": "Validate Session lifecycle assumptions before ORM upgrade execution.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
-      "line": 41,
-      "scope": "test"
-    },
-    {
       "code": "javax-usage",
       "severity": "critical",
       "title": "javax namespace usage detected",
-      "recommendation": "Separate javax to jakarta work from Hibernate API compatibility validation.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-5/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-6/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-6/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-6/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-7/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-7/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "envers/envers-7/src/test/java/org/hibernate/envers/bugs/EnversUnitTestCase.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 60,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 44,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/QuarkusLikeORMUnitTestCase.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-6/src/test/java/org/hibernate/bugs/QuarkusLikeORMUnitTestCase.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMStandaloneTestCase.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Review Hibernate XML mapping before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/ORMUnitTestCase.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/QuarkusLikeORMUnitTestCase.java",
       "line": 9,
       "scope": "test"
     },
     {
-      "code": "hibernate-custom-type",
+      "code": "hibernate-session-api",
       "severity": "warning",
-      "title": "Hibernate custom type integration",
-      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example1Test.java",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "orm/hibernate-orm-7/src/test/java/org/hibernate/bugs/QuarkusLikeORMUnitTestCase.java",
+      "line": 48,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "reactive/hibernate-reactive-2/src/test/java/org/hibernate/reactive/util/Database.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "reactive/hibernate-reactive-3/src/test/java/org/hibernate/reactive/util/Database.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/bugs/ReactiveStandaloneTestCase.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "reactive/hibernate-reactive-4/src/test/java/org/hibernate/reactive/util/Database.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/elasticsearch-5/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/elasticsearch-5/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/elasticsearch-5/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/elasticsearch-5/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/elasticsearch-5/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 8,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-5/lucene/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 8,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-6/orm-lucene/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
       "line": 10,
       "scope": "test"
     },
     {
-      "code": "hibernate-custom-type",
+      "code": "hibernate-session-api",
       "severity": "warning",
-      "title": "Hibernate custom type integration",
-      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example2Test.java",
-      "line": 11,
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 36,
       "scope": "test"
     },
     {
-      "code": "hibernate-custom-type",
+      "code": "hibernate-session-api",
       "severity": "warning",
-      "title": "Hibernate custom type integration",
-      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example3Test.java",
-      "line": 12,
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
       "scope": "test"
     },
     {
-      "code": "hibernate-custom-type",
+      "code": "hibernate-session-api",
       "severity": "warning",
-      "title": "Hibernate custom type integration",
-      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
-      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example4Test.java",
-      "line": 13,
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 8,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-7/orm-lucene/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-elasticsearch/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/SearchTestBase.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 8,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/YourBytecodeEnhancedIT.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "search/hibernate-search-8/orm-lucene/src/test/java/org/hibernate/search/bugs/YourIT.java",
+      "line": 7,
       "scope": "test"
     }
   ],
@@ -306,29 +2290,50 @@
     "name": "Hibernate Test Case Templates",
     "repository": "https://github.com/hibernate/hibernate-test-case-templates",
     "ref": null,
-    "requestedSource": "catalog",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
+    "requestedSource": "local",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/hibernate-test-case-templates",
+    "analysisPath": "benchmark-repos/hibernate-test-case-templates",
+    "gitRevision": "882abaedd3d065f2ccf93522830e82bf611d9614",
     "commands": [],
     "validation": {
-      "requested": false,
-      "status": "not_requested",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation was not requested."
+      "requested": true,
+      "status": "failed",
+      "confidence": 35,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "passed",
+          "command": "mvn -q -DskipTests compile",
+          "durationMs": 42900,
+          "exitCode": 0,
+          "output": "",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "mvn -q test",
+          "durationMs": 81664,
+          "exitCode": 1,
+          "output": "t.java:1596)\n\n[ERROR] Errors: \n[ERROR]   ReactiveStandaloneTestCase.startContainer:61 » IllegalState Could not find a valid Docker environment. Please see logs and check configuration\n[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.4:test (default-test) on project test-case-template-hibernate-reactive-2: \n[ERROR] \n[ERROR] See /workspace/benchmark-repos/hibernate-test-case-templates/reactive/hibernate-reactive-2/target/surefire-reports for the individual test results.\n[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n[ERROR] \n[ERROR] After correcting the problems, you can resume the build with the command\n[ERROR]   mvn <args> -rf :test-case-template-hibernate-reactive-2",
+          "timedOut": false
+        }
+      ],
+      "summary": "1 validation check(s) failed."
     }
   },
   "nextActions": [
     {
-      "id": "capture-validation-evidence",
-      "priority": "info",
-      "title": "Capture validation evidence",
-      "reason": "No blocking static action was detected. The next useful step is compile, test, rollback, and trust evidence.",
-      "evidenceCount": 0,
-      "findingCodes": [],
-      "suggestedCommand": "node ./bin/emp.js transform . --pack hibernate-readiness --mode dry-run --validate --out reports/validation"
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
     }
   ]
 }
