@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T06:16:31.257Z",
+  "project": {
+    "name": "Hibernate Test Case Templates",
+    "root": "https://github.com/hibernate/hibernate-test-case-templates",
+    "source": "https://github.com/hibernate/hibernate-test-case-templates",
+    "buildTools": [
+      "Maven",
+      "Gradle"
+    ],
+    "javaVersion": "17",
+    "springBootVersion": "unknown",
+    "fileCount": 160,
+    "javaFileCount": 82
+  },
+  "pack": "hibernate-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness."
+  },
+  "readiness": {
+    "overall": 86,
+    "categories": {
+      "java": 88,
+      "spring": 86,
+      "hibernate": 84,
+      "jakarta": 95,
+      "build": 90,
+      "security": 76,
+      "architecture": 84
+    },
+    "summary": "Ready for controlled migration planning",
+    "counts": {
+      "critical": 1,
+      "warning": 5,
+      "info": 0
+    }
+  },
+  "productionFindings": [],
+  "testFindings": [
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Validate Session lifecycle assumptions before ORM upgrade execution.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
+      "line": 41,
+      "scope": "test"
+    },
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Separate javax to jakarta work from Hibernate API compatibility validation.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
+      "line": 9,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    }
+  ],
+  "findingSummary": {
+    "production": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "test": {
+      "critical": 1,
+      "warning": 5,
+      "info": 0
+    },
+    "byCode": {
+      "hibernate-session-api": {
+        "code": "hibernate-session-api",
+        "title": "Direct Hibernate Session API usage",
+        "severity": "warning",
+        "total": 1,
+        "production": 0,
+        "test": 1,
+        "topModules": [
+          {
+            "name": "hibernate-orm-5",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Validate Session lifecycle assumptions before ORM upgrade execution.",
+            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
+            "line": 41,
+            "scope": "test"
+          }
+        ]
+      },
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 0,
+        "test": 1,
+        "topModules": [
+          {
+            "name": "hibernate-orm-5",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Separate javax to jakarta work from Hibernate API compatibility validation.",
+            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
+            "line": 9,
+            "scope": "test"
+          }
+        ]
+      },
+      "hibernate-custom-type": {
+        "code": "hibernate-custom-type",
+        "title": "Hibernate custom type integration",
+        "severity": "warning",
+        "total": 4,
+        "production": 0,
+        "test": 4,
+        "topModules": [
+          {
+            "name": "hibernate-orm-5",
+            "count": 4
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-custom-type",
+            "severity": "warning",
+            "title": "Hibernate custom type integration",
+            "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example1Test.java",
+            "line": 10,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-custom-type",
+            "severity": "warning",
+            "title": "Hibernate custom type integration",
+            "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example2Test.java",
+            "line": 11,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-custom-type",
+            "severity": "warning",
+            "title": "Hibernate custom type integration",
+            "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example3Test.java",
+            "line": 12,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-custom-type",
+            "severity": "warning",
+            "title": "Hibernate custom type integration",
+            "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+            "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example4Test.java",
+            "line": 13,
+            "scope": "test"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Validate Session lifecycle assumptions before ORM upgrade execution.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
+      "line": 41,
+      "scope": "test"
+    },
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Separate javax to jakarta work from Hibernate API compatibility validation.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/JPAUnitTestCase.java",
+      "line": 9,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review custom type extension points against Hibernate 6 type-system changes.",
+      "file": "orm/hibernate-orm-5/src/test/java/org/hibernate/bugs/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "hibernate-test-case-templates",
+    "name": "Hibernate Test Case Templates",
+    "repository": "https://github.com/hibernate/hibernate-test-case-templates",
+    "ref": null,
+    "requestedSource": "catalog",
+    "source": "catalog",
+    "checkoutPath": null,
+    "analysisPath": null,
+    "gitRevision": null,
+    "commands": [],
+    "validation": {
+      "requested": false,
+      "status": "not_requested",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation was not requested."
+    }
+  }
+}

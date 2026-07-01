@@ -1,0 +1,360 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T06:16:31.251Z",
+  "project": {
+    "name": "Hibernate ORM Demos",
+    "root": "https://github.com/hibernate/hibernate-demos",
+    "source": "https://github.com/hibernate/hibernate-demos",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "17",
+    "springBootVersion": "unknown",
+    "fileCount": 420,
+    "javaFileCount": 260
+  },
+  "pack": "hibernate-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness."
+  },
+  "readiness": {
+    "overall": 80,
+    "categories": {
+      "java": 88,
+      "spring": 86,
+      "hibernate": 56,
+      "jakarta": 79,
+      "build": 90,
+      "security": 76,
+      "architecture": 84
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 1,
+      "warning": 8,
+      "info": 0
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Validate Session and SessionFactory usage against the Hibernate 6 migration guide.",
+      "file": "basic/src/main/java/org/hibernate/demos/Demo.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta namespace alignment before Hibernate 6 validation.",
+      "file": "basic/src/main/java/org/hibernate/demos/Entity.java",
+      "line": 5,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example7.java",
+      "line": 16,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 8,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "byCode": {
+      "hibernate-session-api": {
+        "code": "hibernate-session-api",
+        "title": "Direct Hibernate Session API usage",
+        "severity": "warning",
+        "total": 8,
+        "production": 8,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "basic",
+            "count": 8
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Validate Session and SessionFactory usage against the Hibernate 6 migration guide.",
+            "file": "basic/src/main/java/org/hibernate/demos/Demo.java",
+            "line": 18,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "basic/src/main/java/org/hibernate/demos/Example1.java",
+            "line": 10,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "basic/src/main/java/org/hibernate/demos/Example2.java",
+            "line": 11,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "basic/src/main/java/org/hibernate/demos/Example3.java",
+            "line": 12,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "basic/src/main/java/org/hibernate/demos/Example4.java",
+            "line": 13,
+            "scope": "production"
+          }
+        ]
+      },
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "basic",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Plan Jakarta namespace alignment before Hibernate 6 validation.",
+            "file": "basic/src/main/java/org/hibernate/demos/Entity.java",
+            "line": 5,
+            "scope": "production"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Validate Session and SessionFactory usage against the Hibernate 6 migration guide.",
+      "file": "basic/src/main/java/org/hibernate/demos/Demo.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta namespace alignment before Hibernate 6 validation.",
+      "file": "basic/src/main/java/org/hibernate/demos/Entity.java",
+      "line": 5,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "basic/src/main/java/org/hibernate/demos/Example7.java",
+      "line": 16,
+      "scope": "production"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "hibernate-demos",
+    "name": "Hibernate ORM Demos",
+    "repository": "https://github.com/hibernate/hibernate-demos",
+    "ref": null,
+    "requestedSource": "catalog",
+    "source": "catalog",
+    "checkoutPath": null,
+    "analysisPath": null,
+    "gitRevision": null,
+    "commands": [],
+    "validation": {
+      "requested": false,
+      "status": "not_requested",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation was not requested."
+    }
+  }
+}

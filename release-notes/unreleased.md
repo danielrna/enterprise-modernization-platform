@@ -15,6 +15,20 @@ Audience: Java consultants and persistence modernization teams
 Links:
 - [Hibernate pack docs](docs/packs/hibernate-readiness.html)
 
+## Hibernate benchmark catalog batch
+
+Add the first catalog-backed Hibernate readiness benchmark batch so the new pack has public evidence examples immediately.
+
+Audience: Consultants and buyers reviewing persistence modernization evidence
+
+- Adds 5 Hibernate readiness benchmark reports.
+- Covers Hibernate demos, Hibernate test templates, Hypersistence Utils, High Performance Java Persistence, and Baeldung Hibernate tutorial material.
+- Raises the public benchmark catalog from 50 to 55 reports.
+
+Links:
+- [Hibernate benchmark example](docs/benchmarks/hibernate-demos/index.html)
+- [Benchmark index](docs/benchmarks/index.html)
+
 ## Pack documentation generation
 
 Generate static pack documentation from `packs/*.json`, including supported checks, readiness categories, report sections, and execution commands.

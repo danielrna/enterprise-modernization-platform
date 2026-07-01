@@ -1,0 +1,745 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T06:16:31.276Z",
+  "project": {
+    "name": "High Performance Java Persistence",
+    "root": "https://github.com/vladmihalcea/high-performance-java-persistence",
+    "source": "https://github.com/vladmihalcea/high-performance-java-persistence",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "11",
+    "springBootVersion": "unknown",
+    "fileCount": 1600,
+    "javaFileCount": 980
+  },
+  "pack": "hibernate-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness."
+  },
+  "readiness": {
+    "overall": 86,
+    "categories": {
+      "java": 88,
+      "spring": 86,
+      "hibernate": 84,
+      "jakarta": 95,
+      "build": 90,
+      "security": 76,
+      "architecture": 84
+    },
+    "summary": "Ready for controlled migration planning",
+    "counts": {
+      "critical": 7,
+      "warning": 20,
+      "info": 0
+    }
+  },
+  "productionFindings": [],
+  "testFindings": [
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Validate Session-specific examples against the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/connection/ConnectionProviderTest.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta namespace alignment before Hibernate 6 validation.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/forum/Tag.java",
+      "line": 6,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example5Test.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example6Test.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example7Test.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example8Test.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example9Test.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example10Test.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example11Test.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example12Test.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example13Test.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example14Test.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example15Test.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example16Test.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example17Test.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example18Test.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example19Test.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example5Test.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example6Test.java",
+      "line": 15,
+      "scope": "test"
+    }
+  ],
+  "findingSummary": {
+    "production": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "test": {
+      "critical": 7,
+      "warning": 20,
+      "info": 0
+    },
+    "byCode": {
+      "hibernate-session-api": {
+        "code": "hibernate-session-api",
+        "title": "Direct Hibernate Session API usage",
+        "severity": "warning",
+        "total": 20,
+        "production": 0,
+        "test": 20,
+        "topModules": [
+          {
+            "name": "core",
+            "count": 20
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Validate Session-specific examples against the target Hibernate version.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/connection/ConnectionProviderTest.java",
+            "line": 36,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example1Test.java",
+            "line": 10,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example2Test.java",
+            "line": 11,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example3Test.java",
+            "line": 12,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example4Test.java",
+            "line": 13,
+            "scope": "test"
+          }
+        ]
+      },
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 0,
+        "test": 1,
+        "topModules": [
+          {
+            "name": "core",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Plan Jakarta namespace alignment before Hibernate 6 validation.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/forum/Tag.java",
+            "line": 6,
+            "scope": "test"
+          }
+        ]
+      },
+      "hibernate-legacy-criteria": {
+        "code": "hibernate-legacy-criteria",
+        "title": "Legacy Hibernate Criteria API",
+        "severity": "critical",
+        "total": 6,
+        "production": 0,
+        "test": 6,
+        "topModules": [
+          {
+            "name": "core",
+            "count": 6
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-legacy-criteria",
+            "severity": "critical",
+            "title": "Legacy Hibernate Criteria API",
+            "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example1Test.java",
+            "line": 10,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-legacy-criteria",
+            "severity": "critical",
+            "title": "Legacy Hibernate Criteria API",
+            "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example2Test.java",
+            "line": 11,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-legacy-criteria",
+            "severity": "critical",
+            "title": "Legacy Hibernate Criteria API",
+            "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example3Test.java",
+            "line": 12,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-legacy-criteria",
+            "severity": "critical",
+            "title": "Legacy Hibernate Criteria API",
+            "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example4Test.java",
+            "line": 13,
+            "scope": "test"
+          },
+          {
+            "code": "hibernate-legacy-criteria",
+            "severity": "critical",
+            "title": "Legacy Hibernate Criteria API",
+            "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+            "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example5Test.java",
+            "line": 14,
+            "scope": "test"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Validate Session-specific examples against the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/connection/ConnectionProviderTest.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Plan Jakarta namespace alignment before Hibernate 6 validation.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/forum/Tag.java",
+      "line": 6,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example5Test.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example6Test.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example7Test.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example8Test.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example9Test.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example10Test.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example11Test.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example12Test.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example13Test.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example14Test.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example15Test.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example16Test.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example17Test.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example18Test.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example19Test.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example5Test.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.",
+      "file": "core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example6Test.java",
+      "line": 15,
+      "scope": "test"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "jakartaDetected": false,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "high-performance-java-persistence",
+    "name": "High Performance Java Persistence",
+    "repository": "https://github.com/vladmihalcea/high-performance-java-persistence",
+    "ref": null,
+    "requestedSource": "catalog",
+    "source": "catalog",
+    "checkoutPath": null,
+    "analysisPath": null,
+    "gitRevision": null,
+    "commands": [],
+    "validation": {
+      "requested": false,
+      "status": "not_requested",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation was not requested."
+    }
+  }
+}

@@ -1,0 +1,1069 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T06:16:31.278Z",
+  "project": {
+    "name": "Baeldung Hibernate Tutorials",
+    "root": "https://github.com/eugenp/tutorials",
+    "source": "https://github.com/eugenp/tutorials",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "17",
+    "springBootVersion": "unknown",
+    "fileCount": 12000,
+    "javaFileCount": 7600
+  },
+  "pack": "hibernate-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness."
+  },
+  "readiness": {
+    "overall": 75,
+    "categories": {
+      "java": 88,
+      "spring": 86,
+      "hibernate": 0,
+      "jakarta": 95,
+      "build": 90,
+      "security": 82,
+      "architecture": 84
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 1,
+      "warning": 44,
+      "info": 0
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Review legacy Criteria examples before treating the repository as Hibernate 6 ready.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/criteria/CriteriaExample.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/model/Employee.hbm.xml",
+      "line": 1,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example14.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example15.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example16.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example17.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example18.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example19.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example20.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example21.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example22.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example23.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example24.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example25.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example26.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example27.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example28.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example29.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example30.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example31.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example12.java",
+      "line": 21,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 44,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "byCode": {
+      "hibernate-legacy-criteria": {
+        "code": "hibernate-legacy-criteria",
+        "title": "Legacy Hibernate Criteria API",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "hibernate-5",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-legacy-criteria",
+            "severity": "critical",
+            "title": "Legacy Hibernate Criteria API",
+            "recommendation": "Review legacy Criteria examples before treating the repository as Hibernate 6 ready.",
+            "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/criteria/CriteriaExample.java",
+            "line": 17,
+            "scope": "production"
+          }
+        ]
+      },
+      "hibernate-xml-mapping": {
+        "code": "hibernate-xml-mapping",
+        "title": "Hibernate XML mapping",
+        "severity": "warning",
+        "total": 13,
+        "production": 13,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "hibernate-5",
+            "count": 13
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-xml-mapping",
+            "severity": "warning",
+            "title": "Hibernate XML mapping",
+            "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+            "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/model/Employee.hbm.xml",
+            "line": 1,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-xml-mapping",
+            "severity": "warning",
+            "title": "Hibernate XML mapping",
+            "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+            "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example1.java",
+            "line": 10,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-xml-mapping",
+            "severity": "warning",
+            "title": "Hibernate XML mapping",
+            "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+            "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example2.java",
+            "line": 11,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-xml-mapping",
+            "severity": "warning",
+            "title": "Hibernate XML mapping",
+            "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+            "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example3.java",
+            "line": 12,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-xml-mapping",
+            "severity": "warning",
+            "title": "Hibernate XML mapping",
+            "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+            "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example4.java",
+            "line": 13,
+            "scope": "production"
+          }
+        ]
+      },
+      "hibernate-session-api": {
+        "code": "hibernate-session-api",
+        "title": "Direct Hibernate Session API usage",
+        "severity": "warning",
+        "total": 31,
+        "production": 31,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "hibernate-5",
+            "count": 31
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example1.java",
+            "line": 10,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example2.java",
+            "line": 11,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example3.java",
+            "line": 12,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example4.java",
+            "line": 13,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+            "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example5.java",
+            "line": 14,
+            "scope": "production"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "hibernate-legacy-criteria",
+      "severity": "critical",
+      "title": "Legacy Hibernate Criteria API",
+      "recommendation": "Review legacy Criteria examples before treating the repository as Hibernate 6 ready.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/criteria/CriteriaExample.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/model/Employee.hbm.xml",
+      "line": 1,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example12.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example13.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example14.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example15.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example16.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example17.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example18.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example19.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example20.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example21.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example22.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example23.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example24.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example25.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example26.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example27.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example28.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example29.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example30.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+      "file": "persistence-modules/hibernate-5/src/main/java/com/baeldung/hibernate/Example31.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example6.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example7.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example8.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example9.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example10.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example11.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-xml-mapping",
+      "severity": "warning",
+      "title": "Hibernate XML mapping",
+      "recommendation": "Validate XML mappings explicitly during Hibernate upgrade work.",
+      "file": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate/Example12.java",
+      "line": 21,
+      "scope": "production"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "baeldung-hibernate-tutorials",
+    "name": "Baeldung Hibernate Tutorials",
+    "repository": "https://github.com/eugenp/tutorials",
+    "ref": null,
+    "requestedSource": "catalog",
+    "source": "catalog",
+    "checkoutPath": null,
+    "analysisPath": null,
+    "gitRevision": null,
+    "commands": [],
+    "validation": {
+      "requested": false,
+      "status": "not_requested",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation was not requested."
+    }
+  }
+}
