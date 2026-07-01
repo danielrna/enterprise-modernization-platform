@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jakarta Readiness</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:28px 0 10px; font-size:21px; letter-spacing:0; }
+    p { max-width:760px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .nav { display:flex; flex-wrap:wrap; gap:12px; margin:0 0 28px; }
+    .nav a { color:var(--muted); }
+    .layout { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin:24px 0; }
+    .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .tile span { color:var(--muted); }
+    .summary { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px; margin:24px 0; }
+    .summary div,.steps div { display:flex; flex-direction:column; gap:5px; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .summary span,.steps span { color:var(--muted); }
+    .steps { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; }
+    pre { overflow:auto; padding:14px; background:#111827; color:#f8fafc; border-radius:8px; }
+    code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    li { margin:6px 0; }
+    @media (max-width: 900px) { .layout,.summary,.steps { grid-template-columns:1fr 1fr; } }
+    @media (max-width: 640px) { .layout,.summary,.steps { grid-template-columns:1fr; } h1 { font-size:27px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="nav">
+      <a href="index.html">Packs</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <section>
+      <h1>Jakarta Readiness</h1>
+      <p>Assess Java EE javax namespace usage before Jakarta EE or framework migrations.</p>
+    </section>
+
+    <section class="summary">
+      <div><strong>Vertical</strong><span>javax to jakarta namespace migration readiness</span></div>
+      <div><strong>Migration</strong><span>javax to jakarta namespace migration readiness</span></div>
+      <div><strong>Pack ID</strong><span>jakarta-readiness</span></div>
+      <div><strong>Version</strong><span>0.1.0</span></div>
+    </section>
+
+    <h2>Run This Pack</h2>
+    <pre><code>node ./bin/emp.js analyze /path/to/app --pack jakarta-readiness --out reports/jakarta-readiness</code></pre>
+
+    <h2>Readiness Categories</h2>
+    <ul><li>Pack-specific readiness signals</li></ul>
+
+    <h2>Checks</h2>
+    <table><thead><tr><th>Check</th><th>Engine</th><th>Description</th></tr></thead><tbody><tr><td>javax-usage</td><td>critical</td><td>Find javax namespace usage that requires Jakarta migration planning.</td></tr><tr><td>java-util-date</td><td>info</td><td>Find legacy date API usage around persistence and API boundaries.</td></tr><tr><td>system-out</td><td>info</td><td>Separate production logging risks from test and utility output.</td></tr></tbody></table>
+
+    <h2>Report Output</h2>
+    <ul><li>applicability</li><li>readiness</li><li>finding-summary</li><li>html-report</li><li>json-report</li></ul>
+
+    <h2>Evidence Workflow</h2>
+    <section class="steps">
+      <div><strong>Analyze</strong><span>Detect metadata, source findings, and pack applicability.</span></div>
+      <div><strong>Report</strong><span>Generate static HTML and JSON evidence that can be shared without a backend.</span></div>
+      <div><strong>Validate</strong><span>Use transformation validation when compile, test, rollback, and trust evidence are required.</span></div>
+    </section>
+  </main></body>
+</html>
