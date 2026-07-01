@@ -1,0 +1,620 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T21:51:42.380Z",
+  "project": {
+    "name": "REST Assured JUnit 4",
+    "root": "https://github.com/rest-assured/rest-assured",
+    "source": "https://github.com/rest-assured/rest-assured",
+    "buildTools": [
+      "Maven",
+      "Gradle"
+    ],
+    "javaVersion": "8",
+    "springBootVersion": "unknown",
+    "fileCount": 1200,
+    "javaFileCount": 720
+  },
+  "pack": "junit-5-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness."
+  },
+  "readiness": {
+    "overall": 80,
+    "categories": {
+      "java": 88,
+      "spring": 86,
+      "hibernate": 72,
+      "jakarta": 95,
+      "build": 90,
+      "security": 76,
+      "testing": 45,
+      "architecture": 84
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 0,
+      "warning": 23,
+      "info": 0
+    }
+  },
+  "productionFindings": [],
+  "testFindings": [
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review HTTP integration test lifecycle before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/RestAssuredTest.java",
+      "line": 5,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example5Test.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example6Test.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example7Test.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example8Test.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example9Test.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example10Test.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example11Test.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example12Test.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example13Test.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example14Test.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example15Test.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example16Test.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example17Test.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example18Test.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example19Test.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example20Test.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example21Test.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example22Test.java",
+      "line": 31,
+      "scope": "test"
+    }
+  ],
+  "findingSummary": {
+    "production": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 23,
+      "info": 0
+    },
+    "byCode": {
+      "junit4-api-usage": {
+        "code": "junit4-api-usage",
+        "title": "JUnit 4 API usage",
+        "severity": "warning",
+        "total": 23,
+        "production": 0,
+        "test": 23,
+        "topModules": [
+          {
+            "name": "rest-assured-itest-java",
+            "count": 23
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review HTTP integration test lifecycle before Jupiter migration.",
+            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/RestAssuredTest.java",
+            "line": 5,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example1Test.java",
+            "line": 10,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example2Test.java",
+            "line": 11,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example3Test.java",
+            "line": 12,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example4Test.java",
+            "line": 13,
+            "scope": "test"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review HTTP integration test lifecycle before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/RestAssuredTest.java",
+      "line": 5,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example5Test.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example6Test.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example7Test.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example8Test.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example9Test.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example10Test.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example11Test.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example12Test.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example13Test.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example14Test.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example15Test.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example16Test.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example17Test.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example18Test.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example19Test.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example20Test.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example21Test.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example22Test.java",
+      "line": 31,
+      "scope": "test"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "springSecurityVersion": "unknown",
+    "jakartaDetected": false,
+    "javaxDetected": true,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": true
+  },
+  "benchmark": {
+    "slug": "rest-assured-junit4",
+    "name": "REST Assured JUnit 4",
+    "repository": "https://github.com/rest-assured/rest-assured",
+    "ref": null,
+    "requestedSource": "catalog",
+    "source": "catalog",
+    "checkoutPath": null,
+    "analysisPath": null,
+    "gitRevision": null,
+    "commands": [],
+    "validation": {
+      "requested": false,
+      "status": "not_requested",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation was not requested."
+    }
+  },
+  "nextActions": [
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "info",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 0,
+      "findingCodes": [
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
+    }
+  ]
+}

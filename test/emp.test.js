@@ -67,6 +67,7 @@ test('publishes the benchmark catalog and migration hub', async () => {
   assert.match(hub, /Findings/);
   assert.match(hub, /Validated Benchmark/);
   assert.match(hub, /Compile \+ tests/);
+  assert.match(await fs.readFile(path.join(hubDir, 'spring-boot-3-readiness.html'), 'utf8'), /Spring Boot 3 Readiness Evidence Hub/);
 });
 
 test('benchmark catalog includes Hibernate readiness evidence', () => {
@@ -88,6 +89,15 @@ test('benchmark catalog includes Spring Security readiness evidence', () => {
   assert.equal(securityBenchmarks.every((benchmark) => benchmark.springSecurityDetected), true);
 });
 
+test('benchmark catalog includes JUnit 5 readiness evidence', () => {
+  const junitBenchmarks = BENCHMARKS.filter((benchmark) => benchmark.pack === 'junit-5-readiness');
+
+  assert.equal(junitBenchmarks.length, 10);
+  assert.equal(junitBenchmarks.some((benchmark) => benchmark.slug === 'junit4-samples'), true);
+  assert.equal(junitBenchmarks.some((benchmark) => benchmark.slug === 'testcontainers-junit4'), true);
+  assert.equal(junitBenchmarks.every((benchmark) => benchmark.junit4Detected), true);
+});
+
 test('generates documentation pages from pack metadata', async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'emp-pack-docs-'));
   const outDir = path.join(root, 'packs');
@@ -98,18 +108,21 @@ test('generates documentation pages from pack metadata', async () => {
   const java = await fs.readFile(path.join(outDir, 'java-17-to-21-readiness.html'), 'utf8');
   const hibernate = await fs.readFile(path.join(outDir, 'hibernate-readiness.html'), 'utf8');
   const security = await fs.readFile(path.join(outDir, 'spring-security-6-readiness.html'), 'utf8');
+  const junit = await fs.readFile(path.join(outDir, 'junit-5-readiness.html'), 'utf8');
 
-  assert.equal(result.count, 5);
+  assert.equal(result.count, 6);
   assert.match(index, /Migration Packs/);
   assert.match(index, /Spring Boot 3 Readiness/);
   assert.match(index, /Hibernate Readiness/);
   assert.match(index, /Spring Security 6 Readiness/);
+  assert.match(index, /JUnit 5 Readiness/);
   assert.match(springBoot, /Spring Boot 2\.x to 3\.x/);
   assert.match(springBoot, /openrewrite-dry-run/);
   assert.match(springBoot, /node \.\/bin\/emp\.js analyze \/path\/to\/app --pack spring-boot-3-readiness/);
   assert.match(java, /binary compatibility/);
   assert.match(hibernate, /Hibernate 5\.x to 6\.x readiness/);
   assert.match(security, /Spring Security 5\.x to 6\.x readiness/);
+  assert.match(junit, /JUnit 4 to JUnit 5 readiness/);
 });
 
 test('generates Knowledge Base pages from structured guidance', async () => {
@@ -120,16 +133,19 @@ test('generates Knowledge Base pages from structured guidance', async () => {
   const index = await fs.readFile(path.join(outDir, 'index.html'), 'utf8');
   const hibernate = await fs.readFile(path.join(outDir, 'hibernate-readiness.html'), 'utf8');
   const security = await fs.readFile(path.join(outDir, 'spring-security-6-readiness.html'), 'utf8');
+  const junit = await fs.readFile(path.join(outDir, 'junit-5-readiness.html'), 'utf8');
 
-  assert.equal(result.count, 3);
+  assert.equal(result.count, 4);
   assert.match(index, /Knowledge Base/);
   assert.match(index, /Hibernate Readiness Knowledge Base/);
   assert.match(index, /Hibernate Validation Failure Patterns/);
   assert.match(index, /Spring Security 6 Readiness Knowledge Base/);
+  assert.match(index, /JUnit 5 Readiness Knowledge Base/);
   assert.match(hibernate, /Legacy Criteria API/);
   assert.match(hibernate, /What This Does Not Prove/);
   assert.match(hibernate, /hibernate-demos/);
   assert.match(security, /WebSecurityConfigurerAdapter/);
+  assert.match(junit, /JUnit 4 API usage/);
 });
 
 test('generates release notes from feature metadata', async () => {
@@ -142,14 +158,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 7);
+  assert.equal(result.count, 8);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.1\.9/);
-  assert.match(html, /Spring Security checkout evidence batch/);
-  assert.match(html, /checkout-backed evidence/);
+  assert.match(index, /v0\.2\.0/);
+  assert.match(html, /JUnit 5 readiness pack/);
+  assert.match(html, /pack-specific Migration Hub/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Spring Security checkout evidence batch one/);
+  assert.match(markdown, /## JUnit 5 readiness pack/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {
@@ -597,6 +613,78 @@ test('Spring Security 6 readiness pack reports mismatch when Spring Security is 
   assert.equal(scan.packApplicability.applicable, false);
   assert.equal(readiness.status, 'not_applicable');
   assert.match(readiness.summary, /Spring Security usage was not detected/);
+});
+
+test('JUnit 5 readiness pack detects JUnit 4 migration risks', async () => {
+  const root = await makeSpringProject();
+  const outDir = path.join(root, 'report');
+  await fs.writeFile(path.join(root, 'pom.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <properties>
+    <java.version>17</java.version>
+  </properties>
+</project>
+`);
+  await fs.mkdir(path.join(root, 'src/test/java/com/example'), { recursive: true });
+  await fs.writeFile(path.join(root, 'src/test/java/com/example/DemoTest.java'), `package com.example;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+@RunWith(DemoRunner.class)
+public class DemoTest {
+  @Before
+  public void setUp() {}
+
+  @Test
+  public void works() {
+    Assert.assertTrue(true);
+  }
+}
+
+class DemoRunner {}
+`);
+
+  const scan = await analyzeProject({ root, pack: 'junit-5-readiness' });
+  const readiness = scoreReadiness(scan);
+  const bundle = await writeReportBundle({ outDir, scan, readiness });
+  const report = JSON.parse(await fs.readFile(bundle.jsonPath, 'utf8'));
+  const html = await fs.readFile(bundle.htmlPath, 'utf8');
+
+  assert.equal(scan.packApplicability.applicable, true);
+  assert.equal(scan.dependencies.junit4Detected, true);
+  assert.equal(scan.findings.some((finding) => finding.code === 'junit4-api-usage'), true);
+  assert.equal(scan.findings.some((finding) => finding.code === 'junit4-runner-usage'), true);
+  assert.equal(scan.findings.some((finding) => finding.code === 'junit4-dependency'), true);
+  assert.equal(Object.hasOwn(readiness.categories, 'testing'), true);
+  assert.equal(report.nextActions.some((action) => action.id === 'review-junit-5-migration-risks'), true);
+  assert.match(html, /Review JUnit 4 to JUnit 5 migration risks/);
+});
+
+test('JUnit 5 readiness pack reports mismatch when JUnit 4 is absent', async () => {
+  const root = await makeSpringProject();
+  const sourceFile = path.join(root, 'src/test/java/com/example/DemoTest.java');
+  await fs.mkdir(path.dirname(sourceFile), { recursive: true });
+  await fs.writeFile(sourceFile, 'package com.example;\npublic class DemoTest {}\n');
+
+  const scan = await analyzeProject({ root, pack: 'junit-5-readiness' });
+  const readiness = scoreReadiness(scan);
+
+  assert.equal(scan.dependencies.junit4Detected, false);
+  assert.equal(scan.packApplicability.applicable, false);
+  assert.equal(readiness.status, 'not_applicable');
+  assert.match(readiness.summary, /JUnit 4 usage was not detected/);
 });
 
 test('enterprise rules affect readiness and appear in reports', async () => {

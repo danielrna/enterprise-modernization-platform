@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AssertJ Examples JUnit 4 Readiness Report</title>
+  <style>
+    :root { color-scheme: light; --ink:#15202b; --muted:#5f6b7a; --line:#d9e1ea; --bg:#f6f8fa; --panel:#fff; --accent:#1769aa; --accent-dark:#0f4f84; --ok:#217a45; --warn:#966600; --bad:#b42318; }
+    * { box-sizing: border-box; }
+    body { margin:0; font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    header { background:#102a43; color:#fff; padding:28px max(24px, calc((100vw - 1120px)/2)); }
+    main { max-width:1120px; margin:0 auto; padding:24px; }
+    h1,h2 { margin:0 0 12px; letter-spacing:0; }
+    h1 { font-size:32px; }
+    h2 { font-size:20px; margin-top:28px; }
+    .meta { color:#d9e6f2; margin:0; }
+    .report-nav { display:flex; flex-wrap:wrap; gap:10px 14px; margin:16px 0 0; }
+    .report-nav a { color:#d9e6f2; font-size:14px; }
+    .grid { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .metric { font-size:34px; font-weight:760; }
+    .label { color:var(--muted); font-size:13px; }
+    .decision { display:grid; grid-template-columns:minmax(0, 1fr) 300px; gap:14px; margin:0 0 18px; }
+    .decision-main { border-left:4px solid var(--accent); }
+    .decision-main.good { border-left-color:var(--ok); }
+    .decision-main.warn { border-left-color:var(--warn); }
+    .decision-main.bad { border-left-color:var(--bad); }
+    .decision-main strong { display:block; margin-bottom:6px; font-size:18px; }
+    .decision-list { display:flex; flex-direction:column; gap:8px; }
+    .risk-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+    .actions a { display:inline-flex; align-items:center; min-height:38px; padding:8px 12px; background:var(--panel); border:1px solid var(--line); border-radius:6px; color:var(--accent); }
+    .actions a.primary { background:var(--accent); color:#fff; border-color:var(--accent-dark); font-weight:700; }
+    .notice { border-left:4px solid var(--accent); }
+    .notice.bad { border-left-color:var(--bad); }
+    .table-scroll { width:100%; overflow-x:auto; border-radius:8px; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    td { overflow-wrap:anywhere; }
+    tr:last-child td { border-bottom:0; }
+    .bar { height:9px; background:#edf2f7; border-radius:999px; overflow:hidden; }
+    .bar span { display:block; height:100%; background:var(--accent); }
+    .pill { display:inline-block; min-width:64px; padding:2px 8px; border-radius:999px; font-size:12px; font-weight:650; text-align:center; background:#eef2f7; color:#344054; }
+    .critical,.failed { background:#ffe4e0; color:var(--bad); }
+    .warning,.pending { background:#fff3c4; color:var(--warn); }
+    .skipped { background:#eef2f7; color:#344054; }
+    .info { background:#e7f0ff; color:#175cd3; }
+    .passed { background:#dff7e8; color:var(--ok); }
+    @media (max-width: 900px) { .decision { grid-template-columns:1fr; } }
+    @media (max-width: 760px) { header { padding:24px 16px; } main { padding:20px 16px; } .grid { grid-template-columns:1fr 1fr; } h1 { font-size:25px; } table { min-width:720px; font-size:13px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AssertJ Examples JUnit 4 Readiness Report</h1>
+    <p class="meta">junit-5-readiness · 2026-07-01T21:51:42.376Z · https://github.com/assertj/assertj-examples</p>
+    <nav class="report-nav">
+      <a href="../../index.html">Home</a>
+      <a href="../index.html">Benchmarks</a>
+      <a href="../../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="report.json">JSON</a>
+    </nav>
+  </header>
+  <main>
+    <section class="decision">
+      <div class="panel decision-main warn">
+        <strong>Needs remediation before confident migration execution</strong>
+        <div>The report has enough signal for scoping, but the evidence is not yet strong enough for execution.</div>
+        <div class="risk-list"><span class="pill warning">16 JUnit 4 API usage</span><span class="pill warning">1 JUnit 4 dependency</span></div>
+        <div class="actions">
+          <a class="primary" href="report.json">Open JSON evidence</a>
+          <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
+        </div>
+      </div>
+      <div class="panel decision-list">
+        <div><strong>Recommended next step</strong><div class="label">Prioritize repeated warning patterns and rerun the report after cleanup.</div></div>
+        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel"><div class="metric">79%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">0</div><div class="label">Critical findings</div></div>
+      <div class="panel"><div class="metric">180</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
+    </section>
+
+    <h2>Executive Summary</h2>
+    <div class="panel">Ready with remediation work</div>
+
+
+    <h2>Pack Applicability</h2>
+    <div class="panel notice">
+      <strong>Pack applicable: yes</strong> · confidence 90%
+      <div>JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness.</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 8 · Build: Maven · javax usage: no · jakarta usage: no</div>
+
+    </div>
+
+
+    <h2>Readiness</h2>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>42%</strong></td><td><div class="bar"><span style="width:42%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+
+
+    <h2>Recommended Next Actions</h2>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill info">info</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
+
+
+    <h2>Evidence</h2>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+
+
+    <h2>Benchmark Evidence</h2>
+    <div class="panel">
+      <strong>catalog</strong> · https://github.com/assertj/assertj-examples
+    </div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+
+    <h2>Benchmark Validation</h2>
+    <div class="panel">
+      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+    </div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+
+
+
+
+
+
+    <h2>Finding Summary</h2>
+    <section class="grid">
+      <div class="panel"><div class="metric">1</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">16</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">2</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">17</div><div class="label">Detailed JSON findings</div></div>
+    </section>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>16</td><td>0</td><td>16</td><td>src (16)</td><td>src/test/java/org/assertj/examples/Example1.java:10 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/assertj/examples/Example2.java:11 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/assertj/examples/Example3.java:12 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/assertj/examples/Example4.java:13 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/assertj/examples/Example5.java:14 · Review JUnit 4 annotations and assertions before Jupiter migration.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 dependency</td><td>1</td><td>1</td><td>0</td><td>pom.xml (1)</td><td>pom.xml:52 · Plan Jupiter dependency and Surefire configuration review.</td></tr></tbody></table></div>
+  </main>
+</body>
+</html>

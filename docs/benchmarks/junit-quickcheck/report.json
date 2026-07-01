@@ -1,0 +1,572 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T21:51:42.368Z",
+  "project": {
+    "name": "JUnit Quickcheck",
+    "root": "https://github.com/pholser/junit-quickcheck",
+    "source": "https://github.com/pholser/junit-quickcheck",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "8",
+    "springBootVersion": "unknown",
+    "fileCount": 520,
+    "javaFileCount": 310
+  },
+  "pack": "junit-5-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness."
+  },
+  "readiness": {
+    "overall": 79,
+    "categories": {
+      "java": 88,
+      "spring": 86,
+      "hibernate": 72,
+      "jakarta": 95,
+      "build": 90,
+      "security": 76,
+      "testing": 41,
+      "architecture": 84
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 0,
+      "warning": 19,
+      "info": 0
+    }
+  },
+  "productionFindings": [],
+  "testFindings": [
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review property-based runner semantics before migrating to Jupiter.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/PropertyTest.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example5Test.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example6Test.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example7Test.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example8Test.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example9Test.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example10Test.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example11Test.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example12Test.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example13Test.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example14Test.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example15Test.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example16Test.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example17Test.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example18Test.java",
+      "line": 27,
+      "scope": "test"
+    }
+  ],
+  "findingSummary": {
+    "production": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 19,
+      "info": 0
+    },
+    "byCode": {
+      "junit4-runner-usage": {
+        "code": "junit4-runner-usage",
+        "title": "JUnit 4 runner usage",
+        "severity": "warning",
+        "total": 1,
+        "production": 0,
+        "test": 1,
+        "topModules": [
+          {
+            "name": "core",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review property-based runner semantics before migrating to Jupiter.",
+            "file": "core/src/test/java/com/pholser/junit/quickcheck/PropertyTest.java",
+            "line": 12,
+            "scope": "test"
+          }
+        ]
+      },
+      "junit4-api-usage": {
+        "code": "junit4-api-usage",
+        "title": "JUnit 4 API usage",
+        "severity": "warning",
+        "total": 18,
+        "production": 0,
+        "test": 18,
+        "topModules": [
+          {
+            "name": "core",
+            "count": 18
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "core/src/test/java/com/pholser/junit/quickcheck/Example1Test.java",
+            "line": 10,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "core/src/test/java/com/pholser/junit/quickcheck/Example2Test.java",
+            "line": 11,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "core/src/test/java/com/pholser/junit/quickcheck/Example3Test.java",
+            "line": 12,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "core/src/test/java/com/pholser/junit/quickcheck/Example4Test.java",
+            "line": 13,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "core/src/test/java/com/pholser/junit/quickcheck/Example5Test.java",
+            "line": 14,
+            "scope": "test"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review property-based runner semantics before migrating to Jupiter.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/PropertyTest.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example5Test.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example6Test.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example7Test.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example8Test.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example9Test.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example10Test.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example11Test.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example12Test.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example13Test.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example14Test.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example15Test.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example16Test.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example17Test.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "core/src/test/java/com/pholser/junit/quickcheck/Example18Test.java",
+      "line": 27,
+      "scope": "test"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "passed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "springSecurityVersion": "unknown",
+    "jakartaDetected": false,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": false
+  },
+  "benchmark": {
+    "slug": "junit-quickcheck",
+    "name": "JUnit Quickcheck",
+    "repository": "https://github.com/pholser/junit-quickcheck",
+    "ref": null,
+    "requestedSource": "catalog",
+    "source": "catalog",
+    "checkoutPath": null,
+    "analysisPath": null,
+    "gitRevision": null,
+    "commands": [],
+    "validation": {
+      "requested": false,
+      "status": "not_requested",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation was not requested."
+    }
+  },
+  "nextActions": [
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "warning",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 0,
+      "findingCodes": [
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
+    }
+  ]
+}

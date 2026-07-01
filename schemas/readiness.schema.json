@@ -16,6 +16,7 @@
         "jakarta": { "type": "integer", "minimum": 0, "maximum": 100 },
         "build": { "type": "integer", "minimum": 0, "maximum": 100 },
         "security": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "testing": { "type": "integer", "minimum": 0, "maximum": 100 },
         "architecture": { "type": "integer", "minimum": 0, "maximum": 100 },
         "enterpriseRules": { "type": "integer", "minimum": 0, "maximum": 100 }
       },

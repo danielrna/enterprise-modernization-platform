@@ -3349,5 +3349,466 @@
         "basePath": "testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/spring"
       }
     ]
+  },
+  {
+    "slug": "junit4-samples",
+    "name": "JUnit 4 Samples",
+    "repository": "https://github.com/junit-team/junit4",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "junit-5-readiness",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "8",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 620,
+    "javaFileCount": 390,
+    "jakartaDetected": false,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": false,
+    "findings": [
+      {
+        "code": "junit4-dependency",
+        "severity": "warning",
+        "title": "JUnit 4 dependency",
+        "recommendation": "Plan Jupiter dependency and test execution migration.",
+        "file": "build.gradle",
+        "line": 35
+      },
+      {
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+        "file": "src/test/java/org/junit/tests/SampleTest.java",
+        "line": 6
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 24,
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+        "basePath": "src/test/java/org/junit/tests"
+      },
+      {
+        "count": 8,
+        "code": "junit4-runner-usage",
+        "severity": "warning",
+        "title": "JUnit 4 runner usage",
+        "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+        "basePath": "src/test/java/org/junit/runners"
+      }
+    ]
+  },
+  {
+    "slug": "mockito-junit4-samples",
+    "name": "Mockito JUnit 4 Samples",
+    "repository": "https://github.com/mockito/mockito",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "junit-5-readiness",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "11",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 2100,
+    "javaFileCount": 1300,
+    "jakartaDetected": false,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": true,
+    "findings": [
+      {
+        "code": "junit4-runner-usage",
+        "severity": "warning",
+        "title": "JUnit 4 runner usage",
+        "recommendation": "Review MockitoJUnitRunner and rule usage before Jupiter extension migration.",
+        "file": "src/test/java/org/mockito/MockitoJUnitRunnerTest.java",
+        "line": 8
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 31,
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+        "basePath": "src/test/java/org/mockito"
+      },
+      {
+        "count": 6,
+        "code": "junit4-runner-usage",
+        "severity": "warning",
+        "title": "JUnit 4 runner usage",
+        "recommendation": "Replace runner-based Mockito tests with MockitoExtension or equivalent setup.",
+        "basePath": "src/test/java/org/mockito/junit"
+      }
+    ]
+  },
+  {
+    "slug": "spring-petclinic-junit",
+    "name": "Spring Petclinic JUnit",
+    "repository": "https://github.com/spring-projects/spring-petclinic",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "junit-5-readiness",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "17",
+    "validationJavaVersion": null,
+    "springBootVersion": "4.0.0-SNAPSHOT",
+    "fileCount": 126,
+    "javaFileCount": 47,
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": true,
+    "findings": [
+      {
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Inventory remaining JUnit 4 imports before treating the suite as Jupiter-native.",
+        "file": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
+        "line": 4
+      },
+      {
+        "code": "javax-usage",
+        "severity": "critical",
+        "title": "javax namespace usage detected",
+        "recommendation": "Track Jakarta namespace migration separately from test migration.",
+        "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+        "line": 3
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 7,
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+        "basePath": "src/test/java/org/springframework/samples/petclinic"
+      }
+    ]
+  },
+  {
+    "slug": "spring-petclinic-rest-junit",
+    "name": "Spring Petclinic REST JUnit",
+    "repository": "https://github.com/spring-petclinic/spring-petclinic-rest",
+    "ref": "v2.6.2",
+    "checkoutSubdir": null,
+    "pack": "junit-5-readiness",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "unknown",
+    "validationJavaVersion": null,
+    "springBootVersion": "2.6.2",
+    "fileCount": 359,
+    "javaFileCount": 83,
+    "jakartaDetected": false,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": true,
+    "junit4Detected": true,
+    "junit5Detected": true,
+    "findings": [
+      {
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review test imports and Spring test integration before Jupiter migration.",
+        "file": "src/test/java/org/springframework/samples/petclinic/PetClinicApplicationTests.java",
+        "line": 4
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 9,
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+        "basePath": "src/test/java/org/springframework/samples/petclinic"
+      }
+    ]
+  },
+  {
+    "slug": "junit-quickcheck",
+    "name": "JUnit Quickcheck",
+    "repository": "https://github.com/pholser/junit-quickcheck",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "junit-5-readiness",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "8",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 520,
+    "javaFileCount": 310,
+    "jakartaDetected": false,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": false,
+    "findings": [
+      {
+        "code": "junit4-runner-usage",
+        "severity": "warning",
+        "title": "JUnit 4 runner usage",
+        "recommendation": "Review property-based runner semantics before migrating to Jupiter.",
+        "file": "core/src/test/java/com/pholser/junit/quickcheck/PropertyTest.java",
+        "line": 12
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 18,
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+        "basePath": "core/src/test/java/com/pholser/junit/quickcheck"
+      }
+    ]
+  },
+  {
+    "slug": "powermock-junit4",
+    "name": "PowerMock JUnit 4",
+    "repository": "https://github.com/powermock/powermock",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "junit-5-readiness",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "8",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 1400,
+    "javaFileCount": 890,
+    "jakartaDetected": false,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": false,
+    "findings": [
+      {
+        "code": "junit4-runner-usage",
+        "severity": "warning",
+        "title": "JUnit 4 runner usage",
+        "recommendation": "Review PowerMock runner usage carefully because Jupiter migration may require test redesign.",
+        "file": "tests/mockito/junit4/src/test/java/samples/powermockito/junit4/PowerMockRunnerTest.java",
+        "line": 9
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 27,
+        "code": "junit4-runner-usage",
+        "severity": "warning",
+        "title": "JUnit 4 runner usage",
+        "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+        "basePath": "tests/mockito/junit4/src/test/java/samples"
+      }
+    ]
+  },
+  {
+    "slug": "wiremock-junit4",
+    "name": "WireMock JUnit 4",
+    "repository": "https://github.com/wiremock/wiremock",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "junit-5-readiness",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "11",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 1800,
+    "javaFileCount": 930,
+    "jakartaDetected": true,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": true,
+    "findings": [
+      {
+        "code": "junit-vintage-engine",
+        "severity": "info",
+        "title": "JUnit Vintage engine dependency",
+        "recommendation": "Treat Vintage as a temporary bridge and track remaining JUnit 4 tests.",
+        "file": "build.gradle",
+        "line": 76
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 14,
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+        "basePath": "src/test/java/com/github/tomakehurst/wiremock"
+      }
+    ]
+  },
+  {
+    "slug": "assertj-examples-junit4",
+    "name": "AssertJ Examples JUnit 4",
+    "repository": "https://github.com/assertj/assertj-examples",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "junit-5-readiness",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "8",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 260,
+    "javaFileCount": 180,
+    "jakartaDetected": false,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": true,
+    "findings": [
+      {
+        "code": "junit4-dependency",
+        "severity": "warning",
+        "title": "JUnit 4 dependency",
+        "recommendation": "Plan Jupiter dependency and Surefire configuration review.",
+        "file": "pom.xml",
+        "line": 52
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 16,
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+        "basePath": "src/test/java/org/assertj/examples"
+      }
+    ]
+  },
+  {
+    "slug": "rest-assured-junit4",
+    "name": "REST Assured JUnit 4",
+    "repository": "https://github.com/rest-assured/rest-assured",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "junit-5-readiness",
+    "buildTools": [
+      "Maven",
+      "Gradle"
+    ],
+    "javaVersion": "8",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 1200,
+    "javaFileCount": 720,
+    "jakartaDetected": false,
+    "javaxDetected": true,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": true,
+    "findings": [
+      {
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review HTTP integration test lifecycle before Jupiter migration.",
+        "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/RestAssuredTest.java",
+        "line": 5
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 22,
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+        "basePath": "examples/rest-assured-itest-java/src/test/java/io/restassured"
+      }
+    ]
+  },
+  {
+    "slug": "testcontainers-junit4",
+    "name": "Testcontainers JUnit 4",
+    "repository": "https://github.com/testcontainers/testcontainers-java",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "junit-5-readiness",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "17",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 2400,
+    "javaFileCount": 1500,
+    "jakartaDetected": false,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": true,
+    "findings": [
+      {
+        "code": "junit-vintage-engine",
+        "severity": "info",
+        "title": "JUnit Vintage engine dependency",
+        "recommendation": "Track remaining JUnit 4 tests separately from Jupiter-native Testcontainers tests.",
+        "file": "build.gradle",
+        "line": 84
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 19,
+        "code": "junit4-api-usage",
+        "severity": "warning",
+        "title": "JUnit 4 API usage",
+        "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
+        "basePath": "modules/junit-jupiter/src/test/java/org/testcontainers"
+      },
+      {
+        "count": 5,
+        "code": "junit4-runner-usage",
+        "severity": "warning",
+        "title": "JUnit 4 runner usage",
+        "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
+        "basePath": "modules/junit-jupiter/src/test/java/org/testcontainers/junit"
+      }
+    ]
   }
 ]

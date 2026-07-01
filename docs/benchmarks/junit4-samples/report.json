@@ -1,0 +1,904 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T21:51:42.337Z",
+  "project": {
+    "name": "JUnit 4 Samples",
+    "root": "https://github.com/junit-team/junit4",
+    "source": "https://github.com/junit-team/junit4",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "8",
+    "springBootVersion": "unknown",
+    "fileCount": 620,
+    "javaFileCount": 390
+  },
+  "pack": "junit-5-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness."
+  },
+  "readiness": {
+    "overall": 75,
+    "categories": {
+      "java": 88,
+      "spring": 86,
+      "hibernate": 72,
+      "jakarta": 95,
+      "build": 90,
+      "security": 76,
+      "testing": 9,
+      "architecture": 84
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 0,
+      "warning": 34,
+      "info": 0
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Plan Jupiter dependency and test execution migration.",
+      "file": "build.gradle",
+      "line": 35,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/SampleTest.java",
+      "line": 6,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example1.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example2.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example3.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example4.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example5.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example6.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example7.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example8.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example9.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example10.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example11.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example12.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example13.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example14.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example15.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example16.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example17.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example18.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example19.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example20.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example21.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example22.java",
+      "line": 31,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example23.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example24.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example1.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example2.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example3.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example4.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example5.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example6.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example7.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example8.java",
+      "line": 17,
+      "scope": "test"
+    }
+  ],
+  "findingSummary": {
+    "production": {
+      "critical": 0,
+      "warning": 1,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 33,
+      "info": 0
+    },
+    "byCode": {
+      "junit4-dependency": {
+        "code": "junit4-dependency",
+        "title": "JUnit 4 dependency",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "build.gradle",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Plan Jupiter dependency and test execution migration.",
+            "file": "build.gradle",
+            "line": 35,
+            "scope": "production"
+          }
+        ]
+      },
+      "junit4-api-usage": {
+        "code": "junit4-api-usage",
+        "title": "JUnit 4 API usage",
+        "severity": "warning",
+        "total": 25,
+        "production": 0,
+        "test": 25,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 25
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "src/test/java/org/junit/tests/SampleTest.java",
+            "line": 6,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "src/test/java/org/junit/tests/Example1.java",
+            "line": 10,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "src/test/java/org/junit/tests/Example2.java",
+            "line": 11,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "src/test/java/org/junit/tests/Example3.java",
+            "line": 12,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "src/test/java/org/junit/tests/Example4.java",
+            "line": 13,
+            "scope": "test"
+          }
+        ]
+      },
+      "junit4-runner-usage": {
+        "code": "junit4-runner-usage",
+        "title": "JUnit 4 runner usage",
+        "severity": "warning",
+        "total": 8,
+        "production": 0,
+        "test": 8,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 8
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+            "file": "src/test/java/org/junit/runners/Example1.java",
+            "line": 10,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+            "file": "src/test/java/org/junit/runners/Example2.java",
+            "line": 11,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+            "file": "src/test/java/org/junit/runners/Example3.java",
+            "line": 12,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+            "file": "src/test/java/org/junit/runners/Example4.java",
+            "line": 13,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+            "file": "src/test/java/org/junit/runners/Example5.java",
+            "line": 14,
+            "scope": "test"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Plan Jupiter dependency and test execution migration.",
+      "file": "build.gradle",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/SampleTest.java",
+      "line": 6,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example1.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example2.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example3.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example4.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example5.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example6.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example7.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example8.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example9.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example10.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example11.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example12.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example13.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example14.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example15.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example16.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example17.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example18.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example19.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example20.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example21.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example22.java",
+      "line": 31,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example23.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/org/junit/tests/Example24.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example1.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example2.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example3.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example4.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example5.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example6.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example7.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace RunWith-based tests with Jupiter extensions or equivalent test structure.",
+      "file": "src/test/java/org/junit/runners/Example8.java",
+      "line": 17,
+      "scope": "test"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "passed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "springSecurityVersion": "unknown",
+    "jakartaDetected": false,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": false
+  },
+  "benchmark": {
+    "slug": "junit4-samples",
+    "name": "JUnit 4 Samples",
+    "repository": "https://github.com/junit-team/junit4",
+    "ref": null,
+    "requestedSource": "catalog",
+    "source": "catalog",
+    "checkoutPath": null,
+    "analysisPath": null,
+    "gitRevision": null,
+    "commands": [],
+    "validation": {
+      "requested": false,
+      "status": "not_requested",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation was not requested."
+    }
+  },
+  "nextActions": [
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "warning",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
+    }
+  ]
+}

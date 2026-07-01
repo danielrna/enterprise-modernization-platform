@@ -45,7 +45,9 @@ async function analyzeBenchmarkMetadata({ root, pack, benchmarkMetadata }) {
     jakartaDetected: benchmarkMetadata.jakartaDetected,
     javaxDetected: benchmarkMetadata.javaxDetected,
     hibernateDetected: benchmarkMetadata.hibernateDetected,
-    springSecurityDetected: benchmarkMetadata.springSecurityDetected
+    springSecurityDetected: benchmarkMetadata.springSecurityDetected,
+    junit4Detected: benchmarkMetadata.junit4Detected || false,
+    junit5Detected: benchmarkMetadata.junit5Detected || false
   };
   return {
     generatedAt: new Date().toISOString(),
@@ -127,7 +129,9 @@ function detectDependencies(contents) {
     jakartaDetected: /\bjakarta\./.test(joined),
     javaxDetected: /\bjavax\./.test(joined),
     hibernateDetected: /hibernate-core|org\.hibernate|hibernate-mapping/.test(joined),
-    springSecurityDetected: /spring-boot-starter-security|spring-security/.test(joined)
+    springSecurityDetected: /spring-boot-starter-security|spring-security/.test(joined),
+    junit4Detected: /junit:junit|org\.junit\.Test|org\.junit\.Assert|org\.junit\.Before|org\.junit\.After|org\.junit\.runner\.RunWith/.test(joined),
+    junit5Detected: /org\.junit\.jupiter|junit-jupiter|junit-platform/.test(joined)
   };
 }
 
@@ -157,6 +161,10 @@ function detectFindings(contents, dependencies, manifests) {
     findings.push(finding('spring-security-5', 'warning', `Spring Security ${dependencies.springSecurityVersion} detected`, 'Plan Spring Security 6 authorization and configuration validation.'));
   }
 
+  if (manifests.pack === 'junit-5-readiness' && !dependencies.junit4Detected) {
+    findings.push(finding('junit4-not-detected', 'warning', 'JUnit 4 usage not detected', 'Confirm JUnit 4 tests are present before using the JUnit 5 readiness pack.'));
+  }
+
   if (manifests.pack === 'java-17-to-21-readiness' && manifests.javaVersion !== '21') {
     findings.push(finding('java-21-target-missing', 'warning', `Java ${manifests.javaVersion} target detected`, 'Set the project release, sourceCompatibility, or toolchain target to Java 21 before final validation.'));
   }
@@ -174,6 +182,10 @@ function detectFindings(contents, dependencies, manifests) {
     addPatternFindings(findings, entry, /\bantMatchers\s*\(|\bmvcMatchers\s*\(|\bregexMatchers\s*\(/g, 'spring-security-legacy-matchers', 'warning', 'Legacy Spring Security matcher API');
     addPatternFindings(findings, entry, /\.authorizeRequests\s*\(/g, 'spring-security-authorize-requests', 'warning', 'authorizeRequests configuration');
     addPatternFindings(findings, entry, /@EnableGlobalMethodSecurity\b/g, 'spring-security-global-method-security', 'warning', 'Global method security annotation');
+    addPatternFindings(findings, entry, /\borg\.junit\.Test\b|\borg\.junit\.Before\b|\borg\.junit\.After\b|\borg\.junit\.Assert\b/g, 'junit4-api-usage', 'warning', 'JUnit 4 API usage');
+    addPatternFindings(findings, entry, /\borg\.junit\.runner\.RunWith\b|@RunWith\b/g, 'junit4-runner-usage', 'warning', 'JUnit 4 runner usage');
+    addPatternFindings(findings, entry, /junit:junit|<artifactId>junit<\/artifactId>/g, 'junit4-dependency', 'warning', 'JUnit 4 dependency');
+    addPatternFindings(findings, entry, /junit-vintage-engine/g, 'junit-vintage-engine', 'info', 'JUnit Vintage engine dependency');
     addSerializableFindings(findings, entry);
     addPublicReflectionFindings(findings, entry);
   }
@@ -207,6 +219,8 @@ function buildEvidence(findings, manifests, dependencies) {
     { name: 'Jakarta namespace readiness', status: dependencies.javaxDetected ? 'failed' : 'passed' },
     { name: 'Hibernate usage detection', status: dependencies.hibernateDetected ? 'passed' : 'warning' },
     { name: 'Spring Security usage detection', status: dependencies.springSecurityDetected ? 'passed' : 'warning' },
+    { name: 'JUnit 4 usage detection', status: dependencies.junit4Detected ? 'passed' : 'warning' },
+    { name: 'JUnit 5 usage detection', status: dependencies.junit5Detected ? 'passed' : 'warning' },
     { name: 'Static source checks', status: findings.length ? 'warning' : 'passed' },
     { name: 'OpenRewrite dry-run readiness', status: 'pending', note: 'OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.' }
   ];
@@ -292,6 +306,18 @@ function evaluatePackApplicability({ pack, manifests, dependencies }) {
         ? 'Spring Security usage was detected. This pack targets Spring Security 5.x to 6.x readiness.'
         : 'Spring Security usage was not detected. This pack is only useful for applications with Spring Security configuration or dependencies.',
       ...(!applicable ? { recommendedPack: dependencies.javaxDetected ? 'jakarta-readiness' : 'spring-boot-3-readiness' } : {})
+    };
+  }
+
+  if (pack === 'junit-5-readiness') {
+    const applicable = Boolean(dependencies.junit4Detected);
+    return {
+      applicable,
+      confidence: applicable ? 0.9 : 0.78,
+      reason: applicable
+        ? 'JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness.'
+        : 'JUnit 4 usage was not detected. This pack is only useful for projects with JUnit 4 tests or dependencies.',
+      ...(!applicable ? { recommendedPack: dependencies.springSecurityDetected ? 'spring-security-6-readiness' : 'java-17-to-21-readiness' } : {})
     };
   }
 

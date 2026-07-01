@@ -1,0 +1,501 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T21:51:42.372Z",
+  "project": {
+    "name": "WireMock JUnit 4",
+    "root": "https://github.com/wiremock/wiremock",
+    "source": "https://github.com/wiremock/wiremock",
+    "buildTools": [
+      "Gradle"
+    ],
+    "javaVersion": "11",
+    "springBootVersion": "unknown",
+    "fileCount": 1800,
+    "javaFileCount": 930
+  },
+  "pack": "junit-5-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness."
+  },
+  "readiness": {
+    "overall": 80,
+    "categories": {
+      "java": 88,
+      "spring": 86,
+      "hibernate": 72,
+      "jakarta": 95,
+      "build": 90,
+      "security": 76,
+      "testing": 48,
+      "architecture": 84
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 0,
+      "warning": 14,
+      "info": 1
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Treat Vintage as a temporary bridge and track remaining JUnit 4 tests.",
+      "file": "build.gradle",
+      "line": 76,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example1.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example2.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example3.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example4.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example5.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example6.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example7.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example8.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example9.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example10.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example11.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example12.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example13.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example14.java",
+      "line": 23,
+      "scope": "test"
+    }
+  ],
+  "findingSummary": {
+    "production": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "test": {
+      "critical": 0,
+      "warning": 14,
+      "info": 0
+    },
+    "byCode": {
+      "junit-vintage-engine": {
+        "code": "junit-vintage-engine",
+        "title": "JUnit Vintage engine dependency",
+        "severity": "info",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "build.gradle",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit-vintage-engine",
+            "severity": "info",
+            "title": "JUnit Vintage engine dependency",
+            "recommendation": "Treat Vintage as a temporary bridge and track remaining JUnit 4 tests.",
+            "file": "build.gradle",
+            "line": 76,
+            "scope": "production"
+          }
+        ]
+      },
+      "junit4-api-usage": {
+        "code": "junit4-api-usage",
+        "title": "JUnit 4 API usage",
+        "severity": "warning",
+        "total": 14,
+        "production": 0,
+        "test": 14,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 14
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/Example1.java",
+            "line": 10,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/Example2.java",
+            "line": 11,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/Example3.java",
+            "line": 12,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/Example4.java",
+            "line": 13,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/Example5.java",
+            "line": 14,
+            "scope": "test"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Treat Vintage as a temporary bridge and track remaining JUnit 4 tests.",
+      "file": "build.gradle",
+      "line": 76,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example1.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example2.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example3.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example4.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example5.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example6.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example7.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example8.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example9.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example10.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example11.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example12.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example13.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/Example14.java",
+      "line": 23,
+      "scope": "test"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "passed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "springSecurityVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": true
+  },
+  "benchmark": {
+    "slug": "wiremock-junit4",
+    "name": "WireMock JUnit 4",
+    "repository": "https://github.com/wiremock/wiremock",
+    "ref": null,
+    "requestedSource": "catalog",
+    "source": "catalog",
+    "checkoutPath": null,
+    "analysisPath": null,
+    "gitRevision": null,
+    "commands": [],
+    "validation": {
+      "requested": false,
+      "status": "not_requested",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation was not requested."
+    }
+  },
+  "nextActions": [
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "info",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
+    }
+  ]
+}

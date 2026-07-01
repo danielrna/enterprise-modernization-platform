@@ -7,7 +7,7 @@ export async function handleMcpRequest(request) {
   if (request.method === 'initialize') {
     return response(request.id, {
       protocolVersion: '2024-11-05',
-      serverInfo: { name: 'enterprise-modernization-platform', version: '0.1.9' },
+      serverInfo: { name: 'enterprise-modernization-platform', version: '0.2.0' },
       capabilities: { tools: {} }
     });
   }

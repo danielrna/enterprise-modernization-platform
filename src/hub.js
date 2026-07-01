@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const RELEASE_VERSION = 'v0.1.9';
+const RELEASE_VERSION = 'v0.2.0';
 const RELEASE_URL = `https://github.com/danielrna/enterprise-modernization-platform/releases/tag/${RELEASE_VERSION}`;
 const SAMPLE_REPORT_URL = `https://github.com/danielrna/enterprise-modernization-platform/releases/download/${RELEASE_VERSION}/emp-smoke-report.zip`;
 const DOCKER_IMAGE = `danielrna/enterprise-modernization-platform:${RELEASE_VERSION}`;
@@ -13,6 +13,9 @@ export async function generateMigrationHub({ outDir, benchmarks = [], benchmarks
   const migrationBenchmarks = benchmarkEvidence.length ? benchmarkEvidence : normalizeBenchmarks(benchmarks);
   await fs.writeFile(path.join(outDir, 'index.html'), normalizeHtml(renderHubIndex(migrationBenchmarks)));
   await fs.writeFile(path.join(outDir, 'spring-boot-2-to-3.html'), normalizeHtml(renderMigrationPage(migrationBenchmarks)));
+  for (const pack of packSummaries(migrationBenchmarks)) {
+    await fs.writeFile(path.join(outDir, `${pack.id}.html`), normalizeHtml(renderPackEvidencePage(pack, migrationBenchmarks)));
+  }
 }
 
 export async function generateBenchmarkIndex({ outDir, reports }) {
@@ -21,6 +24,8 @@ export async function generateBenchmarkIndex({ outDir, reports }) {
 }
 
 function renderHubIndex(benchmarks) {
+  const packTiles = packSummaries(benchmarks).map((pack) => `
+      <a class="tile" href="${escapeHtml(pack.id)}.html"><strong>${escapeHtml(pack.name)}</strong><span>${escapeHtml(pack.count)} reports, ${escapeHtml(pack.checkout)} checkout-backed, ${escapeHtml(pack.passed)} passing validation.</span></a>`).join('');
   const rows = benchmarks.map((benchmark) => `<tr><td><a href="../benchmarks/${escapeHtml(benchmark.slug)}/index.html">${escapeHtml(benchmark.name)}</a></td><td><a href="${escapeHtml(benchmark.repository)}">${escapeHtml(shortRepository(benchmark.repository))}</a></td><td>${escapeHtml(benchmark.pack)}</td><td>${escapeHtml(benchmark.springBootVersion)}</td><td>${renderReadinessBadge(benchmark.readiness)}</td><td>${renderStatusBadge(benchmark.source, 'source')}</td><td>${renderStatusBadge(benchmark.validation.status)}</td></tr>`).join('');
   return page('Migration Hub', `
     ${nav('../')}
@@ -34,9 +39,76 @@ function renderHubIndex(benchmarks) {
       <a class="tile" href="../editions.html"><strong>Editions</strong><span>Community, Professional, Consultant, and Organization options.</span></a>
       <a class="tile" href="../contact.html"><strong>Contact</strong><span>Request Professional, Consultant, or Organization access.</span></a>
     </section>
+    <h2>Pack Evidence Hubs</h2>
+    <section class="layout">${packTiles}</section>
     <h2>Benchmark Set</h2>
     <div class="table-scroll"><table><thead><tr><th>Project</th><th>Repository</th><th>Pack</th><th>Spring Boot</th><th>Readiness</th><th>Source</th><th>Validation</th></tr></thead><tbody>${rows}</tbody></table></div>
   `);
+}
+
+function renderPackEvidencePage(pack, benchmarks) {
+  const packBenchmarks = benchmarks.filter((benchmark) => benchmark.pack === pack.id);
+  const validated = packBenchmarks.filter((benchmark) => benchmark.validation?.status === 'passed');
+  const rows = packBenchmarks.map((benchmark) => `<tr><td><a href="../benchmarks/${escapeHtml(benchmark.slug)}/index.html">${escapeHtml(benchmark.name)}</a></td><td><a href="${escapeHtml(benchmark.repository)}">${escapeHtml(shortRepository(benchmark.repository))}</a></td><td>${renderReadinessBadge(benchmark.readiness)}</td><td>${escapeHtml(benchmark.findings.total)}</td><td>${renderStatusBadge(benchmark.source, 'source')}</td><td>${renderStatusBadge(benchmark.validation.status)}</td><td><a href="../benchmarks/${escapeHtml(benchmark.slug)}/report.json">JSON</a></td></tr>`).join('');
+  const validatedCards = validated.length ? `<section class="validated">${validated.map((benchmark) => `
+      <div class="proof-card">
+        <strong><a href="../benchmarks/${escapeHtml(benchmark.slug)}/index.html">${escapeHtml(benchmark.name)}</a></strong>
+        <span>${escapeHtml(shortRepository(benchmark.repository))}</span>
+        <div class="mini-metrics">
+          <small>${escapeHtml(formatReadiness(benchmark.readiness))} readiness</small>
+          <small>${escapeHtml(benchmark.validation.confidence || 0)}% confidence</small>
+        </div>
+      </div>`).join('')}</section>` : '<p>No reports for this pack currently have passing compile/test validation evidence.</p>';
+
+  return page(`${pack.name} Evidence Hub`, `
+    ${nav('../')}
+    <section>
+      <h1>${escapeHtml(pack.name)} Evidence Hub</h1>
+      <p>Pack-specific benchmark evidence for ${escapeHtml(pack.name)}. Use this page to compare catalog-backed reports, checkout-backed reports, and validation outcomes.</p>
+    </section>
+    <section class="summary-row">
+      <div><strong>${escapeHtml(pack.count)}</strong><span>Total reports</span></div>
+      <div><strong>${escapeHtml(pack.checkout)}</strong><span>Checkout-backed</span></div>
+      <div><strong>${escapeHtml(pack.passed)}</strong><span>Validation passed</span></div>
+      <div><strong>${escapeHtml(pack.failed)}</strong><span>Validation failed</span></div>
+    </section>
+    <h2>Validated Evidence</h2>
+    ${validatedCards}
+    <h2>Pack Benchmark Reports</h2>
+    <div class="table-scroll"><table><thead><tr><th>Project</th><th>Repository</th><th>Readiness</th><th>Findings</th><th>Source</th><th>Validation</th><th>Data</th></tr></thead><tbody>${rows}</tbody></table></div>
+  `);
+}
+
+function packSummaries(benchmarks) {
+  const packs = new Map();
+  for (const benchmark of benchmarks) {
+    const current = packs.get(benchmark.pack) || {
+      id: benchmark.pack,
+      name: packName(benchmark.pack),
+      count: 0,
+      checkout: 0,
+      passed: 0,
+      failed: 0
+    };
+    current.count += 1;
+    if (benchmark.source === 'checkout') current.checkout += 1;
+    if (benchmark.validation?.status === 'passed') current.passed += 1;
+    if (benchmark.validation?.status === 'failed') current.failed += 1;
+    packs.set(benchmark.pack, current);
+  }
+  return [...packs.values()].sort((left, right) => left.name.localeCompare(right.name));
+}
+
+function packName(pack) {
+  const names = {
+    'hibernate-readiness': 'Hibernate Readiness',
+    'jakarta-readiness': 'Jakarta Readiness',
+    'java-17-to-21-readiness': 'Java 17 to 21 Readiness',
+    'junit-5-readiness': 'JUnit 5 Readiness',
+    'spring-boot-3-readiness': 'Spring Boot 3 Readiness',
+    'spring-security-6-readiness': 'Spring Security 6 Readiness'
+  };
+  return names[pack] || pack;
 }
 
 function renderMigrationPage(benchmarks) {

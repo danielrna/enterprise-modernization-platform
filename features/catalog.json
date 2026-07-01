@@ -2,6 +2,98 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.2.0",
+      "title": "v0.2.0",
+      "date": "2026-07-01",
+      "summary": "JUnit 5 readiness pack, 75-report catalog, complete Spring Security checkout evidence, and pack-specific Migration Hub pages.",
+      "features": [
+        {
+          "id": "spring-security-checkout-completion",
+          "type": "evidence",
+          "name": "Spring Security checkout completion",
+          "audience": "Consultants validating Spring Security 6 readiness evidence",
+          "summary": "Promote the remaining Spring Security readiness reports to checkout-backed evidence.",
+          "evidence": [
+            "Promotes JHipster Sample Security to checkout-backed evidence with honest Maven validation failure evidence.",
+            "Promotes Keycloak Security Adapter to checkout-backed evidence with honest Maven compile failure and test timeout evidence.",
+            "Raises checkout-backed evidence from 28 to 30 reports while preserving 13 passing validation reports."
+          ],
+          "links": [
+            {
+              "label": "Spring Security 6 Evidence Hub",
+              "href": "docs/migration-hub/spring-security-6-readiness.html"
+            },
+            {
+              "label": "Keycloak Security Adapter report",
+              "href": "docs/benchmarks/keycloak-security-adapter/index.html"
+            }
+          ]
+        },
+        {
+          "id": "junit-5-readiness-pack",
+          "type": "pack",
+          "name": "JUnit 5 readiness pack",
+          "audience": "Enterprise Java teams migrating JUnit 4 test suites to JUnit 5",
+          "summary": "Add a dedicated readiness pack for JUnit 4 to JUnit 5 modernization planning.",
+          "evidence": [
+            "Adds `packs/junit-5-readiness.json`.",
+            "Detects JUnit 4 dependencies, imports, assertions, lifecycle annotations, runners, and Vintage engine usage.",
+            "Adds the testing readiness category and JUnit migration next actions."
+          ],
+          "links": [
+            {
+              "label": "JUnit 5 pack docs",
+              "href": "docs/packs/junit-5-readiness.html"
+            },
+            {
+              "label": "JUnit 5 Knowledge Base",
+              "href": "docs/knowledge-base/junit-5-readiness.html"
+            }
+          ]
+        },
+        {
+          "id": "junit-benchmark-evidence",
+          "type": "evidence",
+          "name": "JUnit benchmark evidence",
+          "audience": "Consultants building public proof for test modernization work",
+          "summary": "Add the first catalog-backed JUnit 5 readiness benchmark batch.",
+          "evidence": [
+            "Adds 10 JUnit readiness reports.",
+            "Raises the public benchmark catalog from 65 to 75 reports.",
+            "Establishes the public report shape for test modernization evidence."
+          ],
+          "links": [
+            {
+              "label": "JUnit 5 Evidence Hub",
+              "href": "docs/migration-hub/junit-5-readiness.html"
+            },
+            {
+              "label": "Benchmark index",
+              "href": "docs/benchmarks/index.html"
+            }
+          ]
+        },
+        {
+          "id": "pack-specific-migration-hubs",
+          "type": "documentation",
+          "name": "Pack-specific Migration Hub pages",
+          "audience": "Consultants comparing evidence across modernization packs",
+          "summary": "Generate a dedicated evidence hub page for every modernization pack.",
+          "evidence": [
+            "Adds pack-specific Migration Hub pages for Spring Boot, Jakarta, Java LTS, Hibernate, Spring Security, and JUnit readiness.",
+            "Each hub summarizes total reports, checkout-backed reports, passing validation, failed validation, and report links.",
+            "The main Migration Hub now links to all pack-specific evidence hubs."
+          ],
+          "links": [
+            {
+              "label": "Migration Hub",
+              "href": "docs/migration-hub/index.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.1.9",
       "title": "v0.1.9",
       "date": "2026-07-01",

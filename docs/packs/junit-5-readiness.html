@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JUnit 5 Readiness</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:28px 0 10px; font-size:21px; letter-spacing:0; }
+    p { max-width:760px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .layout { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin:24px 0; }
+    .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .tile span { color:var(--muted); }
+    .summary { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px; margin:24px 0; }
+    .summary div,.steps div { display:flex; flex-direction:column; gap:5px; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .summary span,.steps span { color:var(--muted); }
+    .steps { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; }
+    pre { overflow:auto; padding:14px; background:#111827; color:#f8fafc; border-radius:8px; }
+    code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    .table-scroll { width:100%; overflow-x:auto; border-radius:8px; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    li { margin:6px 0; }
+    @media (max-width: 900px) { .layout,.summary,.steps { grid-template-columns:1fr 1fr; } }
+    @media (max-width: 640px) { main { padding:24px 16px; } .layout,.summary,.steps { grid-template-columns:1fr; } h1 { font-size:27px; } table { min-width:680px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="index.html">Packs</a>
+      <a href="../release-notes/index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <section>
+      <h1>JUnit 5 Readiness</h1>
+      <p>Assess JUnit 5 Readiness evidence before mandatory modernization work.</p>
+    </section>
+
+    <section class="summary">
+      <div><strong>Vertical</strong><span>Enterprise Java Test Modernization</span></div>
+      <div><strong>Migration</strong><span>JUnit 4 to JUnit 5 readiness</span></div>
+      <div><strong>Pack ID</strong><span>junit-5-readiness</span></div>
+      <div><strong>Version</strong><span>0.1.0</span></div>
+    </section>
+
+    <h2>Run This Pack</h2>
+    <pre><code>node ./bin/emp.js analyze /path/to/app --pack junit-5-readiness --out reports/junit-5-readiness</code></pre>
+
+    <h2>Readiness Categories</h2>
+    <ul><li>java</li><li>build</li><li>testing</li><li>architecture</li><li>validation</li></ul>
+
+    <h2>Checks</h2>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Engine</th><th>Description</th></tr></thead><tbody><tr><td>junit4-detection</td><td>scanner</td><td>Detect JUnit 4 dependencies, imports, assertions, lifecycle annotations, and runners.</td></tr><tr><td>junit5-detection</td><td>scanner</td><td>Detect JUnit Jupiter or JUnit Platform usage when projects already have partial JUnit 5 adoption.</td></tr><tr><td>junit4-api-usage</td><td>static-source-scan</td><td>Find org.junit.Test, Assert, Before, and After usage that should be migrated to Jupiter APIs.</td></tr><tr><td>junit4-runner-usage</td><td>static-source-scan</td><td>Find RunWith-based tests that need explicit extension or runner migration review.</td></tr><tr><td>junit-vintage-engine</td><td>static-source-scan</td><td>Find Vintage engine usage that may hide incomplete JUnit 5 migration work.</td></tr><tr><td>compile-test-validation</td><td>build-tool</td><td>Capture Maven or Gradle compile and test validation after test migration preparation.</td></tr><tr><td>trust-confidence</td><td>emp-trust</td><td>Summarize compile, test, rollback, compatibility, and confidence evidence for Professional packaging.</td></tr></tbody></table></div>
+
+    <h2>Report Output</h2>
+    <ul><li>executive-summary</li><li>readiness</li><li>evidence</li><li>validation</li><li>trust-engine</li><li>risks-and-recommendations</li></ul>
+
+    <h2>Evidence Workflow</h2>
+    <section class="steps">
+      <div><strong>Analyze</strong><span>Detect metadata, source findings, and pack applicability.</span></div>
+      <div><strong>Report</strong><span>Generate static HTML and JSON evidence that can be shared without a backend.</span></div>
+      <div><strong>Validate</strong><span>Use transformation validation when compile, test, rollback, and trust evidence are required.</span></div>
+    </section>
+  </main></body>
+</html>

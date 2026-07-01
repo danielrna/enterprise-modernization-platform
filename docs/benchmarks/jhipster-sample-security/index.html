@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>JHipster Sample Security Readiness Report</h1>
-    <p class="meta">spring-security-6-readiness · 2026-07-01T21:19:41.694Z · https://github.com/jhipster/jhipster-sample-app</p>
+    <p class="meta">spring-security-6-readiness · 2026-07-01T21:44:21.964Z · https://github.com/jhipster/jhipster-sample-app</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -67,7 +67,7 @@
       <div class="panel decision-main bad">
         <strong>Migration is blocked by critical readiness risks</strong>
         <div>1 critical finding(s) should be resolved before execution planning.</div>
-        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">4 authorizeRequests configuration</span><span class="pill warning">1 Global method security annotation</span></div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">35 Spring field injection</span><span class="pill warning">19 Legacy Spring Security matcher API</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
@@ -75,16 +75,16 @@
       </div>
       <div class="panel decision-list">
         <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">81%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">78%</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">136</div><div class="label">Java files</div></div>
-      <div class="panel"><div class="metric">4.0.6</div><div class="label">Spring Boot</div></div>
+      <div class="panel"><div class="metric">116</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
@@ -95,34 +95,36 @@
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>Spring Security usage was detected. This pack targets Spring Security 5.x to 6.x readiness.</div>
-      <div class="label">Detected: Spring Boot: 4.0.6 · Java: 21 · Build: Maven · javax usage: yes · jakarta usage: yes</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 11 · Build: Maven · javax usage: yes · jakarta usage: no</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>56%</strong></td><td><div class="bar"><span style="width:56%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>33%</strong></td><td><div class="bar"><span style="width:33%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review Spring Security 6 configuration risks</td><td>Spring Security 6 readiness depends on explicit review of removed configuration adapters, matcher API changes, authorization DSL changes, and method security annotations.</td><td>5</td><td><code>node ./bin/emp.js analyze . --pack spring-security-6-readiness --out reports/spring-security-6-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review Spring Security 6 configuration risks</td><td>Spring Security 6 readiness depends on explicit review of removed configuration adapters, matcher API changes, authorization DSL changes, and method security annotations.</td><td>21</td><td><code>node ./bin/emp.js analyze . --pack spring-security-6-readiness --out reports/spring-security-6-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/jhipster/jhipster-sample-app
+      <strong>checkout</strong> · https://github.com/jhipster/jhipster-sample-app
+      <div class="label">Checkout: benchmark-repos/jhipster-sample-security</div>
+      <div class="label">Git revision: 03e7f79bd6c647b66ed7e5d26458e158c74208e6</div>
     </div>
     <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./mvnw -q -DskipTests compile</td><td>4.8 s</td><td>n called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:~/.m2/wrapper/dists/apache-maven-3.8.6-bin/67568434/apache-maven-3.8.6/lib/guava-25.1-android.jar) WARNING: Please consider reporting this to the maint...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./mvnw -q test</td><td>4.0 s</td><td>n called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:~/.m2/wrapper/dists/apache-maven-3.8.6-bin/67568434/apache-maven-3.8.6/lib/guava-25.1-android.jar) WARNING: Please consider reporting this to the maint...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">6</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">3</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">6</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">22</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">37</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">7</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">59</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>authorizeRequests configuration</td><td>4</td><td>4</td><td>0</td><td>src (4)</td><td>src/main/java/io/github/jhipster/sample/config/Example1.java:10 · Review authorization DSL rules before Spring Security 6 validation.<br>src/main/java/io/github/jhipster/sample/config/Example2.java:11 · Review authorization DSL rules before Spring Security 6 validation.<br>src/main/java/io/github/jhipster/sample/config/Example3.java:12 · Review authorization DSL rules before Spring Security 6 validation.<br>src/main/java/io/github/jhipster/sample/config/Example4.java:13 · Review authorization DSL rules before Spring Security 6 validation.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/io/github/jhipster/sample/domain/Operation.java:8 · Plan Jakarta namespace alignment before Spring Security validation.</td></tr><tr><td><span class="pill warning">warning</span><br>Global method security annotation</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/io/github/jhipster/sample/config/SecurityConfiguration.java:18 · Review method security configuration before Spring Security 6 migration.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>35</td><td>0</td><td>35</td><td>src (35)</td><td>src/test/java/io/github/jhipster/sample/config/timezone/HibernateTimeZoneIT.java:25 · Review Spring field injection before modernization.<br>src/test/java/io/github/jhipster/sample/config/timezone/HibernateTimeZoneIT.java:28 · Review Spring field injection before modernization.<br>src/test/java/io/github/jhipster/sample/security/DomainUserDetailsServiceIT.java:33 · Review Spring field injection before modernization.<br>src/test/java/io/github/jhipster/sample/service/MailServiceIT.java:48 · Review Spring field injection before modernization.<br>src/test/java/io/github/jhipster/sample/service/MailServiceIT.java:57 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Legacy Spring Security matcher API</td><td>19</td><td>19</td><td>0</td><td>src (19)</td><td>src/main/java/io/github/jhipster/sample/config/SecurityConfiguration.java:75 · Review Legacy Spring Security matcher API before modernization.<br>src/main/java/io/github/jhipster/sample/config/SecurityConfiguration.java:76 · Review Legacy Spring Security matcher API before modernization.<br>src/main/java/io/github/jhipster/sample/config/SecurityConfiguration.java:77 · Review Legacy Spring Security matcher API before modernization.<br>src/main/java/io/github/jhipster/sample/config/SecurityConfiguration.java:78 · Review Legacy Spring Security matcher API before modernization.<br>src/main/java/io/github/jhipster/sample/config/SecurityConfiguration.java:79 · Review Legacy Spring Security matcher API before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>1</td><td>0</td><td>1</td><td>src (1)</td><td>src/test/java/io/github/jhipster/sample/security/jwt/TokenProviderSecurityMetersTests.java:17 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>1</td><td>0</td><td>1</td><td>src (1)</td><td>src/test/java/io/github/jhipster/sample/config/TestContainersSpringContextCustomizerFactory.java:39 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>authorizeRequests configuration</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/io/github/jhipster/sample/config/SecurityConfiguration.java:74 · Review authorizeRequests configuration before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Global method security annotation</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/io/github/jhipster/sample/config/SecurityConfiguration.java:22 · Review Global method security annotation before modernization.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

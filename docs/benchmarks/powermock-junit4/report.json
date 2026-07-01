@@ -1,0 +1,709 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T21:51:42.370Z",
+  "project": {
+    "name": "PowerMock JUnit 4",
+    "root": "https://github.com/powermock/powermock",
+    "source": "https://github.com/powermock/powermock",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "8",
+    "springBootVersion": "unknown",
+    "fileCount": 1400,
+    "javaFileCount": 890
+  },
+  "pack": "junit-5-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness."
+  },
+  "readiness": {
+    "overall": 79,
+    "categories": {
+      "java": 88,
+      "spring": 86,
+      "hibernate": 72,
+      "jakarta": 95,
+      "build": 90,
+      "security": 76,
+      "testing": 43,
+      "architecture": 84
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 0,
+      "warning": 28,
+      "info": 0
+    }
+  },
+  "productionFindings": [],
+  "testFindings": [
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review PowerMock runner usage carefully because Jupiter migration may require test redesign.",
+      "file": "tests/mockito/junit4/src/test/java/samples/powermockito/junit4/PowerMockRunnerTest.java",
+      "line": 9,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example5Test.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example6Test.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example7Test.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example8Test.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example9Test.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example10Test.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example11Test.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example12Test.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example13Test.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example14Test.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example15Test.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example16Test.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example17Test.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example18Test.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example19Test.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example20Test.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example21Test.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example22Test.java",
+      "line": 31,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example23Test.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example24Test.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example25Test.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example26Test.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example27Test.java",
+      "line": 36,
+      "scope": "test"
+    }
+  ],
+  "findingSummary": {
+    "production": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 28,
+      "info": 0
+    },
+    "byCode": {
+      "junit4-runner-usage": {
+        "code": "junit4-runner-usage",
+        "title": "JUnit 4 runner usage",
+        "severity": "warning",
+        "total": 28,
+        "production": 0,
+        "test": 28,
+        "topModules": [
+          {
+            "name": "junit4",
+            "count": 28
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review PowerMock runner usage carefully because Jupiter migration may require test redesign.",
+            "file": "tests/mockito/junit4/src/test/java/samples/powermockito/junit4/PowerMockRunnerTest.java",
+            "line": 9,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+            "file": "tests/mockito/junit4/src/test/java/samples/Example1Test.java",
+            "line": 10,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+            "file": "tests/mockito/junit4/src/test/java/samples/Example2Test.java",
+            "line": 11,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+            "file": "tests/mockito/junit4/src/test/java/samples/Example3Test.java",
+            "line": 12,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+            "file": "tests/mockito/junit4/src/test/java/samples/Example4Test.java",
+            "line": 13,
+            "scope": "test"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review PowerMock runner usage carefully because Jupiter migration may require test redesign.",
+      "file": "tests/mockito/junit4/src/test/java/samples/powermockito/junit4/PowerMockRunnerTest.java",
+      "line": 9,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example5Test.java",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example6Test.java",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example7Test.java",
+      "line": 16,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example8Test.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example9Test.java",
+      "line": 18,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example10Test.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example11Test.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example12Test.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example13Test.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example14Test.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example15Test.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example16Test.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example17Test.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example18Test.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example19Test.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example20Test.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example21Test.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example22Test.java",
+      "line": 31,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example23Test.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example24Test.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example25Test.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example26Test.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Replace runner-dependent tests with supported Jupiter alternatives or isolate them.",
+      "file": "tests/mockito/junit4/src/test/java/samples/Example27Test.java",
+      "line": 36,
+      "scope": "test"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "passed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "springSecurityVersion": "unknown",
+    "jakartaDetected": false,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": false
+  },
+  "benchmark": {
+    "slug": "powermock-junit4",
+    "name": "PowerMock JUnit 4",
+    "repository": "https://github.com/powermock/powermock",
+    "ref": null,
+    "requestedSource": "catalog",
+    "source": "catalog",
+    "checkoutPath": null,
+    "analysisPath": null,
+    "gitRevision": null,
+    "commands": [],
+    "validation": {
+      "requested": false,
+      "status": "not_requested",
+      "confidence": 0,
+      "checks": [],
+      "summary": "Validation was not requested."
+    }
+  },
+  "nextActions": [
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "warning",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 0,
+      "findingCodes": [
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "junit-5-readiness",
+  "title": "JUnit 5 Readiness Knowledge Base",
+  "pack": "junit-5-readiness",
+  "summary": "Guidance for using EMP JUnit 5 readiness evidence during JUnit 4 to JUnit 5 modernization planning.",
+  "guide": [
+    "Start with applicability. The JUnit 5 readiness pack is useful only when JUnit 4 tests or dependencies are detected.",
+    "Separate test modernization from framework modernization. JUnit 5 work often happens alongside Spring Boot, Java LTS, and build-tool upgrades, but it has its own behavior risks.",
+    "Treat static findings as triage evidence. They identify test APIs and runner assumptions before a consultant promises migration execution."
+  ],
+  "risks": [
+    {
+      "name": "JUnit 4 API usage",
+      "signal": "junit4-api-usage",
+      "whyItMatters": "JUnit 4 annotations and assertions need explicit migration to Jupiter APIs or compatibility handling.",
+      "recommendation": "Inventory JUnit 4 imports and migrate tests in batches with validation evidence."
+    },
+    {
+      "name": "JUnit 4 runners",
+      "signal": "junit4-runner-usage",
+      "whyItMatters": "RunWith-based tests often encode Spring, Mockito, parameterized, or custom runner behavior.",
+      "recommendation": "Review each runner and replace it with the correct Jupiter extension or test style."
+    },
+    {
+      "name": "JUnit 4 dependency",
+      "signal": "junit4-dependency",
+      "whyItMatters": "A direct JUnit 4 dependency can keep old tests compiling while hiding incomplete migration work.",
+      "recommendation": "Track dependency replacement separately from source import rewrites."
+    },
+    {
+      "name": "Vintage engine",
+      "signal": "junit-vintage-engine",
+      "whyItMatters": "Vintage can be useful temporarily, but it can also mask the amount of JUnit 4 still in production test suites.",
+      "recommendation": "Use Vintage deliberately as a transition bridge and report remaining JUnit 4 tests."
+    }
+  ],
+  "validationNotes": [
+    "Catalog-backed reports prove report shape and risk vocabulary, not checkout compile success.",
+    "A passing test run is the most important validation evidence for test modernization.",
+    "Compile-only success is not enough because runner and extension behavior can fail at test execution time.",
+    "Failed validation evidence is still useful when it identifies build-tool, plugin, or runtime blockers."
+  ],
+  "benchmarks": [
+    {
+      "slug": "junit4-samples",
+      "name": "JUnit 4 Samples",
+      "note": "Small JUnit 4 examples for test API and runner migration evidence."
+    },
+    {
+      "slug": "mockito-junit4-samples",
+      "name": "Mockito JUnit 4 Samples",
+      "note": "Mockito runner and rule patterns that need extension review."
+    },
+    {
+      "slug": "spring-petclinic-junit",
+      "name": "Spring Petclinic JUnit",
+      "note": "Spring application tests with framework and JUnit migration overlap."
+    }
+  ],
+  "limits": [
+    "The readiness report does not automatically migrate tests.",
+    "The readiness report does not prove test behavior is preserved.",
+    "The readiness report does not replace focused test execution after migration.",
+    "The readiness report does not infer custom runner semantics."
+  ]
+}

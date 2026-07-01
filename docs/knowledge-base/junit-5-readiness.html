@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JUnit 5 Readiness Knowledge Base</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:28px 0 10px; font-size:21px; letter-spacing:0; }
+    p { max-width:760px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .layout { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:18px 0; }
+    .tile { display:flex; flex-direction:column; gap:6px; min-height:118px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .tile span { color:var(--muted); }
+    .summary { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; margin:24px 0; }
+    .summary div { display:flex; flex-direction:column; gap:5px; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .summary span { color:var(--muted); }
+    .table-scroll { width:100%; overflow-x:auto; border-radius:8px; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    li { margin:6px 0; }
+    code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--muted); }
+    @media (max-width: 760px) { main { padding:24px 16px; } .layout,.summary { grid-template-columns:1fr; } h1 { font-size:27px; } table { min-width:760px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../packs/index.html">Packs</a>
+      <a href="index.html">Knowledge Base</a>
+      <a href="../release-notes/index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <section>
+      <h1>JUnit 5 Readiness Knowledge Base</h1>
+      <p>Guidance for using EMP JUnit 5 readiness evidence during JUnit 4 to JUnit 5 modernization planning.</p>
+    </section>
+
+    <section class="summary">
+      <div><strong>Pack</strong><span><a href="../packs/junit-5-readiness.html">junit-5-readiness</a></span></div>
+      <div><strong>Risks</strong><span>4</span></div>
+      <div><strong>Benchmarks</strong><span>3</span></div>
+    </section>
+
+    <h2>Guide</h2>
+    <ul><li>Start with applicability. The JUnit 5 readiness pack is useful only when JUnit 4 tests or dependencies are detected.</li><li>Separate test modernization from framework modernization. JUnit 5 work often happens alongside Spring Boot, Java LTS, and build-tool upgrades, but it has its own behavior risks.</li><li>Treat static findings as triage evidence. They identify test APIs and runner assumptions before a consultant promises migration execution.</li></ul>
+
+    <h2>Common Risks</h2>
+    <div class="table-scroll"><table><thead><tr><th>Risk</th><th>Why It Matters</th><th>Recommendation</th></tr></thead><tbody>
+      <tr>
+        <td><strong>JUnit 4 API usage</strong><br><code>junit4-api-usage</code></td>
+        <td>JUnit 4 annotations and assertions need explicit migration to Jupiter APIs or compatibility handling.</td>
+        <td>Inventory JUnit 4 imports and migrate tests in batches with validation evidence.</td>
+      </tr>
+      <tr>
+        <td><strong>JUnit 4 runners</strong><br><code>junit4-runner-usage</code></td>
+        <td>RunWith-based tests often encode Spring, Mockito, parameterized, or custom runner behavior.</td>
+        <td>Review each runner and replace it with the correct Jupiter extension or test style.</td>
+      </tr>
+      <tr>
+        <td><strong>JUnit 4 dependency</strong><br><code>junit4-dependency</code></td>
+        <td>A direct JUnit 4 dependency can keep old tests compiling while hiding incomplete migration work.</td>
+        <td>Track dependency replacement separately from source import rewrites.</td>
+      </tr>
+      <tr>
+        <td><strong>Vintage engine</strong><br><code>junit-vintage-engine</code></td>
+        <td>Vintage can be useful temporarily, but it can also mask the amount of JUnit 4 still in production test suites.</td>
+        <td>Use Vintage deliberately as a transition bridge and report remaining JUnit 4 tests.</td>
+      </tr></tbody></table></div>
+
+    <h2>Validation Notes</h2>
+    <ul><li>Catalog-backed reports prove report shape and risk vocabulary, not checkout compile success.</li><li>A passing test run is the most important validation evidence for test modernization.</li><li>Compile-only success is not enough because runner and extension behavior can fail at test execution time.</li><li>Failed validation evidence is still useful when it identifies build-tool, plugin, or runtime blockers.</li></ul>
+
+    <h2>Benchmark Examples</h2>
+    <section class="layout">
+      <a class="tile" href="../benchmarks/junit4-samples/index.html">
+        <strong>JUnit 4 Samples</strong>
+        <span>Small JUnit 4 examples for test API and runner migration evidence.</span>
+      </a>
+      <a class="tile" href="../benchmarks/mockito-junit4-samples/index.html">
+        <strong>Mockito JUnit 4 Samples</strong>
+        <span>Mockito runner and rule patterns that need extension review.</span>
+      </a>
+      <a class="tile" href="../benchmarks/spring-petclinic-junit/index.html">
+        <strong>Spring Petclinic JUnit</strong>
+        <span>Spring application tests with framework and JUnit migration overlap.</span>
+      </a></section>
+
+    <h2>What This Does Not Prove</h2>
+    <ul><li>The readiness report does not automatically migrate tests.</li><li>The readiness report does not prove test behavior is preserved.</li><li>The readiness report does not replace focused test execution after migration.</li><li>The readiness report does not infer custom runner semantics.</li></ul>
+  </main></body>
+</html>

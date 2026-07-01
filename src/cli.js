@@ -9,7 +9,7 @@ import { transformProject } from './transform.js';
 import { loadEnterpriseRules, evaluateEnterpriseRules } from './rules.js';
 import { runMcpServer } from './mcp.js';
 
-const VERSION = '0.1.9';
+const VERSION = '0.2.0';
 
 export async function runCli(argv) {
   const [command, ...rest] = argv;
@@ -153,7 +153,7 @@ function printHelp() {
 
 Usage:
   emp analyze <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness|hibernate-readiness] [--rules .preflight-rules.yml] [--out reports/latest]
-  emp transform <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness|hibernate-readiness|spring-security-6-readiness] [--mode dry-run|apply|rollback] [--engine native|openrewrite|auto] [--recipe recipeId] [--recipe-artifact group:artifact:version] [--validate] [--rules .preflight-rules.yml] [--out reports/transform]
+  emp transform <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness|hibernate-readiness|spring-security-6-readiness|junit-5-readiness] [--mode dry-run|apply|rollback] [--engine native|openrewrite|auto] [--recipe recipeId] [--recipe-artifact group:artifact:version] [--validate] [--rules .preflight-rules.yml] [--out reports/transform]
   emp benchmarks [--source catalog|local|clone] [--only slug[,slug]] [--limit n] [--validate] [--validation-timeout-ms 120000] [--out docs/benchmarks]
   emp hub [--out docs/migration-hub]
   emp mcp

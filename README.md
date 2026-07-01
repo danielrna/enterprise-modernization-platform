@@ -2,15 +2,15 @@
 
 CLI-first readiness evidence for mandatory enterprise software modernization.
 
-This public MVP starts with Enterprise Java Readiness: Spring Boot 2 to 3, Java 17 to 21, Jakarta namespace readiness, Hibernate readiness, enterprise rules, transformation evidence, and static HTML reports a consultant can share with a client.
+This public MVP starts with Enterprise Java Readiness: Spring Boot 2 to 3, Java 17 to 21, Jakarta namespace readiness, Hibernate readiness, Spring Security 6 readiness, JUnit 5 readiness, enterprise rules, transformation evidence, and static HTML reports a consultant can share with a client.
 
 The product is not a Java migration tool. The product is confidence that an application is ready for a mandatory technology evolution.
 
 ## Try In 5 Minutes
 
-Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.1.9
+Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.2.0
 
-Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.1.9/emp-smoke-report.zip
+Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.2.0/emp-smoke-report.zip
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform/migration-hub/spring-boot-2-to-3.html
 
@@ -54,7 +54,7 @@ reports/readiness/index.html
 Run the published Docker image:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.1.9 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.0 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
 ```
 
 Or build the CLI image locally:
@@ -93,7 +93,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.1.9
+        uses: danielrna/enterprise-modernization-platform@v0.2.0
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -109,8 +109,8 @@ jobs:
 ## CLI
 
 ```bash
-node ./bin/emp.js analyze <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness|hibernate-readiness] [--rules .preflight-rules.yml] [--out reports/latest]
-node ./bin/emp.js transform <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness|hibernate-readiness] [--mode dry-run|apply|rollback] [--engine native|openrewrite|auto] [--validate] [--out reports/transform]
+node ./bin/emp.js analyze <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness|hibernate-readiness|spring-security-6-readiness|junit-5-readiness] [--rules .preflight-rules.yml] [--out reports/latest]
+node ./bin/emp.js transform <path> [--pack spring-boot-3-readiness|java-17-to-21-readiness|jakarta-readiness|hibernate-readiness|spring-security-6-readiness|junit-5-readiness] [--mode dry-run|apply|rollback] [--engine native|openrewrite|auto] [--validate] [--out reports/transform]
 node ./bin/emp.js benchmarks [--source catalog|local|clone] [--only slug[,slug]] [--limit n] [--validate] [--validation-timeout-ms 120000] [--out docs/benchmarks]
 node ./bin/emp.js hub [--out docs/migration-hub]
 node ./bin/emp.js mcp
@@ -139,7 +139,7 @@ Use the platform to turn a mandatory upgrade into a client-ready evidence report
 4. Validate compilation and tests.
 5. Sell migration confidence, not a generic migration script.
 
-The public validation set now proves the reference flow on 25 real checkouts, including real Spring Boot applications and Hibernate ORM evidence outside Spring Guides. The validated set includes Spring Boot `2.6.2`, `2.6.3`, and `2.7.6` projects plus Hibernate reports with passing, failing, and timeout validation evidence.
+The public validation set now proves the reference flow on 30 real checkouts, including real Spring Boot applications, Hibernate ORM evidence, and Spring Security evidence outside Spring Guides. The validated set includes Spring Boot `2.6.2`, `2.6.3`, and `2.7.6` projects plus Hibernate and Spring Security reports with passing, failing, and timeout validation evidence.
 
 ## Editions
 
@@ -214,7 +214,7 @@ npm run consultant:demo
 npm run benchmarks:publish
 ```
 
-`npm run docs:generate` generates static pack documentation from `packs/*.json`. `npm run knowledge:generate` generates Knowledge Base pages from `knowledge/*.json`. `npm run release-notes:generate` generates public HTML and GitHub-ready Markdown release notes from `features/catalog.json`. `npm run consultant:demo` generates the Consultant Demo page and downloadable bundle. `npm run benchmarks:publish` uses the checked-in benchmark reports by default, regenerates the Migration Hub, pack docs, Knowledge Base, release notes, Consultant Demo, writes `reports/benchmark-publish-summary.json`, and asserts the current report count. Use `npm run benchmarks:publish -- --min-count 65` for the current benchmark gate. Use `node ./scripts/benchmark-publish.js --source local --validate` or `--source clone --validate` when intentionally refreshing checkout-backed evidence.
+`npm run docs:generate` generates static pack documentation from `packs/*.json`. `npm run knowledge:generate` generates Knowledge Base pages from `knowledge/*.json`. `npm run release-notes:generate` generates public HTML and GitHub-ready Markdown release notes from `features/catalog.json`. `npm run consultant:demo` generates the Consultant Demo page and downloadable bundle. `npm run benchmarks:publish` uses the checked-in benchmark reports by default, regenerates the Migration Hub, pack docs, Knowledge Base, release notes, Consultant Demo, writes `reports/benchmark-publish-summary.json`, and asserts the current report count. Use `npm run benchmarks:publish -- --min-count 75` for the current benchmark gate. Use `node ./scripts/benchmark-publish.js --source local --validate` or `--source clone --validate` when intentionally refreshing checkout-backed evidence.
 
 ## Verification
 
@@ -239,7 +239,7 @@ Current automated coverage verifies:
 
 ## Current Status
 
-Implemented through v0.1.9:
+Implemented through v0.2.0:
 
 - CLI, Docker, MCP, and GitHub Action interfaces.
 - Spring Boot 2 to 3 readiness and transformation workflow.
@@ -247,10 +247,11 @@ Implemented through v0.1.9:
 - Jakarta readiness pack.
 - Hibernate readiness pack.
 - Spring Security 6 readiness pack.
+- JUnit 5 readiness pack.
 - Enterprise rules.
 - Trust evidence and static HTML/JSON reports.
-- 49 Spring Boot benchmark reports plus Jakarta readiness, 10 Hibernate readiness benchmark reports, and 5 Spring Security readiness benchmark reports.
-- Validation status in benchmark reports and the Migration Hub, including 28 checkout-backed reports and 13 reports with passing compile/test evidence.
+- 49 Spring Boot benchmark reports plus Jakarta readiness, 10 Hibernate readiness benchmark reports, 5 Spring Security readiness benchmark reports, and 10 JUnit readiness benchmark reports.
+- Validation status in benchmark reports and the Migration Hub, including 30 checkout-backed reports and 13 reports with passing compile/test evidence.
 - Consultant Demo page and downloadable consultant demo bundle.
 - Spring Boot 2 to 3 Migration Hub published through GitHub Pages.
 

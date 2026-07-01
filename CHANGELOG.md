@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## v0.2.0
+
+- Promoted JHipster Sample Security and Keycloak Security Adapter to checkout-backed Spring Security readiness evidence, completing the initial Spring Security checkout batch.
+- Added the JUnit 5 readiness pack for JUnit 4 to JUnit 5 modernization planning.
+- Added JUnit 4/JUnit 5 static detection, JUnit migration findings, testing readiness scoring, and report next actions.
+- Added the JUnit 5 Readiness Knowledge Base article and 10 catalog-backed JUnit readiness benchmark reports, raising the public benchmark catalog to 75 reports.
+- Added pack-specific Migration Hub evidence pages for every modernization pack.
+
 ## v0.1.9
 
 - Promoted Spring Petclinic REST Security, Spring Boot RealWorld Security, and Spring Security Samples Legacy to checkout-backed Spring Security readiness evidence.

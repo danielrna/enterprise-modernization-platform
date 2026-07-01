@@ -257,6 +257,18 @@ export function buildNextActions(report) {
     });
   }
 
+  const junitCodes = ['junit4-api-usage', 'junit4-runner-usage', 'junit4-dependency', 'junit-vintage-engine'];
+  if (junitCodes.some((code) => hasFinding(report.findings || [], code))) {
+    addAction({
+      id: 'review-junit-5-migration-risks',
+      priority: hasFinding(report.findings || [], 'junit4-runner-usage') ? 'warning' : 'info',
+      title: 'Review JUnit 4 to JUnit 5 migration risks',
+      reason: 'JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.',
+      findingCodes: junitCodes,
+      suggestedCommand: 'node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness'
+    });
+  }
+
   if (report.rules?.violations?.some((violation) => violation.severity === 'critical')) {
     addAction({
       id: 'resolve-critical-enterprise-rules',

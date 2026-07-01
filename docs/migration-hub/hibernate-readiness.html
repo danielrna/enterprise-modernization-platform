@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hibernate Readiness Evidence Hub</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; --accent-dark:#0f4f84; --ok:#217a45; --warn:#966600; --bad:#b42318; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:28px 0 10px; font-size:21px; letter-spacing:0; }
+    p { max-width:760px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .layout { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:24px 0; }
+    .tile { display:flex; flex-direction:column; gap:6px; min-height:118px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .tile span { color:var(--muted); }
+    .cta-band { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:18px; align-items:center; margin:24px 0; padding:18px; background:#eef6fd; border:1px solid #bfd7ee; border-left:4px solid var(--accent); border-radius:8px; }
+    .cta-band div:first-child { display:flex; flex-direction:column; gap:4px; }
+    .cta-band span,.subtle { color:var(--muted); }
+    .summary-row { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px; margin:24px 0; }
+    .summary-row div { display:flex; flex-direction:column; gap:3px; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .summary-row strong { font-size:24px; }
+    .summary-row span { color:var(--muted); }
+    .filters { display:grid; grid-template-columns:minmax(240px, 1fr) 170px 190px auto; gap:10px; align-items:center; margin:18px 0 14px; }
+    input,select { width:100%; min-height:40px; padding:8px 10px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink); font:inherit; }
+    .proof { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:18px; align-items:center; padding:18px; background:var(--panel); border:1px solid var(--line); border-left:4px solid #217a45; border-radius:8px; }
+    .proof p { margin:6px 0 0; }
+    .metrics { display:grid; grid-template-columns:repeat(4, minmax(92px, 1fr)); gap:10px; }
+    .metrics span { display:flex; flex-direction:column; gap:2px; padding:10px 12px; background:#f8fafc; border:1px solid var(--line); border-radius:6px; }
+    .metrics small { color:var(--muted); font-size:12px; }
+    .validated { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:10px; margin:12px 0 24px; }
+    .proof-card { display:flex; flex-direction:column; gap:6px; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .proof-card span,.mini-metrics small { color:var(--muted); }
+    .mini-metrics { display:flex; flex-wrap:wrap; gap:8px; }
+    .trust-grid { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:10px; }
+    .trust-grid div { display:flex; flex-direction:column; gap:5px; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .trust-grid span { color:var(--muted); }
+    .steps { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:10px; }
+    .steps div,.promise div { display:flex; flex-direction:column; gap:5px; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .steps span,.promise span { color:var(--muted); }
+    .promise { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:10px; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .actions a { display:inline-flex; align-items:center; min-height:40px; padding:8px 12px; background:var(--panel); border:1px solid var(--line); border-radius:6px; }
+    .actions a.primary { background:var(--accent); color:#fff; border-color:var(--accent-dark); font-weight:700; }
+    pre { overflow:auto; padding:14px; background:#111827; color:#f8fafc; border-radius:8px; }
+    code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    .table-scroll { width:100%; overflow-x:auto; border-radius:8px; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    td { overflow-wrap:anywhere; }
+    .badge { display:inline-flex; align-items:center; justify-content:center; min-width:72px; min-height:24px; padding:3px 8px; border-radius:999px; font-size:12px; font-weight:700; text-transform:capitalize; }
+    .badge.good { background:#dff7e8; color:var(--ok); }
+    .badge.warn { background:#fff3c4; color:var(--warn); }
+    .badge.bad { background:#ffe4e0; color:var(--bad); }
+    .badge.neutral { background:#eef2f7; color:#344054; }
+    li { margin:6px 0; }
+    @media (max-width: 900px) { .steps,.promise,.validated,.trust-grid,.summary-row { grid-template-columns:1fr 1fr; } .cta-band,.filters { grid-template-columns:1fr; } }
+    @media (max-width: 720px) { main { padding:24px 16px; } .layout,.proof,.steps,.promise,.validated,.trust-grid,.summary-row { grid-template-columns:1fr; } .metrics { grid-template-columns:1fr; } h1 { font-size:27px; } table { min-width:720px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../packs/index.html">Packs</a>
+      <a href="../release-notes/index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <section>
+      <h1>Hibernate Readiness Evidence Hub</h1>
+      <p>Pack-specific benchmark evidence for Hibernate Readiness. Use this page to compare catalog-backed reports, checkout-backed reports, and validation outcomes.</p>
+    </section>
+    <section class="summary-row">
+      <div><strong>10</strong><span>Total reports</span></div>
+      <div><strong>9</strong><span>Checkout-backed</span></div>
+      <div><strong>5</strong><span>Validation passed</span></div>
+      <div><strong>4</strong><span>Validation failed</span></div>
+    </section>
+    <h2>Validated Evidence</h2>
+    <section class="validated">
+      <div class="proof-card">
+        <strong><a href="../benchmarks/bookstore-hibernate/index.html">Bookstore Spring Hibernate</a></strong>
+        <span>frenmanoj/bookstore</span>
+        <div class="mini-metrics">
+          <small>73% readiness</small>
+          <small>95% confidence</small>
+        </div>
+      </div>
+      <div class="proof-card">
+        <strong><a href="../benchmarks/hibernate-demos/index.html">Hibernate ORM Demos</a></strong>
+        <span>hibernate/hibernate-demos</span>
+        <div class="mini-metrics">
+          <small>83% readiness</small>
+          <small>95% confidence</small>
+        </div>
+      </div>
+      <div class="proof-card">
+        <strong><a href="../benchmarks/hibernate-spatial-5-sample/index.html">Hibernate Spatial 5 Sample</a></strong>
+        <span>chaodhib/Hibernate-Spatial-5-Sample</span>
+        <div class="mini-metrics">
+          <small>83% readiness</small>
+          <small>95% confidence</small>
+        </div>
+      </div>
+      <div class="proof-card">
+        <strong><a href="../benchmarks/spring4-hibernate5-example/index.html">Spring 4 Hibernate 5 Example</a></strong>
+        <span>bytestree/spring4-hibernate5-example</span>
+        <div class="mini-metrics">
+          <small>75% readiness</small>
+          <small>95% confidence</small>
+        </div>
+      </div>
+      <div class="proof-card">
+        <strong><a href="../benchmarks/spring-javaconfig-sample/index.html">Spring JavaConfig Sample</a></strong>
+        <span>arey/spring-javaconfig-sample</span>
+        <div class="mini-metrics">
+          <small>78% readiness</small>
+          <small>95% confidence</small>
+        </div>
+      </div></section>
+    <h2>Pack Benchmark Reports</h2>
+    <div class="table-scroll"><table><thead><tr><th>Project</th><th>Repository</th><th>Readiness</th><th>Findings</th><th>Source</th><th>Validation</th><th>Data</th></tr></thead><tbody><tr><td><a href="../benchmarks/baeldung-hibernate-tutorials/index.html">Baeldung Hibernate Tutorials</a></td><td><a href="https://github.com/eugenp/tutorials">eugenp/tutorials</a></td><td><span class="badge warn">75%</span></td><td>45</td><td><span class="badge neutral">catalog</span></td><td><span class="badge neutral">not requested</span></td><td><a href="../benchmarks/baeldung-hibernate-tutorials/report.json">JSON</a></td></tr><tr><td><a href="../benchmarks/bookstore-hibernate/index.html">Bookstore Spring Hibernate</a></td><td><a href="https://github.com/frenmanoj/bookstore">frenmanoj/bookstore</a></td><td><span class="badge warn">73%</span></td><td>9</td><td><span class="badge good">checkout</span></td><td><span class="badge good">passed</span></td><td><a href="../benchmarks/bookstore-hibernate/report.json">JSON</a></td></tr><tr><td><a href="../benchmarks/hibernate-demos/index.html">Hibernate ORM Demos</a></td><td><a href="https://github.com/hibernate/hibernate-demos">hibernate/hibernate-demos</a></td><td><span class="badge good">83%</span></td><td>4</td><td><span class="badge good">checkout</span></td><td><span class="badge good">passed</span></td><td><a href="../benchmarks/hibernate-demos/report.json">JSON</a></td></tr><tr><td><a href="../benchmarks/hibernate-spatial-5-sample/index.html">Hibernate Spatial 5 Sample</a></td><td><a href="https://github.com/chaodhib/Hibernate-Spatial-5-Sample">chaodhib/Hibernate-Spatial-5-Sample</a></td><td><span class="badge good">83%</span></td><td>4</td><td><span class="badge good">checkout</span></td><td><span class="badge good">passed</span></td><td><a href="../benchmarks/hibernate-spatial-5-sample/report.json">JSON</a></td></tr><tr><td><a href="../benchmarks/hibernate-test-case-templates/index.html">Hibernate Test Case Templates</a></td><td><a href="https://github.com/hibernate/hibernate-test-case-templates">hibernate/hibernate-test-case-templates</a></td><td><span class="badge good">84%</span></td><td>110</td><td><span class="badge good">checkout</span></td><td><span class="badge bad">failed</span></td><td><a href="../benchmarks/hibernate-test-case-templates/report.json">JSON</a></td></tr><tr><td><a href="../benchmarks/high-performance-java-persistence/index.html">High Performance Java Persistence</a></td><td><a href="https://github.com/vladmihalcea/high-performance-java-persistence">vladmihalcea/high-performance-java-persistence</a></td><td><span class="badge warn">71%</span></td><td>565</td><td><span class="badge good">checkout</span></td><td><span class="badge bad">failed</span></td><td><a href="../benchmarks/high-performance-java-persistence/report.json">JSON</a></td></tr><tr><td><a href="../benchmarks/hypersistence-utils/index.html">Hypersistence Utils</a></td><td><a href="https://github.com/vladmihalcea/hypersistence-utils">vladmihalcea/hypersistence-utils</a></td><td><span class="badge bad">64%</span></td><td>522</td><td><span class="badge good">checkout</span></td><td><span class="badge bad">failed</span></td><td><a href="../benchmarks/hypersistence-utils/report.json">JSON</a></td></tr><tr><td><a href="../benchmarks/hibernate-helloworld/index.html">Java Hibernate Hello World</a></td><td><a href="https://github.com/marcin-chwedczuk/java-hibernate-helloworld">marcin-chwedczuk/java-hibernate-helloworld</a></td><td><span class="badge good">84%</span></td><td>1</td><td><span class="badge good">checkout</span></td><td><span class="badge bad">failed</span></td><td><a href="../benchmarks/hibernate-helloworld/report.json">JSON</a></td></tr><tr><td><a href="../benchmarks/spring4-hibernate5-example/index.html">Spring 4 Hibernate 5 Example</a></td><td><a href="https://github.com/bytestree/spring4-hibernate5-example">bytestree/spring4-hibernate5-example</a></td><td><span class="badge warn">75%</span></td><td>9</td><td><span class="badge good">checkout</span></td><td><span class="badge good">passed</span></td><td><a href="../benchmarks/spring4-hibernate5-example/report.json">JSON</a></td></tr><tr><td><a href="../benchmarks/spring-javaconfig-sample/index.html">Spring JavaConfig Sample</a></td><td><a href="https://github.com/arey/spring-javaconfig-sample">arey/spring-javaconfig-sample</a></td><td><span class="badge warn">78%</span></td><td>7</td><td><span class="badge good">checkout</span></td><td><span class="badge good">passed</span></td><td><a href="../benchmarks/spring-javaconfig-sample/report.json">JSON</a></td></tr></tbody></table></div>
+  </main></body>
+</html>

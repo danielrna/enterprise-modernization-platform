@@ -1,0 +1,59 @@
+{
+  "id": "junit-5-readiness",
+  "name": "JUnit 5 Readiness",
+  "vertical": "Enterprise Java Test Modernization",
+  "migration": "JUnit 4 to JUnit 5 readiness",
+  "version": "0.1.0",
+  "categories": [
+    "java",
+    "build",
+    "testing",
+    "architecture",
+    "validation"
+  ],
+  "checks": [
+    {
+      "id": "junit4-detection",
+      "engine": "scanner",
+      "description": "Detect JUnit 4 dependencies, imports, assertions, lifecycle annotations, and runners."
+    },
+    {
+      "id": "junit5-detection",
+      "engine": "scanner",
+      "description": "Detect JUnit Jupiter or JUnit Platform usage when projects already have partial JUnit 5 adoption."
+    },
+    {
+      "id": "junit4-api-usage",
+      "engine": "static-source-scan",
+      "description": "Find org.junit.Test, Assert, Before, and After usage that should be migrated to Jupiter APIs."
+    },
+    {
+      "id": "junit4-runner-usage",
+      "engine": "static-source-scan",
+      "description": "Find RunWith-based tests that need explicit extension or runner migration review."
+    },
+    {
+      "id": "junit-vintage-engine",
+      "engine": "static-source-scan",
+      "description": "Find Vintage engine usage that may hide incomplete JUnit 5 migration work."
+    },
+    {
+      "id": "compile-test-validation",
+      "engine": "build-tool",
+      "description": "Capture Maven or Gradle compile and test validation after test migration preparation."
+    },
+    {
+      "id": "trust-confidence",
+      "engine": "emp-trust",
+      "description": "Summarize compile, test, rollback, compatibility, and confidence evidence for Professional packaging."
+    }
+  ],
+  "reportSections": [
+    "executive-summary",
+    "readiness",
+    "evidence",
+    "validation",
+    "trust-engine",
+    "risks-and-recommendations"
+  ]
+}
