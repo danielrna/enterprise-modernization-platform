@@ -797,6 +797,52 @@ test('MCP analyze returns rule-aware readiness evidence', async () => {
   assert.equal(payload.readiness.categories.enterpriseRules, 80);
 });
 
+test('MCP exposes modernization pack metadata beyond analysis', async () => {
+  const list = await handleMcpRequest({
+    jsonrpc: '2.0',
+    id: 8,
+    method: 'tools/list'
+  });
+  assert.equal(list.result.tools.some((tool) => tool.name === 'emp.packs'), true);
+
+  const packsResult = await handleMcpRequest({
+    jsonrpc: '2.0',
+    id: 9,
+    method: 'tools/call',
+    params: {
+      name: 'emp.packs',
+      arguments: {}
+    }
+  });
+  const packsPayload = JSON.parse(packsResult.result.content[0].text);
+  assert.equal(packsPayload.packs.some((pack) => pack.id === 'junit-5-readiness'), true);
+  assert.equal(packsPayload.packs.every((pack) => Number.isInteger(pack.checkCount)), true);
+
+  const detailResult = await handleMcpRequest({
+    jsonrpc: '2.0',
+    id: 10,
+    method: 'tools/call',
+    params: {
+      name: 'emp.packs',
+      arguments: { id: 'junit-5-readiness' }
+    }
+  });
+  const detailPayload = JSON.parse(detailResult.result.content[0].text);
+  assert.equal(detailPayload.id, 'junit-5-readiness');
+  assert.equal(detailPayload.checks.some((check) => check.id === 'junit4-detection'), true);
+
+  const missingResult = await handleMcpRequest({
+    jsonrpc: '2.0',
+    id: 11,
+    method: 'tools/call',
+    params: {
+      name: 'emp.packs',
+      arguments: { id: 'missing-pack' }
+    }
+  });
+  assert.equal(missingResult.error.code, -32602);
+});
+
 test('GitHub Action exposes Docker readiness analysis inputs', async () => {
   const action = await fs.readFile(path.resolve('action.yml'), 'utf8');
   const dockerfile = await fs.readFile(path.resolve('Dockerfile'), 'utf8');
