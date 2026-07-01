@@ -41,11 +41,14 @@ function renderReleaseIndex(releases) {
         <span>${escapeHtml(release.summary)}</span>
       </a>`).join('');
   return page('Release Notes', `
-    <nav class="nav">
+    <nav class="site-nav">
       <a href="../index.html">Home</a>
-      <a href="../packs/index.html">Packs</a>
-      <a href="../migration-hub/index.html">Migration Hub</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../packs/index.html">Packs</a>
+      <a href="../release-notes/index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
+      <a href="../contact.html">Contact</a>
     </nav>
     <section>
       <h1>Release Notes</h1>
@@ -68,10 +71,13 @@ function renderReleasePage(release) {
       </article>`).join('');
 
   return page(`${release.title} Release Notes`, `
-    <nav class="nav">
-      <a href="index.html">Release Notes</a>
-      <a href="../packs/index.html">Packs</a>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../packs/index.html">Packs</a>
+      <a href="index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
       <a href="../contact.html">Contact</a>
     </nav>
     <section>
@@ -122,8 +128,9 @@ function page(title, body) {
     p { max-width:760px; color:var(--muted); }
     a { color:var(--accent); text-decoration:none; }
     a:hover { text-decoration:underline; }
-    .nav { display:flex; flex-wrap:wrap; gap:12px; margin:0 0 28px; }
-    .nav a { color:var(--muted); }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
     .layout { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:24px 0; }
     .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
     .tile span { color:var(--muted); }
@@ -138,7 +145,7 @@ function page(title, body) {
     .actions a { display:inline-flex; align-items:center; min-height:36px; padding:7px 11px; background:#f8fafc; border:1px solid var(--line); border-radius:6px; }
     li { margin:6px 0; }
     code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
-    @media (max-width: 760px) { .layout,.summary,.features { grid-template-columns:1fr; } h1 { font-size:27px; } }
+    @media (max-width: 760px) { main { padding:24px 16px; } .layout,.summary,.features { grid-template-columns:1fr; } h1 { font-size:27px; } }
   </style>
 </head>
 <body><main>${body}</main></body>

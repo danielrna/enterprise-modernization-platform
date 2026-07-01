@@ -5,24 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Spring Petclinic Readiness Report</title>
   <style>
-    :root { color-scheme: light; --ink:#15202b; --muted:#5f6b7a; --line:#d9e1ea; --bg:#f6f8fa; --panel:#fff; --accent:#1769aa; --ok:#217a45; --warn:#966600; --bad:#b42318; }
+    :root { color-scheme: light; --ink:#15202b; --muted:#5f6b7a; --line:#d9e1ea; --bg:#f6f8fa; --panel:#fff; --accent:#1769aa; --accent-dark:#0f4f84; --ok:#217a45; --warn:#966600; --bad:#b42318; }
     * { box-sizing: border-box; }
     body { margin:0; font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
-    header { background:#102a43; color:#fff; padding:32px max(24px, calc((100vw - 1120px)/2)); }
+    header { background:#102a43; color:#fff; padding:28px max(24px, calc((100vw - 1120px)/2)); }
     main { max-width:1120px; margin:0 auto; padding:24px; }
     h1,h2 { margin:0 0 12px; letter-spacing:0; }
     h1 { font-size:32px; }
     h2 { font-size:20px; margin-top:28px; }
     .meta { color:#d9e6f2; margin:0; }
+    .report-nav { display:flex; flex-wrap:wrap; gap:10px 14px; margin:16px 0 0; }
+    .report-nav a { color:#d9e6f2; font-size:14px; }
     .grid { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:12px; }
     .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
     .metric { font-size:34px; font-weight:760; }
     .label { color:var(--muted); font-size:13px; }
+    .decision { display:grid; grid-template-columns:minmax(0, 1fr) 300px; gap:14px; margin:0 0 18px; }
+    .decision-main { border-left:4px solid var(--accent); }
+    .decision-main.good { border-left-color:var(--ok); }
+    .decision-main.warn { border-left-color:var(--warn); }
+    .decision-main.bad { border-left-color:var(--bad); }
+    .decision-main strong { display:block; margin-bottom:6px; font-size:18px; }
+    .decision-list { display:flex; flex-direction:column; gap:8px; }
+    .risk-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+    .actions a { display:inline-flex; align-items:center; min-height:38px; padding:8px 12px; background:var(--panel); border:1px solid var(--line); border-radius:6px; color:var(--accent); }
+    .actions a.primary { background:var(--accent); color:#fff; border-color:var(--accent-dark); font-weight:700; }
     .notice { border-left:4px solid var(--accent); }
     .notice.bad { border-left-color:var(--bad); }
+    .table-scroll { width:100%; overflow-x:auto; border-radius:8px; }
     table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
     th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
     th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    td { overflow-wrap:anywhere; }
     tr:last-child td { border-bottom:0; }
     .bar { height:9px; background:#edf2f7; border-radius:999px; overflow:hidden; }
     .bar span { display:block; height:100%; background:var(--accent); }
@@ -32,15 +47,39 @@
     .skipped { background:#eef2f7; color:#344054; }
     .info { background:#e7f0ff; color:#175cd3; }
     .passed { background:#dff7e8; color:var(--ok); }
-    @media (max-width: 760px) { .grid { grid-template-columns:1fr 1fr; } h1 { font-size:25px; } table { font-size:13px; } }
+    @media (max-width: 900px) { .decision { grid-template-columns:1fr; } }
+    @media (max-width: 760px) { header { padding:24px 16px; } main { padding:20px 16px; } .grid { grid-template-columns:1fr 1fr; } h1 { font-size:25px; } table { min-width:720px; font-size:13px; } }
   </style>
 </head>
 <body>
   <header>
     <h1>Spring Petclinic Readiness Report</h1>
     <p class="meta">spring-boot-3-readiness · 2026-06-30T17:20:42.148Z · https://github.com/spring-projects/spring-petclinic</p>
+    <nav class="report-nav">
+      <a href="../../index.html">Home</a>
+      <a href="../index.html">Benchmarks</a>
+      <a href="../../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="report.json">JSON</a>
+    </nav>
   </header>
   <main>
+    <section class="decision">
+      <div class="panel decision-main bad">
+        <strong>Do not use this pack for migration planning yet</strong>
+        <div>Spring Boot 4.0.0-SNAPSHOT was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">14 Spring field injection patterns</span></div>
+        <div class="actions">
+          <a class="primary" href="report.json">Open JSON evidence</a>
+          <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
+        </div>
+      </div>
+      <div class="panel decision-list">
+        <div><strong>Recommended next step</strong><div class="label">Run jakarta-readiness before using this report for planning.</div></div>
+        <div><strong>Validation state</strong><div class="label">skipped at 0% confidence.</div></div>
+        <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
+      </div>
+    </section>
+
     <section class="grid">
       <div class="panel"><div class="metric">N/A</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
@@ -66,20 +105,20 @@
 
 
     <h2>Evidence</h2>
-    <table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
       <strong>catalog</strong> · https://github.com/spring-projects/spring-petclinic
     </div>
-    <table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
       <strong>skipped</strong> · confidence 0% · Validation requires a local checkout.
     </div>
-    <table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
 
 
 
@@ -93,7 +132,7 @@
       <div class="panel"><div class="metric">2</div><div class="label">Finding types</div></div>
       <div class="panel"><div class="metric">15</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection patterns</td><td>14</td><td>14</td><td>0</td><td>src (14)</td><td>src/main/java/org/springframework/samples/petclinic/Example1.java:10 · Prefer constructor injection in services touched by migration work.<br>src/main/java/org/springframework/samples/petclinic/Example2.java:11 · Prefer constructor injection in services touched by migration work.<br>src/main/java/org/springframework/samples/petclinic/Example3.java:12 · Prefer constructor injection in services touched by migration work.<br>src/main/java/org/springframework/samples/petclinic/Example4.java:13 · Prefer constructor injection in services touched by migration work.<br>src/main/java/org/springframework/samples/petclinic/Example5.java:14 · Prefer constructor injection in services touched by migration work.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java:3 · Plan Jakarta migration before Spring Boot 3 execution.</td></tr></tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection patterns</td><td>14</td><td>14</td><td>0</td><td>src (14)</td><td>src/main/java/org/springframework/samples/petclinic/Example1.java:10 · Prefer constructor injection in services touched by migration work.<br>src/main/java/org/springframework/samples/petclinic/Example2.java:11 · Prefer constructor injection in services touched by migration work.<br>src/main/java/org/springframework/samples/petclinic/Example3.java:12 · Prefer constructor injection in services touched by migration work.<br>src/main/java/org/springframework/samples/petclinic/Example4.java:13 · Prefer constructor injection in services touched by migration work.<br>src/main/java/org/springframework/samples/petclinic/Example5.java:14 · Prefer constructor injection in services touched by migration work.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java:3 · Plan Jakarta migration before Spring Boot 3 execution.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

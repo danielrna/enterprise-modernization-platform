@@ -47,11 +47,14 @@ function renderPackIndex(packs) {
         <span>${escapeHtml(pack.migration)}</span>
       </a>`).join('');
   return page('Migration Packs', `
-    <nav class="nav">
+    <nav class="site-nav">
       <a href="../index.html">Home</a>
       <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../packs/index.html">Packs</a>
+      <a href="../release-notes/index.html">Release Notes</a>
       <a href="../editions.html">Editions</a>
+      <a href="../contact.html">Contact</a>
     </nav>
     <section>
       <h1>Migration Packs</h1>
@@ -71,10 +74,13 @@ function renderPackPage(pack) {
     : '<li>HTML report</li><li>JSON report</li>';
 
   return page(pack.name, `
-    <nav class="nav">
-      <a href="index.html">Packs</a>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
       <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="index.html">Packs</a>
+      <a href="../release-notes/index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
       <a href="../contact.html">Contact</a>
     </nav>
 
@@ -97,7 +103,7 @@ function renderPackPage(pack) {
     <ul>${categoryItems}</ul>
 
     <h2>Checks</h2>
-    <table><thead><tr><th>Check</th><th>Engine</th><th>Description</th></tr></thead><tbody>${checkRows}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Engine</th><th>Description</th></tr></thead><tbody>${checkRows}</tbody></table></div>
 
     <h2>Report Output</h2>
     <ul>${sectionItems}</ul>
@@ -128,8 +134,9 @@ function page(title, body) {
     p { max-width:760px; color:var(--muted); }
     a { color:var(--accent); text-decoration:none; }
     a:hover { text-decoration:underline; }
-    .nav { display:flex; flex-wrap:wrap; gap:12px; margin:0 0 28px; }
-    .nav a { color:var(--muted); }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
     .layout { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin:24px 0; }
     .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
     .tile span { color:var(--muted); }
@@ -139,12 +146,13 @@ function page(title, body) {
     .steps { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; }
     pre { overflow:auto; padding:14px; background:#111827; color:#f8fafc; border-radius:8px; }
     code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    .table-scroll { width:100%; overflow-x:auto; border-radius:8px; }
     table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
     th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
     th { font-size:12px; color:var(--muted); text-transform:uppercase; }
     li { margin:6px 0; }
     @media (max-width: 900px) { .layout,.summary,.steps { grid-template-columns:1fr 1fr; } }
-    @media (max-width: 640px) { .layout,.summary,.steps { grid-template-columns:1fr; } h1 { font-size:27px; } }
+    @media (max-width: 640px) { main { padding:24px 16px; } .layout,.summary,.steps { grid-template-columns:1fr; } h1 { font-size:27px; } table { min-width:680px; } }
   </style>
 </head>
 <body><main>${body}</main></body>

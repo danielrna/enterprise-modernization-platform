@@ -43,6 +43,8 @@ export function renderReport(report) {
   const trust = renderTrust(report.trust);
   const rules = renderRules(report.rules);
   const benchmarkEvidence = renderBenchmarkEvidence(report.benchmark);
+  const decision = reportDecision(report);
+  const primaryRisks = topFindingTypes(report.findingSummary).slice(0, 3);
 
   return `<!doctype html>
 <html lang="en">
@@ -51,24 +53,39 @@ export function renderReport(report) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(report.project.name)} Readiness Report</title>
   <style>
-    :root { color-scheme: light; --ink:#15202b; --muted:#5f6b7a; --line:#d9e1ea; --bg:#f6f8fa; --panel:#fff; --accent:#1769aa; --ok:#217a45; --warn:#966600; --bad:#b42318; }
+    :root { color-scheme: light; --ink:#15202b; --muted:#5f6b7a; --line:#d9e1ea; --bg:#f6f8fa; --panel:#fff; --accent:#1769aa; --accent-dark:#0f4f84; --ok:#217a45; --warn:#966600; --bad:#b42318; }
     * { box-sizing: border-box; }
     body { margin:0; font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
-    header { background:#102a43; color:#fff; padding:32px max(24px, calc((100vw - 1120px)/2)); }
+    header { background:#102a43; color:#fff; padding:28px max(24px, calc((100vw - 1120px)/2)); }
     main { max-width:1120px; margin:0 auto; padding:24px; }
     h1,h2 { margin:0 0 12px; letter-spacing:0; }
     h1 { font-size:32px; }
     h2 { font-size:20px; margin-top:28px; }
     .meta { color:#d9e6f2; margin:0; }
+    .report-nav { display:flex; flex-wrap:wrap; gap:10px 14px; margin:16px 0 0; }
+    .report-nav a { color:#d9e6f2; font-size:14px; }
     .grid { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:12px; }
     .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
     .metric { font-size:34px; font-weight:760; }
     .label { color:var(--muted); font-size:13px; }
+    .decision { display:grid; grid-template-columns:minmax(0, 1fr) 300px; gap:14px; margin:0 0 18px; }
+    .decision-main { border-left:4px solid var(--accent); }
+    .decision-main.good { border-left-color:var(--ok); }
+    .decision-main.warn { border-left-color:var(--warn); }
+    .decision-main.bad { border-left-color:var(--bad); }
+    .decision-main strong { display:block; margin-bottom:6px; font-size:18px; }
+    .decision-list { display:flex; flex-direction:column; gap:8px; }
+    .risk-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+    .actions a { display:inline-flex; align-items:center; min-height:38px; padding:8px 12px; background:var(--panel); border:1px solid var(--line); border-radius:6px; color:var(--accent); }
+    .actions a.primary { background:var(--accent); color:#fff; border-color:var(--accent-dark); font-weight:700; }
     .notice { border-left:4px solid var(--accent); }
     .notice.bad { border-left-color:var(--bad); }
+    .table-scroll { width:100%; overflow-x:auto; border-radius:8px; }
     table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
     th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
     th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    td { overflow-wrap:anywhere; }
     tr:last-child td { border-bottom:0; }
     .bar { height:9px; background:#edf2f7; border-radius:999px; overflow:hidden; }
     .bar span { display:block; height:100%; background:var(--accent); }
@@ -78,15 +95,39 @@ export function renderReport(report) {
     .skipped { background:#eef2f7; color:#344054; }
     .info { background:#e7f0ff; color:#175cd3; }
     .passed { background:#dff7e8; color:var(--ok); }
-    @media (max-width: 760px) { .grid { grid-template-columns:1fr 1fr; } h1 { font-size:25px; } table { font-size:13px; } }
+    @media (max-width: 900px) { .decision { grid-template-columns:1fr; } }
+    @media (max-width: 760px) { header { padding:24px 16px; } main { padding:20px 16px; } .grid { grid-template-columns:1fr 1fr; } h1 { font-size:25px; } table { min-width:720px; font-size:13px; } }
   </style>
 </head>
 <body>
   <header>
     <h1>${escapeHtml(report.project.name)} Readiness Report</h1>
     <p class="meta">${escapeHtml(report.pack)} · ${escapeHtml(report.generatedAt)} · ${escapeHtml(report.project.source)}</p>
+    <nav class="report-nav">
+      <a href="../../index.html">Home</a>
+      <a href="../index.html">Benchmarks</a>
+      <a href="../../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="report.json">JSON</a>
+    </nav>
   </header>
   <main>
+    <section class="decision">
+      <div class="panel decision-main ${escapeHtml(decision.tone)}">
+        <strong>${escapeHtml(decision.title)}</strong>
+        <div>${escapeHtml(decision.summary)}</div>
+        <div class="risk-list">${primaryRisks.map((risk) => `<span class="pill ${escapeHtml(risk.severity)}">${escapeHtml(risk.total)} ${escapeHtml(risk.title)}</span>`).join('') || '<span class="pill passed">No findings</span>'}</div>
+        <div class="actions">
+          <a class="primary" href="report.json">Open JSON evidence</a>
+          <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
+        </div>
+      </div>
+      <div class="panel decision-list">
+        <div><strong>Recommended next step</strong><div class="label">${escapeHtml(decision.nextStep)}</div></div>
+        <div><strong>Validation state</strong><div class="label">${escapeHtml(validationSummary(report))}</div></div>
+        <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
+      </div>
+    </section>
+
     <section class="grid">
       <div class="panel"><div class="metric">${formatScore(report.readiness.overall)}</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">${report.readiness.counts.critical}</div><div class="label">Critical findings</div></div>
@@ -101,7 +142,7 @@ export function renderReport(report) {
     ${readiness}
 
     <h2>Evidence</h2>
-    <table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody>${evidence}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody>${evidence}</tbody></table></div>
 
     ${benchmarkEvidence}
     ${transformation}
@@ -115,7 +156,7 @@ export function renderReport(report) {
       <div class="panel"><div class="metric">${Object.keys(report.findingSummary.byCode).length}</div><div class="label">Finding types</div></div>
       <div class="panel"><div class="metric">${report.findings.length}</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody>${findingSummaryRows}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody>${findingSummaryRows}</tbody></table></div>
   </main>
 </body>
 </html>
@@ -155,7 +196,7 @@ function renderReadiness(report, categories) {
   }
   return `
     <h2>Readiness</h2>
-    <table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody>${categories}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody>${categories}</tbody></table></div>
   `;
 }
 
@@ -248,13 +289,13 @@ function renderTransformation(transformation) {
     </div>
 
     <h2>Transformation Plan</h2>
-    <table><thead><tr><th>File</th><th>Recipe</th><th>Replacements</th></tr></thead><tbody>${changes}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>File</th><th>Recipe</th><th>Replacements</th></tr></thead><tbody>${changes}</tbody></table></div>
 
     <h2>Rewrite Execution</h2>
-    <table><thead><tr><th>Step</th><th>Status</th><th>Command</th></tr></thead><tbody>${execution}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Step</th><th>Status</th><th>Command</th></tr></thead><tbody>${execution}</tbody></table></div>
 
     <h2>Validation</h2>
-    <table><thead><tr><th>Check</th><th>Status</th><th>Command</th></tr></thead><tbody>${validation}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th></tr></thead><tbody>${validation}</tbody></table></div>
   `;
 }
 
@@ -277,7 +318,7 @@ function renderBenchmarkEvidence(benchmark) {
     <div class="panel">
       <strong>${escapeHtml(benchmark.source)}</strong> · ${escapeHtml(benchmark.repository)}${detailsBlock}
     </div>
-    <table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody>${commands}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody>${commands}</tbody></table></div>
     ${validation}
   `;
 }
@@ -293,7 +334,7 @@ function renderBenchmarkValidation(validation) {
     <div class="panel">
       <strong>${escapeHtml(validation.status)}</strong> · confidence ${escapeHtml(validation.confidence)}% · ${escapeHtml(validation.summary)}
     </div>
-    <table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody>${checks}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody>${checks}</tbody></table></div>
   `;
 }
 
@@ -308,7 +349,7 @@ function renderTrust(trust) {
     <div class="panel">
       <strong>${trust.confidence}%</strong> · ${escapeHtml(trust.tier)} · ${escapeHtml(trust.summary)}
     </div>
-    <table><thead><tr><th>Check</th><th>Status</th><th>Evidence</th></tr></thead><tbody>${checks}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Evidence</th></tr></thead><tbody>${checks}</tbody></table></div>
   `;
 }
 
@@ -323,8 +364,64 @@ function renderRules(rules) {
     <div class="panel">
       <strong>${rules.violations.length}</strong> violation(s) · ${escapeHtml(rules.source)}
     </div>
-    <table><thead><tr><th>Severity</th><th>Category</th><th>Rule</th><th>Pattern</th><th>Location</th><th>Guidance</th></tr></thead><tbody>${violations}</tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Severity</th><th>Category</th><th>Rule</th><th>Pattern</th><th>Location</th><th>Guidance</th></tr></thead><tbody>${violations}</tbody></table></div>
   `;
+}
+
+function reportDecision(report) {
+  if (report.readiness.status === 'not_applicable') {
+    return {
+      tone: 'bad',
+      title: 'Do not use this pack for migration planning yet',
+      summary: report.packApplicability?.reason || 'The selected pack is not applicable to the detected project state.',
+      nextStep: report.packApplicability?.recommendedPack
+        ? `Run ${report.packApplicability.recommendedPack} before using this report for planning.`
+        : 'Choose the applicable modernization pack and rerun analysis.'
+    };
+  }
+  if (report.readiness.counts.critical > 0) {
+    return {
+      tone: 'bad',
+      title: 'Migration is blocked by critical readiness risks',
+      summary: `${report.readiness.counts.critical} critical finding(s) should be resolved before execution planning.`,
+      nextStep: 'Triage critical findings, then capture compile and test validation evidence.'
+    };
+  }
+  if (Number(report.readiness.overall) >= 85) {
+    return {
+      tone: 'good',
+      title: 'Ready for controlled migration planning',
+      summary: 'Readiness is strong enough to move from assessment into validation-backed planning.',
+      nextStep: 'Run transformation validation and attach compile, test, rollback, and trust evidence.'
+    };
+  }
+  return {
+    tone: 'warn',
+    title: 'Needs remediation before confident migration execution',
+    summary: 'The report has enough signal for scoping, but the evidence is not yet strong enough for execution.',
+    nextStep: 'Prioritize repeated warning patterns and rerun the report after cleanup.'
+  };
+}
+
+function validationSummary(report) {
+  const validation = report.benchmark?.validation || report.transformation?.validation;
+  if (!validation) return 'No validation evidence captured in this report.';
+  if (Array.isArray(validation)) {
+    const passed = validation.filter((item) => item.status === 'passed').length;
+    return `${passed}/${validation.length} validation checks passed.`;
+  }
+  return `${validation.status || 'unknown'}${validation.confidence !== undefined ? ` at ${validation.confidence}% confidence` : ''}.`;
+}
+
+function topFindingTypes(summary) {
+  return Object.values(summary.byCode)
+    .sort((left, right) => severityRank(left.severity) - severityRank(right.severity) || right.total - left.total || left.title.localeCompare(right.title));
+}
+
+function severityRank(severity) {
+  if (severity === 'critical') return 0;
+  if (severity === 'warning') return 1;
+  return 2;
 }
 
 function ruleOwner(item) {
@@ -354,7 +451,7 @@ function statusFromExitCode(exitCode) {
 }
 
 function trimOutput(output) {
-  const value = String(output || '').trim();
+  const value = String(output || '').replace(/\s+/g, ' ').trim();
   return value.length > 240 ? `${value.slice(0, 237)}...` : value;
 }
 

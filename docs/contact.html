@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Enterprise Modernization Platform Contact</title>
   <style>
-    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; --ok:#217a45; }
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; --accent-dark:#0f4f84; --ok:#217a45; }
     * { box-sizing:border-box; }
     body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
     main { max-width:1080px; margin:0 auto; padding:32px 24px; }
@@ -14,8 +14,9 @@
     p { max-width:760px; color:var(--muted); }
     a { color:var(--accent); text-decoration:none; }
     a:hover { text-decoration:underline; }
-    .nav { display:flex; flex-wrap:wrap; gap:12px; margin:0 0 28px; }
-    .nav a { color:var(--muted); }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
     .grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin:24px 0; }
     .request { display:flex; flex-direction:column; gap:12px; min-height:310px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
     .request.featured { border-top:4px solid var(--ok); }
@@ -24,18 +25,21 @@
     ul { margin:0; padding-left:18px; color:var(--muted); }
     li { margin:6px 0; }
     .cta { display:inline-flex; align-items:center; justify-content:center; min-height:40px; margin-top:auto; padding:8px 12px; background:#f8fafc; border:1px solid var(--line); border-radius:6px; color:var(--accent); text-align:center; }
-    .cta.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+    .cta.primary { background:var(--accent); border-color:var(--accent-dark); color:#fff; font-weight:700; }
     .note { margin-top:24px; padding:16px; background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:8px; }
-    @media (max-width: 860px) { .grid { grid-template-columns:1fr; } h1 { font-size:27px; } }
+    @media (max-width: 860px) { main { padding:24px 16px; } .grid { grid-template-columns:1fr; } h1 { font-size:27px; } }
   </style>
 </head>
 <body>
   <main>
-    <nav class="nav">
+    <nav class="site-nav">
       <a href="index.html">Home</a>
-      <a href="editions.html">Editions</a>
-      <a href="migration-hub/spring-boot-2-to-3.html">Spring Boot 2 to 3</a>
+      <a href="migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="benchmarks/index.html">Benchmarks</a>
+      <a href="packs/index.html">Packs</a>
+      <a href="release-notes/index.html">Release Notes</a>
+      <a href="editions.html">Editions</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
     <section>

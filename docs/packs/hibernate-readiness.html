@@ -14,8 +14,9 @@
     p { max-width:760px; color:var(--muted); }
     a { color:var(--accent); text-decoration:none; }
     a:hover { text-decoration:underline; }
-    .nav { display:flex; flex-wrap:wrap; gap:12px; margin:0 0 28px; }
-    .nav a { color:var(--muted); }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
     .layout { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin:24px 0; }
     .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
     .tile span { color:var(--muted); }
@@ -25,19 +26,23 @@
     .steps { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; }
     pre { overflow:auto; padding:14px; background:#111827; color:#f8fafc; border-radius:8px; }
     code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    .table-scroll { width:100%; overflow-x:auto; border-radius:8px; }
     table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
     th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
     th { font-size:12px; color:var(--muted); text-transform:uppercase; }
     li { margin:6px 0; }
     @media (max-width: 900px) { .layout,.summary,.steps { grid-template-columns:1fr 1fr; } }
-    @media (max-width: 640px) { .layout,.summary,.steps { grid-template-columns:1fr; } h1 { font-size:27px; } }
+    @media (max-width: 640px) { main { padding:24px 16px; } .layout,.summary,.steps { grid-template-columns:1fr; } h1 { font-size:27px; } table { min-width:680px; } }
   </style>
 </head>
 <body><main>
-    <nav class="nav">
-      <a href="index.html">Packs</a>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
       <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="index.html">Packs</a>
+      <a href="../release-notes/index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
       <a href="../contact.html">Contact</a>
     </nav>
 
@@ -60,7 +65,7 @@
     <ul><li>java</li><li>hibernate</li><li>jakarta</li><li>build</li><li>architecture</li><li>validation</li></ul>
 
     <h2>Checks</h2>
-    <table><thead><tr><th>Check</th><th>Engine</th><th>Description</th></tr></thead><tbody><tr><td>hibernate-dependency</td><td>scanner</td><td>Detect Hibernate ORM usage from Maven, Gradle, XML mappings, or source imports.</td></tr><tr><td>legacy-hibernate-criteria</td><td>static-source-scan</td><td>Find legacy org.hibernate.Criteria usage that requires migration review for Hibernate 6.</td></tr><tr><td>hibernate-session-api</td><td>static-source-scan</td><td>Find direct org.hibernate.Session usage that should be validated across ORM upgrades.</td></tr><tr><td>hibernate-custom-type</td><td>static-source-scan</td><td>Find custom UserType or BasicType integration points that often require Hibernate 6 migration work.</td></tr><tr><td>hibernate-xml-mapping</td><td>static-source-scan</td><td>Find Hibernate XML mapping files that need explicit upgrade validation.</td></tr><tr><td>jakarta-namespace</td><td>static-source-scan</td><td>Find javax persistence or validation usage that overlaps with modern Hibernate and Jakarta migration work.</td></tr><tr><td>compile-test-validation</td><td>build-tool</td><td>Capture Maven or Gradle compile and test validation after upgrade preparation.</td></tr><tr><td>trust-confidence</td><td>emp-trust</td><td>Summarize compile, test, rollback, compatibility, and confidence evidence for Professional packaging.</td></tr></tbody></table>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Engine</th><th>Description</th></tr></thead><tbody><tr><td>hibernate-dependency</td><td>scanner</td><td>Detect Hibernate ORM usage from Maven, Gradle, XML mappings, or source imports.</td></tr><tr><td>legacy-hibernate-criteria</td><td>static-source-scan</td><td>Find legacy org.hibernate.Criteria usage that requires migration review for Hibernate 6.</td></tr><tr><td>hibernate-session-api</td><td>static-source-scan</td><td>Find direct org.hibernate.Session usage that should be validated across ORM upgrades.</td></tr><tr><td>hibernate-custom-type</td><td>static-source-scan</td><td>Find custom UserType or BasicType integration points that often require Hibernate 6 migration work.</td></tr><tr><td>hibernate-xml-mapping</td><td>static-source-scan</td><td>Find Hibernate XML mapping files that need explicit upgrade validation.</td></tr><tr><td>jakarta-namespace</td><td>static-source-scan</td><td>Find javax persistence or validation usage that overlaps with modern Hibernate and Jakarta migration work.</td></tr><tr><td>compile-test-validation</td><td>build-tool</td><td>Capture Maven or Gradle compile and test validation after upgrade preparation.</td></tr><tr><td>trust-confidence</td><td>emp-trust</td><td>Summarize compile, test, rollback, compatibility, and confidence evidence for Professional packaging.</td></tr></tbody></table></div>
 
     <h2>Report Output</h2>
     <ul><li>executive-summary</li><li>readiness</li><li>evidence</li><li>validation</li><li>trust-engine</li><li>enterprise-rules</li><li>risks-and-recommendations</li></ul>
