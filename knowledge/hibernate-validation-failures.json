@@ -1,0 +1,82 @@
+{
+  "id": "hibernate-validation-failures",
+  "title": "Hibernate Validation Failure Patterns",
+  "pack": "hibernate-readiness",
+  "summary": "Guidance for interpreting failed, partial, and timeout validation evidence in checkout-backed Hibernate readiness reports.",
+  "guide": [
+    "Use validation failures as scope evidence. A failed compile or test run is not a useless report; it identifies the first environment or dependency blocker that must be cleared before upgrade execution.",
+    "Separate application risk from validation environment risk. Java toolchain mismatch, missing wrappers, blocked repositories, and Docker-dependent tests should be tracked differently from Hibernate API incompatibility.",
+    "Keep passing and failing examples together. Buyers need proof that the tool reports both green paths and messy real-world blockers without hiding failure evidence."
+  ],
+  "risks": [
+    {
+      "name": "Java toolchain mismatch",
+      "signal": "validation-failed",
+      "whyItMatters": "Older Hibernate examples may require Java 8 or older compiler source levels while the release image runs a modern JDK.",
+      "recommendation": "Capture the required runtime explicitly and rerun validation with EMP_JAVA_<major>_HOME when a client project depends on an older Java toolchain."
+    },
+    {
+      "name": "Missing Maven or Gradle wrapper files",
+      "signal": "validation-failed",
+      "whyItMatters": "Repositories sometimes commit wrapper scripts without wrapper jars, making otherwise valid source impossible to validate repeatably.",
+      "recommendation": "Prefer system Maven or Gradle when available, or ask the client to restore wrapper metadata before treating validation as authoritative."
+    },
+    {
+      "name": "Test dependency gaps",
+      "signal": "validation-failed",
+      "whyItMatters": "A project can compile production code while test compilation fails because old sample tests reference missing JUnit or plugin dependencies.",
+      "recommendation": "Record compile success separately from test failure and use that distinction in the migration estimate."
+    },
+    {
+      "name": "External service assumptions",
+      "signal": "validation-failed",
+      "whyItMatters": "Persistence tests may require Docker, PostgreSQL, MySQL, Elasticsearch, or other services that are not part of a static source checkout.",
+      "recommendation": "Mark the report as partial validation and ask for the service bootstrap path before promising runtime confidence."
+    },
+    {
+      "name": "Timeout under release budget",
+      "signal": "validation-failed",
+      "whyItMatters": "Large tutorial or integration-heavy repositories can exceed the current 120-second public validation budget even when the build might pass later.",
+      "recommendation": "Treat timeout evidence as a signal to split modules or raise the validation budget for paid client work."
+    }
+  ],
+  "validationNotes": [
+    "Passing compile plus failing tests is stronger than catalog-only evidence because it proves source and dependency resolution reached the test phase.",
+    "A timeout is not the same as an incompatibility. It records the current public evidence budget and should be revisited for client-specific work.",
+    "Reports should preserve command, duration, exit code, timeout status, and a short log excerpt so consultants can explain the blocker.",
+    "The recommended next action after validation failure is usually environment repair, dependency repair, or module narrowing before migration planning."
+  ],
+  "benchmarks": [
+    {
+      "slug": "hibernate-test-case-templates",
+      "name": "Hibernate Test Case Templates",
+      "note": "Compilation passes while Docker-dependent reactive tests fail without a valid Docker environment."
+    },
+    {
+      "slug": "hypersistence-utils",
+      "name": "Hypersistence Utils",
+      "note": "Validation records Java toolchain failure evidence for modules requiring an older JDK."
+    },
+    {
+      "slug": "high-performance-java-persistence",
+      "name": "High Performance Java Persistence",
+      "note": "Validation records timeout evidence under the current public check budget."
+    },
+    {
+      "slug": "hibernate-helloworld",
+      "name": "Java Hibernate Hello World",
+      "note": "Production compilation passes while test compilation records a missing JUnit dependency."
+    },
+    {
+      "slug": "spring-javaconfig-sample",
+      "name": "Spring JavaConfig Sample",
+      "note": "Compile and tests pass, giving a small green-path comparison for failed validation examples."
+    }
+  ],
+  "limits": [
+    "Validation failure evidence does not prove a Hibernate migration is impossible.",
+    "Validation failure evidence does not replace maintainer knowledge about required local services.",
+    "A passing public validation run does not prove production database behavior.",
+    "A timeout under the public budget should not be used as the only estimate for paid remediation work."
+  ]
+}

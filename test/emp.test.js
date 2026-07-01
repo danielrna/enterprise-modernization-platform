@@ -107,9 +107,10 @@ test('generates Knowledge Base pages from structured guidance', async () => {
   const index = await fs.readFile(path.join(outDir, 'index.html'), 'utf8');
   const hibernate = await fs.readFile(path.join(outDir, 'hibernate-readiness.html'), 'utf8');
 
-  assert.equal(result.count, 1);
+  assert.equal(result.count, 2);
   assert.match(index, /Knowledge Base/);
   assert.match(index, /Hibernate Readiness Knowledge Base/);
+  assert.match(index, /Hibernate Validation Failure Patterns/);
   assert.match(hibernate, /Legacy Criteria API/);
   assert.match(hibernate, /What This Does Not Prove/);
   assert.match(hibernate, /hibernate-demos/);
@@ -125,14 +126,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 3);
+  assert.equal(result.count, 4);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.1\.5/);
-  assert.match(html, /Hibernate checkout validation evidence batch/);
+  assert.match(index, /v0\.1\.6/);
+  assert.match(html, /Hibernate checkout evidence batch two/);
   assert.match(html, /checkout-backed validation evidence/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Hibernate checkout validation evidence batch/);
+  assert.match(markdown, /## Hibernate checkout evidence batch two/);
 });
 
 test('local benchmark reports include checkout evidence', async () => {

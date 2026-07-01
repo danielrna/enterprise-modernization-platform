@@ -1,0 +1,194 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T18:05:55.909Z",
+  "project": {
+    "name": "Java Hibernate Hello World",
+    "root": "benchmark-repos/hibernate-helloworld",
+    "source": "https://github.com/marcin-chwedczuk/java-hibernate-helloworld",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "unknown",
+    "springBootVersion": "unknown",
+    "fileCount": 6,
+    "javaFileCount": 2
+  },
+  "pack": "hibernate-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness."
+  },
+  "readiness": {
+    "overall": 84,
+    "categories": {
+      "java": 88,
+      "spring": 86,
+      "hibernate": 84,
+      "jakarta": 79,
+      "build": 90,
+      "security": 76,
+      "architecture": 84
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 1,
+      "warning": 0,
+      "info": 0
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 0,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "byCode": {
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "hibernate-helloworld",
+    "name": "Java Hibernate Hello World",
+    "repository": "https://github.com/marcin-chwedczuk/java-hibernate-helloworld",
+    "ref": null,
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/hibernate-helloworld",
+    "analysisPath": "benchmark-repos/hibernate-helloworld",
+    "gitRevision": "35564d0e50dd1d0dac22f2d7da3df46719ccc787",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/marcin-chwedczuk/java-hibernate-helloworld benchmark-repos/hibernate-helloworld",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '/workspace/benchmark-repos/hibernate-helloworld'..."
+      }
+    ],
+    "validation": {
+      "requested": true,
+      "status": "failed",
+      "confidence": 35,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "passed",
+          "command": "mvn -q -DskipTests compile",
+          "durationMs": 14586,
+          "exitCode": 0,
+          "output": "",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "mvn -q test",
+          "durationMs": 7913,
+          "exitCode": 1,
+          "output": "enchmark-repos/hibernate-helloworld/src/test/java/mc/hibernatetutorial/AppTest.java:[11,13] cannot find symbol\n[ERROR]   symbol: class TestCase\n[ERROR] /workspace/benchmark-repos/hibernate-helloworld/src/test/java/mc/hibernatetutorial/AppTest.java:[26,19] cannot find symbol\n[ERROR]   symbol:   class Test\n[ERROR]   location: class mc.hibernatetutorial.AppTest\n[ERROR] /workspace/benchmark-repos/hibernate-helloworld/src/test/java/mc/hibernatetutorial/AppTest.java:[28,20] cannot find symbol\n[ERROR]   symbol:   class TestSuite\n[ERROR]   location: class mc.hibernatetutorial.AppTest\n[ERROR] /workspace/benchmark-repos/hibernate-helloworld/src/test/java/mc/hibernatetutorial/AppTest.java:[36,9] cannot find symbol\n[ERROR]   symbol:   method assertTrue(boolean)\n[ERROR]   location: class mc.hibernatetutorial.AppTest\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException",
+          "timedOut": false
+        }
+      ],
+      "summary": "1 validation check(s) failed."
+    }
+  },
+  "nextActions": [
+    {
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    }
+  ]
+}

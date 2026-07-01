@@ -2848,5 +2848,229 @@
         "basePath": "persistence-modules/hibernate-5/src/main/resources/com/baeldung/hibernate"
       }
     ]
+  },
+  {
+    "slug": "spring-javaconfig-sample",
+    "name": "Spring JavaConfig Sample",
+    "repository": "https://github.com/arey/spring-javaconfig-sample",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "hibernate-readiness",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "21",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 90,
+    "javaFileCount": 30,
+    "jakartaDetected": true,
+    "javaxDetected": false,
+    "hibernateDetected": true,
+    "springSecurityDetected": false,
+    "findings": [
+      {
+        "code": "hibernate-session-api",
+        "severity": "warning",
+        "title": "Direct Hibernate Session API usage",
+        "recommendation": "Validate persistence configuration and EntityManagerFactory assumptions before Hibernate upgrade work.",
+        "file": "src/main/java/com/javaetmoi/sample/config/InfrastructureConfig.java",
+        "line": 19
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 4,
+        "code": "hibernate-session-api",
+        "severity": "warning",
+        "title": "Direct Hibernate Session API usage",
+        "recommendation": "Review direct ORM integration points before Hibernate 6 migration.",
+        "basePath": "src/main/java/com/javaetmoi/sample"
+      }
+    ]
+  },
+  {
+    "slug": "spring4-hibernate5-example",
+    "name": "Spring 4 Hibernate 5 Example",
+    "repository": "https://github.com/bytestree/spring4-hibernate5-example",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "hibernate-readiness",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "8",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 42,
+    "javaFileCount": 14,
+    "jakartaDetected": false,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false,
+    "findings": [
+      {
+        "code": "hibernate-session-api",
+        "severity": "warning",
+        "title": "Direct Hibernate Session API usage",
+        "recommendation": "Review Session and SessionFactory usage before Hibernate 6 migration planning.",
+        "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+        "line": 5
+      },
+      {
+        "code": "javax-usage",
+        "severity": "critical",
+        "title": "javax namespace usage detected",
+        "recommendation": "Plan Jakarta namespace alignment before Hibernate 6 validation.",
+        "file": "src/main/java/com/bytestree/model/Employee.java",
+        "line": 3
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 3,
+        "code": "hibernate-session-api",
+        "severity": "warning",
+        "title": "Direct Hibernate Session API usage",
+        "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+        "basePath": "src/main/java/com/bytestree"
+      }
+    ]
+  },
+  {
+    "slug": "hibernate-spatial-5-sample",
+    "name": "Hibernate Spatial 5 Sample",
+    "repository": "https://github.com/chaodhib/Hibernate-Spatial-5-Sample",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "hibernate-readiness",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "8",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 28,
+    "javaFileCount": 8,
+    "jakartaDetected": false,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false,
+    "findings": [
+      {
+        "code": "hibernate-session-api",
+        "severity": "warning",
+        "title": "Direct Hibernate Session API usage",
+        "recommendation": "Validate EntityManager and Hibernate Spatial integration before migration work.",
+        "file": "src/main/java/be/chaouki/prototype/util/JPAUtil.java",
+        "line": 3
+      },
+      {
+        "code": "javax-usage",
+        "severity": "critical",
+        "title": "javax namespace usage detected",
+        "recommendation": "Plan Jakarta namespace alignment before Hibernate 6 validation.",
+        "file": "src/main/java/be/chaouki/prototype/entities/Event.java",
+        "line": 5
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 3,
+        "code": "hibernate-session-api",
+        "severity": "warning",
+        "title": "Direct Hibernate Session API usage",
+        "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+        "basePath": "src/main/java/be/chaouki/prototype"
+      }
+    ]
+  },
+  {
+    "slug": "hibernate-helloworld",
+    "name": "Java Hibernate Hello World",
+    "repository": "https://github.com/marcin-chwedczuk/java-hibernate-helloworld",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "hibernate-readiness",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "8",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 30,
+    "javaFileCount": 7,
+    "jakartaDetected": false,
+    "javaxDetected": false,
+    "hibernateDetected": true,
+    "springSecurityDetected": false,
+    "findings": [
+      {
+        "code": "hibernate-session-api",
+        "severity": "warning",
+        "title": "Direct Hibernate Session API usage",
+        "recommendation": "Validate SessionFactory bootstrap and direct Session calls before migration work.",
+        "file": "src/main/java/mc/hibernatetutorial/App.java",
+        "line": 10
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 3,
+        "code": "hibernate-session-api",
+        "severity": "warning",
+        "title": "Direct Hibernate Session API usage",
+        "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+        "basePath": "src/main/java/mc/hibernatetutorial"
+      }
+    ]
+  },
+  {
+    "slug": "bookstore-hibernate",
+    "name": "Bookstore Spring Hibernate",
+    "repository": "https://github.com/frenmanoj/bookstore",
+    "ref": null,
+    "checkoutSubdir": null,
+    "pack": "hibernate-readiness",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "8",
+    "validationJavaVersion": null,
+    "springBootVersion": "unknown",
+    "fileCount": 55,
+    "javaFileCount": 18,
+    "jakartaDetected": false,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false,
+    "findings": [
+      {
+        "code": "hibernate-session-api",
+        "severity": "warning",
+        "title": "Direct Hibernate Session API usage",
+        "recommendation": "Review DAO Session usage before Hibernate 6 migration planning.",
+        "file": "src/main/java/np/com/mshrestha/bookstore/dao/impl/BookDaoImpl.java",
+        "line": 8
+      },
+      {
+        "code": "javax-usage",
+        "severity": "critical",
+        "title": "javax namespace usage detected",
+        "recommendation": "Plan Jakarta namespace alignment before Hibernate 6 validation.",
+        "file": "src/main/java/np/com/mshrestha/bookstore/model/Book.java",
+        "line": 5
+      }
+    ],
+    "findingGroups": [
+      {
+        "count": 3,
+        "code": "hibernate-session-api",
+        "severity": "warning",
+        "title": "Direct Hibernate Session API usage",
+        "recommendation": "Review direct ORM API usage before Hibernate 6 migration.",
+        "basePath": "src/main/java/np/com/mshrestha/bookstore"
+      }
+    ]
   }
 ]

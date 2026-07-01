@@ -1,0 +1,456 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T18:05:09.245Z",
+  "project": {
+    "name": "Spring 4 Hibernate 5 Example",
+    "root": "benchmark-repos/spring4-hibernate5-example",
+    "source": "https://github.com/bytestree/spring4-hibernate5-example",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "unknown",
+    "springBootVersion": "unknown",
+    "fileCount": 15,
+    "javaFileCount": 9
+  },
+  "pack": "hibernate-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness."
+  },
+  "readiness": {
+    "overall": 75,
+    "categories": {
+      "java": 88,
+      "spring": 68,
+      "hibernate": 61,
+      "jakarta": 79,
+      "build": 90,
+      "security": 76,
+      "architecture": 66
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 1,
+      "warning": 8,
+      "info": 0
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/bytestree/MyApplication.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/bytestree/config/HibernateConfig.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "src/main/java/com/bytestree/config/HibernateConfig.java",
+      "line": 7,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "src/main/java/com/bytestree/config/HibernateConfig.java",
+      "line": 80,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+      "line": 5,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+      "line": 6,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+      "line": 22,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 8,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "byCode": {
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 3,
+        "production": 3,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 3
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/com/bytestree/MyApplication.java",
+            "line": 21,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/com/bytestree/config/HibernateConfig.java",
+            "line": 30,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+            "line": 21,
+            "scope": "production"
+          }
+        ]
+      },
+      "hibernate-session-api": {
+        "code": "hibernate-session-api",
+        "title": "Direct Hibernate Session API usage",
+        "severity": "warning",
+        "total": 5,
+        "production": 5,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 5
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+            "file": "src/main/java/com/bytestree/config/HibernateConfig.java",
+            "line": 7,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+            "file": "src/main/java/com/bytestree/config/HibernateConfig.java",
+            "line": 80,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+            "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+            "line": 5,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+            "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+            "line": 6,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-session-api",
+            "severity": "warning",
+            "title": "Direct Hibernate Session API usage",
+            "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+            "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+            "line": 22,
+            "scope": "production"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/bytestree/MyApplication.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/bytestree/config/HibernateConfig.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "src/main/java/com/bytestree/config/HibernateConfig.java",
+      "line": 7,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "src/main/java/com/bytestree/config/HibernateConfig.java",
+      "line": 80,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+      "line": 5,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+      "line": 6,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-session-api",
+      "severity": "warning",
+      "title": "Direct Hibernate Session API usage",
+      "recommendation": "Review Direct Hibernate Session API usage before modernization.",
+      "file": "src/main/java/com/bytestree/dao/EmployeeDaoImpl.java",
+      "line": 22,
+      "scope": "production"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "jakartaDetected": false,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "spring4-hibernate5-example",
+    "name": "Spring 4 Hibernate 5 Example",
+    "repository": "https://github.com/bytestree/spring4-hibernate5-example",
+    "ref": null,
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/spring4-hibernate5-example",
+    "analysisPath": "benchmark-repos/spring4-hibernate5-example",
+    "gitRevision": "051ee5238cebed151f6ebc987bf1ab84484d0835",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/bytestree/spring4-hibernate5-example benchmark-repos/spring4-hibernate5-example",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '/workspace/benchmark-repos/spring4-hibernate5-example'..."
+      }
+    ],
+    "validation": {
+      "requested": true,
+      "status": "passed",
+      "confidence": 95,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "passed",
+          "command": "mvn -q -DskipTests compile",
+          "durationMs": 19550,
+          "exitCode": 0,
+          "output": "",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "passed",
+          "command": "mvn -q test",
+          "durationMs": 13984,
+          "exitCode": 0,
+          "output": "",
+          "timedOut": false
+        }
+      ],
+      "summary": "Compilation and tests completed successfully."
+    }
+  },
+  "nextActions": [
+    {
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    },
+    {
+      "id": "review-hibernate-upgrade-risks",
+      "priority": "warning",
+      "title": "Review Hibernate API and mapping upgrade risks",
+      "reason": "Hibernate 6 readiness depends on explicit review of legacy Criteria usage, Session API assumptions, custom types, and XML mappings.",
+      "evidenceCount": 5,
+      "findingCodes": [
+        "hibernate-legacy-criteria",
+        "hibernate-session-api",
+        "hibernate-custom-type",
+        "hibernate-xml-mapping"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack hibernate-readiness --out reports/hibernate-readiness"
+    }
+  ]
+}

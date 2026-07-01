@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v0.1.6
+
+- Added five more Hibernate readiness benchmark reports, raising the public benchmark catalog to 60 reports.
+- Promoted Spring JavaConfig Sample, Spring 4 Hibernate 5 Example, Hibernate Spatial 5 Sample, Java Hibernate Hello World, and Bookstore Spring Hibernate to checkout-backed evidence.
+- Added four more passing Hibernate compile/test validation reports, raising validated passing evidence to 12 reports.
+- Added the Hibernate Validation Failure Patterns Knowledge Base article.
+
 ## v0.1.5
 
 - Promoted Hypersistence Utils to checkout-backed Hibernate readiness evidence with Maven toolchain failure evidence for the required JDK 8 toolchain.

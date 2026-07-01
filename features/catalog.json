@@ -2,6 +2,63 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.1.6",
+      "title": "v0.1.6",
+      "date": "2026-07-01",
+      "summary": "Hibernate evidence expansion with five more checkout-backed reports and a validation failure Knowledge Base article.",
+      "features": [
+        {
+          "id": "hibernate-checkout-evidence-batch-two",
+          "type": "evidence",
+          "name": "Hibernate checkout evidence batch two",
+          "audience": "Consultants and persistence modernization reviewers",
+          "summary": "Add five more Hibernate readiness benchmarks and promote all five to checkout-backed validation evidence.",
+          "evidence": [
+            "Adds Spring JavaConfig Sample, Spring 4 Hibernate 5 Example, Hibernate Spatial 5 Sample, Java Hibernate Hello World, and Bookstore Spring Hibernate.",
+            "Records passing compile and test validation for four of the five new reports.",
+            "Records compile-pass and test-failure evidence for Java Hibernate Hello World.",
+            "Raises the public catalog to 60 reports, checkout-backed evidence to 25 reports, and passing validation evidence to 12 reports."
+          ],
+          "links": [
+            {
+              "label": "Spring JavaConfig Sample report",
+              "href": "docs/benchmarks/spring-javaconfig-sample/index.html"
+            },
+            {
+              "label": "Hibernate Spatial 5 Sample report",
+              "href": "docs/benchmarks/hibernate-spatial-5-sample/index.html"
+            },
+            {
+              "label": "Benchmark index",
+              "href": "docs/benchmarks/index.html"
+            }
+          ]
+        },
+        {
+          "id": "hibernate-validation-failure-knowledge",
+          "type": "documentation",
+          "name": "Hibernate validation failure Knowledge Base",
+          "audience": "Consultants explaining failed or partial readiness evidence",
+          "summary": "Add a Knowledge Base article that explains how to interpret Java toolchain mismatches, missing wrappers, test dependency gaps, external service assumptions, and timeouts.",
+          "evidence": [
+            "Adds `knowledge/hibernate-validation-failures.json`.",
+            "Publishes the generated `Hibernate Validation Failure Patterns` page.",
+            "Uses checkout-backed benchmark outcomes to distinguish environment blockers from Hibernate API risk."
+          ],
+          "links": [
+            {
+              "label": "Hibernate Validation Failure Patterns",
+              "href": "docs/knowledge-base/hibernate-validation-failures.html"
+            },
+            {
+              "label": "Knowledge Base index",
+              "href": "docs/knowledge-base/index.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.1.5",
       "title": "v0.1.5",
       "date": "2026-07-01",

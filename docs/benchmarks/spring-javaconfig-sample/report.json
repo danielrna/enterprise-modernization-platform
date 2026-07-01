@@ -1,0 +1,364 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T18:03:45.725Z",
+  "project": {
+    "name": "Spring JavaConfig Sample",
+    "root": "benchmark-repos/spring-javaconfig-sample",
+    "source": "https://github.com/arey/spring-javaconfig-sample",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "unknown",
+    "springBootVersion": "unknown",
+    "fileCount": 17,
+    "javaFileCount": 8
+  },
+  "pack": "hibernate-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness."
+  },
+  "readiness": {
+    "overall": 78,
+    "categories": {
+      "java": 88,
+      "spring": 63,
+      "hibernate": 84,
+      "jakarta": 79,
+      "build": 90,
+      "security": 82,
+      "architecture": 61
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 1,
+      "warning": 6,
+      "info": 0
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/javaetmoi/sample/config/DataSourceConfig.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/javaetmoi/sample/config/InfrastructureConfig.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/javaetmoi/sample/config/MainConfig.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/javaetmoi/sample/config/SecurityConfig.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/javaetmoi/sample/config/WebMvcConfig.java",
+      "line": 41,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/com/javaetmoi/sample/config/SpringConfigTest.java",
+      "line": 36,
+      "scope": "test"
+    }
+  ],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 5,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 1,
+      "info": 0
+    },
+    "byCode": {
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 6,
+        "production": 5,
+        "test": 1,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 6
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/com/javaetmoi/sample/config/DataSourceConfig.java",
+            "line": 34,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/com/javaetmoi/sample/config/InfrastructureConfig.java",
+            "line": 43,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/com/javaetmoi/sample/config/MainConfig.java",
+            "line": 40,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/com/javaetmoi/sample/config/SecurityConfig.java",
+            "line": 39,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/com/javaetmoi/sample/config/WebMvcConfig.java",
+            "line": 41,
+            "scope": "production"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/javaetmoi/sample/config/DataSourceConfig.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/javaetmoi/sample/config/InfrastructureConfig.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/javaetmoi/sample/config/MainConfig.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/javaetmoi/sample/config/SecurityConfig.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/com/javaetmoi/sample/config/WebMvcConfig.java",
+      "line": 41,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/com/javaetmoi/sample/config/SpringConfigTest.java",
+      "line": 36,
+      "scope": "test"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": true
+  },
+  "benchmark": {
+    "slug": "spring-javaconfig-sample",
+    "name": "Spring JavaConfig Sample",
+    "repository": "https://github.com/arey/spring-javaconfig-sample",
+    "ref": null,
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/spring-javaconfig-sample",
+    "analysisPath": "benchmark-repos/spring-javaconfig-sample",
+    "gitRevision": "bde056048d01ad46f946179d4e08c18389717460",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/arey/spring-javaconfig-sample benchmark-repos/spring-javaconfig-sample",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '/workspace/benchmark-repos/spring-javaconfig-sample'..."
+      }
+    ],
+    "validation": {
+      "requested": true,
+      "status": "passed",
+      "confidence": 95,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "passed",
+          "command": "mvn -q -DskipTests compile",
+          "durationMs": 36729,
+          "exitCode": 0,
+          "output": "",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "passed",
+          "command": "mvn -q test",
+          "durationMs": 45551,
+          "exitCode": 0,
+          "output": "eCount = 0]\n18:05:07.320 [main] DEBUG org.springframework.test.context.support.DirtiesContextTestExecutionListener -- After test method: class [SpringConfigTest], method [springConfiguration], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]\n18:05:07.320 [main] DEBUG org.springframework.test.context.web.ServletTestExecutionListener -- Resetting RequestContextHolder for test class com.javaetmoi.sample.config.SpringConfigTest\n18:05:07.394 [main] DEBUG org.springframework.test.context.cache -- Spring test ApplicationContext cache statistics: [DefaultContextCache@134d7ffa size = 2, maxSize = 32, parentContextCount = 1, hitCount = 7, missCount = 2, failureCount = 0]\n18:05:07.395 [main] DEBUG org.springframework.test.context.cache -- Spring test ApplicationContext cache statistics: [DefaultContextCache@134d7ffa size = 2, maxSize = 32, parentContextCount = 1, hitCount = 8, missCount = 2, failureCount = 0]\n18:05:07.396 [main] DEBUG org.springframework.test.context.support.DirtiesContextTestExecutionListener -- After test class: class [SpringConfigTest], class annotated with @DirtiesContext [false] with mode [null]",
+          "timedOut": false
+        }
+      ],
+      "summary": "Compilation and tests completed successfully."
+    }
+  },
+  "nextActions": [
+    {
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    }
+  ]
+}

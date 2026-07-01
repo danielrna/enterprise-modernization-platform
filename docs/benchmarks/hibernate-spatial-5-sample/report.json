@@ -1,0 +1,307 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-01T18:05:43.594Z",
+  "project": {
+    "name": "Hibernate Spatial 5 Sample",
+    "root": "benchmark-repos/hibernate-spatial-5-sample",
+    "source": "https://github.com/chaodhib/Hibernate-Spatial-5-Sample",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "unknown",
+    "springBootVersion": "unknown",
+    "fileCount": 8,
+    "javaFileCount": 3
+  },
+  "pack": "hibernate-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.9,
+    "reason": "Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness."
+  },
+  "readiness": {
+    "overall": 83,
+    "categories": {
+      "java": 84,
+      "spring": 86,
+      "hibernate": 84,
+      "jakarta": 79,
+      "build": 90,
+      "security": 76,
+      "architecture": 82
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 1,
+      "warning": 0,
+      "info": 3
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/main/java/be/chaouki/prototype/EventManager.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/be/chaouki/prototype/EventManager.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/main/java/be/chaouki/prototype/entities/Event.java",
+      "line": 9,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 0,
+      "info": 3
+    },
+    "test": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "byCode": {
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "java.util.Date usage",
+        "severity": "info",
+        "total": 2,
+        "production": 2,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "src/main/java/be/chaouki/prototype/EventManager.java",
+            "line": 14,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "src/main/java/be/chaouki/prototype/entities/Event.java",
+            "line": 9,
+            "scope": "production"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "src/main/java/be/chaouki/prototype/EventManager.java",
+            "line": 47,
+            "scope": "production"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/main/java/be/chaouki/prototype/EventManager.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/be/chaouki/prototype/EventManager.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/main/java/be/chaouki/prototype/entities/Event.java",
+      "line": 9,
+      "scope": "production"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "warning"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "unknown",
+    "jakartaDetected": false,
+    "javaxDetected": true,
+    "hibernateDetected": true,
+    "springSecurityDetected": false
+  },
+  "benchmark": {
+    "slug": "hibernate-spatial-5-sample",
+    "name": "Hibernate Spatial 5 Sample",
+    "repository": "https://github.com/chaodhib/Hibernate-Spatial-5-Sample",
+    "ref": null,
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/hibernate-spatial-5-sample",
+    "analysisPath": "benchmark-repos/hibernate-spatial-5-sample",
+    "gitRevision": "066da6ee5c719e7ccafcfce5039c75c85cf105f9",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/chaodhib/Hibernate-Spatial-5-Sample benchmark-repos/hibernate-spatial-5-sample",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '/workspace/benchmark-repos/hibernate-spatial-5-sample'..."
+      }
+    ],
+    "validation": {
+      "requested": true,
+      "status": "passed",
+      "confidence": 95,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "passed",
+          "command": "mvn -q -DskipTests compile",
+          "durationMs": 7423,
+          "exitCode": 0,
+          "output": "",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "passed",
+          "command": "mvn -q test",
+          "durationMs": 4002,
+          "exitCode": 0,
+          "output": "",
+          "timedOut": false
+        }
+      ],
+      "summary": "Compilation and tests completed successfully."
+    }
+  },
+  "nextActions": [
+    {
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    }
+  ]
+}
