@@ -2,7 +2,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { BENCHMARKS, publishBenchmarks } from '../src/benchmarks.js';
-import { generateMigrationHub } from '../src/hub.js';
+import { generateBenchmarkIndex, generateMigrationHub } from '../src/hub.js';
 import { generateKnowledgeBase } from '../src/knowledge-base.js';
 import { generatePackDocs } from '../src/pack-docs.js';
 import { buildNextActions, renderReport } from '../src/report.js';
@@ -27,6 +27,7 @@ let reports = [];
 if (source === 'existing') {
   await refreshPublishedReportBundles(outDir);
   reports = await loadPublishedReportSummaries(outDir);
+  await generateBenchmarkIndex({ outDir, reports });
 } else {
   const result = await publishBenchmarks({
     outDir,

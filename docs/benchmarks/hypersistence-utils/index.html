@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Hypersistence Utils Readiness Report</h1>
-    <p class="meta">hibernate-readiness · 2026-07-01T06:16:31.273Z · https://github.com/vladmihalcea/hypersistence-utils</p>
+    <p class="meta">hibernate-readiness · 2026-07-01T17:33:58.701Z · https://github.com/vladmihalcea/hypersistence-utils</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -64,48 +64,48 @@
   </header>
   <main>
     <section class="decision">
-      <div class="panel decision-main warn">
-        <strong>Needs remediation before confident migration execution</strong>
-        <div>The report has enough signal for scoping, but the evidence is not yet strong enough for execution.</div>
-        <div class="risk-list"><span class="pill warning">23 Hibernate custom type integration</span><span class="pill warning">1 Direct Hibernate Session API usage</span></div>
+      <div class="panel decision-main bad">
+        <strong>Migration is blocked by critical readiness risks</strong>
+        <div>1 critical finding(s) should be resolved before execution planning.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">203 Direct Hibernate Session API usage</span><span class="pill warning">138 Hibernate custom type integration</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
         </div>
       </div>
       <div class="panel decision-list">
-        <div><strong>Recommended next step</strong><div class="label">Prioritize repeated warning patterns and rerun the report after cleanup.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">81%</div><div class="label">Overall readiness</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">1700</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">64%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
+      <div class="panel"><div class="metric">1042</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready with remediation work</div>
+    <div class="panel">Migration risk requires focused cleanup</div>
 
 
     <h2>Pack Applicability</h2>
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 17 · Build: Maven · javax usage: yes · jakarta usage: yes</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: ${jdk.version} · Build: Maven · javax usage: yes · jakarta usage: yes</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>45%</strong></td><td><div class="bar"><span style="width:45%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>77%</strong></td><td><div class="bar"><span style="width:77%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>1%</strong></td><td><div class="bar"><span style="width:1%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Architecture</td><td><strong>40%</strong></td><td><div class="bar"><span style="width:40%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span></td><td>Review Hibernate API and mapping upgrade risks</td><td>Hibernate 6 readiness depends on explicit review of legacy Criteria usage, Session API assumptions, custom types, and XML mappings.</td><td>23</td><td><code>node ./bin/emp.js analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review Hibernate API and mapping upgrade risks</td><td>Hibernate 6 readiness depends on explicit review of legacy Criteria usage, Session API assumptions, custom types, and XML mappings.</td><td>80</td><td><code>node ./bin/emp.js analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
@@ -114,15 +114,17 @@
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/vladmihalcea/hypersistence-utils
+      <strong>checkout</strong> · https://github.com/vladmihalcea/hypersistence-utils
+      <div class="label">Checkout: benchmark-repos/hypersistence-utils</div>
+      <div class="label">Git revision: 922c6df5e2e16922c0fcbc45bbb07441d3d2e38e</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/vladmihalcea/hypersistence-utils benchmark-repos/hypersistence-utils</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;/workspace/benchmark-repos/hypersistence-utils&#039;... Updating files: 37% (409/1092) Updating files: 38% (415/1092) Updating files: 39% (426/1092) Updating files: 40% (437/1092) Updating files: 41% (448/1092) Updating files: 4...</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./mvnw -q -DskipTests compile</td><td>46.7 s</td><td>............... Unzipping ~/.m2/wrapper/dists/apache-maven-3.6.0-bin/3rgjh30jneo7541hun7uggltkb/apache-maven-3.6.0-bin.zip to ~/.m2/wrapper/dists/apache-maven-3.6.0-bin/3rgjh30jneo7541hun7uggltkb Set executable permissions for: ~/.m2/wra...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./mvnw -q test</td><td>4.2 s</td><td>/workspace/benchmark-repos/hypersistence-utils [ERROR] No toolchain found for type jdk [ERROR] Cannot find matching toolchain definitions for the following toolchain types: jdk [ version=&#039;8&#039; ] [ERROR] Failed to execute goal org.apache.ma...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">23</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">1</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">2</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">24</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">135</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">387</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">8</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">522</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Hibernate custom type integration</td><td>23</td><td>23</td><td>0</td><td>hypersistence-utils-hibernate-55 (23)</td><td>hypersistence-utils-hibernate-55/src/main/java/io/hypersistence/utils/hibernate/type/json/JsonType.java:23 · Validate UserType, BasicType, and JSON type integrations against target Hibernate APIs.<br>hypersistence-utils-hibernate-55/src/main/java/io/hypersistence/utils/hibernate/type/Example1.java:10 · Review custom type extension points against Hibernate 6 type-system changes.<br>hypersistence-utils-hibernate-55/src/main/java/io/hypersistence/utils/hibernate/type/Example2.java:11 · Review custom type extension points against Hibernate 6 type-system changes.<br>hypersistence-utils-hibernate-55/src/main/java/io/hypersistence/utils/hibernate/type/Example3.java:12 · Review custom type extension points against Hibernate 6 type-system changes.<br>hypersistence-utils-hibernate-55/src/main/java/io/hypersistence/utils/hibernate/type/Example4.java:13 · Review custom type extension points against Hibernate 6 type-system changes.</td></tr><tr><td><span class="pill warning">warning</span><br>Direct Hibernate Session API usage</td><td>1</td><td>0</td><td>1</td><td>hypersistence-utils-hibernate-55 (1)</td><td>hypersistence-utils-hibernate-55/src/test/java/io/hypersistence/utils/hibernate/util/AbstractTest.java:44 · Review direct Session API usage in tests and examples before publishing upgrade evidence.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Direct Hibernate Session API usage</td><td>203</td><td>14</td><td>189</td><td>hypersistence-utils-hibernate-71 (68)<br>hypersistence-utils-hibernate-73 (68)<br>hypersistence-utils-hibernate-63 (67)</td><td>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/ImmutableType.java:75 · Review Direct Hibernate Session API usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/ImmutableType.java:89 · Review Direct Hibernate Session API usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/spring/repository/BaseJpaRepositoryImpl.java:5 · Review Direct Hibernate Session API usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/spring/repository/HibernateRepositoryImpl.java:4 · Review Direct Hibernate Session API usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/test/AbstractHibernateTest.java:19 · Review Direct Hibernate Session API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Hibernate custom type integration</td><td>138</td><td>66</td><td>72</td><td>hypersistence-utils-hibernate-63 (46)<br>hypersistence-utils-hibernate-71 (46)<br>hypersistence-utils-hibernate-73 (46)</td><td>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/DescriptorImmutableType.java:12 · Review Hibernate custom type integration before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/DescriptorImmutableType.java:20 · Review Hibernate custom type integration before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/HibernateTypesContributor.java:23 · Review Hibernate custom type integration before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/HibernateTypesContributor.java:61 · Review Hibernate custom type integration before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/HibernateTypesContributor.java:61 · Review Hibernate custom type integration before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Serializable type without serialVersionUID</td><td>71</td><td>14</td><td>57</td><td>hypersistence-utils-hibernate-71 (24)<br>hypersistence-utils-hibernate-73 (24)<br>hypersistence-utils-hibernate-63 (23)</td><td>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/basic/Inet.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/range/Range.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/util/Configuration.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/util/ObjectMapperWrapper.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>hypersistence-utils-hibernate-63/src/test/java/io/hypersistence/utils/hibernate/type/json/MySQLJsonTypeSetTest.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>45</td><td>0</td><td>45</td><td>hypersistence-utils-hibernate-63 (15)<br>hypersistence-utils-hibernate-71 (15)<br>hypersistence-utils-hibernate-73 (15)</td><td>hypersistence-utils-hibernate-63/src/test/java/io/hypersistence/utils/spring/aop/RetryAspectTest.java:21 · Review Spring field injection before modernization.<br>hypersistence-utils-hibernate-63/src/test/java/io/hypersistence/utils/spring/aop/RetryAspectTest.java:24 · Review Spring field injection before modernization.<br>hypersistence-utils-hibernate-63/src/test/java/io/hypersistence/utils/spring/aop/RetryAspectTest.java:27 · Review Spring field injection before modernization.<br>hypersistence-utils-hibernate-63/src/test/java/io/hypersistence/utils/spring/repo/base/SpringDataJPABaseTest.java:35 · Review Spring field injection before modernization.<br>hypersistence-utils-hibernate-63/src/test/java/io/hypersistence/utils/spring/repo/base/SpringDataJPABaseTest.java:38 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>33</td><td>24</td><td>9</td><td>hypersistence-utils-hibernate-63 (11)<br>hypersistence-utils-hibernate-71 (11)<br>hypersistence-utils-hibernate-73 (11)</td><td>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/array/DateArrayType.java:9 · Review java.util.Date usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/array/TimestampArrayType.java:9 · Review java.util.Date usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/array/internal/DateArrayTypeDescriptor.java:3 · Review java.util.Date usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/array/internal/GenericArrayTypeDescriptor.java:7 · Review java.util.Date usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/hibernate/type/array/internal/TimestampArrayTypeDescriptor.java:3 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>16</td><td>16</td><td>0</td><td>hypersistence-utils-hibernate-63 (6)<br>hypersistence-utils-hibernate-71 (5)<br>hypersistence-utils-hibernate-73 (5)</td><td>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/common/ReflectionUtils.java:78 · Review Reflection usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/common/ReflectionUtils.java:103 · Review Reflection usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/common/ReflectionUtils.java:255 · Review Reflection usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/common/ReflectionUtils.java:298 · Review Reflection usage before modernization.<br>hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/common/ReflectionUtils.java:530 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Hibernate XML mapping</td><td>15</td><td>0</td><td>15</td><td>hypersistence-utils-hibernate-63 (5)<br>hypersistence-utils-hibernate-71 (5)<br>hypersistence-utils-hibernate-73 (5)</td><td>hypersistence-utils-hibernate-63/src/test/java/io/hypersistence/utils/hibernate/type/json/HbmJsonTypeTest.java:22 · Review Hibernate XML mapping before modernization.<br>hypersistence-utils-hibernate-63/src/test/resources/hbm/type/json/HbmJsonTypeTest.hbm.xml:2 · Review Hibernate XML mapping before modernization.<br>hypersistence-utils-hibernate-63/src/test/resources/hbm/type/json/HbmJsonTypeTest.hbm.xml:4 · Review Hibernate XML mapping before modernization.<br>hypersistence-utils-hibernate-63/src/test/resources/hbm/type/json/HbmJsonTypeTest.hbm.xml:5 · Review Hibernate XML mapping before modernization.<br>hypersistence-utils-hibernate-63/src/test/resources/hbm/type/json/HbmJsonTypeTest.hbm.xml:21 · Review Hibernate XML mapping before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

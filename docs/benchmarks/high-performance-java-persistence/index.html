@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>High Performance Java Persistence Readiness Report</h1>
-    <p class="meta">hibernate-readiness · 2026-07-01T06:16:31.276Z · https://github.com/vladmihalcea/high-performance-java-persistence</p>
+    <p class="meta">hibernate-readiness · 2026-07-01T17:35:11.062Z · https://github.com/vladmihalcea/high-performance-java-persistence</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -66,8 +66,8 @@
     <section class="decision">
       <div class="panel decision-main bad">
         <strong>Migration is blocked by critical readiness risks</strong>
-        <div>7 critical finding(s) should be resolved before execution planning.</div>
-        <div class="risk-list"><span class="pill critical">6 Legacy Hibernate Criteria API</span><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">20 Direct Hibernate Session API usage</span></div>
+        <div>1 critical finding(s) should be resolved before execution planning.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">202 Direct Hibernate Session API usage</span><span class="pill warning">164 Spring field injection</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
@@ -75,37 +75,37 @@
       </div>
       <div class="panel decision-list">
         <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">86%</div><div class="label">Overall readiness</div></div>
-      <div class="panel"><div class="metric">7</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">980</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">71%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
+      <div class="panel"><div class="metric">1409</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready for controlled migration planning</div>
+    <div class="panel">Ready with remediation work</div>
 
 
     <h2>Pack Applicability</h2>
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>Hibernate ORM usage was detected. This pack targets Hibernate 5.x to 6.x readiness.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 11 · Build: Maven · javax usage: yes · jakarta usage: no</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: unknown · Build: Maven · javax usage: yes · jakarta usage: yes</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>34%</strong></td><td><div class="bar"><span style="width:34%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Architecture</td><td><strong>63%</strong></td><td><div class="bar"><span style="width:63%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill info">info</span></td><td>Capture validation evidence</td><td>No blocking static action was detected. The next useful step is compile, test, rollback, and trust evidence.</td><td>0</td><td><code>node ./bin/emp.js transform . --pack hibernate-readiness --mode dry-run --validate --out reports/validation</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review Hibernate API and mapping upgrade risks</td><td>Hibernate 6 readiness depends on explicit review of legacy Criteria usage, Session API assumptions, custom types, and XML mappings.</td><td>12</td><td><code>node ./bin/emp.js analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
@@ -114,15 +114,17 @@
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/vladmihalcea/high-performance-java-persistence
+      <strong>checkout</strong> · https://github.com/vladmihalcea/high-performance-java-persistence
+      <div class="label">Checkout: benchmark-repos/high-performance-java-persistence</div>
+      <div class="label">Git revision: 0f8f5a4361fb8323b6151010324811ea6408a0e0</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/vladmihalcea/high-performance-java-persistence benchmark-repos/high-performance-java-persistence</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;/workspace/benchmark-repos/high-performance-java-persistence&#039;... Updating files: 32% (478/1465) Updating files: 33% (484/1465) Updating files: 34% (499/1465) Updating files: 35% (513/1465) Updating files: 36% (528/1465) Upd...</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>mvn -q -DskipTests compile</td><td>120.1 s</td><td>Command timed out after 120000 ms.</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>mvn -q test</td><td>120.2 s</td><td>te.fetching.EntityGraphTest$Post.id]: Could not find target type 2026-07-01 17:39:09,885 INFO [main]: o.h.o.b.enhancement - HHH90009032: Bidirectional association not managed for field [com.vladmihalcea.hpjp.hibernate.fetching.EntityGrap...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">0</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">27</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">3</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">27</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">23</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">542</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">8</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">565</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Direct Hibernate Session API usage</td><td>20</td><td>0</td><td>20</td><td>core (20)</td><td>core/src/test/java/com/vladmihalcea/hpjp/hibernate/connection/ConnectionProviderTest.java:36 · Validate Session-specific examples against the target Hibernate version.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example1Test.java:10 · Review direct ORM API usage before Hibernate 6 migration.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example2Test.java:11 · Review direct ORM API usage before Hibernate 6 migration.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example3Test.java:12 · Review direct ORM API usage before Hibernate 6 migration.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/Example4Test.java:13 · Review direct ORM API usage before Hibernate 6 migration.</td></tr><tr><td><span class="pill critical">critical</span><br>Legacy Hibernate Criteria API</td><td>6</td><td>0</td><td>6</td><td>core (6)</td><td>core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example1Test.java:10 · Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example2Test.java:11 · Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example3Test.java:12 · Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example4Test.java:13 · Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/query/Example5Test.java:14 · Replace legacy Criteria API usage with JPA Criteria or query APIs supported by the target Hibernate version.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>0</td><td>1</td><td>core (1)</td><td>core/src/test/java/com/vladmihalcea/hpjp/hibernate/forum/Tag.java:6 · Plan Jakarta namespace alignment before Hibernate 6 validation.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Direct Hibernate Session API usage</td><td>202</td><td>7</td><td>195</td><td>core (194)<br>jooq-core (7)<br>jooq-pgsql (1)</td><td>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/BidirectionalManyToManyExtraColumnsTest.java:23 · Review Direct Hibernate Session API usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/BidirectionalManyToManyLinkEntityEmbeddableTest.java:22 · Review Direct Hibernate Session API usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/BidirectionalManyToManyLinkEntityMapKeyJoinColumnTest.java:19 · Review Direct Hibernate Session API usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/BidirectionalManyToManyLinkEntityTest.java:5 · Review Direct Hibernate Session API usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/BidirectionalManyToManySetTest.java:5 · Review Direct Hibernate Session API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>164</td><td>0</td><td>164</td><td>core (164)</td><td>core/src/test/java/com/vladmihalcea/hpjp/hibernate/cache/transactional/assigned/TransactionalCacheConcurrencyStrategyTest.java:35 · Review Spring field injection before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/cache/transactional/identity/IdentityTransactionalCacheConcurrencyStrategyTest.java:38 · Review Spring field injection before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/connection/FlexyPoolTest.java:40 · Review Spring field injection before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/connection/FlexyPoolTest.java:43 · Review Spring field injection before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/connection/jta/HandlingModeJtaConnectionReleaseTest.java:32 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>132</td><td>1</td><td>131</td><td>core (128)<br>jooq-pgsql-score (4)</td><td>core/src/main/java/com/vladmihalcea/hpjp/hibernate/forum/PostDetails.java:4 · Review java.util.Date usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/access/property/FluentApiPropertyAccessTest.java:11 · Review java.util.Date usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/AllAssociationTest.java:8 · Review java.util.Date usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/BidirectionalManyToManyExtraColumnsTest.java:5 · Review java.util.Date usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/BidirectionalManyToManyLinkEntityEmbeddableTest.java:5 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Serializable type without serialVersionUID</td><td>34</td><td>2</td><td>32</td><td>core (34)</td><td>core/src/main/java/com/vladmihalcea/hpjp/hibernate/type/json/model/Location.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>core/src/main/java/com/vladmihalcea/hpjp/hibernate/type/json/model/Ticket.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/BidirectionalManyToManyExtraColumnsTest.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/BidirectionalManyToManyLinkEntityEmbeddableTest.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/association/BidirectionalManyToManyLinkEntityIdColumnsTest.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.</td></tr><tr><td><span class="pill warning">warning</span><br>Hibernate custom type integration</td><td>19</td><td>5</td><td>14</td><td>core (14)<br>jooq-core (5)</td><td>core/src/test/java/com/vladmihalcea/hpjp/hibernate/audit/trigger/MySQLTriggerBasedAuditedTest.java:9 · Review Hibernate custom type integration before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/audit/trigger/MySQLTriggerBasedAuditedTest.java:37 · Review Hibernate custom type integration before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/audit/trigger/MySQLTriggerBasedJsonAuditLogTest.java:11 · Review Hibernate custom type integration before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/audit/trigger/MySQLTriggerBasedJsonAuditLogTest.java:39 · Review Hibernate custom type integration before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/hibernate/audit/trigger/PostgreSQLTriggerBasedJsonAuditLogTest.java:12 · Review Hibernate custom type integration before modernization.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>11</td><td>5</td><td>6</td><td>core (6)<br>jooq-core (5)</td><td>core/src/test/java/com/vladmihalcea/hpjp/hibernate/cache/readwrite/ReadWriteCacheConcurrencyStrategyWithLockTimeoutTest.java:127 · Review Reflection usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/util/ReflectionUtils.java:92 · Review Reflection usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/util/ReflectionUtils.java:117 · Review Reflection usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/util/ReflectionUtils.java:251 · Review Reflection usage before modernization.<br>core/src/test/java/com/vladmihalcea/hpjp/util/ReflectionUtils.java:294 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JDK internal API usage</td><td>2</td><td>2</td><td>0</td><td>pom.xml (2)</td><td>pom.xml:392 · Review JDK internal API usage before modernization.<br>pom.xml:398 · Review JDK internal API usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

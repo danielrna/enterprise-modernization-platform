@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Promoted Hypersistence Utils to checkout-backed Hibernate readiness evidence with Maven toolchain failure evidence for the required JDK 8 toolchain.
+- Promoted High Performance Java Persistence to checkout-backed Hibernate readiness evidence with validation timeout evidence under the current 120-second check budget.
 - Promoted Hibernate Test Case Templates to checkout-backed Hibernate readiness evidence with passing Maven compile validation and honest test failure evidence for Docker-dependent reactive tests.
 
 ## v0.1.4
