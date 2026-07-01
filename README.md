@@ -8,9 +8,9 @@ The product is not a Java migration tool. The product is confidence that an appl
 
 ## Try In 5 Minutes
 
-Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.1.8
+Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.1.9
 
-Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.1.8/emp-smoke-report.zip
+Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.1.9/emp-smoke-report.zip
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform/migration-hub/spring-boot-2-to-3.html
 
@@ -54,7 +54,7 @@ reports/readiness/index.html
 Run the published Docker image:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.1.8 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.1.9 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
 ```
 
 Or build the CLI image locally:
@@ -93,7 +93,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.1.8
+        uses: danielrna/enterprise-modernization-platform@v0.1.9
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -239,7 +239,7 @@ Current automated coverage verifies:
 
 ## Current Status
 
-Implemented through v0.1.8:
+Implemented through v0.1.9:
 
 - CLI, Docker, MCP, and GitHub Action interfaces.
 - Spring Boot 2 to 3 readiness and transformation workflow.
@@ -250,7 +250,7 @@ Implemented through v0.1.8:
 - Enterprise rules.
 - Trust evidence and static HTML/JSON reports.
 - 49 Spring Boot benchmark reports plus Jakarta readiness, 10 Hibernate readiness benchmark reports, and 5 Spring Security readiness benchmark reports.
-- Validation status in benchmark reports and the Migration Hub, including 25 checkout-backed reports and 12 reports with passing compile/test evidence.
+- Validation status in benchmark reports and the Migration Hub, including 28 checkout-backed reports and 13 reports with passing compile/test evidence.
 - Consultant Demo page and downloadable consultant demo bundle.
 - Spring Boot 2 to 3 Migration Hub published through GitHub Pages.
 

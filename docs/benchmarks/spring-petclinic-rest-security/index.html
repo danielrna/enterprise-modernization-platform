@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Spring Petclinic REST Security Readiness Report</h1>
-    <p class="meta">spring-security-6-readiness · 2026-07-01T21:19:41.687Z · https://github.com/spring-petclinic/spring-petclinic-rest</p>
+    <p class="meta">spring-security-6-readiness · 2026-07-01T21:26:05.440Z · https://github.com/spring-petclinic/spring-petclinic-rest</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -66,8 +66,8 @@
     <section class="decision">
       <div class="panel decision-main bad">
         <strong>Migration is blocked by critical readiness risks</strong>
-        <div>1 critical finding(s) should be resolved before execution planning.</div>
-        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">3 Legacy Spring Security matcher API</span><span class="pill warning">1 authorizeRequests configuration</span></div>
+        <div>5 critical finding(s) should be resolved before execution planning.</div>
+        <div class="risk-list"><span class="pill critical">4 WebSecurityConfigurerAdapter usage</span><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">26 Spring field injection</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
@@ -75,20 +75,20 @@
       </div>
       <div class="panel decision-list">
         <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">passed at 95% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">80%</div><div class="label">Overall readiness</div></div>
-      <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">83</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">66%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">5</div><div class="label">Critical findings</div></div>
+      <div class="panel"><div class="metric">101</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">2.6.2</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready with remediation work</div>
+    <div class="panel">Migration risk requires focused cleanup</div>
 
 
     <h2>Pack Applicability</h2>
@@ -101,11 +101,11 @@
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>52%</strong></td><td><div class="bar"><span style="width:52%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Spring</td><td><strong>55%</strong></td><td><div class="bar"><span style="width:55%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>15%</strong></td><td><div class="bar"><span style="width:15%"></span></div></td></tr><tr><td>Architecture</td><td><strong>53%</strong></td><td><div class="bar"><span style="width:53%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review Spring Security 6 configuration risks</td><td>Spring Security 6 readiness depends on explicit review of removed configuration adapters, matcher API changes, authorization DSL changes, and method security annotations.</td><td>5</td><td><code>node ./bin/emp.js analyze . --pack spring-security-6-readiness --out reports/spring-security-6-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Review Spring Security 6 configuration risks</td><td>Spring Security 6 readiness depends on explicit review of removed configuration adapters, matcher API changes, authorization DSL changes, and method security annotations.</td><td>7</td><td><code>node ./bin/emp.js analyze . --pack spring-security-6-readiness --out reports/spring-security-6-readiness</code></td></tr><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
@@ -114,16 +114,18 @@
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/spring-petclinic/spring-petclinic-rest
+      <strong>checkout</strong> · https://github.com/spring-petclinic/spring-petclinic-rest
       <div class="label">Git ref: v2.6.2</div>
+      <div class="label">Checkout: benchmark-repos/spring-petclinic-rest-security</div>
+      <div class="label">Git revision: 517a399cabe4dd7a40c07a81facd599df3cbf9cd</div>
     </div>
     <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>passed</strong> · confidence 95% · Compilation and tests completed successfully.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill passed">passed</span></td><td>./mvnw -q -DskipTests compile</td><td>13.2 s</td><td>avndlasol9gbrbg6bf2/apache-maven-3.6.3/lib/jansi-1.17.1.jar) WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module WARNING: Restricted methods will be blocked in a future release unless native acce...</td></tr><tr><td>Tests</td><td><span class="pill passed">passed</span></td><td>./mvnw -q test</td><td>67.5 s</td><td>HikariPool-1 - Shutdown completed. INFO LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit &#039;default&#039; INFO HikariDataSource - HikariPool-2 - Shutdown initiated... INFO HikariDataSource - HikariP...</td></tr></tbody></table></div>
 
 
 
@@ -132,12 +134,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">6</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">4</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">6</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">21</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">16</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">7</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">37</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Legacy Spring Security matcher API</td><td>3</td><td>3</td><td>0</td><td>src (3)</td><td>src/main/java/org/springframework/samples/petclinic/security/Example1.java:10 · Review matcher semantics before requestMatchers migration.<br>src/main/java/org/springframework/samples/petclinic/security/Example2.java:11 · Review matcher semantics before requestMatchers migration.<br>src/main/java/org/springframework/samples/petclinic/security/Example3.java:12 · Review matcher semantics before requestMatchers migration.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java:18 · Plan Jakarta namespace alignment before Spring Security 6 validation.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Security 5.6.x detected</td><td>1</td><td>1</td><td>0</td><td>pom.xml (1)</td><td>pom.xml:32 · Plan Spring Security 6 authorization and configuration validation.</td></tr><tr><td><span class="pill warning">warning</span><br>authorizeRequests configuration</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/org/springframework/samples/petclinic/security/SecurityConfig.java:31 · Review authorization DSL rules before Spring Security 6 migration.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>26</td><td>11</td><td>15</td><td>src (26)</td><td>src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcOwnerRepositoryImpl.java:62 · Review Spring field injection before modernization.<br>src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcPetRepositoryImpl.java:67 · Review Spring field injection before modernization.<br>src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcPetTypeRepositoryImpl.java:55 · Review Spring field injection before modernization.<br>src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcSpecialtyRepositoryImpl.java:51 · Review Spring field injection before modernization.<br>src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcUserRepositoryImpl.java:28 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>WebSecurityConfigurerAdapter usage</td><td>4</td><td>4</td><td>0</td><td>src (4)</td><td>src/main/java/org/springframework/samples/petclinic/security/BasicAuthenticationConfig.java:13 · Review WebSecurityConfigurerAdapter usage before modernization.<br>src/main/java/org/springframework/samples/petclinic/security/BasicAuthenticationConfig.java:20 · Review WebSecurityConfigurerAdapter usage before modernization.<br>src/main/java/org/springframework/samples/petclinic/security/DisableSecurityConfig.java:6 · Review WebSecurityConfigurerAdapter usage before modernization.<br>src/main/java/org/springframework/samples/petclinic/security/DisableSecurityConfig.java:14 · Review WebSecurityConfigurerAdapter usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>2</td><td>2</td><td>0</td><td>src (2)</td><td>src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcPetRowMapper.java:23 · Review java.util.Date usage before modernization.<br>src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcVisitRowMapper.java:25 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>authorizeRequests configuration</td><td>2</td><td>2</td><td>0</td><td>src (2)</td><td>src/main/java/org/springframework/samples/petclinic/security/BasicAuthenticationConfig.java:29 · Review authorizeRequests configuration before modernization.<br>src/main/java/org/springframework/samples/petclinic/security/DisableSecurityConfig.java:20 · Review authorizeRequests configuration before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill warning">warning</span><br>Global method security annotation</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/org/springframework/samples/petclinic/security/BasicAuthenticationConfig.java:18 · Review Global method security annotation before modernization.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>1</td><td>0</td><td>1</td><td>src (1)</td><td>src/test/java/org/springframework/samples/petclinic/rest/VisitRestControllerTests.java:171 · Review System.out logging before modernization.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

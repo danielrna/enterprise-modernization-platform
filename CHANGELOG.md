@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v0.1.9
+
+- Promoted Spring Petclinic REST Security, Spring Boot RealWorld Security, and Spring Security Samples Legacy to checkout-backed Spring Security readiness evidence.
+- Added passing Maven compile/test validation evidence for Spring Petclinic REST Security.
+- Preserved honest Gradle/JDK failure evidence for Spring Boot RealWorld Security and Spring Security Samples Legacy.
+- Raised checkout-backed benchmark evidence to 28 reports and passing validation evidence to 13 reports.
+
 ## v0.1.8
 
 - Added the Spring Security 6 readiness pack for Spring Security 5.x to 6.x modernization planning.

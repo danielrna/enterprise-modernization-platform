@@ -142,14 +142,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 6);
+  assert.equal(result.count, 7);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.1\.8/);
-  assert.match(html, /Spring Security 6 readiness pack/);
-  assert.match(html, /security migration findings/);
+  assert.match(index, /v0\.1\.9/);
+  assert.match(html, /Spring Security checkout evidence batch/);
+  assert.match(html, /checkout-backed evidence/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Spring Security 6 readiness pack/);
+  assert.match(markdown, /## Spring Security checkout evidence batch one/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {

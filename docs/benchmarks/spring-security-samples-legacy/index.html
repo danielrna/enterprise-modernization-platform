@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Spring Security Samples Legacy Readiness Report</h1>
-    <p class="meta">spring-security-6-readiness · 2026-07-01T21:19:41.665Z · https://github.com/spring-projects/spring-security-samples</p>
+    <p class="meta">spring-security-6-readiness · 2026-07-01T21:27:40.457Z · https://github.com/spring-projects/spring-security-samples</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -67,7 +67,7 @@
       <div class="panel decision-main bad">
         <strong>Migration is blocked by critical readiness risks</strong>
         <div>1 critical finding(s) should be resolved before execution planning.</div>
-        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">12 authorizeRequests configuration</span><span class="pill warning">4 Global method security annotation</span></div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">35 Spring field injection</span><span class="pill warning">1 Serializable type without serialVersionUID</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
@@ -75,16 +75,16 @@
       </div>
       <div class="panel decision-list">
         <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">74%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">73%</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">180</div><div class="label">Java files</div></div>
-      <div class="panel"><div class="metric">2.7.x</div><div class="label">Spring Boot</div></div>
+      <div class="panel"><div class="metric">416</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
@@ -95,35 +95,37 @@
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>Spring Security usage was detected. This pack targets Spring Security 5.x to 6.x readiness.</div>
-      <div class="label">Detected: Spring Boot: 2.7.x · Java: 17 · Build: Gradle · javax usage: yes · jakarta usage: no</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 17 · Build: Gradle · javax usage: yes · jakarta usage: yes</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>17%</strong></td><td><div class="bar"><span style="width:17%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>52%</strong></td><td><div class="bar"><span style="width:52%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Architecture</td><td><strong>33%</strong></td><td><div class="bar"><span style="width:33%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review Spring Security 6 configuration risks</td><td>Spring Security 6 readiness depends on explicit review of removed configuration adapters, matcher API changes, authorization DSL changes, and method security annotations.</td><td>18</td><td><code>node ./bin/emp.js analyze . --pack spring-security-6-readiness --out reports/spring-security-6-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/spring-projects/spring-security-samples
+      <strong>checkout</strong> · https://github.com/spring-projects/spring-security-samples
       <div class="label">Git ref: 5.8.x</div>
+      <div class="label">Checkout: benchmark-repos/spring-security-samples-legacy</div>
+      <div class="label">Git revision: 472a9b7cb683e854bc9d9781875b2df72faad7a5</div>
     </div>
     <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./gradlew compileJava --no-daemon</td><td>51.5 s</td><td>gle-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation. Daemon will be stopped at the end of the build [In...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./gradlew test --no-daemon</td><td>23.7 s</td><td>gle-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation. Daemon will be stopped at the end of the build [In...</td></tr></tbody></table></div>
 
 
 
@@ -132,12 +134,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">19</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">5</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">19</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">31</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">24</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">4</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">55</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>authorizeRequests configuration</td><td>12</td><td>12</td><td>0</td><td>java-configuration (12)</td><td>servlet/java-configuration/src/main/java/example/Example1.java:10 · Review authorization DSL rules before Spring Security 6 migration.<br>servlet/java-configuration/src/main/java/example/Example2.java:11 · Review authorization DSL rules before Spring Security 6 migration.<br>servlet/java-configuration/src/main/java/example/Example3.java:12 · Review authorization DSL rules before Spring Security 6 migration.<br>servlet/java-configuration/src/main/java/example/Example4.java:13 · Review authorization DSL rules before Spring Security 6 migration.<br>servlet/java-configuration/src/main/java/example/Example5.java:14 · Review authorization DSL rules before Spring Security 6 migration.</td></tr><tr><td><span class="pill warning">warning</span><br>Global method security annotation</td><td>4</td><td>4</td><td>0</td><td>method-security (4)</td><td>method-security/src/main/java/example/Example1.java:10 · Review method security configuration before Spring Security 6 migration.<br>method-security/src/main/java/example/Example2.java:11 · Review method security configuration before Spring Security 6 migration.<br>method-security/src/main/java/example/Example3.java:12 · Review method security configuration before Spring Security 6 migration.<br>method-security/src/main/java/example/Example4.java:13 · Review method security configuration before Spring Security 6 migration.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>form (1)</td><td>servlet/java-configuration/authentication/username-password/form/src/main/java/example/MessageController.java:6 · Plan Jakarta namespace alignment before Spring Security 6 validation.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Security 5.8.x detected</td><td>1</td><td>1</td><td>0</td><td>build.gradle (1)</td><td>build.gradle:12 · Plan Spring Security 6 authorization and configuration validation.</td></tr><tr><td><span class="pill warning">warning</span><br>Legacy Spring Security matcher API</td><td>1</td><td>1</td><td>0</td><td>form (1)</td><td>servlet/java-configuration/authentication/username-password/form/src/main/java/example/SecurityConfiguration.java:28 · Review matcher semantics before requestMatchers migration.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>35</td><td>15</td><td>20</td><td>contacts (6)<br>webclient (6)<br>login (4)</td><td>reactive/webflux/java/oauth2/resource-server/src/integTest/java/example/ServerOAuth2ResourceServerApplicationITests.java:48 · Review Spring field injection before modernization.<br>reactive/webflux/java/oauth2/webclient/src/test/java/example/OAuth2WebClientControllerTests.java:45 · Review Spring field injection before modernization.<br>reactive/webflux/java/oauth2/webclient/src/test/java/example/OAuth2WebClientWebFluxApplicationTests.java:33 · Review Spring field injection before modernization.<br>reactive/webflux/java/oauth2/webclient/src/test/java/example/RegisteredOAuth2AuthorizedClientControllerTests.java:45 · Review Spring field injection before modernization.<br>servlet/java-configuration/aspectj/src/test/java/sample/aspectj/AspectJInterceptorTests.java:40 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>18</td><td>14</td><td>4</td><td>contacts (14)<br>dms (4)</td><td>servlet/xml/java/contacts/src/main/java/sample/contact/AddDeleteContactController.java:51 · Review System.out logging before modernization.<br>servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java:58 · Review System.out logging before modernization.<br>servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java:61 · Review System.out logging before modernization.<br>servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java:65 · Review System.out logging before modernization.<br>servlet/xml/java/contacts/src/main/java/sample/contact/ClientApplication.java:72 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill warning">warning</span><br>Serializable type without serialVersionUID</td><td>1</td><td>1</td><td>0</td><td>contacts (1)</td><td>servlet/xml/java/contacts/src/main/java/sample/contact/Contact.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

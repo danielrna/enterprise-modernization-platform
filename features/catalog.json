@@ -2,6 +2,41 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.1.9",
+      "title": "v0.1.9",
+      "date": "2026-07-01",
+      "summary": "Spring Security checkout evidence batch with one passing compile/test validation report and two honest failure-evidence reports.",
+      "features": [
+        {
+          "id": "spring-security-checkout-evidence-batch-one",
+          "type": "evidence",
+          "name": "Spring Security checkout evidence batch one",
+          "audience": "Consultants and enterprise Java teams validating Spring Security 6 readiness evidence",
+          "summary": "Promote three Spring Security readiness reports from catalog-backed examples to checkout-backed evidence.",
+          "evidence": [
+            "Promotes Spring Petclinic REST Security to checkout-backed evidence with passing Maven compile and test validation.",
+            "Promotes Spring Boot RealWorld Security to checkout-backed evidence with honest Gradle/JDK validation failure evidence.",
+            "Promotes Spring Security Samples Legacy to checkout-backed evidence with honest Gradle build failure evidence.",
+            "Raises checkout-backed evidence from 25 to 28 reports and passing validation evidence from 12 to 13 reports while preserving the 65-report public catalog."
+          ],
+          "links": [
+            {
+              "label": "Spring Petclinic REST Security report",
+              "href": "docs/benchmarks/spring-petclinic-rest-security/index.html"
+            },
+            {
+              "label": "Spring Security Samples Legacy report",
+              "href": "docs/benchmarks/spring-security-samples-legacy/index.html"
+            },
+            {
+              "label": "Benchmark index",
+              "href": "docs/benchmarks/index.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.1.8",
       "title": "v0.1.8",
       "date": "2026-07-01",
