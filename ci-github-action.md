@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform-public@v0.1.3
+        uses: danielrna/enterprise-modernization-platform@v0.1.3
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -37,7 +37,7 @@ Add a `.preflight-rules.yml` file to the analyzed repository and pass it to the 
 
 ```yaml
 - name: Run EMP readiness
-  uses: danielrna/enterprise-modernization-platform-public@v0.1.3
+  uses: danielrna/enterprise-modernization-platform@v0.1.3
   with:
     path: .
     pack: spring-boot-3-readiness
