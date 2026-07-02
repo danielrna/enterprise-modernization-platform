@@ -2,6 +2,37 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.2.4",
+      "title": "v0.2.4",
+      "date": "2026-07-02",
+      "summary": "MCP dry-run transformation planning for AI-assisted migration workflows.",
+      "features": [
+        {
+          "id": "mcp-transform-plan-tool",
+          "type": "interface",
+          "name": "MCP transform plan tool",
+          "audience": "AI clients and consultants planning migration changes before execution",
+          "summary": "Expose dry-run transformation plans through MCP without mutating project files.",
+          "evidence": [
+            "Adds the MCP `emp.transformPlan` tool alongside `emp.analyze`, `emp.packs`, and `emp.benchmarks`.",
+            "Runs existing EMP transformation planning in dry-run mode with no validation or file mutation.",
+            "Returns pack, mode, status, selected engine, plan engine, summary, planned change count, changed files, recipes, replacement counts, and OpenRewrite command metadata.",
+            "Adds an automated no-mutation test using a Spring fixture with a Jakarta namespace rewrite plan."
+          ],
+          "links": [
+            {
+              "label": "MCP usage",
+              "href": "README.md#cli"
+            },
+            {
+              "label": "Migration Hub",
+              "href": "docs/migration-hub/index.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.2.3",
       "title": "v0.2.3",
       "date": "2026-07-02",

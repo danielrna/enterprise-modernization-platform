@@ -8,9 +8,9 @@ The product is not a Java migration tool. The product is confidence that an appl
 
 ## Try In 5 Minutes
 
-Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.2.3
+Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.2.4
 
-Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.2.3/emp-smoke-report.zip
+Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.2.4/emp-smoke-report.zip
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform/migration-hub/spring-boot-2-to-3.html
 
@@ -54,7 +54,7 @@ reports/readiness/index.html
 Run the published Docker image:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.3 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.4 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
 ```
 
 Or build the CLI image locally:
@@ -93,7 +93,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.2.3
+        uses: danielrna/enterprise-modernization-platform@v0.2.4
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -121,6 +121,7 @@ The MCP stdio server exposes:
 - `emp.analyze`: run readiness analysis with optional enterprise rules.
 - `emp.packs`: list modernization packs or return detailed metadata for one pack.
 - `emp.benchmarks`: summarize published benchmark evidence with optional pack, source, validation-status, and limit filters.
+- `emp.transformPlan`: create a dry-run transformation plan without applying file changes.
 
 ## What It Does
 
@@ -132,7 +133,7 @@ The MCP stdio server exposes:
 - Runs dry-run, apply, rollback, validation, and OpenRewrite-backed transformation flows.
 - Captures trust evidence for compilation, tests, rollback, binary compatibility, public API compatibility, breaking API count, and confidence.
 - Applies client-owned enterprise rules from `.preflight-rules.yml`.
-- Exposes an MCP stdio interface for AI clients through `emp.analyze`, `emp.packs`, and `emp.benchmarks`.
+- Exposes an MCP stdio interface for AI clients through `emp.analyze`, `emp.packs`, `emp.benchmarks`, and `emp.transformPlan`.
 - Packages the CLI in Docker with Node, Git, Maven, and Java 21.
 
 ## Consultant Workflow
@@ -245,7 +246,7 @@ Current automated coverage verifies:
 
 ## Current Status
 
-Implemented through v0.2.3:
+Implemented through v0.2.4:
 
 - CLI, Docker, MCP, and GitHub Action interfaces.
 - Spring Boot 2 to 3 readiness and transformation workflow.

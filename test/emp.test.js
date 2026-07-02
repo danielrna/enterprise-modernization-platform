@@ -158,14 +158,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 11);
+  assert.equal(result.count, 12);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.2\.3/);
-  assert.match(html, /MCP benchmark evidence tool/);
-  assert.match(html, /emp\.benchmarks/);
+  assert.match(index, /v0\.2\.4/);
+  assert.match(html, /MCP transform plan tool/);
+  assert.match(html, /emp\.transformPlan/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## MCP benchmark evidence tool/);
+  assert.match(markdown, /## MCP transform plan tool/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {
@@ -882,6 +882,41 @@ test('MCP exposes published benchmark evidence summaries', async () => {
   const passed = JSON.parse(passedResult.result.content[0].text);
   assert.equal(passed.benchmarks.every((benchmark) => benchmark.validationStatus === 'passed'), true);
   assert.equal(passed.totals.validationPassed >= passed.benchmarks.length, true);
+});
+
+test('MCP transformPlan returns a dry-run plan without mutating files', async () => {
+  const root = await makeSpringProject();
+  const sourceFile = path.join(root, 'src/main/java/com/example/Demo.java');
+  const before = await fs.readFile(sourceFile, 'utf8');
+
+  const list = await handleMcpRequest({
+    jsonrpc: '2.0',
+    id: 15,
+    method: 'tools/list'
+  });
+  assert.equal(list.result.tools.some((tool) => tool.name === 'emp.transformPlan'), true);
+
+  const planResult = await handleMcpRequest({
+    jsonrpc: '2.0',
+    id: 16,
+    method: 'tools/call',
+    params: {
+      name: 'emp.transformPlan',
+      arguments: { path: root, pack: 'spring-boot-3-readiness', engine: 'native' }
+    }
+  });
+  const plan = JSON.parse(planResult.result.content[0].text);
+  const after = await fs.readFile(sourceFile, 'utf8');
+
+  assert.equal(plan.mode, 'dry-run');
+  assert.equal(plan.status, 'dry-run');
+  assert.equal(plan.engine, 'native');
+  assert.equal(plan.planEngine, 'emp-native-rewrite');
+  assert.equal(plan.plannedChanges, 1);
+  assert.equal(plan.changes[0].file, 'src/main/java/com/example/Demo.java');
+  assert.equal(plan.changes[0].recipe, 'javax-to-jakarta-namespace');
+  assert.equal(plan.appliedChanges, 0);
+  assert.equal(after, before);
 });
 
 test('GitHub Action exposes Docker readiness analysis inputs', async () => {

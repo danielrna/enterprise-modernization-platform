@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import { analyzeProject } from './scanner.js';
 import { scoreReadiness } from './readiness.js';
 import { loadEnterpriseRules, evaluateEnterpriseRules } from './rules.js';
+import { transformProject } from './transform.js';
 
 const PACKS_URL = new URL('../packs/', import.meta.url);
 const BENCHMARKS_URL = new URL('../docs/benchmarks/', import.meta.url);
@@ -11,7 +12,7 @@ export async function handleMcpRequest(request) {
   if (request.method === 'initialize') {
     return response(request.id, {
       protocolVersion: '2024-11-05',
-      serverInfo: { name: 'enterprise-modernization-platform', version: '0.2.3' },
+      serverInfo: { name: 'enterprise-modernization-platform', version: '0.2.4' },
       capabilities: { tools: {} }
     });
   }
@@ -51,6 +52,20 @@ export async function handleMcpRequest(request) {
               source: { type: 'string' },
               validationStatus: { type: 'string' },
               limit: { type: 'number' }
+            }
+          }
+        },
+        {
+          name: 'emp.transformPlan',
+          description: 'Create a dry-run transformation plan without applying file changes.',
+          inputSchema: {
+            type: 'object',
+            properties: {
+              path: { type: 'string' },
+              pack: { type: 'string' },
+              engine: { type: 'string' },
+              recipe: { type: 'string' },
+              recipeArtifact: { type: 'string' }
             }
           }
         }
@@ -132,6 +147,44 @@ export async function handleMcpRequest(request) {
             limit
           },
           benchmarks: filtered.slice(0, limit)
+        }, null, 2)
+      }]
+    });
+  }
+
+  if (request.method === 'tools/call' && request.params?.name === 'emp.transformPlan') {
+    const args = request.params.arguments || {};
+    const root = path.resolve(args.path || '.');
+    const transformation = await transformProject({
+      root,
+      pack: args.pack || 'spring-boot-3-readiness',
+      mode: 'dry-run',
+      validate: false,
+      engine: args.engine || 'native',
+      recipe: args.recipe || undefined,
+      recipeArtifact: args.recipeArtifact || undefined
+    });
+    return response(request.id, {
+      content: [{
+        type: 'text',
+        text: JSON.stringify({
+          pack: transformation.pack,
+          mode: transformation.mode,
+          status: transformation.status,
+          engine: transformation.engine,
+          requestedEngine: transformation.requestedEngine,
+          planEngine: transformation.plan.engine,
+          summary: transformation.plan.summary,
+          plannedChanges: transformation.plan.changes.length,
+          changes: transformation.plan.changes.map((change) => ({
+            file: change.file,
+            recipe: change.recipe,
+            replacements: change.replacements
+          })),
+          command: transformation.plan.command,
+          openRewrite: transformation.plan.openRewrite,
+          appliedChanges: transformation.applied.length,
+          validation: transformation.validation
         }, null, 2)
       }]
     });

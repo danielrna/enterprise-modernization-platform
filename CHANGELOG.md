@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.2.4
+
+- Added the MCP `emp.transformPlan` tool so AI clients can inspect dry-run transformation plans without applying changes.
+
 ## v0.2.3
 
 - Added the MCP `emp.benchmarks` tool so AI clients can summarize published benchmark evidence by pack, source, and validation status.
