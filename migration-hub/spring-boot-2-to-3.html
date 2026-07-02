@@ -87,8 +87,8 @@
       </div>
       <div class="actions">
         <a class="primary" href="#try-in-5-minutes">Run in 5 minutes</a>
-        <a href="https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.2.6/emp-smoke-report.zip">Download sample report</a>
-        <a href="https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.2.6">Release v0.2.6</a>
+        <a href="https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.2.7/emp-smoke-report.zip">Download sample report</a>
+        <a href="https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.2.7">Release v0.2.7</a>
       </div>
     </section>
 
@@ -216,12 +216,12 @@
       <a href="../benchmarks/gs-spring-boot-27/index.html">Use the validated benchmark as reference</a>
       <a href="../editions.html">Compare editions</a>
       <a href="../contact.html">Request access</a>
-      <a href="https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.2.6">Download v0.2.6</a>
+      <a href="https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.2.7">Download v0.2.7</a>
     </section>
 
     <h2 id="try-in-5-minutes">Try in 5 Minutes</h2>
     <p>Run a readiness report on any Java or Spring repository. The output is a static HTML report and a machine-readable JSON report.</p>
-    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.6 analyze . --pack spring-boot-3-readiness --out reports/spring-boot-readiness</code></pre>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.7 analyze . --pack spring-boot-3-readiness --out reports/spring-boot-readiness</code></pre>
     <p>Open the generated report:</p>
     <pre><code>reports/spring-boot-readiness/index.html</code></pre>
 
@@ -239,7 +239,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run readiness analysis
-        uses: danielrna/enterprise-modernization-platform@v0.2.6
+        uses: danielrna/enterprise-modernization-platform@v0.2.7
         with:
           path: .
           pack: spring-boot-3-readiness
