@@ -83,6 +83,96 @@
       "scope": "production"
     },
     {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review persistence and token date handling before namespace migration.",
+      "file": "model-jpa/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review persistence and token date handling before namespace migration.",
+      "file": "model-jpa/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review persistence and token date handling before namespace migration.",
+      "file": "model-jpa/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review persistence and token date handling before namespace migration.",
+      "file": "model-jpa/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review persistence and token date handling before namespace migration.",
+      "file": "model-jpa/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Route production output through logging.",
+      "file": "services/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Route production output through logging.",
+      "file": "services/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Route production output through logging.",
+      "file": "services/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Route production output through logging.",
+      "file": "services/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Route production output through logging.",
+      "file": "services/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
       "code": "javax-usage",
       "severity": "critical",
       "title": "javax namespace usage detected",
@@ -413,51 +503,6 @@
       "recommendation": "Inventory Java EE APIs before Jakarta conversion.",
       "file": "services/Example42.java",
       "line": 51,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review persistence and token date handling before namespace migration.",
-      "file": "model-jpa/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review persistence and token date handling before namespace migration.",
-      "file": "model-jpa/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review persistence and token date handling before namespace migration.",
-      "file": "model-jpa/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review persistence and token date handling before namespace migration.",
-      "file": "model-jpa/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review persistence and token date handling before namespace migration.",
-      "file": "model-jpa/Example5.java",
-      "line": 14,
       "scope": "production"
     },
     {
@@ -1547,51 +1592,6 @@
       "recommendation": "Review persistence and token date handling before namespace migration.",
       "file": "model-jpa/Example126.java",
       "line": 135,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Route production output through logging.",
-      "file": "services/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Route production output through logging.",
-      "file": "services/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Route production output through logging.",
-      "file": "services/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Route production output through logging.",
-      "file": "services/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Route production output through logging.",
-      "file": "services/Example5.java",
-      "line": 14,
       "scope": "production"
     },
     {
@@ -2738,195 +2738,6 @@
       "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example110Test.java",
       "line": 119,
       "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example111Test.java",
-      "line": 120,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example112Test.java",
-      "line": 121,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example113Test.java",
-      "line": 122,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example114Test.java",
-      "line": 123,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example115Test.java",
-      "line": 124,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example116Test.java",
-      "line": 125,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example117Test.java",
-      "line": 126,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example118Test.java",
-      "line": 127,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example119Test.java",
-      "line": 128,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example120Test.java",
-      "line": 129,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example121Test.java",
-      "line": 130,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example122Test.java",
-      "line": 131,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example123Test.java",
-      "line": 132,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example124Test.java",
-      "line": 133,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example125Test.java",
-      "line": 134,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example126Test.java",
-      "line": 135,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example127Test.java",
-      "line": 136,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example128Test.java",
-      "line": 137,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example129Test.java",
-      "line": 138,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example130Test.java",
-      "line": 139,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example131Test.java",
-      "line": 140,
-      "scope": "test"
     }
   ],
   "findingSummary": {
@@ -3175,6 +2986,141 @@
       "file": "services/Example5.java",
       "line": 14,
       "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review persistence and token date handling before namespace migration.",
+      "file": "model-jpa/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review persistence and token date handling before namespace migration.",
+      "file": "model-jpa/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review persistence and token date handling before namespace migration.",
+      "file": "model-jpa/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review persistence and token date handling before namespace migration.",
+      "file": "model-jpa/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review persistence and token date handling before namespace migration.",
+      "file": "model-jpa/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Route production output through logging.",
+      "file": "services/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Route production output through logging.",
+      "file": "services/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Route production output through logging.",
+      "file": "services/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Route production output through logging.",
+      "file": "services/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Route production output through logging.",
+      "file": "services/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Keep test console output separate from production modernization risk.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example1Test.java",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Keep test console output separate from production modernization risk.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example2Test.java",
+      "line": 11,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Keep test console output separate from production modernization risk.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example3Test.java",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Keep test console output separate from production modernization risk.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example4Test.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Keep test console output separate from production modernization risk.",
+      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example5Test.java",
+      "line": 14,
+      "scope": "test"
     },
     {
       "code": "javax-usage",
@@ -3507,51 +3453,6 @@
       "recommendation": "Inventory Java EE APIs before Jakarta conversion.",
       "file": "services/Example42.java",
       "line": 51,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review persistence and token date handling before namespace migration.",
-      "file": "model-jpa/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review persistence and token date handling before namespace migration.",
-      "file": "model-jpa/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review persistence and token date handling before namespace migration.",
-      "file": "model-jpa/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review persistence and token date handling before namespace migration.",
-      "file": "model-jpa/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review persistence and token date handling before namespace migration.",
-      "file": "model-jpa/Example5.java",
-      "line": 14,
       "scope": "production"
     },
     {
@@ -4648,51 +4549,6 @@
       "severity": "info",
       "title": "System.out logging",
       "recommendation": "Route production output through logging.",
-      "file": "services/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Route production output through logging.",
-      "file": "services/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Route production output through logging.",
-      "file": "services/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Route production output through logging.",
-      "file": "services/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Route production output through logging.",
-      "file": "services/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Route production output through logging.",
       "file": "services/Example6.java",
       "line": 15,
       "scope": "production"
@@ -4840,51 +4696,6 @@
       "file": "services/Example22.java",
       "line": 31,
       "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example1Test.java",
-      "line": 10,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example2Test.java",
-      "line": 11,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example3Test.java",
-      "line": 12,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example4Test.java",
-      "line": 13,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example5Test.java",
-      "line": 14,
-      "scope": "test"
     },
     {
       "code": "system-out",
@@ -5830,195 +5641,6 @@
       "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example110Test.java",
       "line": 119,
       "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example111Test.java",
-      "line": 120,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example112Test.java",
-      "line": 121,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example113Test.java",
-      "line": 122,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example114Test.java",
-      "line": 123,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example115Test.java",
-      "line": 124,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example116Test.java",
-      "line": 125,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example117Test.java",
-      "line": 126,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example118Test.java",
-      "line": 127,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example119Test.java",
-      "line": 128,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example120Test.java",
-      "line": 129,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example121Test.java",
-      "line": 130,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example122Test.java",
-      "line": 131,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example123Test.java",
-      "line": 132,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example124Test.java",
-      "line": 133,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example125Test.java",
-      "line": 134,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example126Test.java",
-      "line": 135,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example127Test.java",
-      "line": 136,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example128Test.java",
-      "line": 137,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example129Test.java",
-      "line": 138,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example130Test.java",
-      "line": 139,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Keep test console output separate from production modernization risk.",
-      "file": "testsuite/integration-arquillian/tests/base/src/test/java/Example131Test.java",
-      "line": 140,
-      "scope": "test"
     }
   ],
   "evidence": [
@@ -6082,5 +5704,14 @@
       ],
       "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
     }
-  ]
+  ],
+  "findingDetails": {
+    "compacted": false,
+    "total": 300,
+    "productionTotal": 190,
+    "testTotal": 110,
+    "detailedTotal": 300,
+    "omittedTotal": 0,
+    "policy": "Representative findings are capped at 300 entries for benchmark report JSON. Full counts are preserved in findingSummary."
+  }
 }

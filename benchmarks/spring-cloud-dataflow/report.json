@@ -96,6 +96,51 @@
       "scope": "production"
     },
     {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review domain date handling.",
+      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review domain date handling.",
+      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review domain date handling.",
+      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review domain date handling.",
+      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review domain date handling.",
+      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection patterns",
@@ -2685,555 +2730,6 @@
       "recommendation": "Prefer constructor injection in services touched by migration work.",
       "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example293.java",
       "line": 302,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example294.java",
-      "line": 303,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example295.java",
-      "line": 304,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example296.java",
-      "line": 305,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example297.java",
-      "line": 306,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example298.java",
-      "line": 307,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example299.java",
-      "line": 308,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example300.java",
-      "line": 309,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example6.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example7.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example8.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example10.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example12.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example16.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example17.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example18.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example19.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example20.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example21.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example26.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example27.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example28.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example29.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example30.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example31.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example32.java",
-      "line": 41,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example33.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example34.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example35.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example36.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example37.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example38.java",
-      "line": 47,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example39.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example40.java",
-      "line": 49,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example41.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example42.java",
-      "line": 51,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example43.java",
-      "line": 52,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example44.java",
-      "line": 53,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example45.java",
-      "line": 54,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example46.java",
-      "line": 55,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example47.java",
-      "line": 56,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example48.java",
-      "line": 57,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example49.java",
-      "line": 58,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example50.java",
-      "line": 59,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example51.java",
-      "line": 60,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example52.java",
-      "line": 61,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example53.java",
-      "line": 62,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example54.java",
-      "line": 63,
       "scope": "production"
     }
   ],
@@ -3489,6 +2985,51 @@
       "scope": "production"
     },
     {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review domain date handling.",
+      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review domain date handling.",
+      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review domain date handling.",
+      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review domain date handling.",
+      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review domain date handling.",
+      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection patterns",
@@ -6079,555 +5620,6 @@
       "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example293.java",
       "line": 302,
       "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example294.java",
-      "line": 303,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example295.java",
-      "line": 304,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example296.java",
-      "line": 305,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example297.java",
-      "line": 306,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example298.java",
-      "line": 307,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example299.java",
-      "line": 308,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-cloud-dataflow-server/src/main/java/org/springframework/cloud/dataflow/Example300.java",
-      "line": 309,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example6.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example7.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example8.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example10.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example12.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example16.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example17.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example18.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example19.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example20.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example21.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example26.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example27.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example28.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example29.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example30.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example31.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example32.java",
-      "line": 41,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example33.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example34.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example35.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example36.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example37.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example38.java",
-      "line": 47,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example39.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example40.java",
-      "line": 49,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example41.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example42.java",
-      "line": 51,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example43.java",
-      "line": 52,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example44.java",
-      "line": 53,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example45.java",
-      "line": 54,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example46.java",
-      "line": 55,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example47.java",
-      "line": 56,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example48.java",
-      "line": 57,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example49.java",
-      "line": 58,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example50.java",
-      "line": 59,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example51.java",
-      "line": 60,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example52.java",
-      "line": 61,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example53.java",
-      "line": 62,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "spring-cloud-dataflow-core/src/main/java/org/springframework/cloud/dataflow/Example54.java",
-      "line": 63,
-      "scope": "production"
     }
   ],
   "evidence": [
@@ -6712,5 +5704,14 @@
       ],
       "suggestedCommand": "node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust"
     }
-  ]
+  ],
+  "findingDetails": {
+    "compacted": false,
+    "total": 300,
+    "productionTotal": 300,
+    "testTotal": 0,
+    "detailedTotal": 300,
+    "omittedTotal": 0,
+    "policy": "Representative findings are capped at 300 entries for benchmark report JSON. Full counts are preserved in findingSummary."
+  }
 }

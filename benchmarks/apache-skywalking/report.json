@@ -96,6 +96,51 @@
       "scope": "production"
     },
     {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "apache/skywalking/src/main/java/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "apache/skywalking/src/main/java/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "apache/skywalking/src/main/java/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "apache/skywalking/src/main/java/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "apache/skywalking/src/main/java/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection patterns",
@@ -1182,51 +1227,6 @@
       "recommendation": "Prefer constructor injection in services touched by migration work.",
       "file": "apache/skywalking/src/main/java/Example126.java",
       "line": 135,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example5.java",
-      "line": 14,
       "scope": "production"
     },
     {
@@ -2730,384 +2730,6 @@
       "recommendation": "Review date handling before migration validation.",
       "file": "apache/skywalking/src/main/java/Example172.java",
       "line": 181,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example173.java",
-      "line": 182,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example174.java",
-      "line": 183,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example175.java",
-      "line": 184,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example176.java",
-      "line": 185,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example177.java",
-      "line": 186,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example178.java",
-      "line": 187,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example179.java",
-      "line": 188,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example180.java",
-      "line": 189,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example181.java",
-      "line": 190,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example182.java",
-      "line": 191,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example183.java",
-      "line": 192,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example184.java",
-      "line": 193,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example185.java",
-      "line": 194,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example186.java",
-      "line": 195,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example187.java",
-      "line": 196,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example188.java",
-      "line": 197,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example189.java",
-      "line": 198,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example190.java",
-      "line": 199,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example191.java",
-      "line": 200,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example192.java",
-      "line": 201,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example193.java",
-      "line": 202,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example194.java",
-      "line": 203,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example195.java",
-      "line": 204,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example196.java",
-      "line": 205,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example197.java",
-      "line": 206,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example198.java",
-      "line": 207,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example199.java",
-      "line": 208,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example200.java",
-      "line": 209,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example201.java",
-      "line": 210,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example202.java",
-      "line": 211,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example203.java",
-      "line": 212,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example204.java",
-      "line": 213,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example205.java",
-      "line": 214,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example206.java",
-      "line": 215,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example207.java",
-      "line": 216,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example208.java",
-      "line": 217,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example209.java",
-      "line": 218,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example210.java",
-      "line": 219,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example211.java",
-      "line": 220,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example212.java",
-      "line": 221,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example213.java",
-      "line": 222,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example214.java",
-      "line": 223,
       "scope": "production"
     }
   ],
@@ -3363,6 +2985,51 @@
       "scope": "production"
     },
     {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "apache/skywalking/src/main/java/Example1.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "apache/skywalking/src/main/java/Example2.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "apache/skywalking/src/main/java/Example3.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "apache/skywalking/src/main/java/Example4.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "Legacy date API usage",
+      "recommendation": "Review date handling before migration validation.",
+      "file": "apache/skywalking/src/main/java/Example5.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection patterns",
@@ -4449,51 +4116,6 @@
       "recommendation": "Prefer constructor injection in services touched by migration work.",
       "file": "apache/skywalking/src/main/java/Example126.java",
       "line": 135,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example5.java",
-      "line": 14,
       "scope": "production"
     },
     {
@@ -5998,384 +5620,6 @@
       "file": "apache/skywalking/src/main/java/Example172.java",
       "line": 181,
       "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example173.java",
-      "line": 182,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example174.java",
-      "line": 183,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example175.java",
-      "line": 184,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example176.java",
-      "line": 185,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example177.java",
-      "line": 186,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example178.java",
-      "line": 187,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example179.java",
-      "line": 188,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example180.java",
-      "line": 189,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example181.java",
-      "line": 190,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example182.java",
-      "line": 191,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example183.java",
-      "line": 192,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example184.java",
-      "line": 193,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example185.java",
-      "line": 194,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example186.java",
-      "line": 195,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example187.java",
-      "line": 196,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example188.java",
-      "line": 197,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example189.java",
-      "line": 198,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example190.java",
-      "line": 199,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example191.java",
-      "line": 200,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example192.java",
-      "line": 201,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example193.java",
-      "line": 202,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example194.java",
-      "line": 203,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example195.java",
-      "line": 204,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example196.java",
-      "line": 205,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example197.java",
-      "line": 206,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example198.java",
-      "line": 207,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example199.java",
-      "line": 208,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example200.java",
-      "line": 209,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example201.java",
-      "line": 210,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example202.java",
-      "line": 211,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example203.java",
-      "line": 212,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example204.java",
-      "line": 213,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example205.java",
-      "line": 214,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example206.java",
-      "line": 215,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example207.java",
-      "line": 216,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example208.java",
-      "line": 217,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example209.java",
-      "line": 218,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example210.java",
-      "line": 219,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example211.java",
-      "line": 220,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example212.java",
-      "line": 221,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example213.java",
-      "line": 222,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "apache/skywalking/src/main/java/Example214.java",
-      "line": 223,
-      "scope": "production"
     }
   ],
   "evidence": [
@@ -6460,5 +5704,14 @@
       ],
       "suggestedCommand": "node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust"
     }
-  ]
+  ],
+  "findingDetails": {
+    "compacted": false,
+    "total": 300,
+    "productionTotal": 300,
+    "testTotal": 0,
+    "detailedTotal": 300,
+    "omittedTotal": 0,
+    "policy": "Representative findings are capped at 300 entries for benchmark report JSON. Full counts are preserved in findingSummary."
+  }
 }

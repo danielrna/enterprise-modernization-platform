@@ -105,6 +105,321 @@
       "scope": "production"
     },
     {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/CoreAuthenticationUtils.java",
+      "line": 270,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/CoreAuthenticationUtils.java",
+      "line": 273,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/CoreAuthenticationUtils.java",
+      "line": 342,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/handler/support/jaas/JaasAuthenticationHandler.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/support/password/PasswordEncoderUtils.java",
+      "line": 63,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/DateTimeUtils.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/io/PathWatcherService.java",
+      "line": 5,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 241,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 1147,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "gradle/tests.gradle",
+      "line": 219,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "gradle/tests.gradle",
+      "line": 224,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "gradle/tests.gradle",
+      "line": 229,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "gradle/tests.gradle",
+      "line": 236,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/OpenIdProviderController.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/mvc/YadisController.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/mvc/YadisController.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptDecryptPropertyCommand.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptEncryptPropertyCommand.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 2225,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 2256,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 2447,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 3609,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 3709,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/springboot.gradle",
+      "line": 112,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/springboot.gradle",
+      "line": 124,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/tests.gradle",
+      "line": 188,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/tests.gradle",
+      "line": 198,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptTestAlgorithmsCommand.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/oidc/GenerateOidcJsonWebKeystoreCommand.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/saml/GenerateSamlIdPMetadataCommand.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/services/GenerateYamlRegisteredServiceCommand.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/services/ValidateRegisteredServiceCommand.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/util/ValidateLdapConnectionCommand.java",
+      "line": 170,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/util/ValidateLdapConnectionCommand.java",
+      "line": 175,
+      "scope": "production"
+    },
+    {
       "code": "system-out",
       "severity": "info",
       "title": "System.out logging",
@@ -337,744 +652,6 @@
       "file": "ci/checks/CheckSpringConfigurationFactories.java",
       "line": 27,
       "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/CoreAuthenticationUtils.java",
-      "line": 270,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/CoreAuthenticationUtils.java",
-      "line": 273,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/CoreAuthenticationUtils.java",
-      "line": 342,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/handler/support/jaas/JaasAuthenticationHandler.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/support/password/PasswordEncoderUtils.java",
-      "line": 63,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/support/password/PasswordEncoderUtils.java",
-      "line": 64,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-tickets-api/src/main/java/org/apereo/cas/ticket/serialization/DefaultTicketStringSerializationManager.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/CollectionUtils.java",
-      "line": 85,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/DateTimeUtils.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/cipher/CipherExecutorUtils.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/cipher/CipherExecutorUtils.java",
-      "line": 56,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/io/PathWatcherService.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/scripting/ScriptingUtils.java",
-      "line": 307,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/scripting/ScriptingUtils.java",
-      "line": 470,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "docs/cas-server-documentation-processor/src/main/java/org/apereo/cas/documentation/CasDocumentationApplication.java",
-      "line": 209,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 241,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 1147,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 2225,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 2256,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 2447,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 3609,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 3709,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/springboot.gradle",
-      "line": 112,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/springboot.gradle",
-      "line": 124,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "gradle/tests.gradle",
-      "line": 219,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "gradle/tests.gradle",
-      "line": 224,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "gradle/tests.gradle",
-      "line": 229,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "gradle/tests.gradle",
-      "line": 236,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/tests.gradle",
-      "line": 188,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/tests.gradle",
-      "line": 198,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-audit-couchbase/src/main/java/org/apereo/cas/audit/CouchbaseAuditTrailManager.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-audit-couchdb/src/main/java/org/apereo/cas/couchdb/audit/CouchDbAuditActionContext.java",
-      "line": 9,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-audit-dynamodb/src/main/java/org/apereo/cas/audit/DynamoDbAuditTrailManagerFacilitator.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-discovery-profile/src/main/java/org/apereo/cas/discovery/CasServerProfileRegistrar.java",
-      "line": 57,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jpa-hibernate/src/main/java/org/apereo/cas/hibernate/CasHibernateJpaBeanFactory.java",
-      "line": 78,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jpa-ticket-registry/src/main/java/org/apereo/cas/ticket/registry/JpaTicketEntityFactory.java",
-      "line": 71,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jpa-util/src/main/java/org/apereo/cas/configuration/support/JpaBeans.java",
-      "line": 47,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jpa-util/src/main/java/org/apereo/cas/jpa/AbstractJpaEntityFactory.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-ldap-core/src/main/java/org/apereo/cas/authentication/support/DefaultLdapAccountStateHandler.java",
-      "line": 210,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-ldap-core/src/main/java/org/apereo/cas/util/LdapUtils.java",
-      "line": 1022,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-ldap-core/src/main/java/org/apereo/cas/util/LdapUtils.java",
-      "line": 1023,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-memcached-core/src/main/java/org/apereo/cas/memcached/kryo/CloseableKryoFactory.java",
-      "line": 59,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-memcached-core/src/main/java/org/apereo/cas/memcached/kryo/serial/ThrowableSerializer.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-mongo-core/src/main/java/org/apereo/cas/mongo/BaseConverters.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-mongo-ticket-registry/src/main/java/org/apereo/cas/ticket/registry/MongoDbTicketRegistry.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-mongo-ticket-registry/src/main/java/org/apereo/cas/ticket/registry/TicketHolder.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-oidc-core-api/src/main/java/org/apereo/cas/oidc/profile/OidcProfileScopeToAttributesFilter.java",
-      "line": 158,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/OpenIdProviderController.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/mvc/YadisController.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/mvc/YadisController.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-pac4j-core-clients/src/main/java/org/apereo/cas/support/pac4j/authentication/clients/BaseDelegatedClientFactory.java",
-      "line": 449,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-pac4j-core-clients/src/main/java/org/apereo/cas/support/pac4j/authentication/clients/BaseDelegatedClientFactory.java",
-      "line": 540,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-pac4j-core-clients/src/main/java/org/apereo/cas/support/pac4j/authentication/clients/BaseDelegatedClientFactory.java",
-      "line": 585,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-reports-core/src/main/java/org/apereo/cas/web/report/AuditLogEndpoint.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-saml-core/src/main/java/org/apereo/cas/config/CoreSamlConfiguration.java",
-      "line": 99,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-saml-core-api/src/main/java/org/apereo/cas/support/saml/util/AbstractSamlObjectBuilder.java",
-      "line": 157,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-saml-core-api/src/main/java/org/apereo/cas/support/saml/util/AbstractSamlObjectBuilder.java",
-      "line": 159,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-saml-idp-core/src/main/java/org/apereo/cas/support/saml/idp/metadata/writer/DefaultSamlIdPCertificateAndKeyWriter.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptDecryptPropertyCommand.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptEncryptPropertyCommand.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptTestAlgorithmsCommand.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jwt/GenerateJwtCommand.java",
-      "line": 108,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jwt/GenerateJwtCommand.java",
-      "line": 117,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jwt/GenerateJwtCommand.java",
-      "line": 157,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/oidc/GenerateOidcJsonWebKeystoreCommand.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/saml/GenerateSamlIdPMetadataCommand.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/services/GenerateYamlRegisteredServiceCommand.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/services/ValidateRegisteredServiceCommand.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/util/ValidateLdapConnectionCommand.java",
-      "line": 170,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/util/ValidateLdapConnectionCommand.java",
-      "line": 175,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-throttle-core/src/main/java/org/apereo/cas/web/support/AbstractThrottledSubmissionHandlerInterceptorAdapter.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-throttle-jdbc/src/main/java/org/apereo/cas/web/support/JdbcThrottledSubmissionHandlerInterceptorAdapter.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-token-core-api/src/main/java/org/apereo/cas/token/JwtBuilder.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-token-core-api/src/main/java/org/apereo/cas/token/JwtTokenTicketBuilder.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-trusted-mfa-core/src/main/java/org/apereo/cas/trusted/authentication/api/MultifactorAuthenticationTrustRecord.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-trusted-mfa-core/src/main/java/org/apereo/cas/trusted/web/flow/AbstractMultifactorTrustedDeviceWebflowConfigurer.java",
-      "line": 122,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-trusted-mfa-couchdb/src/main/java/org/apereo/cas/couchdb/trusted/CouchDbMultifactorAuthenticationTrustRecord.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-trusted-mfa-dynamodb/src/main/java/org/apereo/cas/trusted/authentication/storage/DynamoDbMultifactorTrustEngineFacilitator.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-ws-idp/src/main/java/org/apereo/cas/ws/idp/web/BaseWSFederationRequestController.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-ws-sts-api/src/main/java/org/apereo/cas/support/saml/sts/SamlTokenProvider.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "webapp/cas-server-webapp-init/src/main/java/org/apereo/cas/CasEmbeddedContainerUtils.java",
-      "line": 44,
-      "scope": "production"
     }
   ],
   "testFindings": [
@@ -1175,6 +752,87 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "core/cas-server-core-authentication/src/test/java/org/apereo/cas/authentication/UsernamePasswordCredentialTests.java",
       "line": 39,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "core/cas-server-core-services/src/test/java/org/apereo/cas/services/RegisteredServiceTestUtils.java",
+      "line": 147,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "core/cas-server-core-util/src/test/java/org/apereo/cas/util/DateTimeUtilsTests.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
+      "line": 6,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
+      "line": 8,
       "scope": "test"
     },
     {
@@ -1421,15 +1079,6 @@
       "scope": "test"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-services/src/test/java/org/apereo/cas/services/RegisteredServiceTestUtils.java",
-      "line": 147,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -1463,15 +1112,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "core/cas-server-core-tickets/src/test/java/org/apereo/cas/ticket/factory/BaseTicketFactoryTests.java",
       "line": 62,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "core/cas-server-core-util/src/test/java/org/apereo/cas/util/DateTimeUtilsTests.java",
-      "line": 13,
       "scope": "test"
     },
     {
@@ -1670,15 +1310,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-acme/src/test/java/org/apereo/cas/acme/BaseAcmeTests.java",
       "line": 40,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-audit-rest/src/test/java/org/apereo/cas/audit/RestAuditTrailManagerTests.java",
-      "line": 26,
       "scope": "test"
     },
     {
@@ -2078,15 +1709,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-electrofence/src/test/java/org/apereo/cas/impl/mock/MockTicketGrantingTicketCreatedEventProducer.java",
-      "line": 18,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -2195,78 +1817,6 @@
       "scope": "test"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 32,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 33,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 34,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 35,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 36,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 37,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 38,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 39,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -2348,15 +1898,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-mongo-monitor/src/test/java/org/apereo/cas/monitor/MongoDbHealthIndicatorTests.java",
-      "line": 40,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -2381,15 +1922,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-oauth/src/test/java/org/apereo/cas/support/oauth/authenticator/BaseOAuth20AuthenticatorTests.java",
       "line": 138,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-oauth/src/test/java/org/apereo/cas/ticket/accesstoken/OAuth20JwtBuilderTests.java",
-      "line": 11,
       "scope": "test"
     },
     {
@@ -2420,24 +1952,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-oidc/src/test/java/org/apereo/cas/oidc/jwks/generator/OidcDefaultJsonWebKeystoreGeneratorServiceTests.java",
-      "line": 23,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-oidc/src/test/java/org/apereo/cas/oidc/web/DefaultOAuth20RequestParameterResolverTests.java",
-      "line": 14,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -2453,15 +1967,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-okta-authentication/src/test/java/org/apereo/cas/okta/OktaConfigurationFactoryTests.java",
       "line": 40,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-okta-authentication/src/test/java/org/apereo/cas/okta/OktaPersonAttributeDaoTests.java",
-      "line": 24,
       "scope": "test"
     },
     {
@@ -2489,15 +1994,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-pac4j-core/src/test/java/org/apereo/cas/web/DelegatedClientIdentityProviderConfigurationFactoryTests.java",
       "line": 37,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-pac4j-core-clients/src/test/java/org/apereo/cas/support/pac4j/DelegatedClientJacksonModuleTests.java",
-      "line": 18,
       "scope": "test"
     },
     {
@@ -2816,15 +2312,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-saml-idp/src/test/java/org/apereo/cas/support/saml/web/idp/profile/SamlIdPInitiatedProfileHandlerControllerTests.java",
-      "line": 20,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -2897,33 +2384,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-scim/src/test/java/org/apereo/cas/scim/v1/ScimV1PrincipalAttributeMapperTests.java",
-      "line": 14,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-scim/src/test/java/org/apereo/cas/web/flow/PrincipalScimV1ProvisionerActionTests.java",
-      "line": 30,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-shiro-authentication/src/test/java/org/apereo/cas/adaptors/generic/ShiroAuthenticationHandlerTests.java",
-      "line": 47,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -2939,33 +2399,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-simple-mfa/src/test/java/org/apereo/cas/mfa/simple/ticket/CasSimpleMultifactorAuthenticationTicketExpirationPolicyBuilderTests.java",
       "line": 26,
-      "scope": "test"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
-      "line": 6,
-      "scope": "test"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
-      "line": 7,
-      "scope": "test"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
-      "line": 8,
       "scope": "test"
     },
     {
@@ -3011,15 +2444,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-surrogate-authentication-ldap/src/test/java/org/apereo/cas/authentication/surrogate/SurrogateLdapAuthenticationServiceTests.java",
       "line": 58,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-syncope-authentication/src/test/java/org/apereo/cas/syncope/authentication/BaseSyncopeTests.java",
-      "line": 43,
       "scope": "test"
     },
     {
@@ -3131,15 +2555,6 @@
       "scope": "test"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-webauthn/src/test/java/org/apereo/cas/webauthn/storage/BaseWebAuthnCredentialRepositoryTests.java",
-      "line": 89,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -3194,48 +2609,12 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-x509-core/src/test/java/org/apereo/cas/adaptors/x509/authentication/CasX509Certificate.java",
-      "line": 22,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-x509-core/src/test/java/org/apereo/cas/adaptors/x509/authentication/RevokedCertificateExceptionTests.java",
-      "line": 12,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-x509-core/src/test/java/org/apereo/cas/adaptors/x509/util/MockX509CRL.java",
-      "line": 15,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-x509-webflow/src/test/java/org/apereo/cas/adaptors/x509/web/flow/X509TomcatServletFactoryInitialActionTests.java",
       "line": 37,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-yubikey-core/src/test/java/org/apereo/cas/adaptors/yubikey/DefaultYubiKeyAccountValidatorTests.java",
-      "line": 10,
       "scope": "test"
     },
     {
@@ -3853,240 +3232,6 @@
       "severity": "info",
       "title": "System.out logging",
       "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckEnforceLombokAnnotations.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckEnforceLombokAnnotations.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingClassInTestsSuite.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingClassInTestsSuite.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingConditionalOnFeature.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingConditionalOnFeature.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingConditionalOnMissingBean.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingConditionalOnMissingBean.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingPuppeteerConfig.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingPuppeteerConfig.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingTestTagAnnotation.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingTestTagAnnotation.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingTestsSuiteClassAnnotation.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMissingUtilityClassAnnotation.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMixingSpringBeanWithDependencyInjection.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckMixingSpringBeanWithDependencyInjection.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckPuppeteerScenarioScriptConfiguration.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckPuppeteerScenarioScriptConfiguration.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckRedundantTestConfigurationInheritance.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckRedundantTestConfigurationInheritance.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckRequiredModuleAnnotationReferences.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckRequiredModuleAnnotationReferences.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckSpringConfigurationBeanProxying.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckSpringConfigurationConditionals.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckSpringConfigurationFactories.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "ci/checks/CheckSpringConfigurationFactories.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
       "file": "ci/tests/perf/EvalJMeterTestResults.java",
       "line": 9,
       "scope": "test"
@@ -4164,24 +3309,6 @@
       "scope": "test"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "core/cas-server-core-authentication/src/test/java/org/apereo/cas/authentication/policy/UniquePrincipalAuthenticationPolicyTests.java",
-      "line": 61,
-      "scope": "test"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "core/cas-server-core-authentication/src/test/java/org/apereo/cas/authentication/principal/ChainingPrincipalResolverTests.java",
-      "line": 40,
-      "scope": "test"
-    },
-    {
       "code": "reflection-usage",
       "severity": "info",
       "title": "Reflection usage",
@@ -4231,9 +3358,225 @@
       "severity": "info",
       "title": "Reflection usage",
       "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-authentication-api/src/main/java/org/apereo/cas/authentication/support/password/PasswordEncoderUtils.java",
-      "line": 64,
+      "file": "core/cas-server-core-services/src/test/java/org/apereo/cas/services/RegisteredServiceTestUtils.java",
+      "line": 147,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "core/cas-server-core-util/src/test/java/org/apereo/cas/util/DateTimeUtilsTests.java",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/DateTimeUtils.java",
+      "line": 21,
       "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/io/PathWatcherService.java",
+      "line": 5,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 241,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "gradle/dependencies.gradle",
+      "line": 1147,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "gradle/tests.gradle",
+      "line": 219,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "gradle/tests.gradle",
+      "line": 224,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "gradle/tests.gradle",
+      "line": 229,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "gradle/tests.gradle",
+      "line": 236,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/OpenIdProviderController.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/mvc/YadisController.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/mvc/YadisController.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptDecryptPropertyCommand.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptEncryptPropertyCommand.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
+      "line": 6,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
+      "line": 7,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
+      "line": 8,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "core/cas-server-core-authentication/src/test/java/org/apereo/cas/authentication/policy/UniquePrincipalAuthenticationPolicyTests.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "core/cas-server-core-authentication/src/test/java/org/apereo/cas/authentication/principal/ChainingPrincipalResolverTests.java",
+      "line": 40,
+      "scope": "test"
     },
     {
       "code": "field-injection",
@@ -4461,15 +3804,6 @@
       "scope": "test"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-services/src/test/java/org/apereo/cas/services/RegisteredServiceTestUtils.java",
-      "line": 147,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -4504,87 +3838,6 @@
       "file": "core/cas-server-core-tickets/src/test/java/org/apereo/cas/ticket/factory/BaseTicketFactoryTests.java",
       "line": 62,
       "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-tickets-api/src/main/java/org/apereo/cas/ticket/serialization/DefaultTicketStringSerializationManager.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "core/cas-server-core-util/src/test/java/org/apereo/cas/util/DateTimeUtilsTests.java",
-      "line": 13,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/CollectionUtils.java",
-      "line": 85,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/DateTimeUtils.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/cipher/CipherExecutorUtils.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/cipher/CipherExecutorUtils.java",
-      "line": 56,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/io/PathWatcherService.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/scripting/ScriptingUtils.java",
-      "line": 307,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "core/cas-server-core-util-api/src/main/java/org/apereo/cas/util/scripting/ScriptingUtils.java",
-      "line": 470,
-      "scope": "production"
     },
     {
       "code": "field-injection",
@@ -4731,42 +3984,6 @@
       "scope": "test"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "docs/cas-server-documentation-processor/src/main/java/org/apereo/cas/documentation/CasDocumentationApplication.java",
-      "line": 209,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 241,
-      "scope": "production"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "gradle/dependencies.gradle",
-      "line": 1147,
-      "scope": "production"
-    },
-    {
       "code": "java-internal-api",
       "severity": "warning",
       "title": "JDK internal API usage",
@@ -4827,42 +4044,6 @@
       "recommendation": "Review JDK internal API usage before modernization.",
       "file": "gradle/springboot.gradle",
       "line": 124,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "gradle/tests.gradle",
-      "line": 219,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "gradle/tests.gradle",
-      "line": 224,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "gradle/tests.gradle",
-      "line": 229,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "gradle/tests.gradle",
-      "line": 236,
       "scope": "production"
     },
     {
@@ -4935,42 +4116,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-acme/src/test/java/org/apereo/cas/acme/BaseAcmeTests.java",
       "line": 40,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-audit-couchbase/src/main/java/org/apereo/cas/audit/CouchbaseAuditTrailManager.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-audit-couchdb/src/main/java/org/apereo/cas/couchdb/audit/CouchDbAuditActionContext.java",
-      "line": 9,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-audit-dynamodb/src/main/java/org/apereo/cas/audit/DynamoDbAuditTrailManagerFacilitator.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-audit-rest/src/test/java/org/apereo/cas/audit/RestAuditTrailManagerTests.java",
-      "line": 26,
       "scope": "test"
     },
     {
@@ -5199,15 +4344,6 @@
       "scope": "test"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-discovery-profile/src/main/java/org/apereo/cas/discovery/CasServerProfileRegistrar.java",
-      "line": 57,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -5379,15 +4515,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-electrofence/src/test/java/org/apereo/cas/impl/mock/MockTicketGrantingTicketCreatedEventProducer.java",
-      "line": 18,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -5496,78 +4623,6 @@
       "scope": "test"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 32,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 33,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 34,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 35,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 36,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 37,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 38,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jdbc-drivers/src/test/java/org/apereo/cas/JdbcServletContextListenerTests.java",
-      "line": 39,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -5584,15 +4639,6 @@
       "file": "support/cas-server-support-jpa-eclipselink/src/test/java/org/apereo/cas/eclipselink/CasEclipseLinkJpaBeanFactoryTests.java",
       "line": 44,
       "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jpa-hibernate/src/main/java/org/apereo/cas/hibernate/CasHibernateJpaBeanFactory.java",
-      "line": 78,
-      "scope": "production"
     },
     {
       "code": "field-injection",
@@ -5613,33 +4659,6 @@
       "scope": "test"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jpa-ticket-registry/src/main/java/org/apereo/cas/ticket/registry/JpaTicketEntityFactory.java",
-      "line": 71,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jpa-util/src/main/java/org/apereo/cas/configuration/support/JpaBeans.java",
-      "line": 47,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-jpa-util/src/main/java/org/apereo/cas/jpa/AbstractJpaEntityFactory.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -5656,33 +4675,6 @@
       "file": "support/cas-server-support-ldap/src/test/java/org/apereo/cas/authentication/OpenLdapAuthenticationHandlerTests.java",
       "line": 40,
       "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-ldap-core/src/main/java/org/apereo/cas/authentication/support/DefaultLdapAccountStateHandler.java",
-      "line": 210,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-ldap-core/src/main/java/org/apereo/cas/util/LdapUtils.java",
-      "line": 1022,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-ldap-core/src/main/java/org/apereo/cas/util/LdapUtils.java",
-      "line": 1023,
-      "scope": "production"
     },
     {
       "code": "field-injection",
@@ -5703,24 +4695,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-memcached-core/src/main/java/org/apereo/cas/memcached/kryo/CloseableKryoFactory.java",
-      "line": 59,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-memcached-core/src/main/java/org/apereo/cas/memcached/kryo/serial/ThrowableSerializer.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -5728,42 +4702,6 @@
       "file": "support/cas-server-support-mongo/src/test/java/org/apereo/cas/authentication/MongoDbAuthenticationHandlerTests.java",
       "line": 93,
       "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-mongo-core/src/main/java/org/apereo/cas/mongo/BaseConverters.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-mongo-monitor/src/test/java/org/apereo/cas/monitor/MongoDbHealthIndicatorTests.java",
-      "line": 40,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-mongo-ticket-registry/src/main/java/org/apereo/cas/ticket/registry/MongoDbTicketRegistry.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-mongo-ticket-registry/src/main/java/org/apereo/cas/ticket/registry/TicketHolder.java",
-      "line": 12,
-      "scope": "production"
     },
     {
       "code": "field-injection",
@@ -5790,15 +4728,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-oauth/src/test/java/org/apereo/cas/support/oauth/authenticator/BaseOAuth20AuthenticatorTests.java",
       "line": 138,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-oauth/src/test/java/org/apereo/cas/ticket/accesstoken/OAuth20JwtBuilderTests.java",
-      "line": 11,
       "scope": "test"
     },
     {
@@ -5829,33 +4758,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-oidc/src/test/java/org/apereo/cas/oidc/jwks/generator/OidcDefaultJsonWebKeystoreGeneratorServiceTests.java",
-      "line": 23,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-oidc/src/test/java/org/apereo/cas/oidc/web/DefaultOAuth20RequestParameterResolverTests.java",
-      "line": 14,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-oidc-core-api/src/main/java/org/apereo/cas/oidc/profile/OidcProfileScopeToAttributesFilter.java",
-      "line": 158,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -5872,42 +4774,6 @@
       "file": "support/cas-server-support-okta-authentication/src/test/java/org/apereo/cas/okta/OktaConfigurationFactoryTests.java",
       "line": 40,
       "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-okta-authentication/src/test/java/org/apereo/cas/okta/OktaPersonAttributeDaoTests.java",
-      "line": 24,
-      "scope": "test"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/OpenIdProviderController.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/mvc/YadisController.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-openid/src/main/java/org/apereo/cas/support/openid/web/mvc/YadisController.java",
-      "line": 29,
-      "scope": "production"
     },
     {
       "code": "field-injection",
@@ -5934,42 +4800,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-pac4j-core/src/test/java/org/apereo/cas/web/DelegatedClientIdentityProviderConfigurationFactoryTests.java",
       "line": 37,
-      "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-pac4j-core-clients/src/main/java/org/apereo/cas/support/pac4j/authentication/clients/BaseDelegatedClientFactory.java",
-      "line": 449,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-pac4j-core-clients/src/main/java/org/apereo/cas/support/pac4j/authentication/clients/BaseDelegatedClientFactory.java",
-      "line": 540,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-pac4j-core-clients/src/main/java/org/apereo/cas/support/pac4j/authentication/clients/BaseDelegatedClientFactory.java",
-      "line": 585,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-pac4j-core-clients/src/test/java/org/apereo/cas/support/pac4j/DelegatedClientJacksonModuleTests.java",
-      "line": 18,
       "scope": "test"
     },
     {
@@ -6189,15 +5019,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-reports-core/src/main/java/org/apereo/cas/web/report/AuditLogEndpoint.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -6223,33 +5044,6 @@
       "file": "support/cas-server-support-saml/src/test/java/org/apereo/cas/support/saml/AbstractOpenSamlTests.java",
       "line": 75,
       "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-saml-core/src/main/java/org/apereo/cas/config/CoreSamlConfiguration.java",
-      "line": 99,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-saml-core-api/src/main/java/org/apereo/cas/support/saml/util/AbstractSamlObjectBuilder.java",
-      "line": 157,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-saml-core-api/src/main/java/org/apereo/cas/support/saml/util/AbstractSamlObjectBuilder.java",
-      "line": 159,
-      "scope": "production"
     },
     {
       "code": "field-injection",
@@ -6324,24 +5118,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-saml-idp/src/test/java/org/apereo/cas/support/saml/web/idp/profile/SamlIdPInitiatedProfileHandlerControllerTests.java",
-      "line": 20,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-saml-idp-core/src/main/java/org/apereo/cas/support/saml/idp/metadata/writer/DefaultSamlIdPCertificateAndKeyWriter.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -6414,75 +5190,12 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-scim/src/test/java/org/apereo/cas/scim/v1/ScimV1PrincipalAttributeMapperTests.java",
-      "line": 14,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-scim/src/test/java/org/apereo/cas/web/flow/PrincipalScimV1ProvisionerActionTests.java",
-      "line": 30,
-      "scope": "test"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptDecryptPropertyCommand.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptEncryptPropertyCommand.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jasypt/JasyptTestAlgorithmsCommand.java",
       "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jwt/GenerateJwtCommand.java",
-      "line": 108,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jwt/GenerateJwtCommand.java",
-      "line": 117,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-shell-core/src/main/java/org/apereo/cas/shell/commands/jwt/GenerateJwtCommand.java",
-      "line": 157,
       "scope": "production"
     },
     {
@@ -6540,15 +5253,6 @@
       "scope": "production"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-shiro-authentication/src/test/java/org/apereo/cas/adaptors/generic/ShiroAuthenticationHandlerTests.java",
-      "line": 47,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -6564,33 +5268,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-simple-mfa/src/test/java/org/apereo/cas/mfa/simple/ticket/CasSimpleMultifactorAuthenticationTicketExpirationPolicyBuilderTests.java",
       "line": 26,
-      "scope": "test"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
-      "line": 6,
-      "scope": "test"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
-      "line": 7,
-      "scope": "test"
-    },
-    {
-      "code": "java-internal-api",
-      "severity": "warning",
-      "title": "JDK internal API usage",
-      "recommendation": "Review JDK internal API usage before modernization.",
-      "file": "support/cas-server-support-sms-smsmode/src/test/java/org/apereo/cas/support/sms/SmsModeSmsSenderTests.java",
-      "line": 8,
       "scope": "test"
     },
     {
@@ -6639,33 +5316,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-syncope-authentication/src/test/java/org/apereo/cas/syncope/authentication/BaseSyncopeTests.java",
-      "line": 43,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-throttle-core/src/main/java/org/apereo/cas/web/support/AbstractThrottledSubmissionHandlerInterceptorAdapter.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-throttle-jdbc/src/main/java/org/apereo/cas/web/support/JdbcThrottledSubmissionHandlerInterceptorAdapter.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -6709,24 +5359,6 @@
       "file": "support/cas-server-support-thymeleaf/src/test/java/org/apereo/cas/web/view/ThemeFileTemplateResolverTests.java",
       "line": 39,
       "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-token-core-api/src/main/java/org/apereo/cas/token/JwtBuilder.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-token-core-api/src/main/java/org/apereo/cas/token/JwtTokenTicketBuilder.java",
-      "line": 20,
-      "scope": "production"
     },
     {
       "code": "field-injection",
@@ -6774,42 +5406,6 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-trusted-mfa-core/src/main/java/org/apereo/cas/trusted/authentication/api/MultifactorAuthenticationTrustRecord.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-trusted-mfa-core/src/main/java/org/apereo/cas/trusted/web/flow/AbstractMultifactorTrustedDeviceWebflowConfigurer.java",
-      "line": 122,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-trusted-mfa-couchdb/src/main/java/org/apereo/cas/couchdb/trusted/CouchDbMultifactorAuthenticationTrustRecord.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-trusted-mfa-dynamodb/src/main/java/org/apereo/cas/trusted/authentication/storage/DynamoDbMultifactorTrustEngineFacilitator.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -6828,15 +5424,6 @@
       "scope": "test"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-webauthn/src/test/java/org/apereo/cas/webauthn/storage/BaseWebAuthnCredentialRepositoryTests.java",
-      "line": 89,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -6844,15 +5431,6 @@
       "file": "support/cas-server-support-webauthn/src/test/java/org/apereo/cas/webauthn/web/flow/WebAuthnStartRegistrationActionTests.java",
       "line": 56,
       "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-ws-idp/src/main/java/org/apereo/cas/ws/idp/web/BaseWSFederationRequestController.java",
-      "line": 27,
-      "scope": "production"
     },
     {
       "code": "field-injection",
@@ -6882,15 +5460,6 @@
       "scope": "test"
     },
     {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "support/cas-server-support-ws-sts-api/src/main/java/org/apereo/cas/support/saml/sts/SamlTokenProvider.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -6909,48 +5478,12 @@
       "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-x509-core/src/test/java/org/apereo/cas/adaptors/x509/authentication/CasX509Certificate.java",
-      "line": 22,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-x509-core/src/test/java/org/apereo/cas/adaptors/x509/authentication/RevokedCertificateExceptionTests.java",
-      "line": 12,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-x509-core/src/test/java/org/apereo/cas/adaptors/x509/util/MockX509CRL.java",
-      "line": 15,
-      "scope": "test"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
       "recommendation": "Review Spring field injection before modernization.",
       "file": "support/cas-server-support-x509-webflow/src/test/java/org/apereo/cas/adaptors/x509/web/flow/X509TomcatServletFactoryInitialActionTests.java",
       "line": 37,
-      "scope": "test"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "support/cas-server-support-yubikey-core/src/test/java/org/apereo/cas/adaptors/yubikey/DefaultYubiKeyAccountValidatorTests.java",
-      "line": 10,
       "scope": "test"
     },
     {
@@ -6979,15 +5512,6 @@
       "file": "webapp/cas-server-webapp-config/src/test/java/org/apereo/cas/web/security/authentication/BaseEndpointLdapAuthenticationProviderTests.java",
       "line": 41,
       "scope": "test"
-    },
-    {
-      "code": "reflection-usage",
-      "severity": "info",
-      "title": "Reflection usage",
-      "recommendation": "Review Reflection usage before modernization.",
-      "file": "webapp/cas-server-webapp-init/src/main/java/org/apereo/cas/CasEmbeddedContainerUtils.java",
-      "line": 44,
-      "scope": "production"
     },
     {
       "code": "field-injection",
@@ -7078,6 +5602,240 @@
       "file": "webapp/cas-server-webapp-undertow/src/test/java/org/apereo/cas/CasUndertowBannerTests.java",
       "line": 31,
       "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckEnforceLombokAnnotations.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckEnforceLombokAnnotations.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingClassInTestsSuite.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingClassInTestsSuite.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingConditionalOnFeature.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingConditionalOnFeature.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingConditionalOnMissingBean.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingConditionalOnMissingBean.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingPuppeteerConfig.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingPuppeteerConfig.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingTestTagAnnotation.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingTestTagAnnotation.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingTestsSuiteClassAnnotation.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMissingUtilityClassAnnotation.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMixingSpringBeanWithDependencyInjection.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckMixingSpringBeanWithDependencyInjection.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckPuppeteerScenarioScriptConfiguration.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckPuppeteerScenarioScriptConfiguration.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckRedundantTestConfigurationInheritance.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckRedundantTestConfigurationInheritance.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckRequiredModuleAnnotationReferences.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckRequiredModuleAnnotationReferences.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckSpringConfigurationBeanProxying.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckSpringConfigurationConditionals.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckSpringConfigurationFactories.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "ci/checks/CheckSpringConfigurationFactories.java",
+      "line": 27,
+      "scope": "production"
     }
   ],
   "evidence": [
@@ -7188,5 +5946,14 @@
       ],
       "suggestedCommand": "node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust"
     }
-  ]
+  ],
+  "findingDetails": {
+    "compacted": false,
+    "total": 300,
+    "productionTotal": 69,
+    "testTotal": 231,
+    "detailedTotal": 300,
+    "omittedTotal": 0,
+    "policy": "Representative findings are capped at 300 entries for benchmark report JSON. Full counts are preserved in findingSummary."
+  }
 }
