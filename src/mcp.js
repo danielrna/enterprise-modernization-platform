@@ -12,7 +12,7 @@ export async function handleMcpRequest(request) {
   if (request.method === 'initialize') {
     return response(request.id, {
       protocolVersion: '2024-11-05',
-      serverInfo: { name: 'enterprise-modernization-platform', version: '0.4.0' },
+      serverInfo: { name: 'enterprise-modernization-platform', version: '0.4.1' },
       capabilities: { tools: {} }
     });
   }
@@ -224,7 +224,7 @@ async function loadBenchmarkSummaries() {
       source: report.benchmark?.source || 'catalog',
       validationStatus: report.benchmark?.validation?.status || 'not_requested',
       validationConfidence: report.benchmark?.validation?.confidence ?? 0,
-      findings: report.findings?.length || 0,
+      findings: report.findingDetails?.total ?? report.findings?.length ?? 0,
       reportPath: `docs/benchmarks/${entry.name}/index.html`,
       reportUrl: `https://danielrna.github.io/enterprise-modernization-platform/benchmarks/${entry.name}/`
     });

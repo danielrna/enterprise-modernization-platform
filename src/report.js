@@ -2,9 +2,13 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { buildTrustEvidence } from './trust.js';
 
-export async function writeReportBundle({ outDir, scan, readiness, transformation = null, rules = null }) {
+const DEFAULT_MAX_DETAILED_FINDINGS = 300;
+
+export async function writeReportBundle({ outDir, scan, readiness, transformation = null, rules = null, compactFindings = false, maxDetailedFindings = DEFAULT_MAX_DETAILED_FINDINGS }) {
   await fs.mkdir(outDir, { recursive: true });
   const findingSummary = summarizeFindings(scan.findings);
+  const productionFindings = scan.findings.filter((finding) => finding.scope !== 'test');
+  const testFindings = scan.findings.filter((finding) => finding.scope === 'test');
   const report = {
     schemaVersion: 'emp.report.v1',
     generatedAt: scan.generatedAt,
@@ -12,8 +16,8 @@ export async function writeReportBundle({ outDir, scan, readiness, transformatio
     pack: scan.pack,
     packApplicability: scan.packApplicability,
     readiness,
-    productionFindings: scan.findings.filter((finding) => finding.scope !== 'test'),
-    testFindings: scan.findings.filter((finding) => finding.scope === 'test'),
+    productionFindings,
+    testFindings,
     findingSummary,
     findings: scan.findings,
     evidence: scan.evidence,
@@ -24,6 +28,7 @@ export async function writeReportBundle({ outDir, scan, readiness, transformatio
   if (transformation) report.trust = buildTrustEvidence({ scan, transformation });
   if (rules?.loaded) report.rules = rules;
   report.nextActions = buildNextActions(report);
+  if (compactFindings) compactReportFindings(report, maxDetailedFindings);
   const jsonPath = path.join(outDir, 'report.json');
   const htmlPath = path.join(outDir, 'index.html');
   await fs.writeFile(jsonPath, `${JSON.stringify(report, null, 2)}\n`);
@@ -155,10 +160,10 @@ export function renderReport(report) {
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">${report.productionFindings.length}</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">${report.testFindings.length}</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">${totalProductionFindings(report)}</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">${totalTestFindings(report)}</div><div class="label">Test code findings</div></div>
       <div class="panel"><div class="metric">${Object.keys(report.findingSummary.byCode).length}</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">${report.findings.length}</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">${totalFindings(report)}</div><div class="label">Total findings</div></div>
     </section>
     <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody>${findingSummaryRows}</tbody></table></div>
   </main>
@@ -169,11 +174,10 @@ export function renderReport(report) {
 
 export function buildNextActions(report) {
   const actions = [];
-  const productionFindings = report.productionFindings || [];
   const addAction = ({ id, priority, title, reason, findingCodes = [], suggestedCommand = null }) => {
     if (actions.some((action) => action.id === id)) return;
     const evidenceCount = findingCodes.length
-      ? productionFindings.filter((finding) => findingCodes.includes(finding.code)).length
+      ? productionFindingCountForCodes(report, findingCodes)
       : 0;
     actions.push({ id, priority, title, reason, evidenceCount, findingCodes, suggestedCommand });
   };
@@ -190,7 +194,7 @@ export function buildNextActions(report) {
     });
   }
 
-  if (hasFinding(productionFindings, 'build-tool-missing')) {
+  if (hasProductionFinding(report, 'build-tool-missing')) {
     addAction({
       id: 'add-build-metadata',
       priority: 'critical',
@@ -200,7 +204,7 @@ export function buildNextActions(report) {
     });
   }
 
-  if (hasFinding(productionFindings, 'javax-usage')) {
+  if (hasProductionFinding(report, 'javax-usage')) {
     addAction({
       id: 'plan-jakarta-migration',
       priority: 'critical',
@@ -211,7 +215,7 @@ export function buildNextActions(report) {
     });
   }
 
-  if (hasFinding(productionFindings, 'spring-boot-2') || hasFinding(productionFindings, 'spring-boot-version-unknown')) {
+  if (hasProductionFinding(report, 'spring-boot-2') || hasProductionFinding(report, 'spring-boot-version-unknown')) {
     addAction({
       id: 'validate-spring-boot-upgrade-path',
       priority: 'warning',
@@ -222,7 +226,7 @@ export function buildNextActions(report) {
     });
   }
 
-  if (hasFinding(productionFindings, 'java-21-target-missing')) {
+  if (hasProductionFinding(report, 'java-21-target-missing')) {
     addAction({
       id: 'validate-java-21-target',
       priority: 'warning',
@@ -234,10 +238,10 @@ export function buildNextActions(report) {
   }
 
   const hibernateCodes = ['hibernate-legacy-criteria', 'hibernate-session-api', 'hibernate-custom-type', 'hibernate-xml-mapping'];
-  if (hibernateCodes.some((code) => hasFinding(productionFindings, code))) {
+  if (hibernateCodes.some((code) => hasProductionFinding(report, code))) {
     addAction({
       id: 'review-hibernate-upgrade-risks',
-      priority: hasFinding(productionFindings, 'hibernate-legacy-criteria') ? 'critical' : 'warning',
+      priority: hasProductionFinding(report, 'hibernate-legacy-criteria') ? 'critical' : 'warning',
       title: 'Review Hibernate API and mapping upgrade risks',
       reason: 'Hibernate 6 readiness depends on explicit review of legacy Criteria usage, Session API assumptions, custom types, and XML mappings.',
       findingCodes: hibernateCodes,
@@ -246,10 +250,10 @@ export function buildNextActions(report) {
   }
 
   const springSecurityCodes = ['spring-security-5', 'spring-security-websecurityconfigureradapter', 'spring-security-legacy-matchers', 'spring-security-authorize-requests', 'spring-security-global-method-security'];
-  if (springSecurityCodes.some((code) => hasFinding(productionFindings, code))) {
+  if (springSecurityCodes.some((code) => hasProductionFinding(report, code))) {
     addAction({
       id: 'review-spring-security-6-risks',
-      priority: hasFinding(productionFindings, 'spring-security-websecurityconfigureradapter') ? 'critical' : 'warning',
+      priority: hasProductionFinding(report, 'spring-security-websecurityconfigureradapter') ? 'critical' : 'warning',
       title: 'Review Spring Security 6 configuration risks',
       reason: 'Spring Security 6 readiness depends on explicit review of removed configuration adapters, matcher API changes, authorization DSL changes, and method security annotations.',
       findingCodes: springSecurityCodes,
@@ -258,10 +262,10 @@ export function buildNextActions(report) {
   }
 
   const junitCodes = ['junit4-api-usage', 'junit4-runner-usage', 'junit4-dependency', 'junit-vintage-engine'];
-  if (junitCodes.some((code) => hasFinding(report.findings || [], code))) {
+  if (junitCodes.some((code) => hasAnyFinding(report, code))) {
     addAction({
       id: 'review-junit-5-migration-risks',
-      priority: hasFinding(report.findings || [], 'junit4-runner-usage') ? 'warning' : 'info',
+      priority: hasAnyFinding(report, 'junit4-runner-usage') ? 'warning' : 'info',
       title: 'Review JUnit 4 to JUnit 5 migration risks',
       reason: 'JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.',
       findingCodes: junitCodes,
@@ -397,6 +401,81 @@ function countBySeverity(findings) {
     counts[finding.severity] = (counts[finding.severity] || 0) + 1;
     return counts;
   }, { critical: 0, warning: 0, info: 0 });
+}
+
+export function compactReportFindings(report, maxDetailedFindings = DEFAULT_MAX_DETAILED_FINDINGS) {
+  const max = Number.isInteger(maxDetailedFindings) && maxDetailedFindings > 0
+    ? maxDetailedFindings
+    : DEFAULT_MAX_DETAILED_FINDINGS;
+  const productionTotal = report.productionFindings.length;
+  const testTotal = report.testFindings.length;
+  const total = report.findings.length;
+  const compactedFindings = representativeFindings(report.findings, max);
+
+  report.findingDetails = {
+    compacted: compactedFindings.length < total,
+    total,
+    productionTotal,
+    testTotal,
+    detailedTotal: compactedFindings.length,
+    omittedTotal: total - compactedFindings.length,
+    policy: `Representative findings are capped at ${max} entries for benchmark report JSON. Full counts are preserved in findingSummary.`
+  };
+  report.findings = compactedFindings;
+  report.productionFindings = compactedFindings.filter((finding) => finding.scope !== 'test');
+  report.testFindings = compactedFindings.filter((finding) => finding.scope === 'test');
+}
+
+function representativeFindings(findings, max) {
+  if (findings.length <= max) return findings;
+  const selected = [];
+  const seen = new Set();
+  const add = (finding) => {
+    const key = `${finding.code}\0${finding.scope || ''}\0${finding.file || ''}\0${finding.line || ''}`;
+    if (seen.has(key) || selected.length >= max) return;
+    seen.add(key);
+    selected.push(finding);
+  };
+
+  for (const finding of findings) {
+    const currentCount = selected.filter((item) => item.code === finding.code && item.scope === finding.scope).length;
+    if (currentCount < 5) add(finding);
+  }
+  for (const severity of ['critical', 'warning', 'info']) {
+    for (const finding of findings) {
+      if (finding.severity === severity) add(finding);
+    }
+  }
+  return selected;
+}
+
+function totalFindings(report) {
+  return report.findingDetails?.total ?? report.findings.length;
+}
+
+function totalProductionFindings(report) {
+  return report.findingDetails?.productionTotal ?? report.productionFindings.length;
+}
+
+function totalTestFindings(report) {
+  return report.findingDetails?.testTotal ?? report.testFindings.length;
+}
+
+function productionFindingCountForCodes(report, codes) {
+  if (report.findingSummary?.byCode) {
+    return codes.reduce((total, code) => total + (report.findingSummary.byCode[code]?.production || 0), 0);
+  }
+  return (report.productionFindings || []).filter((finding) => codes.includes(finding.code)).length;
+}
+
+function hasProductionFinding(report, code) {
+  if (report.findingSummary?.byCode?.[code]) return report.findingSummary.byCode[code].production > 0;
+  return hasFinding(report.productionFindings || [], code);
+}
+
+function hasAnyFinding(report, code) {
+  if (report.findingSummary?.byCode?.[code]) return report.findingSummary.byCode[code].total > 0;
+  return hasFinding(report.findings || [], code);
 }
 
 function hasFinding(findings, code) {

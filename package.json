@@ -1,6 +1,6 @@
 {
   "name": "enterprise-modernization-platform",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": false,
   "description": "CLI-first enterprise modernization readiness platform.",
   "type": "module",

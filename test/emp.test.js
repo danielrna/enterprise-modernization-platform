@@ -50,6 +50,55 @@ test('analyzes a Spring Boot project and writes HTML/JSON reports', async () => 
   assert.match(await fs.readFile(bundle.htmlPath, 'utf8'), /Recommended Next Actions/);
 });
 
+test('compact benchmark reports preserve finding totals and representative details', async () => {
+  const root = await makeSpringProject();
+  const outDir = path.join(root, 'compact-report');
+  const scan = await analyzeProject({ root });
+  const originalTotal = scan.findings.length;
+  const originalJavaxProduction = scan.findings.filter((finding) => finding.code === 'javax-usage' && finding.scope !== 'test').length;
+  const originalProduction = scan.findings.filter((finding) => finding.scope !== 'test').length;
+  const originalTest = scan.findings.filter((finding) => finding.scope === 'test').length;
+  for (let index = 0; index < 40; index += 1) {
+    scan.findings.push({
+      code: 'javax-usage',
+      severity: 'critical',
+      title: 'javax namespace usage detected',
+      recommendation: 'Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.',
+      file: `src/main/java/com/example/Legacy${index}.java`,
+      line: 10 + index,
+      scope: 'production'
+    });
+  }
+  for (let index = 0; index < 20; index += 1) {
+    scan.findings.push({
+      code: 'system-out',
+      severity: 'warning',
+      title: 'System.out usage',
+      recommendation: 'Replace console output with structured logging.',
+      file: `src/test/java/com/example/Logging${index}Test.java`,
+      line: 5 + index,
+      scope: 'test'
+    });
+  }
+
+  const readiness = scoreReadiness(scan);
+  const bundle = await writeReportBundle({ outDir, scan, readiness, compactFindings: true, maxDetailedFindings: 12 });
+  const report = JSON.parse(await fs.readFile(bundle.jsonPath, 'utf8'));
+  const html = await fs.readFile(bundle.htmlPath, 'utf8');
+
+  assert.equal(report.findingDetails.compacted, true);
+  assert.equal(report.findingDetails.total, originalTotal + 60);
+  assert.equal(report.findingDetails.productionTotal, originalProduction + 40);
+  assert.equal(report.findingDetails.testTotal, originalTest + 20);
+  assert.equal(report.findings.length, 12);
+  assert.equal(report.findingSummary.byCode['javax-usage'].production, originalJavaxProduction + 40);
+  assert.equal(report.findingSummary.byCode['system-out'].test, 20);
+  assert.equal(report.nextActions.find((action) => action.id === 'plan-jakarta-migration').evidenceCount, originalJavaxProduction + 40);
+  assert.equal(html.includes(`>${originalProduction + 40}</div><div class="label">Production code findings`), true);
+  assert.equal(html.includes(`>${originalTest + 20}</div><div class="label">Test code findings`), true);
+  assert.equal(html.includes(`>${originalTotal + 60}</div><div class="label">Total findings`), true);
+});
+
 test('publishes the benchmark catalog and migration hub', async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'emp-benchmarks-'));
   const benchmarksDir = path.join(root, 'benchmarks');
@@ -162,14 +211,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 20);
+  assert.equal(result.count, 21);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.4\.0/);
-  assert.match(html, /Balanced checkout evidence batch/);
-  assert.match(html, /baeldung-hibernate-tutorials/);
+  assert.match(index, /v0\.4\.1/);
+  assert.match(html, /Benchmark finding compaction/);
+  assert.match(html, /17,621 total findings/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Balanced checkout evidence batch/);
+  assert.match(markdown, /## Benchmark finding compaction/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {

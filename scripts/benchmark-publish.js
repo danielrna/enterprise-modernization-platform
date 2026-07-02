@@ -5,7 +5,7 @@ import { BENCHMARKS, publishBenchmarks } from '../src/benchmarks.js';
 import { generateBenchmarkIndex, generateMigrationHub } from '../src/hub.js';
 import { generateKnowledgeBase } from '../src/knowledge-base.js';
 import { generatePackDocs } from '../src/pack-docs.js';
-import { buildNextActions, renderReport } from '../src/report.js';
+import { buildNextActions, compactReportFindings, renderReport } from '../src/report.js';
 import { generateReleaseNotes } from '../src/release-notes.js';
 import { buildConsultantDemoBundle, generateConsultantDemo } from '../src/consultant-demo.js';
 
@@ -100,12 +100,16 @@ async function loadPublishedReportSummaries(benchmarksDir) {
       pack: report.pack,
       springBootVersion: report.project?.springBootVersion || 'unknown',
       readiness: report.readiness?.overall ?? null,
-      findings: { total: report.findings?.length || 0 },
+      findings: { total: totalFindings(report) },
       source: report.benchmark?.source || 'catalog',
       validation: report.benchmark?.validation || { status: 'not_requested' }
     });
   }
   return reports.sort((left, right) => left.name.localeCompare(right.name));
+}
+
+function totalFindings(report) {
+  return report.findingDetails?.total ?? report.findings?.length ?? 0;
 }
 
 async function summarizePublishedReports(benchmarksDir) {
@@ -133,6 +137,7 @@ async function refreshPublishedReportBundles(benchmarksDir) {
     const report = await readJson(reportPath);
     if (!report) continue;
     report.nextActions = buildNextActions(report);
+    if (report.benchmark && totalFindings(report) > 300) compactReportFindings(report);
     await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
     await fs.writeFile(path.join(benchmarksDir, entry.name, 'index.html'), renderReport(report).replace(/[ \t]+$/gm, ''));
   }

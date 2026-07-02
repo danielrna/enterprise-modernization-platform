@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v0.4.1
+
+- Added benchmark report finding compaction so large checkout-backed reports keep full finding totals and summaries while capping detailed JSON findings to representative samples.
+- Regenerated published benchmark reports with compacted detail arrays, reducing the Baeldung Hibernate Tutorials JSON report from about 12 MB to about 260 KB while preserving 17,621 total findings and passing validation evidence.
+- Preserved the `v0.4.0` evidence counts: 75 public reports, 50 checkout-backed reports, and 17 passing validation reports.
+
 ## v0.4.0
 
 - Promoted Baeldung Hibernate Tutorials to checkout-backed Hibernate readiness evidence with passing Docker-backed Maven compile/test validation.

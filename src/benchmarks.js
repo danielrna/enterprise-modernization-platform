@@ -128,7 +128,7 @@ export async function publishBenchmarks({ outDir, source = 'catalog', only = nul
     scan.benchmark = benchmarkEvidence;
     const readiness = scoreReadiness(scan);
     const reportDir = path.join(outDir, item.slug);
-    const bundle = await writeReportBundle({ outDir: reportDir, scan, readiness });
+    const bundle = await writeReportBundle({ outDir: reportDir, scan, readiness, compactFindings: true });
     reports.push({
       ...item,
       readiness: readiness.overall,

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const RELEASE_VERSION = 'v0.4.0';
+const RELEASE_VERSION = 'v0.4.1';
 const RELEASE_URL = `https://github.com/danielrna/enterprise-modernization-platform/releases/tag/${RELEASE_VERSION}`;
 const SAMPLE_REPORT_URL = `https://github.com/danielrna/enterprise-modernization-platform/releases/download/${RELEASE_VERSION}/emp-smoke-report.zip`;
 const DOCKER_IMAGE = `danielrna/enterprise-modernization-platform:${RELEASE_VERSION}`;
@@ -539,12 +539,16 @@ function normalizeReport(slug, report) {
     source: report.benchmark?.source || 'catalog',
     validation: report.benchmark?.validation || { status: 'not_requested', confidence: 0 },
     findings: {
-      total: report.findings?.length ?? 0,
+      total: totalFindings(report),
       critical: report.readiness?.counts?.critical ?? 0,
       warning: report.readiness?.counts?.warning ?? 0,
       info: report.readiness?.counts?.info ?? 0
     }
   };
+}
+
+function totalFindings(report) {
+  return report.findingDetails?.total ?? report.findings?.length ?? 0;
 }
 
 function compareBenchmarks(left, right) {

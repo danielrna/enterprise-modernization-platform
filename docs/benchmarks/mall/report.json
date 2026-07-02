@@ -111,6 +111,51 @@
       "scope": "production"
     },
     {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnApplyServiceImpl.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OssServiceImpl.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mall-mbg/src/main/java/com/macro/mall/Generator.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -399,15 +444,6 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnApplyServiceImpl.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -426,30 +462,12 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java",
       "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java",
-      "line": 16,
       "scope": "production"
     },
     {
@@ -495,15 +513,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderSettingServiceImpl.java",
       "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OssServiceImpl.java",
-      "line": 20,
       "scope": "production"
     },
     {
@@ -621,15 +630,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java",
       "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java",
-      "line": 22,
       "scope": "production"
     },
     {
@@ -885,30 +885,12 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionServiceImpl.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionServiceImpl.java",
       "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionSessionServiceImpl.java",
-      "line": 14,
       "scope": "production"
     },
     {
@@ -927,15 +909,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionSessionServiceImpl.java",
       "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsHomeAdvertiseServiceImpl.java",
-      "line": 14,
       "scope": "production"
     },
     {
@@ -1020,15 +993,6 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsAdminServiceImpl.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -1092,15 +1056,6 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsMenuServiceImpl.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -1110,30 +1065,12 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceCategoryServiceImpl.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceCategoryServiceImpl.java",
       "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceServiceImpl.java",
-      "line": 13,
       "scope": "production"
     },
     {
@@ -1152,15 +1089,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceServiceImpl.java",
       "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsRoleServiceImpl.java",
-      "line": 15,
       "scope": "production"
     },
     {
@@ -1254,12 +1182,1020 @@
       "scope": "production"
     },
     {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/Generator.java",
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/CancelOrderReceiver.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/CancelOrderSender.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/OrderTimeOutCancelTask.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/config/MallSecurityConfig.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/AlipayController.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/AlipayController.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/HomeController.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberAttentionController.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberProductCollectionController.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberReadHistoryController.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsCartItemController.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsCartItemController.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsPortalOrderController.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsPortalOrderReturnApplyController.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/PmsPortalBrandController.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/PmsPortalProductController.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberController.java",
       "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberReceiveAddressController.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderReturnApplyServiceImpl.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 56,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 62,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 64,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 66,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPromotionServiceImpl.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 41,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCacheServiceImpl.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCacheServiceImpl.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberReceiveAddressServiceImpl.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberReceiveAddressServiceImpl.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-search/src/main/java/com/macro/mall/search/controller/EsProductController.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
+      "line": 59,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityMetadataSource.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/JwtAuthenticationTokenFilter.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/JwtAuthenticationTokenFilter.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionServiceImpl.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionSessionServiceImpl.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsHomeAdvertiseServiceImpl.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsAdminServiceImpl.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsMenuServiceImpl.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceCategoryServiceImpl.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceServiceImpl.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsRoleServiceImpl.java",
+      "line": 15,
       "scope": "production"
     },
     {
@@ -1737,1194 +2673,6 @@
       "recommendation": "Review java.util.Date usage before modernization.",
       "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMember.java",
       "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMemberExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMemberLoginLog.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMemberLoginLogExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMemberStatisticsInfo.java",
-      "line": 6,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMemberStatisticsInfoExample.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMenu.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMenuExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsPermission.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsPermissionExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsResource.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsResourceCategory.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsResourceCategoryExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsResourceExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsRole.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsRoleExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/CancelOrderReceiver.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/CancelOrderSender.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/OrderTimeOutCancelTask.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/config/MallSecurityConfig.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/AlipayController.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/AlipayController.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/HomeController.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberAttentionController.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberProductCollectionController.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberReadHistoryController.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsCartItemController.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsCartItemController.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsPortalOrderController.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsPortalOrderReturnApplyController.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/PmsPortalBrandController.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/PmsPortalProductController.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberController.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberReceiveAddressController.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/domain/HomeFlashPromotion.java",
-      "line": 7,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/domain/MemberBrandAttention.java",
-      "line": 9,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/domain/MemberProductCollection.java",
-      "line": 9,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/domain/MemberReadHistory.java",
-      "line": 9,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderReturnApplyServiceImpl.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderReturnApplyServiceImpl.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 52,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 54,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 56,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 62,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 64,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 66,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 68,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPromotionServiceImpl.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 41,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCacheServiceImpl.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCacheServiceImpl.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberReceiveAddressServiceImpl.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberReceiveAddressServiceImpl.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/util/DateUtil.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-search/src/main/java/com/macro/mall/search/controller/EsProductController.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
-      "line": 55,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
-      "line": 57,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
-      "line": 59,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityMetadataSource.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/JwtAuthenticationTokenFilter.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/JwtAuthenticationTokenFilter.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/util/JwtTokenUtil.java",
-      "line": 13,
       "scope": "production"
     }
   ],
@@ -3316,6 +3064,114 @@
       "scope": "production"
     },
     {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnApplyServiceImpl.java",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java",
+      "line": 11,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OssServiceImpl.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-admin/src/test/com/macro/mall/PmsDaoTests.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-admin/src/test/com/macro/mall/PmsDaoTests.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mall-mbg/src/main/java/com/macro/mall/Generator.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/test/java/com/macro/mall/portal/PortalProductDaoTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-search/src/test/java/com/macro/mall/search/MallSearchApplicationTests.java",
+      "line": 17,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-search/src/test/java/com/macro/mall/search/MallSearchApplicationTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mall-search/src/test/java/com/macro/mall/search/MallSearchApplicationTests.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "mall-search/src/test/java/com/macro/mall/search/MallSearchApplicationTests.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -3604,15 +3460,6 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnApplyServiceImpl.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -3631,30 +3478,12 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java",
       "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java",
-      "line": 16,
       "scope": "production"
     },
     {
@@ -3700,15 +3529,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderSettingServiceImpl.java",
       "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/OssServiceImpl.java",
-      "line": 20,
       "scope": "production"
     },
     {
@@ -3826,15 +3646,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java",
       "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java",
-      "line": 22,
       "scope": "production"
     },
     {
@@ -4090,30 +3901,12 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionServiceImpl.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionServiceImpl.java",
       "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionSessionServiceImpl.java",
-      "line": 14,
       "scope": "production"
     },
     {
@@ -4132,15 +3925,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionSessionServiceImpl.java",
       "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsHomeAdvertiseServiceImpl.java",
-      "line": 14,
       "scope": "production"
     },
     {
@@ -4225,15 +4009,6 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsAdminServiceImpl.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -4297,15 +4072,6 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsMenuServiceImpl.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
@@ -4315,30 +4081,12 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceCategoryServiceImpl.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
       "code": "field-injection",
       "severity": "warning",
       "title": "Spring field injection",
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceCategoryServiceImpl.java",
       "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceServiceImpl.java",
-      "line": 13,
       "scope": "production"
     },
     {
@@ -4357,15 +4105,6 @@
       "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceServiceImpl.java",
       "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsRoleServiceImpl.java",
-      "line": 15,
       "scope": "production"
     },
     {
@@ -4418,24 +4157,6 @@
       "severity": "warning",
       "title": "Spring field injection",
       "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-admin/src/test/com/macro/mall/PmsDaoTests.java",
-      "line": 25,
-      "scope": "test"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-admin/src/test/com/macro/mall/PmsDaoTests.java",
-      "line": 27,
-      "scope": "test"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
       "file": "mall-common/src/main/java/com/macro/mall/common/service/impl/RedisServiceImpl.java",
       "line": 17,
       "scope": "production"
@@ -4477,12 +4198,1020 @@
       "scope": "production"
     },
     {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/Generator.java",
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/CancelOrderReceiver.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/CancelOrderSender.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/OrderTimeOutCancelTask.java",
+      "line": 17,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/config/MallSecurityConfig.java",
+      "line": 16,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/AlipayController.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/AlipayController.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/HomeController.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberAttentionController.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberProductCollectionController.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberReadHistoryController.java",
+      "line": 26,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsCartItemController.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsCartItemController.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsPortalOrderController.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsPortalOrderReturnApplyController.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/PmsPortalBrandController.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/PmsPortalProductController.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberController.java",
       "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberReceiveAddressController.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderReturnApplyServiceImpl.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 56,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 62,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 64,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 66,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPromotionServiceImpl.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 39,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
+      "line": 41,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCacheServiceImpl.java",
+      "line": 18,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCacheServiceImpl.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 32,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberReceiveAddressServiceImpl.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberReceiveAddressServiceImpl.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-search/src/main/java/com/macro/mall/search/controller/EsProductController.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
+      "line": 59,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityMetadataSource.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/JwtAuthenticationTokenFilter.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/component/JwtAuthenticationTokenFilter.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
+      "line": 31,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionServiceImpl.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionSessionServiceImpl.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/SmsHomeAdvertiseServiceImpl.java",
+      "line": 14,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsAdminServiceImpl.java",
+      "line": 37,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsMenuServiceImpl.java",
+      "line": 12,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceCategoryServiceImpl.java",
+      "line": 10,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceServiceImpl.java",
+      "line": 13,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "mall-admin/src/main/java/com/macro/mall/service/impl/UmsRoleServiceImpl.java",
+      "line": 15,
       "scope": "production"
     },
     {
@@ -4961,1239 +5690,6 @@
       "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMember.java",
       "line": 5,
       "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMemberExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMemberLoginLog.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMemberLoginLogExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMemberStatisticsInfo.java",
-      "line": 6,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMemberStatisticsInfoExample.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMenu.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsMenuExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsPermission.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsPermissionExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsResource.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsResourceCategory.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsResourceCategoryExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsResourceExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsRole.java",
-      "line": 5,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-mbg/src/main/java/com/macro/mall/model/UmsRoleExample.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/CancelOrderReceiver.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/CancelOrderSender.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/component/OrderTimeOutCancelTask.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/config/MallSecurityConfig.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/AlipayController.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/AlipayController.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/HomeController.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberAttentionController.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberProductCollectionController.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/MemberReadHistoryController.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsCartItemController.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsCartItemController.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsPortalOrderController.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/OmsPortalOrderReturnApplyController.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/PmsPortalBrandController.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/PmsPortalProductController.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberController.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberCouponController.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/controller/UmsMemberReceiveAddressController.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/domain/HomeFlashPromotion.java",
-      "line": 7,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/domain/MemberBrandAttention.java",
-      "line": 9,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/domain/MemberProductCollection.java",
-      "line": 9,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/domain/MemberReadHistory.java",
-      "line": 9,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/AlipayServiceImpl.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/HomeServiceImpl.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberAttentionServiceImpl.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberCollectionServiceImpl.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/MemberReadHistoryServiceImpl.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsCartItemServiceImpl.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderReturnApplyServiceImpl.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderReturnApplyServiceImpl.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 52,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 54,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 56,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 62,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 64,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 66,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPortalOrderServiceImpl.java",
-      "line": 68,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/OmsPromotionServiceImpl.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalBrandServiceImpl.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/PmsPortalProductServiceImpl.java",
-      "line": 41,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCacheServiceImpl.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCacheServiceImpl.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberCouponServiceImpl.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberReceiveAddressServiceImpl.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberReceiveAddressServiceImpl.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/service/impl/UmsMemberServiceImpl.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-portal/src/main/java/com/macro/mall/portal/util/DateUtil.java",
-      "line": 4,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-portal/src/test/java/com/macro/mall/portal/PortalProductDaoTests.java",
-      "line": 20,
-      "scope": "test"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-search/src/main/java/com/macro/mall/search/controller/EsProductController.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
-      "line": 55,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
-      "line": 57,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-search/src/main/java/com/macro/mall/search/service/impl/EsProductServiceImpl.java",
-      "line": 59,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-search/src/test/java/com/macro/mall/search/MallSearchApplicationTests.java",
-      "line": 17,
-      "scope": "test"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-search/src/test/java/com/macro/mall/search/MallSearchApplicationTests.java",
-      "line": 19,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "mall-search/src/test/java/com/macro/mall/search/MallSearchApplicationTests.java",
-      "line": 27,
-      "scope": "test"
-    },
-    {
-      "code": "system-out",
-      "severity": "info",
-      "title": "System.out logging",
-      "recommendation": "Review System.out logging before modernization.",
-      "file": "mall-search/src/test/java/com/macro/mall/search/MallSearchApplicationTests.java",
-      "line": 34,
-      "scope": "test"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityFilter.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityMetadataSource.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/JwtAuthenticationTokenFilter.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/component/JwtAuthenticationTokenFilter.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection",
-      "recommendation": "Review Spring field injection before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "java.util.Date usage",
-      "recommendation": "Review java.util.Date usage before modernization.",
-      "file": "mall-security/src/main/java/com/macro/mall/security/util/JwtTokenUtil.java",
-      "line": 13,
-      "scope": "production"
     }
   ],
   "evidence": [
@@ -6288,5 +5784,14 @@
       ],
       "suggestedCommand": "node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust"
     }
-  ]
+  ],
+  "findingDetails": {
+    "compacted": false,
+    "total": 300,
+    "productionTotal": 293,
+    "testTotal": 7,
+    "detailedTotal": 300,
+    "omittedTotal": 0,
+    "policy": "Representative findings are capped at 300 entries for benchmark report JSON. Full counts are preserved in findingSummary."
+  }
 }
