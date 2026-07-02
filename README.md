@@ -8,9 +8,9 @@ The product is not a Java migration tool. The product is confidence that an appl
 
 ## Try In 5 Minutes
 
-Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.2.4
+Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.2.5
 
-Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.2.4/emp-smoke-report.zip
+Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.2.5/emp-smoke-report.zip
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform/migration-hub/spring-boot-2-to-3.html
 
@@ -54,7 +54,7 @@ reports/readiness/index.html
 Run the published Docker image:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.4 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.5 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
 ```
 
 Or build the CLI image locally:
@@ -93,7 +93,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.2.4
+        uses: danielrna/enterprise-modernization-platform@v0.2.5
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -114,6 +114,7 @@ node ./bin/emp.js transform <path> [--pack spring-boot-3-readiness|java-17-to-21
 node ./bin/emp.js benchmarks [--source catalog|local|clone] [--only slug[,slug]] [--limit n] [--validate] [--validation-timeout-ms 120000] [--out docs/benchmarks]
 node ./bin/emp.js hub [--out docs/migration-hub]
 node ./bin/emp.js mcp
+npm run mcp:verify
 ```
 
 The MCP stdio server exposes:
@@ -122,6 +123,8 @@ The MCP stdio server exposes:
 - `emp.packs`: list modernization packs or return detailed metadata for one pack.
 - `emp.benchmarks`: summarize published benchmark evidence with optional pack, source, validation-status, and limit filters.
 - `emp.transformPlan`: create a dry-run transformation plan without applying file changes.
+
+See the generated MCP guide at `docs/mcp.html` for JSON-RPC examples and the recommended AI workflow.
 
 ## What It Does
 
@@ -246,7 +249,7 @@ Current automated coverage verifies:
 
 ## Current Status
 
-Implemented through v0.2.4:
+Implemented through v0.2.5:
 
 - CLI, Docker, MCP, and GitHub Action interfaces.
 - Spring Boot 2 to 3 readiness and transformation workflow.

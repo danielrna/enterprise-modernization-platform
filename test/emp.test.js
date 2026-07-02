@@ -158,14 +158,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 12);
+  assert.equal(result.count, 13);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.2\.4/);
-  assert.match(html, /MCP transform plan tool/);
-  assert.match(html, /emp\.transformPlan/);
+  assert.match(index, /v0\.2\.5/);
+  assert.match(html, /MCP docs and smoke verification/);
+  assert.match(html, /mcp:verify/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## MCP transform plan tool/);
+  assert.match(markdown, /## MCP docs and smoke verification/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {
@@ -917,6 +917,20 @@ test('MCP transformPlan returns a dry-run plan without mutating files', async ()
   assert.equal(plan.changes[0].recipe, 'javax-to-jakarta-namespace');
   assert.equal(plan.appliedChanges, 0);
   assert.equal(after, before);
+});
+
+test('MCP docs and smoke verification are packaged', async () => {
+  const packageJson = await fs.readFile(path.resolve('package.json'), 'utf8');
+  const mcpDocs = await fs.readFile(path.resolve('docs/mcp.html'), 'utf8');
+  const home = await fs.readFile(path.resolve('docs/index.html'), 'utf8');
+  const verifier = await fs.readFile(path.resolve('scripts/mcp-verify.js'), 'utf8');
+
+  assert.match(packageJson, /"mcp:verify"/);
+  assert.match(packageJson, /npm run mcp:verify/);
+  assert.match(mcpDocs, /emp\.transformPlan/);
+  assert.match(mcpDocs, /Recommended Workflow/);
+  assert.match(home, /mcp\.html/);
+  assert.match(verifier, /emp\.benchmarks/);
 });
 
 test('GitHub Action exposes Docker readiness analysis inputs', async () => {

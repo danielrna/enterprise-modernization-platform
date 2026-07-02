@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.2.5
+
+- Added an MCP documentation page and `npm run mcp:verify` smoke verification for all MCP tools.
+
 ## v0.2.4
 
 - Added the MCP `emp.transformPlan` tool so AI clients can inspect dry-run transformation plans without applying changes.

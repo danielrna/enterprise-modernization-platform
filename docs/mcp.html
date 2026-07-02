@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMP MCP Interface</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; --accent-dark:#0f4f84; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1120px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 12px; font-size:38px; line-height:1.1; letter-spacing:0; }
+    h2 { margin:30px 0 12px; font-size:22px; letter-spacing:0; }
+    h3 { margin:20px 0 8px; font-size:17px; letter-spacing:0; }
+    p { max-width:820px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 30px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:18px 0; }
+    .panel { padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .panel p { margin:6px 0 0; }
+    pre { overflow:auto; padding:14px; background:#101827; color:#eef6ff; border-radius:8px; font-size:13px; line-height:1.45; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); }
+    th,td { padding:10px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { background:#eef3f8; }
+    @media (max-width: 760px) { main { padding:24px 16px; } h1 { font-size:30px; } .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="migration-hub/index.html">Migration Hub</a>
+      <a href="benchmarks/index.html">Benchmarks</a>
+      <a href="packs/index.html">Packs</a>
+      <a href="knowledge-base/index.html">Knowledge Base</a>
+      <a href="release-notes/index.html">Release Notes</a>
+    </nav>
+
+    <h1>EMP MCP Interface</h1>
+    <p>The MCP stdio interface lets AI clients discover modernization packs, compare public evidence, analyze a project, and inspect a dry-run transformation plan without applying changes.</p>
+
+    <h2>Recommended Workflow</h2>
+    <section class="grid">
+      <div class="panel"><strong>1. Discover packs</strong><p>Call <code>emp.packs</code> to choose the modernization track.</p></div>
+      <div class="panel"><strong>2. Compare evidence</strong><p>Call <code>emp.benchmarks</code> to inspect published benchmark proof for that pack.</p></div>
+      <div class="panel"><strong>3. Analyze project</strong><p>Call <code>emp.analyze</code> for readiness, applicability, findings, and enterprise rules.</p></div>
+      <div class="panel"><strong>4. Plan migration</strong><p>Call <code>emp.transformPlan</code> to inspect planned changes before execution.</p></div>
+    </section>
+
+    <h2>Tools</h2>
+    <table>
+      <thead><tr><th>Tool</th><th>Purpose</th><th>Inputs</th></tr></thead>
+      <tbody>
+        <tr><td><code>emp.packs</code></td><td>List packs or return one pack's full metadata.</td><td><code>id</code> optional</td></tr>
+        <tr><td><code>emp.benchmarks</code></td><td>Summarize published benchmark evidence.</td><td><code>pack</code>, <code>source</code>, <code>validationStatus</code>, <code>limit</code> optional</td></tr>
+        <tr><td><code>emp.analyze</code></td><td>Run readiness analysis with optional enterprise rules.</td><td><code>path</code>, <code>pack</code>, <code>rules</code></td></tr>
+        <tr><td><code>emp.transformPlan</code></td><td>Create a dry-run transformation plan without applying file changes.</td><td><code>path</code>, <code>pack</code>, <code>engine</code>, <code>recipe</code>, <code>recipeArtifact</code></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Example Calls</h2>
+    <h3>Initialize</h3>
+    <pre><code>{"jsonrpc":"2.0","id":1,"method":"initialize"}</code></pre>
+
+    <h3>List Tools</h3>
+    <pre><code>{"jsonrpc":"2.0","id":2,"method":"tools/list"}</code></pre>
+
+    <h3>Discover Packs</h3>
+    <pre><code>{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"emp.packs","arguments":{}}}</code></pre>
+
+    <h3>Filter Benchmark Evidence</h3>
+    <pre><code>{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"emp.benchmarks","arguments":{"pack":"junit-5-readiness","source":"checkout","limit":5}}}</code></pre>
+
+    <h3>Analyze a Project</h3>
+    <pre><code>{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"emp.analyze","arguments":{"path":".","pack":"spring-boot-3-readiness","rules":".preflight-rules.yml"}}}</code></pre>
+
+    <h3>Plan a Transform</h3>
+    <pre><code>{"jsonrpc":"2.0","id":6,"method":"tools/call","params":{"name":"emp.transformPlan","arguments":{"path":".","pack":"spring-boot-3-readiness","engine":"native"}}}</code></pre>
+
+    <h2>Verify Locally</h2>
+    <pre><code>npm run mcp:verify</code></pre>
+  </main>
+</body>
+</html>

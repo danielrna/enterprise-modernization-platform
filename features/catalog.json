@@ -2,6 +2,37 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.2.5",
+      "title": "v0.2.5",
+      "date": "2026-07-02",
+      "summary": "MCP documentation and smoke verification for AI-assisted modernization workflows.",
+      "features": [
+        {
+          "id": "mcp-docs-and-smoke-verification",
+          "type": "documentation",
+          "name": "MCP docs and smoke verification",
+          "audience": "AI client integrators and consultants validating EMP MCP workflows",
+          "summary": "Document and verify the full MCP tool surface.",
+          "evidence": [
+            "Adds `docs/mcp.html` with the recommended MCP workflow, tool inputs, JSON-RPC examples, and local verification command.",
+            "Adds `npm run mcp:verify` to smoke-test `initialize`, `tools/list`, `emp.packs`, `emp.benchmarks`, `emp.analyze`, and `emp.transformPlan`.",
+            "Wires MCP verification into `npm run check`.",
+            "Links the MCP guide from the generated documentation home page and README."
+          ],
+          "links": [
+            {
+              "label": "MCP guide",
+              "href": "docs/mcp.html"
+            },
+            {
+              "label": "MCP usage",
+              "href": "README.md#cli"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.2.4",
       "title": "v0.2.4",
       "date": "2026-07-02",
