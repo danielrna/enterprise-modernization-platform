@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## v0.2.8
+
+- Promoted JUnit Quickcheck and WireMock JUnit 4 to checkout-backed JUnit readiness evidence with honest Maven dependency/test failure and Gradle timeout validation evidence.
+- Raised checkout-backed benchmark evidence to 36 reports while preserving the 75-report public catalog and 15 passing validation reports.
+
 ## v0.2.7
 
 - Added the Trust Engine Evidence Guide Knowledge Base article for explaining confidence factors, validation evidence, pack applicability, and report limits.

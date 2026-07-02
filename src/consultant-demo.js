@@ -142,8 +142,8 @@ function renderConsultantDemo(demos) {
     </section>
 
     <h2>Run This For A Client</h2>
-    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.7 analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></pre>
-    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.7 transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></pre>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.8 analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></pre>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.8 transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></pre>
 
     <h2>Send These Artifacts</h2>
     <section class="artifact-grid">
@@ -185,7 +185,7 @@ ${reports}
 Client command:
 
 \`\`\`bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.7 analyze . --pack hibernate-readiness --out reports/hibernate-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.2.8 analyze . --pack hibernate-readiness --out reports/hibernate-readiness
 \`\`\`
 `;
 }

@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>WireMock JUnit 4 Readiness Report</h1>
-    <p class="meta">junit-5-readiness · 2026-07-01T21:51:42.372Z · https://github.com/wiremock/wiremock</p>
+    <p class="meta">junit-5-readiness · 2026-07-02T16:20:34.586Z · https://github.com/wiremock/wiremock</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -64,65 +64,67 @@
   </header>
   <main>
     <section class="decision">
-      <div class="panel decision-main warn">
-        <strong>Needs remediation before confident migration execution</strong>
-        <div>The report has enough signal for scoping, but the evidence is not yet strong enough for execution.</div>
-        <div class="risk-list"><span class="pill warning">14 JUnit 4 API usage</span><span class="pill info">1 JUnit Vintage engine dependency</span></div>
+      <div class="panel decision-main bad">
+        <strong>Migration is blocked by critical readiness risks</strong>
+        <div>1 critical finding(s) should be resolved before execution planning.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">9 JDK internal API usage</span><span class="pill warning">8 JUnit 4 API usage</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
         </div>
       </div>
       <div class="panel decision-list">
-        <div><strong>Recommended next step</strong><div class="label">Prioritize repeated warning patterns and rerun the report after cleanup.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">80%</div><div class="label">Overall readiness</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">930</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">68%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
+      <div class="panel"><div class="metric">1310</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready with remediation work</div>
+    <div class="panel">Migration risk requires focused cleanup</div>
 
 
     <h2>Pack Applicability</h2>
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 11 · Build: Gradle · javax usage: no · jakarta usage: yes</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 1 · Build: Gradle · javax usage: yes · jakarta usage: yes</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>48%</strong></td><td><div class="bar"><span style="width:48%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>56%</strong></td><td><div class="bar"><span style="width:56%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>19%</strong></td><td><div class="bar"><span style="width:19%"></span></div></td></tr><tr><td>Architecture</td><td><strong>66%</strong></td><td><div class="bar"><span style="width:66%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill info">info</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>5</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/wiremock/wiremock
+      <strong>checkout</strong> · https://github.com/wiremock/wiremock
+      <div class="label">Checkout: benchmark-repos/wiremock-junit4</div>
+      <div class="label">Git revision: df2f968c52e84605c1b7f5d94fd9640cebb4c4c8</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/wiremock/wiremock benchmark-repos/wiremock-junit4</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt;</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./gradlew compileJava --no-daemon</td><td>120.4 s</td><td>Fetching distribution. Downloading https://services.gradle.org/distributions/gradle-9.6.1-bin.zip .............10%.............20%..............30%.............40%..............50%.............60%.............70%..............80%...........</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./gradlew test --no-daemon</td><td>120.3 s</td><td>tion: T.() -&gt; Unit): RegisteringDomainObjectDelegateProviderWithAction&lt;out C, T&gt;&#039; is deprecated. Use &#039;val element = register(name) { }&#039; instead. See the Gradle 9.6 upgrading guide. w: file://~/&lt;workspace&gt;:208:40: &#039;fun &lt;T&gt; ExistingDomainO...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">1</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">14</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">2</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">15</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">45</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">103</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">8</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">148</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>14</td><td>0</td><td>14</td><td>src (14)</td><td>src/test/java/com/github/tomakehurst/wiremock/Example1.java:10 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/com/github/tomakehurst/wiremock/Example2.java:11 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/com/github/tomakehurst/wiremock/Example3.java:12 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/com/github/tomakehurst/wiremock/Example4.java:13 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/com/github/tomakehurst/wiremock/Example5.java:14 · Review JUnit 4 annotations and assertions before Jupiter migration.</td></tr><tr><td><span class="pill info">info</span><br>JUnit Vintage engine dependency</td><td>1</td><td>1</td><td>0</td><td>build.gradle (1)</td><td>build.gradle:76 · Treat Vintage as a temporary bridge and track remaining JUnit 4 tests.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill info">info</span><br>System.out logging</td><td>79</td><td>7</td><td>72</td><td>src (69)<br>perf-test (5)<br>wiremock-url (4)</td><td>perf-test/src/main/java/wiremock/LoadTestConfiguration.java:53 · Review System.out logging before modernization.<br>perf-test/src/main/java/wiremock/LoadTestConfiguration.java:82 · Review System.out logging before modernization.<br>perf-test/src/main/java/wiremock/LoadTestConfiguration.java:100 · Review System.out logging before modernization.<br>perf-test/src/main/java/wiremock/LoadTestConfiguration.java:120 · Review System.out logging before modernization.<br>perf-test/src/main/java/wiremock/LoadTestConfiguration.java:138 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>23</td><td>11</td><td>12</td><td>src (12)<br>wiremock-core (10)<br>certificate-generator (1)</td><td>src/test/java/com/github/tomakehurst/wiremock/ServeEventLogAcceptanceTest.java:38 · Review java.util.Date usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/admin/ConversionsTest.java:25 · Review java.util.Date usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/common/DateTimeOffsetTest.java:25 · Review java.util.Date usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/common/DatesTest.java:25 · Review java.util.Date usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/crypto/X509CertificateSpecification.java:25 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>21</td><td>16</td><td>5</td><td>wiremock-core (15)<br>src (5)<br>wiremock-jetty (1)</td><td>src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java:464 · Review Reflection usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java:467 · Review Reflection usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java:500 · Review Reflection usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/jetty/JettyHttpServerTest.java:146 · Review Reflection usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/matching/StringValuePatternTest.java:72 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JDK internal API usage</td><td>9</td><td>5</td><td>4</td><td>src (4)<br>wiremock-core (3)<br>build.gradle.kts (1)</td><td>build.gradle.kts:163 · Review JDK internal API usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/ProxyAcceptanceTest.java:45 · Review JDK internal API usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/client/HttpAdminClientTest.java:41 · Review JDK internal API usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/common/xml/XmlTest.java:119 · Review JDK internal API usage before modernization.<br>src/test/java/com/github/tomakehurst/wiremock/common/xml/XmlTest.java:119 · Review JDK internal API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>8</td><td>0</td><td>8</td><td>testlogging (4)<br>wiremock-junit4 (4)</td><td>testlogging/src/test/java/WiremockTest.java:2 · Review JUnit 4 API usage before modernization.<br>testlogging/src/test/java/WiremockTest.java:3 · Review JUnit 4 API usage before modernization.<br>testlogging/src/test/java/WiremockTest.java:5 · Review JUnit 4 API usage before modernization.<br>testlogging/src/test/java/WiremockTest.java:17 · Review JUnit 4 API usage before modernization.<br>wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java:37 · Review JUnit 4 API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 dependency</td><td>5</td><td>5</td><td>0</td><td>wiremock-url (3)<br>testlogging (1)<br>wiremock-standalone (1)</td><td>testlogging/pom.xml:43 · Review JUnit 4 dependency before modernization.<br>wiremock-standalone/build.gradle.kts:64 · Review JUnit 4 dependency before modernization.<br>wiremock-url/wiremock-url/build.gradle.kts:15 · Review JUnit 4 dependency before modernization.<br>wiremock-url/wiremock-url-jackson2/build.gradle.kts:22 · Review JUnit 4 dependency before modernization.<br>wiremock-url/wiremock-url-jackson3/build.gradle.kts:18 · Review JUnit 4 dependency before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>2</td><td>0</td><td>2</td><td>wiremock-junit4 (2)</td><td>wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java:42 · Review JUnit 4 runner usage before modernization.<br>wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java:44 · Review JUnit 4 runner usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

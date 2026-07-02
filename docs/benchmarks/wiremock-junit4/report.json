@@ -1,17 +1,17 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-07-01T21:51:42.372Z",
+  "generatedAt": "2026-07-02T16:20:34.586Z",
   "project": {
     "name": "WireMock JUnit 4",
-    "root": "https://github.com/wiremock/wiremock",
+    "root": "benchmark-repos/wiremock-junit4",
     "source": "https://github.com/wiremock/wiremock",
     "buildTools": [
       "Gradle"
     ],
-    "javaVersion": "11",
+    "javaVersion": "1",
     "springBootVersion": "unknown",
-    "fileCount": 1800,
-    "javaFileCount": 930
+    "fileCount": 1669,
+    "javaFileCount": 1310
   },
   "pack": "junit-5-readiness",
   "packApplicability": {
@@ -20,105 +20,1266 @@
     "reason": "JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness."
   },
   "readiness": {
-    "overall": 80,
+    "overall": 68,
     "categories": {
-      "java": 88,
+      "java": 56,
       "spring": 86,
       "hibernate": 72,
-      "jakarta": 95,
+      "jakarta": 79,
       "build": 90,
       "security": 76,
-      "testing": 48,
-      "architecture": 84
+      "testing": 19,
+      "architecture": 66
     },
-    "summary": "Ready with remediation work",
+    "summary": "Migration risk requires focused cleanup",
     "counts": {
-      "critical": 0,
-      "warning": 14,
-      "info": 1
+      "critical": 1,
+      "warning": 24,
+      "info": 123
     }
   },
   "productionFindings": [
     {
-      "code": "junit-vintage-engine",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "build.gradle.kts",
+      "line": 163,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
       "severity": "info",
-      "title": "JUnit Vintage engine dependency",
-      "recommendation": "Treat Vintage as a temporary bridge and track remaining JUnit 4 tests.",
-      "file": "build.gradle",
-      "line": 76,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+      "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+      "line": 100,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+      "line": 120,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+      "line": 138,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/testFixtures/java/com/github/tomakehurst/wiremock/testsupport/WireMockTestClient.java",
+      "line": 120,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "testlogging/pom.xml",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/certificate-generator/src/main/java/com/github/tomakehurst/wiremock/http/ssl/CertificateAuthority.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/admin/AdminRoutes.java",
+      "line": 197,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/admin/Conversions.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/admin/LimitAndSinceDatePaginator.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/DateTimeOffset.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/DateTimeParser.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/DateTimeTruncation.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/Dates.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/ssl/KeyStoreSourceFactory.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/Xml.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/Xml.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/Xml.java",
+      "line": 97,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/XmlDomNode.java",
+      "line": 98,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/XmlDomNode.java",
+      "line": 98,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/XmlNode.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/XmlNode.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/XmlNode.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/ExtensionDeclarations.java",
+      "line": 89,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/ExtensionLoader.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/ExtensionLoader.java",
+      "line": 66,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/Extensions.java",
+      "line": 264,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/Extensions.java",
+      "line": 272,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/Extensions.java",
+      "line": 302,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsCurrentDateHelper.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/RenderableDate.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/TruncateDateTimeHelper.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/WireMockHelpers.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/http/multipart/FileUpload.java",
+      "line": 432,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/matching/StringValuePattern.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/matching/StringValuePatternJsonDeserializer.java",
+      "line": 135,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "wiremock-jetty/build.gradle.kts",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-jetty/src/main/java/com/github/tomakehurst/wiremock/jetty/JettyHttpUtils.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "wiremock-standalone/build.gradle.kts",
+      "line": 64,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "wiremock-url/wiremock-url/build.gradle.kts",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "wiremock-url/wiremock-url-jackson2/build.gradle.kts",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "wiremock-url/wiremock-url-jackson3/build.gradle.kts",
+      "line": 18,
       "scope": "production"
     }
   ],
   "testFindings": [
     {
-      "code": "junit4-api-usage",
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/AcceptanceTestBase.java",
+      "line": 99,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/AdminApiTest.java",
+      "line": 158,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/AdminApiTest.java",
+      "line": 213,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/AdminApiTest.java",
+      "line": 327,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/ContentPatternsJsonValidityTest.java",
+      "line": 290,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 70,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 77,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 80,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 84,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 88,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 112,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 118,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/NotMatchedPageAcceptanceTest.java",
+      "line": 122,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example1.java",
-      "line": 10,
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/ProxyAcceptanceTest.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/ServeEventLogAcceptanceTest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/WebhooksAcceptanceTest.java",
+      "line": 80,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/WebhooksAcceptanceViaPostServeActionTest.java",
+      "line": 101,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/WebhooksAcceptanceViaPostServeActionTest.java",
+      "line": 102,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/WebhooksAcceptanceViaServeEventTest.java",
+      "line": 122,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/WebhooksAcceptanceViaServeEventTest.java",
+      "line": 123,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/admin/ConversionsTest.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/client/HttpAdminClientTest.java",
+      "line": 41,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/common/DateTimeOffsetTest.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/common/DatesTest.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/common/xml/XmlTest.java",
+      "line": 119,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/common/xml/XmlTest.java",
+      "line": 119,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/crypto/X509CertificateSpecification.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsCurrentDateHelperTest.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsCurrentDateHelperTest.java",
+      "line": 89,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/MathsHelperTest.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/ParseDateHelperTest.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/RenderableDateTest.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/TruncateDateTimeHelperTest.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/http/HttpClientFactoryCertificateVerificationTest.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java",
+      "line": 464,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java",
+      "line": 467,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java",
+      "line": 500,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/jetty/JettyHttpServerTest.java",
+      "line": 146,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/matching/RegexValuePatternTest.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/matching/StringValuePatternTest.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/stubbing/StubMappingTest.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/stubbing/StubMappingTest.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/LoggedRequestTest.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 93,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 114,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 132,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 154,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 219,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 220,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 247,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 248,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 297,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 312,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 345,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 362,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 375,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 388,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 403,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 436,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 455,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 471,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 487,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 504,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 525,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 594,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 607,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 688,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 701,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 714,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 727,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 740,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 753,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 310,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 325,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 340,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 352,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 373,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 568,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 601,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 621,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 645,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 668,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 688,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 705,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/MassiveNearMissTest.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/MassiveNearMissTest.java",
+      "line": 75,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/MassiveNearMissTest.java",
+      "line": 126,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/MassiveNearMissTest.java",
+      "line": 129,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example2.java",
-      "line": 11,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "testlogging/src/test/java/WiremockTest.java",
+      "line": 2,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example3.java",
-      "line": 12,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "testlogging/src/test/java/WiremockTest.java",
+      "line": 3,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example4.java",
-      "line": 13,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "testlogging/src/test/java/WiremockTest.java",
+      "line": 5,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example5.java",
-      "line": 14,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example6.java",
-      "line": 15,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example7.java",
-      "line": 16,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example8.java",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "testlogging/src/test/java/WiremockTest.java",
       "line": 17,
       "scope": "test"
     },
@@ -126,90 +1287,471 @@
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example9.java",
-      "line": 18,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+      "line": 37,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example10.java",
-      "line": 19,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+      "line": 44,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example11.java",
-      "line": 20,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/junit/WireMockRuleFailOnUnmatchedRequestsTest.java",
+      "line": 26,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example12.java",
-      "line": 21,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/junit/WireMockRuleFailOnUnmatchedRequestsTest.java",
+      "line": 28,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example13.java",
-      "line": 22,
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "wiremock-url/wiremock-url/src/test/java/org/wiremock/url/IsolatedClassLoader.java",
+      "line": 138,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example14.java",
-      "line": 23,
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "wiremock-url/wiremock-url/src/test/java/org/wiremock/url/IsolatedClassLoader.java",
+      "line": 140,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "wiremock-url/wiremock-url/src/test/java/org/wiremock/url/whatwg/SuccessWhatWGUrlTestCase.java",
+      "line": 130,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "wiremock-url/wiremock-url/src/test/java/org/wiremock/url/whatwg/SuccessWhatWGUrlTestCase.java",
+      "line": 150,
       "scope": "test"
     }
   ],
   "findingSummary": {
     "production": {
-      "critical": 0,
-      "warning": 0,
-      "info": 1
+      "critical": 1,
+      "warning": 10,
+      "info": 34
     },
     "test": {
       "critical": 0,
       "warning": 14,
-      "info": 0
+      "info": 89
     },
     "byCode": {
-      "junit-vintage-engine": {
-        "code": "junit-vintage-engine",
-        "title": "JUnit Vintage engine dependency",
-        "severity": "info",
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
         "total": 1,
         "production": 1,
         "test": 0,
         "topModules": [
           {
-            "name": "build.gradle",
+            "name": "project",
             "count": 1
           }
         ],
         "examples": [
           {
-            "code": "junit-vintage-engine",
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-internal-api": {
+        "code": "java-internal-api",
+        "title": "JDK internal API usage",
+        "severity": "warning",
+        "total": 9,
+        "production": 5,
+        "test": 4,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 4
+          },
+          {
+            "name": "wiremock-core",
+            "count": 3
+          },
+          {
+            "name": "build.gradle.kts",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "build.gradle.kts",
+            "line": 163,
+            "scope": "production"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/ProxyAcceptanceTest.java",
+            "line": 45,
+            "scope": "test"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/client/HttpAdminClientTest.java",
+            "line": 41,
+            "scope": "test"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/common/xml/XmlTest.java",
+            "line": 119,
+            "scope": "test"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/common/xml/XmlTest.java",
+            "line": 119,
+            "scope": "test"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 79,
+        "production": 7,
+        "test": 72,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 69
+          },
+          {
+            "name": "perf-test",
+            "count": 5
+          },
+          {
+            "name": "wiremock-url",
+            "count": 4
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
             "severity": "info",
-            "title": "JUnit Vintage engine dependency",
-            "recommendation": "Treat Vintage as a temporary bridge and track remaining JUnit 4 tests.",
-            "file": "build.gradle",
-            "line": 76,
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+            "line": 53,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+            "line": 82,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+            "line": 100,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+            "line": 120,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+            "line": 138,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "java.util.Date usage",
+        "severity": "info",
+        "total": 23,
+        "production": 11,
+        "test": 12,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 12
+          },
+          {
+            "name": "wiremock-core",
+            "count": 10
+          },
+          {
+            "name": "certificate-generator",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/ServeEventLogAcceptanceTest.java",
+            "line": 38,
+            "scope": "test"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/admin/ConversionsTest.java",
+            "line": 25,
+            "scope": "test"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/common/DateTimeOffsetTest.java",
+            "line": 25,
+            "scope": "test"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/common/DatesTest.java",
+            "line": 25,
+            "scope": "test"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/crypto/X509CertificateSpecification.java",
+            "line": 25,
+            "scope": "test"
+          }
+        ]
+      },
+      "reflection-usage": {
+        "code": "reflection-usage",
+        "title": "Reflection usage",
+        "severity": "info",
+        "total": 21,
+        "production": 16,
+        "test": 5,
+        "topModules": [
+          {
+            "name": "wiremock-core",
+            "count": 15
+          },
+          {
+            "name": "src",
+            "count": 5
+          },
+          {
+            "name": "wiremock-jetty",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java",
+            "line": 464,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java",
+            "line": 467,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java",
+            "line": 500,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/jetty/JettyHttpServerTest.java",
+            "line": 146,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "src/test/java/com/github/tomakehurst/wiremock/matching/StringValuePatternTest.java",
+            "line": 72,
+            "scope": "test"
+          }
+        ]
+      },
+      "junit4-dependency": {
+        "code": "junit4-dependency",
+        "title": "JUnit 4 dependency",
+        "severity": "warning",
+        "total": 5,
+        "production": 5,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "wiremock-url",
+            "count": 3
+          },
+          {
+            "name": "testlogging",
+            "count": 1
+          },
+          {
+            "name": "wiremock-standalone",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "testlogging/pom.xml",
+            "line": 43,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "wiremock-standalone/build.gradle.kts",
+            "line": 64,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "wiremock-url/wiremock-url/build.gradle.kts",
+            "line": 15,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "wiremock-url/wiremock-url-jackson2/build.gradle.kts",
+            "line": 22,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "wiremock-url/wiremock-url-jackson3/build.gradle.kts",
+            "line": 18,
             "scope": "production"
           }
         ]
@@ -218,13 +1760,17 @@
         "code": "junit4-api-usage",
         "title": "JUnit 4 API usage",
         "severity": "warning",
-        "total": 14,
+        "total": 8,
         "production": 0,
-        "test": 14,
+        "test": 8,
         "topModules": [
           {
-            "name": "src",
-            "count": 14
+            "name": "testlogging",
+            "count": 4
+          },
+          {
+            "name": "wiremock-junit4",
+            "count": 4
           }
         ],
         "examples": [
@@ -232,45 +1778,79 @@
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "src/test/java/com/github/tomakehurst/wiremock/Example1.java",
-            "line": 10,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "testlogging/src/test/java/WiremockTest.java",
+            "line": 2,
             "scope": "test"
           },
           {
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "src/test/java/com/github/tomakehurst/wiremock/Example2.java",
-            "line": 11,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "testlogging/src/test/java/WiremockTest.java",
+            "line": 3,
             "scope": "test"
           },
           {
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "src/test/java/com/github/tomakehurst/wiremock/Example3.java",
-            "line": 12,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "testlogging/src/test/java/WiremockTest.java",
+            "line": 5,
             "scope": "test"
           },
           {
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "src/test/java/com/github/tomakehurst/wiremock/Example4.java",
-            "line": 13,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "testlogging/src/test/java/WiremockTest.java",
+            "line": 17,
             "scope": "test"
           },
           {
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "src/test/java/com/github/tomakehurst/wiremock/Example5.java",
-            "line": 14,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+            "line": 37,
+            "scope": "test"
+          }
+        ]
+      },
+      "junit4-runner-usage": {
+        "code": "junit4-runner-usage",
+        "title": "JUnit 4 runner usage",
+        "severity": "warning",
+        "total": 2,
+        "production": 0,
+        "test": 2,
+        "topModules": [
+          {
+            "name": "wiremock-junit4",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+            "line": 42,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+            "line": 44,
             "scope": "test"
           }
         ]
@@ -279,139 +1859,1336 @@
   },
   "findings": [
     {
-      "code": "junit-vintage-engine",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "build.gradle.kts",
+      "line": 163,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
       "severity": "info",
-      "title": "JUnit Vintage engine dependency",
-      "recommendation": "Treat Vintage as a temporary bridge and track remaining JUnit 4 tests.",
-      "file": "build.gradle",
-      "line": 76,
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+      "line": 82,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+      "line": 100,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+      "line": 120,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "perf-test/src/main/java/wiremock/LoadTestConfiguration.java",
+      "line": 138,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/AcceptanceTestBase.java",
+      "line": 99,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/AdminApiTest.java",
+      "line": 158,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/AdminApiTest.java",
+      "line": 213,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/AdminApiTest.java",
+      "line": 327,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/ContentPatternsJsonValidityTest.java",
+      "line": 290,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 70,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 77,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 80,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 84,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 88,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 112,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/DeadlockTest.java",
+      "line": 118,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/NotMatchedPageAcceptanceTest.java",
+      "line": 122,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/ProxyAcceptanceTest.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/ServeEventLogAcceptanceTest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/WebhooksAcceptanceTest.java",
+      "line": 80,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/WebhooksAcceptanceViaPostServeActionTest.java",
+      "line": 101,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/WebhooksAcceptanceViaPostServeActionTest.java",
+      "line": 102,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/WebhooksAcceptanceViaServeEventTest.java",
+      "line": 122,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/WebhooksAcceptanceViaServeEventTest.java",
+      "line": 123,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/admin/ConversionsTest.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/client/HttpAdminClientTest.java",
+      "line": 41,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/common/DateTimeOffsetTest.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/common/DatesTest.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/common/xml/XmlTest.java",
+      "line": 119,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/common/xml/XmlTest.java",
+      "line": 119,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/crypto/X509CertificateSpecification.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsCurrentDateHelperTest.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsCurrentDateHelperTest.java",
+      "line": 89,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/MathsHelperTest.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/ParseDateHelperTest.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/RenderableDateTest.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/TruncateDateTimeHelperTest.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/http/HttpClientFactoryCertificateVerificationTest.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java",
+      "line": 464,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java",
+      "line": 467,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java",
+      "line": 500,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/jetty/JettyHttpServerTest.java",
+      "line": 146,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/matching/RegexValuePatternTest.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/matching/StringValuePatternTest.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/stubbing/StubMappingTest.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/stubbing/StubMappingTest.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/LoggedRequestTest.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 93,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 114,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 132,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 154,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 219,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 220,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 247,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 248,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 297,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 312,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 345,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 362,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 375,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 388,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 403,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 436,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 455,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 471,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 487,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 504,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 525,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 594,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 607,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 688,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 701,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 714,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 727,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 740,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/com/github/tomakehurst/wiremock/verification/diff/PlainTextDiffRendererTest.java",
+      "line": 753,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 310,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 325,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 340,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 352,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 373,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 568,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 601,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 621,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 645,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 668,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 688,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/Examples.java",
+      "line": 705,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/MassiveNearMissTest.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/MassiveNearMissTest.java",
+      "line": 75,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/MassiveNearMissTest.java",
+      "line": 126,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/test/java/ignored/MassiveNearMissTest.java",
+      "line": 129,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/testFixtures/java/com/github/tomakehurst/wiremock/testsupport/WireMockTestClient.java",
+      "line": 120,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "testlogging/pom.xml",
+      "line": 43,
       "scope": "production"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example1.java",
-      "line": 10,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "testlogging/src/test/java/WiremockTest.java",
+      "line": 2,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example2.java",
-      "line": 11,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "testlogging/src/test/java/WiremockTest.java",
+      "line": 3,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example3.java",
-      "line": 12,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "testlogging/src/test/java/WiremockTest.java",
+      "line": 5,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example4.java",
-      "line": 13,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example5.java",
-      "line": 14,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example6.java",
-      "line": 15,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example7.java",
-      "line": 16,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example8.java",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "testlogging/src/test/java/WiremockTest.java",
       "line": 17,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example9.java",
-      "line": 18,
-      "scope": "test"
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/certificate-generator/src/main/java/com/github/tomakehurst/wiremock/http/ssl/CertificateAuthority.java",
+      "line": 34,
+      "scope": "production"
     },
     {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example10.java",
-      "line": 19,
-      "scope": "test"
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/admin/AdminRoutes.java",
+      "line": 197,
+      "scope": "production"
     },
     {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example11.java",
-      "line": 20,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example12.java",
-      "line": 21,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example13.java",
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/admin/Conversions.java",
       "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/admin/LimitAndSinceDatePaginator.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/DateTimeOffset.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/DateTimeParser.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/DateTimeTruncation.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/Dates.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/ssl/KeyStoreSourceFactory.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/Xml.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/Xml.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/Xml.java",
+      "line": 97,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/XmlDomNode.java",
+      "line": 98,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/XmlDomNode.java",
+      "line": 98,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/XmlNode.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/XmlNode.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/common/xml/XmlNode.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/ExtensionDeclarations.java",
+      "line": 89,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/ExtensionLoader.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/ExtensionLoader.java",
+      "line": 66,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/Extensions.java",
+      "line": 264,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/Extensions.java",
+      "line": 272,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/Extensions.java",
+      "line": 302,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsCurrentDateHelper.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/RenderableDate.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/TruncateDateTimeHelper.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/WireMockHelpers.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/http/multipart/FileUpload.java",
+      "line": 432,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/matching/StringValuePattern.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-core/src/main/java/com/github/tomakehurst/wiremock/matching/StringValuePatternJsonDeserializer.java",
+      "line": 135,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "wiremock-jetty/build.gradle.kts",
+      "line": 65,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "wiremock-jetty/src/main/java/com/github/tomakehurst/wiremock/jetty/JettyHttpUtils.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+      "line": 37,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/com/github/tomakehurst/wiremock/Example14.java",
-      "line": 23,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+      "line": 40,
       "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+      "line": 42,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/WireMockJUnitRuleTest.java",
+      "line": 44,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/junit/WireMockRuleFailOnUnmatchedRequestsTest.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "wiremock-junit4/src/test/java/com/github/tomakehurst/wiremock/junit/WireMockRuleFailOnUnmatchedRequestsTest.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "wiremock-standalone/build.gradle.kts",
+      "line": 64,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "wiremock-url/wiremock-url/build.gradle.kts",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "wiremock-url/wiremock-url/src/test/java/org/wiremock/url/IsolatedClassLoader.java",
+      "line": 138,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "wiremock-url/wiremock-url/src/test/java/org/wiremock/url/IsolatedClassLoader.java",
+      "line": 140,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "wiremock-url/wiremock-url/src/test/java/org/wiremock/url/whatwg/SuccessWhatWGUrlTestCase.java",
+      "line": 130,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "wiremock-url/wiremock-url/src/test/java/org/wiremock/url/whatwg/SuccessWhatWGUrlTestCase.java",
+      "line": 150,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "wiremock-url/wiremock-url-jackson2/build.gradle.kts",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "wiremock-url/wiremock-url-jackson3/build.gradle.kts",
+      "line": 18,
+      "scope": "production"
     }
   ],
   "evidence": [
@@ -425,7 +3202,7 @@
     },
     {
       "name": "Jakarta namespace readiness",
-      "status": "passed"
+      "status": "failed"
     },
     {
       "name": "Hibernate usage detection",
@@ -457,7 +3234,7 @@
     "springBootVersion": "unknown",
     "springSecurityVersion": "unknown",
     "jakartaDetected": true,
-    "javaxDetected": false,
+    "javaxDetected": true,
     "hibernateDetected": false,
     "springSecurityDetected": false,
     "junit4Detected": true,
@@ -468,27 +3245,64 @@
     "name": "WireMock JUnit 4",
     "repository": "https://github.com/wiremock/wiremock",
     "ref": null,
-    "requestedSource": "catalog",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
-    "commands": [],
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/wiremock-junit4",
+    "analysisPath": "benchmark-repos/wiremock-junit4",
+    "gitRevision": "df2f968c52e84605c1b7f5d94fd9640cebb4c4c8",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/wiremock/wiremock benchmark-repos/wiremock-junit4",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '~/<workspace>"
+      }
+    ],
     "validation": {
-      "requested": false,
-      "status": "not_requested",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation was not requested."
+      "requested": true,
+      "status": "failed",
+      "confidence": 25,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "failed",
+          "command": "./gradlew compileJava --no-daemon",
+          "durationMs": 120353,
+          "exitCode": 143,
+          "output": "Fetching distribution.\nDownloading https://services.gradle.org/distributions/gradle-9.6.1-bin.zip\n.............10%.............20%..............30%.............40%..............50%.............60%.............70%..............80%.............90%..............100%\n\nWelcome to Gradle 9.6.1!\n\nHere are the highlights of this release:\n - Improved Configuration Cache hit rates\n - Additional CLI rendering options\n - Important project hierarchy lookup deprecations\n\nFor more details see https://docs.gradle.org/9.6.1/release-notes.html\n\nTo honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.6.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.\nDaemon will be stopped at the end of the build \n> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED\n> Task :buildSrc:generateExternalPluginSpecBuilders\n> Task :buildSrc:extractPrecompiledScriptPluginPlugins\n> Task :buildSrc:generateScriptPluginAdapters\n> Task :buildSrc:pluginDescriptors\n> Task :buildSrc:processResources\n> Task :buildSrc:compilePluginsBlocks\n> Task :buildSrc:generatePrecompiledScriptPluginAccessors\nCommand timed out after 120000 ms.",
+          "timedOut": true
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "./gradlew test --no-daemon",
+          "durationMs": 120325,
+          "exitCode": 143,
+          "output": "tion: T.() -> Unit): RegisteringDomainObjectDelegateProviderWithAction<out C, T>' is deprecated. Use 'val element = register(name) { }' instead. See the Gradle 9.6 upgrading guide.\nw: file://~/<workspace>:208:40: 'fun <T> ExistingDomainObjectDelegate<out T>.getValue(receiver: Any?, property: KProperty<*>): T' is deprecated. Use the named() API instead. See the Gradle 9.6 upgrading guide.\nw: file://~/<workspace>:220:24: 'fun RegisteringDomainObjectDelegateProviderWithAction<out TaskContainer, Task>.provideDelegate(receiver: Any?, property: KProperty<*>): ExistingDomainObjectDelegate<TaskProvider<Task>>' is deprecated. Use 'val task = tasks.register(name) { }' instead. See the Gradle 9.6 upgrading guide.\nw: file://~/<workspace>:220:24: 'fun <T : Any, C : NamedDomainObjectContainer<T>> C.registering(action: T.() -> Unit): RegisteringDomainObjectDelegateProviderWithAction<out C, T>' is deprecated. Use 'val element = register(name) { }' instead. See the Gradle 9.6 upgrading guide.\nw: file://~/<workspace>:220:24: 'fun <T> ExistingDomainObjectDelegate<out T>.getValue(receiver: Any?, property: KProperty<*>): T' is deprecated. Use the named() API instead. See the Gradle 9.6 upgrading guide.\nCommand timed out after 120000 ms.",
+          "timedOut": true
+        }
+      ],
+      "summary": "2 validation check(s) failed."
     }
   },
   "nextActions": [
     {
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    },
+    {
       "id": "review-junit-5-migration-risks",
-      "priority": "info",
+      "priority": "warning",
       "title": "Review JUnit 4 to JUnit 5 migration risks",
       "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
-      "evidenceCount": 1,
+      "evidenceCount": 5,
       "findingCodes": [
         "junit4-api-usage",
         "junit4-runner-usage",

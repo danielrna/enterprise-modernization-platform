@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>JUnit Quickcheck Readiness Report</h1>
-    <p class="meta">junit-5-readiness · 2026-07-01T21:51:42.368Z · https://github.com/pholser/junit-quickcheck</p>
+    <p class="meta">junit-5-readiness · 2026-07-02T16:25:16.750Z · https://github.com/pholser/junit-quickcheck</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -64,26 +64,26 @@
   </header>
   <main>
     <section class="decision">
-      <div class="panel decision-main warn">
-        <strong>Needs remediation before confident migration execution</strong>
-        <div>The report has enough signal for scoping, but the evidence is not yet strong enough for execution.</div>
-        <div class="risk-list"><span class="pill warning">18 JUnit 4 API usage</span><span class="pill warning">1 JUnit 4 runner usage</span></div>
+      <div class="panel decision-main bad">
+        <strong>Migration is blocked by critical readiness risks</strong>
+        <div>1 critical finding(s) should be resolved before execution planning.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">822 JUnit 4 runner usage</span><span class="pill warning">386 JUnit 4 API usage</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
         </div>
       </div>
       <div class="panel decision-list">
-        <div><strong>Recommended next step</strong><div class="label">Prioritize repeated warning patterns and rerun the report after cleanup.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">79%</div><div class="label">Overall readiness</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">310</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">70%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
+      <div class="panel"><div class="metric">507</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
@@ -95,34 +95,36 @@
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 8 · Build: Gradle · javax usage: no · jakarta usage: no</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: unknown · Build: Maven · javax usage: yes · jakarta usage: no</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>41%</strong></td><td><div class="bar"><span style="width:41%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>0%</strong></td><td><div class="bar"><span style="width:0%"></span></div></td></tr><tr><td>Architecture</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>10</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/pholser/junit-quickcheck
+      <strong>checkout</strong> · https://github.com/pholser/junit-quickcheck
+      <div class="label">Checkout: benchmark-repos/junit-quickcheck</div>
+      <div class="label">Git revision: de9f5d75314d0cf9b703f625ae24a4ac598f56a7</div>
     </div>
     <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>mvn -q -DskipTests compile</td><td>45.5 s</td><td>[ERROR] Failed to execute goal on project junit-quickcheck-generators: Could not resolve dependencies for project com.pholser:junit-quickcheck-generators:jar:1.1-SNAPSHOT [ERROR] dependency: com.pholser:junit-quickcheck-core:jar:tests:1....</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>mvn -q test</td><td>79.7 s</td><td>29) at com.pholser.junit.quickcheck.PropertyParameterGenerationByFieldsTest.autoGenerationOnPrimitiveWrapperType(PropertyParameterGenerationByFieldsTest.java:114) FAILURES!!! Tests run: 1, Failures: 1 &gt; [ERROR] Tests run: 510, Failures: ...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">0</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">19</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">2</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">19</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">21</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">1486</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">7</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">1507</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>18</td><td>0</td><td>18</td><td>core (18)</td><td>core/src/test/java/com/pholser/junit/quickcheck/Example1Test.java:10 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>core/src/test/java/com/pholser/junit/quickcheck/Example2Test.java:11 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>core/src/test/java/com/pholser/junit/quickcheck/Example3Test.java:12 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>core/src/test/java/com/pholser/junit/quickcheck/Example4Test.java:13 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>core/src/test/java/com/pholser/junit/quickcheck/Example5Test.java:14 · Review JUnit 4 annotations and assertions before Jupiter migration.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>1</td><td>0</td><td>1</td><td>core (1)</td><td>core/src/test/java/com/pholser/junit/quickcheck/PropertyTest.java:12 · Review property-based runner semantics before migrating to Jupiter.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>822</td><td>1</td><td>821</td><td>generators (526)<br>core (255)<br>examples (28)</td><td>core/src/main/java/com/pholser/junit/quickcheck/Property.java:37 · Review JUnit 4 runner usage before modernization.<br>core/src/test/java/com/pholser/junit/quickcheck/ComponentizedGeneratorsIsolateConfigurationFromComponentsTest.java:40 · Review JUnit 4 runner usage before modernization.<br>core/src/test/java/com/pholser/junit/quickcheck/ComponentizedGeneratorsIsolateConfigurationFromComponentsTest.java:49 · Review JUnit 4 runner usage before modernization.<br>core/src/test/java/com/pholser/junit/quickcheck/ComposedObjectsTest.java:48 · Review JUnit 4 runner usage before modernization.<br>core/src/test/java/com/pholser/junit/quickcheck/ComposedObjectsTest.java:55 · Review JUnit 4 runner usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>386</td><td>4</td><td>382</td><td>core (218)<br>generators (145)<br>examples (15)</td><td>core/src/main/java/com/pholser/junit/quickcheck/runner/JUnitQuickcheck.java:36 · Review JUnit 4 API usage before modernization.<br>core/src/main/java/com/pholser/junit/quickcheck/runner/JUnitQuickcheck.java:50 · Review JUnit 4 API usage before modernization.<br>core/src/main/java/com/pholser/junit/quickcheck/runner/JUnitQuickcheck.java:52 · Review JUnit 4 API usage before modernization.<br>core/src/main/java/com/pholser/junit/quickcheck/runner/JUnitQuickcheck.java:53 · Review JUnit 4 API usage before modernization.<br>core/src/test/java/com/pholser/junit/quickcheck/BasicCapabilitiesOfGeneratorTest.java:29 · Review JUnit 4 API usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>265</td><td>2</td><td>263</td><td>core (259)<br>generators (6)</td><td>core/src/test/java/com/pholser/junit/quickcheck/GenericArrayPropertyParameterTypesTest.java:80 · Review System.out logging before modernization.<br>core/src/test/java/com/pholser/junit/quickcheck/UsualJUnitMachineryOnSubclassPropertyTest.java:86 · Review System.out logging before modernization.<br>core/src/test/java/com/pholser/junit/quickcheck/UsualJUnitMachineryOnSubclassPropertyTest.java:91 · Review System.out logging before modernization.<br>core/src/test/java/com/pholser/junit/quickcheck/UsualJUnitMachineryOnSubclassPropertyTest.java:100 · Review System.out logging before modernization.<br>core/src/test/java/com/pholser/junit/quickcheck/UsualJUnitMachineryOnSubclassPropertyTest.java:105 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>18</td><td>7</td><td>11</td><td>core (18)</td><td>core/src/main/java/com/pholser/junit/quickcheck/internal/ParameterTypeContext.java:491 · Review Reflection usage before modernization.<br>core/src/main/java/com/pholser/junit/quickcheck/internal/Reflection.java:99 · Review Reflection usage before modernization.<br>core/src/main/java/com/pholser/junit/quickcheck/internal/Reflection.java:206 · Review Reflection usage before modernization.<br>core/src/main/java/com/pholser/junit/quickcheck/internal/Reflection.java:216 · Review Reflection usage before modernization.<br>core/src/main/java/com/pholser/junit/quickcheck/internal/generator/GeneratorRepository.java:295 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>10</td><td>1</td><td>9</td><td>generators (10)</td><td>generators/src/main/java/com/pholser/junit/quickcheck/generator/java/util/DateGenerator.java:61 · Review java.util.Date usage before modernization.<br>generators/src/test/java/com/pholser/junit/quickcheck/DatePropertyParameterTypesTest.java:29 · Review java.util.Date usage before modernization.<br>generators/src/test/java/com/pholser/junit/quickcheck/MapPropertyParameterTypesTest.java:34 · Review java.util.Date usage before modernization.<br>generators/src/test/java/com/pholser/junit/quickcheck/generator/java/util/DatePropertyParameterTest.java:28 · Review java.util.Date usage before modernization.<br>generators/src/test/java/com/pholser/junit/quickcheck/generator/java/util/RangedDatePropertyParameterTest.java:29 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 dependency</td><td>5</td><td>5</td><td>0</td><td>core (1)<br>examples (1)<br>generators (1)</td><td>core/pom.xml:20 · Review JUnit 4 dependency before modernization.<br>examples/pom.xml:21 · Review JUnit 4 dependency before modernization.<br>generators/pom.xml:21 · Review JUnit 4 dependency before modernization.<br>guava/pom.xml:20 · Review JUnit 4 dependency before modernization.<br>pom.xml:119 · Review JUnit 4 dependency before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>
