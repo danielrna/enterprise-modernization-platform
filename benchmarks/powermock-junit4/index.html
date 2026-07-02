@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>PowerMock JUnit 4 Readiness Report</h1>
-    <p class="meta">junit-5-readiness · 2026-07-01T21:51:42.370Z · https://github.com/powermock/powermock</p>
+    <p class="meta">junit-5-readiness · 2026-07-02T17:14:50.930Z · https://github.com/powermock/powermock</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -64,65 +64,67 @@
   </header>
   <main>
     <section class="decision">
-      <div class="panel decision-main warn">
-        <strong>Needs remediation before confident migration execution</strong>
-        <div>The report has enough signal for scoping, but the evidence is not yet strong enough for execution.</div>
-        <div class="risk-list"><span class="pill warning">28 JUnit 4 runner usage</span></div>
+      <div class="panel decision-main bad">
+        <strong>Migration is blocked by critical readiness risks</strong>
+        <div>1 critical finding(s) should be resolved before execution planning.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">575 JUnit 4 API usage</span><span class="pill warning">422 JUnit 4 runner usage</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
         </div>
       </div>
       <div class="panel decision-list">
-        <div><strong>Recommended next step</strong><div class="label">Prioritize repeated warning patterns and rerun the report after cleanup.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">79%</div><div class="label">Overall readiness</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">890</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">63%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
+      <div class="panel"><div class="metric">940</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready with remediation work</div>
+    <div class="panel">Migration risk requires focused cleanup</div>
 
 
     <h2>Pack Applicability</h2>
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 8 · Build: Maven · javax usage: no · jakarta usage: no</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 1 · Build: Gradle · javax usage: yes · jakarta usage: no</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>43%</strong></td><td><div class="bar"><span style="width:43%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>38%</strong></td><td><div class="bar"><span style="width:38%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>0%</strong></td><td><div class="bar"><span style="width:0%"></span></div></td></tr><tr><td>Architecture</td><td><strong>65%</strong></td><td><div class="bar"><span style="width:65%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>27</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/powermock/powermock
+      <strong>checkout</strong> · https://github.com/powermock/powermock
+      <div class="label">Checkout: benchmark-repos/powermock-junit4</div>
+      <div class="label">Git revision: a0be5c4bbeb04f13a6aec2653c1f5663cece1316</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/powermock/powermock benchmark-repos/powermock-junit4</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt;</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./gradlew compileJava --no-daemon</td><td>18.6 s</td><td>eps-plugin:0.0.7. &gt; Could not get resource &#039;https://repo.spring.io/plugins-release/org/springframework/build/gradle/propdeps-plugin/0.0.7/propdeps-plugin-0.0.7.pom&#039;. &gt; Could not GET &#039;https://repo.spring.io/plugins-release/org/springframe...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./gradlew test --no-daemon</td><td>6.6 s</td><td>deps-plugin:0.0.7. &gt; Could not get resource &#039;https://repo.spring.io/plugins-release/org/springframework/build/gradle/propdeps-plugin/0.0.7/propdeps-plugin-0.0.7.pom&#039;. &gt; Could not GET &#039;https://repo.spring.io/plugins-release/org/springfram...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">0</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">28</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">1</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">28</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">184</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">1061</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">8</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">1245</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>28</td><td>0</td><td>28</td><td>junit4 (28)</td><td>tests/mockito/junit4/src/test/java/samples/powermockito/junit4/PowerMockRunnerTest.java:9 · Review PowerMock runner usage carefully because Jupiter migration may require test redesign.<br>tests/mockito/junit4/src/test/java/samples/Example1Test.java:10 · Replace runner-dependent tests with supported Jupiter alternatives or isolate them.<br>tests/mockito/junit4/src/test/java/samples/Example2Test.java:11 · Replace runner-dependent tests with supported Jupiter alternatives or isolate them.<br>tests/mockito/junit4/src/test/java/samples/Example3Test.java:12 · Replace runner-dependent tests with supported Jupiter alternatives or isolate them.<br>tests/mockito/junit4/src/test/java/samples/Example4Test.java:13 · Replace runner-dependent tests with supported Jupiter alternatives or isolate them.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>575</td><td>10</td><td>565</td><td>junit4 (310)<br>powermock-core (46)<br>junit4-agent (30)</td><td>powermock-api/powermock-api-mockito2/src/test/java/org/powermock/api/mockito/internal/expectation/DefaultMethodExpectationSetupTestCase.java:18 · Review JUnit 4 API usage before modernization.<br>powermock-api/powermock-api-mockito2/src/test/java/org/powermock/api/mockito/internal/expectation/DefaultMethodExpectationSetupTestCase.java:19 · Review JUnit 4 API usage before modernization.<br>powermock-api/powermock-api-mockito2/src/test/java/org/powermock/api/mockito/internal/mockcreation/MockCreatorTestCase.java:3 · Review JUnit 4 API usage before modernization.<br>powermock-api/powermock-api-mockito2/src/test/java/org/powermock/api/mockito/mockmaker/PowerMockMakerTestCase.java:21 · Review JUnit 4 API usage before modernization.<br>powermock-api/powermock-api-mockito2/src/test/java/org/powermock/api/mockito/mockmaker/PowerMockMakerTestCase.java:22 · Review JUnit 4 API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>422</td><td>1</td><td>421</td><td>junit4 (286)<br>junit4-delegate (28)<br>powermock-core (15)</td><td>powermock-api/powermock-api-mockito2/src/test/java/org/powermock/api/mockito/PowerMockMockito2ApiTestSuite.java:3 · Review JUnit 4 runner usage before modernization.<br>powermock-api/powermock-api-mockito2/src/test/java/org/powermock/api/mockito/PowerMockMockito2ApiTestSuite.java:14 · Review JUnit 4 runner usage before modernization.<br>powermock-core/src/test/java/org/powermock/configuration/support/ConfigurationFactoryImplTest.java:26 · Review JUnit 4 runner usage before modernization.<br>powermock-core/src/test/java/org/powermock/configuration/support/ConfigurationFactoryImplTest.java:33 · Review JUnit 4 runner usage before modernization.<br>powermock-core/src/test/java/org/powermock/core/classloader/MockClassLoaderFactoryTest.java:7 · Review JUnit 4 runner usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>117</td><td>84</td><td>33</td><td>powermock-core (43)<br>powermock-reflect (31)<br>powermock-api-easymock (11)</td><td>powermock-api/powermock-api-easymock/src/main/java/org/powermock/api/easymock/EasyMockConfiguration.java:44 · Review Reflection usage before modernization.<br>powermock-api/powermock-api-easymock/src/main/java/org/powermock/api/easymock/EasyMockConfiguration.java:53 · Review Reflection usage before modernization.<br>powermock-api/powermock-api-easymock/src/main/java/org/powermock/api/easymock/EasyMockConfiguration.java:62 · Review Reflection usage before modernization.<br>powermock-api/powermock-api-easymock/src/main/java/org/powermock/api/easymock/EasyMockConfiguration.java:63 · Review Reflection usage before modernization.<br>powermock-api/powermock-api-easymock/src/main/java/org/powermock/api/easymock/PowerMock.java:1684 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JDK internal API usage</td><td>70</td><td>70</td><td>0</td><td>powermock-module-javaagent (66)<br>powermock-classloading-objenesis (2)<br>powermock-api-mockito2 (1)</td><td>powermock-api/powermock-api-mockito2/src/main/java/org/powermock/api/mockito/internal/exceptions/StackTraceCleanerProvider.java:31 · Review JDK internal API usage before modernization.<br>powermock-classloading/powermock-classloading-objenesis/src/main/java/org/powermock/classloading/DeepCloner.java:24 · Review JDK internal API usage before modernization.<br>powermock-classloading/powermock-classloading-objenesis/src/main/java/org/powermock/classloading/DeepCloner.java:339 · Review JDK internal API usage before modernization.<br>powermock-modules/powermock-module-javaagent/src/main/java/com/sun/tools/attach/AgentInitializationException.java:25 · Review JDK internal API usage before modernization.<br>powermock-modules/powermock-module-javaagent/src/main/java/com/sun/tools/attach/AgentLoadException.java:25 · Review JDK internal API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 dependency</td><td>34</td><td>16</td><td>18</td><td>tests (18)<br>gradle (14)<br>powermock-release (2)</td><td>gradle/modules.gradle:63 · Review JUnit 4 dependency before modernization.<br>gradle/modules.gradle:81 · Review JUnit 4 dependency before modernization.<br>gradle/modules.gradle:108 · Review JUnit 4 dependency before modernization.<br>gradle/modules.gradle:124 · Review JUnit 4 dependency before modernization.<br>gradle/modules.gradle:145 · Review JUnit 4 dependency before modernization.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>24</td><td>2</td><td>22</td><td>utils (15)<br>junit4-delegate (4)<br>powermock-core (2)</td><td>powermock-core/src/main/java/org/powermock/core/PowerMockUtils.java:53 · Review System.out logging before modernization.<br>powermock-core/src/main/java/org/powermock/core/PowerMockUtils.java:55 · Review System.out logging before modernization.<br>tests/mockito/junit4/src/test/java/samples/powermockito/junit4/bugs/ClassLoaderBugTest.java:43 · Review System.out logging before modernization.<br>tests/mockito/junit4-delegate/src/test/java/powermock/modules/test/mockito/junit4/delegate/parameterized/MockFinalUsingAnnotationsTest.java:54 · Review System.out logging before modernization.<br>tests/mockito/junit4-delegate/src/test/java/powermock/modules/test/mockito/junit4/delegate/parameterized/SuppressConstructorHierarchyDemoTest.java:56 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>2</td><td>0</td><td>2</td><td>junit4 (1)<br>utils (1)</td><td>tests/easymock/junit4/src/test/java/samples/junit4/expectnew/MockDateTest.java:28 · Review java.util.Date usage before modernization.<br>tests/utils/src/main/java/samples/expectnew/ExpectNewDemo.java:22 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

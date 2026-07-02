@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Mockito JUnit 4 Samples Readiness Report</h1>
-    <p class="meta">junit-5-readiness · 2026-07-01T21:51:42.349Z · https://github.com/mockito/mockito</p>
+    <p class="meta">junit-5-readiness · 2026-07-02T17:10:14.923Z · https://github.com/mockito/mockito</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -64,65 +64,67 @@
   </header>
   <main>
     <section class="decision">
-      <div class="panel decision-main warn">
-        <strong>Needs remediation before confident migration execution</strong>
-        <div>The report has enough signal for scoping, but the evidence is not yet strong enough for execution.</div>
-        <div class="risk-list"><span class="pill warning">31 JUnit 4 API usage</span><span class="pill warning">7 JUnit 4 runner usage</span></div>
+      <div class="panel decision-main bad">
+        <strong>Migration is blocked by critical readiness risks</strong>
+        <div>1 critical finding(s) should be resolved before execution planning.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">936 JUnit 4 API usage</span><span class="pill warning">118 JUnit 4 runner usage</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
         </div>
       </div>
       <div class="panel decision-list">
-        <div><strong>Recommended next step</strong><div class="label">Prioritize repeated warning patterns and rerun the report after cleanup.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">76%</div><div class="label">Overall readiness</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">1300</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">58%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
+      <div class="panel"><div class="metric">1000</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready with remediation work</div>
+    <div class="panel">Migration risk requires focused cleanup</div>
 
 
     <h2>Pack Applicability</h2>
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 11 · Build: Gradle · javax usage: no · jakarta usage: no</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 18 · Build: Gradle · javax usage: yes · jakarta usage: no</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>15%</strong></td><td><div class="bar"><span style="width:15%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>43%</strong></td><td><div class="bar"><span style="width:43%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>0%</strong></td><td><div class="bar"><span style="width:0%"></span></div></td></tr><tr><td>Architecture</td><td><strong>17%</strong></td><td><div class="bar"><span style="width:17%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>36</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/mockito/mockito
+      <strong>checkout</strong> · https://github.com/mockito/mockito
+      <div class="label">Checkout: benchmark-repos/mockito-junit4-samples</div>
+      <div class="label">Git revision: f3cf74c7e1106f7d32299001ca0ecf2c492c468c</div>
     </div>
     <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./gradlew compileJava --no-daemon</td><td>120.4 s</td><td>Downloading https://services.gradle.org/distributions/gradle-8.14.2-bin.zip .............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%..............100...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./gradlew test --no-daemon</td><td>120.4 s</td><td>To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation. Dae...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">0</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">38</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">2</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">38</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">203</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">1116</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">9</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">1319</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>31</td><td>0</td><td>31</td><td>src (31)</td><td>src/test/java/org/mockito/Example1.java:10 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/mockito/Example2.java:11 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/mockito/Example3.java:12 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/mockito/Example4.java:13 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/mockito/Example5.java:14 · Review JUnit 4 annotations and assertions before Jupiter migration.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>7</td><td>0</td><td>7</td><td>src (7)</td><td>src/test/java/org/mockito/MockitoJUnitRunnerTest.java:8 · Review MockitoJUnitRunner and rule usage before Jupiter extension migration.<br>src/test/java/org/mockito/junit/Example1.java:10 · Replace runner-based Mockito tests with MockitoExtension or equivalent setup.<br>src/test/java/org/mockito/junit/Example2.java:11 · Replace runner-based Mockito tests with MockitoExtension or equivalent setup.<br>src/test/java/org/mockito/junit/Example3.java:12 · Replace runner-based Mockito tests with MockitoExtension or equivalent setup.<br>src/test/java/org/mockito/junit/Example4.java:13 · Replace runner-based Mockito tests with MockitoExtension or equivalent setup.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>936</td><td>29</td><td>907</td><td>mockito-core (840)<br>inline-mocks-tests (35)<br>extensions-tests (11)</td><td>mockito-core/src/main/java/org/mockito/Mockito.java:1281 · Review JUnit 4 API usage before modernization.<br>mockito-core/src/main/java/org/mockito/internal/runners/util/TestMethodsFinder.java:9 · Review JUnit 4 API usage before modernization.<br>mockito-core/src/test/java/org/concurrentmockito/ThreadVerifiesContinuouslyInteractingMockTest.java:10 · Review JUnit 4 API usage before modernization.<br>mockito-core/src/test/java/org/concurrentmockito/ThreadsRunAllTestsHalfManualTest.java:7 · Review JUnit 4 API usage before modernization.<br>mockito-core/src/test/java/org/concurrentmockito/ThreadsRunAllTestsHalfManualTest.java:15 · Review JUnit 4 API usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>134</td><td>65</td><td>69</td><td>mockito-core (128)<br>memory-tests (2)<br>module-tests (2)</td><td>mockito-core/src/main/java/org/mockito/Mockito.java:1448 · Review Reflection usage before modernization.<br>mockito-core/src/main/java/org/mockito/internal/PremainAttachAccess.java:46 · Review Reflection usage before modernization.<br>mockito-core/src/main/java/org/mockito/internal/PremainAttachAccess.java:53 · Review Reflection usage before modernization.<br>mockito-core/src/main/java/org/mockito/internal/PremainAttachAccess.java:97 · Review Reflection usage before modernization.<br>mockito-core/src/main/java/org/mockito/internal/configuration/ClassPathLoader.java:60 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>118</td><td>6</td><td>112</td><td>mockito-core (100)<br>mockito-errorprone (8)<br>android-tests (4)</td><td>mockito-core/src/main/java/org/mockito/Mockito.java:1280 · Review JUnit 4 runner usage before modernization.<br>mockito-core/src/main/java/org/mockito/junit/MockitoJUnitRunner.java:37 · Review JUnit 4 runner usage before modernization.<br>mockito-core/src/test/java/org/mockito/MockTest.java:9 · Review JUnit 4 runner usage before modernization.<br>mockito-core/src/test/java/org/mockito/MockTest.java:15 · Review JUnit 4 runner usage before modernization.<br>mockito-core/src/test/java/org/mockito/MockTest.java:18 · Review JUnit 4 runner usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JDK internal API usage</td><td>50</td><td>44</td><td>6</td><td>mockito-errorprone (19)<br>mockito-extensions (13)<br>mockito-core (10)</td><td>gradle.properties:6 · Review JDK internal API usage before modernization.<br>gradle.properties:7 · Review JDK internal API usage before modernization.<br>gradle.properties:8 · Review JDK internal API usage before modernization.<br>gradle.properties:9 · Review JDK internal API usage before modernization.<br>gradle.properties:10 · Review JDK internal API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Serializable type without serialVersionUID</td><td>39</td><td>31</td><td>8</td><td>mockito-core (38)<br>mockito-errorprone (1)</td><td>mockito-core/src/main/java/org/mockito/internal/exceptions/Reporter.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>mockito-core/src/main/java/org/mockito/internal/framework/DisabledMockHandler.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>mockito-core/src/main/java/org/mockito/internal/invocation/InvocationMatcher.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>mockito-core/src/main/java/org/mockito/internal/invocation/MatchersBinder.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>mockito-core/src/main/java/org/mockito/internal/matchers/And.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>31</td><td>26</td><td>5</td><td>mockito-core (30)<br>inline-mocks-tests (1)</td><td>mockito-core/src/main/java/org/mockito/ArgumentMatchers.java:41 · Review System.out logging before modernization.<br>mockito-core/src/main/java/org/mockito/Mockito.java:337 · Review System.out logging before modernization.<br>mockito-core/src/main/java/org/mockito/Mockito.java:340 · Review System.out logging before modernization.<br>mockito-core/src/main/java/org/mockito/Mockito.java:343 · Review System.out logging before modernization.<br>mockito-core/src/main/java/org/mockito/Mockito.java:385 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>9</td><td>0</td><td>9</td><td>mockito-core (8)<br>mockito-junit-jupiter (1)</td><td>mockito-core/src/test/java/org/mockito/internal/invocation/TypeSafeMatchingTest.java:10 · Review java.util.Date usage before modernization.<br>mockito-core/src/test/java/org/mockito/internal/stubbing/answers/AnswersWithDelayTest.java:11 · Review java.util.Date usage before modernization.<br>mockito-core/src/test/java/org/mockito/internal/util/ObjectMethodsGuruTest.java:10 · Review java.util.Date usage before modernization.<br>mockito-core/src/test/java/org/mockitousage/PlaygroundWithDemoOfUnclonedParametersProblemTest.java:13 · Review java.util.Date usage before modernization.<br>mockito-core/src/test/java/org/mockitousage/bugs/CompareMatcherTest.java:14 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 dependency</td><td>1</td><td>1</td><td>0</td><td>mockito-extensions (1)</td><td>mockito-extensions/mockito-errorprone/build.gradle.kts:14 · Review JUnit 4 dependency before modernization.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

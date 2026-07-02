@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Testcontainers JUnit 4 Readiness Report</h1>
-    <p class="meta">junit-5-readiness · 2026-07-01T21:51:42.385Z · https://github.com/testcontainers/testcontainers-java</p>
+    <p class="meta">junit-5-readiness · 2026-07-02T17:19:47.523Z · https://github.com/testcontainers/testcontainers-java</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -64,65 +64,67 @@
   </header>
   <main>
     <section class="decision">
-      <div class="panel decision-main warn">
-        <strong>Needs remediation before confident migration execution</strong>
-        <div>The report has enough signal for scoping, but the evidence is not yet strong enough for execution.</div>
-        <div class="risk-list"><span class="pill warning">19 JUnit 4 API usage</span><span class="pill warning">5 JUnit 4 runner usage</span><span class="pill info">1 JUnit Vintage engine dependency</span></div>
+      <div class="panel decision-main bad">
+        <strong>Migration is blocked by critical readiness risks</strong>
+        <div>1 critical finding(s) should be resolved before execution planning.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">15 JUnit 4 API usage</span><span class="pill warning">9 JUnit 4 dependency</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
         </div>
       </div>
       <div class="panel decision-list">
-        <div><strong>Recommended next step</strong><div class="label">Prioritize repeated warning patterns and rerun the report after cleanup.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">77%</div><div class="label">Overall readiness</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">1500</div><div class="label">Java files</div></div>
-      <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
+      <div class="panel"><div class="metric">69%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
+      <div class="panel"><div class="metric">757</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">3.5.6</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready with remediation work</div>
+    <div class="panel">Migration risk requires focused cleanup</div>
 
 
     <h2>Pack Applicability</h2>
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 17 · Build: Gradle · javax usage: no · jakarta usage: no</div>
+      <div class="label">Detected: Spring Boot: 3.5.6 · Java: 1 · Build: Gradle · javax usage: yes · jakarta usage: yes</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>22%</strong></td><td><div class="bar"><span style="width:22%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>7%</strong></td><td><div class="bar"><span style="width:7%"></span></div></td></tr><tr><td>Architecture</td><td><strong>73%</strong></td><td><div class="bar"><span style="width:73%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>9</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/testcontainers/testcontainers-java
+      <strong>checkout</strong> · https://github.com/testcontainers/testcontainers-java
+      <div class="label">Checkout: benchmark-repos/testcontainers-junit4</div>
+      <div class="label">Git revision: deb78e1e6e47675f56e8d7b3f4747093d66f1baa</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/testcontainers/testcontainers-java benchmark-repos/testcontainers-junit4</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt;</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./gradlew compileJava --no-daemon</td><td>28.4 s</td><td>Downloading https://services.gradle.org/distributions/gradle-8.14.3-all.zip .....................10%.....................20%......................30%.....................40%......................50%.....................60%..................</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./gradlew test --no-daemon</td><td>7.9 s</td><td>To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation. Dae...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">1</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">24</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">3</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">25</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">27</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">30</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">9</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">57</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>19</td><td>0</td><td>19</td><td>junit-jupiter (19)</td><td>modules/junit-jupiter/src/test/java/org/testcontainers/Example1Test.java:10 · Review JUnit 4 annotations and rules before Jupiter migration.<br>modules/junit-jupiter/src/test/java/org/testcontainers/Example2Test.java:11 · Review JUnit 4 annotations and rules before Jupiter migration.<br>modules/junit-jupiter/src/test/java/org/testcontainers/Example3Test.java:12 · Review JUnit 4 annotations and rules before Jupiter migration.<br>modules/junit-jupiter/src/test/java/org/testcontainers/Example4Test.java:13 · Review JUnit 4 annotations and rules before Jupiter migration.<br>modules/junit-jupiter/src/test/java/org/testcontainers/Example5Test.java:14 · Review JUnit 4 annotations and rules before Jupiter migration.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>5</td><td>0</td><td>5</td><td>junit-jupiter (5)</td><td>modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example1Test.java:10 · Review runner or rule-dependent container lifecycle assumptions.<br>modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example2Test.java:11 · Review runner or rule-dependent container lifecycle assumptions.<br>modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example3Test.java:12 · Review runner or rule-dependent container lifecycle assumptions.<br>modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example4Test.java:13 · Review runner or rule-dependent container lifecycle assumptions.<br>modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example5Test.java:14 · Review runner or rule-dependent container lifecycle assumptions.</td></tr><tr><td><span class="pill info">info</span><br>JUnit Vintage engine dependency</td><td>1</td><td>1</td><td>0</td><td>build.gradle (1)</td><td>build.gradle:84 · Track remaining JUnit 4 tests separately from Jupiter-native Testcontainers tests.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>15</td><td>0</td><td>15</td><td>generic (10)<br>redis (4)<br>test-support (1)</td><td>docs/examples/junit4/generic/src/test/java/generic/CmdModifierTest.java:6 · Review JUnit 4 API usage before modernization.<br>docs/examples/junit4/generic/src/test/java/generic/CommandsTest.java:4 · Review JUnit 4 API usage before modernization.<br>docs/examples/junit4/generic/src/test/java/generic/ContainerCreationTest.java:4 · Review JUnit 4 API usage before modernization.<br>docs/examples/junit4/generic/src/test/java/generic/DependsOnTest.java:4 · Review JUnit 4 API usage before modernization.<br>docs/examples/junit4/generic/src/test/java/generic/ExecTest.java:4 · Review JUnit 4 API usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>13</td><td>13</td><td>0</td><td>clickhouse (2)<br>core (2)<br>jdbc (2)</td><td>core/src/main/java/org/testcontainers/containers/GenericContainer.java:355 · Review Reflection usage before modernization.<br>core/src/main/java/org/testcontainers/images/PullPolicy.java:43 · Review Reflection usage before modernization.<br>modules/clickhouse/src/main/java/org/testcontainers/clickhouse/ClickHouseContainer.java:84 · Review Reflection usage before modernization.<br>modules/clickhouse/src/main/java/org/testcontainers/containers/ClickHouseContainer.java:84 · Review Reflection usage before modernization.<br>modules/hivemq/src/main/java/org/testcontainers/hivemq/HiveMQExtension.java:303 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 dependency</td><td>9</td><td>9</td><td>0</td><td>.github (3)<br>docs (2)<br>modules (2)</td><td>.github/dependabot.yml:175 · Review JUnit 4 dependency before modernization.<br>.github/dependabot.yml:385 · Review JUnit 4 dependency before modernization.<br>.github/dependabot.yml:459 · Review JUnit 4 dependency before modernization.<br>docs/examples/junit4/generic/build.gradle:4 · Review JUnit 4 dependency before modernization.<br>docs/examples/junit4/redis/build.gradle:6 · Review JUnit 4 dependency before modernization.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>8</td><td>1</td><td>7</td><td>core (2)<br>selenium (2)<br>cockroachdb (1)</td><td>core/src/test/java/org/testcontainers/utility/ResourceReaperTest.java:102 · Review System.out logging before modernization.<br>core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java:20 · Review System.out logging before modernization.<br>modules/cockroachdb/src/test/java/org/testcontainers/cockroachdb/CockroachContainerTest.java:100 · Review System.out logging before modernization.<br>modules/hivemq/src/main/java/org/testcontainers/hivemq/HiveMQContainer.java:91 · Review System.out logging before modernization.<br>modules/selenium/src/test/java/org/testcontainers/selenium/BaseWebDriverContainerTest.java:35 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JDK internal API usage</td><td>7</td><td>2</td><td>5</td><td>core (6)<br>generic (1)</td><td>core/src/main/java/org/testcontainers/dockerclient/RootlessDockerClientProviderStrategy.java:3 · Review JDK internal API usage before modernization.<br>core/src/main/java/org/testcontainers/dockerclient/RootlessDockerClientProviderStrategy.java:4 · Review JDK internal API usage before modernization.<br>core/src/test/java/org/testcontainers/containers/ExposedHostTest.java:4 · Review JDK internal API usage before modernization.<br>core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java:3 · Review JDK internal API usage before modernization.<br>core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java:4 · Review JDK internal API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>2</td><td>0</td><td>2</td><td>generic (2)</td><td>docs/examples/junit4/generic/src/test/java/org/testcontainers/containers/startupcheck/StartupCheckStrategyTest.java:6 · Review JUnit 4 runner usage before modernization.<br>docs/examples/junit4/generic/src/test/java/org/testcontainers/containers/startupcheck/StartupCheckStrategyTest.java:19 · Review JUnit 4 runner usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>1</td><td>0</td><td>1</td><td>spring-boot-kotlin-redis (1)</td><td>examples/spring-boot-kotlin-redis/src/test/kotlin/com/example/redis/RedisTest.kt:15 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>1</td><td>1</td><td>0</td><td>selenium (1)</td><td>modules/selenium/src/main/java/org/testcontainers/containers/DefaultRecordingFileFactory.java:5 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

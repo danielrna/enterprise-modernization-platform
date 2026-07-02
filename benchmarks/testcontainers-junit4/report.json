@@ -1,17 +1,17 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-07-01T21:51:42.385Z",
+  "generatedAt": "2026-07-02T17:19:47.523Z",
   "project": {
     "name": "Testcontainers JUnit 4",
-    "root": "https://github.com/testcontainers/testcontainers-java",
+    "root": "benchmark-repos/testcontainers-junit4",
     "source": "https://github.com/testcontainers/testcontainers-java",
     "buildTools": [
       "Gradle"
     ],
-    "javaVersion": "17",
-    "springBootVersion": "unknown",
-    "fileCount": 2400,
-    "javaFileCount": 1500
+    "javaVersion": "1",
+    "springBootVersion": "3.5.6",
+    "fileCount": 1431,
+    "javaFileCount": 757
   },
   "pack": "junit-5-readiness",
   "packApplicability": {
@@ -20,123 +20,438 @@
     "reason": "JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness."
   },
   "readiness": {
-    "overall": 77,
+    "overall": 69,
     "categories": {
-      "java": 88,
+      "java": 72,
       "spring": 86,
       "hibernate": 72,
-      "jakarta": 95,
+      "jakarta": 79,
       "build": 90,
       "security": 76,
-      "testing": 22,
-      "architecture": 84
+      "testing": 7,
+      "architecture": 73
     },
-    "summary": "Ready with remediation work",
+    "summary": "Migration risk requires focused cleanup",
     "counts": {
-      "critical": 0,
-      "warning": 24,
-      "info": 1
+      "critical": 1,
+      "warning": 34,
+      "info": 22
     }
   },
   "productionFindings": [
     {
-      "code": "junit-vintage-engine",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
+      "line": 175,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
+      "line": 385,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
+      "line": 459,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
       "severity": "info",
-      "title": "JUnit Vintage engine dependency",
-      "recommendation": "Track remaining JUnit 4 tests separately from Jupiter-native Testcontainers tests.",
-      "file": "build.gradle",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "core/src/main/java/org/testcontainers/containers/GenericContainer.java",
+      "line": 355,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/main/java/org/testcontainers/dockerclient/RootlessDockerClientProviderStrategy.java",
+      "line": 3,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/main/java/org/testcontainers/dockerclient/RootlessDockerClientProviderStrategy.java",
+      "line": 4,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "core/src/main/java/org/testcontainers/images/PullPolicy.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "docs/examples/junit4/generic/build.gradle",
+      "line": 4,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "docs/examples/junit4/redis/build.gradle",
+      "line": 6,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "examples/cucumber/build.gradle",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/clickhouse/src/main/java/org/testcontainers/clickhouse/ClickHouseContainer.java",
       "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/clickhouse/src/main/java/org/testcontainers/containers/ClickHouseContainer.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/hivemq/src/main/java/org/testcontainers/hivemq/HiveMQContainer.java",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/hivemq/src/main/java/org/testcontainers/hivemq/HiveMQExtension.java",
+      "line": 303,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/jdbc/src/main/java/org/testcontainers/containers/JdbcDatabaseContainer.java",
+      "line": 233,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/jdbc/src/main/java/org/testcontainers/jdbc/ContainerDatabaseDriver.java",
+      "line": 250,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "modules/junit-jupiter/build.gradle",
+      "line": 5,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/mysql/src/main/java/org/testcontainers/containers/MySQLContainer.java",
+      "line": 104,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/mysql/src/main/java/org/testcontainers/mysql/MySQLContainer.java",
+      "line": 89,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/oceanbase/src/main/java/org/testcontainers/oceanbase/OceanBaseJdbcUtils.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/oracle-free/src/main/java/org/testcontainers/oracle/OracleContainer.java",
+      "line": 93,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/oracle-xe/src/main/java/org/testcontainers/containers/OracleContainer.java",
+      "line": 114,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "modules/selenium/src/main/java/org/testcontainers/containers/DefaultRecordingFileFactory.java",
+      "line": 5,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "modules/spock/build.gradle",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/tidb/src/main/java/org/testcontainers/tidb/TiDBContainer.java",
+      "line": 73,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "test-support/build.gradle",
+      "line": 2,
       "scope": "production"
     }
   ],
   "testFindings": [
     {
-      "code": "junit4-api-usage",
+      "code": "java-internal-api",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example1Test.java",
-      "line": 10,
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/test/java/org/testcontainers/containers/ExposedHostTest.java",
+      "line": 4,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/testcontainers/utility/ResourceReaperTest.java",
+      "line": 102,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+      "line": 4,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+      "line": 5,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example2Test.java",
-      "line": 11,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/CmdModifierTest.java",
+      "line": 6,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example3Test.java",
-      "line": 12,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/CommandsTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example4Test.java",
-      "line": 13,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/ContainerCreationTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example5Test.java",
-      "line": 14,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/DependsOnTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example6Test.java",
-      "line": 15,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/ExecTest.java",
+      "line": 4,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/HostPortExposedTest.java",
+      "line": 3,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example7Test.java",
-      "line": 16,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/HostPortExposedTest.java",
+      "line": 7,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example8Test.java",
-      "line": 17,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/ImageNameSubstitutionTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example9Test.java",
-      "line": 18,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/MultiplePortsExposedTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example10Test.java",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/WaitStrategiesTest.java",
+      "line": 4,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/org/testcontainers/containers/startupcheck/StartupCheckStrategyTest.java",
+      "line": 5,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/org/testcontainers/containers/startupcheck/StartupCheckStrategyTest.java",
+      "line": 6,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/org/testcontainers/containers/startupcheck/StartupCheckStrategyTest.java",
       "line": 19,
       "scope": "test"
     },
@@ -144,163 +459,408 @@
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example11Test.java",
-      "line": 20,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/redis/src/test/java/quickstart/RedisBackedCacheIntTest.java",
+      "line": 3,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example12Test.java",
-      "line": 21,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/redis/src/test/java/quickstart/RedisBackedCacheIntTest.java",
+      "line": 5,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example13Test.java",
-      "line": 22,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/redis/src/test/java/quickstart/RedisBackedCacheIntTestStep0.java",
+      "line": 3,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example14Test.java",
-      "line": 23,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/redis/src/test/java/quickstart/RedisBackedCacheIntTestStep0.java",
+      "line": 5,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-boot-kotlin-redis/src/test/kotlin/com/example/redis/RedisTest.kt",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/cockroachdb/src/test/java/org/testcontainers/cockroachdb/CockroachContainerTest.java",
+      "line": 100,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/selenium/src/test/java/org/testcontainers/selenium/BaseWebDriverContainerTest.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/selenium/src/test/java/org/testcontainers/selenium/BaseWebDriverContainerTest.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/typesense/src/test/java/org/testcontainers/typesense/TypesenseContainerTest.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/vault/src/test/java/org/testcontainers/vault/VaultContainerTest.java",
+      "line": 71,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example15Test.java",
-      "line": 24,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example16Test.java",
-      "line": 25,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example17Test.java",
-      "line": 26,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example18Test.java",
-      "line": 27,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example19Test.java",
-      "line": 28,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-runner-usage",
-      "severity": "warning",
-      "title": "JUnit 4 runner usage",
-      "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example1Test.java",
-      "line": 10,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-runner-usage",
-      "severity": "warning",
-      "title": "JUnit 4 runner usage",
-      "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example2Test.java",
-      "line": 11,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-runner-usage",
-      "severity": "warning",
-      "title": "JUnit 4 runner usage",
-      "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example3Test.java",
-      "line": 12,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-runner-usage",
-      "severity": "warning",
-      "title": "JUnit 4 runner usage",
-      "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example4Test.java",
-      "line": 13,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-runner-usage",
-      "severity": "warning",
-      "title": "JUnit 4 runner usage",
-      "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example5Test.java",
-      "line": 14,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "test-support/src/test/java/org/testcontainers/testsupport/FlakyRuleTest.java",
+      "line": 3,
       "scope": "test"
     }
   ],
   "findingSummary": {
     "production": {
-      "critical": 0,
-      "warning": 0,
-      "info": 1
+      "critical": 1,
+      "warning": 11,
+      "info": 15
     },
     "test": {
       "critical": 0,
-      "warning": 24,
-      "info": 0
+      "warning": 23,
+      "info": 7
     },
     "byCode": {
-      "junit-vintage-engine": {
-        "code": "junit-vintage-engine",
-        "title": "JUnit Vintage engine dependency",
-        "severity": "info",
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
         "total": 1,
         "production": 1,
         "test": 0,
         "topModules": [
           {
-            "name": "build.gradle",
+            "name": "project",
             "count": 1
           }
         ],
         "examples": [
           {
-            "code": "junit-vintage-engine",
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "junit4-dependency": {
+        "code": "junit4-dependency",
+        "title": "JUnit 4 dependency",
+        "severity": "warning",
+        "total": 9,
+        "production": 9,
+        "test": 0,
+        "topModules": [
+          {
+            "name": ".github",
+            "count": 3
+          },
+          {
+            "name": "docs",
+            "count": 2
+          },
+          {
+            "name": "modules",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": ".github/dependabot.yml",
+            "line": 175,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": ".github/dependabot.yml",
+            "line": 385,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": ".github/dependabot.yml",
+            "line": 459,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "docs/examples/junit4/generic/build.gradle",
+            "line": 4,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "docs/examples/junit4/redis/build.gradle",
+            "line": 6,
+            "scope": "production"
+          }
+        ]
+      },
+      "reflection-usage": {
+        "code": "reflection-usage",
+        "title": "Reflection usage",
+        "severity": "info",
+        "total": 13,
+        "production": 13,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "clickhouse",
+            "count": 2
+          },
+          {
+            "name": "core",
+            "count": 2
+          },
+          {
+            "name": "jdbc",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "reflection-usage",
             "severity": "info",
-            "title": "JUnit Vintage engine dependency",
-            "recommendation": "Track remaining JUnit 4 tests separately from Jupiter-native Testcontainers tests.",
-            "file": "build.gradle",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "core/src/main/java/org/testcontainers/containers/GenericContainer.java",
+            "line": 355,
+            "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "core/src/main/java/org/testcontainers/images/PullPolicy.java",
+            "line": 43,
+            "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "modules/clickhouse/src/main/java/org/testcontainers/clickhouse/ClickHouseContainer.java",
             "line": 84,
             "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "modules/clickhouse/src/main/java/org/testcontainers/containers/ClickHouseContainer.java",
+            "line": 84,
+            "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "modules/hivemq/src/main/java/org/testcontainers/hivemq/HiveMQExtension.java",
+            "line": 303,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-internal-api": {
+        "code": "java-internal-api",
+        "title": "JDK internal API usage",
+        "severity": "warning",
+        "total": 7,
+        "production": 2,
+        "test": 5,
+        "topModules": [
+          {
+            "name": "core",
+            "count": 6
+          },
+          {
+            "name": "generic",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "core/src/main/java/org/testcontainers/dockerclient/RootlessDockerClientProviderStrategy.java",
+            "line": 3,
+            "scope": "production"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "core/src/main/java/org/testcontainers/dockerclient/RootlessDockerClientProviderStrategy.java",
+            "line": 4,
+            "scope": "production"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "core/src/test/java/org/testcontainers/containers/ExposedHostTest.java",
+            "line": 4,
+            "scope": "test"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+            "line": 3,
+            "scope": "test"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+            "line": 4,
+            "scope": "test"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 8,
+        "production": 1,
+        "test": 7,
+        "topModules": [
+          {
+            "name": "core",
+            "count": 2
+          },
+          {
+            "name": "selenium",
+            "count": 2
+          },
+          {
+            "name": "cockroachdb",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "core/src/test/java/org/testcontainers/utility/ResourceReaperTest.java",
+            "line": 102,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+            "line": 20,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "modules/cockroachdb/src/test/java/org/testcontainers/cockroachdb/CockroachContainerTest.java",
+            "line": 100,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "modules/hivemq/src/main/java/org/testcontainers/hivemq/HiveMQContainer.java",
+            "line": 91,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "modules/selenium/src/test/java/org/testcontainers/selenium/BaseWebDriverContainerTest.java",
+            "line": 35,
+            "scope": "test"
           }
         ]
       },
@@ -308,13 +868,21 @@
         "code": "junit4-api-usage",
         "title": "JUnit 4 API usage",
         "severity": "warning",
-        "total": 19,
+        "total": 15,
         "production": 0,
-        "test": 19,
+        "test": 15,
         "topModules": [
           {
-            "name": "junit-jupiter",
-            "count": 19
+            "name": "generic",
+            "count": 10
+          },
+          {
+            "name": "redis",
+            "count": 4
+          },
+          {
+            "name": "test-support",
+            "count": 1
           }
         ],
         "examples": [
@@ -322,45 +890,45 @@
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-            "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example1Test.java",
-            "line": 10,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "docs/examples/junit4/generic/src/test/java/generic/CmdModifierTest.java",
+            "line": 6,
             "scope": "test"
           },
           {
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-            "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example2Test.java",
-            "line": 11,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "docs/examples/junit4/generic/src/test/java/generic/CommandsTest.java",
+            "line": 4,
             "scope": "test"
           },
           {
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-            "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example3Test.java",
-            "line": 12,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "docs/examples/junit4/generic/src/test/java/generic/ContainerCreationTest.java",
+            "line": 4,
             "scope": "test"
           },
           {
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-            "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example4Test.java",
-            "line": 13,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "docs/examples/junit4/generic/src/test/java/generic/DependsOnTest.java",
+            "line": 4,
             "scope": "test"
           },
           {
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-            "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example5Test.java",
-            "line": 14,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "docs/examples/junit4/generic/src/test/java/generic/ExecTest.java",
+            "line": 4,
             "scope": "test"
           }
         ]
@@ -369,13 +937,13 @@
         "code": "junit4-runner-usage",
         "title": "JUnit 4 runner usage",
         "severity": "warning",
-        "total": 5,
+        "total": 2,
         "production": 0,
-        "test": 5,
+        "test": 2,
         "topModules": [
           {
-            "name": "junit-jupiter",
-            "count": 5
+            "name": "generic",
+            "count": 2
           }
         ],
         "examples": [
@@ -383,46 +951,69 @@
             "code": "junit4-runner-usage",
             "severity": "warning",
             "title": "JUnit 4 runner usage",
-            "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-            "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example1Test.java",
-            "line": 10,
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "docs/examples/junit4/generic/src/test/java/org/testcontainers/containers/startupcheck/StartupCheckStrategyTest.java",
+            "line": 6,
             "scope": "test"
           },
           {
             "code": "junit4-runner-usage",
             "severity": "warning",
             "title": "JUnit 4 runner usage",
-            "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-            "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example2Test.java",
-            "line": 11,
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "docs/examples/junit4/generic/src/test/java/org/testcontainers/containers/startupcheck/StartupCheckStrategyTest.java",
+            "line": 19,
             "scope": "test"
-          },
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 1,
+        "production": 0,
+        "test": 1,
+        "topModules": [
           {
-            "code": "junit4-runner-usage",
-            "severity": "warning",
-            "title": "JUnit 4 runner usage",
-            "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-            "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example3Test.java",
-            "line": 12,
-            "scope": "test"
-          },
+            "name": "spring-boot-kotlin-redis",
+            "count": 1
+          }
+        ],
+        "examples": [
           {
-            "code": "junit4-runner-usage",
+            "code": "field-injection",
             "severity": "warning",
-            "title": "JUnit 4 runner usage",
-            "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-            "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example4Test.java",
-            "line": 13,
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "examples/spring-boot-kotlin-redis/src/test/kotlin/com/example/redis/RedisTest.kt",
+            "line": 15,
             "scope": "test"
-          },
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "java.util.Date usage",
+        "severity": "info",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
           {
-            "code": "junit4-runner-usage",
-            "severity": "warning",
-            "title": "JUnit 4 runner usage",
-            "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-            "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example5Test.java",
-            "line": 14,
-            "scope": "test"
+            "name": "selenium",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "modules/selenium/src/main/java/org/testcontainers/containers/DefaultRecordingFileFactory.java",
+            "line": 5,
+            "scope": "production"
           }
         ]
       }
@@ -430,228 +1021,516 @@
   },
   "findings": [
     {
-      "code": "junit-vintage-engine",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
+      "line": 175,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
+      "line": 385,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
+      "line": 459,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
       "severity": "info",
-      "title": "JUnit Vintage engine dependency",
-      "recommendation": "Track remaining JUnit 4 tests separately from Jupiter-native Testcontainers tests.",
-      "file": "build.gradle",
-      "line": 84,
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "core/src/main/java/org/testcontainers/containers/GenericContainer.java",
+      "line": 355,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/main/java/org/testcontainers/dockerclient/RootlessDockerClientProviderStrategy.java",
+      "line": 3,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/main/java/org/testcontainers/dockerclient/RootlessDockerClientProviderStrategy.java",
+      "line": 4,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "core/src/main/java/org/testcontainers/images/PullPolicy.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/test/java/org/testcontainers/containers/ExposedHostTest.java",
+      "line": 4,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/java/org/testcontainers/utility/ResourceReaperTest.java",
+      "line": 102,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+      "line": 4,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "core/src/test/resources/compose-file-copy-inclusions/EnvVariableRestEndpoint.java",
+      "line": 5,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "docs/examples/junit4/generic/build.gradle",
+      "line": 4,
       "scope": "production"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example1Test.java",
-      "line": 10,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/CmdModifierTest.java",
+      "line": 6,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example2Test.java",
-      "line": 11,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/CommandsTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example3Test.java",
-      "line": 12,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/ContainerCreationTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example4Test.java",
-      "line": 13,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/DependsOnTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example5Test.java",
-      "line": 14,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/ExecTest.java",
+      "line": 4,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/HostPortExposedTest.java",
+      "line": 3,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example6Test.java",
-      "line": 15,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/HostPortExposedTest.java",
+      "line": 7,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example7Test.java",
-      "line": 16,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/ImageNameSubstitutionTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example8Test.java",
-      "line": 17,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/MultiplePortsExposedTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example9Test.java",
-      "line": 18,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/generic/WaitStrategiesTest.java",
+      "line": 4,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example10Test.java",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/org/testcontainers/containers/startupcheck/StartupCheckStrategyTest.java",
+      "line": 5,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/org/testcontainers/containers/startupcheck/StartupCheckStrategyTest.java",
+      "line": 6,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "docs/examples/junit4/generic/src/test/java/org/testcontainers/containers/startupcheck/StartupCheckStrategyTest.java",
       "line": 19,
       "scope": "test"
     },
     {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "docs/examples/junit4/redis/build.gradle",
+      "line": 6,
+      "scope": "production"
+    },
+    {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example11Test.java",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/redis/src/test/java/quickstart/RedisBackedCacheIntTest.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/redis/src/test/java/quickstart/RedisBackedCacheIntTest.java",
+      "line": 5,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/redis/src/test/java/quickstart/RedisBackedCacheIntTestStep0.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "docs/examples/junit4/redis/src/test/java/quickstart/RedisBackedCacheIntTestStep0.java",
+      "line": 5,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "examples/cucumber/build.gradle",
+      "line": 15,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-boot-kotlin-redis/src/test/kotlin/com/example/redis/RedisTest.kt",
+      "line": 15,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/clickhouse/src/main/java/org/testcontainers/clickhouse/ClickHouseContainer.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/clickhouse/src/main/java/org/testcontainers/containers/ClickHouseContainer.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/cockroachdb/src/test/java/org/testcontainers/cockroachdb/CockroachContainerTest.java",
+      "line": 100,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/hivemq/src/main/java/org/testcontainers/hivemq/HiveMQContainer.java",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/hivemq/src/main/java/org/testcontainers/hivemq/HiveMQExtension.java",
+      "line": 303,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/jdbc/src/main/java/org/testcontainers/containers/JdbcDatabaseContainer.java",
+      "line": 233,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/jdbc/src/main/java/org/testcontainers/jdbc/ContainerDatabaseDriver.java",
+      "line": 250,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "modules/junit-jupiter/build.gradle",
+      "line": 5,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/mysql/src/main/java/org/testcontainers/containers/MySQLContainer.java",
+      "line": 104,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/mysql/src/main/java/org/testcontainers/mysql/MySQLContainer.java",
+      "line": 89,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/oceanbase/src/main/java/org/testcontainers/oceanbase/OceanBaseJdbcUtils.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/oracle-free/src/main/java/org/testcontainers/oracle/OracleContainer.java",
+      "line": 93,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/oracle-xe/src/main/java/org/testcontainers/containers/OracleContainer.java",
+      "line": 114,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "modules/selenium/src/main/java/org/testcontainers/containers/DefaultRecordingFileFactory.java",
+      "line": 5,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/selenium/src/test/java/org/testcontainers/selenium/BaseWebDriverContainerTest.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/selenium/src/test/java/org/testcontainers/selenium/BaseWebDriverContainerTest.java",
+      "line": 36,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "modules/spock/build.gradle",
       "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/tidb/src/main/java/org/testcontainers/tidb/TiDBContainer.java",
+      "line": 73,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/typesense/src/test/java/org/testcontainers/typesense/TypesenseContainerTest.java",
+      "line": 30,
       "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "modules/vault/src/test/java/org/testcontainers/vault/VaultContainerTest.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "test-support/build.gradle",
+      "line": 2,
+      "scope": "production"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example12Test.java",
-      "line": 21,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example13Test.java",
-      "line": 22,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example14Test.java",
-      "line": 23,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example15Test.java",
-      "line": 24,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example16Test.java",
-      "line": 25,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example17Test.java",
-      "line": 26,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example18Test.java",
-      "line": 27,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and rules before Jupiter migration.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/Example19Test.java",
-      "line": 28,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-runner-usage",
-      "severity": "warning",
-      "title": "JUnit 4 runner usage",
-      "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example1Test.java",
-      "line": 10,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-runner-usage",
-      "severity": "warning",
-      "title": "JUnit 4 runner usage",
-      "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example2Test.java",
-      "line": 11,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-runner-usage",
-      "severity": "warning",
-      "title": "JUnit 4 runner usage",
-      "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example3Test.java",
-      "line": 12,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-runner-usage",
-      "severity": "warning",
-      "title": "JUnit 4 runner usage",
-      "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example4Test.java",
-      "line": 13,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-runner-usage",
-      "severity": "warning",
-      "title": "JUnit 4 runner usage",
-      "recommendation": "Review runner or rule-dependent container lifecycle assumptions.",
-      "file": "modules/junit-jupiter/src/test/java/org/testcontainers/junit/Example5Test.java",
-      "line": 14,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "test-support/src/test/java/org/testcontainers/testsupport/FlakyRuleTest.java",
+      "line": 3,
       "scope": "test"
     }
   ],
@@ -662,11 +1541,11 @@
     },
     {
       "name": "Spring Boot version detection",
-      "status": "warning"
+      "status": "passed"
     },
     {
       "name": "Jakarta namespace readiness",
-      "status": "passed"
+      "status": "failed"
     },
     {
       "name": "Hibernate usage detection",
@@ -695,10 +1574,10 @@
     }
   ],
   "dependencies": {
-    "springBootVersion": "unknown",
+    "springBootVersion": "3.5.6",
     "springSecurityVersion": "unknown",
-    "jakartaDetected": false,
-    "javaxDetected": false,
+    "jakartaDetected": true,
+    "javaxDetected": true,
     "hibernateDetected": false,
     "springSecurityDetected": false,
     "junit4Detected": true,
@@ -709,27 +1588,64 @@
     "name": "Testcontainers JUnit 4",
     "repository": "https://github.com/testcontainers/testcontainers-java",
     "ref": null,
-    "requestedSource": "catalog",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
-    "commands": [],
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/testcontainers-junit4",
+    "analysisPath": "benchmark-repos/testcontainers-junit4",
+    "gitRevision": "deb78e1e6e47675f56e8d7b3f4747093d66f1baa",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/testcontainers/testcontainers-java benchmark-repos/testcontainers-junit4",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '~/<workspace>"
+      }
+    ],
     "validation": {
-      "requested": false,
-      "status": "not_requested",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation was not requested."
+      "requested": true,
+      "status": "failed",
+      "confidence": 25,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "failed",
+          "command": "./gradlew compileJava --no-daemon",
+          "durationMs": 28353,
+          "exitCode": 1,
+          "output": "Downloading https://services.gradle.org/distributions/gradle-8.14.3-all.zip\n.....................10%.....................20%......................30%.....................40%......................50%.....................60%.....................70%......................80%.....................90%......................100%\nTo honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.\nDaemon will be stopped at the end of the build \nConfiguration on demand is an incubating feature.\n\nFAILURE: Build failed with an exception.\n\n* What went wrong:\nBUG! exception in phase 'semantic analysis' in source unit '_BuildScript_' Unsupported class file major version 69\n> Unsupported class file major version 69\n\n* Try:\n> Run with --stacktrace option to get the stack trace.\n> Run with --info or --debug option to get more log output.\n> Run with --scan to get full insights.\n> Get more help at https://help.gradle.org.\n\nBUILD FAILED in 26s",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "./gradlew test --no-daemon",
+          "durationMs": 7921,
+          "exitCode": 1,
+          "output": "To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.\nDaemon will be stopped at the end of the build \nConfiguration on demand is an incubating feature.\n\nFAILURE: Build failed with an exception.\n\n* What went wrong:\nBUG! exception in phase 'semantic analysis' in source unit '_BuildScript_' Unsupported class file major version 69\n> Unsupported class file major version 69\n\n* Try:\n> Run with --stacktrace option to get the stack trace.\n> Run with --info or --debug option to get more log output.\n> Run with --scan to get full insights.\n> Get more help at https://help.gradle.org.\n\nBUILD FAILED in 7s",
+          "timedOut": false
+        }
+      ],
+      "summary": "2 validation check(s) failed."
     }
   },
   "nextActions": [
+    {
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    },
     {
       "id": "review-junit-5-migration-risks",
       "priority": "warning",
       "title": "Review JUnit 4 to JUnit 5 migration risks",
       "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
-      "evidenceCount": 1,
+      "evidenceCount": 9,
       "findingCodes": [
         "junit4-api-usage",
         "junit4-runner-usage",

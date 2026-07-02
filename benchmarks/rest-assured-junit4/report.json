@@ -1,18 +1,17 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-07-01T21:51:42.380Z",
+  "generatedAt": "2026-07-02T17:15:48.148Z",
   "project": {
     "name": "REST Assured JUnit 4",
-    "root": "https://github.com/rest-assured/rest-assured",
+    "root": "benchmark-repos/rest-assured-junit4",
     "source": "https://github.com/rest-assured/rest-assured",
     "buildTools": [
-      "Maven",
-      "Gradle"
+      "Maven"
     ],
-    "javaVersion": "8",
+    "javaVersion": "17",
     "springBootVersion": "unknown",
-    "fileCount": 1200,
-    "javaFileCount": 720
+    "fileCount": 732,
+    "javaFileCount": 537
   },
   "pack": "junit-5-readiness",
   "packApplicability": {
@@ -21,257 +20,769 @@
     "reason": "JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness."
   },
   "readiness": {
-    "overall": 80,
+    "overall": 63,
     "categories": {
-      "java": 88,
+      "java": 58,
       "spring": 86,
       "hibernate": 72,
-      "jakarta": 95,
+      "jakarta": 79,
       "build": 90,
-      "security": 76,
-      "testing": 45,
-      "architecture": 84
+      "security": 38,
+      "testing": 23,
+      "architecture": 61
     },
-    "summary": "Ready with remediation work",
+    "summary": "Migration risk requires focused cleanup",
     "counts": {
-      "critical": 0,
-      "warning": 23,
-      "info": 0
+      "critical": 3,
+      "warning": 30,
+      "info": 23
     }
   },
-  "productionFindings": [],
+  "productionFindings": [
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "examples/rest-assured-itest-java/pom.xml",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/pom.xml",
+      "line": 107,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "examples/spring-mvc-webapp/pom.xml",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-websecurityconfigureradapter",
+      "severity": "critical",
+      "title": "WebSecurityConfigurerAdapter usage",
+      "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+      "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-websecurityconfigureradapter",
+      "severity": "critical",
+      "title": "WebSecurityConfigurerAdapter usage",
+      "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+      "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-authorize-requests",
+      "severity": "warning",
+      "title": "authorizeRequests configuration",
+      "recommendation": "Review authorizeRequests configuration before modernization.",
+      "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "examples/spring7-mvc-webapp/pom.xml",
+      "line": 128,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "json-path/src/main/java/io/restassured/path/json/JsonPath.java",
+      "line": 652,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "json-path/src/main/java/io/restassured/path/json/JsonPath.java",
+      "line": 701,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-commons/src/main/java/io/restassured/module/spring/commons/config/ConfigConverter.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/MockMvcFactory.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/MockMvcRequestSenderImpl.java",
+      "line": 575,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/MockMvcRequestSenderImpl.java",
+      "line": 637,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/SpringSecurityClassPathChecker.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/specification/MockMvcRequestSpecBuilder.java",
+      "line": 827,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/util/ReflectionUtil.java",
+      "line": 138,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "modules/spring-web-test-client/pom.xml",
+      "line": 154,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-web-test-client/src/main/java/io/restassured/module/webtestclient/specification/WebTestClientRequestSpecBuilder.java",
+      "line": 56,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "pom.xml",
+      "line": 407,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "pom.xml",
+      "line": 479,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/builder/ResponseSpecBuilder.java",
+      "line": 668,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+      "line": 128,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+      "line": 130,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+      "line": 391,
+      "scope": "production"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "rest-assured/src/main/java/io/restassured/internal/http/BasicNameValuePairWithNoValueSupport.java",
+      "line": 1,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/matcher/DetailedCookieMatcher.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "rest-assured-common/src/main/groovy/io/restassured/internal/common/classpath/ClassPathResolver.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "xml-path/pom.xml",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "xml-path/src/main/java/io/restassured/path/xml/XmlPath.java",
+      "line": 624,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "xml-path/src/main/java/io/restassured/path/xml/XmlPath.java",
+      "line": 644,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "xml-path/src/main/java/io/restassured/path/xml/XmlPath.java",
+      "line": 676,
+      "scope": "production"
+    }
+  ],
   "testFindings": [
     {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review HTTP integration test lifecycle before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/RestAssuredTest.java",
-      "line": 5,
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/LoggingITest.java",
+      "line": 113,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example1Test.java",
-      "line": 10,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example2Test.java",
-      "line": 11,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example3Test.java",
-      "line": 12,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example4Test.java",
-      "line": 13,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example5Test.java",
-      "line": 14,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example6Test.java",
-      "line": 15,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example7Test.java",
-      "line": 16,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example8Test.java",
-      "line": 17,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example9Test.java",
-      "line": 18,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example10Test.java",
-      "line": 19,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example11Test.java",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/JsonPathOSGiITest.java",
       "line": 20,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "junit4-runner-usage",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example12Test.java",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/JsonPathOSGiITest.java",
       "line": 21,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "junit4-runner-usage",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example13Test.java",
-      "line": 22,
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/JsonPathOSGiITest.java",
+      "line": 32,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example14Test.java",
-      "line": 23,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/RestAssuredOSGiITest.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/RestAssuredOSGiITest.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/RestAssuredOSGiITest.java",
+      "line": 32,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example15Test.java",
-      "line": 24,
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/XmlPathOSGiITest.java",
+      "line": 20,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "junit4-runner-usage",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example16Test.java",
-      "line": 25,
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/XmlPathOSGiITest.java",
+      "line": 21,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "junit4-runner-usage",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example17Test.java",
-      "line": 26,
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/XmlPathOSGiITest.java",
+      "line": 37,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example18Test.java",
-      "line": 27,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/AutoSpringSecurityConfigurerITest.java",
+      "line": 52,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example19Test.java",
-      "line": 28,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/MockMvcSecurityITest.java",
+      "line": 47,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example20Test.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/MultiPartFileUploadITest.java",
+      "line": 57,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/NonMultiPartFileUploadITest.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/WebAppContextWithMockMvcConfigurerITest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring7-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/AutoSpringSecurityConfigurerITest.java",
+      "line": 48,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring7-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/MockMvcSecurityITest.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring7-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/MultiPartFileUploadITest.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring7-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/NonMultiPartFileUploadITest.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring7-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/WebAppContextWithMockMvcConfigurerITest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "json-path/src/test/java/io/restassured/path/json/JsonPathTest.java",
+      "line": 215,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/test/java/io/restassured/module/mockmvc/CookieTest.java",
       "line": 29,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example21Test.java",
-      "line": 30,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example22Test.java",
-      "line": 31,
       "scope": "test"
     }
   ],
   "findingSummary": {
     "production": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0
+      "critical": 3,
+      "warning": 11,
+      "info": 20
     },
     "test": {
       "critical": 0,
-      "warning": 23,
-      "info": 0
+      "warning": 19,
+      "info": 3
     },
     "byCode": {
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-internal-api": {
+        "code": "java-internal-api",
+        "title": "JDK internal API usage",
+        "severity": "warning",
+        "total": 5,
+        "production": 5,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "examples",
+            "count": 3
+          },
+          {
+            "name": "pom.xml",
+            "count": 1
+          },
+          {
+            "name": "xml-path",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "examples/rest-assured-itest-java/pom.xml",
+            "line": 91,
+            "scope": "production"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "examples/spring-mvc-webapp/pom.xml",
+            "line": 96,
+            "scope": "production"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "examples/spring7-mvc-webapp/pom.xml",
+            "line": 128,
+            "scope": "production"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "pom.xml",
+            "line": 407,
+            "scope": "production"
+          },
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "xml-path/pom.xml",
+            "line": 91,
+            "scope": "production"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 7,
+        "production": 5,
+        "test": 2,
+        "topModules": [
+          {
+            "name": "json-path",
+            "count": 3
+          },
+          {
+            "name": "xml-path",
+            "count": 3
+          },
+          {
+            "name": "rest-assured-itest-java",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/LoggingITest.java",
+            "line": 113,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "json-path/src/main/java/io/restassured/path/json/JsonPath.java",
+            "line": 652,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "json-path/src/main/java/io/restassured/path/json/JsonPath.java",
+            "line": 701,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "json-path/src/test/java/io/restassured/path/json/JsonPathTest.java",
+            "line": 215,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "xml-path/src/main/java/io/restassured/path/xml/XmlPath.java",
+            "line": 624,
+            "scope": "production"
+          }
+        ]
+      },
+      "junit4-dependency": {
+        "code": "junit4-dependency",
+        "title": "JUnit 4 dependency",
+        "severity": "warning",
+        "total": 3,
+        "production": 3,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "examples",
+            "count": 1
+          },
+          {
+            "name": "modules",
+            "count": 1
+          },
+          {
+            "name": "pom.xml",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "examples/rest-assured-itest-java-osgi/pom.xml",
+            "line": 107,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "modules/spring-web-test-client/pom.xml",
+            "line": 154,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "pom.xml",
+            "line": 479,
+            "scope": "production"
+          }
+        ]
+      },
       "junit4-api-usage": {
         "code": "junit4-api-usage",
         "title": "JUnit 4 API usage",
         "severity": "warning",
-        "total": 23,
+        "total": 3,
         "production": 0,
-        "test": 23,
+        "test": 3,
         "topModules": [
           {
-            "name": "rest-assured-itest-java",
-            "count": 23
+            "name": "rest-assured-itest-java-osgi",
+            "count": 3
           }
         ],
         "examples": [
@@ -279,46 +790,397 @@
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review HTTP integration test lifecycle before Jupiter migration.",
-            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/RestAssuredTest.java",
-            "line": 5,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/JsonPathOSGiITest.java",
+            "line": 20,
             "scope": "test"
           },
           {
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example1Test.java",
-            "line": 10,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/RestAssuredOSGiITest.java",
+            "line": 19,
             "scope": "test"
           },
           {
             "code": "junit4-api-usage",
             "severity": "warning",
             "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example2Test.java",
-            "line": 11,
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/XmlPathOSGiITest.java",
+            "line": 20,
+            "scope": "test"
+          }
+        ]
+      },
+      "junit4-runner-usage": {
+        "code": "junit4-runner-usage",
+        "title": "JUnit 4 runner usage",
+        "severity": "warning",
+        "total": 6,
+        "production": 0,
+        "test": 6,
+        "topModules": [
+          {
+            "name": "rest-assured-itest-java-osgi",
+            "count": 6
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/JsonPathOSGiITest.java",
+            "line": 21,
             "scope": "test"
           },
           {
-            "code": "junit4-api-usage",
+            "code": "junit4-runner-usage",
             "severity": "warning",
-            "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example3Test.java",
-            "line": 12,
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/JsonPathOSGiITest.java",
+            "line": 32,
             "scope": "test"
           },
           {
-            "code": "junit4-api-usage",
+            "code": "junit4-runner-usage",
             "severity": "warning",
-            "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example4Test.java",
-            "line": 13,
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/RestAssuredOSGiITest.java",
+            "line": 20,
             "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/RestAssuredOSGiITest.java",
+            "line": 32,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/XmlPathOSGiITest.java",
+            "line": 21,
+            "scope": "test"
+          }
+        ]
+      },
+      "spring-security-websecurityconfigureradapter": {
+        "code": "spring-security-websecurityconfigureradapter",
+        "title": "WebSecurityConfigurerAdapter usage",
+        "severity": "critical",
+        "total": 2,
+        "production": 2,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-mvc-webapp",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "spring-security-websecurityconfigureradapter",
+            "severity": "critical",
+            "title": "WebSecurityConfigurerAdapter usage",
+            "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+            "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
+            "line": 23,
+            "scope": "production"
+          },
+          {
+            "code": "spring-security-websecurityconfigureradapter",
+            "severity": "critical",
+            "title": "WebSecurityConfigurerAdapter usage",
+            "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+            "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
+            "line": 27,
+            "scope": "production"
+          }
+        ]
+      },
+      "spring-security-legacy-matchers": {
+        "code": "spring-security-legacy-matchers",
+        "title": "Legacy Spring Security matcher API",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-mvc-webapp",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "spring-security-legacy-matchers",
+            "severity": "warning",
+            "title": "Legacy Spring Security matcher API",
+            "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+            "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
+            "line": 35,
+            "scope": "production"
+          }
+        ]
+      },
+      "spring-security-authorize-requests": {
+        "code": "spring-security-authorize-requests",
+        "title": "authorizeRequests configuration",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-mvc-webapp",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "spring-security-authorize-requests",
+            "severity": "warning",
+            "title": "authorizeRequests configuration",
+            "recommendation": "Review authorizeRequests configuration before modernization.",
+            "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
+            "line": 34,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 10,
+        "production": 0,
+        "test": 10,
+        "topModules": [
+          {
+            "name": "spring-mvc-webapp",
+            "count": 5
+          },
+          {
+            "name": "spring7-mvc-webapp",
+            "count": 5
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/AutoSpringSecurityConfigurerITest.java",
+            "line": 52,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/MockMvcSecurityITest.java",
+            "line": 47,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/MultiPartFileUploadITest.java",
+            "line": 57,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/NonMultiPartFileUploadITest.java",
+            "line": 49,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/WebAppContextWithMockMvcConfigurerITest.java",
+            "line": 38,
+            "scope": "test"
+          }
+        ]
+      },
+      "reflection-usage": {
+        "code": "reflection-usage",
+        "title": "Reflection usage",
+        "severity": "info",
+        "total": 10,
+        "production": 10,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-mock-mvc",
+            "count": 6
+          },
+          {
+            "name": "rest-assured",
+            "count": 1
+          },
+          {
+            "name": "rest-assured-common",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "modules/spring-commons/src/main/java/io/restassured/module/spring/commons/config/ConfigConverter.java",
+            "line": 42,
+            "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/MockMvcFactory.java",
+            "line": 95,
+            "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/MockMvcRequestSenderImpl.java",
+            "line": 575,
+            "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/MockMvcRequestSenderImpl.java",
+            "line": 637,
+            "scope": "production"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/SpringSecurityClassPathChecker.java",
+            "line": 27,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "java.util.Date usage",
+        "severity": "info",
+        "total": 6,
+        "production": 5,
+        "test": 1,
+        "topModules": [
+          {
+            "name": "rest-assured",
+            "count": 5
+          },
+          {
+            "name": "spring-mock-mvc",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "modules/spring-mock-mvc/src/test/java/io/restassured/module/mockmvc/CookieTest.java",
+            "line": 29,
+            "scope": "test"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+            "line": 22,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+            "line": 128,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+            "line": 130,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+            "line": 391,
+            "scope": "production"
+          }
+        ]
+      },
+      "serializable-missing-serial-version": {
+        "code": "serializable-missing-serial-version",
+        "title": "Serializable type without serialVersionUID",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "rest-assured",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "rest-assured/src/main/java/io/restassured/internal/http/BasicNameValuePairWithNoValueSupport.java",
+            "line": 1,
+            "scope": "production"
           }
         ]
       }
@@ -326,211 +1188,508 @@
   },
   "findings": [
     {
-      "code": "junit4-api-usage",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review HTTP integration test lifecycle before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/RestAssuredTest.java",
-      "line": 5,
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "examples/rest-assured-itest-java/pom.xml",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/LoggingITest.java",
+      "line": 113,
       "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/pom.xml",
+      "line": 107,
+      "scope": "production"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example1Test.java",
-      "line": 10,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example2Test.java",
-      "line": 11,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example3Test.java",
-      "line": 12,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example4Test.java",
-      "line": 13,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example5Test.java",
-      "line": 14,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example6Test.java",
-      "line": 15,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example7Test.java",
-      "line": 16,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example8Test.java",
-      "line": 17,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example9Test.java",
-      "line": 18,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example10Test.java",
-      "line": 19,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example11Test.java",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/JsonPathOSGiITest.java",
       "line": 20,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "junit4-runner-usage",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example12Test.java",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/JsonPathOSGiITest.java",
       "line": 21,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "junit4-runner-usage",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example13Test.java",
-      "line": 22,
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/JsonPathOSGiITest.java",
+      "line": 32,
       "scope": "test"
     },
     {
       "code": "junit4-api-usage",
       "severity": "warning",
       "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example14Test.java",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/RestAssuredOSGiITest.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/RestAssuredOSGiITest.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/RestAssuredOSGiITest.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/XmlPathOSGiITest.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/XmlPathOSGiITest.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "examples/rest-assured-itest-java-osgi/src/test/java/io/restassured/test/osgi/XmlPathOSGiITest.java",
+      "line": 37,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "examples/spring-mvc-webapp/pom.xml",
+      "line": 96,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-websecurityconfigureradapter",
+      "severity": "critical",
+      "title": "WebSecurityConfigurerAdapter usage",
+      "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+      "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
       "line": 23,
-      "scope": "test"
+      "scope": "production"
     },
     {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example15Test.java",
-      "line": 24,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example16Test.java",
-      "line": 25,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example17Test.java",
-      "line": 26,
-      "scope": "test"
-    },
-    {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example18Test.java",
+      "code": "spring-security-websecurityconfigureradapter",
+      "severity": "critical",
+      "title": "WebSecurityConfigurerAdapter usage",
+      "recommendation": "Review WebSecurityConfigurerAdapter usage before modernization.",
+      "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
       "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-legacy-matchers",
+      "severity": "warning",
+      "title": "Legacy Spring Security matcher API",
+      "recommendation": "Review Legacy Spring Security matcher API before modernization.",
+      "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "spring-security-authorize-requests",
+      "severity": "warning",
+      "title": "authorizeRequests configuration",
+      "recommendation": "Review authorizeRequests configuration before modernization.",
+      "file": "examples/spring-mvc-webapp/src/main/java/io/restassured/examples/springmvc/config/SecurityConfiguration.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/AutoSpringSecurityConfigurerITest.java",
+      "line": 52,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example19Test.java",
-      "line": 28,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/MockMvcSecurityITest.java",
+      "line": 47,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example20Test.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/MultiPartFileUploadITest.java",
+      "line": 57,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/NonMultiPartFileUploadITest.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/WebAppContextWithMockMvcConfigurerITest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "examples/spring7-mvc-webapp/pom.xml",
+      "line": 128,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring7-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/AutoSpringSecurityConfigurerITest.java",
+      "line": 48,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring7-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/MockMvcSecurityITest.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring7-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/MultiPartFileUploadITest.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring7-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/NonMultiPartFileUploadITest.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "examples/spring7-mvc-webapp/src/test/java/io/restassured/examples/springmvc/controller/WebAppContextWithMockMvcConfigurerITest.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "json-path/src/main/java/io/restassured/path/json/JsonPath.java",
+      "line": 652,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "json-path/src/main/java/io/restassured/path/json/JsonPath.java",
+      "line": 701,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "json-path/src/test/java/io/restassured/path/json/JsonPathTest.java",
+      "line": 215,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-commons/src/main/java/io/restassured/module/spring/commons/config/ConfigConverter.java",
+      "line": 42,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/MockMvcFactory.java",
+      "line": 95,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/MockMvcRequestSenderImpl.java",
+      "line": 575,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/MockMvcRequestSenderImpl.java",
+      "line": 637,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/internal/SpringSecurityClassPathChecker.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/specification/MockMvcRequestSpecBuilder.java",
+      "line": 827,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/main/java/io/restassured/module/mockmvc/util/ReflectionUtil.java",
+      "line": 138,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "modules/spring-mock-mvc/src/test/java/io/restassured/module/mockmvc/CookieTest.java",
       "line": 29,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "junit4-dependency",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example21Test.java",
-      "line": 30,
-      "scope": "test"
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "modules/spring-web-test-client/pom.xml",
+      "line": 154,
+      "scope": "production"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "modules/spring-web-test-client/src/main/java/io/restassured/module/webtestclient/specification/WebTestClientRequestSpecBuilder.java",
+      "line": 56,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "examples/rest-assured-itest-java/src/test/java/io/restassured/Example22Test.java",
-      "line": 31,
-      "scope": "test"
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "pom.xml",
+      "line": 407,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "pom.xml",
+      "line": 479,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/builder/ResponseSpecBuilder.java",
+      "line": 668,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+      "line": 128,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+      "line": 130,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/http/Cookie.java",
+      "line": 391,
+      "scope": "production"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "rest-assured/src/main/java/io/restassured/internal/http/BasicNameValuePairWithNoValueSupport.java",
+      "line": 1,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "rest-assured/src/main/java/io/restassured/matcher/DetailedCookieMatcher.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "rest-assured-common/src/main/groovy/io/restassured/internal/common/classpath/ClassPathResolver.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "xml-path/pom.xml",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "xml-path/src/main/java/io/restassured/path/xml/XmlPath.java",
+      "line": 624,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "xml-path/src/main/java/io/restassured/path/xml/XmlPath.java",
+      "line": 644,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "xml-path/src/main/java/io/restassured/path/xml/XmlPath.java",
+      "line": 676,
+      "scope": "production"
     }
   ],
   "evidence": [
@@ -552,7 +1711,7 @@
     },
     {
       "name": "Spring Security usage detection",
-      "status": "warning"
+      "status": "passed"
     },
     {
       "name": "JUnit 4 usage detection",
@@ -574,11 +1733,11 @@
   ],
   "dependencies": {
     "springBootVersion": "unknown",
-    "springSecurityVersion": "unknown",
-    "jakartaDetected": false,
+    "springSecurityVersion": "${spring.security.version}",
+    "jakartaDetected": true,
     "javaxDetected": true,
     "hibernateDetected": false,
-    "springSecurityDetected": false,
+    "springSecurityDetected": true,
     "junit4Detected": true,
     "junit5Detected": true
   },
@@ -587,27 +1746,72 @@
     "name": "REST Assured JUnit 4",
     "repository": "https://github.com/rest-assured/rest-assured",
     "ref": null,
-    "requestedSource": "catalog",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
+    "requestedSource": "local",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/rest-assured-junit4",
+    "analysisPath": "benchmark-repos/rest-assured-junit4",
+    "gitRevision": "2cdc25872f945f7d3978f73f2c4fb679302ac593",
     "commands": [],
     "validation": {
-      "requested": false,
-      "status": "not_requested",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation was not requested."
+      "requested": true,
+      "status": "failed",
+      "confidence": 25,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "failed",
+          "command": "mvn -q -DskipTests compile",
+          "durationMs": 104540,
+          "exitCode": 1,
+          "output": "cess(Driver.scala:68)\n[ERROR] \tat scala.tools.nsc.Driver.main(Driver.scala:82)\n[ERROR] \tat scala.tools.nsc.Main.main(Main.scala)\n[ERROR] \tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\n[ERROR] \tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n[ERROR] \tat scala_maven_executions.MainHelper.runMain(MainHelper.java:164)\n[ERROR] \tat scala_maven_executions.MainWithArgsInFile.main(MainWithArgsInFile.java:26)\n[ERROR] Failed to execute goal net.alchim31.maven:scala-maven-plugin:3.2.2:compile (default) on project scala-support: wrap: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1) -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException\n[ERROR] \n[ERROR] After correcting the problems, you can resume the build with the command\n[ERROR]   mvn <args> -rf :scala-support",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "mvn -q test",
+          "durationMs": 120162,
+          "exitCode": 143,
+          "output": " = reference\nauthor = Nigel Rees\ntitle = Sayings of the Century\nprice = 8.95\n{\n    \"some\": \"ŘÍŠŽŤČÝŮŇÚĚĎÁÉÓ\"\n}\n[\n    {\n        \"email\": \"name1@mail.com\",\n        \"alias\": \"name one\",\n        \"phone\": \"3456789\"\n    },\n    {\n        \"email\": \"name2@mail.com\",\n        \"alias\": \"name two\",\n        \"phone\": \"1234567\"\n    },\n    {\n        \"email\": \"name3@mail.com\",\n        \"alias\": \"name three\",\n        \"phone\": \"2345678\"\n    }\n]\n[\n    {\n        \"email\": \"name1@mail.com\",\n        \"alias\": \"name one\",\n        \"phone\": \"3456789\"\n    },\n    {\n        \"email\": \"name2@mail.com\",\n        \"alias\": \"name two\",\n        \"phone\": \"1234567\"\n    },\n    {\n        \"email\": \"name3@mail.com\",\n        \"alias\": \"name three\",\n        \"phone\": \"2345678\"\n    }\n]\n<some><thing id='1'>ikk</thing><thing id='2'>ikk2</thing><thing id='3'>3</thing></some>\n<?xml version=\"1.0\" encoding=\"UTF-8\"?><some>\n  <thing id=\"1\">ikk</thing>\n  <thing id=\"2\">ikk2</thing>\n  <thing id=\"3\">3</thing>\n</some>\n<?xml version=\"1.0\" encoding=\"UTF-8\"?><some>\n  <thing id=\"1\">ikk</thing>\n  <thing id=\"2\">ikk2</thing>\n  <thing id=\"3\">3</thing>\n</some>\n[Fatal Error] :2:74: The markup in the document following the root element must be well-formed.\nCommand timed out after 120000 ms.",
+          "timedOut": true
+        }
+      ],
+      "summary": "2 validation check(s) failed."
     }
   },
   "nextActions": [
     {
+      "id": "review-spring-security-6-risks",
+      "priority": "critical",
+      "title": "Review Spring Security 6 configuration risks",
+      "reason": "Spring Security 6 readiness depends on explicit review of removed configuration adapters, matcher API changes, authorization DSL changes, and method security annotations.",
+      "evidenceCount": 4,
+      "findingCodes": [
+        "spring-security-5",
+        "spring-security-websecurityconfigureradapter",
+        "spring-security-legacy-matchers",
+        "spring-security-authorize-requests",
+        "spring-security-global-method-security"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack spring-security-6-readiness --out reports/spring-security-6-readiness"
+    },
+    {
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    },
+    {
       "id": "review-junit-5-migration-risks",
-      "priority": "info",
+      "priority": "warning",
       "title": "Review JUnit 4 to JUnit 5 migration risks",
       "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
-      "evidenceCount": 0,
+      "evidenceCount": 3,
       "findingCodes": [
         "junit4-api-usage",
         "junit4-runner-usage",
