@@ -2,6 +2,42 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.3.1",
+      "title": "v0.3.1",
+      "date": "2026-07-02",
+      "summary": "GitHub Pages deployment recovery for the static evidence site.",
+      "features": [
+        {
+          "id": "pages-workflow-recovery",
+          "type": "distribution",
+          "name": "Pages workflow recovery",
+          "audience": "Consultants and users opening public benchmark, release-note, and Migration Hub URLs",
+          "summary": "Restore explicit GitHub Pages deployment after branch-only publishing left the public site on an old snapshot.",
+          "evidence": [
+            "Restores `actions/configure-pages@v5`, `actions/upload-pages-artifact@v3`, and `actions/deploy-pages@v4` in `.github/workflows/pages.yml`.",
+            "Uses unique Pages artifact names per workflow run attempt to avoid duplicate artifact collisions on reruns.",
+            "Restores the `github-pages` deployment environment and deployment URL output.",
+            "Verifies the `v0.3.0` release notes, Spring Cloud benchmark reports, and Spring Boot evidence hub return `200` from GitHub Pages.",
+            "Preserves the `v0.3.0` evidence counts: 75 public reports, 45 checkout-backed reports, and 16 passing validation reports."
+          ],
+          "links": [
+            {
+              "label": "Release notes",
+              "href": "docs/release-notes/v0.3.1.html"
+            },
+            {
+              "label": "Spring Boot 3 Evidence Hub",
+              "href": "docs/migration-hub/spring-boot-3-readiness.html"
+            },
+            {
+              "label": "Benchmark index",
+              "href": "docs/benchmarks/index.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.3.0",
       "title": "v0.3.0",
       "date": "2026-07-02",

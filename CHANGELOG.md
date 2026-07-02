@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## v0.3.1
+
+- Restored explicit GitHub Pages deployment with `actions/deploy-pages@v4`, unique Pages artifacts, and the `github-pages` environment after branch-only publishing left the public site on an old snapshot.
+- Preserved the `v0.3.0` evidence counts: 75 public reports, 45 checkout-backed reports, and 16 passing validation reports.
+
 ## v0.3.0
 
 - Promoted JHipster Sample App, Spring Cloud Config, Spring Cloud Consul, Spring Cloud Task, and Spring Cloud OpenFeign to checkout-backed Spring Boot readiness evidence with honest Java compatibility, timeout, and passing validation evidence.
