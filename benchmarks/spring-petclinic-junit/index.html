@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Spring Petclinic JUnit Readiness Report</h1>
-    <p class="meta">junit-5-readiness · 2026-07-01T21:51:42.352Z · https://github.com/spring-projects/spring-petclinic</p>
+    <p class="meta">junit-5-readiness · 2026-07-02T06:15:43.369Z · https://github.com/spring-projects/spring-petclinic</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -65,64 +65,66 @@
   <main>
     <section class="decision">
       <div class="panel decision-main bad">
-        <strong>Migration is blocked by critical readiness risks</strong>
-        <div>1 critical finding(s) should be resolved before execution planning.</div>
-        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">8 JUnit 4 API usage</span></div>
+        <strong>Do not use this pack for migration planning yet</strong>
+        <div>JUnit 4 usage was not detected. This pack is only useful for projects with JUnit 4 tests or dependencies.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">14 Spring field injection</span><span class="pill warning">1 JUnit 4 usage not detected</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
         </div>
       </div>
       <div class="panel decision-list">
-        <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Recommended next step</strong><div class="label">Run java-17-to-21-readiness before using this report for planning.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 35% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">80%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">N/A</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
       <div class="panel"><div class="metric">47</div><div class="label">Java files</div></div>
-      <div class="panel"><div class="metric">4.0.0-SNAPSHOT</div><div class="label">Spring Boot</div></div>
+      <div class="panel"><div class="metric">4.1.0</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready with remediation work</div>
+    <div class="panel">Pack mismatch: JUnit 4 usage was not detected. This pack is only useful for projects with JUnit 4 tests or dependencies.</div>
 
 
     <h2>Pack Applicability</h2>
-    <div class="panel notice">
-      <strong>Pack applicable: yes</strong> · confidence 90%
-      <div>JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness.</div>
-      <div class="label">Detected: Spring Boot: 4.0.0-SNAPSHOT · Java: 17 · Build: Maven · javax usage: yes · jakarta usage: yes</div>
-
+    <div class="panel notice bad">
+      <strong>Pack applicable: no</strong> · confidence 78%
+      <div>JUnit 4 usage was not detected. This pack is only useful for projects with JUnit 4 tests or dependencies.</div>
+      <div class="label">Detected: Spring Boot: 4.1.0 · Java: 17 · Build: Maven, Gradle · javax usage: yes · jakarta usage: yes</div>
+      <div class="label">Recommended pack: java-17-to-21-readiness</div>
     </div>
 
 
-    <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>56%</strong></td><td><div class="bar"><span style="width:56%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+      <h2>Readiness</h2>
+      <div class="panel notice bad">Readiness score was not computed because this pack is not applicable to the project.</div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill info">info</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill critical">critical</span></td><td>Select the applicable modernization pack</td><td>JUnit 4 usage was not detected. This pack is only useful for projects with JUnit 4 tests or dependencies.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack java-17-to-21-readiness --out reports/java-17-to-21-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/spring-projects/spring-petclinic
+      <strong>checkout</strong> · https://github.com/spring-projects/spring-petclinic
+      <div class="label">Checkout: benchmark-repos/spring-petclinic-junit</div>
+      <div class="label">Git revision: b3ee2c53e76e9267f03551a7cd36b0983c859c56</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/spring-projects/spring-petclinic benchmark-repos/spring-petclinic-junit</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt;</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 35% · 1 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill passed">passed</span></td><td>./mvnw -q -DskipTests compile</td><td>23.8 s</td><td></td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./mvnw -q test</td><td>120.2 s</td><td>: Pulling image layers: 0 pending, 10 downloaded, 2 extracted, (244 MB/258 MB) 2026-07-02T08:17:36.123+02:00 INFO 28299 --- [ream-1281308557] tc.mysql:9.7 : Pulling image layers: 0 pending, 10 downloaded, 3 extracted, (244 MB/258 MB) 202...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">1</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">8</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">2</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">9</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">3</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">14</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">4</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">17</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>8</td><td>0</td><td>8</td><td>src (8)</td><td>src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java:4 · Inventory remaining JUnit 4 imports before treating the suite as Jupiter-native.<br>src/test/java/org/springframework/samples/petclinic/Example1.java:10 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/springframework/samples/petclinic/Example2.java:11 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/springframework/samples/petclinic/Example3.java:12 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/springframework/samples/petclinic/Example4.java:13 · Review JUnit 4 annotations and assertions before Jupiter migration.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java:3 · Track Jakarta namespace migration separately from test migration.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>14</td><td>0</td><td>14</td><td>src (14)</td><td>src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java:55 · Review Spring field injection before modernization.<br>src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java:58 · Review Spring field injection before modernization.<br>src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java:40 · Review Spring field injection before modernization.<br>src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java:43 · Review Spring field injection before modernization.<br>src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java:60 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 usage not detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Confirm JUnit 4 tests are present before using the JUnit 5 readiness pack.</td></tr><tr><td><span class="pill warning">warning</span><br>Serializable type without serialVersionUID</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

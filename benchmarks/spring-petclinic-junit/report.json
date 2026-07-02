@@ -1,40 +1,34 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-07-01T21:51:42.352Z",
+  "generatedAt": "2026-07-02T06:15:43.369Z",
   "project": {
     "name": "Spring Petclinic JUnit",
-    "root": "https://github.com/spring-projects/spring-petclinic",
+    "root": "benchmark-repos/spring-petclinic-junit",
     "source": "https://github.com/spring-projects/spring-petclinic",
     "buildTools": [
-      "Maven"
+      "Maven",
+      "Gradle"
     ],
     "javaVersion": "17",
-    "springBootVersion": "4.0.0-SNAPSHOT",
+    "springBootVersion": "4.1.0",
     "fileCount": 126,
     "javaFileCount": 47
   },
   "pack": "junit-5-readiness",
   "packApplicability": {
-    "applicable": true,
-    "confidence": 0.9,
-    "reason": "JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness."
+    "applicable": false,
+    "confidence": 0.78,
+    "reason": "JUnit 4 usage was not detected. This pack is only useful for projects with JUnit 4 tests or dependencies.",
+    "recommendedPack": "java-17-to-21-readiness"
   },
   "readiness": {
-    "overall": 80,
-    "categories": {
-      "java": 88,
-      "spring": 86,
-      "hibernate": 84,
-      "jakarta": 79,
-      "build": 90,
-      "security": 76,
-      "testing": 56,
-      "architecture": 84
-    },
-    "summary": "Ready with remediation work",
+    "overall": null,
+    "categories": {},
+    "summary": "Pack mismatch: JUnit 4 usage was not detected. This pack is only useful for projects with JUnit 4 tests or dependencies.",
+    "status": "not_applicable",
     "counts": {
       "critical": 1,
-      "warning": 8,
+      "warning": 16,
       "info": 0
     }
   },
@@ -43,163 +37,224 @@
       "code": "javax-usage",
       "severity": "critical",
       "title": "javax namespace usage detected",
-      "recommendation": "Track Jakarta namespace migration separately from test migration.",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-not-detected",
+      "severity": "warning",
+      "title": "JUnit 4 usage not detected",
+      "recommendation": "Confirm JUnit 4 tests are present before using the JUnit 5 readiness pack.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
       "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
-      "line": 3,
+      "line": 1,
       "scope": "production"
     }
   ],
   "testFindings": [
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Inventory remaining JUnit 4 imports before treating the suite as Jupiter-native.",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+      "line": 43,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+      "line": 60,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
       "file": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
-      "line": 4,
+      "line": 65,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example1.java",
-      "line": 10,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java",
+      "line": 58,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example2.java",
-      "line": 11,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java",
+      "line": 53,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example3.java",
-      "line": 12,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+      "line": 76,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example4.java",
-      "line": 13,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+      "line": 79,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example5.java",
-      "line": 14,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+      "line": 82,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example6.java",
-      "line": 15,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/system/CrashControllerIntegrationTests.java",
+      "line": 58,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example7.java",
-      "line": 16,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java",
+      "line": 48,
       "scope": "test"
     }
   ],
   "findingSummary": {
     "production": {
       "critical": 1,
-      "warning": 0,
+      "warning": 2,
       "info": 0
     },
     "test": {
       "critical": 0,
-      "warning": 8,
+      "warning": 14,
       "info": 0
     },
     "byCode": {
-      "junit4-api-usage": {
-        "code": "junit4-api-usage",
-        "title": "JUnit 4 API usage",
-        "severity": "warning",
-        "total": 8,
-        "production": 0,
-        "test": 8,
-        "topModules": [
-          {
-            "name": "src",
-            "count": 8
-          }
-        ],
-        "examples": [
-          {
-            "code": "junit4-api-usage",
-            "severity": "warning",
-            "title": "JUnit 4 API usage",
-            "recommendation": "Inventory remaining JUnit 4 imports before treating the suite as Jupiter-native.",
-            "file": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
-            "line": 4,
-            "scope": "test"
-          },
-          {
-            "code": "junit4-api-usage",
-            "severity": "warning",
-            "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "src/test/java/org/springframework/samples/petclinic/Example1.java",
-            "line": 10,
-            "scope": "test"
-          },
-          {
-            "code": "junit4-api-usage",
-            "severity": "warning",
-            "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "src/test/java/org/springframework/samples/petclinic/Example2.java",
-            "line": 11,
-            "scope": "test"
-          },
-          {
-            "code": "junit4-api-usage",
-            "severity": "warning",
-            "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "src/test/java/org/springframework/samples/petclinic/Example3.java",
-            "line": 12,
-            "scope": "test"
-          },
-          {
-            "code": "junit4-api-usage",
-            "severity": "warning",
-            "title": "JUnit 4 API usage",
-            "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-            "file": "src/test/java/org/springframework/samples/petclinic/Example4.java",
-            "line": 13,
-            "scope": "test"
-          }
-        ]
-      },
       "javax-usage": {
         "code": "javax-usage",
         "title": "javax namespace usage detected",
         "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "junit4-not-detected": {
+        "code": "junit4-not-detected",
+        "title": "JUnit 4 usage not detected",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-not-detected",
+            "severity": "warning",
+            "title": "JUnit 4 usage not detected",
+            "recommendation": "Confirm JUnit 4 tests are present before using the JUnit 5 readiness pack.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "serializable-missing-serial-version": {
+        "code": "serializable-missing-serial-version",
+        "title": "Serializable type without serialVersionUID",
+        "severity": "warning",
         "total": 1,
         "production": 1,
         "test": 0,
@@ -211,13 +266,74 @@
         ],
         "examples": [
           {
-            "code": "javax-usage",
-            "severity": "critical",
-            "title": "javax namespace usage detected",
-            "recommendation": "Track Jakarta namespace migration separately from test migration.",
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
             "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
-            "line": 3,
+            "line": 1,
             "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 14,
+        "production": 0,
+        "test": 14,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 14
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+            "line": 55,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+            "line": 58,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+            "line": 40,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+            "line": 43,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+            "line": 60,
+            "scope": "test"
           }
         ]
       }
@@ -225,84 +341,156 @@
   },
   "findings": [
     {
-      "code": "junit4-api-usage",
-      "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Inventory remaining JUnit 4 imports before treating the suite as Jupiter-native.",
-      "file": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
-      "line": 4,
-      "scope": "test"
-    },
-    {
       "code": "javax-usage",
       "severity": "critical",
       "title": "javax namespace usage detected",
-      "recommendation": "Track Jakarta namespace migration separately from test migration.",
-      "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
-      "line": 3,
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
       "scope": "production"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "junit4-not-detected",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example1.java",
-      "line": 10,
+      "title": "JUnit 4 usage not detected",
+      "recommendation": "Confirm JUnit 4 tests are present before using the JUnit 5 readiness pack.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+      "line": 1,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+      "line": 55,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example2.java",
-      "line": 11,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+      "line": 58,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example3.java",
-      "line": 12,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+      "line": 40,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example4.java",
-      "line": 13,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+      "line": 43,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example5.java",
-      "line": 14,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+      "line": 60,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example6.java",
-      "line": 15,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+      "line": 63,
       "scope": "test"
     },
     {
-      "code": "junit4-api-usage",
+      "code": "field-injection",
       "severity": "warning",
-      "title": "JUnit 4 API usage",
-      "recommendation": "Review JUnit 4 annotations and assertions before Jupiter migration.",
-      "file": "src/test/java/org/springframework/samples/petclinic/Example7.java",
-      "line": 16,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java",
+      "line": 53,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+      "line": 79,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+      "line": 82,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/system/CrashControllerIntegrationTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java",
+      "line": 48,
       "scope": "test"
     }
   ],
@@ -329,7 +517,7 @@
     },
     {
       "name": "JUnit 4 usage detection",
-      "status": "passed"
+      "status": "warning"
     },
     {
       "name": "JUnit 5 usage detection",
@@ -346,13 +534,13 @@
     }
   ],
   "dependencies": {
-    "springBootVersion": "4.0.0-SNAPSHOT",
+    "springBootVersion": "4.1.0",
     "springSecurityVersion": "unknown",
     "jakartaDetected": true,
     "javaxDetected": true,
     "hibernateDetected": true,
     "springSecurityDetected": false,
-    "junit4Detected": true,
+    "junit4Detected": false,
     "junit5Detected": true
   },
   "benchmark": {
@@ -360,18 +548,44 @@
     "name": "Spring Petclinic JUnit",
     "repository": "https://github.com/spring-projects/spring-petclinic",
     "ref": null,
-    "requestedSource": "catalog",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
-    "commands": [],
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/spring-petclinic-junit",
+    "analysisPath": "benchmark-repos/spring-petclinic-junit",
+    "gitRevision": "b3ee2c53e76e9267f03551a7cd36b0983c859c56",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/spring-projects/spring-petclinic benchmark-repos/spring-petclinic-junit",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '~/<workspace>"
+      }
+    ],
     "validation": {
-      "requested": false,
-      "status": "not_requested",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation was not requested."
+      "requested": true,
+      "status": "failed",
+      "confidence": 35,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "passed",
+          "command": "./mvnw -q -DskipTests compile",
+          "durationMs": 23815,
+          "exitCode": 0,
+          "output": "",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "./mvnw -q test",
+          "durationMs": 120230,
+          "exitCode": 143,
+          "output": "    : Pulling image layers:  0 pending, 10 downloaded,  2 extracted, (244 MB/258 MB)\n2026-07-02T08:17:36.123+02:00  INFO 28299 --- [ream-1281308557] tc.mysql:9.7                             : Pulling image layers:  0 pending, 10 downloaded,  3 extracted, (244 MB/258 MB)\n2026-07-02T08:17:37.107+02:00  INFO 28299 --- [ream-1281308557] tc.mysql:9.7                             : Pulling image layers:  0 pending, 10 downloaded,  4 extracted, (249 MB/258 MB)\n2026-07-02T08:17:37.142+02:00  INFO 28299 --- [ream-1281308557] tc.mysql:9.7                             : Pulling image layers:  0 pending, 10 downloaded,  5 extracted, (249 MB/258 MB)\n2026-07-02T08:17:37.178+02:00  INFO 28299 --- [ream-1281308557] tc.mysql:9.7                             : Pulling image layers:  0 pending, 10 downloaded,  6 extracted, (249 MB/258 MB)\n2026-07-02T08:17:41.857+02:00  INFO 28299 --- [ream-1281308557] tc.mysql:9.7                             : Pulling image layers:  0 pending, 10 downloaded,  7 extracted, (250 MB/258 MB)\n2026-07-02T08:17:41.888+02:00  INFO 28299 --- [ream-1281308557] tc.mysql:9.7                             : Pulling image layers:  0 pending, 10 downloaded,  8 extracted, (250 MB/258 MB)\nCommand timed out after 120000 ms.",
+          "timedOut": true
+        }
+      ],
+      "summary": "1 validation check(s) failed."
     }
   },
   "nextActions": [
@@ -387,18 +601,13 @@
       "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
     },
     {
-      "id": "review-junit-5-migration-risks",
-      "priority": "info",
-      "title": "Review JUnit 4 to JUnit 5 migration risks",
-      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "id": "select-applicable-pack",
+      "priority": "critical",
+      "title": "Select the applicable modernization pack",
+      "reason": "JUnit 4 usage was not detected. This pack is only useful for projects with JUnit 4 tests or dependencies.",
       "evidenceCount": 0,
-      "findingCodes": [
-        "junit4-api-usage",
-        "junit4-runner-usage",
-        "junit4-dependency",
-        "junit-vintage-engine"
-      ],
-      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
+      "findingCodes": [],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack java-17-to-21-readiness --out reports/java-17-to-21-readiness"
     }
   ]
 }
