@@ -1,472 +1,946 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T22:51:14.739Z",
+  "generatedAt": "2026-07-02T21:28:13.557Z",
   "project": {
     "name": "Spring Cloud Zookeeper",
-    "root": "https://github.com/spring-cloud/spring-cloud-zookeeper",
+    "root": "benchmark-repos/spring-cloud-zookeeper",
     "source": "https://github.com/spring-cloud/spring-cloud-zookeeper",
     "buildTools": [
       "Maven"
     ],
-    "javaVersion": "17",
-    "springBootVersion": "2.7.x",
-    "fileCount": 900,
-    "javaFileCount": 520
+    "javaVersion": "unknown",
+    "springBootVersion": "unknown",
+    "fileCount": 204,
+    "javaFileCount": 124
   },
   "pack": "spring-boot-3-readiness",
   "packApplicability": {
-    "applicable": true,
-    "confidence": 0.95,
-    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
-    "targetVersion": "3.x"
+    "applicable": false,
+    "confidence": 0.9,
+    "reason": "Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "recommendedPack": "java-17-to-21-readiness"
   },
   "readiness": {
-    "overall": 71,
-    "categories": {
-      "java": 77,
-      "spring": 45,
-      "jakarta": 79,
-      "build": 90,
-      "security": 82,
-      "architecture": 50
-    },
-    "summary": "Ready with remediation work",
+    "overall": null,
+    "categories": {},
+    "summary": "Pack mismatch: Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "status": "not_applicable",
     "counts": {
-      "critical": 1,
-      "warning": 16,
-      "info": 26
+      "critical": 0,
+      "warning": 92,
+      "info": 7
     }
   },
   "productionFindings": [
     {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "spring/cloud/zookeeper/src/main/java/ExampleApplication.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "spring-boot-2",
+      "code": "spring-boot-version-unknown",
       "severity": "warning",
-      "title": "Spring Boot 2.7.x detected",
-      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "title": "Spring Boot version unknown",
+      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
       "file": null,
       "line": null,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example1.java",
-      "line": 10,
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+      "file": "spring-cloud-zookeeper-config/pom.xml",
+      "line": 78,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example2.java",
-      "line": 11,
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+      "file": "spring-cloud-zookeeper-core/pom.xml",
+      "line": 88,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example4.java",
-      "line": 13,
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/pom.xml",
+      "line": 113,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example5.java",
-      "line": 14,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/main/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryAutoConfiguration.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+      "file": "spring-cloud-zookeeper-sample/pom.xml",
+      "line": 71,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example6.java",
-      "line": 15,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/main/java/org/springframework/cloud/zookeeper/sample/SampleZookeeperApplication.java",
+      "line": 52,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example7.java",
-      "line": 16,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/main/java/org/springframework/cloud/zookeeper/sample/SampleZookeeperApplication.java",
+      "line": 55,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example8.java",
-      "line": 17,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/main/java/org/springframework/cloud/zookeeper/sample/SampleZookeeperApplication.java",
+      "line": 58,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example10.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example12.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example6.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example7.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example8.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example10.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example12.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example16.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example17.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example18.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example19.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example20.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example21.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example26.java",
-      "line": 35,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/main/java/org/springframework/cloud/zookeeper/sample/SampleZookeeperApplication.java",
+      "line": 61,
       "scope": "production"
     }
   ],
-  "testFindings": [],
+  "testFindings": [
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigAutoConfigurationTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigAutoConfigurationTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigAutoConfigurationTests.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataCustomizationIntegrationTests.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataCustomizationIntegrationTests.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataCustomizationIntegrationTests.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataIntegrationTests.java",
+      "line": 127,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataIntegrationTests.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataIntegrationTests.java",
+      "line": 31,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataIntegrationTests.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorFailFastTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorFailFastTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorFailFastTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorNoApplicationNameTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorTests.java",
+      "line": 129,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorTests.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorTests.java",
+      "line": 33,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorTests.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 81,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 125,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 166,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperHealthAutoConfigurationTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryAutoRegistrationFalseTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryAutoRegistrationFalseTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryAutoRegistrationFalseTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryClientTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryDisabledTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryDisabledTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryDisabledTests.java",
+      "line": 39,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorDisabledTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorDisabledTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorDisabledTests.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorWithNestedStructureTests.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorWithNestedStructureTests.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorWithNestedStructureTests.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryPropertiesIntegrationTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryPropertiesTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryPropertiesTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryPropertiesTests.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryTests.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryTests.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperLifecycleRegistrationDisabledTests.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperLifecycleRegistrationDisabledTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperLifecycleRegistrationDisabledTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperLifecycleRegistrationDisabledTests.java",
+      "line": 41,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeprDiscoveryNonWebAppTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeprDiscoveryNonWebAppTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeprDiscoveryNonWebAppTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/DiscoveryClientConfigServiceAutoConfigurationTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/DiscoveryClientConfigServiceAutoConfigurationTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/DiscoveryClientConfigServiceAutoConfigurationTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/DiscoveryClientConfigServiceAutoConfigurationTests.java",
+      "line": 53,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/ZookeeperConfigServerAutoConfigurationTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/ZookeeperConfigServerAutoConfigurationTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/ZookeeperConfigServerBootstrapperNoConfigClientTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/ZookeeperConfigServerBootstrapperNoConfigClientTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/ZookeeperConfigServerBootstrapperNoConfigClientTests.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/StubsConfigurationTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDependenciesTest.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDependenciesTests.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDependenciesTests.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDiscoveryWithDependenciesIntegrationTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDiscoveryWithDependenciesIntegrationTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDiscoveryWithDependenciesIntegrationTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDiscoveryWithDyingDependenciesTests.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/watcher/DefaultDependencyWatcherSpringTests.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/watcher/DefaultDependencyWatcherSpringTests.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/watcher/DefaultDependencyWatcherSpringTests.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/watcher/presence/DefaultDependencyPresenceOnStartupVerifierTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/watcher/presence/DependencyPresenceOnStartupVerifierTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 53,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/test/java/org/springframework/cloud/zookeeper/sample/SampleApplicationTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/test/java/org/springframework/cloud/zookeeper/sample/ZookeeperConfigDataOrderingIntegrationTests.java",
+      "line": 73,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/test/java/org/springframework/cloud/zookeeper/sample/ZookeeperConfigDataOrderingIntegrationTests.java",
+      "line": 99,
+      "scope": "test"
+    }
+  ],
   "findingSummary": {
     "production": {
-      "critical": 1,
-      "warning": 16,
-      "info": 26
+      "critical": 0,
+      "warning": 6,
+      "info": 4
     },
     "test": {
       "critical": 0,
-      "warning": 0,
-      "info": 0
+      "warning": 86,
+      "info": 3
     },
     "byCode": {
-      "javax-usage": {
-        "code": "javax-usage",
-        "title": "javax namespace usage detected",
-        "severity": "critical",
-        "total": 1,
-        "production": 1,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "zookeeper",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "javax-usage",
-            "severity": "critical",
-            "title": "javax namespace usage detected",
-            "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-            "file": "spring/cloud/zookeeper/src/main/java/ExampleApplication.java",
-            "line": 12,
-            "scope": "production"
-          }
-        ]
-      },
-      "spring-boot-2": {
-        "code": "spring-boot-2",
-        "title": "Spring Boot 2.7.x detected",
+      "spring-boot-version-unknown": {
+        "code": "spring-boot-version-unknown",
+        "title": "Spring Boot version unknown",
         "severity": "warning",
         "total": 1,
         "production": 1,
@@ -479,135 +953,319 @@
         ],
         "examples": [
           {
-            "code": "spring-boot-2",
+            "code": "spring-boot-version-unknown",
             "severity": "warning",
-            "title": "Spring Boot 2.7.x detected",
-            "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+            "title": "Spring Boot version unknown",
+            "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
             "file": null,
             "line": null,
             "scope": "production"
           }
         ]
       },
-      "field-injection": {
-        "code": "field-injection",
-        "title": "Spring field injection patterns",
-        "severity": "warning",
-        "total": 15,
-        "production": 15,
+      "junit-vintage-engine": {
+        "code": "junit-vintage-engine",
+        "title": "JUnit Vintage engine dependency",
+        "severity": "info",
+        "total": 4,
+        "production": 4,
         "test": 0,
         "topModules": [
           {
-            "name": "zookeeper",
-            "count": 15
+            "name": "spring-cloud-zookeeper-config",
+            "count": 1
+          },
+          {
+            "name": "spring-cloud-zookeeper-core",
+            "count": 1
+          },
+          {
+            "name": "spring-cloud-zookeeper-discovery",
+            "count": 1
           }
         ],
         "examples": [
           {
-            "code": "field-injection",
-            "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring/cloud/zookeeper/src/main/java/Example1.java",
-            "line": 10,
+            "code": "junit-vintage-engine",
+            "severity": "info",
+            "title": "JUnit Vintage engine dependency",
+            "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+            "file": "spring-cloud-zookeeper-config/pom.xml",
+            "line": 78,
             "scope": "production"
           },
           {
-            "code": "field-injection",
-            "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring/cloud/zookeeper/src/main/java/Example2.java",
-            "line": 11,
+            "code": "junit-vintage-engine",
+            "severity": "info",
+            "title": "JUnit Vintage engine dependency",
+            "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+            "file": "spring-cloud-zookeeper-core/pom.xml",
+            "line": 88,
             "scope": "production"
           },
           {
-            "code": "field-injection",
-            "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring/cloud/zookeeper/src/main/java/Example3.java",
-            "line": 12,
+            "code": "junit-vintage-engine",
+            "severity": "info",
+            "title": "JUnit Vintage engine dependency",
+            "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+            "file": "spring-cloud-zookeeper-discovery/pom.xml",
+            "line": 113,
             "scope": "production"
           },
           {
-            "code": "field-injection",
-            "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring/cloud/zookeeper/src/main/java/Example4.java",
-            "line": 13,
-            "scope": "production"
-          },
-          {
-            "code": "field-injection",
-            "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring/cloud/zookeeper/src/main/java/Example5.java",
-            "line": 14,
+            "code": "junit-vintage-engine",
+            "severity": "info",
+            "title": "JUnit Vintage engine dependency",
+            "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+            "file": "spring-cloud-zookeeper-sample/pom.xml",
+            "line": 71,
             "scope": "production"
           }
         ]
       },
-      "java-util-date": {
-        "code": "java-util-date",
-        "title": "Legacy date API usage",
-        "severity": "info",
-        "total": 26,
-        "production": 26,
-        "test": 0,
+      "junit4-api-usage": {
+        "code": "junit4-api-usage",
+        "title": "JUnit 4 API usage",
+        "severity": "warning",
+        "total": 46,
+        "production": 0,
+        "test": 46,
         "topModules": [
           {
-            "name": "zookeeper",
-            "count": 26
+            "name": "spring-cloud-zookeeper-discovery",
+            "count": 27
+          },
+          {
+            "name": "spring-cloud-zookeeper-config",
+            "count": 16
+          },
+          {
+            "name": "spring-cloud-zookeeper-core",
+            "count": 2
           }
         ],
         "examples": [
           {
-            "code": "java-util-date",
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigAutoConfigurationTests.java",
+            "line": 21,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigAutoConfigurationTests.java",
+            "line": 22,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigAutoConfigurationTests.java",
+            "line": 24,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataCustomizationIntegrationTests.java",
+            "line": 25,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataCustomizationIntegrationTests.java",
+            "line": 26,
+            "scope": "test"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 3,
+        "production": 0,
+        "test": 3,
+        "topModules": [
+          {
+            "name": "spring-cloud-zookeeper-config",
+            "count": 2
+          },
+          {
+            "name": "spring-cloud-zookeeper-sample",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "spring/cloud/zookeeper/src/main/java/Example1.java",
-            "line": 10,
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataIntegrationTests.java",
+            "line": 127,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorTests.java",
+            "line": 129,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "spring-cloud-zookeeper-sample/src/test/java/org/springframework/cloud/zookeeper/sample/ZookeeperConfigDataOrderingIntegrationTests.java",
+            "line": 99,
+            "scope": "test"
+          }
+        ]
+      },
+      "junit4-runner-usage": {
+        "code": "junit4-runner-usage",
+        "title": "JUnit 4 runner usage",
+        "severity": "warning",
+        "total": 32,
+        "production": 0,
+        "test": 32,
+        "topModules": [
+          {
+            "name": "spring-cloud-zookeeper-discovery",
+            "count": 26
+          },
+          {
+            "name": "spring-cloud-zookeeper-core",
+            "count": 6
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+            "line": 29,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+            "line": 47,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+            "line": 50,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+            "line": 81,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+            "line": 125,
+            "scope": "test"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 13,
+        "production": 5,
+        "test": 8,
+        "topModules": [
+          {
+            "name": "spring-cloud-zookeeper-discovery",
+            "count": 8
+          },
+          {
+            "name": "spring-cloud-zookeeper-sample",
+            "count": 5
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-cloud-zookeeper-discovery/src/main/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryAutoConfiguration.java",
+            "line": 52,
             "scope": "production"
           },
           {
-            "code": "java-util-date",
-            "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "spring/cloud/zookeeper/src/main/java/Example2.java",
-            "line": 11,
-            "scope": "production"
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryPropertiesIntegrationTests.java",
+            "line": 47,
+            "scope": "test"
           },
           {
-            "code": "java-util-date",
-            "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "spring/cloud/zookeeper/src/main/java/Example3.java",
-            "line": 12,
-            "scope": "production"
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+            "line": 55,
+            "scope": "test"
           },
           {
-            "code": "java-util-date",
-            "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "spring/cloud/zookeeper/src/main/java/Example4.java",
-            "line": 13,
-            "scope": "production"
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+            "line": 58,
+            "scope": "test"
           },
           {
-            "code": "java-util-date",
-            "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "spring/cloud/zookeeper/src/main/java/Example5.java",
-            "line": 14,
-            "scope": "production"
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperLifecycleRegistrationDisabledTests.java",
+            "line": 49,
+            "scope": "test"
           }
         ]
       }
@@ -615,391 +1273,895 @@
   },
   "findings": [
     {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "spring/cloud/zookeeper/src/main/java/ExampleApplication.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "spring-boot-2",
+      "code": "spring-boot-version-unknown",
       "severity": "warning",
-      "title": "Spring Boot 2.7.x detected",
-      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "title": "Spring Boot version unknown",
+      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
       "file": null,
       "line": null,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example1.java",
-      "line": 10,
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+      "file": "spring-cloud-zookeeper-config/pom.xml",
+      "line": 78,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-api-usage",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example6.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example7.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example8.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example10.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example12.java",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigAutoConfigurationTests.java",
       "line": 21,
-      "scope": "production"
+      "scope": "test"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-api-usage",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example13.java",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigAutoConfigurationTests.java",
       "line": 22,
-      "scope": "production"
+      "scope": "test"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-api-usage",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example14.java",
-      "line": 23,
-      "scope": "production"
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigAutoConfigurationTests.java",
+      "line": 24,
+      "scope": "test"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-api-usage",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example6.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example7.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example8.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example10.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example12.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example16.java",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataCustomizationIntegrationTests.java",
       "line": 25,
-      "scope": "production"
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example17.java",
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataCustomizationIntegrationTests.java",
       "line": 26,
-      "scope": "production"
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example18.java",
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataCustomizationIntegrationTests.java",
       "line": 27,
-      "scope": "production"
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example19.java",
-      "line": 28,
-      "scope": "production"
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataIntegrationTests.java",
+      "line": 127,
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example20.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example21.java",
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataIntegrationTests.java",
       "line": 30,
-      "scope": "production"
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example22.java",
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataIntegrationTests.java",
       "line": 31,
-      "scope": "production"
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example23.java",
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperConfigDataIntegrationTests.java",
       "line": 32,
-      "scope": "production"
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorFailFastTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorFailFastTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorFailFastTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorNoApplicationNameTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example24.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorTests.java",
+      "line": 129,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorTests.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorTests.java",
       "line": 33,
-      "scope": "production"
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example25.java",
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-config/src/test/java/org/springframework/cloud/zookeeper/config/ZookeeperPropertySourceLocatorTests.java",
       "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+      "file": "spring-cloud-zookeeper-core/pom.xml",
+      "line": 88,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 81,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 125,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperAutoConfigurationTests.java",
+      "line": 166,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-core/src/test/java/org/springframework/cloud/zookeeper/ZookeeperHealthAutoConfigurationTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit-vintage-engine",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring/cloud/zookeeper/src/main/java/Example26.java",
-      "line": 35,
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/pom.xml",
+      "line": 113,
       "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/main/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryAutoConfiguration.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryAutoRegistrationFalseTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryAutoRegistrationFalseTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryAutoRegistrationFalseTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryClientTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryDisabledTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryDisabledTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryDisabledTests.java",
+      "line": 39,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorDisabledTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorDisabledTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorDisabledTests.java",
+      "line": 38,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorWithNestedStructureTests.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorWithNestedStructureTests.java",
+      "line": 27,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryHealthIndicatorWithNestedStructureTests.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryPropertiesIntegrationTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryPropertiesTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryPropertiesTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryPropertiesTests.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoverySecurePortTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryTests.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperDiscoveryTests.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperLifecycleRegistrationDisabledTests.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperLifecycleRegistrationDisabledTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperLifecycleRegistrationDisabledTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeperLifecycleRegistrationDisabledTests.java",
+      "line": 41,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeprDiscoveryNonWebAppTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeprDiscoveryNonWebAppTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/ZookeeprDiscoveryNonWebAppTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/DiscoveryClientConfigServiceAutoConfigurationTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/DiscoveryClientConfigServiceAutoConfigurationTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/DiscoveryClientConfigServiceAutoConfigurationTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/DiscoveryClientConfigServiceAutoConfigurationTests.java",
+      "line": 53,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/ZookeeperConfigServerAutoConfigurationTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/ZookeeperConfigServerAutoConfigurationTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/ZookeeperConfigServerBootstrapperNoConfigClientTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/ZookeeperConfigServerBootstrapperNoConfigClientTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/configclient/ZookeeperConfigServerBootstrapperNoConfigClientTests.java",
+      "line": 32,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/StubsConfigurationTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDependenciesTest.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDependenciesTests.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDependenciesTests.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDiscoveryWithDependenciesIntegrationTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDiscoveryWithDependenciesIntegrationTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDiscoveryWithDependenciesIntegrationTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/dependency/ZookeeperDiscoveryWithDyingDependenciesTests.java",
+      "line": 29,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/watcher/DefaultDependencyWatcherSpringTests.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/watcher/DefaultDependencyWatcherSpringTests.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/watcher/DefaultDependencyWatcherSpringTests.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/watcher/presence/DefaultDependencyPresenceOnStartupVerifierTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/discovery/watcher/presence/DependencyPresenceOnStartupVerifierTests.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 53,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 23,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 24,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "spring-cloud-zookeeper-discovery/src/test/java/org/springframework/cloud/zookeeper/serviceregistry/ZookeeperAutoServiceRegistrationTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+      "file": "spring-cloud-zookeeper-sample/pom.xml",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/main/java/org/springframework/cloud/zookeeper/sample/SampleZookeeperApplication.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/main/java/org/springframework/cloud/zookeeper/sample/SampleZookeeperApplication.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/main/java/org/springframework/cloud/zookeeper/sample/SampleZookeeperApplication.java",
+      "line": 58,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/main/java/org/springframework/cloud/zookeeper/sample/SampleZookeeperApplication.java",
+      "line": 61,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/test/java/org/springframework/cloud/zookeeper/sample/SampleApplicationTests.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/test/java/org/springframework/cloud/zookeeper/sample/ZookeeperConfigDataOrderingIntegrationTests.java",
+      "line": 73,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "spring-cloud-zookeeper-sample/src/test/java/org/springframework/cloud/zookeeper/sample/ZookeeperConfigDataOrderingIntegrationTests.java",
+      "line": 99,
+      "scope": "test"
     }
   ],
   "evidence": [
@@ -1009,11 +2171,27 @@
     },
     {
       "name": "Spring Boot version detection",
-      "status": "passed"
+      "status": "warning"
     },
     {
       "name": "Jakarta namespace readiness",
-      "status": "failed"
+      "status": "passed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "passed"
     },
     {
       "name": "Static source checks",
@@ -1026,42 +2204,83 @@
     }
   ],
   "dependencies": {
-    "springBootVersion": "2.7.x",
-    "jakartaDetected": false,
-    "javaxDetected": true,
-    "hibernateDetected": true,
-    "springSecurityDetected": true
+    "springBootVersion": "unknown",
+    "springSecurityVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": true
   },
   "benchmark": {
     "slug": "spring-cloud-zookeeper",
     "name": "Spring Cloud Zookeeper",
     "repository": "https://github.com/spring-cloud/spring-cloud-zookeeper",
     "ref": null,
-    "requestedSource": "catalog",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
-    "commands": [],
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/spring-cloud-zookeeper",
+    "analysisPath": "benchmark-repos/spring-cloud-zookeeper",
+    "gitRevision": "9e6a837b975ca2c4ca9d23e1edb0470241de0aac",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/spring-cloud/spring-cloud-zookeeper benchmark-repos/spring-cloud-zookeeper",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '~/<workspace>"
+      }
+    ],
     "validation": {
-      "requested": false,
-      "status": "not_requested",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation was not requested."
+      "requested": true,
+      "status": "failed",
+      "confidence": 35,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "passed",
+          "command": "./mvnw -q -DskipTests compile",
+          "durationMs": 33114,
+          "exitCode": 0,
+          "output": "version check\nThe found version is [5.0.3-SNAPSHOT]\nDeactivating \"milestone\" profile for version=\"5.0.3-SNAPSHOT\"\nDeactivating \"central\" profile for version=\"5.0.3-SNAPSHOT\"\nWARNING: A restricted method in java.lang.System has been called\nWARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module (file:~/.m2/wrapper/dists/apache-maven-3.9.0-bin/7u41pcsb933vr4m6u83d7ofakm/apache-maven-3.9.0/lib/jansi-2.4.0.jar)\nWARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module\nWARNING: Restricted methods will be blocked in a future release unless native access is enabled\n\nWARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:~/.m2/wrapper/dists/apache-maven-3.9.0-bin/7u41pcsb933vr4m6u83d7ofakm/apache-maven-3.9.0/lib/guava-30.1-jre.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper\nWARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "./mvnw -q test",
+          "durationMs": 120008,
+          "exitCode": 143,
+          "output": "-07-02T23:30:45.240+02:00  INFO 54249 --- [testZkPropertySource] [ervermainrunner] o.a.z.server.SyncRequestProcessor        : Shutting down\n2026-07-02T23:30:45.240+02:00  INFO 54249 --- [testZkPropertySource] [0 cport:49797):] o.a.z.server.PrepRequestProcessor        : PrepRequestProcessor exited loop!\n2026-07-02T23:30:45.247+02:00  INFO 54249 --- [testZkPropertySource] [   SyncThread:0] o.a.z.server.SyncRequestProcessor        : SyncRequestProcessor exited!\n2026-07-02T23:30:45.247+02:00  INFO 54249 --- [testZkPropertySource] [ervermainrunner] o.a.z.server.FinalRequestProcessor       : shutdown of request processor complete\n2026-07-02T23:30:45.248+02:00  INFO 54249 --- [testZkPropertySource] [ervermainrunner] o.a.z.server.watch.WatchManagerFactory   : Using org.apache.zookeeper.server.watch.WatchManager as watch manager\n2026-07-02T23:30:45.248+02:00  INFO 54249 --- [testZkPropertySource] [ervermainrunner] o.a.z.server.watch.WatchManagerFactory   : Using org.apache.zookeeper.server.watch.WatchManager as watch manager\n2026-07-02T23:30:45.249+02:00  INFO 54249 --- [testZkPropertySource] [ervermainrunner] o.a.z.s.e.ZooKeeperServerEmbeddedImpl    : ZK server died. Requesting stop on JVM\nCommand timed out after 120000 ms.",
+          "timedOut": true
+        }
+      ],
+      "summary": "1 validation check(s) failed."
     }
   },
   "nextActions": [
     {
-      "id": "plan-jakarta-migration",
+      "id": "select-applicable-pack",
       "priority": "critical",
-      "title": "Plan javax to Jakarta namespace migration",
-      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
-      "evidenceCount": 1,
+      "title": "Select the applicable modernization pack",
+      "reason": "Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+      "evidenceCount": 0,
+      "findingCodes": [],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack java-17-to-21-readiness --out reports/java-17-to-21-readiness"
+    },
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "warning",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 4,
       "findingCodes": [
-        "javax-usage"
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
       ],
-      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
     },
     {
       "id": "validate-spring-boot-upgrade-path",
