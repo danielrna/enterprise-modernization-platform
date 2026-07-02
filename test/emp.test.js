@@ -158,14 +158,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 13);
+  assert.equal(result.count, 14);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.2\.5/);
-  assert.match(html, /MCP docs and smoke verification/);
-  assert.match(html, /mcp:verify/);
+  assert.match(index, /v0\.2\.6/);
+  assert.match(html, /JUnit checkout evidence batch two/);
+  assert.match(html, /junit4-samples/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## MCP docs and smoke verification/);
+  assert.match(markdown, /## JUnit checkout evidence batch two/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {

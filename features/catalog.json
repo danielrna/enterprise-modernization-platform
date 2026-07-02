@@ -2,6 +2,41 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.2.6",
+      "title": "v0.2.6",
+      "date": "2026-07-02",
+      "summary": "Second checkout-backed JUnit readiness evidence batch with one newly passing validation report.",
+      "features": [
+        {
+          "id": "junit-checkout-evidence-batch-two",
+          "type": "evidence",
+          "name": "JUnit checkout evidence batch two",
+          "audience": "Consultants validating JUnit 4 to JUnit 5 modernization evidence",
+          "summary": "Promote JUnit 4 Samples and Spring Petclinic JUnit from catalog-backed examples to checkout-backed validation evidence.",
+          "evidence": [
+            "Promotes JUnit 4 Samples to checkout-backed evidence at git revision `300468b1efd48d76fac2f7bd6d576846dcbbf5ed`.",
+            "Adds passing Maven compile and test validation evidence for JUnit 4 Samples with 95% validation confidence.",
+            "Promotes Spring Petclinic JUnit to checkout-backed evidence at git revision `b3ee2c53e76e9267f03551a7cd36b0983c859c56`, with passing Maven compilation and honest test-timeout evidence under the 120-second validation budget.",
+            "Raises checkout-backed evidence from 32 to 34 reports and passing validation evidence from 14 to 15 reports while preserving the 75-report public catalog."
+          ],
+          "links": [
+            {
+              "label": "JUnit 4 Samples report",
+              "href": "docs/benchmarks/junit4-samples/index.html"
+            },
+            {
+              "label": "Spring Petclinic JUnit report",
+              "href": "docs/benchmarks/spring-petclinic-junit/index.html"
+            },
+            {
+              "label": "JUnit 5 Evidence Hub",
+              "href": "docs/migration-hub/junit-5-readiness.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.2.5",
       "title": "v0.2.5",
       "date": "2026-07-02",

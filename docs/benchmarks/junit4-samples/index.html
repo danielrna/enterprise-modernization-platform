@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>JUnit 4 Samples Readiness Report</h1>
-    <p class="meta">junit-5-readiness · 2026-07-01T21:51:42.337Z · https://github.com/junit-team/junit4</p>
+    <p class="meta">junit-5-readiness · 2026-07-02T06:18:28.825Z · https://github.com/junit-team/junit4</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -67,7 +67,7 @@
       <div class="panel decision-main warn">
         <strong>Needs remediation before confident migration execution</strong>
         <div>The report has enough signal for scoping, but the evidence is not yet strong enough for execution.</div>
-        <div class="risk-list"><span class="pill warning">25 JUnit 4 API usage</span><span class="pill warning">8 JUnit 4 runner usage</span><span class="pill warning">1 JUnit 4 dependency</span></div>
+        <div class="risk-list"><span class="pill warning">466 JUnit 4 API usage</span><span class="pill warning">322 JUnit 4 runner usage</span><span class="pill warning">3 Serializable type without serialVersionUID</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
@@ -75,37 +75,37 @@
       </div>
       <div class="panel decision-list">
         <div><strong>Recommended next step</strong><div class="label">Prioritize repeated warning patterns and rerun the report after cleanup.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">passed at 95% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">75%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">69%</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">0</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">390</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">471</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready with remediation work</div>
+    <div class="panel">Migration risk requires focused cleanup</div>
 
 
     <h2>Pack Applicability</h2>
     <div class="panel notice">
       <strong>Pack applicable: yes</strong> · confidence 90%
       <div>JUnit 4 usage was detected. This pack targets JUnit 4 to JUnit 5 readiness.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 8 · Build: Gradle · javax usage: no · jakarta usage: no</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: unknown · Build: Maven · javax usage: no · jakarta usage: no</div>
 
     </div>
 
 
     <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>88%</strong></td><td><div class="bar"><span style="width:88%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>9%</strong></td><td><div class="bar"><span style="width:9%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>81%</strong></td><td><div class="bar"><span style="width:81%"></span></div></td></tr><tr><td>Spring</td><td><strong>86%</strong></td><td><div class="bar"><span style="width:86%"></span></div></td></tr><tr><td>Hibernate</td><td><strong>72%</strong></td><td><div class="bar"><span style="width:72%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>95%</strong></td><td><div class="bar"><span style="width:95%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Testing</td><td><strong>0%</strong></td><td><div class="bar"><span style="width:0%"></span></div></td></tr><tr><td>Architecture</td><td><strong>54%</strong></td><td><div class="bar"><span style="width:54%"></span></div></td></tr></tbody></table></div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>65</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
@@ -114,15 +114,17 @@
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/junit-team/junit4
+      <strong>checkout</strong> · https://github.com/junit-team/junit4
+      <div class="label">Checkout: benchmark-repos/junit4-samples</div>
+      <div class="label">Git revision: 300468b1efd48d76fac2f7bd6d576846dcbbf5ed</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/junit-team/junit4 benchmark-repos/junit4-samples</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt;</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>passed</strong> · confidence 95% · Compilation and tests completed successfully.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill passed">passed</span></td><td>./mvnw -q -DskipTests compile</td><td>14.4 s</td><td>WARNING: A restricted method in java.lang.System has been called WARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module (file:~/.m2/wrapper/dists/apache-maven-3.9.6/a53741d1/lib/...</td></tr><tr><td>Tests</td><td><span class="pill passed">passed</span></td><td>./mvnw -q test</td><td>28.0 s</td><td>res: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.junit.tests.validation.FailedConstructionTest Running org.junit.tests.validation.ValidationTest Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.ju...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">1</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">33</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">3</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">34</div><div class="label">Detailed JSON findings</div></div>
+      <div class="panel"><div class="metric">91</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">737</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">8</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">828</div><div class="label">Detailed JSON findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>25</td><td>0</td><td>25</td><td>src (25)</td><td>src/test/java/org/junit/tests/SampleTest.java:6 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/junit/tests/Example1.java:10 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/junit/tests/Example2.java:11 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/junit/tests/Example3.java:12 · Review JUnit 4 annotations and assertions before Jupiter migration.<br>src/test/java/org/junit/tests/Example4.java:13 · Review JUnit 4 annotations and assertions before Jupiter migration.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>8</td><td>0</td><td>8</td><td>src (8)</td><td>src/test/java/org/junit/runners/Example1.java:10 · Replace RunWith-based tests with Jupiter extensions or equivalent test structure.<br>src/test/java/org/junit/runners/Example2.java:11 · Replace RunWith-based tests with Jupiter extensions or equivalent test structure.<br>src/test/java/org/junit/runners/Example3.java:12 · Replace RunWith-based tests with Jupiter extensions or equivalent test structure.<br>src/test/java/org/junit/runners/Example4.java:13 · Replace RunWith-based tests with Jupiter extensions or equivalent test structure.<br>src/test/java/org/junit/runners/Example5.java:14 · Replace RunWith-based tests with Jupiter extensions or equivalent test structure.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 dependency</td><td>1</td><td>1</td><td>0</td><td>build.gradle (1)</td><td>build.gradle:35 · Plan Jupiter dependency and test execution migration.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>466</td><td>51</td><td>415</td><td>src (466)</td><td>src/main/java/junit/framework/Assert.java:6 · Review JUnit 4 API usage before modernization.<br>src/main/java/org/junit/After.java:9 · Review JUnit 4 API usage before modernization.<br>src/main/java/org/junit/After.java:11 · Review JUnit 4 API usage before modernization.<br>src/main/java/org/junit/After.java:12 · Review JUnit 4 API usage before modernization.<br>src/main/java/org/junit/After.java:12 · Review JUnit 4 API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 runner usage</td><td>322</td><td>13</td><td>309</td><td>src (322)</td><td>src/main/java/org/junit/internal/builders/AnnotatedBuilder.java:3 · Review JUnit 4 runner usage before modernization.<br>src/main/java/org/junit/internal/builders/AnnotatedBuilder.java:13 · Review JUnit 4 runner usage before modernization.<br>src/main/java/org/junit/internal/builders/AnnotatedBuilder.java:68 · Review JUnit 4 runner usage before modernization.<br>src/main/java/org/junit/runner/Runner.java:8 · Review JUnit 4 runner usage before modernization.<br>src/main/java/org/junit/runner/Runner.java:19 · Review JUnit 4 runner usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>31</td><td>20</td><td>11</td><td>src (31)</td><td>src/main/java/junit/framework/TestSuite.java:138 · Review Reflection usage before modernization.<br>src/main/java/junit/runner/BaseTestRunner.java:213 · Review Reflection usage before modernization.<br>src/main/java/org/junit/experimental/max/MaxCore.java:147 · Review Reflection usage before modernization.<br>src/main/java/org/junit/experimental/theories/Theories.java:89 · Review Reflection usage before modernization.<br>src/main/java/org/junit/experimental/theories/Theories.java:105 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Serializable type without serialVersionUID</td><td>3</td><td>2</td><td>1</td><td>src (3)</td><td>src/main/java/org/junit/internal/SerializableMatcherDescription.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>src/main/java/org/junit/internal/SerializableValueDescription.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>src/test/java/org/junit/AssumptionViolatedExceptionTest.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>3</td><td>3</td><td>0</td><td>src (3)</td><td>src/main/java/junit/runner/BaseTestRunner.java:166 · Review System.out logging before modernization.<br>src/main/java/junit/runner/Version.java:16 · Review System.out logging before modernization.<br>src/main/java/org/junit/runners/Parameterized.java:154 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JDK internal API usage</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/main/java/org/junit/internal/Throwables.java:253 · Review JDK internal API usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>1</td><td>0</td><td>1</td><td>src (1)</td><td>src/test/java/org/junit/tests/experimental/theories/runner/WithDataPointMethod.java:14 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 dependency</td><td>1</td><td>1</td><td>0</td><td>pom.xml (1)</td><td>pom.xml:6 · Review JUnit 4 dependency before modernization.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

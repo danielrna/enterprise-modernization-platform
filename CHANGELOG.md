@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v0.2.6
+
+- Promoted JUnit 4 Samples to checkout-backed JUnit readiness evidence with passing Maven compile/test validation.
+- Promoted Spring Petclinic JUnit to checkout-backed evidence with passing Maven compile validation and honest test-timeout evidence.
+- Raised checkout-backed benchmark evidence to 34 reports and passing validation evidence to 15 reports while preserving the 75-report public catalog.
+
 ## v0.2.5
 
 - Added an MCP documentation page and `npm run mcp:verify` smoke verification for all MCP tools.
