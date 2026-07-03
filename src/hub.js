@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const RELEASE_VERSION = 'v0.5.0';
+const RELEASE_VERSION = 'v0.5.1';
 const RELEASE_URL = `https://github.com/danielrna/enterprise-modernization-platform/releases/tag/${RELEASE_VERSION}`;
 const SAMPLE_REPORT_URL = `https://github.com/danielrna/enterprise-modernization-platform/releases/download/${RELEASE_VERSION}/emp-smoke-report.zip`;
 const DOCKER_IMAGE = `danielrna/enterprise-modernization-platform:${RELEASE_VERSION}`;

@@ -211,14 +211,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 24);
+  assert.equal(result.count, 25);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.5\.0/);
-  assert.match(html, /Phase 1 evidence depth complete/);
+  assert.match(index, /v0\.5\.1/);
+  assert.match(html, /Phase 2 distribution and conversion proof/);
   assert.match(html, /75 checkout-backed reports/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Phase 1 evidence depth complete/);
+  assert.match(markdown, /## Phase 2 distribution and conversion proof/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {

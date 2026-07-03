@@ -2,6 +2,41 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.5.1",
+      "title": "v0.5.1",
+      "date": "2026-07-03",
+      "summary": "Phase 2 Distribution and Conversion Proof transition release after completing the 75-report checkout-backed evidence set.",
+      "features": [
+        {
+          "id": "phase-2-distribution-conversion-proof",
+          "type": "roadmap",
+          "name": "Phase 2 distribution and conversion proof",
+          "audience": "External users, Java consultants, and maintainers turning public evidence into repeatable usage",
+          "summary": "Move the roadmap from evidence accumulation to external-user onboarding, reproducible demos, and consultant conversion assets.",
+          "evidence": [
+            "Confirms Phase 1 Evidence Depth is complete at 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.",
+            "Keeps the `v0.5.0` benchmark evidence set unchanged while making distribution and conversion the active roadmap target.",
+            "Aligns README, CLI help, release metadata, generated release notes, and Consultant Demo assets with the current evidence counts.",
+            "Sets the next release direction around stranger-reproducible quickstart paths, Docker/GitHub Action onboarding, and consultant-ready proof narratives before expanding the catalog again."
+          ],
+          "links": [
+            {
+              "label": "Benchmark index",
+              "href": "docs/benchmarks/index.html"
+            },
+            {
+              "label": "Consultant demo",
+              "href": "docs/consultant-demo.html"
+            },
+            {
+              "label": "Migration Hub",
+              "href": "docs/migration-hub/spring-boot-3-readiness.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.5.0",
       "title": "v0.5.0",
       "date": "2026-07-03",

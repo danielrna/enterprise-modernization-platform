@@ -8,9 +8,9 @@ The product is not a Java migration tool. The product is confidence that an appl
 
 ## Try In 5 Minutes
 
-Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.5.0
+Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.5.1
 
-Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.5.0/emp-smoke-report.zip
+Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.5.1/emp-smoke-report.zip
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform/migration-hub/spring-boot-2-to-3.html
 
@@ -54,7 +54,7 @@ reports/readiness/index.html
 Run the published Docker image:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.0 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.1 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
 ```
 
 Or build the CLI image locally:
@@ -93,7 +93,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.5.0
+        uses: danielrna/enterprise-modernization-platform@v0.5.1
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -249,7 +249,7 @@ Current automated coverage verifies:
 
 ## Current Status
 
-Implemented through v0.5.0:
+Implemented through v0.5.1:
 
 - CLI, Docker, MCP, and GitHub Action interfaces.
 - Spring Boot 2 to 3 readiness and transformation workflow.
@@ -264,6 +264,8 @@ Implemented through v0.5.0:
 - Validation status in benchmark reports and the Migration Hub, including 75 checkout-backed reports and 17 reports with passing compile/test evidence.
 - Consultant Demo page and downloadable consultant demo bundle.
 - Spring Boot 2 to 3 Migration Hub published through GitHub Pages.
+
+Current roadmap phase: Phase 2, Distribution and Conversion Proof. Phase 1 Evidence Depth is complete: all 75 public benchmark reports are checkout-backed, with 17 passing compile/test validation reports. The next releases should make that proof easier for external users to run, understand, and reuse in consultant workflows before expanding the catalog again.
 
 Still intentionally out of scope:
 

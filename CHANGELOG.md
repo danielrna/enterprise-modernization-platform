@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v0.5.1
+
+- Opened Phase 2 Distribution and Conversion Proof after completing Phase 1 Evidence Depth in `v0.5.0`.
+- Aligned README, CLI help, public release metadata, and consultant demo assets around the current 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.
+- Preserved the `v0.5.0` evidence set while making the next roadmap target external-user onboarding instead of another benchmark batch.
+
 ## v0.5.0
 
 - Completed Phase 1 Evidence Depth by promoting the final 20 catalog-only benchmark reports to checkout-backed evidence.
