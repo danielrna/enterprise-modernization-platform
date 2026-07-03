@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Spring AMQP Readiness Report</h1>
-    <p class="meta">spring-boot-3-readiness · 2026-06-30T17:23:07.957Z · https://github.com/spring-projects/spring-amqp</p>
+    <p class="meta">spring-boot-3-readiness · 2026-07-03T05:47:32.542Z · https://github.com/spring-projects/spring-amqp</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -65,64 +65,66 @@
   <main>
     <section class="decision">
       <div class="panel decision-main bad">
-        <strong>Migration is blocked by critical readiness risks</strong>
-        <div>1 critical finding(s) should be resolved before execution planning.</div>
-        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">1 Spring Boot 2.7.x detected</span><span class="pill info">44 Legacy date API usage</span></div>
+        <strong>Do not use this pack for migration planning yet</strong>
+        <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">126 Spring field injection</span><span class="pill warning">9 Serializable type without serialVersionUID</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
         </div>
       </div>
       <div class="panel decision-list">
-        <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
-        <div><strong>Validation state</strong><div class="label">skipped at 0% confidence.</div></div>
+        <div><strong>Recommended next step</strong><div class="label">Run jakarta-readiness before using this report for planning.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 35% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">81%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">N/A</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">1500</div><div class="label">Java files</div></div>
-      <div class="panel"><div class="metric">2.7.x</div><div class="label">Spring Boot</div></div>
+      <div class="panel"><div class="metric">661</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready with remediation work</div>
+    <div class="panel">Pack mismatch: Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
 
 
     <h2>Pack Applicability</h2>
-    <div class="panel notice">
-      <strong>Pack applicable: yes</strong> · confidence 95%
-      <div>Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
-      <div class="label">Detected: Spring Boot: 2.7.x · Java: 17 · Build: Gradle · javax usage: yes · jakarta usage: yes</div>
-
+    <div class="panel notice bad">
+      <strong>Pack applicable: no</strong> · confidence 90%
+      <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 17 · Build: Gradle · javax usage: yes · jakarta usage: yes</div>
+      <div class="label">Recommended pack: jakarta-readiness</div>
     </div>
 
 
-    <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>75%</strong></td><td><div class="bar"><span style="width:75%"></span></div></td></tr><tr><td>Spring</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+      <h2>Readiness</h2>
+      <div class="panel notice bad">Readiness score was not computed because this pack is not applicable to the project.</div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Validate the Spring Boot 3 upgrade path</td><td>Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.</td><td>1</td><td><code>node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill critical">critical</span></td><td>Select the applicable modernization pack</td><td>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Validate the Spring Boot 3 upgrade path</td><td>Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.</td><td>1</td><td><code>node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></td></tr><tr><td><span class="pill info">info</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/spring-projects/spring-amqp
+      <strong>checkout</strong> · https://github.com/spring-projects/spring-amqp
+      <div class="label">Checkout: benchmark-repos/spring-amqp</div>
+      <div class="label">Git revision: ec584a3781264a549a609530e0b1aae02481fb5a</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/spring-projects/spring-amqp benchmark-repos/spring-amqp</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt;</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>skipped</strong> · confidence 0% · Validation requires a local checkout.
+      <strong>failed</strong> · confidence 35% · 1 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill passed">passed</span></td><td>./gradlew compileJava --no-daemon</td><td>56.2 s</td><td>SOURCE &gt; Task :spring-amqp:compileKotlin NO-SOURCE &gt; Task :spring-rabbit-junit:compileJava FROM-CACHE &gt; Task :spring-amqp:compileJava FROM-CACHE &gt; Task :spring-amqp-client:compileKotlin NO-SOURCE &gt; Task :spring-rabbit:compileKotlin NO-SO...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./gradlew test --no-daemon</td><td>121.0 s</td><td>E &gt; Task :spring-amqp-client:testClasses &gt; Task :spring-amqp:compileTestJava FROM-CACHE &gt; Task :spring-amqp:testClasses &gt; Task :spring-amqp:test FROM-CACHE &gt; Task :spring-rabbit:compileTestJava FROM-CACHE &gt; Task :spring-rabbit:testClasse...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">46</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">3</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">46</div><div class="label">Total findings</div></div>
+      <div class="panel"><div class="metric">15</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">149</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">7</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">164</div><div class="label">Total findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill info">info</span><br>Legacy date API usage</td><td>44</td><td>44</td><td>0</td><td>spring-rabbit (44)</td><td>spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example1.java:10 · Review date handling before migration validation.<br>spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example2.java:11 · Review date handling before migration validation.<br>spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example3.java:12 · Review date handling before migration validation.<br>spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example4.java:13 · Review date handling before migration validation.<br>spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example5.java:14 · Review date handling before migration validation.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>spring-rabbit (1)</td><td>spring-rabbit/src/main/java/org/springframework/amqp/rabbit/config/AbstractRabbitListenerContainerFactory.java:14 · Plan Jakarta migration before Spring Boot 3 execution.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot 2.7.x detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Run OpenRewrite Boot 3 recipes in dry-run mode.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>126</td><td>0</td><td>126</td><td>spring-rabbit (98)<br>spring-rabbit-test (22)<br>spring-rabbitmq-client (4)</td><td>spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java:64 · Review Spring field injection before modernization.<br>spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonXmlMessageConverterTests.java:55 · Review Spring field injection before modernization.<br>spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java:85 · Review Spring field injection before modernization.<br>spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java:88 · Review Spring field injection before modernization.<br>spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java:91 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>19</td><td>12</td><td>7</td><td>spring-amqp (9)<br>spring-rabbit (6)<br>spring-amqp-client (3)</td><td>spring-amqp/src/main/java/org/springframework/amqp/core/MessageBuilderSupport.java:19 · Review java.util.Date usage before modernization.<br>spring-amqp/src/main/java/org/springframework/amqp/core/MessageProperties.java:23 · Review java.util.Date usage before modernization.<br>spring-amqp/src/main/java/org/springframework/amqp/support/AmqpMessageHeaderAccessor.java:19 · Review java.util.Date usage before modernization.<br>spring-amqp/src/main/java/org/springframework/amqp/support/SimpleAmqpHeaderMapper.java:19 · Review java.util.Date usage before modernization.<br>spring-amqp/src/test/java/org/springframework/amqp/core/MessageTests.java:26 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Serializable type without serialVersionUID</td><td>9</td><td>0</td><td>9</td><td>spring-rabbit (6)<br>spring-amqp (3)</td><td>spring-amqp/src/test/java/org/springframework/amqp/core/MessageTests.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>spring-amqp/src/test/java/org/springframework/amqp/support/converter/AllowedListDeserializingMessageConverterTests.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>spring-amqp/src/test/java/org/springframework/amqp/support/converter/ContentTypeDelegatingMessageConverterTests.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ConsumerBatchingTests.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchIntegrationTests.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>7</td><td>0</td><td>7</td><td>spring-amqp (5)<br>spring-rabbit (2)</td><td>spring-amqp/src/test/java/org/springframework/amqp/listener/adapter/DelegatingInvocableHandlerTests.java:49 · Review Reflection usage before modernization.<br>spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java:347 · Review Reflection usage before modernization.<br>spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java:362 · Review Reflection usage before modernization.<br>spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java:378 · Review Reflection usage before modernization.<br>spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java:393 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 API usage</td><td>1</td><td>1</td><td>0</td><td>src (1)</td><td>src/checkstyle/checkstyle.xml:80 · Review JUnit 4 API usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot version unknown</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Declare Spring Boot version explicitly in Maven or Gradle metadata.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>
