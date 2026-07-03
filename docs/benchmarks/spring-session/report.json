@@ -1,382 +1,622 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T17:23:07.955Z",
+  "generatedAt": "2026-07-03T05:47:09.218Z",
   "project": {
     "name": "Spring Session",
-    "root": "https://github.com/spring-projects/spring-session",
+    "root": "benchmark-repos/spring-session",
     "source": "https://github.com/spring-projects/spring-session",
     "buildTools": [
       "Gradle"
     ],
     "javaVersion": "17",
-    "springBootVersion": "2.7.x",
-    "fileCount": 1700,
-    "javaFileCount": 990
+    "springBootVersion": "unknown",
+    "fileCount": 733,
+    "javaFileCount": 421
   },
   "pack": "spring-boot-3-readiness",
   "packApplicability": {
-    "applicable": true,
-    "confidence": 0.95,
-    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
-    "targetVersion": "3.x"
+    "applicable": false,
+    "confidence": 0.9,
+    "reason": "Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "recommendedPack": "jakarta-readiness"
   },
   "readiness": {
-    "overall": 70,
-    "categories": {
-      "java": 88,
-      "spring": 37,
-      "jakarta": 79,
-      "build": 90,
-      "security": 82,
-      "architecture": 42
-    },
-    "summary": "Ready with remediation work",
+    "overall": null,
+    "categories": {},
+    "summary": "Pack mismatch: Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "status": "not_applicable",
     "counts": {
       "critical": 1,
-      "warning": 32,
-      "info": 0
+      "warning": 58,
+      "info": 4
     }
   },
   "productionFindings": [
     {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "spring-session-core/src/main/java/org/springframework/session/web/http/SessionRepositoryFilter.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "spring-boot-2",
+      "code": "spring-boot-version-unknown",
       "severity": "warning",
-      "title": "Spring Boot 2.7.x detected",
-      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "title": "Spring Boot version unknown",
+      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
       "file": null,
       "line": null,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example1.java",
-      "line": 10,
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-dependency",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example6.java",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
       "line": 15,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-dependency",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example7.java",
-      "line": 16,
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
+      "line": 32,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-dependency",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example8.java",
-      "line": 17,
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
+      "line": 49,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-dependency",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example9.java",
-      "line": 18,
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/build.gradle",
+      "line": 81,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example10.java",
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "buildSrc/src/main/java/org/springframework/gradle/antora/UpdateAntoraVersionTask.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "buildSrc/src/main/java/org/springframework/gradle/github/milestones/GitHubMilestoneHasNoOpenIssuesTask.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-session-core/src/main/java/org/springframework/session/security/SpringSessionBackedSessionInformation.java",
       "line": 19,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example11.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/main/java/org/springframework/session/web/socket/config/annotation/AbstractSessionWebSocketMessageBrokerConfigurer.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/ReactiveRedisIndexedSessionRepositoryITests.java",
+      "line": 64,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/ReactiveRedisIndexedSessionRepositoryITests.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/ReactiveRedisSessionRepositoryITests.java",
+      "line": 59,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/RedisIndexedSessionRepositoryITests.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/RedisIndexedSessionRepositoryITests.java",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/RedisSessionRepositoryITests.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/SortedSetRedisSessionExpirationStoreITests.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/SortedSetRedisSessionExpirationStoreITests.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/config/annotation/web/http/EnableRedisIndexedHttpSessionExpireSessionDestroyedTests.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/config/annotation/web/http/EnableRedisIndexedHttpSessionExpireSessionDestroyedTests.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/flushimmediately/RedisIndexedSessionRepositoryFlushImmediatelyITests.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/taskexecutor/RedisListenerContainerTaskExecutorITests.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/RedisSessionExpirationPolicy.java",
       "line": 20,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example12.java",
-      "line": 21,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/config/annotation/web/http/AbstractRedisHttpSessionConfiguration.java",
+      "line": 119,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example13.java",
-      "line": 22,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/config/annotation/web/http/RedisIndexedHttpSessionConfiguration.java",
+      "line": 160,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example14.java",
-      "line": 23,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/config/annotation/web/server/AbstractRedisWebSessionConfiguration.java",
+      "line": 99,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example15.java",
-      "line": 24,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/config/annotation/web/server/RedisIndexedWebSessionConfiguration.java",
+      "line": 116,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example16.java",
-      "line": 25,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/config/annotation/web/server/RedisWebSessionConfiguration.java",
+      "line": 119,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example17.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example18.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example19.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example20.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example21.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example26.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-docs/modules/ROOT/examples/java/docs/security/SecurityConfiguration.java",
       "line": 35,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example27.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-jdbc/src/integration-test/java/org/springframework/session/jdbc/AbstractJdbcIndexedSessionRepositoryITests.java",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-jdbc/src/integration-test/java/org/springframework/session/jdbc/AbstractJdbcIndexedSessionRepositoryITests.java",
+      "line": 74,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-jdbc/src/integration-test/java/org/springframework/session/jdbc/AbstractJdbcIndexedSessionRepositoryITests.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-jdbc/src/main/java/org/springframework/session/jdbc/config/annotation/web/http/JdbcHttpSessionConfiguration.java",
+      "line": 216,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-findbyusername/src/integration-test/java/sample/FindByUsernameTests.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-findbyusername/src/main/java/sample/session/SessionDetailsFilter.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-jdbc/src/integration-test/java/sample/BootTests.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-redis/src/integration-test/java/sample/BootTests.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-redis-json/src/integration-test/java/sample/HttpRedisJsonTest.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-websocket/src/integration-test/java/sample/ApplicationTests.java",
+      "line": 60,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-websocket/src/main/java/sample/config/WebSecurityConfig.java",
       "line": 36,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example28.java",
-      "line": 37,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-websocket/src/main/java/sample/mvc/MessageController.java",
+      "line": 46,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example29.java",
-      "line": 38,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-websocket/src/main/java/sample/security/UserRepositoryUserDetailsService.java",
+      "line": 41,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example30.java",
-      "line": 39,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-javaconfig-rest/src/integration-test/java/rest/RestMockMvcTests.java",
+      "line": 58,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example31.java",
-      "line": 40,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-javaconfig-rest/src/integration-test/java/rest/RestMockMvcTests.java",
+      "line": 61,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-javaconfig-rest/src/main/java/sample/SecurityConfig.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-javaconfig-security/src/main/java/sample/SecurityConfig.java",
+      "line": 32,
       "scope": "production"
     }
   ],
-  "testFindings": [],
+  "testFindings": [
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "buildSrc/src/test/java/io/spring/gradle/convention/IntegrationTestPluginITest.java",
+      "line": 6,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "buildSrc/src/test/java/io/spring/gradle/convention/JacocoPluginITest.java",
+      "line": 5,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/integrationtest/withgroovy/build.gradle",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/integrationtest/withjava/build.gradle",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/integrationtest/withpropdeps/build.gradle",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/jacoco/java/build.gradle",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/maven/install/build.gradle",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/maven/install-with-springio/build.gradle",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/maven/signing/build.gradle",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/maven/upload/build.gradle",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/showcase/samples/sgbcs-sample-war/build.gradle",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/testsconfiguration/web/build.gradle",
+      "line": 9,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+      "line": 73,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+      "line": 79,
+      "scope": "test"
+    }
+  ],
   "findingSummary": {
     "production": {
       "critical": 1,
-      "warning": 32,
-      "info": 0
+      "warning": 41,
+      "info": 4
     },
     "test": {
       "critical": 0,
-      "warning": 0,
+      "warning": 17,
       "info": 0
     },
     "byCode": {
-      "javax-usage": {
-        "code": "javax-usage",
-        "title": "javax namespace usage detected",
-        "severity": "critical",
-        "total": 1,
-        "production": 1,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "spring-session-core",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "javax-usage",
-            "severity": "critical",
-            "title": "javax namespace usage detected",
-            "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-            "file": "spring-session-core/src/main/java/org/springframework/session/web/http/SessionRepositoryFilter.java",
-            "line": 18,
-            "scope": "production"
-          }
-        ]
-      },
-      "spring-boot-2": {
-        "code": "spring-boot-2",
-        "title": "Spring Boot 2.7.x detected",
+      "spring-boot-version-unknown": {
+        "code": "spring-boot-version-unknown",
+        "title": "Spring Boot version unknown",
         "severity": "warning",
         "total": 1,
         "production": 1,
@@ -389,74 +629,278 @@
         ],
         "examples": [
           {
-            "code": "spring-boot-2",
+            "code": "spring-boot-version-unknown",
             "severity": "warning",
-            "title": "Spring Boot 2.7.x detected",
-            "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+            "title": "Spring Boot version unknown",
+            "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
             "file": null,
             "line": null,
             "scope": "production"
           }
         ]
       },
-      "field-injection": {
-        "code": "field-injection",
-        "title": "Spring field injection patterns",
-        "severity": "warning",
-        "total": 31,
-        "production": 31,
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
         "test": 0,
         "topModules": [
           {
-            "name": "spring-session-samples",
-            "count": 31
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "junit4-dependency": {
+        "code": "junit4-dependency",
+        "title": "JUnit 4 dependency",
+        "severity": "warning",
+        "total": 14,
+        "production": 4,
+        "test": 10,
+        "topModules": [
+          {
+            "name": "buildSrc",
+            "count": 11
+          },
+          {
+            "name": ".github",
+            "count": 3
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": ".github/dependabot.yml",
+            "line": 15,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": ".github/dependabot.yml",
+            "line": 32,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": ".github/dependabot.yml",
+            "line": 49,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "buildSrc/build.gradle",
+            "line": 81,
+            "scope": "production"
+          },
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "buildSrc/src/test/resources/samples/integrationtest/withgroovy/build.gradle",
+            "line": 13,
+            "scope": "test"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 2,
+        "production": 2,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "buildSrc",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "buildSrc/src/main/java/org/springframework/gradle/antora/UpdateAntoraVersionTask.java",
+            "line": 51,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "buildSrc/src/main/java/org/springframework/gradle/github/milestones/GitHubMilestoneHasNoOpenIssuesTask.java",
+            "line": 44,
+            "scope": "production"
+          }
+        ]
+      },
+      "junit4-api-usage": {
+        "code": "junit4-api-usage",
+        "title": "JUnit 4 API usage",
+        "severity": "warning",
+        "total": 2,
+        "production": 0,
+        "test": 2,
+        "topModules": [
+          {
+            "name": "buildSrc",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "buildSrc/src/test/java/io/spring/gradle/convention/IntegrationTestPluginITest.java",
+            "line": 6,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "buildSrc/src/test/java/io/spring/gradle/convention/JacocoPluginITest.java",
+            "line": 5,
+            "scope": "test"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "java.util.Date usage",
+        "severity": "info",
+        "total": 2,
+        "production": 2,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "spring-session-core",
+            "count": 1
+          },
+          {
+            "name": "spring-session-data-redis",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "spring-session-core/src/main/java/org/springframework/session/security/SpringSessionBackedSessionInformation.java",
+            "line": 19,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/RedisSessionExpirationPolicy.java",
+            "line": 20,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 41,
+        "production": 36,
+        "test": 5,
+        "topModules": [
+          {
+            "name": "spring-session-data-redis",
+            "count": 17
+          },
+          {
+            "name": "spring-session-core",
+            "count": 6
+          },
+          {
+            "name": "spring-session-jdbc",
+            "count": 4
           }
         ],
         "examples": [
           {
             "code": "field-injection",
             "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring-session-samples/src/main/java/sample/Example1.java",
-            "line": 10,
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-session-core/src/main/java/org/springframework/session/web/socket/config/annotation/AbstractSessionWebSocketMessageBrokerConfigurer.java",
+            "line": 84,
             "scope": "production"
           },
           {
             "code": "field-injection",
             "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring-session-samples/src/main/java/sample/Example2.java",
-            "line": 11,
-            "scope": "production"
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+            "line": 65,
+            "scope": "test"
           },
           {
             "code": "field-injection",
             "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring-session-samples/src/main/java/sample/Example3.java",
-            "line": 12,
-            "scope": "production"
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+            "line": 68,
+            "scope": "test"
           },
           {
             "code": "field-injection",
             "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring-session-samples/src/main/java/sample/Example4.java",
-            "line": 13,
-            "scope": "production"
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+            "line": 73,
+            "scope": "test"
           },
           {
             "code": "field-injection",
             "severity": "warning",
-            "title": "Spring field injection patterns",
-            "recommendation": "Prefer constructor injection in services touched by migration work.",
-            "file": "spring-session-samples/src/main/java/sample/Example5.java",
-            "line": 14,
-            "scope": "production"
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+            "line": 76,
+            "scope": "test"
           }
         ]
       }
@@ -464,300 +908,570 @@
   },
   "findings": [
     {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "spring-session-core/src/main/java/org/springframework/session/web/http/SessionRepositoryFilter.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "spring-boot-2",
+      "code": "spring-boot-version-unknown",
       "severity": "warning",
-      "title": "Spring Boot 2.7.x detected",
-      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "title": "Spring Boot version unknown",
+      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
       "file": null,
       "line": null,
       "scope": "production"
     },
     {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example1.java",
-      "line": 10,
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-dependency",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example6.java",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
       "line": 15,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-dependency",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example7.java",
-      "line": 16,
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
+      "line": 32,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-dependency",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example8.java",
-      "line": 17,
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": ".github/dependabot.yml",
+      "line": 49,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "junit4-dependency",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example9.java",
-      "line": 18,
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/build.gradle",
+      "line": 81,
       "scope": "production"
     },
     {
-      "code": "field-injection",
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "buildSrc/src/main/java/org/springframework/gradle/antora/UpdateAntoraVersionTask.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "buildSrc/src/main/java/org/springframework/gradle/github/milestones/GitHubMilestoneHasNoOpenIssuesTask.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-api-usage",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example10.java",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "buildSrc/src/test/java/io/spring/gradle/convention/IntegrationTestPluginITest.java",
+      "line": 6,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "buildSrc/src/test/java/io/spring/gradle/convention/JacocoPluginITest.java",
+      "line": 5,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/integrationtest/withgroovy/build.gradle",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/integrationtest/withjava/build.gradle",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/integrationtest/withpropdeps/build.gradle",
+      "line": 13,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/jacoco/java/build.gradle",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/maven/install/build.gradle",
+      "line": 12,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/maven/install-with-springio/build.gradle",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/maven/signing/build.gradle",
+      "line": 14,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/maven/upload/build.gradle",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/showcase/samples/sgbcs-sample-war/build.gradle",
+      "line": 10,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "buildSrc/src/test/resources/samples/testsconfiguration/web/build.gradle",
+      "line": 9,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-session-core/src/main/java/org/springframework/session/security/SpringSessionBackedSessionInformation.java",
       "line": 19,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example11.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/main/java/org/springframework/session/web/socket/config/annotation/AbstractSessionWebSocketMessageBrokerConfigurer.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+      "line": 73,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-core/src/test/java/org/springframework/session/config/annotation/web/http/EnableSpringHttpSessionCustomCookieSerializerTests.java",
+      "line": 79,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/ReactiveRedisIndexedSessionRepositoryITests.java",
+      "line": 64,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/ReactiveRedisIndexedSessionRepositoryITests.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/ReactiveRedisSessionRepositoryITests.java",
+      "line": 59,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/RedisIndexedSessionRepositoryITests.java",
+      "line": 68,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/RedisIndexedSessionRepositoryITests.java",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/RedisSessionRepositoryITests.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/SortedSetRedisSessionExpirationStoreITests.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/SortedSetRedisSessionExpirationStoreITests.java",
+      "line": 57,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/config/annotation/web/http/EnableRedisIndexedHttpSessionExpireSessionDestroyedTests.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/config/annotation/web/http/EnableRedisIndexedHttpSessionExpireSessionDestroyedTests.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/flushimmediately/RedisIndexedSessionRepositoryFlushImmediatelyITests.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/integration-test/java/org/springframework/session/data/redis/taskexecutor/RedisListenerContainerTaskExecutorITests.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/RedisSessionExpirationPolicy.java",
       "line": 20,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example12.java",
-      "line": 21,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/config/annotation/web/http/AbstractRedisHttpSessionConfiguration.java",
+      "line": 119,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example13.java",
-      "line": 22,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/config/annotation/web/http/RedisIndexedHttpSessionConfiguration.java",
+      "line": 160,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example14.java",
-      "line": 23,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/config/annotation/web/server/AbstractRedisWebSessionConfiguration.java",
+      "line": 99,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example15.java",
-      "line": 24,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/config/annotation/web/server/RedisIndexedWebSessionConfiguration.java",
+      "line": 116,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example16.java",
-      "line": 25,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-data-redis/src/main/java/org/springframework/session/data/redis/config/annotation/web/server/RedisWebSessionConfiguration.java",
+      "line": 119,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example17.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example18.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example19.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example20.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example21.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "field-injection",
-      "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example26.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-docs/modules/ROOT/examples/java/docs/security/SecurityConfiguration.java",
       "line": 35,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example27.java",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-jdbc/src/integration-test/java/org/springframework/session/jdbc/AbstractJdbcIndexedSessionRepositoryITests.java",
+      "line": 71,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-jdbc/src/integration-test/java/org/springframework/session/jdbc/AbstractJdbcIndexedSessionRepositoryITests.java",
+      "line": 74,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-jdbc/src/integration-test/java/org/springframework/session/jdbc/AbstractJdbcIndexedSessionRepositoryITests.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-jdbc/src/main/java/org/springframework/session/jdbc/config/annotation/web/http/JdbcHttpSessionConfiguration.java",
+      "line": 216,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-findbyusername/src/integration-test/java/sample/FindByUsernameTests.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-findbyusername/src/main/java/sample/session/SessionDetailsFilter.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-jdbc/src/integration-test/java/sample/BootTests.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-redis/src/integration-test/java/sample/BootTests.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-redis-json/src/integration-test/java/sample/HttpRedisJsonTest.java",
+      "line": 55,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-websocket/src/integration-test/java/sample/ApplicationTests.java",
+      "line": 60,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-websocket/src/main/java/sample/config/WebSecurityConfig.java",
       "line": 36,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example28.java",
-      "line": 37,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-websocket/src/main/java/sample/mvc/MessageController.java",
+      "line": 46,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example29.java",
-      "line": 38,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-boot-websocket/src/main/java/sample/security/UserRepositoryUserDetailsService.java",
+      "line": 41,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example30.java",
-      "line": 39,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-javaconfig-rest/src/integration-test/java/rest/RestMockMvcTests.java",
+      "line": 58,
       "scope": "production"
     },
     {
       "code": "field-injection",
       "severity": "warning",
-      "title": "Spring field injection patterns",
-      "recommendation": "Prefer constructor injection in services touched by migration work.",
-      "file": "spring-session-samples/src/main/java/sample/Example31.java",
-      "line": 40,
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-javaconfig-rest/src/integration-test/java/rest/RestMockMvcTests.java",
+      "line": 61,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-javaconfig-rest/src/main/java/sample/SecurityConfig.java",
+      "line": 52,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-session-samples/spring-session-sample-javaconfig-security/src/main/java/sample/SecurityConfig.java",
+      "line": 32,
       "scope": "production"
     }
   ],
@@ -768,11 +1482,27 @@
     },
     {
       "name": "Spring Boot version detection",
-      "status": "passed"
+      "status": "warning"
     },
     {
       "name": "Jakarta namespace readiness",
       "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "passed"
     },
     {
       "name": "Static source checks",
@@ -785,29 +1515,58 @@
     }
   ],
   "dependencies": {
-    "springBootVersion": "2.7.x",
+    "springBootVersion": "unknown",
+    "springSecurityVersion": "unknown",
     "jakartaDetected": true,
     "javaxDetected": true,
     "hibernateDetected": false,
-    "springSecurityDetected": true
+    "springSecurityDetected": true,
+    "junit4Detected": true,
+    "junit5Detected": true
   },
   "benchmark": {
     "slug": "spring-session",
     "name": "Spring Session",
     "repository": "https://github.com/spring-projects/spring-session",
     "ref": null,
-    "requestedSource": "local",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
-    "commands": [],
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/spring-session",
+    "analysisPath": "benchmark-repos/spring-session",
+    "gitRevision": "e7aee108af33dc485465241b3e0c9918b244a965",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/spring-projects/spring-session benchmark-repos/spring-session",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '~/<workspace>"
+      }
+    ],
     "validation": {
       "requested": true,
-      "status": "skipped",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation requires a local checkout."
+      "status": "failed",
+      "confidence": 25,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "failed",
+          "command": "./gradlew compileJava --no-daemon",
+          "durationMs": 12850,
+          "exitCode": 1,
+          "output": "Downloading https://services.gradle.org/distributions/gradle-8.14.3-bin.zip\n.............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%..............100%\nTo honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.\nDaemon will be stopped at the end of the build \n\nFAILURE: Build failed with an exception.\n\n* What went wrong:\nBUG! exception in phase 'semantic analysis' in source unit '_BuildScript_' Unsupported class file major version 69\n> Unsupported class file major version 69\n\n* Try:\n> Run with --stacktrace option to get the stack trace.\n> Run with --info or --debug option to get more log output.\n> Run with --scan to get full insights.\n> Get more help at https://help.gradle.org.\n\nBUILD FAILED in 11s",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "./gradlew test --no-daemon",
+          "durationMs": 8537,
+          "exitCode": 1,
+          "output": "To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.\nDaemon will be stopped at the end of the build \n\nFAILURE: Build failed with an exception.\n\n* What went wrong:\nBUG! exception in phase 'semantic analysis' in source unit '_BuildScript_' Unsupported class file major version 69\n> Unsupported class file major version 69\n\n* Try:\n> Run with --stacktrace option to get the stack trace.\n> Run with --info or --debug option to get more log output.\n> Run with --scan to get full insights.\n> Get more help at https://help.gradle.org.\n\nBUILD FAILED in 8s",
+          "timedOut": false
+        }
+      ],
+      "summary": "2 validation check(s) failed."
     }
   },
   "nextActions": [
@@ -823,6 +1582,15 @@
       "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
     },
     {
+      "id": "select-applicable-pack",
+      "priority": "critical",
+      "title": "Select the applicable modernization pack",
+      "reason": "Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+      "evidenceCount": 0,
+      "findingCodes": [],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    },
+    {
       "id": "validate-spring-boot-upgrade-path",
       "priority": "warning",
       "title": "Validate the Spring Boot 3 upgrade path",
@@ -833,6 +1601,29 @@
         "spring-boot-version-unknown"
       ],
       "suggestedCommand": "node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust"
+    },
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "info",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 4,
+      "findingCodes": [
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
     }
-  ]
+  ],
+  "findingDetails": {
+    "compacted": false,
+    "total": 63,
+    "productionTotal": 46,
+    "testTotal": 17,
+    "detailedTotal": 63,
+    "omittedTotal": 0,
+    "policy": "Representative findings are capped at 300 entries for benchmark report JSON. Full counts are preserved in findingSummary."
+  }
 }

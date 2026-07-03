@@ -1,57 +1,51 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T17:23:07.957Z",
+  "generatedAt": "2026-07-03T05:47:32.542Z",
   "project": {
     "name": "Spring AMQP",
-    "root": "https://github.com/spring-projects/spring-amqp",
+    "root": "benchmark-repos/spring-amqp",
     "source": "https://github.com/spring-projects/spring-amqp",
     "buildTools": [
       "Gradle"
     ],
     "javaVersion": "17",
-    "springBootVersion": "2.7.x",
-    "fileCount": 2500,
-    "javaFileCount": 1500
+    "springBootVersion": "unknown",
+    "fileCount": 864,
+    "javaFileCount": 661
   },
   "pack": "spring-boot-3-readiness",
   "packApplicability": {
-    "applicable": true,
-    "confidence": 0.95,
-    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
-    "targetVersion": "3.x"
+    "applicable": false,
+    "confidence": 0.9,
+    "reason": "Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "recommendedPack": "jakarta-readiness"
   },
   "readiness": {
-    "overall": 81,
-    "categories": {
-      "java": 75,
-      "spring": 79,
-      "jakarta": 79,
-      "build": 90,
-      "security": 76,
-      "architecture": 84
-    },
-    "summary": "Ready with remediation work",
+    "overall": null,
+    "categories": {},
+    "summary": "Pack mismatch: Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "status": "not_applicable",
     "counts": {
       "critical": 1,
-      "warning": 1,
-      "info": 44
+      "warning": 137,
+      "info": 26
     }
   },
   "productionFindings": [
     {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/config/AbstractRabbitListenerContainerFactory.java",
-      "line": 14,
+      "code": "spring-boot-version-unknown",
+      "severity": "warning",
+      "title": "Spring Boot version unknown",
+      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
+      "file": null,
+      "line": null,
       "scope": "production"
     },
     {
-      "code": "spring-boot-2",
-      "severity": "warning",
-      "title": "Spring Boot 2.7.x detected",
-      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
       "file": null,
       "line": null,
       "scope": "production"
@@ -59,441 +53,1479 @@
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example6.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example7.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example8.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example10.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/main/java/org/springframework/amqp/core/MessageBuilderSupport.java",
       "line": 19,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example12.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example14.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/main/java/org/springframework/amqp/core/MessageProperties.java",
       "line": 23,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example15.java",
-      "line": 24,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/main/java/org/springframework/amqp/support/AmqpMessageHeaderAccessor.java",
+      "line": 19,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example16.java",
-      "line": 25,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/main/java/org/springframework/amqp/support/SimpleAmqpHeaderMapper.java",
+      "line": 19,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example17.java",
-      "line": 26,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp-client/src/main/java/org/springframework/amqp/client/AmqpClient.java",
+      "line": 20,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example18.java",
-      "line": 27,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp-client/src/main/java/org/springframework/amqp/client/DefaultAmqpClient.java",
+      "line": 20,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example19.java",
-      "line": 28,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp-client/src/main/java/org/springframework/amqp/client/ProtonUtils.java",
+      "line": 19,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example20.java",
-      "line": 29,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/batch/BatchingStrategy.java",
+      "line": 20,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example21.java",
-      "line": 30,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/batch/SimpleBatchingStrategy.java",
+      "line": 23,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example22.java",
-      "line": 31,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/core/BatchingRabbitTemplate.java",
+      "line": 19,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example23.java",
-      "line": 32,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/support/DefaultMessagePropertiesConverter.java",
+      "line": 22,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example24.java",
-      "line": 33,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbitmq-client/src/main/java/org/springframework/amqp/rabbitmq/client/RabbitAmqpUtils.java",
+      "line": 20,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example26.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example27.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example28.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example29.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example30.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example31.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example32.java",
-      "line": 41,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example33.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example34.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example35.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example36.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example37.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example38.java",
-      "line": 47,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example39.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example40.java",
-      "line": 49,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example41.java",
-      "line": 50,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example42.java",
-      "line": 51,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example43.java",
-      "line": 52,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example44.java",
-      "line": 53,
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "src/checkstyle/checkstyle.xml",
+      "line": 80,
       "scope": "production"
     }
   ],
-  "testFindings": [],
+  "testFindings": [
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/core/MessageTests.java",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/core/MessageTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/core/builder/MessageBuilderTests.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/listener/adapter/DelegatingInvocableHandlerTests.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/AmqpMessageHeaderAccessorTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/SimpleAmqpHeaderMapperTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/AllowedListDeserializingMessageConverterTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/ContentTypeDelegatingMessageConverterTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+      "line": 347,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+      "line": 362,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+      "line": 378,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+      "line": 393,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonXmlMessageConverterTests.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/test/kotlin/org/springframework/amqp/core/KotlinMessagePropertiesTests.kt",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+      "line": 85,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+      "line": 88,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+      "line": 91,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+      "line": 94,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 74,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 77,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 80,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 83,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 89,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 92,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 95,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 101,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 104,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ComplexTypeJsonIntegrationTests.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ComplexTypeJsonIntegrationTests.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ConsumerBatchingTests.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ConsumerBatchingTests.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ConsumerBatchingTests.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ConsumerBatchingTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ContentTypeDelegatingMessageConverterIntegrationTests.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ContentTypeDelegatingMessageConverterIntegrationTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ContentTypeDelegatingMessageConverterIntegrationTests.java",
+      "line": 67,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchIntegrationTests.java",
+      "line": 60,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchIntegrationTests.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchIntegrationTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchJsonIntegrationTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchJsonIntegrationTests.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitCglibProxyTests.java",
+      "line": 52,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitCglibProxyTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIdleContainerTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIdleContainerTests.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIdleContainerTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIdleContainerTests.java",
+      "line": 67,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 527,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 193,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 196,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 199,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 202,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 205,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 208,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 211,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 214,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 217,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 220,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 223,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 226,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 229,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 232,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 235,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 238,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 241,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 244,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 247,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 250,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/LazyContainerTests.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/LazyContainerTests.java",
+      "line": 52,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/LazyContainerTests.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/MessageHandlerTests.java",
+      "line": 52,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/ExchangeParserIntegrationTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/ExchangeParserIntegrationTests.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/ExchangeParserIntegrationTests.java",
+      "line": 53,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/QueueArgumentsParserTests.java",
+      "line": 41,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/QueueArgumentsParserTests.java",
+      "line": 44,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/QueueArgumentsParserTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/connection/CachePropertiesTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/connection/CachePropertiesTests.java",
+      "line": 48,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/FixedReplyQueueDeadLetterTests.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/FixedReplyQueueDeadLetterTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/RabbitTemplateIntegrationTests.java",
+      "line": 170,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/RabbitTemplateIntegrationTests.java",
+      "line": 173,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/RabbitTemplateIntegrationTests.java",
+      "line": 176,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/RabbitTemplateMPPIntegrationTests.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/RabbitTemplateMPPIntegrationTests.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 74,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 77,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 80,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 83,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerEventListenerTests.java",
+      "line": 54,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/DlqExpiryTests.java",
+      "line": 54,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/JavaConfigFixedReplyQueueTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/JavaConfigFixedReplyQueueTests.java",
+      "line": 67,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/JavaConfigFixedReplyQueueTests.java",
+      "line": 70,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/JavaConfigFixedReplyQueueTests.java",
+      "line": 73,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/JavaConfigFixedReplyQueueTests.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/MethodRabbitListenerEndpointTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/SimpleMessageListenerContainerIntegration2Tests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/StopStartIntegrationTests.java",
+      "line": 52,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/StopStartIntegrationTests.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/adapter/BatchMessagingMessageListenerAdapterTests.java",
+      "line": 66,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/adapter/BatchMessagingMessageListenerAdapterTests.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/logback/AmqpAppenderIntegrationTests.java",
+      "line": 66,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/logback/AmqpAppenderIntegrationTests.java",
+      "line": 69,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/logback/AmqpAppenderIntegrationTests.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/logback/AmqpAppenderIntegrationTests.java",
+      "line": 75,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/kotlin/org/springframework/amqp/rabbit/annotation/EnableRabbitKotlinTests.kt",
+      "line": 67,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/kotlin/org/springframework/amqp/rabbit/annotation/EnableRabbitKotlinTests.kt",
+      "line": 70,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/main/java/org/springframework/amqp/rabbit/test/TestRabbitTemplate.java",
+      "line": 82,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/RabbitListenerProxyTest.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/RabbitListenerProxyTest.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/RabbitListenerProxyTest.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/context/SpringRabbitTestTests.java",
+      "line": 46,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/context/SpringRabbitTestTests.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/context/SpringRabbitTestTests.java",
+      "line": 54,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/context/SpringRabbitTestTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerCaptureTest.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerCaptureTest.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerCaptureTest.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerCaptureTest.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyAndCaptureTest.java",
+      "line": 60,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyAndCaptureTest.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyAndCaptureTest.java",
+      "line": 66,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyAndCaptureTest.java",
+      "line": 69,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyTest.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyTest.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyTest.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyTest.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/TestRabbitTemplateTests.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/TestRabbitTemplateTests.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbitmq-client/src/test/java/org/springframework/amqp/rabbitmq/client/RabbitAmqpTestBase.java",
+      "line": 52,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbitmq-client/src/test/java/org/springframework/amqp/rabbitmq/client/RabbitAmqpTestBase.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbitmq-client/src/test/java/org/springframework/amqp/rabbitmq/client/RabbitAmqpTestBase.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbitmq-client/src/test/java/org/springframework/amqp/rabbitmq/client/RabbitAmqpTestBase.java",
+      "line": 61,
+      "scope": "test"
+    }
+  ],
   "findingSummary": {
     "production": {
       "critical": 1,
-      "warning": 1,
-      "info": 44
+      "warning": 2,
+      "info": 12
     },
     "test": {
       "critical": 0,
-      "warning": 0,
-      "info": 0
+      "warning": 135,
+      "info": 14
     },
     "byCode": {
-      "javax-usage": {
-        "code": "javax-usage",
-        "title": "javax namespace usage detected",
-        "severity": "critical",
-        "total": 1,
-        "production": 1,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "spring-rabbit",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "javax-usage",
-            "severity": "critical",
-            "title": "javax namespace usage detected",
-            "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/config/AbstractRabbitListenerContainerFactory.java",
-            "line": 14,
-            "scope": "production"
-          }
-        ]
-      },
-      "spring-boot-2": {
-        "code": "spring-boot-2",
-        "title": "Spring Boot 2.7.x detected",
+      "spring-boot-version-unknown": {
+        "code": "spring-boot-version-unknown",
+        "title": "Spring Boot version unknown",
         "severity": "warning",
         "total": 1,
         "production": 1,
@@ -506,10 +1538,35 @@
         ],
         "examples": [
           {
-            "code": "spring-boot-2",
+            "code": "spring-boot-version-unknown",
             "severity": "warning",
-            "title": "Spring Boot 2.7.x detected",
-            "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+            "title": "Spring Boot version unknown",
+            "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
             "file": null,
             "line": null,
             "scope": "production"
@@ -518,61 +1575,293 @@
       },
       "java-util-date": {
         "code": "java-util-date",
-        "title": "Legacy date API usage",
+        "title": "java.util.Date usage",
         "severity": "info",
-        "total": 44,
-        "production": 44,
-        "test": 0,
+        "total": 19,
+        "production": 12,
+        "test": 7,
         "topModules": [
           {
+            "name": "spring-amqp",
+            "count": 9
+          },
+          {
             "name": "spring-rabbit",
-            "count": 44
+            "count": 6
+          },
+          {
+            "name": "spring-amqp-client",
+            "count": 3
           }
         ],
         "examples": [
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example1.java",
-            "line": 10,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "spring-amqp/src/main/java/org/springframework/amqp/core/MessageBuilderSupport.java",
+            "line": 19,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example2.java",
-            "line": 11,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "spring-amqp/src/main/java/org/springframework/amqp/core/MessageProperties.java",
+            "line": 23,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example3.java",
-            "line": 12,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "spring-amqp/src/main/java/org/springframework/amqp/support/AmqpMessageHeaderAccessor.java",
+            "line": 19,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example4.java",
-            "line": 13,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "spring-amqp/src/main/java/org/springframework/amqp/support/SimpleAmqpHeaderMapper.java",
+            "line": 19,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review date handling before migration validation.",
-            "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example5.java",
-            "line": 14,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/core/MessageTests.java",
+            "line": 26,
+            "scope": "test"
+          }
+        ]
+      },
+      "serializable-missing-serial-version": {
+        "code": "serializable-missing-serial-version",
+        "title": "Serializable type without serialVersionUID",
+        "severity": "warning",
+        "total": 9,
+        "production": 0,
+        "test": 9,
+        "topModules": [
+          {
+            "name": "spring-rabbit",
+            "count": 6
+          },
+          {
+            "name": "spring-amqp",
+            "count": 3
+          }
+        ],
+        "examples": [
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/core/MessageTests.java",
+            "line": 1,
+            "scope": "test"
+          },
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/AllowedListDeserializingMessageConverterTests.java",
+            "line": 1,
+            "scope": "test"
+          },
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/ContentTypeDelegatingMessageConverterTests.java",
+            "line": 1,
+            "scope": "test"
+          },
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ConsumerBatchingTests.java",
+            "line": 1,
+            "scope": "test"
+          },
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchIntegrationTests.java",
+            "line": 1,
+            "scope": "test"
+          }
+        ]
+      },
+      "reflection-usage": {
+        "code": "reflection-usage",
+        "title": "Reflection usage",
+        "severity": "info",
+        "total": 7,
+        "production": 0,
+        "test": 7,
+        "topModules": [
+          {
+            "name": "spring-amqp",
+            "count": 5
+          },
+          {
+            "name": "spring-rabbit",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/listener/adapter/DelegatingInvocableHandlerTests.java",
+            "line": 49,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+            "line": 347,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+            "line": 362,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+            "line": 378,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+            "line": 393,
+            "scope": "test"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 126,
+        "production": 0,
+        "test": 126,
+        "topModules": [
+          {
+            "name": "spring-rabbit",
+            "count": 98
+          },
+          {
+            "name": "spring-rabbit-test",
+            "count": 22
+          },
+          {
+            "name": "spring-rabbitmq-client",
+            "count": 4
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+            "line": 64,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonXmlMessageConverterTests.java",
+            "line": 55,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+            "line": 85,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+            "line": 88,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+            "line": 91,
+            "scope": "test"
+          }
+        ]
+      },
+      "junit4-api-usage": {
+        "code": "junit4-api-usage",
+        "title": "JUnit 4 API usage",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "src/checkstyle/checkstyle.xml",
+            "line": 80,
             "scope": "production"
           }
         ]
@@ -581,19 +1870,19 @@
   },
   "findings": [
     {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/config/AbstractRabbitListenerContainerFactory.java",
-      "line": 14,
+      "code": "spring-boot-version-unknown",
+      "severity": "warning",
+      "title": "Spring Boot version unknown",
+      "recommendation": "Declare Spring Boot version explicitly in Maven or Gradle metadata.",
+      "file": null,
+      "line": null,
       "scope": "production"
     },
     {
-      "code": "spring-boot-2",
-      "severity": "warning",
-      "title": "Spring Boot 2.7.x detected",
-      "recommendation": "Run OpenRewrite Boot 3 recipes in dry-run mode.",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
       "file": null,
       "line": null,
       "scope": "production"
@@ -601,397 +1890,1459 @@
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example1.java",
-      "line": 10,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example6.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example7.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example8.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example10.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/main/java/org/springframework/amqp/core/MessageBuilderSupport.java",
       "line": 19,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example12.java",
-      "line": 21,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example14.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/main/java/org/springframework/amqp/core/MessageProperties.java",
       "line": 23,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example15.java",
-      "line": 24,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/main/java/org/springframework/amqp/support/AmqpMessageHeaderAccessor.java",
+      "line": 19,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example16.java",
-      "line": 25,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/main/java/org/springframework/amqp/support/SimpleAmqpHeaderMapper.java",
+      "line": 19,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example17.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/core/MessageTests.java",
       "line": 26,
-      "scope": "production"
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/core/MessageTests.java",
+      "line": 1,
+      "scope": "test"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example18.java",
-      "line": 27,
-      "scope": "production"
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/core/builder/MessageBuilderTests.java",
+      "line": 21,
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
+      "code": "reflection-usage",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example19.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example20.java",
-      "line": 29,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example21.java",
-      "line": 30,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example26.java",
-      "line": 35,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example27.java",
-      "line": 36,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example28.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example29.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example30.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example31.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example32.java",
-      "line": 41,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example33.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example34.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example35.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example36.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example37.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example38.java",
-      "line": 47,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example39.java",
-      "line": 48,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example40.java",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/listener/adapter/DelegatingInvocableHandlerTests.java",
       "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/AmqpMessageHeaderAccessorTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/SimpleAmqpHeaderMapperTests.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/AllowedListDeserializingMessageConverterTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/ContentTypeDelegatingMessageConverterTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+      "line": 347,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+      "line": 362,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+      "line": 378,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonJsonMessageConverterTests.java",
+      "line": 393,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-amqp/src/test/java/org/springframework/amqp/support/converter/JacksonXmlMessageConverterTests.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp/src/test/kotlin/org/springframework/amqp/core/KotlinMessagePropertiesTests.kt",
+      "line": 26,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp-client/src/main/java/org/springframework/amqp/client/AmqpClient.java",
+      "line": 20,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example41.java",
-      "line": 50,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp-client/src/main/java/org/springframework/amqp/client/DefaultAmqpClient.java",
+      "line": 20,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example42.java",
-      "line": 51,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-amqp-client/src/main/java/org/springframework/amqp/client/ProtonUtils.java",
+      "line": 19,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example43.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/batch/BatchingStrategy.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/batch/SimpleBatchingStrategy.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/core/BatchingRabbitTemplate.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/support/DefaultMessagePropertiesConverter.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+      "line": 85,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+      "line": 88,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+      "line": 91,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/AsyncRabbitTemplateTests.java",
+      "line": 94,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 74,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 77,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 80,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 83,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 89,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 92,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 95,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 98,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 101,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/AsyncListenerTests.java",
+      "line": 104,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ComplexTypeJsonIntegrationTests.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ComplexTypeJsonIntegrationTests.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ConsumerBatchingTests.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ConsumerBatchingTests.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ConsumerBatchingTests.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ConsumerBatchingTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ContentTypeDelegatingMessageConverterIntegrationTests.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ContentTypeDelegatingMessageConverterIntegrationTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/ContentTypeDelegatingMessageConverterIntegrationTests.java",
+      "line": 67,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchIntegrationTests.java",
+      "line": 60,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchIntegrationTests.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchIntegrationTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchJsonIntegrationTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitBatchJsonIntegrationTests.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitCglibProxyTests.java",
       "line": 52,
-      "scope": "production"
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitCglibProxyTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIdleContainerTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIdleContainerTests.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIdleContainerTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIdleContainerTests.java",
+      "line": 67,
+      "scope": "test"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review date handling before migration validation.",
-      "file": "spring-rabbit/src/main/java/org/springframework/amqp/rabbit/Example44.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 30,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 527,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 193,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 196,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 199,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 202,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 205,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 208,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 211,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 214,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 217,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 220,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 223,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 226,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 229,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 232,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 235,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 238,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 241,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 244,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 247,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 250,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/EnableRabbitIntegrationTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/LazyContainerTests.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/LazyContainerTests.java",
+      "line": 52,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/LazyContainerTests.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/annotation/MessageHandlerTests.java",
+      "line": 52,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/ExchangeParserIntegrationTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/ExchangeParserIntegrationTests.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/ExchangeParserIntegrationTests.java",
       "line": 53,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/QueueArgumentsParserTests.java",
+      "line": 41,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/QueueArgumentsParserTests.java",
+      "line": 44,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/config/QueueArgumentsParserTests.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/connection/CachePropertiesTests.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/connection/CachePropertiesTests.java",
+      "line": 48,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/FixedReplyQueueDeadLetterTests.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/FixedReplyQueueDeadLetterTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/RabbitTemplateIntegrationTests.java",
+      "line": 170,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/RabbitTemplateIntegrationTests.java",
+      "line": 173,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/RabbitTemplateIntegrationTests.java",
+      "line": 176,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/RabbitTemplateMPPIntegrationTests.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/core/RabbitTemplateMPPIntegrationTests.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 56,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 74,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 77,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 80,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 83,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerDeclaredQueueNameTests.java",
+      "line": 86,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/BrokerEventListenerTests.java",
+      "line": 54,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/DlqExpiryTests.java",
+      "line": 54,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/JavaConfigFixedReplyQueueTests.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/JavaConfigFixedReplyQueueTests.java",
+      "line": 67,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/JavaConfigFixedReplyQueueTests.java",
+      "line": 70,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/JavaConfigFixedReplyQueueTests.java",
+      "line": 73,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/JavaConfigFixedReplyQueueTests.java",
+      "line": 76,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/MethodRabbitListenerEndpointTests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/SimpleMessageListenerContainerIntegration2Tests.java",
+      "line": 1,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/StopStartIntegrationTests.java",
+      "line": 52,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/StopStartIntegrationTests.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/adapter/BatchMessagingMessageListenerAdapterTests.java",
+      "line": 66,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/listener/adapter/BatchMessagingMessageListenerAdapterTests.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/logback/AmqpAppenderIntegrationTests.java",
+      "line": 66,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/logback/AmqpAppenderIntegrationTests.java",
+      "line": 69,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/logback/AmqpAppenderIntegrationTests.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/java/org/springframework/amqp/rabbit/logback/AmqpAppenderIntegrationTests.java",
+      "line": 75,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/kotlin/org/springframework/amqp/rabbit/annotation/EnableRabbitKotlinTests.kt",
+      "line": 67,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit/src/test/kotlin/org/springframework/amqp/rabbit/annotation/EnableRabbitKotlinTests.kt",
+      "line": 70,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/main/java/org/springframework/amqp/rabbit/test/TestRabbitTemplate.java",
+      "line": 82,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/RabbitListenerProxyTest.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/RabbitListenerProxyTest.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/RabbitListenerProxyTest.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/context/SpringRabbitTestTests.java",
+      "line": 46,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/context/SpringRabbitTestTests.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/context/SpringRabbitTestTests.java",
+      "line": 54,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/context/SpringRabbitTestTests.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerCaptureTest.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerCaptureTest.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerCaptureTest.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerCaptureTest.java",
+      "line": 71,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyAndCaptureTest.java",
+      "line": 60,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyAndCaptureTest.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyAndCaptureTest.java",
+      "line": 66,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyAndCaptureTest.java",
+      "line": 69,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyTest.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyTest.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyTest.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/ExampleRabbitListenerSpyTest.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/TestRabbitTemplateTests.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbit-test/src/test/java/org/springframework/amqp/rabbit/test/examples/TestRabbitTemplateTests.java",
+      "line": 62,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "spring-rabbitmq-client/src/main/java/org/springframework/amqp/rabbitmq/client/RabbitAmqpUtils.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbitmq-client/src/test/java/org/springframework/amqp/rabbitmq/client/RabbitAmqpTestBase.java",
+      "line": 52,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbitmq-client/src/test/java/org/springframework/amqp/rabbitmq/client/RabbitAmqpTestBase.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbitmq-client/src/test/java/org/springframework/amqp/rabbitmq/client/RabbitAmqpTestBase.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "spring-rabbitmq-client/src/test/java/org/springframework/amqp/rabbitmq/client/RabbitAmqpTestBase.java",
+      "line": 61,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "src/checkstyle/checkstyle.xml",
+      "line": 80,
       "scope": "production"
     }
   ],
@@ -1002,11 +3353,27 @@
     },
     {
       "name": "Spring Boot version detection",
-      "status": "passed"
+      "status": "warning"
     },
     {
       "name": "Jakarta namespace readiness",
       "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "passed"
     },
     {
       "name": "Static source checks",
@@ -1019,29 +3386,58 @@
     }
   ],
   "dependencies": {
-    "springBootVersion": "2.7.x",
+    "springBootVersion": "unknown",
+    "springSecurityVersion": "unknown",
     "jakartaDetected": true,
     "javaxDetected": true,
-    "hibernateDetected": false,
-    "springSecurityDetected": false
+    "hibernateDetected": true,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": true
   },
   "benchmark": {
     "slug": "spring-amqp",
     "name": "Spring AMQP",
     "repository": "https://github.com/spring-projects/spring-amqp",
     "ref": null,
-    "requestedSource": "local",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
-    "commands": [],
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/spring-amqp",
+    "analysisPath": "benchmark-repos/spring-amqp",
+    "gitRevision": "ec584a3781264a549a609530e0b1aae02481fb5a",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/spring-projects/spring-amqp benchmark-repos/spring-amqp",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '~/<workspace>"
+      }
+    ],
     "validation": {
       "requested": true,
-      "status": "skipped",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation requires a local checkout."
+      "status": "failed",
+      "confidence": 35,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "passed",
+          "command": "./gradlew compileJava --no-daemon",
+          "durationMs": 56173,
+          "exitCode": 0,
+          "output": "SOURCE\n> Task :spring-amqp:compileKotlin NO-SOURCE\n> Task :spring-rabbit-junit:compileJava FROM-CACHE\n> Task :spring-amqp:compileJava FROM-CACHE\n> Task :spring-amqp-client:compileKotlin NO-SOURCE\n> Task :spring-rabbit:compileKotlin NO-SOURCE\n> Task :spring-amqp-client:compileJava FROM-CACHE\n> Task :spring-rabbit:compileJava FROM-CACHE\n> Task :spring-rabbit-test:compileKotlin NO-SOURCE\n> Task :spring-rabbitmq-client:compileKotlin NO-SOURCE\n> Task :spring-rabbit-stream:compileKotlin NO-SOURCE\n> Task :spring-rabbit-test:compileJava FROM-CACHE\n> Task :spring-rabbit-stream:compileJava FROM-CACHE\n> Task :spring-rabbitmq-client:compileJava FROM-CACHE\n\n[Incubating] Problems report is available at: file://~/<workspace>\n\nDeprecated Gradle features were used in this build, making it incompatible with Gradle 10.\n\nYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.\n\nFor more on this, please refer to https://docs.gradle.org/9.4.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.\n\nBUILD SUCCESSFUL in 54s\n7 actionable tasks: 7 from cache\nConfiguration cache entry stored.",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "./gradlew test --no-daemon",
+          "durationMs": 120953,
+          "exitCode": 143,
+          "output": "E\n> Task :spring-amqp-client:testClasses\n> Task :spring-amqp:compileTestJava FROM-CACHE\n> Task :spring-amqp:testClasses\n> Task :spring-amqp:test FROM-CACHE\n> Task :spring-rabbit:compileTestJava FROM-CACHE\n> Task :spring-rabbit:testClasses\n> Task :spring-rabbit-test:compileTestKotlin NO-SOURCE\n> Task :spring-rabbit-test:compileTestJava FROM-CACHE\n> Task :spring-rabbit-test:testClasses\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\n> Task :spring-rabbitmq-client:test\n> Task :spring-rabbit-stream:test\n\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\n\n> Task :spring-rabbit-test:test\n> Task :spring-amqp-client:test\n> Task :spring-rabbit:test\n\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\nCommand timed out after 120000 ms.",
+          "timedOut": true
+        }
+      ],
+      "summary": "1 validation check(s) failed."
     }
   },
   "nextActions": [
@@ -1057,6 +3453,15 @@
       "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
     },
     {
+      "id": "select-applicable-pack",
+      "priority": "critical",
+      "title": "Select the applicable modernization pack",
+      "reason": "Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+      "evidenceCount": 0,
+      "findingCodes": [],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    },
+    {
       "id": "validate-spring-boot-upgrade-path",
       "priority": "warning",
       "title": "Validate the Spring Boot 3 upgrade path",
@@ -1067,6 +3472,29 @@
         "spring-boot-version-unknown"
       ],
       "suggestedCommand": "node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust"
+    },
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "info",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
     }
-  ]
+  ],
+  "findingDetails": {
+    "compacted": false,
+    "total": 164,
+    "productionTotal": 15,
+    "testTotal": 149,
+    "detailedTotal": 164,
+    "omittedTotal": 0,
+    "policy": "Representative findings are capped at 300 entries for benchmark report JSON. Full counts are preserved in findingSummary."
+  }
 }

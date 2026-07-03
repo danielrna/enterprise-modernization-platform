@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Spring Cloud Gateway Readiness Report</h1>
-    <p class="meta">spring-boot-3-readiness · 2026-06-30T17:23:07.912Z · https://github.com/spring-cloud/spring-cloud-gateway</p>
+    <p class="meta">spring-boot-3-readiness · 2026-07-03T05:38:58.929Z · https://github.com/spring-cloud/spring-cloud-gateway</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -65,64 +65,66 @@
   <main>
     <section class="decision">
       <div class="panel decision-main bad">
-        <strong>Migration is blocked by critical readiness risks</strong>
-        <div>1 critical finding(s) should be resolved before execution planning.</div>
-        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">1 Spring Boot 2.7.x detected</span><span class="pill info">71 Legacy date API usage</span></div>
+        <strong>Do not use this pack for migration planning yet</strong>
+        <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">68 Spring field injection</span><span class="pill warning">1 Serializable type without serialVersionUID</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
         </div>
       </div>
       <div class="panel decision-list">
-        <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
-        <div><strong>Validation state</strong><div class="label">skipped at 0% confidence.</div></div>
+        <div><strong>Recommended next step</strong><div class="label">Run jakarta-readiness before using this report for planning.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">81%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">N/A</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">1200</div><div class="label">Java files</div></div>
-      <div class="panel"><div class="metric">2.7.x</div><div class="label">Spring Boot</div></div>
+      <div class="panel"><div class="metric">674</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Ready with remediation work</div>
+    <div class="panel">Pack mismatch: Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
 
 
     <h2>Pack Applicability</h2>
-    <div class="panel notice">
-      <strong>Pack applicable: yes</strong> · confidence 95%
-      <div>Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
-      <div class="label">Detected: Spring Boot: 2.7.x · Java: 17 · Build: Maven · javax usage: yes · jakarta usage: yes</div>
-
+    <div class="panel notice bad">
+      <strong>Pack applicable: no</strong> · confidence 90%
+      <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 17 · Build: Maven · javax usage: yes · jakarta usage: yes</div>
+      <div class="label">Recommended pack: jakarta-readiness</div>
     </div>
 
 
-    <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>74%</strong></td><td><div class="bar"><span style="width:74%"></span></div></td></tr><tr><td>Spring</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>82%</strong></td><td><div class="bar"><span style="width:82%"></span></div></td></tr><tr><td>Architecture</td><td><strong>84%</strong></td><td><div class="bar"><span style="width:84%"></span></div></td></tr></tbody></table></div>
+      <h2>Readiness</h2>
+      <div class="panel notice bad">Readiness score was not computed because this pack is not applicable to the project.</div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Validate the Spring Boot 3 upgrade path</td><td>Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.</td><td>1</td><td><code>node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill critical">critical</span></td><td>Select the applicable modernization pack</td><td>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Validate the Spring Boot 3 upgrade path</td><td>Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.</td><td>1</td><td><code>node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/spring-cloud/spring-cloud-gateway
+      <strong>checkout</strong> · https://github.com/spring-cloud/spring-cloud-gateway
+      <div class="label">Checkout: benchmark-repos/spring-cloud-gateway</div>
+      <div class="label">Git revision: 7c87fc1ea187e46d678b53afadce0094476cc44d</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/spring-cloud/spring-cloud-gateway benchmark-repos/spring-cloud-gateway</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt;</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>skipped</strong> · confidence 0% · Validation requires a local checkout.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./mvnw -q -DskipTests compile</td><td>120.5 s</td><td>WARNING: A terminally deprecated method in sun.misc.Unsafe has been called WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:~/.m2/wrapper/dists/apache-maven-3.9.11/a2d47...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./mvnw -q test</td><td>120.5 s</td><td>venCli.doMain(MavenCli.java:283) [ERROR] at org.apache.maven.cli.MavenCli.main(MavenCli.java:206) [ERROR] at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) [ERROR] at java.base/java....</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">73</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">3</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">73</div><div class="label">Total findings</div></div>
+      <div class="panel"><div class="metric">10</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">71</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">7</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">81</div><div class="label">Total findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill info">info</span><br>Legacy date API usage</td><td>71</td><td>71</td><td>0</td><td>spring-cloud-gateway-server (71)</td><td>spring-cloud-gateway-server/src/main/java/org/springframework/cloud/gateway/Example1.java:10 · Review date handling before migration validation.<br>spring-cloud-gateway-server/src/main/java/org/springframework/cloud/gateway/Example2.java:11 · Review date handling before migration validation.<br>spring-cloud-gateway-server/src/main/java/org/springframework/cloud/gateway/Example3.java:12 · Review date handling before migration validation.<br>spring-cloud-gateway-server/src/main/java/org/springframework/cloud/gateway/Example4.java:13 · Review date handling before migration validation.<br>spring-cloud-gateway-server/src/main/java/org/springframework/cloud/gateway/Example5.java:14 · Review date handling before migration validation.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>spring-cloud-gateway-server (1)</td><td>spring-cloud-gateway-server/src/main/java/org/springframework/cloud/gateway/filter/WebsocketRoutingFilter.java:15 · Plan Jakarta migration before Spring Boot 3 execution.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot 2.7.x detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Run OpenRewrite Boot 3 recipes in dry-run mode.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>68</td><td>4</td><td>64</td><td>spring-cloud-gateway-server-webflux (42)<br>spring-cloud-gateway-proxyexchange-webmvc (11)<br>spring-cloud-gateway-server-webmvc (9)</td><td>spring-cloud-gateway-proxyexchange-webflux/src/main/java/org/springframework/cloud/gateway/webflux/config/ProxyResponseAutoConfiguration.java:51 · Review Spring field injection before modernization.<br>spring-cloud-gateway-proxyexchange-webflux/src/test/java/org/springframework/cloud/gateway/webflux/ProductionConfigurationTests.java:70 · Review Spring field injection before modernization.<br>spring-cloud-gateway-proxyexchange-webflux/src/test/java/org/springframework/cloud/gateway/webflux/ProductionConfigurationTests.java:73 · Review Spring field injection before modernization.<br>spring-cloud-gateway-proxyexchange-webflux/src/test/java/org/springframework/cloud/gateway/webflux/ProductionConfigurationTests.java:285 · Review Spring field injection before modernization.<br>spring-cloud-gateway-proxyexchange-webflux/src/test/java/org/springframework/cloud/gateway/webflux/ReactiveTests.java:61 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>5</td><td>0</td><td>5</td><td>spring-cloud-gateway-server-webmvc (3)<br>spring-cloud-gateway-server-webflux (2)</td><td>spring-cloud-gateway-server-webflux/src/test/java/org/springframework/cloud/gateway/filter/headers/ForwardedHeadersFilterTests.java:207 · Review System.out logging before modernization.<br>spring-cloud-gateway-server-webflux/src/test/java/org/springframework/cloud/gateway/filter/headers/ForwardedHeadersFilterTests.java:213 · Review System.out logging before modernization.<br>spring-cloud-gateway-server-webmvc/src/test/java/org/springframework/cloud/gateway/server/mvc/VanillaRouterFunctionTests.java:70 · Review System.out logging before modernization.<br>spring-cloud-gateway-server-webmvc/src/test/java/org/springframework/cloud/gateway/server/mvc/filter/ForwardedRequestHeadersFilterTests.java:273 · Review System.out logging before modernization.<br>spring-cloud-gateway-server-webmvc/src/test/java/org/springframework/cloud/gateway/server/mvc/filter/ForwardedRequestHeadersFilterTests.java:279 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>4</td><td>2</td><td>2</td><td>spring-cloud-gateway-server-webflux (3)<br>spring-cloud-gateway-server-webmvc (1)</td><td>spring-cloud-gateway-server-webflux/src/main/java/org/springframework/cloud/gateway/config/ConfigurableHintsRegistrationProcessor.java:134 · Review Reflection usage before modernization.<br>spring-cloud-gateway-server-webflux/src/test/java/org/springframework/cloud/gateway/config/GatewayAutoConfigurationTests.java:265 · Review Reflection usage before modernization.<br>spring-cloud-gateway-server-webflux/src/test/java/org/springframework/cloud/gateway/config/GatewayAutoConfigurationTests.java:281 · Review Reflection usage before modernization.<br>spring-cloud-gateway-server-webmvc/src/main/java/org/springframework/cloud/gateway/server/mvc/config/GatewayMvcRuntimeHintsProcessor.java:131 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>1</td><td>1</td><td>0</td><td>spring-cloud-gateway-server-webflux (1)</td><td>spring-cloud-gateway-server-webflux/src/main/java/org/springframework/cloud/gateway/filter/factory/cache/CachedResponse.java:33 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill warning">warning</span><br>Serializable type without serialVersionUID</td><td>1</td><td>1</td><td>0</td><td>spring-cloud-gateway-server-webflux (1)</td><td>spring-cloud-gateway-server-webflux/src/main/java/org/springframework/cloud/gateway/filter/factory/cache/CachedResponse.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot version unknown</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Declare Spring Boot version explicitly in Maven or Gradle metadata.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

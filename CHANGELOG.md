@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v0.4.2
+
+- Promoted Spring Batch, Spring Session, Spring AMQP, Spring Integration, and Spring Cloud Gateway to checkout-backed Spring Boot readiness evidence.
+- Captured honest compile, test, failure, and timeout validation evidence for the promoted Spring ecosystem reports instead of leaving them catalog-only.
+- Raised checkout-backed benchmark evidence to 55 reports while preserving the 75-report public catalog and 17 passing validation reports.
+
 ## v0.4.1
 
 - Added benchmark report finding compaction so large checkout-backed reports keep full finding totals and summaries while capping detailed JSON findings to representative samples.

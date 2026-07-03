@@ -211,14 +211,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 21);
+  assert.equal(result.count, 22);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.4\.1/);
-  assert.match(html, /Benchmark finding compaction/);
-  assert.match(html, /17,621 total findings/);
+  assert.match(index, /v0\.4\.2/);
+  assert.match(html, /Spring ecosystem checkout evidence/);
+  assert.match(html, /55 checkout-backed reports/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Benchmark finding compaction/);
+  assert.match(markdown, /## Spring ecosystem checkout evidence/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {
