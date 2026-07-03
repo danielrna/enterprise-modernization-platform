@@ -2,6 +2,42 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.4.3",
+      "title": "v0.4.3",
+      "date": "2026-07-03",
+      "summary": "Benchmark validation timeout reliability for heavy Maven and Gradle repositories.",
+      "features": [
+        {
+          "id": "validation-timeout-cleanup",
+          "type": "quality",
+          "name": "Validation timeout cleanup",
+          "audience": "Maintainers refreshing checkout-backed benchmark evidence on heavy Maven and Gradle repositories",
+          "summary": "Harden benchmark validation timeout handling so stubborn child processes cannot leave benchmark publishing stuck after timeout evidence is captured.",
+          "evidence": [
+            "Escalates timed-out validation commands from `SIGTERM` to `SIGKILL` after a short grace period.",
+            "Force-resolves timed-out validation commands so inherited Maven, Surefire, Gradle, or worker stdio cannot hang the benchmark publisher.",
+            "Keeps timeout evidence explicit with failed validation checks, timeout output, duration, and exit code `124`.",
+            "Adds a regression test with a fake Maven wrapper that leaves an attached child process ignoring `SIGTERM`.",
+            "Preserves current evidence at 75 public reports, 55 checkout-backed reports, and 17 passing validation reports."
+          ],
+          "links": [
+            {
+              "label": "Benchmark index",
+              "href": "docs/benchmarks/index.html"
+            },
+            {
+              "label": "Spring Boot Evidence Hub",
+              "href": "docs/migration-hub/spring-boot-3-readiness.html"
+            },
+            {
+              "label": "Spring Cloud Gateway report",
+              "href": "docs/benchmarks/spring-cloud-gateway/index.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.4.2",
       "title": "v0.4.2",
       "date": "2026-07-03",

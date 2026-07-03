@@ -12,6 +12,8 @@ const CATALOG_URL = new URL('../benchmarks/catalog.json', import.meta.url);
 export const BENCHMARKS = await loadBenchmarkCatalog();
 
 const DEFAULT_VALIDATION_TIMEOUT_MS = 120000;
+const TIMEOUT_TERMINATE_GRACE_MS = 500;
+const TIMEOUT_FORCE_RESOLVE_MS = 1000;
 
 async function loadBenchmarkCatalog() {
   const catalog = JSON.parse(await fs.readFile(CATALOG_URL, 'utf8'));
@@ -389,30 +391,45 @@ function runCommand(args, options = {}) {
     const child = spawn(args[0], args.slice(1), { cwd: options.cwd, detached: Boolean(options.timeoutMs), env: options.env || process.env });
     let output = '';
     let timedOut = false;
+    let settled = false;
+    let terminateTimeout = null;
+    let forceResolveTimeout = null;
+    const finish = (exitCode, finalOutput = output) => {
+      if (settled) return;
+      settled = true;
+      if (timeout) clearTimeout(timeout);
+      if (terminateTimeout) clearTimeout(terminateTimeout);
+      if (forceResolveTimeout) clearTimeout(forceResolveTimeout);
+      resolve({ exitCode, output: finalOutput, durationMs: Date.now() - startedAt, timedOut });
+    };
     const timeout = options.timeoutMs
       ? setTimeout(() => {
           timedOut = true;
-          killProcessTree(child);
+          killProcessTree(child, 'SIGTERM');
+          terminateTimeout = setTimeout(() => {
+            killProcessTree(child, 'SIGKILL');
+          }, TIMEOUT_TERMINATE_GRACE_MS);
+          forceResolveTimeout = setTimeout(() => {
+            finish(124);
+          }, TIMEOUT_FORCE_RESOLVE_MS);
         }, options.timeoutMs)
       : null;
     child.stdout.on('data', (chunk) => { output += chunk.toString(); });
     child.stderr.on('data', (chunk) => { output += chunk.toString(); });
     child.on('error', (error) => {
-      if (timeout) clearTimeout(timeout);
-      resolve({ exitCode: 127, output: error.message, durationMs: Date.now() - startedAt, timedOut });
+      finish(127, error.message);
     });
     child.on('close', (exitCode) => {
-      if (timeout) clearTimeout(timeout);
-      resolve({ exitCode, output, durationMs: Date.now() - startedAt, timedOut });
+      finish(exitCode ?? (timedOut ? 124 : 1));
     });
   });
 }
 
-function killProcessTree(child) {
+function killProcessTree(child, signal) {
   if (!child.pid) return;
   try {
-    process.kill(-child.pid, 'SIGTERM');
+    process.kill(-child.pid, signal);
   } catch {
-    child.kill('SIGTERM');
+    child.kill(signal);
   }
 }

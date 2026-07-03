@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v0.4.3
+
+- Hardened benchmark validation timeout handling so Maven and Gradle child processes are escalated from `SIGTERM` to `SIGKILL` and timed-out commands force-resolve instead of hanging on inherited stdio.
+- Added regression coverage for stubborn validation child processes that ignore termination signals.
+- Preserved current benchmark evidence at 75 public reports, 55 checkout-backed reports, and 17 passing validation reports.
+
 ## v0.4.2
 
 - Promoted Spring Batch, Spring Session, Spring AMQP, Spring Integration, and Spring Cloud Gateway to checkout-backed Spring Boot readiness evidence.

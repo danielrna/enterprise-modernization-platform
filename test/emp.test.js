@@ -211,14 +211,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 22);
+  assert.equal(result.count, 23);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.4\.2/);
-  assert.match(html, /Spring ecosystem checkout evidence/);
-  assert.match(html, /55 checkout-backed reports/);
+  assert.match(index, /v0\.4\.3/);
+  assert.match(html, /Validation timeout cleanup/);
+  assert.match(html, /Force-resolves timed-out validation commands/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Spring ecosystem checkout evidence/);
+  assert.match(markdown, /## Validation timeout cleanup/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {
@@ -332,6 +332,59 @@ public class Demo {
   assert.match(html, /Benchmark Validation/);
   assert.match(html, /Compilation/);
   assert.match(html, /Tests/);
+});
+
+test('benchmark validation timeouts force-close attached child processes', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'emp-benchmark-timeout-'));
+  const reposDir = path.join(root, 'repos');
+  const checkout = path.join(reposDir, 'spring-petclinic');
+  const outDir = path.join(root, 'benchmarks');
+  await fs.mkdir(path.join(checkout, 'src/main/java/com/example'), { recursive: true });
+  await fs.writeFile(path.join(checkout, 'pom.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.18</version>
+  </parent>
+  <properties>
+    <java.version>17</java.version>
+  </properties>
+</project>
+`);
+  await fs.writeFile(path.join(checkout, 'mvnw'), `#!/bin/sh
+echo "starting stubborn validation child"
+(trap '' TERM; while true; do sleep 1; done) &
+wait
+`);
+  await fs.chmod(path.join(checkout, 'mvnw'), 0o755);
+  await fs.writeFile(path.join(checkout, 'src/main/java/com/example/Demo.java'), `package com.example;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Demo {
+}
+`);
+
+  const startedAt = Date.now();
+  const result = await publishBenchmarks({
+    outDir,
+    source: 'local',
+    only: 'spring-petclinic',
+    reposDir,
+    validate: true,
+    validationTimeoutMs: 200
+  });
+  const durationMs = Date.now() - startedAt;
+  const report = JSON.parse(await fs.readFile(path.join(outDir, 'spring-petclinic', 'report.json'), 'utf8'));
+
+  assert.equal(durationMs < 5000, true);
+  assert.equal(result.reports[0].validation.status, 'failed');
+  assert.equal(report.benchmark.validation.checks.length, 2);
+  assert.equal(report.benchmark.validation.checks.every((check) => check.timedOut), true);
+  assert.equal(report.benchmark.validation.checks.every((check) => check.exitCode === 124), true);
+  assert.match(report.benchmark.validation.checks[0].output, /Command timed out after 200 ms/);
 });
 
 test('benchmark validation can require a specific Java runtime', async () => {
