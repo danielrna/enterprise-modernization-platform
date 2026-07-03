@@ -211,14 +211,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 26);
+  assert.equal(result.count, 27);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
   assert.match(index, /v0\.5\.1/);
-  assert.match(html, /External quickstart proof/);
+  assert.match(html, /External action trial proof/);
   assert.match(html, /75 checkout-backed reports/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## External quickstart proof/);
+  assert.match(markdown, /## External action trial proof/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {
@@ -1045,6 +1045,7 @@ test('GitHub Action exposes Docker readiness analysis inputs', async () => {
   const entrypoint = await fs.readFile(path.resolve('docker-entrypoint.sh'), 'utf8');
   const githubDocs = await fs.readFile(path.resolve('docs/ci-github-action.md'), 'utf8');
   const quickstart = await fs.readFile(path.resolve('docs/quickstart.html'), 'utf8');
+  const externalTrial = await fs.readFile(path.resolve('docs/external-trial.html'), 'utf8');
   const dockerDocs = await fs.readFile(path.resolve('docs/docker-wrapper.md'), 'utf8');
   const ciDocs = await fs.readFile(path.resolve('docs/ci-examples.md'), 'utf8');
   const releaseDocs = await fs.readFile(path.resolve('docs/release-checklist.md'), 'utf8');
@@ -1074,8 +1075,11 @@ test('GitHub Action exposes Docker readiness analysis inputs', async () => {
   assert.match(await fs.readFile(path.resolve('scripts/benchmark-publish.js'), 'utf8'), /generateReleaseNotes/);
   assert.match(githubDocs, /actions\/upload-artifact@v4/);
   assert.match(quickstart, /Run a readiness report in 5 minutes/);
-  assert.match(quickstart, /danielrna\/enterprise-modernization-platform:v0\.5\.2/);
+  assert.match(quickstart, /danielrna\/enterprise-modernization-platform:v0\.5\.3/);
   assert.match(quickstart, /emp-readiness-report/);
+  assert.match(externalTrial, /External Trial Proof/);
+  assert.match(externalTrial, /28662892927/);
+  assert.match(externalTrial, /emp-readiness-report/);
   assert.match(githubDocs, /emp-report\/index\.html/);
   assert.match(dockerDocs, /docker run --rm/);
   assert.match(ciDocs, /GitLab CI/);

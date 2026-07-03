@@ -44,6 +44,7 @@ function renderReleaseIndex(releases) {
     <nav class="site-nav">
       <a href="../index.html">Home</a>
       <a href="../quickstart.html">Quickstart</a>
+      <a href="../external-trial.html">External Trial</a>
       <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
       <a href="../packs/index.html">Packs</a>
@@ -75,6 +76,7 @@ function renderReleasePage(release) {
     <nav class="site-nav">
       <a href="../index.html">Home</a>
       <a href="../quickstart.html">Quickstart</a>
+      <a href="../external-trial.html">External Trial</a>
       <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
       <a href="../packs/index.html">Packs</a>
@@ -109,7 +111,12 @@ function renderReleaseMarkdown(release) {
 
 function renderLinks(links) {
   if (!links.length) return '';
-  return `<h3>Links</h3><div class="actions">${links.map((link) => `<a href="../${escapeHtml(link.href.replace(/^docs\//, ''))}">${escapeHtml(link.label)}</a>`).join('')}</div>`;
+  return `<h3>Links</h3><div class="actions">${links.map((link) => `<a href="${escapeHtml(releaseLinkHref(link.href))}">${escapeHtml(link.label)}</a>`).join('')}</div>`;
+}
+
+function releaseLinkHref(href) {
+  if (/^https?:\/\//.test(href)) return href;
+  return `../${href.replace(/^docs\//, '')}`;
 }
 
 function page(title, body) {

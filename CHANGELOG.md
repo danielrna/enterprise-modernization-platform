@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v0.5.3
+
+- Completed Phase 2 Distribution and Conversion Proof by validating the GitHub Action path from the separate `emp-action-smoke-test` repository.
+- Verified external workflow run `28662892927` succeeded using `danielrna/enterprise-modernization-platform@v0.5.2` and uploaded `index.html` plus `report.json`.
+- Added the External Trial Proof page with the run URL, artifact details, report snapshot, and Phase 2 completion note.
+- Added External Trial links to public navigation and the Consultant Demo bundle.
+
 ## v0.5.2
 
 - Added a Docker-first external quickstart page with expected outputs, pack selection, GitHub Action usage, and evidence interpretation.

@@ -49,6 +49,7 @@ function renderIndex(articles) {
     <nav class="site-nav">
       <a href="../index.html">Home</a>
       <a href="../quickstart.html">Quickstart</a>
+      <a href="../external-trial.html">External Trial</a>
       <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
       <a href="../packs/index.html">Packs</a>
@@ -85,6 +86,7 @@ function renderArticle(article) {
     <nav class="site-nav">
       <a href="../index.html">Home</a>
       <a href="../quickstart.html">Quickstart</a>
+      <a href="../external-trial.html">External Trial</a>
       <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
       <a href="../packs/index.html">Packs</a>

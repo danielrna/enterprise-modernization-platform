@@ -2,6 +2,64 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.5.3",
+      "title": "v0.5.3",
+      "date": "2026-07-03",
+      "summary": "External Trial Proof release completing Phase 2 Distribution and Conversion Proof.",
+      "features": [
+        {
+          "id": "external-action-trial-proof",
+          "type": "distribution",
+          "name": "External action trial proof",
+          "audience": "External repository maintainers and consultants validating that EMP runs outside the main project",
+          "summary": "Validate the GitHub Action path from a separate repository and publish the exact run and artifact evidence.",
+          "evidence": [
+            "Updates `danielrna/emp-action-smoke-test` to use `danielrna/enterprise-modernization-platform@v0.5.2` from an external-style workflow.",
+            "Verifies GitHub Actions run `28662892927` completed successfully in 23 seconds.",
+            "Downloads the `emp-readiness-report` artifact and confirms it contains `index.html` and `report.json`.",
+            "Confirms the generated report is `emp.report.v1`, applies `spring-boot-3-readiness`, scores 81% readiness, and captures the expected javax and Spring Boot 2.7.18 evidence.",
+            "Adds `docs/external-trial.html` so the first external usage signal is public and reusable in consultant conversations."
+          ],
+          "links": [
+            {
+              "label": "External Trial Proof",
+              "href": "docs/external-trial.html"
+            },
+            {
+              "label": "GitHub Actions run",
+              "href": "https://github.com/danielrna/emp-action-smoke-test/actions/runs/28662892927"
+            },
+            {
+              "label": "Quickstart",
+              "href": "docs/quickstart.html"
+            }
+          ]
+        },
+        {
+          "id": "phase-2-complete",
+          "type": "roadmap",
+          "name": "Phase 2 complete",
+          "audience": "Maintainers deciding whether to expand evidence, improve conversion, or start the next roadmap phase",
+          "summary": "Close Phase 2 after proving public evidence, onboarding, consultant packaging, and external GitHub Action usage.",
+          "evidence": [
+            "Phase 1 remains complete at 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.",
+            "Phase 2 now has a Docker-first quickstart, generated public docs, consultant bundle inclusion, and a passing external-style GitHub Action trial.",
+            "The next roadmap decision can move beyond onboarding proof without adding another benchmark batch as a substitute for external usage."
+          ],
+          "links": [
+            {
+              "label": "External Trial Proof",
+              "href": "docs/external-trial.html"
+            },
+            {
+              "label": "Consultant demo",
+              "href": "docs/consultant-demo.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.5.2",
       "title": "v0.5.2",
       "date": "2026-07-03",
