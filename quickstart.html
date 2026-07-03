@@ -44,6 +44,7 @@
     <nav class="site-nav">
       <a href="index.html">Home</a>
       <a href="quickstart.html">Quickstart</a>
+      <a href="external-trial.html">External Trial</a>
       <a href="migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="consultant-demo.html">Consultant Demo</a>
       <a href="benchmarks/index.html">Benchmarks</a>
@@ -73,7 +74,7 @@
       </div>
       <div class="step">
         <strong>Run the readiness analyzer.</strong>
-        <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.2 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
+        <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.3 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
       </div>
       <div class="step">
         <strong>Open the static report.</strong>
@@ -128,7 +129,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.5.2
+        uses: danielrna/enterprise-modernization-platform@v0.5.3
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -147,6 +148,9 @@ jobs:
       <div class="card"><strong>Failure handling</strong><p>Treat failed validation as scope evidence, not as embarrassment.</p></div>
       <div class="card"><strong>Paid next work</strong><p>Offer validation environment repair, targeted remediation, then migration execution.</p></div>
     </section>
+
+    <h2>External Trial</h2>
+    <p>The GitHub Action path has been validated from a separate external-style repository. See <a href="external-trial.html">External Trial Proof</a> for the workflow run, artifact, and report snapshot.</p>
   </main>
 </body>
 </html>
