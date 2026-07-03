@@ -2,6 +2,65 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.5.4",
+      "title": "v0.5.4",
+      "date": "2026-07-03",
+      "summary": "External friction workflow release turning Phase 2 proof into consultant-style trial evidence.",
+      "features": [
+        {
+          "id": "external-friction-trial-workflow",
+          "type": "distribution",
+          "name": "External friction trial workflow",
+          "audience": "Java consultants and maintainers deciding what to improve after the first external runs",
+          "summary": "Run Docker-first trials against repositories outside the benchmark catalog, publish report snapshots, and convert repeated first-run friction into the next roadmap decision.",
+          "evidence": [
+            "Adds checked-in HTML and JSON report artifacts under `docs/external-trials/` for four public repositories outside the 75-report benchmark catalog.",
+            "Publishes the Callicoder Spring Boot MySQL REST API case study with Spring Boot 2.5.5, Java 11, Maven, and 82% Spring Boot 3 readiness.",
+            "Records not-applicable evidence for one multi-sample repository root and two already-upgraded Spring Boot 3.x repositories instead of claiming misleading readiness scores.",
+            "Updates `docs/external-trial.html` with the Docker command, trial matrix, case-study notes, and friction observations.",
+            "Updates the quickstart guidance for multi-sample repositories, already-upgraded applications, and honest `not applicable` results."
+          ],
+          "links": [
+            {
+              "label": "External Trial Proof",
+              "href": "docs/external-trial.html"
+            },
+            {
+              "label": "Callicoder trial report",
+              "href": "docs/external-trials/callicoder-spring-boot-mysql-rest-api/index.html"
+            },
+            {
+              "label": "Quickstart",
+              "href": "docs/quickstart.html"
+            }
+          ]
+        },
+        {
+          "id": "conversion-proof-next-branch",
+          "type": "roadmap",
+          "name": "Conversion proof next branch",
+          "audience": "Maintainers choosing the next work item after Phase 2",
+          "summary": "Make the post-Phase-2 branch explicit: use 3 to 5 consultant-style external trials to sharpen the offer before adding another pack or increasing benchmark volume.",
+          "evidence": [
+            "Keeps Phase 1 evidence depth intact at 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.",
+            "Keeps Phase 2 distribution proof intact with Docker quickstart and a validated external-style GitHub Action run.",
+            "Adds concrete friction categories from the first Docker trial batch: repository scope, pack selection, and report interpretation.",
+            "Updates public homepage and README roadmap language so external conversion proof is the recommended next branch."
+          ],
+          "links": [
+            {
+              "label": "Consultant demo",
+              "href": "docs/consultant-demo.html"
+            },
+            {
+              "label": "External Trial Proof",
+              "href": "docs/external-trial.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.5.3",
       "title": "v0.5.3",
       "date": "2026-07-03",

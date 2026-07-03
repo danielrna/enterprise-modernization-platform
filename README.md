@@ -11,7 +11,7 @@ The product is not a Java migration tool. The product is confidence that an appl
 The fastest path is Docker. Run this from the Java repository you want to inspect:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.3 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.4 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness
 ```
 
 Open the report:
@@ -22,13 +22,15 @@ reports/emp-readiness/index.html
 
 You should expect a static HTML report plus `reports/emp-readiness/report.json`. A low score or failed validation does not mean the tool failed; it means the report found migration risk, missing build metadata, Java/toolchain mismatch, dependency issues, test failures, or timeout evidence that should be handled before migration execution.
 
-Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.5.3
+If the report says the selected pack is not applicable, first confirm that you ran the command from the actual application directory. Multi-sample repositories often need a subdirectory such as `complete/` instead of the repository root. If the application is already on Spring Boot 3.x, use a more relevant pack such as `jakarta-readiness`, `java-17-to-21-readiness`, `spring-security-6-readiness`, or `junit-5-readiness`.
 
-Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.5.3/emp-smoke-report.zip
+Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.5.4
+
+Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.5.4/emp-smoke-report.zip
 
 Quickstart: https://danielrna.github.io/enterprise-modernization-platform/quickstart.html
 
-External trial proof: https://danielrna.github.io/enterprise-modernization-platform/external-trial.html
+External trial proof and case study: https://danielrna.github.io/enterprise-modernization-platform/external-trial.html
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform/migration-hub/spring-boot-2-to-3.html
 
@@ -72,7 +74,7 @@ reports/readiness/index.html
 Run the published Docker image from the target repository:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.3 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.4 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
 ```
 
 Or build the CLI image locally:
@@ -111,7 +113,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.5.3
+        uses: danielrna/enterprise-modernization-platform@v0.5.4
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -172,6 +174,13 @@ Use the platform to turn a mandatory upgrade into a client-ready evidence report
 The public validation set now proves the reference flow on 75 real checkouts, including real Spring Boot applications, Hibernate ORM evidence, Spring Security evidence, JUnit migration evidence, and heavyweight platform repositories outside Spring Guides. The validated set includes Spring Boot `2.6.2`, `2.6.3`, and `2.7.6` projects plus passing, failing, Java compatibility, and timeout validation evidence.
 
 The external GitHub Action path has also been validated from the separate `danielrna/emp-action-smoke-test` repository. Run `28662892927` used `danielrna/enterprise-modernization-platform@v0.5.2`, completed successfully, and uploaded an `emp-readiness-report` artifact containing `index.html` and `report.json`.
+
+Additional Docker-first external trials were run against public repositories outside the 75-report benchmark catalog:
+
+- `callicoder/spring-boot-mysql-rest-api-tutorial`: Spring Boot 2.5.5, Maven, Java 11, applicable to the Spring Boot 3 readiness pack, 82% readiness, with Jakarta namespace migration as the top action.
+- `spring-guides/gs-accessing-data-jpa`: root-level run completed, but the selected pack was not applicable because the repository is a multi-sample guide and should be run from an application subdirectory.
+- `RameshMF/springboot-thymeleaf-crud-pagination-sorting-webapp`: run completed, but Spring Boot 3.0.4 made the Spring Boot 2 to 3 pack non-applicable.
+- `bezkoder/spring-boot-data-jpa-mysql`: run completed, but Spring Boot 3.1.5 made the Spring Boot 2 to 3 pack non-applicable.
 
 How to read the evidence:
 
@@ -279,7 +288,7 @@ Current automated coverage verifies:
 
 ## Current Status
 
-Implemented through v0.5.3:
+Implemented through v0.5.4:
 
 - CLI, Docker, MCP, and GitHub Action interfaces.
 - Spring Boot 2 to 3 readiness and transformation workflow.
@@ -295,7 +304,9 @@ Implemented through v0.5.3:
 - Consultant Demo page and downloadable consultant demo bundle.
 - Spring Boot 2 to 3 Migration Hub published through GitHub Pages.
 
-Current roadmap phase: Phase 2, Distribution and Conversion Proof, is complete. Phase 1 Evidence Depth produced 75 checkout-backed public reports. Phase 2 made that proof runnable through Docker and GitHub Actions, then validated the action path from an external-style repository.
+Current roadmap phase: Phase 2, Distribution and Conversion Proof, is complete. Phase 1 Evidence Depth produced 75 checkout-backed public reports. Phase 2 made that proof runnable through Docker and GitHub Actions, validated the action path from an external-style repository, and added Docker-first external trial evidence outside the benchmark catalog.
+
+Recommended next growth branch: conversion proof. The product should now prioritize 3 to 5 consultant-style external trials with named repositories, report snapshots, friction notes, and follow-up offers before adding another pack or increasing benchmark volume.
 
 Still intentionally out of scope:
 

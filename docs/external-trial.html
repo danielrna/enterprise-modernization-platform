@@ -8,13 +8,14 @@
     :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; --ok:#217a45; --warn:#966600; --bad:#b42318; }
     * { box-sizing:border-box; }
     body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
-    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    main { max-width:1120px; margin:0 auto; padding:32px 24px; }
     h1 { margin:0 0 10px; font-size:36px; line-height:1.12; letter-spacing:0; }
     h2 { margin:30px 0 12px; font-size:21px; letter-spacing:0; }
-    p { max-width:780px; color:var(--muted); }
+    p { max-width:820px; color:var(--muted); }
     a { color:var(--accent); text-decoration:none; }
     a:hover { text-decoration:underline; }
     code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+    pre { overflow:auto; padding:14px; background:#102033; color:#eef6fd; border-radius:8px; }
     .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 30px; padding-bottom:16px; border-bottom:1px solid var(--line); }
     .site-nav a { color:var(--muted); font-size:14px; }
     .site-nav a:first-child { color:var(--ink); font-weight:700; }
@@ -26,10 +27,12 @@
     table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
     th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
     th { font-size:12px; color:var(--muted); text-transform:uppercase; }
-    .pill { display:inline-flex; min-width:74px; justify-content:center; padding:2px 8px; border-radius:999px; font-size:12px; font-weight:700; background:#eef2f7; color:#344054; }
+    .pill { display:inline-flex; min-width:88px; justify-content:center; padding:2px 8px; border-radius:999px; font-size:12px; font-weight:700; background:#eef2f7; color:#344054; }
     .pill.ok { background:#e9f7ef; color:var(--ok); }
+    .pill.warn { background:#fff8e6; color:var(--warn); }
+    .pill.bad { background:#fff1f0; color:var(--bad); }
     .note { margin-top:20px; padding:16px; background:#eef6fd; border:1px solid #bfd7ee; border-left:4px solid var(--accent); border-radius:8px; }
-    @media (max-width: 780px) { main { padding:24px 16px; } .summary,.grid { grid-template-columns:1fr; } h1 { font-size:30px; } table { min-width:720px; } .table-scroll { overflow:auto; } }
+    @media (max-width: 780px) { main { padding:24px 16px; } .summary,.grid { grid-template-columns:1fr; } h1 { font-size:30px; } table { min-width:760px; } .table-scroll { overflow:auto; } }
   </style>
 </head>
 <body>
@@ -46,51 +49,61 @@
 
     <section>
       <h1>External Trial Proof</h1>
-      <p>Phase 2 closes only if the quickstart path works outside the main repository. This page records the first external-style GitHub Action validation using the separate <code>emp-action-smoke-test</code> repository.</p>
+      <p>Phase 2 closes only if the quickstart path works outside the main repository. This page records the GitHub Action proof plus Docker-first trials against public repositories that are not in the 75-report benchmark catalog.</p>
     </section>
 
     <section class="summary">
-      <div><strong>success</strong><span>Workflow conclusion</span></div>
-      <div><strong>23s</strong><span>Job duration</span></div>
-      <div><strong>81%</strong><span>Readiness score</span></div>
-      <div><strong>2</strong><span>Report files</span></div>
+      <div><strong>1</strong><span>GitHub Action proof</span></div>
+      <div><strong>4</strong><span>Docker trial runs</span></div>
+      <div><strong>1</strong><span>Applicable case study</span></div>
+      <div><strong>0</strong><span>Backend services</span></div>
     </section>
 
-    <h2>Validated Run</h2>
+    <h2>GitHub Action Proof</h2>
     <div class="table-scroll"><table>
       <thead><tr><th>Field</th><th>Evidence</th></tr></thead>
       <tbody>
         <tr><td>Repository</td><td><a href="https://github.com/danielrna/emp-action-smoke-test">danielrna/emp-action-smoke-test</a></td></tr>
         <tr><td>Workflow</td><td>EMP Readiness Smoke Test</td></tr>
         <tr><td>Run</td><td><a href="https://github.com/danielrna/emp-action-smoke-test/actions/runs/28662892927">28662892927</a></td></tr>
-        <tr><td>Commit</td><td><code>1ab7e90f40c40c1e91fc16ba814bdbb1da7807ec</code></td></tr>
         <tr><td>Action Reference</td><td><code>danielrna/enterprise-modernization-platform@v0.5.2</code></td></tr>
         <tr><td>Artifact</td><td><code>emp-readiness-report</code> containing <code>index.html</code> and <code>report.json</code></td></tr>
       </tbody>
     </table></div>
 
-    <h2>Report Evidence</h2>
-    <section class="grid">
-      <div class="card"><strong>Applicable pack</strong><span>Spring Boot 2.x to 3.x readiness applied to the smoke app.</span></div>
-      <div class="card"><strong>Detected stack</strong><span>Spring Boot 2.7.18, Java 17, Maven, javax usage.</span></div>
-      <div class="card"><strong>Next actions</strong><span>Plan Jakarta migration and validate the Spring Boot 3 upgrade path.</span></div>
-      <div class="card"><strong>Static deliverable</strong><span>The external workflow produced a shareable report without a hosted backend.</span></div>
-    </section>
-
-    <h2>Result Snapshot</h2>
+    <h2>Docker Trial Runs</h2>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.4 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
     <div class="table-scroll"><table>
-      <thead><tr><th>Check</th><th>Result</th></tr></thead>
+      <thead><tr><th>Repository</th><th>Catalog Status</th><th>Detected Stack</th><th>Result</th><th>Evidence</th></tr></thead>
       <tbody>
-        <tr><td>Report schema</td><td><code>emp.report.v1</code></td></tr>
-        <tr><td>Pack</td><td><code>spring-boot-3-readiness</code></td></tr>
-        <tr><td>Applicability</td><td><span class="pill ok">true</span></td></tr>
-        <tr><td>Readiness</td><td>81%</td></tr>
-        <tr><td>Findings</td><td>1 critical javax namespace finding, 1 Spring Boot 2.7.18 warning.</td></tr>
+        <tr><td><a href="https://github.com/callicoder/spring-boot-mysql-rest-api-tutorial">callicoder/spring-boot-mysql-rest-api-tutorial</a></td><td>Outside catalog</td><td>Spring Boot 2.5.5, Java 11, Maven</td><td><span class="pill ok">82%</span></td><td><a href="external-trials/callicoder-spring-boot-mysql-rest-api/index.html">HTML</a> · <a href="external-trials/callicoder-spring-boot-mysql-rest-api/report.json">JSON</a></td></tr>
+        <tr><td><a href="https://github.com/spring-guides/gs-accessing-data-jpa">spring-guides/gs-accessing-data-jpa</a></td><td>Outside catalog</td><td>Spring Boot 4.0.7 signal at repository root</td><td><span class="pill warn">N/A</span></td><td><a href="external-trials/gs-accessing-data-jpa/index.html">HTML</a> · <a href="external-trials/gs-accessing-data-jpa/report.json">JSON</a></td></tr>
+        <tr><td><a href="https://github.com/RameshMF/springboot-thymeleaf-crud-pagination-sorting-webapp">RameshMF/springboot-thymeleaf-crud-pagination-sorting-webapp</a></td><td>Outside catalog</td><td>Spring Boot 3.0.4, Java 17, Maven</td><td><span class="pill warn">N/A</span></td><td><a href="external-trials/rameshmf-thymeleaf-crud/index.html">HTML</a> · <a href="external-trials/rameshmf-thymeleaf-crud/report.json">JSON</a></td></tr>
+        <tr><td><a href="https://github.com/bezkoder/spring-boot-data-jpa-mysql">bezkoder/spring-boot-data-jpa-mysql</a></td><td>Outside catalog</td><td>Spring Boot 3.1.5, Java 17, Maven</td><td><span class="pill warn">N/A</span></td><td><a href="external-trials/bezkoder-spring-boot-data-jpa-mysql/index.html">HTML</a> · <a href="external-trials/bezkoder-spring-boot-data-jpa-mysql/report.json">JSON</a></td></tr>
       </tbody>
     </table></div>
 
+    <h2>Case Study: Callicoder Notes API</h2>
+    <section class="grid">
+      <div class="card"><strong>Repository context</strong><span>A small Spring Boot REST API with Maven metadata, Java 11, Spring Boot 2.5.5, and seven Java source files.</span></div>
+      <div class="card"><strong>Readiness result</strong><span>The Spring Boot 3 readiness pack applied and produced an 82% readiness score.</span></div>
+      <div class="card"><strong>Top risks</strong><span>Spring Boot 2.5.5, javax namespace usage, and one java.util.Date production finding.</span></div>
+      <div class="card"><strong>Consultant next step</strong><span>Run Jakarta readiness, then run a Spring Boot 3 dry-run transform with validation evidence.</span></div>
+    </section>
+
+    <h2>Friction Found</h2>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Observation</th><th>Documentation Change</th></tr></thead>
+      <tbody>
+        <tr><td>Multi-sample repositories can be run from the wrong root.</td><td>The quickstart now tells users to run from the actual application folder, such as <code>complete/</code>.</td></tr>
+        <tr><td>Spring Boot 3.x apps should not get a Spring Boot 2 to 3 readiness score.</td><td>The quickstart now explains that <code>not applicable</code> is honest evidence and suggests other packs.</td></tr>
+        <tr><td>Public GitHub examples disappear or move.</td><td>External proof is based on cloned repositories and checked-in report artifacts, not assumptions.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Next Growth Branch</h2>
     <section class="note">
-      <p>Phase 2 Distribution and Conversion Proof is complete: the public proof set exists, the quickstart is documented, and the GitHub Action path has been validated from an external-style repository.</p>
+      <p>The next branch should be conversion proof: repeat this external-trial format for 3 to 5 consultant-relevant repositories, publish case-study snapshots, and use the friction notes to sharpen the offer before adding more packs or chasing a larger benchmark count.</p>
     </section>
   </main>
 </body>

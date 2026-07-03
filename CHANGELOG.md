@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v0.5.4
+
+- Added Docker-first external trial evidence for four public repositories outside the benchmark catalog.
+- Published the Callicoder Spring Boot 2.5.5 case study with HTML and JSON report artifacts.
+- Captured first-run friction around multi-sample repository roots, already-upgraded Spring Boot 3 applications, and pack selection.
+- Updated the quickstart, homepage, README, and Consultant Demo path so the next roadmap branch is conversion proof before more benchmark volume.
+
 ## v0.5.3
 
 - Completed Phase 2 Distribution and Conversion Proof by validating the GitHub Action path from the separate `emp-action-smoke-test` repository.

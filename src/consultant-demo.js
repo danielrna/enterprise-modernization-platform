@@ -54,6 +54,8 @@ export async function buildConsultantDemoBundle({
     'editions.html',
     'contact.html',
     'release-notes/index.html',
+    'release-notes/v0.5.4.html',
+    'release-notes/v0.5.4.md',
     'release-notes/v0.5.3.html',
     'release-notes/v0.5.3.md',
     'knowledge-base/index.html',
@@ -146,17 +148,17 @@ function renderConsultantDemo(demos) {
     </section>
 
     <h2>Run This For A Client</h2>
-    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.3 analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></pre>
-    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.3 transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></pre>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.4 analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></pre>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.4 transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></pre>
 
     <h2>Send These Artifacts</h2>
     <section class="artifact-grid">
       <a href="benchmarks/spring-javaconfig-sample/index.html"><strong>Green-path report</strong><span>Checkout-backed compile and test pass.</span></a>
       <a href="benchmarks/hibernate-helloworld/index.html"><strong>Partial validation report</strong><span>Compile passes, tests expose dependency gap.</span></a>
       <a href="quickstart.html"><strong>External quickstart</strong><span>Docker and GitHub Action path for a new repository.</span></a>
-      <a href="external-trial.html"><strong>External trial proof</strong><span>Separate-repository GitHub Action run with report artifact.</span></a>
+      <a href="external-trial.html"><strong>External trial proof</strong><span>Separate-repository GitHub Action proof plus Docker-first external trial evidence.</span></a>
       <a href="knowledge-base/hibernate-validation-failures.html"><strong>Failure-pattern guide</strong><span>Explains blockers without overselling.</span></a>
-      <a href="release-notes/v0.5.3.html"><strong>Release notes</strong><span>What changed in the current release.</span></a>
+      <a href="release-notes/v0.5.4.html"><strong>Release notes</strong><span>What changed in the current release.</span></a>
     </section>
 
     <h2>What To Say</h2>
@@ -183,6 +185,7 @@ Recommended flow:
 2. Show one partial or failed validation report.
 3. Show the Hibernate Validation Failure Patterns Knowledge Base article.
 4. Explain the paid next step: validation, remediation, then migration execution.
+5. Use external-trial.html to show first-run friction and the conversion-proof next branch.
 
 Included reports:
 
@@ -191,7 +194,7 @@ ${reports}
 Client command:
 
 \`\`\`bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.3 analyze . --pack hibernate-readiness --out reports/hibernate-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.4 analyze . --pack hibernate-readiness --out reports/hibernate-readiness
 \`\`\`
 `;
 }
