@@ -71,10 +71,11 @@
       <div class="step">
         <strong>Open the target repository.</strong>
         <pre><code>cd /path/to/spring-or-java-app</code></pre>
+        <p>If the repository contains multiple samples, run from the actual application folder, not necessarily the repository root. Spring Guides-style repositories often need a subdirectory such as <code>complete/</code>.</p>
       </div>
       <div class="step">
         <strong>Run the readiness analyzer.</strong>
-        <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.3 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
+        <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.4 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
       </div>
       <div class="step">
         <strong>Open the static report.</strong>
@@ -110,9 +111,17 @@
         <tr><td><span class="status ok">passed</span></td><td>Compile or tests completed in the validation environment.</td><td>Use this as stronger trust evidence in the client conversation.</td></tr>
         <tr><td><span class="status bad">failed</span></td><td>The build, tests, toolchain, or dependencies failed with captured output.</td><td>Triage the exact failure before quoting migration execution.</td></tr>
         <tr><td><span class="status warn">timeout</span></td><td>A heavyweight build exceeded the validation budget.</td><td>Narrow modules, raise timeout, or prepare a client-specific validation environment.</td></tr>
-        <tr><td><span class="status">not applicable</span></td><td>The selected pack does not match the repository enough to score it.</td><td>Select a better pack or confirm the repository scope.</td></tr>
+        <tr><td><span class="status">not applicable</span></td><td>The selected pack does not match the repository enough to score it.</td><td>Confirm the application directory first, then select a better pack if the app is already past that migration.</td></tr>
       </tbody>
     </table></div>
+
+    <h2>Common First-Run Friction</h2>
+    <section class="grid">
+      <div class="card"><strong>Multi-sample repository</strong><p>If the root has folders like <code>initial/</code> and <code>complete/</code>, run EMP inside the app folder so build metadata and source scope match one application.</p></div>
+      <div class="card"><strong>Already upgraded app</strong><p>Spring Boot 3.x applications are not scored by the Spring Boot 2 to 3 pack. Use Jakarta, Java LTS, Spring Security, Hibernate, or JUnit readiness instead.</p></div>
+      <div class="card"><strong>No score is still evidence</strong><p>A non-applicable result means the tool avoided claiming a readiness score for the wrong migration path.</p></div>
+      <div class="card"><strong>Use the JSON</strong><p><code>report.json</code> preserves the detected Spring Boot version, Java version, build tools, findings, and next actions for review.</p></div>
+    </section>
 
     <h2>GitHub Action Path</h2>
     <p>For an external repository, add this workflow and download the report artifact after the run.</p>
@@ -129,7 +138,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.5.3
+        uses: danielrna/enterprise-modernization-platform@v0.5.4
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -150,7 +159,7 @@ jobs:
     </section>
 
     <h2>External Trial</h2>
-    <p>The GitHub Action path has been validated from a separate external-style repository. See <a href="external-trial.html">External Trial Proof</a> for the workflow run, artifact, and report snapshot.</p>
+    <p>The GitHub Action path and Docker-first external trial path have both been validated from repositories outside the main benchmark catalog. See <a href="external-trial.html">External Trial Proof</a> for run evidence, case-study notes, and first-run friction.</p>
   </main>
 </body>
 </html>

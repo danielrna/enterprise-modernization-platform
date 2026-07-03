@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>v0.5.4 Release Notes</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:0 0 8px; font-size:21px; letter-spacing:0; }
+    h3 { margin:16px 0 8px; font-size:15px; letter-spacing:0; }
+    p { max-width:760px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .layout { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:24px 0; }
+    .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .tile span { color:var(--muted); }
+    .summary { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; margin:24px 0; }
+    .summary div,.feature { padding:16px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .summary div { display:flex; flex-direction:column; gap:5px; }
+    .summary span,.meta span,small { color:var(--muted); }
+    .features { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .feature small { display:block; margin-bottom:8px; text-transform:uppercase; font-size:12px; }
+    .meta { display:flex; gap:8px; margin:12px 0; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .actions a { display:inline-flex; align-items:center; min-height:36px; padding:7px 11px; background:#f8fafc; border:1px solid var(--line); border-radius:6px; }
+    li { margin:6px 0; }
+    code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    @media (max-width: 760px) { main { padding:24px 16px; } .layout,.summary,.features { grid-template-columns:1fr; } h1 { font-size:27px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../quickstart.html">Quickstart</a>
+      <a href="../external-trial.html">External Trial</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../packs/index.html">Packs</a>
+      <a href="index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <section>
+      <h1>v0.5.4</h1>
+      <p>External friction workflow release turning Phase 2 proof into consultant-style trial evidence.</p>
+    </section>
+    <section class="summary">
+      <div><strong>Date</strong><span>2026-07-03</span></div>
+      <div><strong>Features</strong><span>2</span></div>
+      <div><strong>Draft</strong><span><a href="v0.5.4.md">Markdown</a></span></div>
+    </section>
+    <section class="features">
+      <article class="feature">
+        <small>distribution</small>
+        <h2>External friction trial workflow</h2>
+        <p>Run Docker-first trials against repositories outside the benchmark catalog, publish report snapshots, and convert repeated first-run friction into the next roadmap decision.</p>
+        <div class="meta"><strong>Audience</strong><span>Java consultants and maintainers deciding what to improve after the first external runs</span></div>
+        <h3>Evidence</h3>
+        <ul><li>Adds checked-in HTML and JSON report artifacts under <code>docs/external-trials/</code> for four public repositories outside the 75-report benchmark catalog.</li><li>Publishes the Callicoder Spring Boot MySQL REST API case study with Spring Boot 2.5.5, Java 11, Maven, and 82% Spring Boot 3 readiness.</li><li>Records not-applicable evidence for one multi-sample repository root and two already-upgraded Spring Boot 3.x repositories instead of claiming misleading readiness scores.</li><li>Updates <code>docs/external-trial.html</code> with the Docker command, trial matrix, case-study notes, and friction observations.</li><li>Updates the quickstart guidance for multi-sample repositories, already-upgraded applications, and honest <code>not applicable</code> results.</li></ul>
+        <h3>Links</h3><div class="actions"><a href="../external-trial.html">External Trial Proof</a><a href="../external-trials/callicoder-spring-boot-mysql-rest-api/index.html">Callicoder trial report</a><a href="../quickstart.html">Quickstart</a></div>
+      </article>
+      <article class="feature">
+        <small>roadmap</small>
+        <h2>Conversion proof next branch</h2>
+        <p>Make the post-Phase-2 branch explicit: use 3 to 5 consultant-style external trials to sharpen the offer before adding another pack or increasing benchmark volume.</p>
+        <div class="meta"><strong>Audience</strong><span>Maintainers choosing the next work item after Phase 2</span></div>
+        <h3>Evidence</h3>
+        <ul><li>Keeps Phase 1 evidence depth intact at 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.</li><li>Keeps Phase 2 distribution proof intact with Docker quickstart and a validated external-style GitHub Action run.</li><li>Adds concrete friction categories from the first Docker trial batch: repository scope, pack selection, and report interpretation.</li><li>Updates public homepage and README roadmap language so external conversion proof is the recommended next branch.</li></ul>
+        <h3>Links</h3><div class="actions"><a href="../consultant-demo.html">Consultant demo</a><a href="../external-trial.html">External Trial Proof</a></div>
+      </article></section>
+  </main></body>
+</html>

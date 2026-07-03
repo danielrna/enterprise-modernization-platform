@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-03T15:43:05.146Z",
+  "project": {
+    "name": "workspace",
+    "root": "/workspace",
+    "source": "local",
+    "buildTools": [],
+    "javaVersion": "17",
+    "springBootVersion": "4.0.7",
+    "fileCount": 57,
+    "javaFileCount": 6
+  },
+  "pack": "spring-boot-3-readiness",
+  "packApplicability": {
+    "applicable": false,
+    "confidence": 0.94,
+    "reason": "Spring Boot 4.0.7 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "recommendedPack": "java-17-to-21-readiness"
+  },
+  "readiness": {
+    "overall": null,
+    "categories": {},
+    "summary": "Pack mismatch: Spring Boot 4.0.7 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "status": "not_applicable",
+    "counts": {
+      "critical": 1,
+      "warning": 2,
+      "info": 0
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "build-tool-missing",
+      "severity": "critical",
+      "title": "Build tool not detected",
+      "recommendation": "Add Maven or Gradle metadata before automated readiness checks.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "complete/src/test/java/com/example/accessingdatajpa/CustomerRepositoryTests.java",
+      "line": 31,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "complete/src/test/java/com/example/accessingdatajpa/CustomerRepositoryTests.java",
+      "line": 34,
+      "scope": "test"
+    }
+  ],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 0,
+      "info": 0
+    },
+    "test": {
+      "critical": 0,
+      "warning": 2,
+      "info": 0
+    },
+    "byCode": {
+      "build-tool-missing": {
+        "code": "build-tool-missing",
+        "title": "Build tool not detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "build-tool-missing",
+            "severity": "critical",
+            "title": "Build tool not detected",
+            "recommendation": "Add Maven or Gradle metadata before automated readiness checks.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 2,
+        "production": 0,
+        "test": 2,
+        "topModules": [
+          {
+            "name": "complete",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "complete/src/test/java/com/example/accessingdatajpa/CustomerRepositoryTests.java",
+            "line": 31,
+            "scope": "test"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "complete/src/test/java/com/example/accessingdatajpa/CustomerRepositoryTests.java",
+            "line": 34,
+            "scope": "test"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "build-tool-missing",
+      "severity": "critical",
+      "title": "Build tool not detected",
+      "recommendation": "Add Maven or Gradle metadata before automated readiness checks.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "complete/src/test/java/com/example/accessingdatajpa/CustomerRepositoryTests.java",
+      "line": 31,
+      "scope": "test"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "complete/src/test/java/com/example/accessingdatajpa/CustomerRepositoryTests.java",
+      "line": 34,
+      "scope": "test"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "failed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "passed"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "passed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "4.0.7",
+    "springSecurityVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": false,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": false,
+    "junit5Detected": true
+  },
+  "nextActions": [
+    {
+      "id": "add-build-metadata",
+      "priority": "critical",
+      "title": "Add Maven or Gradle metadata before migration planning",
+      "reason": "Build metadata is required for repeatable analysis, transformation, and validation evidence.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "build-tool-missing"
+      ],
+      "suggestedCommand": null
+    },
+    {
+      "id": "select-applicable-pack",
+      "priority": "critical",
+      "title": "Select the applicable modernization pack",
+      "reason": "Spring Boot 4.0.7 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+      "evidenceCount": 0,
+      "findingCodes": [],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack java-17-to-21-readiness --out reports/java-17-to-21-readiness"
+    }
+  ]
+}
