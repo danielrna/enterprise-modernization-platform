@@ -1,0 +1,755 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-03T19:35:18.496Z",
+  "project": {
+    "name": "workspace",
+    "root": "/workspace",
+    "source": "local",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "1.8",
+    "springBootVersion": "2.1.0.RELEASE",
+    "fileCount": 42,
+    "javaFileCount": 10
+  },
+  "pack": "spring-boot-3-readiness",
+  "packApplicability": {
+    "applicable": true,
+    "confidence": 0.95,
+    "reason": "Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "targetVersion": "3.x"
+  },
+  "readiness": {
+    "overall": 73,
+    "categories": {
+      "java": 84,
+      "spring": 65,
+      "hibernate": 72,
+      "jakarta": 79,
+      "build": 90,
+      "security": 76,
+      "testing": 63,
+      "architecture": 55
+    },
+    "summary": "Ready with remediation work",
+    "counts": {
+      "critical": 1,
+      "warning": 7,
+      "info": 11
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "spring-boot-2",
+      "severity": "warning",
+      "title": "Spring Boot 2.1.0.RELEASE detected",
+      "recommendation": "Plan Spring Boot 3 and Jakarta compatibility validation.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 93,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 94,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 101,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 102,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 109,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 110,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 113,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/SysUserController.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/entity/SysUser.java",
+      "line": 7,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/service/impl/SysUserServiceImpl.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/util/ClassPathFileUtil.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/util/ClassPathFileUtil.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/vo/ApiResult.java",
+      "line": 8,
+      "scope": "production"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/vo/ApiResult.java",
+      "line": 1,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "src/test/java/io/geekidea/springboot/assembly/ApplicationTests.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "src/test/java/io/geekidea/springboot/assembly/ApplicationTests.java",
+      "line": 4,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "src/test/java/io/geekidea/springboot/assembly/ApplicationTests.java",
+      "line": 8,
+      "scope": "test"
+    }
+  ],
+  "findingSummary": {
+    "production": {
+      "critical": 1,
+      "warning": 4,
+      "info": 11
+    },
+    "test": {
+      "critical": 0,
+      "warning": 3,
+      "info": 0
+    },
+    "byCode": {
+      "spring-boot-2": {
+        "code": "spring-boot-2",
+        "title": "Spring Boot 2.1.0.RELEASE detected",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "spring-boot-2",
+            "severity": "warning",
+            "title": "Spring Boot 2.1.0.RELEASE detected",
+            "recommendation": "Plan Spring Boot 3 and Jakarta compatibility validation.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 9,
+        "production": 9,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 9
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+            "line": 93,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+            "line": 94,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+            "line": 101,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+            "line": 102,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+            "line": 109,
+            "scope": "production"
+          }
+        ]
+      },
+      "field-injection": {
+        "code": "field-injection",
+        "title": "Spring field injection",
+        "severity": "warning",
+        "total": 2,
+        "production": 2,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/io/geekidea/springboot/assembly/controller/SysUserController.java",
+            "line": 23,
+            "scope": "production"
+          },
+          {
+            "code": "field-injection",
+            "severity": "warning",
+            "title": "Spring field injection",
+            "recommendation": "Review Spring field injection before modernization.",
+            "file": "src/main/java/io/geekidea/springboot/assembly/service/impl/SysUserServiceImpl.java",
+            "line": 22,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "java.util.Date usage",
+        "severity": "info",
+        "total": 2,
+        "production": 2,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "src/main/java/io/geekidea/springboot/assembly/entity/SysUser.java",
+            "line": 7,
+            "scope": "production"
+          },
+          {
+            "code": "java-util-date",
+            "severity": "info",
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "src/main/java/io/geekidea/springboot/assembly/vo/ApiResult.java",
+            "line": 8,
+            "scope": "production"
+          }
+        ]
+      },
+      "serializable-missing-serial-version": {
+        "code": "serializable-missing-serial-version",
+        "title": "Serializable type without serialVersionUID",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "serializable-missing-serial-version",
+            "severity": "warning",
+            "title": "Serializable type without serialVersionUID",
+            "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+            "file": "src/main/java/io/geekidea/springboot/assembly/vo/ApiResult.java",
+            "line": 1,
+            "scope": "production"
+          }
+        ]
+      },
+      "junit4-api-usage": {
+        "code": "junit4-api-usage",
+        "title": "JUnit 4 API usage",
+        "severity": "warning",
+        "total": 1,
+        "production": 0,
+        "test": 1,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-api-usage",
+            "severity": "warning",
+            "title": "JUnit 4 API usage",
+            "recommendation": "Review JUnit 4 API usage before modernization.",
+            "file": "src/test/java/io/geekidea/springboot/assembly/ApplicationTests.java",
+            "line": 3,
+            "scope": "test"
+          }
+        ]
+      },
+      "junit4-runner-usage": {
+        "code": "junit4-runner-usage",
+        "title": "JUnit 4 runner usage",
+        "severity": "warning",
+        "total": 2,
+        "production": 0,
+        "test": 2,
+        "topModules": [
+          {
+            "name": "src",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "src/test/java/io/geekidea/springboot/assembly/ApplicationTests.java",
+            "line": 4,
+            "scope": "test"
+          },
+          {
+            "code": "junit4-runner-usage",
+            "severity": "warning",
+            "title": "JUnit 4 runner usage",
+            "recommendation": "Review JUnit 4 runner usage before modernization.",
+            "file": "src/test/java/io/geekidea/springboot/assembly/ApplicationTests.java",
+            "line": 8,
+            "scope": "test"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "spring-boot-2",
+      "severity": "warning",
+      "title": "Spring Boot 2.1.0.RELEASE detected",
+      "recommendation": "Plan Spring Boot 3 and Jakarta compatibility validation.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 93,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 94,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 101,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 102,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 109,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 110,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/HelloController.java",
+      "line": 113,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/controller/SysUserController.java",
+      "line": 23,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/entity/SysUser.java",
+      "line": 7,
+      "scope": "production"
+    },
+    {
+      "code": "field-injection",
+      "severity": "warning",
+      "title": "Spring field injection",
+      "recommendation": "Review Spring field injection before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/service/impl/SysUserServiceImpl.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/util/ClassPathFileUtil.java",
+      "line": 30,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/util/ClassPathFileUtil.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/vo/ApiResult.java",
+      "line": 8,
+      "scope": "production"
+    },
+    {
+      "code": "serializable-missing-serial-version",
+      "severity": "warning",
+      "title": "Serializable type without serialVersionUID",
+      "recommendation": "Add an explicit serialVersionUID before Java runtime migration validation.",
+      "file": "src/main/java/io/geekidea/springboot/assembly/vo/ApiResult.java",
+      "line": 1,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-api-usage",
+      "severity": "warning",
+      "title": "JUnit 4 API usage",
+      "recommendation": "Review JUnit 4 API usage before modernization.",
+      "file": "src/test/java/io/geekidea/springboot/assembly/ApplicationTests.java",
+      "line": 3,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "src/test/java/io/geekidea/springboot/assembly/ApplicationTests.java",
+      "line": 4,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-runner-usage",
+      "severity": "warning",
+      "title": "JUnit 4 runner usage",
+      "recommendation": "Review JUnit 4 runner usage before modernization.",
+      "file": "src/test/java/io/geekidea/springboot/assembly/ApplicationTests.java",
+      "line": 8,
+      "scope": "test"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "passed"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "failed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "2.1.0.RELEASE",
+    "springSecurityVersion": "unknown",
+    "jakartaDetected": false,
+    "javaxDetected": true,
+    "hibernateDetected": false,
+    "springSecurityDetected": false,
+    "junit4Detected": true,
+    "junit5Detected": false
+  },
+  "nextActions": [
+    {
+      "id": "plan-jakarta-migration",
+      "priority": "critical",
+      "title": "Plan javax to Jakarta namespace migration",
+      "reason": "Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "javax-usage"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
+    },
+    {
+      "id": "validate-spring-boot-upgrade-path",
+      "priority": "warning",
+      "title": "Validate the Spring Boot 3 upgrade path",
+      "reason": "Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "spring-boot-2",
+        "spring-boot-version-unknown"
+      ],
+      "suggestedCommand": "node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust"
+    },
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "warning",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 0,
+      "findingCodes": [
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
+    }
+  ]
+}

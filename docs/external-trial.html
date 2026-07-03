@@ -49,13 +49,13 @@
 
     <section>
       <h1>External Trial Proof</h1>
-      <p>Phase 2 closes only if the quickstart path works outside the main repository. This page records the GitHub Action proof plus Docker-first trials against public repositories that are not in the 75-report benchmark catalog.</p>
+      <p>Phase 2 closes only if the quickstart path works outside the main repository. This page records the GitHub Action proof plus Docker-first conversion trials against public repositories that are not in the 75-report benchmark catalog.</p>
     </section>
 
     <section class="summary">
-      <div><strong>1</strong><span>GitHub Action proof</span></div>
-      <div><strong>4</strong><span>Docker trial runs</span></div>
-      <div><strong>1</strong><span>Applicable case study</span></div>
+      <div><strong>2</strong><span>GitHub Action proofs</span></div>
+      <div><strong>9</strong><span>Docker trial runs</span></div>
+      <div><strong>5</strong><span>Applicable case studies</span></div>
       <div><strong>0</strong><span>Backend services</span></div>
     </section>
 
@@ -65,30 +65,36 @@
       <tbody>
         <tr><td>Repository</td><td><a href="https://github.com/danielrna/emp-action-smoke-test">danielrna/emp-action-smoke-test</a></td></tr>
         <tr><td>Workflow</td><td>EMP Readiness Smoke Test</td></tr>
-        <tr><td>Run</td><td><a href="https://github.com/danielrna/emp-action-smoke-test/actions/runs/28662892927">28662892927</a></td></tr>
-        <tr><td>Action Reference</td><td><code>danielrna/enterprise-modernization-platform@v0.5.2</code></td></tr>
-        <tr><td>Artifact</td><td><code>emp-readiness-report</code> containing <code>index.html</code> and <code>report.json</code></td></tr>
+        <tr><td>Latest completed run</td><td><a href="https://github.com/danielrna/emp-action-smoke-test/actions/runs/28679821177">28679821177</a></td></tr>
+        <tr><td>Latest completed action reference</td><td><code>danielrna/enterprise-modernization-platform@v0.5.4</code></td></tr>
+        <tr><td>Latest completed artifact</td><td><code>emp-readiness-report</code> containing <code>index.html</code> and <code>report.json</code>; JSON scored 81% readiness on Spring Boot 2.7.18.</td></tr>
+        <tr><td>Earlier run</td><td><a href="https://github.com/danielrna/emp-action-smoke-test/actions/runs/28662892927">28662892927</a> validated the first separate-repository action path on <code>v0.5.2</code>.</td></tr>
       </tbody>
     </table></div>
 
     <h2>Docker Trial Runs</h2>
-    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.4 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.5 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
     <div class="table-scroll"><table>
       <thead><tr><th>Repository</th><th>Catalog Status</th><th>Detected Stack</th><th>Result</th><th>Evidence</th></tr></thead>
       <tbody>
         <tr><td><a href="https://github.com/callicoder/spring-boot-mysql-rest-api-tutorial">callicoder/spring-boot-mysql-rest-api-tutorial</a></td><td>Outside catalog</td><td>Spring Boot 2.5.5, Java 11, Maven</td><td><span class="pill ok">82%</span></td><td><a href="external-trials/callicoder-spring-boot-mysql-rest-api/index.html">HTML</a> · <a href="external-trials/callicoder-spring-boot-mysql-rest-api/report.json">JSON</a></td></tr>
+        <tr><td><a href="https://github.com/mertakdut/Spring-Boot-Sample-Project">mertakdut/Spring-Boot-Sample-Project</a></td><td>Outside catalog</td><td>Spring Boot 2.1.3, Java 8, Maven</td><td><span class="pill bad">59%</span></td><td><a href="external-trials/mertakdut-spring-boot-sample-project/index.html">HTML</a> · <a href="external-trials/mertakdut-spring-boot-sample-project/report.json">JSON</a></td></tr>
+        <tr><td><a href="https://github.com/shekhargulati/spring-boot-maven-angular-starter">shekhargulati/spring-boot-maven-angular-starter</a></td><td>Outside catalog</td><td>Spring Boot 2.2.6, Java 8, Maven</td><td><span class="pill ok">81%</span></td><td><a href="external-trials/shekhargulati-spring-boot-maven-angular-starter/index.html">HTML</a> · <a href="external-trials/shekhargulati-spring-boot-maven-angular-starter/report.json">JSON</a></td></tr>
+        <tr><td><a href="https://github.com/dsyer/spring-boot-angular">dsyer/spring-boot-angular</a></td><td>Outside catalog</td><td>Spring Boot 2.6.0, Java 8, Maven</td><td><span class="pill ok">83%</span></td><td><a href="external-trials/dsyer-spring-boot-angular/index.html">HTML</a> · <a href="external-trials/dsyer-spring-boot-angular/report.json">JSON</a></td></tr>
+        <tr><td><a href="https://github.com/geekidea/spring-boot-assembly">geekidea/spring-boot-assembly</a></td><td>Outside catalog</td><td>Spring Boot 2.1.0, Java 8, Maven</td><td><span class="pill warn">73%</span></td><td><a href="external-trials/geekidea-spring-boot-assembly/index.html">HTML</a> · <a href="external-trials/geekidea-spring-boot-assembly/report.json">JSON</a></td></tr>
         <tr><td><a href="https://github.com/spring-guides/gs-accessing-data-jpa">spring-guides/gs-accessing-data-jpa</a></td><td>Outside catalog</td><td>Spring Boot 4.0.7 signal at repository root</td><td><span class="pill warn">N/A</span></td><td><a href="external-trials/gs-accessing-data-jpa/index.html">HTML</a> · <a href="external-trials/gs-accessing-data-jpa/report.json">JSON</a></td></tr>
         <tr><td><a href="https://github.com/RameshMF/springboot-thymeleaf-crud-pagination-sorting-webapp">RameshMF/springboot-thymeleaf-crud-pagination-sorting-webapp</a></td><td>Outside catalog</td><td>Spring Boot 3.0.4, Java 17, Maven</td><td><span class="pill warn">N/A</span></td><td><a href="external-trials/rameshmf-thymeleaf-crud/index.html">HTML</a> · <a href="external-trials/rameshmf-thymeleaf-crud/report.json">JSON</a></td></tr>
         <tr><td><a href="https://github.com/bezkoder/spring-boot-data-jpa-mysql">bezkoder/spring-boot-data-jpa-mysql</a></td><td>Outside catalog</td><td>Spring Boot 3.1.5, Java 17, Maven</td><td><span class="pill warn">N/A</span></td><td><a href="external-trials/bezkoder-spring-boot-data-jpa-mysql/index.html">HTML</a> · <a href="external-trials/bezkoder-spring-boot-data-jpa-mysql/report.json">JSON</a></td></tr>
+        <tr><td><a href="https://github.com/bezkoder/spring-boot-jpa-postgresql">bezkoder/spring-boot-jpa-postgresql</a></td><td>Outside catalog</td><td>Spring Boot 3.1.0, Java 17, Maven</td><td><span class="pill warn">N/A</span></td><td><a href="external-trials/bezkoder-spring-boot-jpa-postgresql/index.html">HTML</a> · <a href="external-trials/bezkoder-spring-boot-jpa-postgresql/report.json">JSON</a></td></tr>
       </tbody>
     </table></div>
 
-    <h2>Case Study: Callicoder Notes API</h2>
+    <h2>Conversion Case Studies</h2>
     <section class="grid">
-      <div class="card"><strong>Repository context</strong><span>A small Spring Boot REST API with Maven metadata, Java 11, Spring Boot 2.5.5, and seven Java source files.</span></div>
-      <div class="card"><strong>Readiness result</strong><span>The Spring Boot 3 readiness pack applied and produced an 82% readiness score.</span></div>
-      <div class="card"><strong>Top risks</strong><span>Spring Boot 2.5.5, javax namespace usage, and one java.util.Date production finding.</span></div>
-      <div class="card"><strong>Consultant next step</strong><span>Run Jakarta readiness, then run a Spring Boot 3 dry-run transform with validation evidence.</span></div>
+      <div class="card"><strong>Low readiness cleanup</strong><span>Mertakdut scores 59% with Spring Security and Java 8 signals, creating a concrete readiness cleanup offer before migration execution.</span></div>
+      <div class="card"><strong>Jakarta migration scope</strong><span>Callicoder and Geekidea expose javax namespace findings, making Jakarta readiness and namespace remediation the next paid step.</span></div>
+      <div class="card"><strong>Validation follow-up</strong><span>Dsyer and Shekhargulati score above 80%, so the natural next step is dry-run transformation plus compile/test validation evidence.</span></div>
+      <div class="card"><strong>Pack selection discipline</strong><span>Spring Boot 3.x Bezkoder and RameshMF runs stay not applicable, proving the report avoids false Spring Boot 2 to 3 scoring.</span></div>
     </section>
 
     <h2>Friction Found</h2>
@@ -97,13 +103,15 @@
       <tbody>
         <tr><td>Multi-sample repositories can be run from the wrong root.</td><td>The quickstart now tells users to run from the actual application folder, such as <code>complete/</code>.</td></tr>
         <tr><td>Spring Boot 3.x apps should not get a Spring Boot 2 to 3 readiness score.</td><td>The quickstart now explains that <code>not applicable</code> is honest evidence and suggests other packs.</td></tr>
+        <tr><td>Low readiness scores create clearer paid work than green demos.</td><td>The trial page now separates cleanup, Jakarta migration, validation, and pack-selection offer branches.</td></tr>
+        <tr><td>Older Java 8 Spring Boot 2.x examples need runtime planning before migration execution.</td><td>The matrix now exposes Java version and Spring Boot version together for consultant scoping.</td></tr>
         <tr><td>Public GitHub examples disappear or move.</td><td>External proof is based on cloned repositories and checked-in report artifacts, not assumptions.</td></tr>
       </tbody>
     </table></div>
 
     <h2>Next Growth Branch</h2>
     <section class="note">
-      <p>The next branch should be conversion proof: repeat this external-trial format for 3 to 5 consultant-relevant repositories, publish case-study snapshots, and use the friction notes to sharpen the offer before adding more packs or chasing a larger benchmark count.</p>
+      <p>The next branch is outreach proof: use these 9 external-trial snapshots in consultant conversations, track which offer branch gets a response, and only then decide whether the next product change is pricing, copy, validation depth, or another pack.</p>
     </section>
   </main>
 </body>

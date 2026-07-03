@@ -211,15 +211,15 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 28);
+  assert.equal(result.count, 29);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.5\.4/);
+  assert.match(index, /v0\.5\.5/);
   assert.match(index, /v0\.5\.1/);
-  assert.match(html, /External friction trial workflow/);
+  assert.match(html, /Conversion proof trial batch/);
   assert.match(html, /75 checkout-backed reports/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## External friction trial workflow/);
+  assert.match(markdown, /## Conversion proof trial batch/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {
@@ -1076,15 +1076,17 @@ test('GitHub Action exposes Docker readiness analysis inputs', async () => {
   assert.match(await fs.readFile(path.resolve('scripts/benchmark-publish.js'), 'utf8'), /generateReleaseNotes/);
   assert.match(githubDocs, /actions\/upload-artifact@v4/);
   assert.match(quickstart, /Run a readiness report in 5 minutes/);
-  assert.match(quickstart, /danielrna\/enterprise-modernization-platform:v0\.5\.4/);
+  assert.match(quickstart, /danielrna\/enterprise-modernization-platform:v0\.5\.5/);
   assert.match(quickstart, /emp-readiness-report/);
   assert.match(quickstart, /Common First-Run Friction/);
   assert.match(externalTrial, /External Trial Proof/);
-  assert.match(externalTrial, /28662892927/);
+  assert.match(externalTrial, /28679821177/);
   assert.match(externalTrial, /emp-readiness-report/);
   assert.match(externalTrial, /Docker Trial Runs/);
   assert.match(externalTrial, /callicoder\/spring-boot-mysql-rest-api-tutorial/);
-  assert.match(externalTrial, /conversion proof/);
+  assert.match(externalTrial, /mertakdut\/Spring-Boot-Sample-Project/);
+  assert.match(externalTrial, /9 external-trial snapshots/);
+  assert.match(externalTrial, /Conversion Case Studies/);
   assert.match(githubDocs, /emp-report\/index\.html/);
   assert.match(dockerDocs, /docker run --rm/);
   assert.match(ciDocs, /GitLab CI/);

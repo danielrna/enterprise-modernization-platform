@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v0.5.5
+
+- Expanded conversion proof from 4 to 9 Docker-first external trial runs outside the benchmark catalog.
+- Added four more applicable Spring Boot 2.x case studies with readiness scores from 59% to 83%.
+- Added a second Bezkoder not-applicable trial, confirming already-upgraded Spring Boot 3 applications should use another pack.
+- Updated the External Trial Proof page around a concrete consultant offer branch: readiness cleanup, Jakarta migration, Spring Security review, and validation follow-up.
+
 ## v0.5.4
 
 - Added Docker-first external trial evidence for four public repositories outside the benchmark catalog.

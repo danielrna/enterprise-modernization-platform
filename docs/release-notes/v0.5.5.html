@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>v0.5.5 Release Notes</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:0 0 8px; font-size:21px; letter-spacing:0; }
+    h3 { margin:16px 0 8px; font-size:15px; letter-spacing:0; }
+    p { max-width:760px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .layout { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:24px 0; }
+    .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .tile span { color:var(--muted); }
+    .summary { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; margin:24px 0; }
+    .summary div,.feature { padding:16px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .summary div { display:flex; flex-direction:column; gap:5px; }
+    .summary span,.meta span,small { color:var(--muted); }
+    .features { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .feature small { display:block; margin-bottom:8px; text-transform:uppercase; font-size:12px; }
+    .meta { display:flex; gap:8px; margin:12px 0; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .actions a { display:inline-flex; align-items:center; min-height:36px; padding:7px 11px; background:#f8fafc; border:1px solid var(--line); border-radius:6px; }
+    li { margin:6px 0; }
+    code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    @media (max-width: 760px) { main { padding:24px 16px; } .layout,.summary,.features { grid-template-columns:1fr; } h1 { font-size:27px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../quickstart.html">Quickstart</a>
+      <a href="../external-trial.html">External Trial</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../packs/index.html">Packs</a>
+      <a href="index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <section>
+      <h1>v0.5.5</h1>
+      <p>Conversion proof batch release expanding external Docker trials into consultant offer evidence.</p>
+    </section>
+    <section class="summary">
+      <div><strong>Date</strong><span>2026-07-03</span></div>
+      <div><strong>Features</strong><span>2</span></div>
+      <div><strong>Draft</strong><span><a href="v0.5.5.md">Markdown</a></span></div>
+    </section>
+    <section class="features">
+      <article class="feature">
+        <small>distribution</small>
+        <h2>Conversion proof trial batch</h2>
+        <p>Expand the Docker-first external trial set from four to nine public repositories outside the benchmark catalog and publish the resulting report snapshots.</p>
+        <div class="meta"><strong>Audience</strong><span>Java consultants validating whether EMP produces useful client conversations on unfamiliar repositories</span></div>
+        <h3>Evidence</h3>
+        <ul><li>Adds checked-in HTML and JSON report artifacts for <code>mertakdut/Spring-Boot-Sample-Project</code>, <code>bezkoder/spring-boot-jpa-postgresql</code>, <code>shekhargulati/spring-boot-maven-angular-starter</code>, <code>dsyer/spring-boot-angular</code>, and <code>geekidea/spring-boot-assembly</code>.</li><li>Raises the external Docker trial proof set to 9 runs: 5 applicable Spring Boot 2.x case studies and 4 honest not-applicable runs.</li><li>Captures applicable readiness scores of 59%, 81%, 82%, 83%, and 73% across unfamiliar Spring Boot 2.x repositories.</li><li>Preserves the benchmark baseline at 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.</li><li>Keeps the 75-report benchmark catalog unchanged while adding conversion evidence outside the catalog.</li><li>Updates the External Trial Proof page with a richer trial matrix, current action proof, and consultant follow-up offers.</li></ul>
+        <h3>Links</h3><div class="actions"><a href="../external-trial.html">External Trial Proof</a><a href="../external-trials/mertakdut-spring-boot-sample-project/index.html">Mertakdut trial report</a><a href="../quickstart.html">Quickstart</a></div>
+      </article>
+      <article class="feature">
+        <small>consultant</small>
+        <h2>Consultant offer friction map</h2>
+        <p>Translate repeated external-trial outcomes into concrete offer branches instead of adding another product surface.</p>
+        <div class="meta"><strong>Audience</strong><span>Consultants turning first-run evidence into paid next work</span></div>
+        <h3>Evidence</h3>
+        <ul><li>Low readiness on <code>mertakdut/Spring-Boot-Sample-Project</code> turns into a readiness cleanup and Spring Security review offer.</li><li>Older Spring Boot 2.1 and Java 8 signals in <code>geekidea/spring-boot-assembly</code> turn into Jakarta migration and runtime planning work.</li><li>Moderate readiness on <code>dsyer/spring-boot-angular</code> and <code>shekhargulati/spring-boot-maven-angular-starter</code> turns into validation and dry-run transformation follow-up.</li><li>Already-upgraded Spring Boot 3.x Bezkoder examples reinforce pack-selection guidance rather than producing misleading scores.</li></ul>
+        <h3>Links</h3><div class="actions"><a href="../consultant-demo.html">Consultant demo</a><a href="../external-trial.html">External Trial Proof</a></div>
+      </article></section>
+  </main></body>
+</html>

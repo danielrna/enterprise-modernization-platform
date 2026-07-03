@@ -75,7 +75,7 @@
       </div>
       <div class="step">
         <strong>Run the readiness analyzer.</strong>
-        <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.4 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
+        <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.5 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
       </div>
       <div class="step">
         <strong>Open the static report.</strong>
@@ -138,7 +138,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.5.4
+        uses: danielrna/enterprise-modernization-platform@v0.5.5
         with:
           path: .
           pack: spring-boot-3-readiness

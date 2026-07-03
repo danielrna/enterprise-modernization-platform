@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "emp.report.v1",
+  "generatedAt": "2026-07-03T19:35:12.847Z",
+  "project": {
+    "name": "workspace",
+    "root": "/workspace",
+    "source": "local",
+    "buildTools": [
+      "Maven"
+    ],
+    "javaVersion": "17",
+    "springBootVersion": "3.1.0",
+    "fileCount": 11,
+    "javaFileCount": 5
+  },
+  "pack": "spring-boot-3-readiness",
+  "packApplicability": {
+    "applicable": false,
+    "confidence": 0.94,
+    "reason": "Spring Boot 3.1.0 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "recommendedPack": "java-17-to-21-readiness"
+  },
+  "readiness": {
+    "overall": null,
+    "categories": {},
+    "summary": "Pack mismatch: Spring Boot 3.1.0 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+    "status": "not_applicable",
+    "counts": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    }
+  },
+  "productionFindings": [
+    {
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+      "file": "pom.xml",
+      "line": 44,
+      "scope": "production"
+    }
+  ],
+  "testFindings": [],
+  "findingSummary": {
+    "production": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "test": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "byCode": {
+      "junit-vintage-engine": {
+        "code": "junit-vintage-engine",
+        "title": "JUnit Vintage engine dependency",
+        "severity": "info",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "pom.xml",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit-vintage-engine",
+            "severity": "info",
+            "title": "JUnit Vintage engine dependency",
+            "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+            "file": "pom.xml",
+            "line": 44,
+            "scope": "production"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "code": "junit-vintage-engine",
+      "severity": "info",
+      "title": "JUnit Vintage engine dependency",
+      "recommendation": "Review JUnit Vintage engine dependency before modernization.",
+      "file": "pom.xml",
+      "line": 44,
+      "scope": "production"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Build metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Boot version detection",
+      "status": "passed"
+    },
+    {
+      "name": "Jakarta namespace readiness",
+      "status": "passed"
+    },
+    {
+      "name": "Hibernate usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "passed"
+    },
+    {
+      "name": "Static source checks",
+      "status": "warning"
+    },
+    {
+      "name": "OpenRewrite dry-run readiness",
+      "status": "pending",
+      "note": "OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available."
+    }
+  ],
+  "dependencies": {
+    "springBootVersion": "3.1.0",
+    "springSecurityVersion": "unknown",
+    "jakartaDetected": true,
+    "javaxDetected": false,
+    "hibernateDetected": true,
+    "springSecurityDetected": false,
+    "junit4Detected": false,
+    "junit5Detected": true
+  },
+  "nextActions": [
+    {
+      "id": "select-applicable-pack",
+      "priority": "critical",
+      "title": "Select the applicable modernization pack",
+      "reason": "Spring Boot 3.1.0 was detected, not Spring Boot 2.x. This pack targets Spring Boot 2.x to 3.x migrations.",
+      "evidenceCount": 0,
+      "findingCodes": [],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack java-17-to-21-readiness --out reports/java-17-to-21-readiness"
+    },
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "info",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
+    }
+  ]
+}
