@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMP Quickstart</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; --accent-dark:#0f4f84; --ok:#217a45; --warn:#966600; --bad:#b42318; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 10px; font-size:38px; line-height:1.12; letter-spacing:0; }
+    h2 { margin:30px 0 12px; font-size:21px; letter-spacing:0; }
+    p { max-width:780px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    pre { overflow:auto; padding:14px; background:#102033; color:#eef6fd; border-radius:8px; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 30px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .hero { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:24px; align-items:start; }
+    .proof,.card { padding:16px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .proof { border-left:4px solid var(--ok); }
+    .proof div { display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px solid var(--line); }
+    .proof div:last-child { border-bottom:0; }
+    .proof strong { font-size:22px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:18px 0; }
+    .steps { counter-reset:step; display:grid; gap:12px; margin:18px 0; }
+    .step { position:relative; padding:16px 16px 16px 54px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .step:before { counter-increment:step; content:counter(step); position:absolute; left:16px; top:16px; width:26px; height:26px; display:grid; place-items:center; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; }
+    .status { display:inline-flex; min-width:92px; justify-content:center; padding:2px 8px; border-radius:999px; font-size:12px; font-weight:700; background:#eef2f7; color:#344054; }
+    .status.ok { background:#e9f7ef; color:var(--ok); }
+    .status.bad { background:#fff1f0; color:var(--bad); }
+    .status.warn { background:#fff8e6; color:var(--warn); }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    @media (max-width: 780px) { main { padding:24px 16px; } .hero,.grid { grid-template-columns:1fr; } h1 { font-size:30px; } table { min-width:720px; } .table-scroll { overflow:auto; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="quickstart.html">Quickstart</a>
+      <a href="migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="consultant-demo.html">Consultant Demo</a>
+      <a href="benchmarks/index.html">Benchmarks</a>
+      <a href="packs/index.html">Packs</a>
+      <a href="knowledge-base/index.html">Knowledge Base</a>
+      <a href="release-notes/index.html">Release Notes</a>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Run a readiness report in 5 minutes.</h1>
+        <p>This is the external-user path. It assumes you have Docker and a Java repository checked out locally. It does not require a server, account, database, or local Node.js installation.</p>
+      </div>
+      <aside class="proof">
+        <div><span>Public reports</span><strong>75</strong></div>
+        <div><span>Checkout-backed</span><strong>75</strong></div>
+        <div><span>Passing validation</span><strong>17</strong></div>
+        <div><span>Hosted backend</span><strong>0</strong></div>
+      </aside>
+    </section>
+
+    <h2>Docker Path</h2>
+    <section class="steps">
+      <div class="step">
+        <strong>Open the target repository.</strong>
+        <pre><code>cd /path/to/spring-or-java-app</code></pre>
+      </div>
+      <div class="step">
+        <strong>Run the readiness analyzer.</strong>
+        <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.2 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
+      </div>
+      <div class="step">
+        <strong>Open the static report.</strong>
+        <pre><code>reports/emp-readiness/index.html</code></pre>
+      </div>
+    </section>
+
+    <h2>What You Get</h2>
+    <section class="grid">
+      <div class="card"><strong>HTML report</strong><p>Shareable readiness evidence for a client or team review.</p></div>
+      <div class="card"><strong>JSON report</strong><p>Machine-readable evidence for agents, CI, or later comparison.</p></div>
+      <div class="card"><strong>Readiness score</strong><p>Only shown when the selected pack applies to the repository.</p></div>
+      <div class="card"><strong>Next actions</strong><p>Prioritized follow-up work based on findings and validation state.</p></div>
+    </section>
+
+    <h2>Choose a Pack</h2>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Pack</th><th>Use When</th><th>Command Value</th></tr></thead>
+      <tbody>
+        <tr><td>Spring Boot 3 Readiness</td><td>Spring Boot 2.x to 3.x planning.</td><td><code>spring-boot-3-readiness</code></td></tr>
+        <tr><td>Java 17 to 21 Readiness</td><td>Java runtime migration planning.</td><td><code>java-17-to-21-readiness</code></td></tr>
+        <tr><td>Jakarta Readiness</td><td>Java EE to Jakarta namespace risk review.</td><td><code>jakarta-readiness</code></td></tr>
+        <tr><td>Hibernate Readiness</td><td>Hibernate 5.x to 6.x planning.</td><td><code>hibernate-readiness</code></td></tr>
+        <tr><td>Spring Security 6 Readiness</td><td>Spring Security 5.x to 6.x planning.</td><td><code>spring-security-6-readiness</code></td></tr>
+        <tr><td>JUnit 5 Readiness</td><td>JUnit 4 to JUnit 5 migration planning.</td><td><code>junit-5-readiness</code></td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Read the Evidence</h2>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Status</th><th>Meaning</th><th>Consultant Next Step</th></tr></thead>
+      <tbody>
+        <tr><td><span class="status ok">passed</span></td><td>Compile or tests completed in the validation environment.</td><td>Use this as stronger trust evidence in the client conversation.</td></tr>
+        <tr><td><span class="status bad">failed</span></td><td>The build, tests, toolchain, or dependencies failed with captured output.</td><td>Triage the exact failure before quoting migration execution.</td></tr>
+        <tr><td><span class="status warn">timeout</span></td><td>A heavyweight build exceeded the validation budget.</td><td>Narrow modules, raise timeout, or prepare a client-specific validation environment.</td></tr>
+        <tr><td><span class="status">not applicable</span></td><td>The selected pack does not match the repository enough to score it.</td><td>Select a better pack or confirm the repository scope.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>GitHub Action Path</h2>
+    <p>For an external repository, add this workflow and download the report artifact after the run.</p>
+    <pre><code>name: EMP Readiness
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run EMP readiness
+        uses: danielrna/enterprise-modernization-platform@v0.5.2
+        with:
+          path: .
+          pack: spring-boot-3-readiness
+          out: emp-report
+
+      - name: Upload EMP report
+        uses: actions/upload-artifact@v4
+        with:
+          name: emp-readiness-report
+          path: emp-report</code></pre>
+
+    <h2>Consultant Follow-Up</h2>
+    <section class="grid">
+      <div class="card"><strong>First call</strong><p>Show readiness, applicability, critical findings, and next actions.</p></div>
+      <div class="card"><strong>Trust proof</strong><p>Use checkout-backed benchmark reports to explain what the tool proves.</p></div>
+      <div class="card"><strong>Failure handling</strong><p>Treat failed validation as scope evidence, not as embarrassment.</p></div>
+      <div class="card"><strong>Paid next work</strong><p>Offer validation environment repair, targeted remediation, then migration execution.</p></div>
+    </section>
+  </main>
+</body>
+</html>

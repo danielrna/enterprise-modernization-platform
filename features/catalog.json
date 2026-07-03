@@ -2,6 +2,64 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.5.2",
+      "title": "v0.5.2",
+      "date": "2026-07-03",
+      "summary": "External Quickstart Proof release for Phase 2 onboarding and consultant conversion.",
+      "features": [
+        {
+          "id": "external-quickstart-proof",
+          "type": "distribution",
+          "name": "External quickstart proof",
+          "audience": "Java consultants and external repository maintainers trying EMP for the first time",
+          "summary": "Make the first run Docker-first, explicit, and reproducible without reading project internals.",
+          "evidence": [
+            "Adds a dedicated `docs/quickstart.html` page with Docker, GitHub Action, output paths, pack selection, and evidence interpretation.",
+            "Rewrites the README first-run path around the published Docker image and expected `index.html` plus `report.json` outputs.",
+            "Explains passed, failed, timeout, and not-applicable evidence so validation failures remain commercially useful instead of looking like tool failure.",
+            "Links quickstart guidance from the homepage, generated documentation nav, Migration Hub, release notes, and Consultant Demo bundle.",
+            "Preserves the Phase 1 proof base at 75 public reports, 75 checkout-backed reports, and 17 passing validation reports."
+          ],
+          "links": [
+            {
+              "label": "Quickstart",
+              "href": "docs/quickstart.html"
+            },
+            {
+              "label": "Consultant demo",
+              "href": "docs/consultant-demo.html"
+            },
+            {
+              "label": "Benchmark index",
+              "href": "docs/benchmarks/index.html"
+            }
+          ]
+        },
+        {
+          "id": "consultant-conversion-path",
+          "type": "consultant",
+          "name": "Consultant conversion path",
+          "audience": "Consultants turning readiness evidence into paid validation and remediation work",
+          "summary": "Connect the public proof set to a concrete client conversation: run, read evidence, explain limits, sell next work.",
+          "evidence": [
+            "Adds quickstart assets to the downloadable Consultant Demo bundle.",
+            "Positions honest validation failures as scope evidence for environment repair, module narrowing, or migration preparation.",
+            "Keeps the no-backend story clear: static HTML and JSON reports are the deliverable."
+          ],
+          "links": [
+            {
+              "label": "Consultant demo",
+              "href": "docs/consultant-demo.html"
+            },
+            {
+              "label": "Trust Engine Knowledge Base",
+              "href": "docs/knowledge-base/trust-engine-evidence.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.5.1",
       "title": "v0.5.1",
       "date": "2026-07-03",

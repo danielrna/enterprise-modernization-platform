@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v0.5.2
+
+- Added a Docker-first external quickstart page with expected outputs, pack selection, GitHub Action usage, and evidence interpretation.
+- Reworked the README first-run path around the published Docker image so outside users can run a report without reading project internals.
+- Linked the quickstart into the homepage, generated docs navigation, Migration Hub, release notes, and Consultant Demo bundle.
+- Preserved the Phase 1 evidence base at 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.
+
 ## v0.5.1
 
 - Opened Phase 2 Distribution and Conversion Proof after completing Phase 1 Evidence Depth in `v0.5.0`.

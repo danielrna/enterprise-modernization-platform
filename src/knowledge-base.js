@@ -48,6 +48,7 @@ function renderIndex(articles) {
   return page('Knowledge Base', `
     <nav class="site-nav">
       <a href="../index.html">Home</a>
+      <a href="../quickstart.html">Quickstart</a>
       <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
       <a href="../packs/index.html">Packs</a>
@@ -83,6 +84,7 @@ function renderArticle(article) {
   return page(article.title, `
     <nav class="site-nav">
       <a href="../index.html">Home</a>
+      <a href="../quickstart.html">Quickstart</a>
       <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="../benchmarks/index.html">Benchmarks</a>
       <a href="../packs/index.html">Packs</a>

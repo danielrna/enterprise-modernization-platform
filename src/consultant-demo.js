@@ -48,12 +48,13 @@ export async function buildConsultantDemoBundle({
 
   const files = [
     'index.html',
+    'quickstart.html',
     'consultant-demo.html',
     'editions.html',
     'contact.html',
     'release-notes/index.html',
-    'release-notes/v0.5.1.html',
-    'release-notes/v0.5.1.md',
+    'release-notes/v0.5.2.html',
+    'release-notes/v0.5.2.md',
     'knowledge-base/index.html',
     'knowledge-base/hibernate-readiness.html',
     'knowledge-base/hibernate-validation-failures.html',
@@ -110,6 +111,7 @@ function renderConsultantDemo(demos) {
   return page('Consultant Demo', `
     <nav class="site-nav">
       <a href="index.html">Home</a>
+      <a href="quickstart.html">Quickstart</a>
       <a href="consultant-demo.html">Consultant Demo</a>
       <a href="benchmarks/index.html">Benchmarks</a>
       <a href="knowledge-base/index.html">Knowledge Base</a>
@@ -142,15 +144,16 @@ function renderConsultantDemo(demos) {
     </section>
 
     <h2>Run This For A Client</h2>
-    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.1 analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></pre>
-    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.1 transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></pre>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.2 analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></pre>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.2 transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></pre>
 
     <h2>Send These Artifacts</h2>
     <section class="artifact-grid">
       <a href="benchmarks/spring-javaconfig-sample/index.html"><strong>Green-path report</strong><span>Checkout-backed compile and test pass.</span></a>
       <a href="benchmarks/hibernate-helloworld/index.html"><strong>Partial validation report</strong><span>Compile passes, tests expose dependency gap.</span></a>
+      <a href="quickstart.html"><strong>External quickstart</strong><span>Docker and GitHub Action path for a new repository.</span></a>
       <a href="knowledge-base/hibernate-validation-failures.html"><strong>Failure-pattern guide</strong><span>Explains blockers without overselling.</span></a>
-      <a href="release-notes/v0.5.1.html"><strong>Release notes</strong><span>What changed in the current release.</span></a>
+      <a href="release-notes/v0.5.2.html"><strong>Release notes</strong><span>What changed in the current release.</span></a>
     </section>
 
     <h2>What To Say</h2>
@@ -185,7 +188,7 @@ ${reports}
 Client command:
 
 \`\`\`bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.1 analyze . --pack hibernate-readiness --out reports/hibernate-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.2 analyze . --pack hibernate-readiness --out reports/hibernate-readiness
 \`\`\`
 `;
 }

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const RELEASE_VERSION = 'v0.5.1';
+const RELEASE_VERSION = 'v0.5.2';
 const RELEASE_URL = `https://github.com/danielrna/enterprise-modernization-platform/releases/tag/${RELEASE_VERSION}`;
 const SAMPLE_REPORT_URL = `https://github.com/danielrna/enterprise-modernization-platform/releases/download/${RELEASE_VERSION}/emp-smoke-report.zip`;
 const DOCKER_IMAGE = `danielrna/enterprise-modernization-platform:${RELEASE_VERSION}`;
@@ -373,6 +373,7 @@ function summarizeBenchmarkIndex(reports) {
 function nav(prefix = '') {
   return `<nav class="site-nav">
       <a href="${prefix}index.html">Home</a>
+      <a href="${prefix}quickstart.html">Quickstart</a>
       <a href="${prefix}migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
       <a href="${prefix}benchmarks/index.html">Benchmarks</a>
       <a href="${prefix}packs/index.html">Packs</a>
