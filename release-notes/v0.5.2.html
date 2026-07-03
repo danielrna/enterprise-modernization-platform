@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>v0.4.1 Release Notes</title>
+  <title>v0.5.2 Release Notes</title>
   <style>
     :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; }
     * { box-sizing:border-box; }
@@ -47,23 +47,32 @@
       <a href="../contact.html">Contact</a>
     </nav>
     <section>
-      <h1>v0.4.1</h1>
-      <p>Benchmark report-size hygiene for large checkout-backed evidence reports.</p>
+      <h1>v0.5.2</h1>
+      <p>External Quickstart Proof release for Phase 2 onboarding and consultant conversion.</p>
     </section>
     <section class="summary">
       <div><strong>Date</strong><span>2026-07-03</span></div>
-      <div><strong>Features</strong><span>1</span></div>
-      <div><strong>Draft</strong><span><a href="v0.4.1.md">Markdown</a></span></div>
+      <div><strong>Features</strong><span>2</span></div>
+      <div><strong>Draft</strong><span><a href="v0.5.2.md">Markdown</a></span></div>
     </section>
     <section class="features">
       <article class="feature">
-        <small>quality</small>
-        <h2>Benchmark finding compaction</h2>
-        <p>Cap detailed finding arrays in benchmark report JSON while preserving full totals, summaries, examples, next actions, and validation evidence.</p>
-        <div class="meta"><strong>Audience</strong><span>Consultants and readers opening large public benchmark JSON reports</span></div>
+        <small>distribution</small>
+        <h2>External quickstart proof</h2>
+        <p>Make the first run Docker-first, explicit, and reproducible without reading project internals.</p>
+        <div class="meta"><strong>Audience</strong><span>Java consultants and external repository maintainers trying EMP for the first time</span></div>
         <h3>Evidence</h3>
-        <ul><li>Adds compact benchmark report JSON with <code>findingDetails</code> totals, production/test totals, detailed sample count, omitted count, and compaction policy.</li><li>Keeps <code>findingSummary</code> as the authoritative full-count summary for finding types, top modules, and examples.</li><li>Updates benchmark publishing, Migration Hub summaries, and MCP benchmark summaries to use full finding totals when reports are compacted.</li><li>Regenerates oversized published benchmark reports, reducing Baeldung Hibernate Tutorials from about 12 MB to about 260 KB while preserving 17,621 total findings.</li><li>Preserves the <code>v0.4.0</code> evidence counts: 75 public reports, 50 checkout-backed reports, and 17 passing validation reports.</li></ul>
-        <h3>Links</h3><div class="actions"><a href="../benchmarks/baeldung-hibernate-tutorials/index.html">Baeldung Hibernate Tutorials report</a><a href="../benchmarks/index.html">Benchmark index</a><a href="../migration-hub/hibernate-readiness.html">Hibernate Evidence Hub</a></div>
+        <ul><li>Adds a dedicated <code>docs/quickstart.html</code> page with Docker, GitHub Action, output paths, pack selection, and evidence interpretation.</li><li>Rewrites the README first-run path around the published Docker image and expected <code>index.html</code> plus <code>report.json</code> outputs.</li><li>Explains passed, failed, timeout, and not-applicable evidence so validation failures remain commercially useful instead of looking like tool failure.</li><li>Links quickstart guidance from the homepage, generated documentation nav, Migration Hub, release notes, and Consultant Demo bundle.</li><li>Preserves the Phase 1 proof base at 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.</li></ul>
+        <h3>Links</h3><div class="actions"><a href="../quickstart.html">Quickstart</a><a href="../consultant-demo.html">Consultant demo</a><a href="../benchmarks/index.html">Benchmark index</a></div>
+      </article>
+      <article class="feature">
+        <small>consultant</small>
+        <h2>Consultant conversion path</h2>
+        <p>Connect the public proof set to a concrete client conversation: run, read evidence, explain limits, sell next work.</p>
+        <div class="meta"><strong>Audience</strong><span>Consultants turning readiness evidence into paid validation and remediation work</span></div>
+        <h3>Evidence</h3>
+        <ul><li>Adds quickstart assets to the downloadable Consultant Demo bundle.</li><li>Positions honest validation failures as scope evidence for environment repair, module narrowing, or migration preparation.</li><li>Keeps the no-backend story clear: static HTML and JSON reports are the deliverable.</li></ul>
+        <h3>Links</h3><div class="actions"><a href="../consultant-demo.html">Consultant demo</a><a href="../knowledge-base/trust-engine-evidence.html">Trust Engine Knowledge Base</a></div>
       </article></section>
   </main></body>
 </html>
