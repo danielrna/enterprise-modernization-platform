@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Apache SkyWalking Readiness Report</h1>
-    <p class="meta">spring-boot-3-readiness · 2026-06-30T22:51:14.754Z · https://github.com/apache/skywalking</p>
+    <p class="meta">spring-boot-3-readiness · 2026-07-03T06:34:32.115Z · https://github.com/apache/skywalking</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -67,7 +67,7 @@
       <div class="panel decision-main bad">
         <strong>Do not use this pack for migration planning yet</strong>
         <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
-        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">126 Spring field injection patterns</span><span class="pill warning">1 Spring Boot version unknown</span></div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">11 Serializable type without serialVersionUID</span><span class="pill warning">4 JDK internal API usage</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
@@ -75,7 +75,7 @@
       </div>
       <div class="panel decision-list">
         <div><strong>Recommended next step</strong><div class="label">Run jakarta-readiness before using this report for planning.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
@@ -83,7 +83,7 @@
     <section class="grid">
       <div class="panel"><div class="metric">N/A</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">6200</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">2636</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
@@ -95,7 +95,7 @@
     <div class="panel notice bad">
       <strong>Pack applicable: no</strong> · confidence 90%
       <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 17 · Build: Maven · javax usage: yes · jakarta usage: no</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 1.8 · Build: Maven · javax usage: yes · jakarta usage: no</div>
       <div class="label">Recommended pack: jakarta-readiness</div>
     </div>
 
@@ -105,24 +105,26 @@
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill critical">critical</span></td><td>Select the applicable modernization pack</td><td>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Validate the Spring Boot 3 upgrade path</td><td>Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.</td><td>1</td><td><code>node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill critical">critical</span></td><td>Select the applicable modernization pack</td><td>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Validate the Spring Boot 3 upgrade path</td><td>Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.</td><td>1</td><td><code>node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></td></tr><tr><td><span class="pill info">info</span></td><td>Review JUnit 4 to JUnit 5 migration risks</td><td>JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.</td><td>2</td><td><code>node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/apache/skywalking
+      <strong>checkout</strong> · https://github.com/apache/skywalking
+      <div class="label">Checkout: benchmark-repos/apache-skywalking</div>
+      <div class="label">Git revision: 5884dc8bae32d7529b37e0ee788a107ed1348bf5</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/apache/skywalking benchmark-repos/apache-skywalking</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt; Updating files: 50% (2484/4929) Updating files: 51% (2514/4929) Updating files: 52% (2564/4929) Updating files: 53% (2613/4929) Updating files: 54% (2662/4929) Updating files: 55% (2711/4929) Updating files: 5...</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./mvnw -q -DskipTests compile</td><td>19.2 s</td><td>pace&gt;:[20,51] package org.apache.skywalking.apm.network.common.v3 does not exist [ERROR] ~/&lt;workspace&gt;:[23,19] cannot find symbol [ERROR] symbol: class Command [ERROR] location: class org.apache.skywalking.oap.server.network.trace.compon...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./mvnw -q test</td><td>16.5 s</td><td>pace&gt;:[20,51] package org.apache.skywalking.apm.network.common.v3 does not exist [ERROR] ~/&lt;workspace&gt;:[23,19] cannot find symbol [ERROR] symbol: class Command [ERROR] location: class org.apache.skywalking.oap.server.network.trace.compon...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">300</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">4</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">300</div><div class="label">Total findings</div></div>
+      <div class="panel"><div class="metric">49</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">77</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">8</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">126</div><div class="label">Total findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill info">info</span><br>Legacy date API usage</td><td>214</td><td>214</td><td>0</td><td>skywalking (214)</td><td>apache/skywalking/src/main/java/Example1.java:10 · Review date handling before migration validation.<br>apache/skywalking/src/main/java/Example2.java:11 · Review date handling before migration validation.<br>apache/skywalking/src/main/java/Example3.java:12 · Review date handling before migration validation.<br>apache/skywalking/src/main/java/Example4.java:13 · Review date handling before migration validation.<br>apache/skywalking/src/main/java/Example5.java:14 · Review date handling before migration validation.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring field injection patterns</td><td>126</td><td>126</td><td>0</td><td>skywalking (126)</td><td>apache/skywalking/src/main/java/Example1.java:10 · Prefer constructor injection in services touched by migration work.<br>apache/skywalking/src/main/java/Example2.java:11 · Prefer constructor injection in services touched by migration work.<br>apache/skywalking/src/main/java/Example3.java:12 · Prefer constructor injection in services touched by migration work.<br>apache/skywalking/src/main/java/Example4.java:13 · Prefer constructor injection in services touched by migration work.<br>apache/skywalking/src/main/java/Example5.java:14 · Prefer constructor injection in services touched by migration work.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>skywalking (1)</td><td>apache/skywalking/src/main/java/ExampleApplication.java:12 · Plan Jakarta migration before Spring Boot 3 execution.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot version unknown</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Declare Spring Boot version explicitly in Maven or Gradle metadata.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>103</td><td>28</td><td>75</td><td>server-core (20)<br>log-analyzer (17)<br>oal-rt (17)</td><td>oap-server/analyzer/hierarchy/src/main/java/org/apache/skywalking/oap/server/core/config/v2/compiler/HierarchyRuleClassGenerator.java:350 · Review Reflection usage before modernization.<br>oap-server/analyzer/log-analyzer/src/main/java/org/apache/skywalking/oap/log/analyzer/v2/compiler/LALBlockCodegen.java:513 · Review Reflection usage before modernization.<br>oap-server/analyzer/log-analyzer/src/main/java/org/apache/skywalking/oap/log/analyzer/v2/compiler/LALClassGenerator.java:590 · Review Reflection usage before modernization.<br>oap-server/analyzer/log-analyzer/src/main/java/org/apache/skywalking/oap/log/analyzer/v2/compiler/LALDefCodegen.java:119 · Review Reflection usage before modernization.<br>oap-server/analyzer/log-analyzer/src/main/java/org/apache/skywalking/oap/log/analyzer/v2/compiler/LALDefCodegen.java:219 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>Serializable type without serialVersionUID</td><td>11</td><td>11</td><td>0</td><td>apm-network (8)<br>cluster-etcd-plugin (1)<br>library-banyandb-client (1)</td><td>apm-protocol/apm-network/src/main/java/org/apache/skywalking/oap/server/network/trace/component/command/AsyncProfilerTaskCommand.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>apm-protocol/apm-network/src/main/java/org/apache/skywalking/oap/server/network/trace/component/command/ConfigurationDiscoveryCommand.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>apm-protocol/apm-network/src/main/java/org/apache/skywalking/oap/server/network/trace/component/command/ContinuousProfilingPolicyCommand.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>apm-protocol/apm-network/src/main/java/org/apache/skywalking/oap/server/network/trace/component/command/ContinuousProfilingReportCommand.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.<br>apm-protocol/apm-network/src/main/java/org/apache/skywalking/oap/server/network/trace/component/command/EBPFProfilingTaskCommand.java:1 · Add an explicit serialVersionUID before Java runtime migration validation.</td></tr><tr><td><span class="pill warning">warning</span><br>JDK internal API usage</td><td>4</td><td>4</td><td>0</td><td>server-testing (4)</td><td>oap-server/server-testing/src/main/java/org/apache/skywalking/oap/server/testing/util/ReflectUtil.java:27 · Review JDK internal API usage before modernization.<br>oap-server/server-testing/src/main/java/org/apache/skywalking/oap/server/testing/util/ReflectUtil.java:32 · Review JDK internal API usage before modernization.<br>oap-server/server-testing/src/main/java/org/apache/skywalking/oap/server/testing/util/ReflectUtil.java:36 · Review JDK internal API usage before modernization.<br>oap-server/server-testing/src/main/java/org/apache/skywalking/oap/server/testing/util/ReflectUtil.java:38 · Review JDK internal API usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>3</td><td>1</td><td>2</td><td>apm-checkstyle (1)<br>aws-firehose-receiver (1)<br>cluster-nacos-plugin (1)</td><td>apm-checkstyle/checkStyle.xml:33 · Review System.out logging before modernization.<br>oap-server/server-cluster-plugin/cluster-nacos-plugin/src/test/java/org/apache/skywalking/oap/server/cluster/plugin/nacos/ClusterModuleNacosProviderFunctionalIT.java:66 · Review System.out logging before modernization.<br>oap-server/server-receiver-plugin/aws-firehose-receiver/src/test/java/org/apache/skywalking/oap/server/receiver/aws/firehose/OtelMetricsConvertorTest.java:54 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JUnit 4 dependency</td><td>2</td><td>2</td><td>0</td><td>oap-server-bom (2)</td><td>oap-server-bom/pom.xml:278 · Review JUnit 4 dependency before modernization.<br>oap-server-bom/pom.xml:602 · Review JUnit 4 dependency before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>1</td><td>1</td><td>0</td><td>query-graphql-plugin (1)</td><td>oap-server/server-query-plugin/query-graphql-plugin/src/main/java/org/apache/skywalking/oap/query/graphql/resolver/MetadataQueryV2.java:23 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot version unknown</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Declare Spring Boot version explicitly in Maven or Gradle metadata.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

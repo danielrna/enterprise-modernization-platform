@@ -1,6 +1,6 @@
 import path from 'node:path';
 import fs from 'node:fs/promises';
-import { spawn } from 'node:child_process';
+import { execFileSync, spawn } from 'node:child_process';
 import os from 'node:os';
 import { analyzeProject } from './scanner.js';
 import { scoreReadiness } from './readiness.js';
@@ -405,9 +405,9 @@ function runCommand(args, options = {}) {
     const timeout = options.timeoutMs
       ? setTimeout(() => {
           timedOut = true;
-          killProcessTree(child, 'SIGTERM');
+          killProcessTree(child, 'SIGTERM', options.cwd);
           terminateTimeout = setTimeout(() => {
-            killProcessTree(child, 'SIGKILL');
+            killProcessTree(child, 'SIGKILL', options.cwd);
           }, TIMEOUT_TERMINATE_GRACE_MS);
           forceResolveTimeout = setTimeout(() => {
             finish(124);
@@ -425,11 +425,49 @@ function runCommand(args, options = {}) {
   });
 }
 
-function killProcessTree(child, signal) {
+function killProcessTree(child, signal, cwd = null) {
   if (!child.pid) return;
   try {
     process.kill(-child.pid, signal);
   } catch {
     child.kill(signal);
   }
+  killProcessesMatchingCwd(cwd, signal, child.pid);
+}
+
+function killProcessesMatchingCwd(cwd, signal, rootPid) {
+  if (!cwd) return;
+  const output = processListOutput();
+  if (!output) {
+    return;
+  }
+  for (const line of output.split('\n')) {
+    const match = line.match(/^\s*(\d+)\s+(\d+)\s+(.+)$/);
+    if (!match) continue;
+    const pid = Number(match[1]);
+    const ppid = Number(match[2]);
+    const command = match[3];
+    if (!Number.isInteger(pid) || pid === process.pid || pid === rootPid) continue;
+    if (ppid === rootPid || command.includes(cwd)) {
+      try {
+        process.kill(pid, signal);
+      } catch {
+        // The process may have exited between ps and kill.
+      }
+    }
+  }
+}
+
+function processListOutput() {
+  for (const args of [
+    ['-axo', 'pid=,ppid=,command='],
+    ['-o', 'pid=,ppid=,args=']
+  ]) {
+    try {
+      return execFileSync('ps', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    } catch {
+      // Some minimal containers expose only a subset of ps options.
+    }
+  }
+  return '';
 }

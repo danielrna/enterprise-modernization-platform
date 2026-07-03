@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Spring Cloud Netflix Readiness Report</h1>
-    <p class="meta">spring-boot-3-readiness · 2026-06-30T22:51:14.726Z · https://github.com/spring-cloud/spring-cloud-netflix</p>
+    <p class="meta">spring-boot-3-readiness · 2026-07-03T06:14:52.040Z · https://github.com/spring-cloud/spring-cloud-netflix</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -65,64 +65,66 @@
   <main>
     <section class="decision">
       <div class="panel decision-main bad">
-        <strong>Migration is blocked by critical readiness risks</strong>
-        <div>1 critical finding(s) should be resolved before execution planning.</div>
-        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">24 Spring field injection patterns</span><span class="pill warning">1 Spring Boot 2.7.x detected</span></div>
+        <strong>Do not use this pack for migration planning yet</strong>
+        <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">37 Spring field injection</span><span class="pill warning">8 JDK internal API usage</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
         </div>
       </div>
       <div class="panel decision-list">
-        <div><strong>Recommended next step</strong><div class="label">Triage critical findings, then capture compile and test validation evidence.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Recommended next step</strong><div class="label">Run jakarta-readiness before using this report for planning.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 35% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
 
     <section class="grid">
-      <div class="panel"><div class="metric">69%</div><div class="label">Overall readiness</div></div>
+      <div class="panel"><div class="metric">N/A</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">920</div><div class="label">Java files</div></div>
-      <div class="panel"><div class="metric">2.7.x</div><div class="label">Spring Boot</div></div>
+      <div class="panel"><div class="metric">134</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
     <h2>Executive Summary</h2>
-    <div class="panel">Migration risk requires focused cleanup</div>
+    <div class="panel">Pack mismatch: Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
 
 
     <h2>Pack Applicability</h2>
-    <div class="panel notice">
-      <strong>Pack applicable: yes</strong> · confidence 95%
-      <div>Spring Boot 2.x was detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
-      <div class="label">Detected: Spring Boot: 2.7.x · Java: 17 · Build: Maven · javax usage: yes · jakarta usage: no</div>
-
+    <div class="panel notice bad">
+      <strong>Pack applicable: no</strong> · confidence 90%
+      <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: unknown · Build: Maven · javax usage: yes · jakarta usage: yes</div>
+      <div class="label">Recommended pack: jakarta-readiness</div>
     </div>
 
 
-    <h2>Readiness</h2>
-    <div class="table-scroll"><table><thead><tr><th>Category</th><th>Score</th><th>Signal</th></tr></thead><tbody><tr><td>Java</td><td><strong>76%</strong></td><td><div class="bar"><span style="width:76%"></span></div></td></tr><tr><td>Spring</td><td><strong>40%</strong></td><td><div class="bar"><span style="width:40%"></span></div></td></tr><tr><td>Jakarta</td><td><strong>79%</strong></td><td><div class="bar"><span style="width:79%"></span></div></td></tr><tr><td>Build</td><td><strong>90%</strong></td><td><div class="bar"><span style="width:90%"></span></div></td></tr><tr><td>Security</td><td><strong>82%</strong></td><td><div class="bar"><span style="width:82%"></span></div></td></tr><tr><td>Architecture</td><td><strong>45%</strong></td><td><div class="bar"><span style="width:45%"></span></div></td></tr></tbody></table></div>
+      <h2>Readiness</h2>
+      <div class="panel notice bad">Readiness score was not computed because this pack is not applicable to the project.</div>
 
 
     <h2>Recommended Next Actions</h2>
-    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Validate the Spring Boot 3 upgrade path</td><td>Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.</td><td>1</td><td><code>node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Priority</th><th>Action</th><th>Reason</th><th>Evidence</th><th>Suggested Command</th></tr></thead><tbody><tr><td><span class="pill critical">critical</span></td><td>Plan javax to Jakarta namespace migration</td><td>Modern Spring Boot and Hibernate migration paths require Jakarta namespace readiness.</td><td>1</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill critical">critical</span></td><td>Select the applicable modernization pack</td><td>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</td><td>0</td><td><code>node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness</code></td></tr><tr><td><span class="pill warning">warning</span></td><td>Validate the Spring Boot 3 upgrade path</td><td>Spring Boot version evidence determines whether the Spring Boot 2 to 3 pack can support migration planning.</td><td>1</td><td><code>node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></td></tr></tbody></table></div>
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/spring-cloud/spring-cloud-netflix
+      <strong>checkout</strong> · https://github.com/spring-cloud/spring-cloud-netflix
+      <div class="label">Checkout: benchmark-repos/spring-cloud-netflix</div>
+      <div class="label">Git revision: 68b32f5b87b43858cfcd8489ab9a76ec89f6e15a</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/spring-cloud/spring-cloud-netflix benchmark-repos/spring-cloud-netflix</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt;</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 35% · 1 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill passed">passed</span></td><td>./mvnw -q -DskipTests compile</td><td>116.5 s</td><td>e WARNING: Use of the three-letter time zone ID &quot;JST&quot; is deprecated and it will be removed in a future release WARNING: Use of the three-letter time zone ID &quot;MIT&quot; is deprecated and it will be removed in a future release WARNING: Use of t...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./mvnw -q test</td><td>120.1 s</td><td>___| .__|_| |_|_| |_\__, | / / / / =========|_|==============|___/=/_/_/_/ :: Spring Boot :: (v4.0.7) 2026-07-03T08:18:44.910+02:00 INFO 69308 --- [ main] o.a.maven.surefire.booter.ForkedBooter : Starting ForkedBooter v3.5.6 using Java 2...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">64</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">4</div><div class="label">Finding types</div></div>
-      <div class="panel"><div class="metric">64</div><div class="label">Total findings</div></div>
+      <div class="panel"><div class="metric">22</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">28</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">6</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">50</div><div class="label">Total findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill info">info</span><br>Legacy date API usage</td><td>38</td><td>38</td><td>0</td><td>netflix (38)</td><td>spring/cloud/netflix/src/main/java/Example1.java:10 · Review date handling before migration validation.<br>spring/cloud/netflix/src/main/java/Example2.java:11 · Review date handling before migration validation.<br>spring/cloud/netflix/src/main/java/Example3.java:12 · Review date handling before migration validation.<br>spring/cloud/netflix/src/main/java/Example4.java:13 · Review date handling before migration validation.<br>spring/cloud/netflix/src/main/java/Example5.java:14 · Review date handling before migration validation.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring field injection patterns</td><td>24</td><td>24</td><td>0</td><td>netflix (24)</td><td>spring/cloud/netflix/src/main/java/Example1.java:10 · Prefer constructor injection in services touched by migration work.<br>spring/cloud/netflix/src/main/java/Example2.java:11 · Prefer constructor injection in services touched by migration work.<br>spring/cloud/netflix/src/main/java/Example3.java:12 · Prefer constructor injection in services touched by migration work.<br>spring/cloud/netflix/src/main/java/Example4.java:13 · Prefer constructor injection in services touched by migration work.<br>spring/cloud/netflix/src/main/java/Example5.java:14 · Prefer constructor injection in services touched by migration work.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>netflix (1)</td><td>spring/cloud/netflix/src/main/java/ExampleApplication.java:12 · Plan Jakarta migration before Spring Boot 3 execution.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot 2.7.x detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Run OpenRewrite Boot 3 recipes in dry-run mode.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill warning">warning</span><br>Spring field injection</td><td>37</td><td>12</td><td>25</td><td>spring-cloud-netflix-eureka-server (19)<br>spring-cloud-netflix-eureka-client (18)</td><td>spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaClientAutoConfiguration.java:258 · Review Spring field injection before modernization.<br>spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaClientAutoConfiguration.java:297 · Review Spring field injection before modernization.<br>spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaInstanceConfigBean.java:296 · Review Spring field injection before modernization.<br>spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/config/EurekaClientConfigServerAutoConfiguration.java:45 · Review Spring field injection before modernization.<br>spring-cloud-netflix-eureka-client/src/test/java/org/springframework/cloud/netflix/eureka/EurekaClientAutoConfigurationRandomPortTests.java:37 · Review Spring field injection before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JDK internal API usage</td><td>8</td><td>7</td><td>1</td><td>spring-cloud-starter-netflix-eureka-client (6)<br>spring-cloud-netflix-eureka-client (2)</td><td>spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaClientAutoConfiguration.java:166 · Review JDK internal API usage before modernization.<br>spring-cloud-netflix-eureka-client/src/test/java/org/springframework/cloud/netflix/eureka/EurekaClientAutoConfigurationTests.java:120 · Review JDK internal API usage before modernization.<br>spring-cloud-starter-netflix-eureka-client/pom.xml:27 · Review JDK internal API usage before modernization.<br>spring-cloud-starter-netflix-eureka-client/pom.xml:31 · Review JDK internal API usage before modernization.<br>spring-cloud-starter-netflix-eureka-client/pom.xml:35 · Review JDK internal API usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>2</td><td>1</td><td>1</td><td>spring-cloud-netflix-eureka-client-tls-tests (1)<br>spring-cloud-netflix-eureka-server (1)</td><td>spring-cloud-netflix-eureka-client-tls-tests/src/test/java/org/springframework/cloud/netflix/eureka/KeyTool.java:26 · Review java.util.Date usage before modernization.<br>spring-cloud-netflix-eureka-server/src/main/java/org/springframework/cloud/netflix/eureka/server/EurekaController.java:21 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot version unknown</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Declare Spring Boot version explicitly in Maven or Gradle metadata.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>1</td><td>0</td><td>1</td><td>spring-cloud-netflix-eureka-client (1)</td><td>spring-cloud-netflix-eureka-client/src/test/java/org/springframework/cloud/netflix/eureka/config/EurekaConfigServerBootstrapConfigurationClientTests.java:59 · Review System.out logging before modernization.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

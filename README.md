@@ -8,9 +8,9 @@ The product is not a Java migration tool. The product is confidence that an appl
 
 ## Try In 5 Minutes
 
-Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.4.3
+Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.5.0
 
-Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.4.3/emp-smoke-report.zip
+Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.5.0/emp-smoke-report.zip
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform/migration-hub/spring-boot-2-to-3.html
 
@@ -54,7 +54,7 @@ reports/readiness/index.html
 Run the published Docker image:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.4.3 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.0 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
 ```
 
 Or build the CLI image locally:
@@ -93,7 +93,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.4.3
+        uses: danielrna/enterprise-modernization-platform@v0.5.0
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -149,7 +149,7 @@ Use the platform to turn a mandatory upgrade into a client-ready evidence report
 4. Validate compilation and tests.
 5. Sell migration confidence, not a generic migration script.
 
-The public validation set now proves the reference flow on 45 real checkouts, including real Spring Boot applications, Hibernate ORM evidence, Spring Security evidence, and JUnit migration evidence outside Spring Guides. The validated set includes Spring Boot `2.6.2`, `2.6.3`, and `2.7.6` projects plus passing, failing, Java compatibility, and timeout validation evidence.
+The public validation set now proves the reference flow on 75 real checkouts, including real Spring Boot applications, Hibernate ORM evidence, Spring Security evidence, JUnit migration evidence, and heavyweight platform repositories outside Spring Guides. The validated set includes Spring Boot `2.6.2`, `2.6.3`, and `2.7.6` projects plus passing, failing, Java compatibility, and timeout validation evidence.
 
 ## Editions
 
@@ -249,7 +249,7 @@ Current automated coverage verifies:
 
 ## Current Status
 
-Implemented through v0.4.3:
+Implemented through v0.5.0:
 
 - CLI, Docker, MCP, and GitHub Action interfaces.
 - Spring Boot 2 to 3 readiness and transformation workflow.
@@ -261,7 +261,7 @@ Implemented through v0.4.3:
 - Enterprise rules.
 - Trust evidence and static HTML/JSON reports.
 - 49 Spring Boot benchmark reports plus Jakarta readiness, 10 Hibernate readiness benchmark reports, 5 Spring Security readiness benchmark reports, and 10 JUnit readiness benchmark reports.
-- Validation status in benchmark reports and the Migration Hub, including 55 checkout-backed reports and 17 reports with passing compile/test evidence.
+- Validation status in benchmark reports and the Migration Hub, including 75 checkout-backed reports and 17 reports with passing compile/test evidence.
 - Consultant Demo page and downloadable consultant demo bundle.
 - Spring Boot 2 to 3 Migration Hub published through GitHub Pages.
 

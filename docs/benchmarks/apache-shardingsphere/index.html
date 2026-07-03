@@ -54,7 +54,7 @@
 <body>
   <header>
     <h1>Apache ShardingSphere Readiness Report</h1>
-    <p class="meta">spring-boot-3-readiness · 2026-06-30T22:51:14.766Z · https://github.com/apache/shardingsphere</p>
+    <p class="meta">spring-boot-3-readiness · 2026-07-03T06:51:17.555Z · https://github.com/apache/shardingsphere</p>
     <nav class="report-nav">
       <a href="../../index.html">Home</a>
       <a href="../index.html">Benchmarks</a>
@@ -67,7 +67,7 @@
       <div class="panel decision-main bad">
         <strong>Do not use this pack for migration planning yet</strong>
         <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
-        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">118 Spring field injection patterns</span><span class="pill warning">1 Spring Boot version unknown</span></div>
+        <div class="risk-list"><span class="pill critical">1 javax namespace usage detected</span><span class="pill warning">4 JDK internal API usage</span><span class="pill warning">1 Spring Boot version unknown</span></div>
         <div class="actions">
           <a class="primary" href="report.json">Open JSON evidence</a>
           <a href="../../migration-hub/spring-boot-2-to-3.html">Read migration guide</a>
@@ -75,7 +75,7 @@
       </div>
       <div class="panel decision-list">
         <div><strong>Recommended next step</strong><div class="label">Run jakarta-readiness before using this report for planning.</div></div>
-        <div><strong>Validation state</strong><div class="label">not_requested at 0% confidence.</div></div>
+        <div><strong>Validation state</strong><div class="label">failed at 25% confidence.</div></div>
         <div><strong>Evidence package</strong><div class="label">Static HTML and JSON report, shareable without a backend.</div></div>
       </div>
     </section>
@@ -83,7 +83,7 @@
     <section class="grid">
       <div class="panel"><div class="metric">N/A</div><div class="label">Overall readiness</div></div>
       <div class="panel"><div class="metric">1</div><div class="label">Critical findings</div></div>
-      <div class="panel"><div class="metric">7400</div><div class="label">Java files</div></div>
+      <div class="panel"><div class="metric">9652</div><div class="label">Java files</div></div>
       <div class="panel"><div class="metric">unknown</div><div class="label">Spring Boot</div></div>
     </section>
 
@@ -95,7 +95,7 @@
     <div class="panel notice bad">
       <strong>Pack applicable: no</strong> · confidence 90%
       <div>Spring Boot 2.x was not detected. This pack targets Spring Boot 2.x to 3.x migrations.</div>
-      <div class="label">Detected: Spring Boot: unknown · Java: 17 · Build: Maven · javax usage: yes · jakarta usage: no</div>
+      <div class="label">Detected: Spring Boot: unknown · Java: 1.8 · Build: Maven · javax usage: yes · jakarta usage: yes</div>
       <div class="label">Recommended pack: jakarta-readiness</div>
     </div>
 
@@ -109,20 +109,22 @@
 
 
     <h2>Evidence</h2>
-    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Evidence</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Build metadata</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Boot version detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>Jakarta namespace readiness</td><td><span class="pill failed">failed</span></td><td></td></tr><tr><td>Hibernate usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Spring Security usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 4 usage detection</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>JUnit 5 usage detection</td><td><span class="pill passed">passed</span></td><td></td></tr><tr><td>Static source checks</td><td><span class="pill warning">warning</span></td><td></td></tr><tr><td>OpenRewrite dry-run readiness</td><td><span class="pill pending">pending</span></td><td>OpenRewrite execution is available through transform --engine openrewrite when Maven or Gradle execution is available.</td></tr></tbody></table></div>
 
 
     <h2>Benchmark Evidence</h2>
     <div class="panel">
-      <strong>catalog</strong> · https://github.com/apache/shardingsphere
+      <strong>checkout</strong> · https://github.com/apache/shardingsphere
+      <div class="label">Checkout: benchmark-repos/apache-shardingsphere</div>
+      <div class="label">Git revision: c9b29c87417b4a3761682bb12836dc11de23b3c9</div>
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td colspan="3">No external command was needed for this benchmark source.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Command</th><th>Status</th><th>Output</th></tr></thead><tbody><tr><td>git clone --depth 1 https://github.com/apache/shardingsphere benchmark-repos/apache-shardingsphere</td><td><span class="pill passed">passed</span></td><td>Cloning into &#039;~/&lt;workspace&gt; Updating files: 7% (1231/17473) Updating files: 8% (1398/17473) Updating files: 9% (1573/17473) Updating files: 10% (1748/17473) Updating files: 11% (1923/17473) Updating files: 12% (2097/17473) Updating files...</td></tr></tbody></table></div>
 
     <h2>Benchmark Validation</h2>
     <div class="panel">
-      <strong>not_requested</strong> · confidence 0% · Validation was not requested.
+      <strong>failed</strong> · confidence 25% · 2 validation check(s) failed.
     </div>
-    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td colspan="5">Validation was not requested.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Check</th><th>Status</th><th>Command</th><th>Duration</th><th>Log Excerpt</th></tr></thead><tbody><tr><td>Compilation</td><td><span class="pill failed">failed</span></td><td>./mvnw -q -DskipTests compile</td><td>120.2 s</td><td>WARNING: A terminally deprecated method in sun.misc.Unsafe has been called WARNING: sun.misc.Unsafe::objectFieldOffset has been called by lombok.permit.Permit WARNING: Please consider reporting this to the maintainers of class lombok.per...</td></tr><tr><td>Tests</td><td><span class="pill failed">failed</span></td><td>./mvnw -q test</td><td>120.2 s</td><td>ssInjector$UsingUnsafe$Dispatcher$CreationAction (file:~/.m2/repository/net/bytebuddy/byte-buddy/1.18.8/byte-buddy-1.18.8.jar) WARNING: Please consider reporting this to the maintainers of class net.bytebuddy.dynamic.loading.ClassInjecto...</td></tr></tbody></table></div>
 
 
 
@@ -131,12 +133,12 @@
 
     <h2>Finding Summary</h2>
     <section class="grid">
-      <div class="panel"><div class="metric">300</div><div class="label">Production code findings</div></div>
-      <div class="panel"><div class="metric">0</div><div class="label">Test code findings</div></div>
-      <div class="panel"><div class="metric">4</div><div class="label">Finding types</div></div>
+      <div class="panel"><div class="metric">41</div><div class="label">Production code findings</div></div>
+      <div class="panel"><div class="metric">259</div><div class="label">Test code findings</div></div>
+      <div class="panel"><div class="metric">6</div><div class="label">Finding types</div></div>
       <div class="panel"><div class="metric">300</div><div class="label">Total findings</div></div>
     </section>
-    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill info">info</span><br>Legacy date API usage</td><td>188</td><td>188</td><td>0</td><td>shardingsphere (188)</td><td>apache/shardingsphere/src/main/java/Example1.java:10 · Review date handling before migration validation.<br>apache/shardingsphere/src/main/java/Example2.java:11 · Review date handling before migration validation.<br>apache/shardingsphere/src/main/java/Example3.java:12 · Review date handling before migration validation.<br>apache/shardingsphere/src/main/java/Example4.java:13 · Review date handling before migration validation.<br>apache/shardingsphere/src/main/java/Example5.java:14 · Review date handling before migration validation.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring field injection patterns</td><td>118</td><td>118</td><td>0</td><td>shardingsphere (118)</td><td>apache/shardingsphere/src/main/java/Example1.java:10 · Prefer constructor injection in services touched by migration work.<br>apache/shardingsphere/src/main/java/Example2.java:11 · Prefer constructor injection in services touched by migration work.<br>apache/shardingsphere/src/main/java/Example3.java:12 · Prefer constructor injection in services touched by migration work.<br>apache/shardingsphere/src/main/java/Example4.java:13 · Prefer constructor injection in services touched by migration work.<br>apache/shardingsphere/src/main/java/Example5.java:14 · Prefer constructor injection in services touched by migration work.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>shardingsphere (1)</td><td>apache/shardingsphere/src/main/java/ExampleApplication.java:12 · Plan Jakarta migration before Spring Boot 3 execution.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot version unknown</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Declare Spring Boot version explicitly in Maven or Gradle metadata.</td></tr></tbody></table></div>
+    <div class="table-scroll"><table><thead><tr><th>Type</th><th>Total</th><th>Production</th><th>Test</th><th>Top modules</th><th>Examples</th></tr></thead><tbody><tr><td><span class="pill info">info</span><br>Reflection usage</td><td>512</td><td>58</td><td>454</td><td>core (198)<br>mysql (50)<br>postgresql (42)</td><td>agent/core/src/main/java/org/apache/shardingsphere/agent/core/advisor/executor/AdviceFactory.java:52 · Review Reflection usage before modernization.<br>agent/core/src/main/java/org/apache/shardingsphere/agent/core/advisor/executor/AdviceFactory.java:52 · Review Reflection usage before modernization.<br>agent/core/src/main/java/org/apache/shardingsphere/agent/core/builder/interceptor/impl/MethodAdvisorBuilderInterceptor.java:52 · Review Reflection usage before modernization.<br>agent/core/src/test/java/org/apache/shardingsphere/agent/core/advisor/config/yaml/swapper/YamlAdvisorConfigurationSwapperTest.java:49 · Review Reflection usage before modernization.<br>agent/core/src/test/java/org/apache/shardingsphere/agent/core/advisor/config/yaml/swapper/YamlPointcutConfigurationSwapperTest.java:48 · Review Reflection usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>java.util.Date usage</td><td>27</td><td>12</td><td>15</td><td>core (17)<br>merge (3)<br>executor (2)</td><td>database/protocol/dialect/firebird/src/main/java/org/apache/shardingsphere/database/protocol/firebird/packet/command/query/statement/execute/protocol/FirebirdDateBinaryProtocolValue.java:25 · Review java.util.Date usage before modernization.<br>database/protocol/dialect/firebird/src/main/java/org/apache/shardingsphere/database/protocol/firebird/packet/command/query/statement/execute/protocol/FirebirdTimestampBinaryProtocolValue.java:25 · Review java.util.Date usage before modernization.<br>database/protocol/dialect/mysql/src/main/java/org/apache/shardingsphere/database/protocol/mysql/packet/binlog/row/column/value/time/MySQLDatetimeBinlogProtocolValue.java:27 · Review java.util.Date usage before modernization.<br>database/protocol/dialect/mysql/src/main/java/org/apache/shardingsphere/database/protocol/mysql/packet/command/query/binary/execute/protocol/MySQLDateBinaryProtocolValue.java:28 · Review java.util.Date usage before modernization.<br>features/encrypt/core/src/test/java/org/apache/shardingsphere/encrypt/merge/dql/EncryptMergedResultTest.java:51 · Review java.util.Date usage before modernization.</td></tr><tr><td><span class="pill info">info</span><br>System.out logging</td><td>7</td><td>7</td><td>0</td><td>shardingsphere-parser-example (6)<br>common (1)</td><td>examples/shardingsphere-parser-example/src/main/java/org/apache/shardingsphere/example/parser/mysql/statement/MySQLParserStatementExample.java:62 · Review System.out logging before modernization.<br>examples/shardingsphere-parser-example/src/main/java/org/apache/shardingsphere/example/parser/opengauss/statement/OpenGaussParserStatementExample.java:60 · Review System.out logging before modernization.<br>examples/shardingsphere-parser-example/src/main/java/org/apache/shardingsphere/example/parser/oracle/statement/OracleParserStatementExample.java:60 · Review System.out logging before modernization.<br>examples/shardingsphere-parser-example/src/main/java/org/apache/shardingsphere/example/parser/postgresql/statement/PostgreSQLParserStatementExample.java:60 · Review System.out logging before modernization.<br>examples/shardingsphere-parser-example/src/main/java/org/apache/shardingsphere/example/parser/sql92/statement/SQL92ParserStatementExample.java:60 · Review System.out logging before modernization.</td></tr><tr><td><span class="pill warning">warning</span><br>JDK internal API usage</td><td>4</td><td>0</td><td>4</td><td>mcp (4)</td><td>test/e2e/mcp/src/test/java/org/apache/shardingsphere/test/e2e/mcp/llm/conversation/client/LLMChatModelClientTest.java:21 · Review JDK internal API usage before modernization.<br>test/e2e/mcp/src/test/java/org/apache/shardingsphere/test/e2e/mcp/llm/conversation/client/LLMChatModelClientTest.java:22 · Review JDK internal API usage before modernization.<br>test/e2e/mcp/src/test/java/org/apache/shardingsphere/test/e2e/mcp/llm/fixture/LLMRuntimeSupportTest.java:20 · Review JDK internal API usage before modernization.<br>test/e2e/mcp/src/test/java/org/apache/shardingsphere/test/e2e/mcp/llm/fixture/LLMRuntimeSupportTest.java:21 · Review JDK internal API usage before modernization.</td></tr><tr><td><span class="pill critical">critical</span><br>javax namespace usage detected</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.</td></tr><tr><td><span class="pill warning">warning</span><br>Spring Boot version unknown</td><td>1</td><td>1</td><td>0</td><td>project (1)</td><td>Project metadata · Declare Spring Boot version explicitly in Maven or Gradle metadata.</td></tr></tbody></table></div>
   </main>
 </body>
 </html>

@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v0.5.0
+
+- Completed Phase 1 Evidence Depth by promoting the final 20 catalog-only benchmark reports to checkout-backed evidence.
+- Raised benchmark evidence to 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.
+- Captured honest validation failure and timeout evidence for heavyweight Spring, platform, workflow, identity, and IoT repositories.
+- Hardened validation timeout cleanup further by terminating checkout-working-directory child processes such as Maven Surefire and Gradle workers after timeout evidence is captured.
+
 ## v0.4.3
 
 - Hardened benchmark validation timeout handling so Maven and Gradle child processes are escalated from `SIGTERM` to `SIGKILL` and timed-out commands force-resolve instead of hanging on inherited stdio.

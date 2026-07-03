@@ -2,6 +2,48 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.5.0",
+      "title": "v0.5.0",
+      "date": "2026-07-03",
+      "summary": "Phase 1 Evidence Depth completion with every public benchmark report backed by a real checkout.",
+      "features": [
+        {
+          "id": "phase-1-evidence-depth-complete",
+          "type": "evidence",
+          "name": "Phase 1 evidence depth complete",
+          "audience": "Consultants and maintainers who need the public proof set to be hard to dismiss",
+          "summary": "Promote the remaining catalog-only benchmark reports to checkout-backed evidence and preserve honest validation outcomes for heavyweight repositories.",
+          "evidence": [
+            "Raises current evidence to 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.",
+            "Promotes Flowable Engine, Spring Cloud Stream, Spring Cloud Contract, Spring Cloud Netflix, and Spring Cloud Kubernetes to checkout-backed reports.",
+            "Promotes Broadleaf Commerce, OpenMRS Core, Kill Bill, Camunda BPM Platform, and Activiti to checkout-backed reports.",
+            "Promotes Apache Fineract, Netflix Conductor, Spring Cloud Data Flow, Alibaba Nacos, and Apache SkyWalking to checkout-backed reports.",
+            "Promotes Apache ShardingSphere, Baeldung Tutorials, Keycloak, Keycloak Jakarta Readiness, and ThingsBoard to checkout-backed reports.",
+            "Keeps validation evidence honest with captured compile/test failures, timeouts, signal-derived exits, and checkout revisions instead of converting failures into catalog-only examples.",
+            "Extends timeout cleanup so Maven Surefire, Gradle workers, and other checkout-working-directory child processes are terminated after timeout evidence is captured."
+          ],
+          "links": [
+            {
+              "label": "Benchmark index",
+              "href": "docs/benchmarks/index.html"
+            },
+            {
+              "label": "Apache ShardingSphere report",
+              "href": "docs/benchmarks/apache-shardingsphere/index.html"
+            },
+            {
+              "label": "Keycloak report",
+              "href": "docs/benchmarks/keycloak/index.html"
+            },
+            {
+              "label": "ThingsBoard report",
+              "href": "docs/benchmarks/thingsboard/index.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.4.3",
       "title": "v0.4.3",
       "date": "2026-07-03",

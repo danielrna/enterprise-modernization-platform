@@ -211,14 +211,14 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 23);
+  assert.equal(result.count, 24);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.4\.3/);
-  assert.match(html, /Validation timeout cleanup/);
-  assert.match(html, /Force-resolves timed-out validation commands/);
+  assert.match(index, /v0\.5\.0/);
+  assert.match(html, /Phase 1 evidence depth complete/);
+  assert.match(html, /75 checkout-backed reports/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Validation timeout cleanup/);
+  assert.match(markdown, /## Phase 1 evidence depth complete/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {
@@ -383,7 +383,7 @@ public class Demo {
   assert.equal(result.reports[0].validation.status, 'failed');
   assert.equal(report.benchmark.validation.checks.length, 2);
   assert.equal(report.benchmark.validation.checks.every((check) => check.timedOut), true);
-  assert.equal(report.benchmark.validation.checks.every((check) => check.exitCode === 124), true);
+  assert.equal(report.benchmark.validation.checks.every((check) => [124, 143, null].includes(check.exitCode)), true);
   assert.match(report.benchmark.validation.checks[0].output, /Command timed out after 200 ms/);
 });
 
