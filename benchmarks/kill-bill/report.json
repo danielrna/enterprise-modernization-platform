@@ -1,9 +1,9 @@
 {
   "schemaVersion": "emp.report.v1",
-  "generatedAt": "2026-06-30T17:20:42.244Z",
+  "generatedAt": "2026-07-03T06:27:57.009Z",
   "project": {
     "name": "Kill Bill",
-    "root": "https://github.com/killbill/killbill",
+    "root": "benchmark-repos/kill-bill",
     "source": "https://github.com/killbill/killbill",
     "buildTools": [
       "Maven"
@@ -27,20 +27,11 @@
     "status": "not_applicable",
     "counts": {
       "critical": 1,
-      "warning": 1,
-      "info": 61
+      "warning": 92,
+      "info": 83
     }
   },
   "productionFindings": [
-    {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "server/src/main/java/org/killbill/billing/server/listeners/KillbillGuiceListener.java",
-      "line": 12,
-      "scope": "production"
-    },
     {
       "code": "spring-boot-version-unknown",
       "severity": "warning",
@@ -51,593 +42,1595 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 83,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 130,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/DefaultCallContext.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/DefaultCallContext.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/DefaultCallContext.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/DefaultCallContext.java",
+      "line": 62,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/InternalCallContext.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/InternalCallContext.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/InternalCallContext.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/InternalCallContext.java",
+      "line": 130,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/main/java/org/killbill/billing/beatrix/extbus/BeatrixListener.java",
+      "line": 72,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/main/java/org/killbill/billing/beatrix/extbus/BeatrixListener.java",
+      "line": 110,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example1.java",
-      "line": 10,
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/CatalogSafetyInitializer.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/CatalogSafetyInitializer.java",
+      "line": 137,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example6.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example7.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example8.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example10.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example12.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultMutableStaticCatalog.java",
       "line": 21,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example16.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example17.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example18.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example19.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example20.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultPlan.java",
       "line": 29,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example21.java",
-      "line": 30,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultVersionedCatalog.java",
+      "line": 29,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example26.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/LoadCatalog.java",
       "line": 35,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example27.java",
-      "line": 36,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/StandaloneCatalog.java",
+      "line": 28,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example28.java",
-      "line": 37,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example29.java",
-      "line": 38,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example30.java",
-      "line": 39,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example31.java",
-      "line": 40,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example32.java",
-      "line": 41,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example33.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example34.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example35.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example36.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example37.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example38.java",
-      "line": 47,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example39.java",
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/DefaultEntitlementService.java",
       "line": 48,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example40.java",
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/DefaultEntitlementService.java",
+      "line": 107,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/api/DefaultEntitlementContext.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/api/DefaultEntitlementContext.java",
       "line": 49,
       "scope": "production"
     },
     {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/api/DefaultEntitlementContext.java",
+      "line": 87,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/api/DefaultEntitlementContext.java",
+      "line": 177,
+      "scope": "production"
+    },
+    {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example41.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/dao/BlockingStateSqlDao.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/dao/DefaultBlockingStateDao.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 109,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 129,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 150,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 174,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 202,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 219,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 292,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 301,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 321,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 340,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceTagHandler.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceTagHandler.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/dao/InvoicePaymentSqlDao.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/dao/InvoiceTrackingSqlDao.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/json/CatalogJson.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/mappers/RuntimeExceptionMapper.java",
       "line": 50,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example42.java",
-      "line": 51,
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/resources/TenantResource.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/resources/TenantResource.java",
+      "line": 153,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/util/Context.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/util/Context.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/util/Context.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "overdue/src/main/java/org/killbill/billing/overdue/listener/OverdueListener.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "overdue/src/main/java/org/killbill/billing/overdue/listener/OverdueListener.java",
+      "line": 165,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "overdue/src/main/java/org/killbill/billing/overdue/notification/DefaultOverdueNotifierBase.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "overdue/src/main/java/org/killbill/billing/overdue/notification/DefaultOverdueNotifierBase.java",
+      "line": 121,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/bus/PaymentBusEventHandler.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/bus/PaymentBusEventHandler.java",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/core/janitor/IncompletePaymentAttemptTask.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/core/janitor/IncompletePaymentAttemptTask.java",
+      "line": 217,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/core/janitor/IncompletePaymentTransactionTask.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/core/janitor/IncompletePaymentTransactionTask.java",
+      "line": 201,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example43.java",
-      "line": 52,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/DefaultPaymentDao.java",
+      "line": 25,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example44.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/PaymentAttemptSqlDao.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/PaymentSqlDao.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/TransactionSqlDao.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/invoice/PaymentTagHandler.java",
+      "line": 33,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/invoice/PaymentTagHandler.java",
+      "line": 74,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/retry/BaseRetryService.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/retry/BaseRetryService.java",
+      "line": 80,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/retry/BaseRetryService.java",
+      "line": 160,
+      "scope": "production"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "pom.xml",
+      "line": 94,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "profiles/killbill/src/main/java/org/killbill/billing/server/listeners/CleanupListener.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "profiles/killbill/src/main/java/org/killbill/billing/server/listeners/CleanupListener.java",
       "line": 53,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example45.java",
-      "line": 54,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/api/user/DefaultSubscriptionBillingEvent.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/core/DefaultSubscriptionBaseService.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/core/DefaultSubscriptionBaseService.java",
+      "line": 128,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example46.java",
-      "line": 55,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/BundleSqlDao.java",
+      "line": 22,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example47.java",
-      "line": 56,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/DefaultSubscriptionDao.java",
+      "line": 25,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example48.java",
-      "line": 57,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/SubscriptionEventSqlDao.java",
+      "line": 21,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example49.java",
-      "line": 58,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/SubscriptionSqlDao.java",
+      "line": 20,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example50.java",
-      "line": 59,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "usage/src/main/java/org/killbill/billing/usage/dao/RolledUpUsageSqlDao.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/callcontext/CallContextFactory.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/callcontext/DefaultCallContextFactory.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/callcontext/InternalCallContextFactory.java",
+      "line": 218,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/callcontext/InternalCallContextFactory.java",
+      "line": 237,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/callcontext/InternalCallContextFactory.java",
+      "line": 287,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example51.java",
-      "line": 60,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/catalog/CatalogDateHelper.java",
+      "line": 20,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example52.java",
-      "line": 61,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/dao/BinderBase.java",
+      "line": 19,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example53.java",
-      "line": 62,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/dao/MapperBase.java",
+      "line": 22,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "reflection-usage",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example54.java",
-      "line": 63,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example55.java",
-      "line": 64,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example56.java",
-      "line": 65,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example57.java",
-      "line": 66,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example58.java",
-      "line": 67,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example59.java",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/entity/dao/EntityDaoBase.java",
       "line": 68,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "reflection-usage",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example60.java",
-      "line": 69,
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/glue/EhcacheShiroManagerProvider.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/metrics/JCacheGaugeFactory.java",
+      "line": 83,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example61.java",
-      "line": 70,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/nodes/dao/DefaultNodeInfoDao.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/nodes/dao/NodeInfoSqlDao.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/optimizer/BusDispatcherOptimizerOn.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/optimizer/BusDispatcherOptimizerOn.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/optimizer/BusOptimizerOn.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/AnnotationHierarchicalResolver.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/PermissionAnnotationMethodInterceptor.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/PermissionAnnotationMethodInterceptor.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/api/DefaultSecurityApi.java",
+      "line": 319,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/shiro/dao/UserRolesSqlDao.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/shiro/dao/UsersSqlDao.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/shiro/realm/KillBillAuth0Realm.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/validation/ValidationManager.java",
+      "line": 83,
       "scope": "production"
     }
   ],
-  "testFindings": [],
+  "testFindings": [
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "account/src/test/java/org/killbill/billing/account/api/user/TestEventJson.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestBeatrixListener.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestBeatrixListener.java",
+      "line": 139,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestEventJson.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestEventJson.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestEventJson.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestIntegrationBase.java",
+      "line": 141,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestIntegrationBase.java",
+      "line": 495,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestPublicBus.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestPublicBus.java",
+      "line": 171,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestPublicBus.java",
+      "line": 174,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestWithFakeKPMPlugin.java",
+      "line": 209,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/MockCatalog.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/MockPlan.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/TestDefaultPriceOverride.java",
+      "line": 145,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/TestPlan.java",
+      "line": 19,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/TestStandaloneCatalogWithPriceOverrideUnit.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "entitlement/src/test/java/org/killbill/billing/entitlement/api/TestEventJson.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/dao/TestCBADaoUnit.java",
+      "line": 115,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/template/formatters/TestDefaultInvoiceFormatter.java",
+      "line": 529,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestSubscriptionItemTree.java",
+      "line": 1380,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestTreePrinter.java",
+      "line": 73,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestTreePrinter.java",
+      "line": 117,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestTreePrinter.java",
+      "line": 129,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jaxrs/src/test/java/org/killbill/billing/jaxrs/json/TestInvoiceItemJsonSimple.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "overdue/src/test/java/org/killbill/billing/overdue/notification/TestOverdueNotificationKeyJson.java",
+      "line": 39,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "overdue/src/test/java/org/killbill/billing/overdue/notification/TestOverdueNotificationKeyJson.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "payment/src/test/java/org/killbill/billing/payment/TestDefaultStateMachineConfigDOTGenerator.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "payment/src/test/java/org/killbill/billing/payment/api/TestEventJson.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "payment/src/test/java/org/killbill/billing/payment/api/TestEventJson.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "profiles/killbill/src/test/java/org/killbill/billing/jaxrs/TestJetty.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "profiles/killbill/src/test/java/org/killbill/billing/jaxrs/resources/TestDBRouterResource.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "profiles/killbill/src/test/java/org/killbill/billing/jaxrs/resources/TestDBRouterResource.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "subscription/src/test/java/org/killbill/billing/subscription/api/TestEventJson.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "subscription/src/test/java/org/killbill/billing/subscription/api/TestEventJson.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/test/java/org/killbill/billing/subscription/api/user/TestSubscriptionBillingEvents.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/GuicyKillbillTestModule.java",
+      "line": 31,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/GuicyKillbillTestModule.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/callcontext/MutableCallContext.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/callcontext/MutableCallContext.java",
+      "line": 57,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/callcontext/MutableInternalCallContext.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/callcontext/MutableInternalCallContext.java",
+      "line": 54,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/mock/MockPlan.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/UtilTestSuiteWithEmbeddedDB.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/audit/TestDefaultAuditLog.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/audit/TestDefaultAuditLog.java",
+      "line": 48,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/audit/TestDefaultAuditLog.java",
+      "line": 48,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/audit/TestDefaultAuditLog.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/audit/TestDefaultAuditLog.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/callcontext/TestCallContext.java",
+      "line": 69,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/callcontext/TestCallContext.java",
+      "line": 70,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/callcontext/TestInternalCallContextFactory.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/dao/TestNonEntityDao.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/export/dao/TestDatabaseExportDao.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/export/dao/TestDatabaseExportDaoWithExtraTables.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/dao/TestJDBCSessionDao.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/dao/TestSessionModelDao.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 69,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillJndiLdapRealm.java",
+      "line": 84,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillJndiLdapRealm.java",
+      "line": 89,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillJndiLdapRealm.java",
+      "line": 90,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillOktaRealm.java",
+      "line": 54,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillOktaRealm.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillOktaRealm.java",
+      "line": 60,
+      "scope": "test"
+    }
+  ],
   "findingSummary": {
     "production": {
       "critical": 1,
-      "warning": 1,
-      "info": 61
+      "warning": 70,
+      "info": 38
     },
     "test": {
       "critical": 0,
-      "warning": 0,
-      "info": 0
+      "warning": 22,
+      "info": 45
     },
     "byCode": {
-      "javax-usage": {
-        "code": "javax-usage",
-        "title": "javax namespace usage detected",
-        "severity": "critical",
-        "total": 1,
-        "production": 1,
-        "test": 0,
-        "topModules": [
-          {
-            "name": "server",
-            "count": 1
-          }
-        ],
-        "examples": [
-          {
-            "code": "javax-usage",
-            "severity": "critical",
-            "title": "javax namespace usage detected",
-            "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-            "file": "server/src/main/java/org/killbill/billing/server/listeners/KillbillGuiceListener.java",
-            "line": 12,
-            "scope": "production"
-          }
-        ]
-      },
       "spring-boot-version-unknown": {
         "code": "spring-boot-version-unknown",
         "title": "Spring Boot version unknown",
@@ -663,63 +1656,353 @@
           }
         ]
       },
-      "java-util-date": {
-        "code": "java-util-date",
-        "title": "Legacy date API usage",
-        "severity": "info",
-        "total": 61,
-        "production": 61,
+      "javax-usage": {
+        "code": "javax-usage",
+        "title": "javax namespace usage detected",
+        "severity": "critical",
+        "total": 1,
+        "production": 1,
         "test": 0,
         "topModules": [
           {
+            "name": "project",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "javax-usage",
+            "severity": "critical",
+            "title": "javax namespace usage detected",
+            "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+            "file": null,
+            "line": null,
+            "scope": "production"
+          }
+        ]
+      },
+      "reflection-usage": {
+        "code": "reflection-usage",
+        "title": "Reflection usage",
+        "severity": "info",
+        "total": 22,
+        "production": 10,
+        "test": 12,
+        "topModules": [
+          {
             "name": "util",
-            "count": 61
+            "count": 6
+          },
+          {
+            "name": "beatrix",
+            "count": 4
+          },
+          {
+            "name": "catalog",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "account/src/test/java/org/killbill/billing/account/api/user/TestEventJson.java",
+            "line": 47,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestEventJson.java",
+            "line": 45,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestEventJson.java",
+            "line": 58,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestEventJson.java",
+            "line": 68,
+            "scope": "test"
+          },
+          {
+            "code": "reflection-usage",
+            "severity": "info",
+            "title": "Reflection usage",
+            "recommendation": "Review Reflection usage before modernization.",
+            "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestWithFakeKPMPlugin.java",
+            "line": 209,
+            "scope": "test"
+          }
+        ]
+      },
+      "hibernate-custom-type": {
+        "code": "hibernate-custom-type",
+        "title": "Hibernate custom type integration",
+        "severity": "warning",
+        "total": 89,
+        "production": 67,
+        "test": 22,
+        "topModules": [
+          {
+            "name": "util",
+            "count": 23
+          },
+          {
+            "name": "api",
+            "count": 14
+          },
+          {
+            "name": "invoice",
+            "count": 13
+          }
+        ],
+        "examples": [
+          {
+            "code": "hibernate-custom-type",
+            "severity": "warning",
+            "title": "Hibernate custom type integration",
+            "recommendation": "Review Hibernate custom type integration before modernization.",
+            "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+            "line": 29,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-custom-type",
+            "severity": "warning",
+            "title": "Hibernate custom type integration",
+            "recommendation": "Review Hibernate custom type integration before modernization.",
+            "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+            "line": 38,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-custom-type",
+            "severity": "warning",
+            "title": "Hibernate custom type integration",
+            "recommendation": "Review Hibernate custom type integration before modernization.",
+            "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+            "line": 46,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-custom-type",
+            "severity": "warning",
+            "title": "Hibernate custom type integration",
+            "recommendation": "Review Hibernate custom type integration before modernization.",
+            "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+            "line": 50,
+            "scope": "production"
+          },
+          {
+            "code": "hibernate-custom-type",
+            "severity": "warning",
+            "title": "Hibernate custom type integration",
+            "recommendation": "Review Hibernate custom type integration before modernization.",
+            "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+            "line": 83,
+            "scope": "production"
+          }
+        ]
+      },
+      "java-util-date": {
+        "code": "java-util-date",
+        "title": "java.util.Date usage",
+        "severity": "info",
+        "total": 41,
+        "production": 27,
+        "test": 14,
+        "topModules": [
+          {
+            "name": "util",
+            "count": 16
+          },
+          {
+            "name": "catalog",
+            "count": 8
+          },
+          {
+            "name": "subscription",
+            "count": 6
           }
         ],
         "examples": [
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review domain date handling.",
-            "file": "util/src/main/java/org/killbill/billing/util/Example1.java",
-            "line": 10,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultMutableStaticCatalog.java",
+            "line": 21,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review domain date handling.",
-            "file": "util/src/main/java/org/killbill/billing/util/Example2.java",
-            "line": 11,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultPlan.java",
+            "line": 29,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review domain date handling.",
-            "file": "util/src/main/java/org/killbill/billing/util/Example3.java",
-            "line": 12,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultVersionedCatalog.java",
+            "line": 29,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review domain date handling.",
-            "file": "util/src/main/java/org/killbill/billing/util/Example4.java",
-            "line": 13,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "catalog/src/main/java/org/killbill/billing/catalog/StandaloneCatalog.java",
+            "line": 28,
             "scope": "production"
           },
           {
             "code": "java-util-date",
             "severity": "info",
-            "title": "Legacy date API usage",
-            "recommendation": "Review domain date handling.",
-            "file": "util/src/main/java/org/killbill/billing/util/Example5.java",
-            "line": 14,
+            "title": "java.util.Date usage",
+            "recommendation": "Review java.util.Date usage before modernization.",
+            "file": "catalog/src/test/java/org/killbill/billing/catalog/MockCatalog.java",
+            "line": 22,
+            "scope": "test"
+          }
+        ]
+      },
+      "system-out": {
+        "code": "system-out",
+        "title": "System.out logging",
+        "severity": "info",
+        "total": 20,
+        "production": 1,
+        "test": 19,
+        "topModules": [
+          {
+            "name": "util",
+            "count": 10
+          },
+          {
+            "name": "invoice",
+            "count": 6
+          },
+          {
+            "name": "catalog",
+            "count": 2
+          }
+        ],
+        "examples": [
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "catalog/src/main/java/org/killbill/billing/catalog/LoadCatalog.java",
+            "line": 35,
+            "scope": "production"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "catalog/src/test/java/org/killbill/billing/catalog/TestDefaultPriceOverride.java",
+            "line": 145,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "invoice/src/test/java/org/killbill/billing/invoice/dao/TestCBADaoUnit.java",
+            "line": 115,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "invoice/src/test/java/org/killbill/billing/invoice/template/formatters/TestDefaultInvoiceFormatter.java",
+            "line": 529,
+            "scope": "test"
+          },
+          {
+            "code": "system-out",
+            "severity": "info",
+            "title": "System.out logging",
+            "recommendation": "Review System.out logging before modernization.",
+            "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestSubscriptionItemTree.java",
+            "line": 1380,
+            "scope": "test"
+          }
+        ]
+      },
+      "java-internal-api": {
+        "code": "java-internal-api",
+        "title": "JDK internal API usage",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "jaxrs",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "java-internal-api",
+            "severity": "warning",
+            "title": "JDK internal API usage",
+            "recommendation": "Review JDK internal API usage before modernization.",
+            "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/mappers/RuntimeExceptionMapper.java",
+            "line": 50,
+            "scope": "production"
+          }
+        ]
+      },
+      "junit4-dependency": {
+        "code": "junit4-dependency",
+        "title": "JUnit 4 dependency",
+        "severity": "warning",
+        "total": 1,
+        "production": 1,
+        "test": 0,
+        "topModules": [
+          {
+            "name": "pom.xml",
+            "count": 1
+          }
+        ],
+        "examples": [
+          {
+            "code": "junit4-dependency",
+            "severity": "warning",
+            "title": "JUnit 4 dependency",
+            "recommendation": "Review JUnit 4 dependency before modernization.",
+            "file": "pom.xml",
+            "line": 94,
             "scope": "production"
           }
         ]
@@ -727,15 +2010,6 @@
     }
   },
   "findings": [
-    {
-      "code": "javax-usage",
-      "severity": "critical",
-      "title": "javax namespace usage detected",
-      "recommendation": "Plan Jakarta migration before Spring Boot 3 execution.",
-      "file": "server/src/main/java/org/killbill/billing/server/listeners/KillbillGuiceListener.java",
-      "line": 12,
-      "scope": "production"
-    },
     {
       "code": "spring-boot-version-unknown",
       "severity": "warning",
@@ -746,553 +2020,1579 @@
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "javax-usage",
+      "severity": "critical",
+      "title": "javax namespace usage detected",
+      "recommendation": "Migrate Java EE imports to Jakarta equivalents for Spring Boot 3.",
+      "file": null,
+      "line": null,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example1.java",
-      "line": 10,
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "account/src/test/java/org/killbill/billing/account/api/user/TestEventJson.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 38,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 46,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 83,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/CallContextBase.java",
+      "line": 130,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/DefaultCallContext.java",
+      "line": 28,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/DefaultCallContext.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/DefaultCallContext.java",
+      "line": 47,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/DefaultCallContext.java",
+      "line": 62,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/InternalCallContext.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/InternalCallContext.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/InternalCallContext.java",
+      "line": 54,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "api/src/main/java/org/killbill/billing/callcontext/InternalCallContext.java",
+      "line": 130,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/main/java/org/killbill/billing/beatrix/extbus/BeatrixListener.java",
+      "line": 72,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/main/java/org/killbill/billing/beatrix/extbus/BeatrixListener.java",
+      "line": 110,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestBeatrixListener.java",
+      "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestBeatrixListener.java",
+      "line": 139,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestEventJson.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestEventJson.java",
+      "line": 58,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/extbus/TestEventJson.java",
+      "line": 68,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestIntegrationBase.java",
+      "line": 141,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestIntegrationBase.java",
+      "line": 495,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestPublicBus.java",
+      "line": 50,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestPublicBus.java",
+      "line": 171,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestPublicBus.java",
+      "line": 174,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "beatrix/src/test/java/org/killbill/billing/beatrix/integration/TestWithFakeKPMPlugin.java",
+      "line": 209,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/CatalogSafetyInitializer.java",
+      "line": 84,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/CatalogSafetyInitializer.java",
+      "line": 137,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example2.java",
-      "line": 11,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example3.java",
-      "line": 12,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example4.java",
-      "line": 13,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example5.java",
-      "line": 14,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example6.java",
-      "line": 15,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example7.java",
-      "line": 16,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example8.java",
-      "line": 17,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example9.java",
-      "line": 18,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example10.java",
-      "line": 19,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example11.java",
-      "line": 20,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example12.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultMutableStaticCatalog.java",
       "line": 21,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example13.java",
-      "line": 22,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example14.java",
-      "line": 23,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example15.java",
-      "line": 24,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example16.java",
-      "line": 25,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example17.java",
-      "line": 26,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example18.java",
-      "line": 27,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example19.java",
-      "line": 28,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example20.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultPlan.java",
       "line": 29,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example21.java",
-      "line": 30,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/DefaultVersionedCatalog.java",
+      "line": 29,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example22.java",
-      "line": 31,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example23.java",
-      "line": 32,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example24.java",
-      "line": 33,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example25.java",
-      "line": 34,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example26.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/LoadCatalog.java",
       "line": 35,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example27.java",
-      "line": 36,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/main/java/org/killbill/billing/catalog/StandaloneCatalog.java",
+      "line": 28,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example28.java",
-      "line": 37,
-      "scope": "production"
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/MockCatalog.java",
+      "line": 22,
+      "scope": "test"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example29.java",
-      "line": 38,
-      "scope": "production"
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/MockPlan.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/TestDefaultPriceOverride.java",
+      "line": 145,
+      "scope": "test"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example30.java",
-      "line": 39,
-      "scope": "production"
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/TestPlan.java",
+      "line": 19,
+      "scope": "test"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example31.java",
-      "line": 40,
-      "scope": "production"
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "catalog/src/test/java/org/killbill/billing/catalog/TestStandaloneCatalogWithPriceOverrideUnit.java",
+      "line": 21,
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example32.java",
-      "line": 41,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example33.java",
-      "line": 42,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example34.java",
-      "line": 43,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example35.java",
-      "line": 44,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example36.java",
-      "line": 45,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example37.java",
-      "line": 46,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example38.java",
-      "line": 47,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example39.java",
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/DefaultEntitlementService.java",
       "line": 48,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example40.java",
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/DefaultEntitlementService.java",
+      "line": 107,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/api/DefaultEntitlementContext.java",
+      "line": 35,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/api/DefaultEntitlementContext.java",
       "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/api/DefaultEntitlementContext.java",
+      "line": 87,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/api/DefaultEntitlementContext.java",
+      "line": 177,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example41.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/dao/BlockingStateSqlDao.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "entitlement/src/main/java/org/killbill/billing/entitlement/dao/DefaultBlockingStateDao.java",
+      "line": 25,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "entitlement/src/test/java/org/killbill/billing/entitlement/api/TestEventJson.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 49,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 109,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 129,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 150,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 174,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 202,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 219,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 292,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 301,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 321,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceListener.java",
+      "line": 340,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceTagHandler.java",
+      "line": 34,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/InvoiceTagHandler.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/dao/InvoicePaymentSqlDao.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "invoice/src/main/java/org/killbill/billing/invoice/dao/InvoiceTrackingSqlDao.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/dao/TestCBADaoUnit.java",
+      "line": 115,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/template/formatters/TestDefaultInvoiceFormatter.java",
+      "line": 529,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestSubscriptionItemTree.java",
+      "line": 1380,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestTreePrinter.java",
+      "line": 73,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestTreePrinter.java",
+      "line": 117,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "invoice/src/test/java/org/killbill/billing/invoice/tree/TestTreePrinter.java",
+      "line": 129,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/json/CatalogJson.java",
+      "line": 24,
+      "scope": "production"
+    },
+    {
+      "code": "java-internal-api",
+      "severity": "warning",
+      "title": "JDK internal API usage",
+      "recommendation": "Review JDK internal API usage before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/mappers/RuntimeExceptionMapper.java",
+      "line": 50,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/resources/TenantResource.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/resources/TenantResource.java",
+      "line": 153,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/util/Context.java",
+      "line": 36,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/util/Context.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "jaxrs/src/main/java/org/killbill/billing/jaxrs/util/Context.java",
       "line": 50,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example42.java",
-      "line": 51,
-      "scope": "production"
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "jaxrs/src/test/java/org/killbill/billing/jaxrs/json/TestInvoiceItemJsonSimple.java",
+      "line": 20,
+      "scope": "test"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example43.java",
-      "line": 52,
-      "scope": "production"
-    },
-    {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example44.java",
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "overdue/src/main/java/org/killbill/billing/overdue/listener/OverdueListener.java",
       "line": 53,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "overdue/src/main/java/org/killbill/billing/overdue/listener/OverdueListener.java",
+      "line": 165,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "overdue/src/main/java/org/killbill/billing/overdue/notification/DefaultOverdueNotifierBase.java",
+      "line": 43,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "overdue/src/main/java/org/killbill/billing/overdue/notification/DefaultOverdueNotifierBase.java",
+      "line": 121,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example45.java",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "overdue/src/test/java/org/killbill/billing/overdue/notification/TestOverdueNotificationKeyJson.java",
+      "line": 39,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "overdue/src/test/java/org/killbill/billing/overdue/notification/TestOverdueNotificationKeyJson.java",
+      "line": 49,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/bus/PaymentBusEventHandler.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/bus/PaymentBusEventHandler.java",
+      "line": 91,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/core/janitor/IncompletePaymentAttemptTask.java",
       "line": 54,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example46.java",
-      "line": 55,
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/core/janitor/IncompletePaymentAttemptTask.java",
+      "line": 217,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/core/janitor/IncompletePaymentTransactionTask.java",
+      "line": 48,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/core/janitor/IncompletePaymentTransactionTask.java",
+      "line": 201,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example47.java",
-      "line": 56,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/DefaultPaymentDao.java",
+      "line": 25,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example48.java",
-      "line": 57,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/PaymentAttemptSqlDao.java",
+      "line": 22,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example49.java",
-      "line": 58,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/PaymentSqlDao.java",
+      "line": 21,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example50.java",
-      "line": 59,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/dao/TransactionSqlDao.java",
+      "line": 22,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example51.java",
-      "line": 60,
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/invoice/PaymentTagHandler.java",
+      "line": 33,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example52.java",
-      "line": 61,
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/invoice/PaymentTagHandler.java",
+      "line": 74,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
-      "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example53.java",
-      "line": 62,
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/retry/BaseRetryService.java",
+      "line": 34,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/retry/BaseRetryService.java",
+      "line": 80,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "payment/src/main/java/org/killbill/billing/payment/retry/BaseRetryService.java",
+      "line": 160,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example54.java",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "payment/src/test/java/org/killbill/billing/payment/TestDefaultStateMachineConfigDOTGenerator.java",
+      "line": 35,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "payment/src/test/java/org/killbill/billing/payment/api/TestEventJson.java",
+      "line": 40,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "payment/src/test/java/org/killbill/billing/payment/api/TestEventJson.java",
+      "line": 51,
+      "scope": "test"
+    },
+    {
+      "code": "junit4-dependency",
+      "severity": "warning",
+      "title": "JUnit 4 dependency",
+      "recommendation": "Review JUnit 4 dependency before modernization.",
+      "file": "pom.xml",
+      "line": 94,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "profiles/killbill/src/main/java/org/killbill/billing/server/listeners/CleanupListener.java",
+      "line": 45,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "profiles/killbill/src/main/java/org/killbill/billing/server/listeners/CleanupListener.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "profiles/killbill/src/test/java/org/killbill/billing/jaxrs/TestJetty.java",
       "line": 63,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "profiles/killbill/src/test/java/org/killbill/billing/jaxrs/resources/TestDBRouterResource.java",
+      "line": 34,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "profiles/killbill/src/test/java/org/killbill/billing/jaxrs/resources/TestDBRouterResource.java",
+      "line": 47,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/api/user/DefaultSubscriptionBillingEvent.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/core/DefaultSubscriptionBaseService.java",
+      "line": 53,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/core/DefaultSubscriptionBaseService.java",
+      "line": 128,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example55.java",
-      "line": 64,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/BundleSqlDao.java",
+      "line": 22,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example56.java",
-      "line": 65,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/DefaultSubscriptionDao.java",
+      "line": 25,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example57.java",
-      "line": 66,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/SubscriptionEventSqlDao.java",
+      "line": 21,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example58.java",
-      "line": 67,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/main/java/org/killbill/billing/subscription/engine/dao/SubscriptionSqlDao.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "subscription/src/test/java/org/killbill/billing/subscription/api/TestEventJson.java",
+      "line": 45,
+      "scope": "test"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "subscription/src/test/java/org/killbill/billing/subscription/api/TestEventJson.java",
+      "line": 55,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "subscription/src/test/java/org/killbill/billing/subscription/api/user/TestSubscriptionBillingEvents.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "usage/src/main/java/org/killbill/billing/usage/dao/RolledUpUsageSqlDao.java",
+      "line": 21,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/callcontext/CallContextFactory.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/callcontext/DefaultCallContextFactory.java",
+      "line": 44,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/callcontext/InternalCallContextFactory.java",
+      "line": 218,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/callcontext/InternalCallContextFactory.java",
+      "line": 237,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/callcontext/InternalCallContextFactory.java",
+      "line": 287,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example59.java",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/catalog/CatalogDateHelper.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/dao/BinderBase.java",
+      "line": 19,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/dao/MapperBase.java",
+      "line": 22,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/entity/dao/EntityDaoBase.java",
       "line": 68,
       "scope": "production"
     },
     {
-      "code": "java-util-date",
+      "code": "reflection-usage",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example60.java",
-      "line": 69,
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/glue/EhcacheShiroManagerProvider.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/metrics/JCacheGaugeFactory.java",
+      "line": 83,
       "scope": "production"
     },
     {
       "code": "java-util-date",
       "severity": "info",
-      "title": "Legacy date API usage",
-      "recommendation": "Review domain date handling.",
-      "file": "util/src/main/java/org/killbill/billing/util/Example61.java",
-      "line": 70,
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/nodes/dao/DefaultNodeInfoDao.java",
+      "line": 20,
       "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/nodes/dao/NodeInfoSqlDao.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/optimizer/BusDispatcherOptimizerOn.java",
+      "line": 27,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/optimizer/BusDispatcherOptimizerOn.java",
+      "line": 51,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/optimizer/BusOptimizerOn.java",
+      "line": 67,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/AnnotationHierarchicalResolver.java",
+      "line": 75,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/PermissionAnnotationMethodInterceptor.java",
+      "line": 29,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/PermissionAnnotationMethodInterceptor.java",
+      "line": 77,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/api/DefaultSecurityApi.java",
+      "line": 319,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/shiro/dao/UserRolesSqlDao.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/shiro/dao/UsersSqlDao.java",
+      "line": 20,
+      "scope": "production"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/security/shiro/realm/KillBillAuth0Realm.java",
+      "line": 40,
+      "scope": "production"
+    },
+    {
+      "code": "reflection-usage",
+      "severity": "info",
+      "title": "Reflection usage",
+      "recommendation": "Review Reflection usage before modernization.",
+      "file": "util/src/main/java/org/killbill/billing/util/validation/ValidationManager.java",
+      "line": 83,
+      "scope": "production"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/GuicyKillbillTestModule.java",
+      "line": 31,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/GuicyKillbillTestModule.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/callcontext/MutableCallContext.java",
+      "line": 25,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/callcontext/MutableCallContext.java",
+      "line": 57,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/callcontext/MutableInternalCallContext.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/callcontext/MutableInternalCallContext.java",
+      "line": 54,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/mock/MockPlan.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/UtilTestSuiteWithEmbeddedDB.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/audit/TestDefaultAuditLog.java",
+      "line": 28,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/audit/TestDefaultAuditLog.java",
+      "line": 48,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/audit/TestDefaultAuditLog.java",
+      "line": 48,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/audit/TestDefaultAuditLog.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/audit/TestDefaultAuditLog.java",
+      "line": 72,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/callcontext/TestCallContext.java",
+      "line": 69,
+      "scope": "test"
+    },
+    {
+      "code": "hibernate-custom-type",
+      "severity": "warning",
+      "title": "Hibernate custom type integration",
+      "recommendation": "Review Hibernate custom type integration before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/callcontext/TestCallContext.java",
+      "line": 70,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/callcontext/TestInternalCallContextFactory.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/dao/TestNonEntityDao.java",
+      "line": 22,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/export/dao/TestDatabaseExportDao.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/export/dao/TestDatabaseExportDaoWithExtraTables.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/dao/TestJDBCSessionDao.java",
+      "line": 20,
+      "scope": "test"
+    },
+    {
+      "code": "java-util-date",
+      "severity": "info",
+      "title": "java.util.Date usage",
+      "recommendation": "Review java.util.Date usage before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/dao/TestSessionModelDao.java",
+      "line": 21,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 64,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 65,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillAuth0Realm.java",
+      "line": 69,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillJndiLdapRealm.java",
+      "line": 84,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillJndiLdapRealm.java",
+      "line": 89,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillJndiLdapRealm.java",
+      "line": 90,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillOktaRealm.java",
+      "line": 54,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillOktaRealm.java",
+      "line": 59,
+      "scope": "test"
+    },
+    {
+      "code": "system-out",
+      "severity": "info",
+      "title": "System.out logging",
+      "recommendation": "Review System.out logging before modernization.",
+      "file": "util/src/test/java/org/killbill/billing/util/security/shiro/realm/TestKillBillOktaRealm.java",
+      "line": 60,
+      "scope": "test"
     }
   ],
   "evidence": [
@@ -1309,6 +3609,22 @@
       "status": "failed"
     },
     {
+      "name": "Hibernate usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "Spring Security usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 4 usage detection",
+      "status": "warning"
+    },
+    {
+      "name": "JUnit 5 usage detection",
+      "status": "warning"
+    },
+    {
       "name": "Static source checks",
       "status": "warning"
     },
@@ -1320,28 +3636,57 @@
   ],
   "dependencies": {
     "springBootVersion": "unknown",
+    "springSecurityVersion": "unknown",
     "jakartaDetected": true,
     "javaxDetected": true,
     "hibernateDetected": false,
-    "springSecurityDetected": false
+    "springSecurityDetected": false,
+    "junit4Detected": false,
+    "junit5Detected": false
   },
   "benchmark": {
     "slug": "kill-bill",
     "name": "Kill Bill",
     "repository": "https://github.com/killbill/killbill",
     "ref": null,
-    "requestedSource": "local",
-    "source": "catalog",
-    "checkoutPath": null,
-    "analysisPath": null,
-    "gitRevision": null,
-    "commands": [],
+    "requestedSource": "clone",
+    "source": "checkout",
+    "checkoutPath": "benchmark-repos/kill-bill",
+    "analysisPath": "benchmark-repos/kill-bill",
+    "gitRevision": "fcef98343e9893bcf654294fb46643f261c3f887",
+    "commands": [
+      {
+        "command": "git clone --depth 1 https://github.com/killbill/killbill benchmark-repos/kill-bill",
+        "exitCode": 0,
+        "status": "passed",
+        "output": "Cloning into '~/<workspace>\nUpdating files:  88% (1834/2077)\rUpdating files:  89% (1849/2077)\rUpdating files:  90% (1870/2077)\rUpdating files:  91% (1891/2077)\rUpdating files:  92% (1911/2077)\rUpdating files:  93% (1932/2077)\rUpdating files:  94% (1953/2077)\rUpdating files:  95% (1974/2077)\rUpdating files:  96% (1994/2077)\rUpdating files:  97% (2015/2077)\rUpdating files:  98% (2036/2077)\rUpdating files:  99% (2057/2077)\rUpdating files: 100% (2077/2077)\rUpdating files: 100% (2077/2077), done."
+      }
+    ],
     "validation": {
       "requested": true,
-      "status": "skipped",
-      "confidence": 0,
-      "checks": [],
-      "summary": "Validation requires a local checkout."
+      "status": "failed",
+      "confidence": 25,
+      "checks": [
+        {
+          "name": "Compilation",
+          "status": "failed",
+          "command": "mvn -q -DskipTests compile",
+          "durationMs": 4,
+          "exitCode": 127,
+          "output": "spawn mvn ENOENT",
+          "timedOut": false
+        },
+        {
+          "name": "Tests",
+          "status": "failed",
+          "command": "mvn -q test",
+          "durationMs": 22,
+          "exitCode": 127,
+          "output": "spawn mvn ENOENT",
+          "timedOut": false
+        }
+      ],
+      "summary": "2 validation check(s) failed."
     }
   },
   "nextActions": [
@@ -1366,6 +3711,20 @@
       "suggestedCommand": "node ./bin/emp.js analyze . --pack jakarta-readiness --out reports/jakarta-readiness"
     },
     {
+      "id": "review-hibernate-upgrade-risks",
+      "priority": "warning",
+      "title": "Review Hibernate API and mapping upgrade risks",
+      "reason": "Hibernate 6 readiness depends on explicit review of legacy Criteria usage, Session API assumptions, custom types, and XML mappings.",
+      "evidenceCount": 67,
+      "findingCodes": [
+        "hibernate-legacy-criteria",
+        "hibernate-session-api",
+        "hibernate-custom-type",
+        "hibernate-xml-mapping"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack hibernate-readiness --out reports/hibernate-readiness"
+    },
+    {
       "id": "validate-spring-boot-upgrade-path",
       "priority": "warning",
       "title": "Validate the Spring Boot 3 upgrade path",
@@ -1376,6 +3735,29 @@
         "spring-boot-version-unknown"
       ],
       "suggestedCommand": "node ./bin/emp.js transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust"
+    },
+    {
+      "id": "review-junit-5-migration-risks",
+      "priority": "info",
+      "title": "Review JUnit 4 to JUnit 5 migration risks",
+      "reason": "JUnit 5 readiness depends on explicit review of JUnit 4 APIs, runners, dependencies, and Vintage engine assumptions.",
+      "evidenceCount": 1,
+      "findingCodes": [
+        "junit4-api-usage",
+        "junit4-runner-usage",
+        "junit4-dependency",
+        "junit-vintage-engine"
+      ],
+      "suggestedCommand": "node ./bin/emp.js analyze . --pack junit-5-readiness --out reports/junit-5-readiness"
     }
-  ]
+  ],
+  "findingDetails": {
+    "compacted": false,
+    "total": 176,
+    "productionTotal": 109,
+    "testTotal": 67,
+    "detailedTotal": 176,
+    "omittedTotal": 0,
+    "policy": "Representative findings are capped at 300 entries for benchmark report JSON. Full counts are preserved in findingSummary."
+  }
 }
