@@ -7,6 +7,7 @@ import { generateKnowledgeBase } from '../src/knowledge-base.js';
 import { generatePackDocs } from '../src/pack-docs.js';
 import { buildNextActions, compactReportFindings, renderReport } from '../src/report.js';
 import { generateReleaseNotes } from '../src/release-notes.js';
+import { generateOutreachPacket } from '../src/outreach-packet.js';
 import { buildConsultantDemoBundle, generateConsultantDemo } from '../src/consultant-demo.js';
 
 const DEFAULT_MIN_COUNT = BENCHMARKS.length;
@@ -48,6 +49,7 @@ await generateMigrationHub({ outDir: hubDir, benchmarks: reports, benchmarksDir:
 const packDocs = await generatePackDocs({ outDir: packDocsDir });
 const knowledgeBase = await generateKnowledgeBase({ outDir: knowledgeDir });
 const releaseNotes = await generateReleaseNotes({ outDir: releaseNotesDir });
+const outreachPacket = await generateOutreachPacket();
 const consultantDemo = await generateConsultantDemo({ benchmarksDir: outDir, outFile: consultantDemoFile });
 const consultantBundle = await buildConsultantDemoBundle({ docsDir: path.resolve('docs'), outFile: consultantDemoBundle });
 
@@ -73,6 +75,8 @@ await fs.writeFile(options.summary || 'reports/benchmark-publish-summary.json', 
   packDocsCount: packDocs.count,
   knowledgeArticleCount: knowledgeBase.count,
   releaseNoteFeatureCount: releaseNotes.featureCount,
+  outreachPacketFile: path.relative(process.cwd(), outreachPacket.outFile),
+  outreachPacketTrialCount: outreachPacket.trialCount,
   consultantDemoReportCount: consultantDemo.count,
   consultantDemoBundleFileCount: consultantBundle.fileCount,
   ...summary
@@ -84,6 +88,7 @@ console.log(`Migration Hub: ${path.relative(process.cwd(), hubDir)}`);
 console.log(`Pack docs: ${path.relative(process.cwd(), packDocsDir)}`);
 console.log(`Knowledge Base: ${path.relative(process.cwd(), knowledgeDir)}`);
 console.log(`Release notes: ${path.relative(process.cwd(), releaseNotesDir)}`);
+console.log(`Outreach packet: ${path.relative(process.cwd(), outreachPacket.outFile)}`);
 console.log(`Consultant demo: ${path.relative(process.cwd(), consultantDemoFile)}`);
 
 async function loadPublishedReportSummaries(benchmarksDir) {

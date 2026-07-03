@@ -50,12 +50,13 @@ export async function buildConsultantDemoBundle({
     'index.html',
     'quickstart.html',
     'external-trial.html',
+    'outreach-packet.html',
     'consultant-demo.html',
     'editions.html',
     'contact.html',
     'release-notes/index.html',
-    'release-notes/v0.5.5.html',
-    'release-notes/v0.5.5.md',
+    'release-notes/v0.5.6.html',
+    'release-notes/v0.5.6.md',
     'external-trials/mertakdut-spring-boot-sample-project/index.html',
     'external-trials/mertakdut-spring-boot-sample-project/report.json',
     'external-trials/geekidea-spring-boot-assembly/index.html',
@@ -152,8 +153,8 @@ function renderConsultantDemo(demos) {
     </section>
 
     <h2>Run This For A Client</h2>
-    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.5 analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></pre>
-    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.5 transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></pre>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.6 analyze . --pack hibernate-readiness --out reports/hibernate-readiness</code></pre>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.6 transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/spring-boot-trust</code></pre>
 
     <h2>Send These Artifacts</h2>
     <section class="artifact-grid">
@@ -161,8 +162,9 @@ function renderConsultantDemo(demos) {
       <a href="benchmarks/hibernate-helloworld/index.html"><strong>Partial validation report</strong><span>Compile passes, tests expose dependency gap.</span></a>
       <a href="quickstart.html"><strong>External quickstart</strong><span>Docker and GitHub Action path for a new repository.</span></a>
       <a href="external-trial.html"><strong>External trial proof</strong><span>Separate-repository GitHub Action proof plus 9 Docker-first external trial snapshots.</span></a>
+      <a href="outreach-packet.html"><strong>Outreach packet</strong><span>Offer branches, report links, and copy/paste messages.</span></a>
       <a href="knowledge-base/hibernate-validation-failures.html"><strong>Failure-pattern guide</strong><span>Explains blockers without overselling.</span></a>
-      <a href="release-notes/v0.5.5.html"><strong>Release notes</strong><span>What changed in the current release.</span></a>
+      <a href="release-notes/v0.5.6.html"><strong>Release notes</strong><span>What changed in the current release.</span></a>
     </section>
 
     <h2>What To Say</h2>
@@ -198,7 +200,7 @@ ${reports}
 Client command:
 
 \`\`\`bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.5 analyze . --pack hibernate-readiness --out reports/hibernate-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.6 analyze . --pack hibernate-readiness --out reports/hibernate-readiness
 \`\`\`
 `;
 }

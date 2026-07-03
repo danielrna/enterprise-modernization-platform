@@ -211,15 +211,15 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 29);
+  assert.equal(result.count, 30);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.5\.5/);
+  assert.match(index, /v0\.5\.6/);
   assert.match(index, /v0\.5\.1/);
-  assert.match(html, /Conversion proof trial batch/);
+  assert.match(html, /Outreach Packet/);
   assert.match(html, /75 checkout-backed reports/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Conversion proof trial batch/);
+  assert.match(markdown, /## Outreach Packet/);
 });
 
 test('generates Consultant Demo page and bundle', async () => {
@@ -1047,6 +1047,7 @@ test('GitHub Action exposes Docker readiness analysis inputs', async () => {
   const githubDocs = await fs.readFile(path.resolve('docs/ci-github-action.md'), 'utf8');
   const quickstart = await fs.readFile(path.resolve('docs/quickstart.html'), 'utf8');
   const externalTrial = await fs.readFile(path.resolve('docs/external-trial.html'), 'utf8');
+  const outreachPacket = await fs.readFile(path.resolve('docs/outreach-packet.html'), 'utf8');
   const dockerDocs = await fs.readFile(path.resolve('docs/docker-wrapper.md'), 'utf8');
   const ciDocs = await fs.readFile(path.resolve('docs/ci-examples.md'), 'utf8');
   const releaseDocs = await fs.readFile(path.resolve('docs/release-checklist.md'), 'utf8');
@@ -1076,17 +1077,20 @@ test('GitHub Action exposes Docker readiness analysis inputs', async () => {
   assert.match(await fs.readFile(path.resolve('scripts/benchmark-publish.js'), 'utf8'), /generateReleaseNotes/);
   assert.match(githubDocs, /actions\/upload-artifact@v4/);
   assert.match(quickstart, /Run a readiness report in 5 minutes/);
-  assert.match(quickstart, /danielrna\/enterprise-modernization-platform:v0\.5\.5/);
+  assert.match(quickstart, /danielrna\/enterprise-modernization-platform:v0\.5\.6/);
   assert.match(quickstart, /emp-readiness-report/);
   assert.match(quickstart, /Common First-Run Friction/);
   assert.match(externalTrial, /External Trial Proof/);
-  assert.match(externalTrial, /28679821177/);
+  assert.match(externalTrial, /28680350526/);
   assert.match(externalTrial, /emp-readiness-report/);
   assert.match(externalTrial, /Docker Trial Runs/);
   assert.match(externalTrial, /callicoder\/spring-boot-mysql-rest-api-tutorial/);
   assert.match(externalTrial, /mertakdut\/Spring-Boot-Sample-Project/);
   assert.match(externalTrial, /9 external-trial snapshots/);
   assert.match(externalTrial, /Conversion Case Studies/);
+  assert.match(outreachPacket, /Outreach Packet/);
+  assert.match(outreachPacket, /Readiness Cleanup/);
+  assert.match(outreachPacket, /Copy And Send/);
   assert.match(githubDocs, /emp-report\/index\.html/);
   assert.match(dockerDocs, /docker run --rm/);
   assert.match(ciDocs, /GitLab CI/);

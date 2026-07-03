@@ -11,7 +11,7 @@ The product is not a Java migration tool. The product is confidence that an appl
 The fastest path is Docker. Run this from the Java repository you want to inspect:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.5 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.6 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness
 ```
 
 Open the report:
@@ -24,13 +24,15 @@ You should expect a static HTML report plus `reports/emp-readiness/report.json`.
 
 If the report says the selected pack is not applicable, first confirm that you ran the command from the actual application directory. Multi-sample repositories often need a subdirectory such as `complete/` instead of the repository root. If the application is already on Spring Boot 3.x, use a more relevant pack such as `jakarta-readiness`, `java-17-to-21-readiness`, `spring-security-6-readiness`, or `junit-5-readiness`.
 
-Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.5.5
+Release: https://github.com/danielrna/enterprise-modernization-platform/releases/tag/v0.5.6
 
-Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.5.5/emp-smoke-report.zip
+Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-platform/releases/download/v0.5.6/emp-smoke-report.zip
 
 Quickstart: https://danielrna.github.io/enterprise-modernization-platform/quickstart.html
 
 External trial proof and case study: https://danielrna.github.io/enterprise-modernization-platform/external-trial.html
+
+Outreach packet: https://danielrna.github.io/enterprise-modernization-platform/outreach-packet.html
 
 Spring Boot 2 to 3 Migration Hub: https://danielrna.github.io/enterprise-modernization-platform/migration-hub/spring-boot-2-to-3.html
 
@@ -74,7 +76,7 @@ reports/readiness/index.html
 Run the published Docker image from the target repository:
 
 ```bash
-docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.5 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.6 analyze . --pack spring-boot-3-readiness --out reports/docker-readiness
 ```
 
 Or build the CLI image locally:
@@ -113,7 +115,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run EMP readiness
-        uses: danielrna/enterprise-modernization-platform@v0.5.5
+        uses: danielrna/enterprise-modernization-platform@v0.5.6
         with:
           path: .
           pack: spring-boot-3-readiness
@@ -293,7 +295,7 @@ Current automated coverage verifies:
 
 ## Current Status
 
-Implemented through v0.5.5:
+Implemented through v0.5.6:
 
 - CLI, Docker, MCP, and GitHub Action interfaces.
 - Spring Boot 2 to 3 readiness and transformation workflow.
@@ -312,6 +314,8 @@ Implemented through v0.5.5:
 Current roadmap phase: Phase 2, Distribution and Conversion Proof, is complete. Phase 1 Evidence Depth produced 75 checkout-backed public reports. Phase 2 made that proof runnable through Docker and GitHub Actions, validated the action path from an external-style repository, and added 9 Docker-first external trial runs outside the benchmark catalog.
 
 Current growth branch: conversion proof. The product should use the 9 external trial snapshots to test consultant outreach and paid follow-up offers before adding another pack or increasing benchmark volume.
+
+The Outreach Packet groups those 9 snapshots into offer branches and copy/paste messages for testing replies from Java consultants and teams.
 
 Still intentionally out of scope:
 

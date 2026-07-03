@@ -2,6 +2,42 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.5.6",
+      "title": "v0.5.6",
+      "date": "2026-07-03",
+      "summary": "Outreach Packet release turning external trial evidence into copyable consultant outreach.",
+      "features": [
+        {
+          "id": "outreach-packet",
+          "type": "distribution",
+          "name": "Outreach Packet",
+          "audience": "Consultants and maintainers testing whether external readiness evidence creates replies",
+          "summary": "Generate a static outreach page from the 9 external trial snapshots with offer branches, report links, and copy/paste messages.",
+          "evidence": [
+            "Adds `docs/outreach-packet.html` generated from checked-in external trial report JSON.",
+            "Groups evidence into readiness cleanup, Jakarta migration scope, validation and dry-run proof, and pack-selection help.",
+            "Includes copy/paste outreach messages for each offer branch.",
+            "Keeps the benchmark catalog unchanged at 75 public reports, 75 checkout-backed reports, and 17 passing validation reports.",
+            "Wires the outreach packet into benchmark publishing and the Consultant Demo bundle."
+          ],
+          "links": [
+            {
+              "label": "Outreach Packet",
+              "href": "docs/outreach-packet.html"
+            },
+            {
+              "label": "External Trial Proof",
+              "href": "docs/external-trial.html"
+            },
+            {
+              "label": "Consultant demo",
+              "href": "docs/consultant-demo.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.5.5",
       "title": "v0.5.5",
       "date": "2026-07-03",

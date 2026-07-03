@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v0.5.6
+
+- Added a generated Outreach Packet page from the 9 external trial snapshots.
+- Grouped reports into readiness cleanup, Jakarta migration scope, validation/dry-run proof, and pack-selection help offer branches.
+- Added copy/paste outreach messages for consultant and Java team conversations.
+- Included the outreach packet in the Consultant Demo bundle and benchmark publishing workflow.
+
 ## v0.5.5
 
 - Expanded conversion proof from 4 to 9 Docker-first external trial runs outside the benchmark catalog.
