@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hibernate 6 Readiness Check</title>
+  <meta name="description" content="Assess Hibernate 5 to 6 modernization risk with static readiness reports and benchmark evidence.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://danielrna.github.io/enterprise-modernization-platform/hibernate-6-readiness.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Enterprise Modernization Platform">
+  <meta property="og:title" content="Hibernate 6 Readiness Check">
+  <meta property="og:description" content="Assess Hibernate 5 to 6 modernization risk with static readiness reports and benchmark evidence.">
+  <meta property="og:url" content="https://danielrna.github.io/enterprise-modernization-platform/hibernate-6-readiness.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hibernate 6 Readiness Check">
+  <meta name="twitter:description" content="Assess Hibernate 5 to 6 modernization risk with static readiness reports and benchmark evidence.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://danielrna.github.io/enterprise-modernization-platform/#website","name":"Enterprise Modernization Platform","url":"https://danielrna.github.io/enterprise-modernization-platform/"},{"@type":"SoftwareApplication","@id":"https://danielrna.github.io/enterprise-modernization-platform/#software","name":"Enterprise Modernization Platform","applicationCategory":"DeveloperApplication","operatingSystem":"Docker, GitHub Actions, Node.js","offers":{"@type":"Offer","price":"0","priceCurrency":"CHF"},"url":"https://danielrna.github.io/enterprise-modernization-platform/"},{"@type":"WebPage","@id":"https://danielrna.github.io/enterprise-modernization-platform/hibernate-6-readiness.html#webpage","url":"https://danielrna.github.io/enterprise-modernization-platform/hibernate-6-readiness.html","name":"Hibernate 6 Readiness Check","description":"Assess Hibernate 5 to 6 modernization risk with static readiness reports and benchmark evidence.","isPartOf":{"@id":"https://danielrna.github.io/enterprise-modernization-platform/#website"},"about":{"@id":"https://danielrna.github.io/enterprise-modernization-platform/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://danielrna.github.io/enterprise-modernization-platform/"},{"@type":"ListItem","position":2,"name":"Hibernate 6 Readiness Check","item":"https://danielrna.github.io/enterprise-modernization-platform/hibernate-6-readiness.html"}]}]}</script>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; --accent-dark:#0f4f84; --ok:#217a45; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1120px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 10px; font-size:42px; line-height:1.08; letter-spacing:0; }
+    h2 { margin:30px 0 12px; font-size:21px; letter-spacing:0; }
+    p { max-width:780px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    pre { overflow:auto; white-space:pre-wrap; padding:14px; background:#102033; color:#eef6fd; border-radius:8px; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 34px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .hero { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:26px; align-items:start; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+    .actions a { display:inline-flex; align-items:center; min-height:42px; padding:9px 13px; background:var(--panel); border:1px solid var(--line); border-radius:6px; }
+    .actions a.primary { background:var(--accent); color:#fff; border-color:var(--accent-dark); font-weight:700; }
+    .proof { display:flex; flex-direction:column; gap:0; padding:16px; background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--ok); border-radius:8px; }
+    .proof div { display:flex; justify-content:space-between; gap:14px; padding:9px 0; border-bottom:1px solid var(--line); }
+    .proof div:last-child { border-bottom:0; }
+    .proof span,.grid span,.links span,.steps span { color:var(--muted); }
+    .proof strong { font-size:22px; }
+    .grid,.links,.steps,.pack-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:18px 0; }
+    .steps { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .grid div,.links a,.steps div,.pack-grid a { display:flex; flex-direction:column; gap:6px; min-height:112px; padding:16px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .pack-grid code { overflow-wrap:anywhere; color:var(--accent-dark); }
+    .faq { display:grid; gap:10px; max-width:840px; }
+    details { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px 14px; }
+    summary { cursor:pointer; font-weight:700; }
+    details p { margin:8px 0 0; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    .table-scroll { overflow:auto; }
+    @media (max-width: 860px) { main { padding:24px 16px; } .hero,.grid,.links,.steps,.pack-grid { grid-template-columns:1fr; } h1 { font-size:31px; } table { min-width:720px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="quickstart.html">Quickstart</a>
+    <a href="docker.html">Docker</a>
+    <a href="github-action.html">GitHub Action</a>
+    <a href="examples.html">Examples</a>
+    <a href="consultants.html">Consultants</a>
+    <a href="benchmarks/index.html">Benchmarks</a>
+    <a href="packs/index.html">Packs</a>
+    <a href="release-notes/index.html">Release Notes</a>
+  </nav>
+    <section class="hero">
+      <div>
+        <h1>Hibernate 6 readiness check</h1>
+        <p>Use this page when a persistence layer needs Hibernate 5.x to 6.x migration evidence before implementation starts.</p>
+        <div class="actions">
+          <a class="primary" href="#run">Run with Docker</a>
+          <a href="#github-action">Use GitHub Action</a>
+          <a href="migration-hub/hibernate-readiness.html">Review proof</a>
+        </div>
+      </div>
+      <aside class="proof" aria-label="Published evidence">
+    <div><span>Public reports</span><strong>75</strong></div>
+    <div><span>Checkout-backed</span><strong>75</strong></div>
+    <div><span>Passing validation</span><strong>17</strong></div>
+    <div><span>Backend required</span><strong>0</strong></div>
+  </aside>
+    </section>
+
+    <h2>Use When</h2>
+    <p>Hibernate 5.x to 6.x planning, persistence risk review, and validation-scoped consultant work.</p>
+
+    <h2>Readiness Signals</h2>
+    <section class="grid"><div><strong>Hibernate usage detection</strong><span>Included in the generated report evidence.</span></div><div><strong>ORM upgrade-risk findings</strong><span>Included in the generated report evidence.</span></div><div><strong>Validation failure-pattern guidance</strong><span>Included in the generated report evidence.</span></div><div><strong>Checkout-backed benchmark references</strong><span>Included in the generated report evidence.</span></div></section>
+
+    <h2 id="run">Run With Docker</h2>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.6 analyze . --pack hibernate-readiness --out reports/hibernate-6-readiness</code></pre>
+    <p>Open <code>reports/hibernate-6-readiness/index.html</code>. The same folder contains <code>report.json</code> for automation, agents, and later comparison.</p>
+
+    <h2 id="github-action">Run In GitHub Actions</h2>
+    <pre><code>name: EMP Readiness
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run EMP readiness
+        uses: danielrna/enterprise-modernization-platform@v0.5.6
+        with:
+          path: .
+          pack: hibernate-readiness
+          out: emp-report
+
+      - name: Upload EMP report
+        uses: actions/upload-artifact@v4
+        with:
+          name: emp-readiness-report
+          path: emp-report</code></pre>
+
+    <h2>Proof To Review</h2>
+    <section class="links"><a href="migration-hub/hibernate-readiness.html"><strong>Hibernate evidence hub</strong><span>Open static evidence for this path.</span></a><a href="knowledge-base/hibernate-validation-failures.html"><strong>Hibernate validation failure guide</strong><span>Open static evidence for this path.</span></a><a href="consultant-demo.html"><strong>Consultant demo</strong><span>Open static evidence for this path.</span></a></section>
+
+    <h2>What This Does Not Require</h2>
+    <section class="grid">
+      <div><strong>No hosted backend</strong><span>The output is static HTML and JSON.</span></div>
+      <div><strong>No account</strong><span>The Community path runs from Docker or source checkout.</span></div>
+      <div><strong>No custom parser</strong><span>The product orchestrates proven modernization signals and engines.</span></div>
+      <div><strong>No dashboard</strong><span>The report is the primary product surface.</span></div>
+    </section>
+
+    <h2>FAQ</h2>
+    <div class="faq">
+    <details open><summary>Does this apply code changes?</summary><p>No. The readiness command measures migration risk and writes static evidence. Use transform dry-run separately when you need change planning and validation evidence.</p></details>
+    <details><summary>What files should I share?</summary><p>Share <code>index.html</code> for human review and <code>report.json</code> for CI, automation, or AI clients.</p></details>
+    <details><summary>What if the report is not applicable?</summary><p>Check that the command ran from the actual application directory, then choose a more relevant pack. The selected pack here is <code>hibernate-readiness</code>.</p></details>
+    <details><summary>Does it require a server?</summary><p>No. Docker, GitHub Actions, static HTML, and JSON are enough for the first passive trial.</p></details>
+  </div>
+  </main></body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/quickstart.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/spring-boot-3-readiness.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/java-21-readiness.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/jakarta-migration-readiness.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/hibernate-6-readiness.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/docker.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/github-action.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/examples.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/consultants.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/external-trial.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/outreach-packet.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/consultant-demo.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/benchmarks/index.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/packs/index.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/migration-hub/index.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/knowledge-base/index.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://danielrna.github.io/enterprise-modernization-platform/release-notes/index.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+</urlset>

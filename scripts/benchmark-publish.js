@@ -9,6 +9,7 @@ import { buildNextActions, compactReportFindings, renderReport } from '../src/re
 import { generateReleaseNotes } from '../src/release-notes.js';
 import { generateOutreachPacket } from '../src/outreach-packet.js';
 import { buildConsultantDemoBundle, generateConsultantDemo } from '../src/consultant-demo.js';
+import { generatePassiveFunnel } from '../src/passive-funnel.js';
 
 const DEFAULT_MIN_COUNT = BENCHMARKS.length;
 
@@ -50,6 +51,7 @@ const packDocs = await generatePackDocs({ outDir: packDocsDir });
 const knowledgeBase = await generateKnowledgeBase({ outDir: knowledgeDir });
 const releaseNotes = await generateReleaseNotes({ outDir: releaseNotesDir });
 const outreachPacket = await generateOutreachPacket();
+const passiveFunnel = await generatePassiveFunnel({ outDir: path.resolve('docs') });
 const consultantDemo = await generateConsultantDemo({ benchmarksDir: outDir, outFile: consultantDemoFile });
 const consultantBundle = await buildConsultantDemoBundle({ docsDir: path.resolve('docs'), outFile: consultantDemoBundle });
 
@@ -77,6 +79,7 @@ await fs.writeFile(options.summary || 'reports/benchmark-publish-summary.json', 
   releaseNoteFeatureCount: releaseNotes.featureCount,
   outreachPacketFile: path.relative(process.cwd(), outreachPacket.outFile),
   outreachPacketTrialCount: outreachPacket.trialCount,
+  passiveFunnelPageCount: passiveFunnel.count,
   consultantDemoReportCount: consultantDemo.count,
   consultantDemoBundleFileCount: consultantBundle.fileCount,
   ...summary
@@ -89,6 +92,7 @@ console.log(`Pack docs: ${path.relative(process.cwd(), packDocsDir)}`);
 console.log(`Knowledge Base: ${path.relative(process.cwd(), knowledgeDir)}`);
 console.log(`Release notes: ${path.relative(process.cwd(), releaseNotesDir)}`);
 console.log(`Outreach packet: ${path.relative(process.cwd(), outreachPacket.outFile)}`);
+console.log(`Passive funnel pages: ${passiveFunnel.count}`);
 console.log(`Consultant demo: ${path.relative(process.cwd(), consultantDemoFile)}`);
 
 async function loadPublishedReportSummaries(benchmarksDir) {

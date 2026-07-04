@@ -13,6 +13,7 @@ import { generateKnowledgeBase } from '../src/knowledge-base.js';
 import { generatePackDocs } from '../src/pack-docs.js';
 import { generateReleaseNotes } from '../src/release-notes.js';
 import { buildConsultantDemoBundle, generateConsultantDemo } from '../src/consultant-demo.js';
+import { generatePassiveFunnel } from '../src/passive-funnel.js';
 import { transformProject } from '../src/transform.js';
 import { loadEnterpriseRules, evaluateEnterpriseRules } from '../src/rules.js';
 import { handleMcpRequest } from '../src/mcp.js';
@@ -211,15 +212,35 @@ test('generates release notes from feature metadata', async () => {
   const html = await fs.readFile(path.join(outDir, `${releaseId}.html`), 'utf8');
   const markdown = await fs.readFile(path.join(outDir, `${releaseId}.md`), 'utf8');
 
-  assert.equal(result.count, 30);
+  assert.equal(result.count, 31);
   assert.equal(result.featureCount >= 4, true);
   assert.match(index, /Release Notes/);
-  assert.match(index, /v0\.5\.6/);
+  assert.match(index, /v0\.5\.7/);
   assert.match(index, /v0\.5\.1/);
-  assert.match(html, /Outreach Packet/);
+  assert.match(html, /Passive Trial Funnel/);
   assert.match(html, /75 checkout-backed reports/);
   assert.match(markdown, new RegExp(`# ${releaseId}`));
-  assert.match(markdown, /## Outreach Packet/);
+  assert.match(markdown, /## Passive Trial Funnel/);
+});
+
+test('generates passive funnel pages with SEO metadata', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'emp-passive-funnel-'));
+  const result = await generatePassiveFunnel({ outDir: root });
+  const springBoot = await fs.readFile(path.join(root, 'spring-boot-3-readiness.html'), 'utf8');
+  const githubAction = await fs.readFile(path.join(root, 'github-action.html'), 'utf8');
+  const sitemap = await fs.readFile(path.join(root, 'sitemap.xml'), 'utf8');
+  const robots = await fs.readFile(path.join(root, 'robots.txt'), 'utf8');
+  const jsonLd = springBoot.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
+
+  assert.equal(result.count, 10);
+  assert.match(springBoot, /<link rel="canonical" href="https:\/\/danielrna\.github\.io\/enterprise-modernization-platform\/spring-boot-3-readiness\.html">/);
+  assert.match(springBoot, /<meta property="og:title" content="Spring Boot 3 Readiness Check">/);
+  assert.match(springBoot, /docker run --rm/);
+  assert.match(githubAction, /uses: danielrna\/enterprise-modernization-platform@v0\.5\.6/);
+  assert.match(sitemap, /spring-boot-3-readiness\.html/);
+  assert.match(robots, /Sitemap: https:\/\/danielrna\.github\.io\/enterprise-modernization-platform\/sitemap\.xml/);
+  assert.equal(Boolean(jsonLd), true);
+  assert.equal(JSON.parse(jsonLd)['@context'], 'https://schema.org');
 });
 
 test('generates Consultant Demo page and bundle', async () => {

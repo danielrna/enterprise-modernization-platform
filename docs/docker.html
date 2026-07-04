@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMP Docker Readiness Reports</title>
+  <meta name="description" content="Run EMP from Docker and generate static HTML and JSON modernization readiness reports.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://danielrna.github.io/enterprise-modernization-platform/docker.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Enterprise Modernization Platform">
+  <meta property="og:title" content="EMP Docker Readiness Reports">
+  <meta property="og:description" content="Run EMP from Docker and generate static HTML and JSON modernization readiness reports.">
+  <meta property="og:url" content="https://danielrna.github.io/enterprise-modernization-platform/docker.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="EMP Docker Readiness Reports">
+  <meta name="twitter:description" content="Run EMP from Docker and generate static HTML and JSON modernization readiness reports.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://danielrna.github.io/enterprise-modernization-platform/#website","name":"Enterprise Modernization Platform","url":"https://danielrna.github.io/enterprise-modernization-platform/"},{"@type":"SoftwareApplication","@id":"https://danielrna.github.io/enterprise-modernization-platform/#software","name":"Enterprise Modernization Platform","applicationCategory":"DeveloperApplication","operatingSystem":"Docker, GitHub Actions, Node.js","offers":{"@type":"Offer","price":"0","priceCurrency":"CHF"},"url":"https://danielrna.github.io/enterprise-modernization-platform/"},{"@type":"WebPage","@id":"https://danielrna.github.io/enterprise-modernization-platform/docker.html#webpage","url":"https://danielrna.github.io/enterprise-modernization-platform/docker.html","name":"EMP Docker Readiness Reports","description":"Run EMP from Docker and generate static HTML and JSON modernization readiness reports.","isPartOf":{"@id":"https://danielrna.github.io/enterprise-modernization-platform/#website"},"about":{"@id":"https://danielrna.github.io/enterprise-modernization-platform/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://danielrna.github.io/enterprise-modernization-platform/"},{"@type":"ListItem","position":2,"name":"EMP Docker Readiness Reports","item":"https://danielrna.github.io/enterprise-modernization-platform/docker.html"}]}]}</script>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; --accent-dark:#0f4f84; --ok:#217a45; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1120px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 10px; font-size:42px; line-height:1.08; letter-spacing:0; }
+    h2 { margin:30px 0 12px; font-size:21px; letter-spacing:0; }
+    p { max-width:780px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    pre { overflow:auto; white-space:pre-wrap; padding:14px; background:#102033; color:#eef6fd; border-radius:8px; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 34px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .hero { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:26px; align-items:start; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+    .actions a { display:inline-flex; align-items:center; min-height:42px; padding:9px 13px; background:var(--panel); border:1px solid var(--line); border-radius:6px; }
+    .actions a.primary { background:var(--accent); color:#fff; border-color:var(--accent-dark); font-weight:700; }
+    .proof { display:flex; flex-direction:column; gap:0; padding:16px; background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--ok); border-radius:8px; }
+    .proof div { display:flex; justify-content:space-between; gap:14px; padding:9px 0; border-bottom:1px solid var(--line); }
+    .proof div:last-child { border-bottom:0; }
+    .proof span,.grid span,.links span,.steps span { color:var(--muted); }
+    .proof strong { font-size:22px; }
+    .grid,.links,.steps,.pack-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:18px 0; }
+    .steps { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .grid div,.links a,.steps div,.pack-grid a { display:flex; flex-direction:column; gap:6px; min-height:112px; padding:16px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .pack-grid code { overflow-wrap:anywhere; color:var(--accent-dark); }
+    .faq { display:grid; gap:10px; max-width:840px; }
+    details { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px 14px; }
+    summary { cursor:pointer; font-weight:700; }
+    details p { margin:8px 0 0; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:12px; color:var(--muted); text-transform:uppercase; }
+    .table-scroll { overflow:auto; }
+    @media (max-width: 860px) { main { padding:24px 16px; } .hero,.grid,.links,.steps,.pack-grid { grid-template-columns:1fr; } h1 { font-size:31px; } table { min-width:720px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="quickstart.html">Quickstart</a>
+    <a href="docker.html">Docker</a>
+    <a href="github-action.html">GitHub Action</a>
+    <a href="examples.html">Examples</a>
+    <a href="consultants.html">Consultants</a>
+    <a href="benchmarks/index.html">Benchmarks</a>
+    <a href="packs/index.html">Packs</a>
+    <a href="release-notes/index.html">Release Notes</a>
+  </nav>
+    <section class="hero">
+      <div>
+        <h1>Docker readiness report</h1>
+        <p>Use Docker when the target repository is local and the first run should not require a Node.js install.</p>
+      </div>
+      <aside class="proof" aria-label="Published evidence">
+    <div><span>Public reports</span><strong>75</strong></div>
+    <div><span>Checkout-backed</span><strong>75</strong></div>
+    <div><span>Passing validation</span><strong>17</strong></div>
+    <div><span>Backend required</span><strong>0</strong></div>
+  </aside>
+    </section>
+
+    <h2>Local Repository</h2>
+    <pre><code>cd /path/to/java-app
+docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.6 analyze . --pack spring-boot-3-readiness --out reports/emp-readiness</code></pre>
+    <h2>Transformation Dry Run</h2>
+    <pre><code>docker run --rm -v "$PWD:/workspace" danielrna/enterprise-modernization-platform:v0.5.6 transform . --pack spring-boot-3-readiness --mode dry-run --validate --out reports/emp-transform</code></pre>
+    <h2>Choose A Pack</h2>
+    <section class="pack-grid">
+    <a href="spring-boot-3-readiness.html">
+      <strong>Spring Boot 2 to 3</strong>
+      <code>spring-boot-3-readiness</code>
+      <span>Spring Boot 3 readiness</span>
+    </a>
+    <a href="java-21-readiness.html">
+      <strong>Java 17 to 21</strong>
+      <code>java-17-to-21-readiness</code>
+      <span>Java 21 readiness</span>
+    </a>
+    <a href="jakarta-migration-readiness.html">
+      <strong>javax to jakarta</strong>
+      <code>jakarta-readiness</code>
+      <span>Jakarta migration readiness</span>
+    </a>
+    <a href="hibernate-6-readiness.html">
+      <strong>Hibernate 5 to 6</strong>
+      <code>hibernate-readiness</code>
+      <span>Hibernate 6 readiness</span>
+    </a>
+    <a href="packs/spring-security-6-readiness.html">
+      <strong>Spring Security 5 to 6</strong>
+      <code>spring-security-6-readiness</code>
+      <span>Spring Security pack</span>
+    </a>
+    <a href="packs/junit-5-readiness.html">
+      <strong>JUnit 4 to 5</strong>
+      <code>junit-5-readiness</code>
+      <span>JUnit pack</span>
+    </a>
+  </section>
+    <h2>First-Run Checks</h2>
+    <section class="grid">
+      <div><strong>Run from app root</strong><span>Multi-sample repositories often need a subdirectory.</span></div>
+      <div><strong>Read not-applicable results</strong><span>They prevent claiming a score for the wrong migration.</span></div>
+      <div><strong>Keep artifacts</strong><span>Reports are the passive conversion asset.</span></div>
+      <div><strong>Escalate to validation</strong><span>Use transform dry-run when compile/test evidence is required.</span></div>
+    </section>
+
+  </main></body>
+</html>

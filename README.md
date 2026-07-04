@@ -30,6 +30,17 @@ Sample smoke-test report: https://github.com/danielrna/enterprise-modernization-
 
 Quickstart: https://danielrna.github.io/enterprise-modernization-platform/quickstart.html
 
+Passive self-serve pages:
+
+- Spring Boot 3 readiness: https://danielrna.github.io/enterprise-modernization-platform/spring-boot-3-readiness.html
+- Java 21 readiness: https://danielrna.github.io/enterprise-modernization-platform/java-21-readiness.html
+- Jakarta migration readiness: https://danielrna.github.io/enterprise-modernization-platform/jakarta-migration-readiness.html
+- Hibernate 6 readiness: https://danielrna.github.io/enterprise-modernization-platform/hibernate-6-readiness.html
+- Docker path: https://danielrna.github.io/enterprise-modernization-platform/docker.html
+- GitHub Action path: https://danielrna.github.io/enterprise-modernization-platform/github-action.html
+- Report examples: https://danielrna.github.io/enterprise-modernization-platform/examples.html
+- Consultant passive flow: https://danielrna.github.io/enterprise-modernization-platform/consultants.html
+
 External trial proof and case study: https://danielrna.github.io/enterprise-modernization-platform/external-trial.html
 
 Outreach packet: https://danielrna.github.io/enterprise-modernization-platform/outreach-packet.html
@@ -265,12 +276,13 @@ node ./bin/emp.js benchmarks --source local --validate --validation-timeout-ms 3
 node ./bin/emp.js hub --out docs/migration-hub
 npm run docs:generate
 npm run knowledge:generate
+npm run passive:funnel
 npm run release-notes:generate
 npm run consultant:demo
 npm run benchmarks:publish
 ```
 
-`npm run docs:generate` generates static pack documentation from `packs/*.json`. `npm run knowledge:generate` generates Knowledge Base pages from `knowledge/*.json`. `npm run release-notes:generate` generates public HTML and GitHub-ready Markdown release notes from `features/catalog.json`. `npm run consultant:demo` generates the Consultant Demo page and downloadable bundle. `npm run benchmarks:publish` uses the checked-in benchmark reports by default, regenerates the Migration Hub, pack docs, Knowledge Base, release notes, Consultant Demo, writes `reports/benchmark-publish-summary.json`, and asserts the current report count. Use `npm run benchmarks:publish -- --min-count 75` for the current benchmark gate. Use `node ./scripts/benchmark-publish.js --source local --validate` or `--source clone --validate` when intentionally refreshing checkout-backed evidence.
+`npm run docs:generate` generates static pack documentation from `packs/*.json`. `npm run knowledge:generate` generates Knowledge Base pages from `knowledge/*.json`. `npm run passive:funnel` generates direct GitHub Pages acquisition pages for Docker, GitHub Action, examples, consultants, and the main mandatory upgrade checks. `npm run release-notes:generate` generates public HTML and GitHub-ready Markdown release notes from `features/catalog.json`. `npm run consultant:demo` generates the Consultant Demo page and downloadable bundle. `npm run benchmarks:publish` uses the checked-in benchmark reports by default, regenerates the Migration Hub, pack docs, Knowledge Base, release notes, passive funnel pages, Consultant Demo, writes `reports/benchmark-publish-summary.json`, and asserts the current report count. Use `npm run benchmarks:publish -- --min-count 75` for the current benchmark gate. Use `node ./scripts/benchmark-publish.js --source local --validate` or `--source clone --validate` when intentionally refreshing checkout-backed evidence.
 
 ## Verification
 
@@ -313,9 +325,9 @@ Implemented through v0.5.6:
 
 Current roadmap phase: Phase 2, Distribution and Conversion Proof, is complete. Phase 1 Evidence Depth produced 75 checkout-backed public reports. Phase 2 made that proof runnable through Docker and GitHub Actions, validated the action path from an external-style repository, and added 9 Docker-first external trial runs outside the benchmark catalog.
 
-Current growth branch: conversion proof. The product should use the 9 external trial snapshots to test consultant outreach and paid follow-up offers before adding another pack or increasing benchmark volume.
+Current growth branch: passive conversion proof. The product should turn the existing evidence, external trial snapshots, Docker path, and GitHub Action path into self-serve GitHub Pages entry points before adding another pack or increasing benchmark volume.
 
-The Outreach Packet groups those 9 snapshots into offer branches and copy/paste messages for testing replies from Java consultants and teams.
+The Outreach Packet remains useful as content source material, but the primary operating model is now passive discovery through direct readiness pages, examples, Docker commands, GitHub Action workflows, and static report proof.
 
 Still intentionally out of scope:
 

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>v0.5.7 Release Notes</title>
+  <style>
+    :root { --ink:#17202a; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fb; --panel:#fff; --accent:#1769aa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    main { max-width:1080px; margin:0 auto; padding:32px 24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:0 0 8px; font-size:21px; letter-spacing:0; }
+    h3 { margin:16px 0 8px; font-size:15px; letter-spacing:0; }
+    p { max-width:760px; color:var(--muted); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-nav a { color:var(--muted); font-size:14px; }
+    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    .layout { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:24px 0; }
+    .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
+    .tile span { color:var(--muted); }
+    .summary { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; margin:24px 0; }
+    .summary div,.feature { padding:16px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .summary div { display:flex; flex-direction:column; gap:5px; }
+    .summary span,.meta span,small { color:var(--muted); }
+    .features { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .feature small { display:block; margin-bottom:8px; text-transform:uppercase; font-size:12px; }
+    .meta { display:flex; gap:8px; margin:12px 0; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .actions a { display:inline-flex; align-items:center; min-height:36px; padding:7px 11px; background:#f8fafc; border:1px solid var(--line); border-radius:6px; }
+    li { margin:6px 0; }
+    code { font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    @media (max-width: 760px) { main { padding:24px 16px; } .layout,.summary,.features { grid-template-columns:1fr; } h1 { font-size:27px; } }
+  </style>
+</head>
+<body><main>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../quickstart.html">Quickstart</a>
+      <a href="../external-trial.html">External Trial</a>
+      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
+      <a href="../benchmarks/index.html">Benchmarks</a>
+      <a href="../packs/index.html">Packs</a>
+      <a href="index.html">Release Notes</a>
+      <a href="../editions.html">Editions</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <section>
+      <h1>v0.5.7</h1>
+      <p>Passive Trial Funnel release turning outreach assets into self-serve GitHub Pages entry points.</p>
+    </section>
+    <section class="summary">
+      <div><strong>Date</strong><span>2026-07-04</span></div>
+      <div><strong>Features</strong><span>2</span></div>
+      <div><strong>Draft</strong><span><a href="v0.5.7.md">Markdown</a></span></div>
+    </section>
+    <section class="features">
+      <article class="feature">
+        <small>distribution</small>
+        <h2>Passive Trial Funnel</h2>
+        <p>Add direct GitHub Pages landing pages for mandatory upgrade checks, Docker usage, GitHub Action usage, report examples, and consultant self-qualification.</p>
+        <div class="meta"><strong>Audience</strong><span>Java consultants, maintainers, and teams who should be able to self-qualify without manual outreach</span></div>
+        <h3>Evidence</h3>
+        <ul><li>Adds generated pages for Spring Boot 3 readiness, Java 21 readiness, Jakarta migration readiness, and Hibernate 6 readiness.</li><li>Adds generated Docker, GitHub Action, examples, and consultant passive-flow pages.</li><li>Generates <code>docs/sitemap.xml</code> and <code>docs/robots.txt</code> for the GitHub Pages site.</li><li>Adds canonical URLs, descriptions, Open Graph tags, Twitter card tags, and JSON-LD structured data to passive funnel pages.</li><li>Keeps runnable commands pinned to the latest published image and action until the next release tag is cut.</li><li>Wires passive funnel generation into benchmark publishing and the Consultant Demo bundle.</li><li>Updates README and homepage navigation so passive discovery is the default path instead of manual outreach.</li></ul>
+        <h3>Links</h3><div class="actions"><a href="../spring-boot-3-readiness.html">Spring Boot 3 readiness</a><a href="../github-action.html">GitHub Action path</a><a href="../consultants.html">Consultant passive flow</a></div>
+      </article>
+      <article class="feature">
+        <small>roadmap</small>
+        <h2>Passive growth branch</h2>
+        <p>Reframe the post-Phase-2 conversion branch around passive GitHub Pages discovery rather than manual consultant outreach.</p>
+        <div class="meta"><strong>Audience</strong><span>Maintainers aligning the master plan with a low-touch acquisition model</span></div>
+        <h3>Evidence</h3>
+        <ul><li>Preserves the 75 public reports, 75 checkout-backed reports, and 17 passing validation reports as proof assets.</li><li>Turns the outreach packet into supporting material rather than the primary operating model.</li><li>Creates self-serve pages that answer what to run, which pack to choose, which examples to inspect, and when paid validation makes sense.</li></ul>
+        <h3>Links</h3><div class="actions"><a href="../examples.html">Examples</a><a href="../docker.html">Docker path</a></div>
+      </article></section>
+  </main></body>
+</html>

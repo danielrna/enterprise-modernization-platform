@@ -2,6 +2,66 @@
   "schemaVersion": "emp.features.v1",
   "releases": [
     {
+      "id": "v0.5.7",
+      "title": "v0.5.7",
+      "date": "2026-07-04",
+      "summary": "Passive Trial Funnel release turning outreach assets into self-serve GitHub Pages entry points.",
+      "features": [
+        {
+          "id": "passive-trial-funnel",
+          "type": "distribution",
+          "name": "Passive Trial Funnel",
+          "audience": "Java consultants, maintainers, and teams who should be able to self-qualify without manual outreach",
+          "summary": "Add direct GitHub Pages landing pages for mandatory upgrade checks, Docker usage, GitHub Action usage, report examples, and consultant self-qualification.",
+          "evidence": [
+            "Adds generated pages for Spring Boot 3 readiness, Java 21 readiness, Jakarta migration readiness, and Hibernate 6 readiness.",
+            "Adds generated Docker, GitHub Action, examples, and consultant passive-flow pages.",
+            "Generates `docs/sitemap.xml` and `docs/robots.txt` for the GitHub Pages site.",
+            "Adds canonical URLs, descriptions, Open Graph tags, Twitter card tags, and JSON-LD structured data to passive funnel pages.",
+            "Keeps runnable commands pinned to the latest published image and action until the next release tag is cut.",
+            "Wires passive funnel generation into benchmark publishing and the Consultant Demo bundle.",
+            "Updates README and homepage navigation so passive discovery is the default path instead of manual outreach."
+          ],
+          "links": [
+            {
+              "label": "Spring Boot 3 readiness",
+              "href": "docs/spring-boot-3-readiness.html"
+            },
+            {
+              "label": "GitHub Action path",
+              "href": "docs/github-action.html"
+            },
+            {
+              "label": "Consultant passive flow",
+              "href": "docs/consultants.html"
+            }
+          ]
+        },
+        {
+          "id": "passive-growth-branch",
+          "type": "roadmap",
+          "name": "Passive growth branch",
+          "audience": "Maintainers aligning the master plan with a low-touch acquisition model",
+          "summary": "Reframe the post-Phase-2 conversion branch around passive GitHub Pages discovery rather than manual consultant outreach.",
+          "evidence": [
+            "Preserves the 75 public reports, 75 checkout-backed reports, and 17 passing validation reports as proof assets.",
+            "Turns the outreach packet into supporting material rather than the primary operating model.",
+            "Creates self-serve pages that answer what to run, which pack to choose, which examples to inspect, and when paid validation makes sense."
+          ],
+          "links": [
+            {
+              "label": "Examples",
+              "href": "docs/examples.html"
+            },
+            {
+              "label": "Docker path",
+              "href": "docs/docker.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "v0.5.6",
       "title": "v0.5.6",
       "date": "2026-07-03",
