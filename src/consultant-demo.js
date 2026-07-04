@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
+import { renderSiteNav, siteNavStyles } from './site-chrome.js';
 
 const DEFAULT_SELECTION = [
   {
@@ -125,17 +126,7 @@ function renderConsultantDemo(demos) {
       </article>`).join('');
 
   return page('Consultant Demo', `
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="quickstart.html">Quickstart</a>
-      <a href="external-trial.html">External Trial</a>
-      <a href="consultant-demo.html">Consultant Demo</a>
-      <a href="benchmarks/index.html">Benchmarks</a>
-      <a href="knowledge-base/index.html">Knowledge Base</a>
-      <a href="release-notes/index.html">Release Notes</a>
-      <a href="editions.html">Editions</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    ${renderSiteNav('')}
 
     <section class="hero">
       <div>
@@ -256,9 +247,7 @@ function page(title, body) {
     p { max-width:780px; color:var(--muted); }
     a { color:var(--accent); text-decoration:none; }
     a:hover { text-decoration:underline; }
-    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 30px; padding-bottom:16px; border-bottom:1px solid var(--line); }
-    .site-nav a { color:var(--muted); font-size:14px; }
-    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    ${siteNavStyles()}
     .hero { display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:22px; align-items:start; }
     .proof,.demo-card,.steps div,.artifact-grid a { background:var(--panel); border:1px solid var(--line); border-radius:8px; }
     .proof { display:grid; grid-template-columns:1fr; gap:10px; padding:16px; border-left:4px solid var(--ok); }

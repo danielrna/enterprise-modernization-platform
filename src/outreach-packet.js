@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { renderSiteNav, siteNavStyles } from './site-chrome.js';
 
 const TRIALS_DIR = 'docs/external-trials';
 
@@ -94,15 +95,7 @@ function repositoryName(slug) {
 
 function renderOutreachPacket({ trials, branches }) {
   return page('EMP Outreach Packet', `
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="quickstart.html">Quickstart</a>
-      <a href="external-trial.html">External Trial</a>
-      <a href="outreach-packet.html">Outreach Packet</a>
-      <a href="consultant-demo.html">Consultant Demo</a>
-      <a href="release-notes/index.html">Release Notes</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    ${renderSiteNav('')}
 
     <section class="hero">
       <h1>Outreach Packet</h1>
@@ -182,9 +175,7 @@ function page(title, body) {
     a:hover { text-decoration:underline; }
     pre { overflow:auto; white-space:pre-wrap; padding:14px; background:#102033; color:#eef6fd; border-radius:8px; }
     code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
-    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 30px; padding-bottom:16px; border-bottom:1px solid var(--line); }
-    .site-nav a { color:var(--muted); font-size:14px; }
-    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    ${siteNavStyles()}
     .summary,.branch-grid,.copy-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:22px 0; }
     .branch-grid,.copy-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
     .summary div,.branch,.copy { padding:16px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }

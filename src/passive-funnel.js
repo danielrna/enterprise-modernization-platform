@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { renderSiteNav, siteNavStyles } from './site-chrome.js';
 
 const RELEASE_VERSION = 'v0.5.6';
 const DOCKER_IMAGE = `danielrna/enterprise-modernization-platform:${RELEASE_VERSION}`;
@@ -356,17 +357,7 @@ function proofBox() {
 }
 
 function nav() {
-  return `<nav class="site-nav">
-    <a href="index.html">Home</a>
-    <a href="quickstart.html">Quickstart</a>
-    <a href="docker.html">Docker</a>
-    <a href="github-action.html">GitHub Action</a>
-    <a href="examples.html">Examples</a>
-    <a href="consultants.html">Consultants</a>
-    <a href="benchmarks/index.html">Benchmarks</a>
-    <a href="packs/index.html">Packs</a>
-    <a href="release-notes/index.html">Release Notes</a>
-  </nav>`;
+  return renderSiteNav('');
 }
 
 function page(pageDef, body) {
@@ -437,9 +428,7 @@ function page(pageDef, body) {
     a:hover { text-decoration:underline; }
     code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     pre { overflow:auto; white-space:pre-wrap; padding:14px; background:#102033; color:#eef6fd; border-radius:8px; }
-    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 34px; padding-bottom:16px; border-bottom:1px solid var(--line); }
-    .site-nav a { color:var(--muted); font-size:14px; }
-    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    ${siteNavStyles()}
     .hero { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:26px; align-items:start; }
     .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
     .actions a { display:inline-flex; align-items:center; min-height:42px; padding:9px 13px; background:var(--panel); border:1px solid var(--line); border-radius:6px; }

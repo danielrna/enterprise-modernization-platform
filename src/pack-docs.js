@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { renderSiteNav, siteNavStyles } from './site-chrome.js';
 
 export async function generatePackDocs({
   packsDir = 'packs',
@@ -47,17 +48,7 @@ function renderPackIndex(packs) {
         <span>${escapeHtml(pack.migration)}</span>
       </a>`).join('');
   return page('Migration Packs', `
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../quickstart.html">Quickstart</a>
-      <a href="../external-trial.html">External Trial</a>
-      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
-      <a href="../benchmarks/index.html">Benchmarks</a>
-      <a href="../packs/index.html">Packs</a>
-      <a href="../release-notes/index.html">Release Notes</a>
-      <a href="../editions.html">Editions</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
+    ${renderSiteNav('../')}
     <section>
       <h1>Migration Packs</h1>
       <p>Generated documentation pages from pack metadata. Each page describes the readiness scope, checks, report sections, and execution command for a mandatory modernization pack.</p>
@@ -76,17 +67,7 @@ function renderPackPage(pack) {
     : '<li>HTML report</li><li>JSON report</li>';
 
   return page(pack.name, `
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../quickstart.html">Quickstart</a>
-      <a href="../external-trial.html">External Trial</a>
-      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
-      <a href="../benchmarks/index.html">Benchmarks</a>
-      <a href="index.html">Packs</a>
-      <a href="../release-notes/index.html">Release Notes</a>
-      <a href="../editions.html">Editions</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
+    ${renderSiteNav('../')}
 
     <section>
       <h1>${escapeHtml(pack.name)}</h1>
@@ -138,9 +119,7 @@ function page(title, body) {
     p { max-width:760px; color:var(--muted); }
     a { color:var(--accent); text-decoration:none; }
     a:hover { text-decoration:underline; }
-    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
-    .site-nav a { color:var(--muted); font-size:14px; }
-    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    ${siteNavStyles()}
     .layout { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin:24px 0; }
     .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
     .tile span { color:var(--muted); }

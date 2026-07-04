@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { renderSiteNav, siteNavStyles } from './site-chrome.js';
 
 export async function generateReleaseNotes({
   featuresFile = 'features/catalog.json',
@@ -41,17 +42,7 @@ function renderReleaseIndex(releases) {
         <span>${escapeHtml(release.summary)}</span>
       </a>`).join('');
   return page('Release Notes', `
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../quickstart.html">Quickstart</a>
-      <a href="../external-trial.html">External Trial</a>
-      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
-      <a href="../benchmarks/index.html">Benchmarks</a>
-      <a href="../packs/index.html">Packs</a>
-      <a href="../release-notes/index.html">Release Notes</a>
-      <a href="../editions.html">Editions</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
+    ${renderSiteNav('../')}
     <section>
       <h1>Release Notes</h1>
       <p>Generated release-note pages and GitHub-ready Markdown drafts from structured feature metadata.</p>
@@ -73,17 +64,7 @@ function renderReleasePage(release) {
       </article>`).join('');
 
   return page(`${release.title} Release Notes`, `
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../quickstart.html">Quickstart</a>
-      <a href="../external-trial.html">External Trial</a>
-      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
-      <a href="../benchmarks/index.html">Benchmarks</a>
-      <a href="../packs/index.html">Packs</a>
-      <a href="index.html">Release Notes</a>
-      <a href="../editions.html">Editions</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
+    ${renderSiteNav('../')}
     <section>
       <h1>${escapeHtml(release.title)}</h1>
       <p>${escapeHtml(release.summary)}</p>
@@ -137,9 +118,7 @@ function page(title, body) {
     p { max-width:760px; color:var(--muted); }
     a { color:var(--accent); text-decoration:none; }
     a:hover { text-decoration:underline; }
-    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
-    .site-nav a { color:var(--muted); font-size:14px; }
-    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+    ${siteNavStyles()}
     .layout { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:24px 0; }
     .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
     .tile span { color:var(--muted); }

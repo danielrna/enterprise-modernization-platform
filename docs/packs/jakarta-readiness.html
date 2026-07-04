@@ -14,9 +14,24 @@
     p { max-width:760px; color:var(--muted); }
     a { color:var(--accent); text-decoration:none; }
     a:hover { text-decoration:underline; }
-    .site-nav { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
-    .site-nav a { color:var(--muted); font-size:14px; }
-    .site-nav a:first-child { color:var(--ink); font-weight:700; }
+
+    .site-nav { position:relative; z-index:5; display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 34px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .site-brand { display:inline-flex; align-items:center; min-height:36px; padding:0 10px; color:var(--ink); font-weight:800; letter-spacing:0; border:1px solid var(--line); border-radius:6px; background:var(--panel); }
+    .site-menu { position:relative; }
+    .site-menu summary { list-style:none; cursor:pointer; display:inline-flex; align-items:center; min-height:36px; padding:0 10px; color:var(--muted); border:1px solid transparent; border-radius:6px; user-select:none; }
+    .site-menu summary::-webkit-details-marker { display:none; }
+    .site-menu summary:after { content:""; width:6px; height:6px; margin-left:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg) translateY(-2px); }
+    .site-menu[open] summary { color:var(--ink); background:var(--panel); border-color:var(--line); }
+    .site-menu div { position:absolute; top:42px; left:0; min-width:210px; display:grid; gap:4px; padding:8px; background:var(--panel); border:1px solid var(--line); border-radius:8px; box-shadow:0 18px 40px rgba(15,23,42,.12); }
+    .site-menu:last-child div { left:auto; right:0; }
+    .site-menu a { display:flex; align-items:center; min-height:34px; padding:7px 9px; color:var(--ink); border-radius:6px; white-space:nowrap; }
+    .site-menu a:hover { text-decoration:none; background:#eef6fd; color:var(--accent); }
+    @media (max-width: 760px) {
+      .site-nav { gap:6px; margin-bottom:26px; }
+      .site-brand,.site-menu summary { min-height:34px; padding:0 9px; font-size:14px; }
+      .site-menu { position:static; }
+      .site-menu div { left:16px; right:16px; top:auto; min-width:0; margin-top:4px; }
+    }
     .layout { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin:24px 0; }
     .tile { display:flex; flex-direction:column; gap:6px; min-height:128px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; color:var(--ink); }
     .tile span { color:var(--muted); }
@@ -36,17 +51,29 @@
   </style>
 </head>
 <body><main>
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../quickstart.html">Quickstart</a>
-      <a href="../external-trial.html">External Trial</a>
-      <a href="../migration-hub/spring-boot-2-to-3.html">Migration Hub</a>
-      <a href="../benchmarks/index.html">Benchmarks</a>
-      <a href="index.html">Packs</a>
-      <a href="../release-notes/index.html">Release Notes</a>
-      <a href="../editions.html">Editions</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
+    <nav class="site-nav" aria-label="Site navigation">
+    <a class="site-brand" href="../index.html">EMP</a>
+    <details class="site-menu">
+      <summary>Run</summary>
+      <div><a href="../quickstart.html">Quickstart</a><a href="../docker.html">Docker</a><a href="../github-action.html">GitHub Action</a></div>
+    </details>
+    <details class="site-menu">
+      <summary>Readiness</summary>
+      <div><a href="../spring-boot-3-readiness.html">Spring Boot 3</a><a href="../java-21-readiness.html">Java 21</a><a href="../jakarta-migration-readiness.html">Jakarta</a><a href="../hibernate-6-readiness.html">Hibernate 6</a><a href="../packs/index.html">All Packs</a></div>
+    </details>
+    <details class="site-menu">
+      <summary>Proof</summary>
+      <div><a href="../examples.html">Examples</a><a href="../benchmarks/index.html">Benchmarks</a><a href="../migration-hub/index.html">Migration Hub</a><a href="../external-trial.html">External Trial</a></div>
+    </details>
+    <details class="site-menu">
+      <summary>Resources</summary>
+      <div><a href="../consultants.html">Consultants</a><a href="../consultant-demo.html">Consultant Demo</a><a href="../knowledge-base/index.html">Knowledge Base</a><a href="../mcp.html">MCP</a><a href="../release-notes/index.html">Release Notes</a></div>
+    </details>
+    <details class="site-menu">
+      <summary>Access</summary>
+      <div><a href="../editions.html">Editions</a><a href="../contact.html">Contact</a></div>
+    </details>
+  </nav>
 
     <section>
       <h1>Jakarta Readiness</h1>
